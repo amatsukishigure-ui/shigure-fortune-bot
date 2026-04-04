@@ -1,0 +1,22 @@
+# 認証情報（絶対にコミットしない）
+.env
+*.env
+
+# Pythonキャッシュ
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# 仮想環境
+venv/
+.venv/
+env/
+
+# エラーログ（オプション）
+data/error_log.json
+
+# OS
+.DS_Store
+Thumbs.db

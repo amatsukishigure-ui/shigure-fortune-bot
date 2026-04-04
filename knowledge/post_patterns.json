@@ -1,0 +1,66 @@
+[
+  {
+    "id": "ichi_gon",
+    "name": "一言型",
+    "description": "1〜3行の短い気づき・名言風。X向き。朝晩に使う。",
+    "example": "動く前に、方位を整える。\nそれだけで同じ行動の結果が変わる。",
+    "weight": 1.2,
+    "platforms": ["threads", "x"]
+  },
+  {
+    "id": "hoshi_betsu",
+    "name": "星座別情報型",
+    "description": "12星座の吉方位・運気を一覧で伝える。保存・拡散されやすい。",
+    "example": "【今週の星座別 吉方位】\n♈ 牡羊座 → 東・東南\n♉ 牡牛座 → 南・西南...",
+    "weight": 1.3,
+    "platforms": ["threads"]
+  },
+  {
+    "id": "list",
+    "name": "リスト型",
+    "description": "「〇〇な人の特徴」「〇〇すること3つ」など箇条書きで情報をまとめる。",
+    "example": "金運が上がらない人の習慣。\n・財布を雑に扱う\n・お金を使った後に感謝しない\n・財布を床に置く",
+    "weight": 1.1,
+    "platforms": ["threads", "x"]
+  },
+  {
+    "id": "episode",
+    "name": "鑑定エピソード型",
+    "description": "実際の鑑定（または架空）のエピソードを体験談として語る。信頼・共感を生む。",
+    "example": "先日、転職を迷っている方を鑑定しました。\n「今の会社を辞めるべきか」という相談でした...",
+    "weight": 1.0,
+    "platforms": ["threads"]
+  },
+  {
+    "id": "trivia",
+    "name": "豆知識型",
+    "description": "風水・占星術の豆知識。「知らなかった！」で保存される。",
+    "example": "【風水豆知識】玄関の話。\n玄関は運気の入口。なのに、これを置いている家が多い...",
+    "weight": 1.1,
+    "platforms": ["threads", "x"]
+  },
+  {
+    "id": "kyokan",
+    "name": "共感・問いかけ型",
+    "description": "「〜な人いる？」「これ、あなたのこと？」で共感とコメントを誘発する。",
+    "example": "「なんとなく、今じゃない気がする」\nその感覚、合ってることが多い。",
+    "weight": 1.2,
+    "platforms": ["threads", "x"]
+  },
+  {
+    "id": "menu_guide",
+    "name": "メニュー案内型",
+    "description": "鑑定メニューを自然に紹介して誘導する。週1回程度使う。",
+    "example": "【鑑定メニューのご案内】\n龍脈命術鑑定、受け付けています。\n▷ 吉方位レポート 2,000円...",
+    "weight": 0.7,
+    "platforms": ["threads"]
+  },
+  {
+    "id": "world_view",
+    "name": "世界観投稿型",
+    "description": "時雨としての考え方・占いへの想いを語る。ファン化・親近感。",
+    "example": "なぜ私が占いをするのか、少し話します。\n20代の頃、大きな選択を前に...",
+    "weight": 0.9,
+    "platforms": ["threads"]
+  }
+]
