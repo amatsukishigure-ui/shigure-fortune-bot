@@ -3,8 +3,10 @@ name: shigure-auto-post
 on:
   schedule:
     - cron: '0 0 * * *'
-    - cron: '0 3 * * *'
+    - cron: '0 2 * * *'
+    - cron: '0 5 * * *'
     - cron: '0 9 * * *'
+    - cron: '0 11 * * *'
     - cron: '0 12 * * *'
   workflow_dispatch:
     inputs:
