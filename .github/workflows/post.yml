@@ -1,19 +1,15 @@
-name: 時雨 自動投稿
+name: shigure-auto-post
 
 on:
   schedule:
-    # 毎朝 9:00 JST (= 00:00 UTC) にdaily実行（ネタ収集・生成）
     - cron: '0 0 * * *'
-    # 12:00 JST (= 03:00 UTC) に投稿
     - cron: '0 3 * * *'
-    # 18:00 JST (= 09:00 UTC) に投稿
     - cron: '0 9 * * *'
-    # 21:00 JST (= 12:00 UTC) に投稿
     - cron: '0 12 * * *'
   workflow_dispatch:
     inputs:
       command:
-        description: '実行コマンド (daily / post / status)'
+        description: 'command (daily / post / status)'
         required: true
         default: 'status'
 
@@ -22,35 +18,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: チェックアウト
+      - name: checkout
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_PAT }}
 
-      - name: Python セットアップ
+      - name: setup python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: 依存パッケージインストール
+      - name: install dependencies
         run: pip install -r requirements.txt
 
-      - name: .env を生成
+      - name: create env file
         run: |
-          cat > .env << 'EOF'
-          ANTHROPIC_API_KEY=${{ secrets.ANTHROPIC_API_KEY }}
-          THREADS_ACCESS_TOKEN=${{ secrets.THREADS_ACCESS_TOKEN }}
-          THREADS_USER_ID=${{ secrets.THREADS_USER_ID }}
-          X_API_KEY=${{ secrets.X_API_KEY }}
-          X_API_SECRET=${{ secrets.X_API_SECRET }}
-          X_ACCESS_TOKEN=${{ secrets.X_ACCESS_TOKEN }}
-          X_ACCESS_TOKEN_SECRET=${{ secrets.X_ACCESS_TOKEN_SECRET }}
-          X_BEARER_TOKEN=${{ secrets.X_BEARER_TOKEN }}
-          EOF
+          printf 'ANTHROPIC_API_KEY=%s\n' '${{ secrets.ANTHROPIC_API_KEY }}' > .env
+          printf 'THREADS_ACCESS_TOKEN=%s\n' '${{ secrets.THREADS_ACCESS_TOKEN }}' >> .env
+          printf 'THREADS_USER_ID=%s\n' '${{ secrets.THREADS_USER_ID }}' >> .env
+          printf 'X_API_KEY=%s\n' '${{ secrets.X_API_KEY }}' >> .env
+          printf 'X_API_SECRET=%s\n' '${{ secrets.X_API_SECRET }}' >> .env
+          printf 'X_ACCESS_TOKEN=%s\n' '${{ secrets.X_ACCESS_TOKEN }}' >> .env
+          printf 'X_ACCESS_TOKEN_SECRET=%s\n' '${{ secrets.X_ACCESS_TOKEN_SECRET }}' >> .env
+          printf 'X_BEARER_TOKEN=%s\n' '${{ secrets.X_BEARER_TOKEN }}' >> .env
 
-      - name: コマンド実行
+      - name: run command
         run: |
-          # スケジュール実行の場合、時刻でコマンドを決定
           HOUR=$(date -u +%H)
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             CMD="${{ github.event.inputs.command }}"
@@ -59,15 +52,15 @@ jobs:
           else
             CMD="post both"
           fi
-          echo "実行: python main.py $CMD"
+          echo "running: python main.py $CMD"
           python main.py $CMD
         env:
           PYTHONIOENCODING: utf-8
 
-      - name: 状態ファイルをコミット（キュー・履歴を保存）
+      - name: save state files
         run: |
           git config user.name "shigure-bot"
-          git config user.email "bot@shigure-fortune"
+          git config user.email "bot@shigure-fortune.local"
           git add data/
           git diff --cached --quiet || git commit -m "bot: state update $(date -u +'%Y-%m-%d %H:%M') UTC"
           git push
