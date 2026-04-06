@@ -1,0 +1,18 @@
+name: keepalive
+
+on:
+  schedule:
+    - cron: '0 20 * * 0'  # 毎週日曜 5:00 JST
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+      - run: |
+          git config user.name "shigure-bot"
+          git config user.email "bot@shigure-fortune.local"
+          git commit --allow-empty -m "chore: keepalive $(date -u +'%Y-%m-%d')"
+          git push
