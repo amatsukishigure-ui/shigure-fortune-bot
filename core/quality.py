@@ -92,6 +92,10 @@ def score_post(post_text: str, account_profile: dict) -> dict:
         if raw.startswith("json"):
             raw = raw[4:]
 
+    raw = raw.strip()
+    if not raw:
+        raise ValueError("quality score response was empty")
+
     result = json.loads(raw)
     scores = result["scores"]
     average = sum(scores.values()) / len(scores)
@@ -121,7 +125,17 @@ def score_with_retry(
 
     for attempt in range(max_retries + 1):
         attempts = attempt + 1
-        score_result = score_post(current_post, account_profile)
+        try:
+            score_result = score_post(current_post, account_profile)
+        except (ValueError, json.JSONDecodeError):
+            if attempt < max_retries:
+                continue
+            return {
+                "post": current_post,
+                "score_result": {"scores": {}, "average": 0, "passed": False, "feedback": "score parse error"},
+                "attempts": attempts,
+                "accepted": False,
+            }
 
         if score_result["passed"]:
             return {
