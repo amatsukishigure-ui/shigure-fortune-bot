@@ -29,7 +29,7 @@
     "description": "実際の鑑定（または架空）のエピソードを体験談として語る。信頼・共感を生む。",
     "example": "先日、転職を迷っている方を鑑定しました。\n「今の会社を辞めるべきか」という相談でした...",
     "weight": 1.0,
-    "platforms": ["threads"]
+    "platforms": ["threads", "x"]
   },
   {
     "id": "trivia",
@@ -61,6 +61,6 @@
     "description": "時雨としての考え方・占いへの想いを語る。ファン化・親近感。",
     "example": "なぜ私が占いをするのか、少し話します。\n20代の頃、大きな選択を前に...",
     "weight": 0.9,
-    "platforms": ["threads"]
+    "platforms": ["threads", "x"]
   }
 ]

@@ -2,12 +2,14 @@ name: shigure-auto-post
 
 on:
   schedule:
-    - cron: '0 0 * * *'
-    - cron: '0 2 * * *'
-    - cron: '0 5 * * *'
-    - cron: '0 9 * * *'
-    - cron: '0 11 * * *'
-    - cron: '0 12 * * *'
+    # 2時間ごとに起動（JST 奇数時）
+    - cron: '0 1 * * *'   #  10:00 JST
+    - cron: '0 3 * * *'   #  12:00 JST
+    - cron: '0 5 * * *'   #  14:00 JST
+    - cron: '0 7 * * *'   #  16:00 JST
+    - cron: '0 9 * * *'   #  18:00 JST
+    - cron: '0 11 * * *'  #  20:00 JST
+    - cron: '0 13 * * *'  #  22:00 JST
   workflow_dispatch:
     inputs:
       command:
@@ -44,18 +46,31 @@ jobs:
           printf 'X_ACCESS_TOKEN_SECRET=%s\n' '${{ secrets.X_ACCESS_TOKEN_SECRET }}' >> .env
           printf 'X_BEARER_TOKEN=%s\n' '${{ secrets.X_BEARER_TOKEN }}' >> .env
 
-      - name: run command
+      - name: run
         run: |
-          HOUR=$(date -u +%H)
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             CMD="${{ github.event.inputs.command }}"
-          elif [ "$HOUR" = "00" ]; then
-            CMD="daily"
+            echo "Manual: python main.py $CMD"
+            python main.py $CMD
           else
-            CMD="post both"
+            # 今日のdailyが未実行なら先に実行
+            TODAY=$(date -u +%Y-%m-%d)
+            DAILY_DONE=$(python -c "
+          import json, pathlib
+          h = json.loads(pathlib.Path('data/post_history.json').read_text()) if pathlib.Path('data/post_history.json').exists() else []
+          today = '$TODAY'
+          done = any(p.get('posted_at','').startswith(today) for p in h)
+          print('yes' if done else 'no')
+          " 2>/dev/null || echo "no")
+
+            if [ "$DAILY_DONE" = "no" ]; then
+              echo "Daily not done yet — running daily first"
+              python main.py daily
+            fi
+
+            echo "Running post"
+            python main.py post both
           fi
-          echo "running: python main.py $CMD"
-          python main.py $CMD
         env:
           PYTHONIOENCODING: utf-8
 
