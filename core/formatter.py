@@ -15,21 +15,37 @@ from config import X_CHAR_LIMIT, THREADS_CHAR_LIMIT, X_HASHTAGS
 def format_for_threads(text: str) -> str:
     """
     Threads用に整形する（最大500字）。
-    基本的にライターが生成したテキストをそのまま使う。
+    段落単位で収まる範囲まで含め、文の途中で切れないようにする。
     """
     text = text.strip()
     if len(text) <= THREADS_CHAR_LIMIT:
         return text
-    # 超えた場合は文末で切る
-    truncated = text[:THREADS_CHAR_LIMIT - 3]
-    last_break = max(
-        truncated.rfind("。"),
-        truncated.rfind("\n"),
-        truncated.rfind("、"),
-    )
-    if last_break > THREADS_CHAR_LIMIT // 2:
-        return truncated[:last_break + 1] + "..."
-    return truncated + "..."
+
+    # 段落（空行区切り）単位で収まる範囲まで結合する
+    blocks = text.split("\n\n")
+    result = ""
+    for block in blocks:
+        candidate = (result + "\n\n" + block).strip() if result else block
+        if len(candidate) <= THREADS_CHAR_LIMIT:
+            result = candidate
+        else:
+            break
+
+    if result:
+        return result
+
+    # 1段落でも500字を超える場合は文末（。）で切る
+    truncated = text[:THREADS_CHAR_LIMIT - 1]
+    last_period = truncated.rfind("。")
+    if last_period > THREADS_CHAR_LIMIT // 2:
+        return truncated[:last_period + 1]
+
+    # 改行で切る
+    last_newline = truncated.rfind("\n")
+    if last_newline > THREADS_CHAR_LIMIT // 2:
+        return truncated[:last_newline]
+
+    return truncated
 
 
 def format_for_x(text: str, hashtags: list = None) -> str:
