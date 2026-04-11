@@ -177,13 +177,15 @@ def _generate_post(
     )
     response = client_obj.messages.create(
         model=MODEL_HEAVY,
-        max_tokens=1024,
-        thinking={"type": "adaptive"},
+        max_tokens=4096,
         messages=[{"role": "user", "content": prompt}],
     )
     for block in response.content:
         if block.type == "text":
-            return block.text.strip()
+            text = block.text.strip()
+            if len(text) < 50:
+                return ""  # 短すぎる場合は不完全な生成として棄却
+            return text
     return ""
 
 
