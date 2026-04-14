@@ -57,7 +57,7 @@ def cmd_daily():
     researcher.run(max_themes=5)
 
     print("\n✍️  [5/5] ライター: 投稿生成（時雨として）")
-    result = writer.run(batch_size=8)
+    result = writer.run(batch_size=12)
     print(
         f"   生成: {result['generated']}件 → "
         f"Threads: {result['queued_threads']}件, "
