@@ -53,18 +53,15 @@ jobs:
             echo "Manual: python main.py $CMD"
             python main.py $CMD
           else
-            # 今日のdailyが未実行なら先に実行
-            TODAY=$(date -u +%Y-%m-%d)
-            DAILY_DONE=$(python -c "
+            # キューが3件以下なら補充（daily実行）
+            QUEUE_LOW=$(python -c "
           import json, pathlib
-          h = json.loads(pathlib.Path('data/post_history.json').read_text()) if pathlib.Path('data/post_history.json').exists() else []
-          today = '$TODAY'
-          done = any(p.get('posted_at','').startswith(today) for p in h)
-          print('yes' if done else 'no')
-          " 2>/dev/null || echo "no")
+          q = json.loads(pathlib.Path('data/post_queue.json').read_text()) if pathlib.Path('data/post_queue.json').exists() else []
+          print('yes' if len(q) <= 3 else 'no')
+          " 2>/dev/null || echo "yes")
 
-            if [ "$DAILY_DONE" = "no" ]; then
-              echo "Daily not done yet — running daily first"
+            if [ "$QUEUE_LOW" = "yes" ]; then
+              echo "Queue low — running daily to refill"
               python main.py daily
             fi
 
