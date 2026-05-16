@@ -50,7 +50,25 @@ def _get_todays_schedule() -> list:
     return CONTENT_SCHEDULE.get(day, CONTENT_SCHEDULE["Monday"])
 
 
-def _select_pattern(patterns: list, recent_patterns: list, platform_hint: str = "threads") -> dict:
+ZODIAC_SIGNS = [
+    "♈牡羊座", "♉牡牛座", "♊双子座", "♋蟹座",
+    "♌獅子座", "♍乙女座", "♎天秤座", "♏蠍座",
+    "♐射手座", "♑山羊座", "♒水瓶座", "♓魚座",
+]
+
+
+def _get_jst_hour() -> int:
+    from datetime import timezone, timedelta
+    jst = timezone(timedelta(hours=9))
+    return datetime.now(jst).hour
+
+
+def _pick_zodiac() -> str:
+    import random
+    return random.choice(ZODIAC_SIGNS)
+
+
+def _select_pattern(patterns: list, recent_patterns: list, platform_hint: str = "threads", hour: int = 12) -> dict:
     import random
     blocked = set(recent_patterns)
     # プラットフォームに対応するパターンのみ
@@ -61,7 +79,14 @@ def _select_pattern(patterns: list, recent_patterns: list, platform_hint: str = 
     if not available:
         available = [p for p in patterns if platform_hint in p.get("platforms", ["threads"])]
 
-    weights = [p.get("weight", 1.0) for p in available]
+    # 夜（20〜23時 JST）は yoru_kichi を3倍優先
+    weights = []
+    for p in available:
+        w = p.get("weight", 1.0)
+        if 20 <= hour <= 23 and p.get("id") == "yoru_kichi":
+            w *= 3.0
+        weights.append(w)
+
     return random.choices(available, weights=weights, k=1)[0]
 
 
@@ -100,6 +125,7 @@ def _build_prompt(
     research_topics: list,
     analyst_feedback: str,
     feedback_for_rewrite: str = "",
+    extra_hint: dict = None,
 ) -> str:
     """投稿生成プロンプトを構築する"""
     profile = knowledge["profile"]
@@ -121,9 +147,44 @@ def _build_prompt(
         if any(k in t.get("theme", "") for k in theme.split("/"))
     ) or "（関連リサーチなし）"
 
+    if extra_hint is None:
+        extra_hint = {}
+
     rewrite_block = ""
     if feedback_for_rewrite:
         rewrite_block = f"\n## 前回の添削フィードバック（必ず反映）\n{feedback_for_rewrite}\n"
+
+    # パターン固有の追加ルール
+    pattern_id = pattern.get("id", "")
+    pattern_extra = ""
+    if pattern_id == "pop_short":
+        pattern_extra = """
+## ポップ短文型の追加ルール
+- 2〜5行に収める（80〜150文字）
+- 語尾はカジュアルに（「〜だよ」「〜よね」「〜してみて」「〜かも」「〜ね」「〜！」）
+- 絵文字を1〜3個使ってOK（末尾や強調部分に）
+- 難しい専門用語より「ふとした気づき」として書く
+- 読んで「あ、これ試せる」と思われる内容にする
+"""
+    elif pattern_id == "zodiac_target":
+        zodiac = extra_hint.get("zodiac", "♈牡羊座")
+        pattern_extra = f"""
+## 星座ターゲット型の追加ルール
+- この投稿は「{zodiac}」の人向け
+- 冒頭を「{zodiac}さんへ。」で始める
+- その星座に合った吉方位・今週の運気・アドバイスを1〜2点伝える
+- 100〜200文字のコンパクトな内容
+- 語尾はやや親しみやすく（「〜してみてね」「〜がいいよ」など）
+"""
+    elif pattern_id == "yoru_kichi":
+        pattern_extra = """
+## 夜の吉方位予告型の追加ルール
+- 「明日の吉方位」「明日動くなら」という夜向けの内容にする
+- 明日の具体的な方位（東・西・南・北・東南・西南など）を1〜2つ示す
+- 朝の行動に活かせる具体的なアドバイスを添える（通勤・買い物・散歩など）
+- 100〜200文字程度、夜に読んで翌朝試したくなる内容
+- 語尾は「〜してみて」「〜がいいよ」などやさしいカジュアル調
+"""
 
     return f"""あなたは占術家「時雨（しぐれ）」として、Threadsに投稿するテキストを1本生成してください。
 
@@ -146,16 +207,17 @@ def _build_prompt(
 
 ## バズった1行目の構造例
 {hooks_sample}
-{rewrite_block}
+{rewrite_block}{pattern_extra}
 ## 生成ルール
 - 文字数: 80〜400文字（星座一覧は450文字まで可）。必ずこの範囲に収めること。
 - 口調は「時雨」として一貫させる
 - 1行目は必ずインパクトがある一文
 - 風水・吉方位・龍脈命術の世界観を自然に織り込む
+- 語尾に少しポップさを持たせる（「〜だよ」「〜よね」「〜してみて」なども自然に使う）
 - 最後の誘導文（「プロフィールから」等）は週1回のメニュー案内型のみ
-- 短文型（一言型）は3行以内
+- 短文型（一言型・ポップ短文型）は5行以内
 - 「占術家 時雨」のシグネチャは世界観投稿・エピソード投稿のみ末尾に追加
-- 絵文字は控えめに（0〜2個）
+- 絵文字は基本0〜2個（ポップ短文型のみ最大3個）
 - NGワードは使わない
 
 ## 出力
@@ -170,10 +232,11 @@ def _generate_post(
     research_topics: list,
     analyst_feedback: str,
     feedback_for_rewrite: str = "",
+    extra_hint: dict = None,
 ) -> str:
     prompt = _build_prompt(
         pattern, theme, knowledge, research_topics,
-        analyst_feedback, feedback_for_rewrite,
+        analyst_feedback, feedback_for_rewrite, extra_hint,
     )
     response = client_obj.messages.create(
         model=MODEL_HEAVY,
@@ -215,6 +278,7 @@ def run(batch_size: int = 5) -> dict:
     recent_patterns = _get_recent_patterns(history)
     recent_themes = _get_recent_themes(history)
     todays_schedule = _get_todays_schedule()
+    jst_hour = _get_jst_hour()
 
     queued_threads = 0
     queued_x = 0
@@ -225,19 +289,25 @@ def run(batch_size: int = 5) -> dict:
         # スケジュールヒントを使ってテーマ選択（曜日固定コンテンツ）
         schedule_hint = todays_schedule[i % len(todays_schedule)]
         theme = _select_theme(knowledge["theme_tree"], recent_themes, schedule_hint)
-        pattern = _select_pattern(knowledge["patterns"], recent_patterns)
+        pattern = _select_pattern(knowledge["patterns"], recent_patterns, hour=jst_hour)
 
-        def rewrite_func(post_text: str, feedback: str) -> str:
+        # パターン固有のヒント（星座ターゲット型は対象星座を決定）
+        extra_hint = {}
+        if pattern.get("id") == "zodiac_target":
+            extra_hint["zodiac"] = _pick_zodiac()
+
+        def rewrite_func(post_text: str, feedback: str, _p=pattern, _eh=extra_hint) -> str:
             return _generate_post(
-                client_obj, pattern, theme, knowledge,
+                client_obj, _p, theme, knowledge,
                 research_data.get("topics", []), analyst_feedback,
-                feedback_for_rewrite=feedback,
+                feedback_for_rewrite=feedback, extra_hint=_eh,
             )
 
         # 初回生成
         first_draft = _generate_post(
             client_obj, pattern, theme, knowledge,
             research_data.get("topics", []), analyst_feedback,
+            extra_hint=extra_hint,
         )
         if not first_draft:
             rejected += 1
