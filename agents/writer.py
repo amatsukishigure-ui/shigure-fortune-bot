@@ -199,14 +199,57 @@ def _build_prompt(
 - 語尾は「〜してみて」「〜がいいよ」などやさしいカジュアル調
 """
     elif pattern_id == "kaiun_day":
-        now = datetime.now()
+        # キャッシュから今日・直近の開運日情報を取得
+        from core.kaiun_calendar import get_today_lucky_info, get_upcoming_lucky_days
+        today_info = get_today_lucky_info()
+        upcoming   = get_upcoming_lucky_days(n=3)
+
+        if today_info:
+            lucky_types = "・".join(today_info.get("lucky_types", []))
+            best_actions = "、".join(today_info.get("best_actions", []))
+            kichi_houi   = "・".join(today_info.get("kichi_houi", []))
+            today_block  = f"""
+【今日の開運情報（正確な暦に基づく）】
+- 日付: {today_info.get('date_jp', '')}（{today_info.get('weekday', '')}曜日）
+- 干支: {today_info.get('kanshi', '')}
+- 六曜: {today_info.get('rokuyou', '')}
+- 開運日の種別: {lucky_types}
+- おすすめ行動: {best_actions}
+- 吉方位: {kichi_houi}
+- まとめ: {today_info.get('summary', '')}
+- 補足: {today_info.get('note', '')}"""
+        else:
+            # 今日は開運日でない場合→直近の開運日を紹介
+            if upcoming:
+                nxt = upcoming[0]
+                lucky_types  = "・".join(nxt.get("lucky_types", []))
+                best_actions = "、".join(nxt.get("best_actions", []))
+                today_block  = f"""
+【直近の開運日（今日は通常の日）】
+- 日付: {nxt.get('date_jp', '')}（{nxt.get('weekday', '')}曜日）
+- 干支: {nxt.get('kanshi', '')} / 六曜: {nxt.get('rokuyou', '')}
+- 開運日の種別: {lucky_types}
+- おすすめ行動: {best_actions}
+- まとめ: {nxt.get('summary', '')}"""
+            else:
+                today_block = "（開運日データ取得中）"
+
+        upcoming_lines = "\n".join(
+            f"  - {d.get('date_jp','')}（{d.get('weekday','')}）: {', '.join(d.get('lucky_types', []))} ★{d.get('lucky_score',1)}"
+            for d in upcoming[:3]
+        )
+
         pattern_extra = f"""
 ## 開運日型の追加ルール
-- 今日の日付: {now.strftime('%Y年%m月%d日（%A）')}
-- 一粒万倍日・天赦日・大安・寅の日・巳の日・天一天上などの開運日を切り口にする
-- 「今日は○○の日」という時事性のある書き出しで始める
-- その日の吉方位や、開運日にすべき具体的な行動を1〜2つ提示する
-- 「今日中に動いて」「今日だけ試して」という即時行動を促す
+{today_block}
+
+【直近の開運日（参考）】
+{upcoming_lines}
+
+- 上記の正確な暦情報を必ず使って投稿を生成すること（日付・開運日種別・干支を正確に記載）
+- 「今日は○○の日」または「○日は○○の日」という形で開始する
+- 開運日に行うべき具体的な行動を1〜2つ提示する
+- 「今日中に動いて」「この日だけは試して」という即時行動を促す
 - 150〜250文字程度のテンポよい内容
 - 語尾はカジュアルでOK（「〜してみて」「〜がいいよ」）
 """

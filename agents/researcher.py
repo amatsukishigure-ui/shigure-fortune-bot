@@ -21,6 +21,7 @@ from config import (
     THEME_TREE_FILE, ACCOUNT_PROFILE_FILE,
 )
 from core.state import load_json, load_research, save_research, load_history
+from core.kaiun_calendar import get_lucky_days
 
 
 # ─────────────────────────────────────────
@@ -300,6 +301,14 @@ def run(max_themes: int = 5) -> dict:
     # 不足テーマを特定
     under_themes = _get_underrepresented_themes(theme_tree, history)[:max_themes]
     print(f"  📋 リサーチ対象テーマ: {under_themes}")
+
+    # ── ステップ0: 開運日カレンダー計算（7日ごとにキャッシュ更新）──
+    print("  📅 開運日カレンダー更新中...")
+    try:
+        lucky_days = get_lucky_days(client_obj)
+        print(f"  開運日: {len(lucky_days)}件（45日分）")
+    except Exception as e:
+        print(f"  ⚠️ 開運日計算失敗: {e}")
 
     # ── ステップ1: ニュースRSS取得 ──
     print("  🌐 ニュースRSS取得中...")
