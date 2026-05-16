@@ -16,7 +16,7 @@ from config import (
     ANTHROPIC_API_KEY, MODEL_HEAVY,
     MAX_QUALITY_RETRIES, MAX_SAME_PATTERN_CONSECUTIVE, MAX_SAME_THEME_CONSECUTIVE,
     ACCOUNT_PROFILE_FILE, POST_PATTERNS_FILE, THEME_TREE_FILE, HOOK_EXAMPLES_FILE,
-    CONTENT_SCHEDULE, DATA_DIR,
+    PERSONAS_FILE, CONTENT_SCHEDULE, DATA_DIR,
 )
 from core.state import (
     load_json, load_history, load_research, enqueue_post,
@@ -28,11 +28,13 @@ from agents.x_poster import enqueue_x_post
 
 
 def _load_knowledge() -> dict:
+    personas_data = load_json(PERSONAS_FILE, default={})
     return {
         "profile": load_json(ACCOUNT_PROFILE_FILE, default={}),
         "patterns": load_json(POST_PATTERNS_FILE, default=[]),
         "theme_tree": load_json(THEME_TREE_FILE, default={}),
         "hook_examples": load_json(HOOK_EXAMPLES_FILE, default=[]),
+        "personas": personas_data.get("personas", []),
     }
 
 
@@ -66,6 +68,17 @@ def _get_jst_hour() -> int:
 def _pick_zodiac() -> str:
     import random
     return random.choice(ZODIAC_SIGNS)
+
+
+def _pick_persona(personas: list, recent_persona_ids: list = None) -> dict | None:
+    """ペルソナリストからランダムに1件選ぶ（直近使用済みは避ける）"""
+    import random
+    if not personas:
+        return None
+    recent_ids = set(recent_persona_ids or [])
+    fresh = [p for p in personas if p.get("id") not in recent_ids]
+    pool = fresh if fresh else personas
+    return random.choice(pool)
 
 
 def _select_pattern(patterns: list, recent_patterns: list, platform_hint: str = "threads", hour: int = 12) -> dict:
@@ -300,6 +313,45 @@ def _build_prompt(
 - cta_soft は150〜250文字、menu_guide は200〜350文字を目安に
 - 「無料」「初回無料」という言葉は使ってよい
 """
+    elif pattern_id == "persona_episode":
+        persona = extra_hint.get("persona") if extra_hint else None
+        if persona:
+            gender_label = "女性" if persona.get("gender") == "female" else "男性"
+            tags_str = "・".join(persona.get("tags", []))
+            tried_str = "／".join(persona.get("tried", [])[:2])
+            persona_block = f"""
+【今回使用するペルソナ情報】
+- 年齢・性別・職業: {persona.get('age')}歳・{gender_label}・{persona.get('occupation')}
+- 悩み: {persona.get('struggle', '')}
+- 試してきたこと: {tried_str}
+- 感情: {persona.get('emotion', '')}
+- きっかけ: {persona.get('trigger', '')}
+- 鑑定で判明したこと: {persona.get('revelation', '')}
+- 行動: {persona.get('action', '')}
+- 結果: {persona.get('result', '')}
+- タグ: {tags_str}"""
+        else:
+            persona_block = "（ペルソナデータなし：自由にエピソードを作成）"
+
+        pattern_extra = f"""
+## ペルソナ鑑定エピソード型の追加ルール
+{persona_block}
+
+### 構成（この順番で書く）
+1. **導入（1〜2行）**: 「先日、○○の方を鑑定しました」または「こんな相談が来ました」で始める
+2. **悩みの共感（2〜3行）**: 当事者が感じていた苦しさ・焦り・疑問を具体的に描写（「なのに」「なぜか」など逆接を使う）
+3. **転機（1〜2行）**: 鑑定で何がわかったか。「その違和感の正体は〇〇でした」という形で明かす
+4. **行動と結果（1〜2行）**: 取った行動とその後の変化を簡潔に
+5. **メッセージ（1行）**: 読者への普遍的なメッセージ（「頑張りが足りないんじゃない。方向がずれていただけ」など）
+6. **CTA（最後）**: 「▷ 鑑定ページ {service_url}」を添える
+
+### ルール
+- 250〜400文字（CTAのURL含む）
+- 実名・特定できる個人情報は使わない（「30代のWebマーケターの方」のように匿名化）
+- 大げさな言葉（「人生が変わった」「奇跡」）は避け、具体的な事実（数字・行動）で語る
+- 読んだ人が「自分と同じかも」と感じる悩みの描写を丁寧に
+- 鑑定を押しつけない。最後のCTAは「気になる方はどうぞ」スタンス
+"""
 
     return f"""あなたは占術家「時雨（しぐれ）」として、Threadsに投稿するテキストを1本生成してください。
 
@@ -395,6 +447,12 @@ def run(batch_size: int = 5) -> dict:
     todays_schedule = _get_todays_schedule()
     jst_hour = _get_jst_hour()
 
+    # ペルソナの直近使用IDを追跡（重複を避ける）
+    recent_persona_ids = [
+        h.get("persona_id") for h in history[-20:]
+        if h.get("persona_id")
+    ]
+
     queued_threads = 0
     queued_x = 0
     rejected = 0
@@ -410,6 +468,11 @@ def run(batch_size: int = 5) -> dict:
         extra_hint = {}
         if pattern.get("id") in ("zodiac_target", "caligula"):
             extra_hint["zodiac"] = _pick_zodiac()
+        elif pattern.get("id") == "persona_episode":
+            persona = _pick_persona(knowledge.get("personas", []), recent_persona_ids)
+            if persona:
+                extra_hint["persona"] = persona
+                recent_persona_ids.append(persona.get("id"))
 
         def rewrite_func(post_text: str, feedback: str, _p=pattern, _eh=extra_hint) -> str:
             return _generate_post(
@@ -460,6 +523,9 @@ def run(batch_size: int = 5) -> dict:
             "quality_score": result["score_result"]["average"],
             "attempts": result["attempts"],
         }
+        # ペルソナIDを記録（重複防止のため）
+        if extra_hint.get("persona"):
+            post_obj["persona_id"] = extra_hint["persona"].get("id")
 
         # Threadsキューに追加
         enqueue_post(post_obj)

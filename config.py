@@ -66,6 +66,7 @@ ACCOUNT_PROFILE_FILE = KNOWLEDGE_DIR / "account_profile.json"
 POST_PATTERNS_FILE = KNOWLEDGE_DIR / "post_patterns.json"
 THEME_TREE_FILE = KNOWLEDGE_DIR / "theme_tree.json"
 HOOK_EXAMPLES_FILE = KNOWLEDGE_DIR / "hook_examples.json"
+PERSONAS_FILE = KNOWLEDGE_DIR / "personas.json"
 
 # Platform settings
 X_CHAR_LIMIT = 280
