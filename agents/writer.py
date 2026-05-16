@@ -141,11 +141,21 @@ def _build_prompt(
 
     hooks_sample = "\n".join(f"- {h}" for h in knowledge["hook_examples"][:8])
 
-    research_text = "\n".join(
-        f"- {t.get('title', '')}: {t.get('summary', '')}"
-        for t in research_topics[:5]
+    def _fmt_topic(t: dict) -> str:
+        parts = [f"- {t.get('title', '')}: {t.get('summary', '')}"]
+        if t.get("cultural_angle"):
+            parts.append(f"  （文化的視点: {t['cultural_angle']}）")
+        if t.get("season_note"):
+            parts.append(f"  （季節・天文: {t['season_note']}）")
+        if t.get("hook_idea"):
+            parts.append(f"  （フックアイデア: {t['hook_idea']}）")
+        return "\n".join(parts)
+
+    matched = [
+        t for t in research_topics
         if any(k in t.get("theme", "") for k in theme.split("/"))
-    ) or "（関連リサーチなし）"
+    ][:5]
+    research_text = "\n".join(_fmt_topic(t) for t in matched) or "（関連リサーチなし）"
 
     if extra_hint is None:
         extra_hint = {}
