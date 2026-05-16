@@ -18,10 +18,11 @@
   },
   "ng_words": ["保証します", "絶対", "100%", "稼げる", "簡単に", "必ず当たる"],
   "signature": "\n\n　　　占術家 時雨",
+  "service_url": "https://shigurerooms.hp.peraichi.com",
   "affiliate_links": {
     "転職エージェント活用": "https://example.com/agent-affiliate",
     "引越し方位": "https://example.com/moving-affiliate",
-    "鑑定申込": "https://peraichi.com/shigure"
+    "鑑定申込": "https://shigurerooms.hp.peraichi.com"
   },
   "menu": {
     "初回無料鑑定": "無料",

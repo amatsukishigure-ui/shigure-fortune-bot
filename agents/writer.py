@@ -150,6 +150,9 @@ def _build_prompt(
     if extra_hint is None:
         extra_hint = {}
 
+    # 鑑定ページURL（メニュー誘導・ソフト誘導パターンで使用）
+    service_url = knowledge.get("profile", {}).get("service_url", "https://shigurerooms.hp.peraichi.com")
+
     rewrite_block = ""
     if feedback_for_rewrite:
         rewrite_block = f"\n## 前回の添削フィードバック（必ず反映）\n{feedback_for_rewrite}\n"
@@ -184,6 +187,16 @@ def _build_prompt(
 - 朝の行動に活かせる具体的なアドバイスを添える（通勤・買い物・散歩など）
 - 100〜200文字程度、夜に読んで翌朝試したくなる内容
 - 語尾は「〜してみて」「〜がいいよ」などやさしいカジュアル調
+"""
+    elif pattern_id in ("menu_guide", "cta_soft"):
+        pattern_extra = f"""
+## 鑑定誘導型の追加ルール
+- 鑑定ページURL: {service_url}
+- 本文で価値ある気づきを1つ提供してから誘導する（いきなり告知しない）
+- 最後に「▷ 鑑定ページ {service_url}」を自然に添える
+- 押しつけず「気になる方はどうぞ」のスタンスを保つ
+- cta_soft は150〜250文字、menu_guide は200〜350文字を目安に
+- 「無料」「初回無料」という言葉は使ってよい
 """
 
     return f"""あなたは占術家「時雨（しぐれ）」として、Threadsに投稿するテキストを1本生成してください。
