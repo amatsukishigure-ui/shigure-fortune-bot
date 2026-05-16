@@ -198,6 +198,35 @@ def _build_prompt(
 - 100〜200文字程度、夜に読んで翌朝試したくなる内容
 - 語尾は「〜してみて」「〜がいいよ」などやさしいカジュアル調
 """
+    elif pattern_id == "kaiun_day":
+        now = datetime.now()
+        pattern_extra = f"""
+## 開運日型の追加ルール
+- 今日の日付: {now.strftime('%Y年%m月%d日（%A）')}
+- 一粒万倍日・天赦日・大安・寅の日・巳の日・天一天上などの開運日を切り口にする
+- 「今日は○○の日」という時事性のある書き出しで始める
+- その日の吉方位や、開運日にすべき具体的な行動を1〜2つ提示する
+- 「今日中に動いて」「今日だけ試して」という即時行動を促す
+- 150〜250文字程度のテンポよい内容
+- 語尾はカジュアルでOK（「〜してみて」「〜がいいよ」）
+"""
+    elif pattern_id == "caligula":
+        zodiac = extra_hint.get("zodiac", "")
+        caligula_target = f"「{zodiac}さんは」" if zodiac else "特定のタイプ・状況・星座"
+        pattern_extra = f"""
+## カリギュラ型の追加ルール
+- カリギュラ効果：「見ないで」「知らなくていい」「読まなくていい」「これは○○な人だけ」
+  など制限・禁止ワードを冒頭に置いて、逆に読みたくさせる
+- ターゲット: {caligula_target}に絞り込む（全員向けはNG）
+- 絞り込み例:
+  「今、なんとなく動けない人は読まないで」
+  「転職を考えている人だけ見てほしい」
+  「♌獅子座は、今週これを知らないほうがいいかもしれない」
+  「吉方位を試して効果がなかった人へ」
+- 冒頭の制限ワードで引き込んだあと、本当に価値のある情報を届ける
+- 読んだ人が「自分のことだ」と感じ、コメント・保存したくなる内容
+- 100〜200文字程度でテンポよく
+"""
     elif pattern_id in ("menu_guide", "cta_soft"):
         pattern_extra = f"""
 ## 鑑定誘導型の追加ルール
@@ -314,9 +343,9 @@ def run(batch_size: int = 5) -> dict:
         theme = _select_theme(knowledge["theme_tree"], recent_themes, schedule_hint)
         pattern = _select_pattern(knowledge["patterns"], recent_patterns, hour=jst_hour)
 
-        # パターン固有のヒント（星座ターゲット型は対象星座を決定）
+        # パターン固有のヒント（星座を使うパターンは対象星座を決定）
         extra_hint = {}
-        if pattern.get("id") == "zodiac_target":
+        if pattern.get("id") in ("zodiac_target", "caligula"):
             extra_hint["zodiac"] = _pick_zodiac()
 
         def rewrite_func(post_text: str, feedback: str, _p=pattern, _eh=extra_hint) -> str:
