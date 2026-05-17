@@ -304,14 +304,40 @@ def _build_prompt(
 - 150〜250文字、改行を効果的に使う
 """
     elif pattern_id in ("menu_guide", "cta_soft"):
-        pattern_extra = f"""
-## 鑑定誘導型の追加ルール
+        # メニューをプロンプト用にフォーマット
+        raw_menu = knowledge.get("profile", {}).get("menu", [])
+        if isinstance(raw_menu, list):
+            menu_lines = "\n".join(
+                f"▷ {m['name']}　{m['price']:,}円\n　{m['description']}"
+                for m in raw_menu
+            )
+        else:
+            menu_lines = "（メニューデータなし）"
+
+        if pattern_id == "menu_guide":
+            pattern_extra = f"""
+## メニュー案内型の追加ルール
+- 鑑定ページURL: {service_url}
+- 必ず以下の正確なメニュー名・価格・説明を使うこと（変更・省略・追加禁止）:
+
+【鑑定メニュー】
+─────────────
+{menu_lines}
+
+- 冒頭に一言「こんな方に使ってほしい」という導入を添えてから一覧を出す
+- 最後は「詳細・お申し込みは {service_url}」で締める
+- 200〜400文字を目安に
+"""
+        else:  # cta_soft
+            pattern_extra = f"""
+## ソフト誘導型の追加ルール
 - 鑑定ページURL: {service_url}
 - 本文で価値ある気づきを1つ提供してから誘導する（いきなり告知しない）
+- 鑑定メニューに言及する場合は以下の正確な名称・価格を使うこと:
+{menu_lines}
 - 最後に「▷ 鑑定ページ {service_url}」を自然に添える
 - 押しつけず「気になる方はどうぞ」のスタンスを保つ
-- cta_soft は150〜250文字、menu_guide は200〜350文字を目安に
-- 「無料」「初回無料」という言葉は使ってよい
+- 150〜250文字を目安に
 """
     elif pattern_id == "follow_cta":
         pattern_extra = """
