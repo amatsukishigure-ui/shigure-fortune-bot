@@ -7,7 +7,7 @@
 
 import json
 import anthropic
-from datetime import datetime
+from datetime import datetime, timezone, timedelta, date
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
@@ -58,11 +58,43 @@ ZODIAC_SIGNS = [
     "♐射手座", "♑山羊座", "♒水瓶座", "♓魚座",
 ]
 
+# GitHub Actionsのスケジュール（JST）
+SCHEDULED_HOURS_JST = [10, 12, 14, 16, 18, 20, 22]
+JST = timezone(timedelta(hours=9))
+WEEKDAY_JP = ["月", "火", "水", "木", "金", "土", "日"]
+
 
 def _get_jst_hour() -> int:
-    from datetime import timezone, timedelta
-    jst = timezone(timedelta(hours=9))
-    return datetime.now(jst).hour
+    return datetime.now(JST).hour
+
+
+def _estimate_post_time(queue_length: int, batch_position: int) -> datetime:
+    """
+    現在のキュー長とバッチ内の位置から投稿予定時刻を推定する。
+    スケジュールは SCHEDULED_HOURS_JST（JST）の順で1投稿/1スロット消費。
+    """
+    now = datetime.now(JST)
+
+    # 今後3日分のスケジュールスロットを生成（現在時刻より後のみ）
+    upcoming_slots = []
+    for delta_days in range(3):
+        day = now.date() + timedelta(days=delta_days)
+        for h in SCHEDULED_HOURS_JST:
+            slot = datetime(day.year, day.month, day.day, h, 0, tzinfo=JST)
+            if slot > now:
+                upcoming_slots.append(slot)
+
+    # キューにある既存の投稿を先に消費し、その後のスロットにこの投稿が来る
+    idx = queue_length + batch_position
+    if idx < len(upcoming_slots):
+        return upcoming_slots[idx]
+    return upcoming_slots[-1] if upcoming_slots else now
+
+
+def _format_datetime_jp(dt: datetime) -> str:
+    """datetime を「M月D日（曜）HH:MM」形式に変換"""
+    wd = WEEKDAY_JP[dt.weekday()]
+    return f"{dt.month}月{dt.day}日（{wd}）{dt.strftime('%H:%M')}"
 
 
 def _pick_zodiac() -> str:
@@ -176,6 +208,29 @@ def _build_prompt(
     # 鑑定ページURL（メニュー誘導・ソフト誘導パターンで使用）
     service_url = knowledge.get("profile", {}).get("service_url", "https://shigurerooms.hp.peraichi.com")
 
+    # ── 推定投稿時刻ブロック ──────────────────────────────────────
+    est_dt: datetime | None = extra_hint.get("estimated_post_time")
+    if est_dt and isinstance(est_dt, datetime):
+        est_date_str   = est_dt.date().isoformat()           # "2026-05-18"
+        est_date_jp    = _format_datetime_jp(est_dt)         # "5月18日（月）10:00"
+        est_tomorrow   = (est_dt.date() + timedelta(days=1)).isoformat()
+        tm = est_dt + timedelta(days=1)
+        est_tomorrow_jp = f"{tm.month}月{tm.day}日（{WEEKDAY_JP[tm.weekday()]}）"
+        post_time_block = (
+            f"## 推定投稿時刻（重要）\n"
+            f"この投稿は **{est_date_jp} JST** に公開される予定です。\n"
+            f"「今日」= {est_date_jp.split('（')[0]}、"
+            f"「明日」= {est_tomorrow_jp}、"
+            f"「昨日」= その前日 として投稿本文を書いてください。\n"
+            f"生成時刻と投稿時刻はずれる場合があるため、必ずこの推定時刻を基準にすること。\n"
+        )
+    else:
+        now_jst = datetime.now(JST)
+        est_date_str  = now_jst.date().isoformat()
+        est_tomorrow  = (now_jst.date() + timedelta(days=1)).isoformat()
+        post_time_block = ""  # フォールバック：通常通り
+    # ─────────────────────────────────────────────────────────────
+
     rewrite_block = ""
     if feedback_for_rewrite:
         rewrite_block = f"\n## 前回の添削フィードバック（必ず反映）\n{feedback_for_rewrite}\n"
@@ -203,49 +258,62 @@ def _build_prompt(
 - 語尾はやや親しみやすく（「〜してみてね」「〜がいいよ」など）
 """
     elif pattern_id == "yoru_kichi":
-        pattern_extra = """
+        pattern_extra = f"""
 ## 夜の吉方位予告型の追加ルール
-- 「明日の吉方位」「明日動くなら」という夜向けの内容にする
+- この投稿は夜（20〜22時）に公開される。「明日」= {est_tomorrow_jp if est_dt else "翌日"} を指す
+- 「明日（{est_tomorrow_jp if est_dt else "翌日"}）の吉方位」「{est_tomorrow_jp if est_dt else "明日"}動くなら」という内容にする
 - 明日の具体的な方位（東・西・南・北・東南・西南など）を1〜2つ示す
 - 朝の行動に活かせる具体的なアドバイスを添える（通勤・買い物・散歩など）
 - 100〜200文字程度、夜に読んで翌朝試したくなる内容
 - 語尾は「〜してみて」「〜がいいよ」などやさしいカジュアル調
 """
     elif pattern_id == "kaiun_day":
-        # キャッシュから今日・直近の開運日情報を取得
-        from core.kaiun_calendar import get_today_lucky_info, get_upcoming_lucky_days
-        today_info = get_today_lucky_info()
-        upcoming   = get_upcoming_lucky_days(n=3)
+        # 推定投稿日を基準に開運日情報を取得（今日ではなく投稿される日）
+        from core.kaiun_calendar import _load_cache
+        cache = _load_cache()
+        all_days = cache.get("days", [])
 
-        if today_info:
-            lucky_types = "・".join(today_info.get("lucky_types", []))
-            best_actions = "、".join(today_info.get("best_actions", []))
-            kichi_houi   = "・".join(today_info.get("kichi_houi", []))
-            today_block  = f"""
-【今日の開運情報（正確な暦に基づく）】
-- 日付: {today_info.get('date_jp', '')}（{today_info.get('weekday', '')}曜日）
-- 干支: {today_info.get('kanshi', '')}
-- 六曜: {today_info.get('rokuyou', '')}
+        # 推定投稿日に一致する開運日情報を検索
+        target_info = next((d for d in all_days if d.get("date") == est_date_str), None)
+
+        # 推定投稿日以降の直近開運日リスト
+        upcoming = sorted(
+            [d for d in all_days if d.get("date", "") >= est_date_str],
+            key=lambda x: x["date"]
+        )[:3]
+
+        if target_info:
+            lucky_types  = "・".join(target_info.get("lucky_types", []))
+            best_actions = "、".join(target_info.get("best_actions", []))
+            kichi_houi   = "・".join(target_info.get("kichi_houi", []))
+            day_block = f"""
+【投稿日（{est_date_jp if est_dt else est_date_str}）の開運情報】
+- 日付: {target_info.get('date_jp', '')}（{target_info.get('weekday', '')}曜日）
+- 干支: {target_info.get('kanshi', '')}
+- 六曜: {target_info.get('rokuyou', '')}
 - 開運日の種別: {lucky_types}
 - おすすめ行動: {best_actions}
 - 吉方位: {kichi_houi}
-- まとめ: {today_info.get('summary', '')}
-- 補足: {today_info.get('note', '')}"""
+- まとめ: {target_info.get('summary', '')}
+- 補足: {target_info.get('note', '')}"""
+            day_label = "今日"
         else:
-            # 今日は開運日でない場合→直近の開運日を紹介
+            # 投稿日は通常の日 → 直近の開運日を予告する形で紹介
             if upcoming:
                 nxt = upcoming[0]
                 lucky_types  = "・".join(nxt.get("lucky_types", []))
                 best_actions = "、".join(nxt.get("best_actions", []))
-                today_block  = f"""
-【直近の開運日（今日は通常の日）】
+                day_block = f"""
+【直近の開運日（投稿日は通常の日）】
 - 日付: {nxt.get('date_jp', '')}（{nxt.get('weekday', '')}曜日）
 - 干支: {nxt.get('kanshi', '')} / 六曜: {nxt.get('rokuyou', '')}
 - 開運日の種別: {lucky_types}
 - おすすめ行動: {best_actions}
 - まとめ: {nxt.get('summary', '')}"""
+                day_label = f"{nxt.get('date_jp', '')}（{nxt.get('weekday', '')}）"
             else:
-                today_block = "（開運日データ取得中）"
+                day_block = "（開運日データ取得中）"
+                day_label = "直近の開運日"
 
         upcoming_lines = "\n".join(
             f"  - {d.get('date_jp','')}（{d.get('weekday','')}）: {', '.join(d.get('lucky_types', []))} ★{d.get('lucky_score',1)}"
@@ -254,15 +322,15 @@ def _build_prompt(
 
         pattern_extra = f"""
 ## 開運日型の追加ルール
-{today_block}
+{day_block}
 
-【直近の開運日（参考）】
+【参考：直近の開運日一覧】
 {upcoming_lines}
 
 - 上記の正確な暦情報を必ず使って投稿を生成すること（日付・開運日種別・干支を正確に記載）
-- 「今日は○○の日」または「○日は○○の日」という形で開始する
+- 投稿日が開運日の場合は「今日は○○の日」で始める
+- 投稿日が通常日の場合は「{day_label}は○○の日」として予告型で書く
 - 開運日に行うべき具体的な行動を1〜2つ提示する
-- 「今日中に動いて」「この日だけは試して」という即時行動を促す
 - 150〜250文字程度のテンポよい内容
 - 語尾はカジュアルでOK（「〜してみて」「〜がいいよ」）
 """
@@ -402,6 +470,7 @@ def _build_prompt(
 
     return f"""あなたは占術家「時雨（しぐれ）」として、Threadsに投稿するテキストを1本生成してください。
 
+{post_time_block}
 ## アカウント情報
 {profile_summary}
 
@@ -433,6 +502,7 @@ def _build_prompt(
 - 「占術家 時雨」のシグネチャは世界観投稿・エピソード投稿のみ末尾に追加
 - 絵文字は基本0〜2個（ポップ短文型のみ最大3個）
 - NGワードは使わない
+- 「今日」「明日」「今週」などの時間表現は必ず推定投稿時刻を基準にすること
 
 ## 出力
 投稿本文のみ。説明・メタ情報は不要。"""
@@ -494,6 +564,10 @@ def run(batch_size: int = 5) -> dict:
     todays_schedule = _get_todays_schedule()
     jst_hour = _get_jst_hour()
 
+    # 現在のキュー長を取得（投稿予定時刻の推定に使用）
+    current_queue = load_json(DATA_DIR / "post_queue.json", default=[])
+    current_queue_len = len(current_queue)
+
     # ペルソナの直近使用IDを追跡（重複を避ける）
     recent_persona_ids = [
         h.get("persona_id") for h in history[-20:]
@@ -511,8 +585,11 @@ def run(batch_size: int = 5) -> dict:
         theme = _select_theme(knowledge["theme_tree"], recent_themes, schedule_hint)
         pattern = _select_pattern(knowledge["patterns"], recent_patterns, hour=jst_hour)
 
+        # 推定投稿時刻（キュー長 + バッチ内位置 から計算）
+        est_post_time = _estimate_post_time(current_queue_len, i)
+
         # パターン固有のヒント（星座を使うパターンは対象星座を決定）
-        extra_hint = {}
+        extra_hint = {"estimated_post_time": est_post_time}
         if pattern.get("id") in ("zodiac_target", "caligula"):
             extra_hint["zodiac"] = _pick_zodiac()
         elif pattern.get("id") == "persona_episode":
