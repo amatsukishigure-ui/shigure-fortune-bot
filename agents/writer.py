@@ -97,6 +97,78 @@ def _format_datetime_jp(dt: datetime) -> str:
     return f"{dt.month}月{dt.day}日（{wd}）{dt.strftime('%H:%M')}"
 
 
+def _get_season_context(dt: datetime) -> str:
+    """推定投稿日から季節・節気コンテキストを生成する（季節ズレ防止）"""
+    m, d = dt.month, dt.day
+    if m == 1:
+        season = "冬（1月）"
+        sekki = "小寒（1/5頃）→ 大寒（1/20頃）"
+        notes = "年明け・寒の入り・受験シーズン"
+        ng = "秋分・春分・夏至・立春はまだ先"
+    elif m == 2:
+        season = "冬〜早春（2月）"
+        sekki = "立春（2/4頃）→ 雨水（2/19頃）"
+        notes = "節分・立春・梅の季節"
+        ng = "秋・夏の節気は使わないこと"
+    elif m == 3:
+        season = "春（3月）"
+        sekki = "啓蟄（3/6頃）→ 春分（3/20頃）"
+        notes = "春分・お彼岸・桜の季節"
+        ng = "秋分・夏至・冬至は使わないこと"
+    elif m == 4:
+        season = "春（4月）"
+        sekki = "清明（4/5頃）→ 穀雨（4/20頃）"
+        notes = "桜・花見・新年度スタート"
+        ng = "秋分・夏至・冬至は使わないこと"
+    elif m == 5:
+        season = "初夏（5月）"
+        sekki = "立夏（5/5頃）→ 小満（5/21頃）" if d <= 21 else "小満（5/21）過ぎ → 芒種（6/6頃）へ"
+        notes = "ゴールデンウィーク・初夏・梅雨前・新緑"
+        ng = "秋分・春分・夏至・冬至は使わないこと（夏至は6月下旬）"
+    elif m == 6:
+        season = "初夏〜梅雨（6月）"
+        sekki = "芒種（6/6頃）→ 夏至（6/21頃）"
+        notes = "梅雨入り・夏至・紫陽花の季節"
+        ng = "秋分・春分・冬至は使わないこと"
+    elif m == 7:
+        season = "夏・梅雨明け（7月）"
+        sekki = "小暑（7/7頃）→ 大暑（7/23頃）"
+        notes = "梅雨明け・七夕・盛夏"
+        ng = "秋分・春分・冬至は使わないこと"
+    elif m == 8:
+        season = "真夏〜晩夏（8月）"
+        sekki = "立秋（8/7頃）→ 処暑（8/23頃）"
+        notes = "お盆・立秋・夏の終わり"
+        ng = "春分・冬至は使わないこと（秋分は9月末）"
+    elif m == 9:
+        season = "初秋（9月）"
+        sekki = "白露（9/8頃）→ 秋分（9/23頃）"
+        notes = "敬老の日・秋分・お彼岸・夜長"
+        ng = "春分・夏至・冬至は使わないこと"
+    elif m == 10:
+        season = "秋（10月）"
+        sekki = "寒露（10/8頃）→ 霜降（10/23頃）"
+        notes = "紅葉・秋の行楽・ハロウィン"
+        ng = "春分・夏至は使わないこと"
+    elif m == 11:
+        season = "晩秋（11月）"
+        sekki = "立冬（11/7頃）→ 小雪（11/22頃）"
+        notes = "七五三・立冬・紅葉の見頃"
+        ng = "春分・夏至・秋分は使わないこと"
+    else:  # m == 12
+        season = "冬（12月）"
+        sekki = "大雪（12/7頃）→ 冬至（12/22頃）"
+        notes = "冬至・クリスマス・年末・大掃除"
+        ng = "春分・夏至・秋分は使わないこと"
+
+    return (
+        f"現在の季節: {season}\n"
+        f"近い節気: {sekki}\n"
+        f"季節メモ: {notes}\n"
+        f"⚠️ NG節気（この時期に使ってはいけない節気・季節語）: {ng}"
+    )
+
+
 def _pick_zodiac() -> str:
     import random
     return random.choice(ZODIAC_SIGNS)
@@ -216,19 +288,30 @@ def _build_prompt(
         est_tomorrow   = (est_dt.date() + timedelta(days=1)).isoformat()
         tm = est_dt + timedelta(days=1)
         est_tomorrow_jp = f"{tm.month}月{tm.day}日（{WEEKDAY_JP[tm.weekday()]}）"
+        season_ctx = _get_season_context(est_dt)
         post_time_block = (
-            f"## 推定投稿時刻（重要）\n"
+            f"## 推定投稿時刻・季節コンテキスト（必ず守ること）\n"
             f"この投稿は **{est_date_jp} JST** に公開される予定です。\n"
             f"「今日」= {est_date_jp.split('（')[0]}、"
             f"「明日」= {est_tomorrow_jp}、"
             f"「昨日」= その前日 として投稿本文を書いてください。\n"
-            f"生成時刻と投稿時刻はずれる場合があるため、必ずこの推定時刻を基準にすること。\n"
+            f"生成時刻と投稿時刻はずれる場合があるため、必ずこの推定時刻を基準にすること。\n\n"
+            f"### 実際の季節情報\n"
+            f"{season_ctx}\n\n"
+            f"⛔ 上記NG節気・季節語は絶対に使わないこと。\n"
+            f"   正しい節気・季節のみを使い、季節と内容が一致しない投稿を生成しないこと。\n"
         )
     else:
         now_jst = datetime.now(JST)
         est_date_str  = now_jst.date().isoformat()
         est_tomorrow  = (now_jst.date() + timedelta(days=1)).isoformat()
-        post_time_block = ""  # フォールバック：通常通り
+        season_ctx = _get_season_context(now_jst)
+        post_time_block = (
+            f"## 季節コンテキスト（必ず守ること）\n"
+            f"### 実際の季節情報\n"
+            f"{season_ctx}\n\n"
+            f"⛔ 上記NG節気・季節語は絶対に使わないこと。\n"
+        )
     # ─────────────────────────────────────────────────────────────
 
     rewrite_block = ""
@@ -715,6 +798,7 @@ def _build_prompt(
 - 絵文字は基本0〜2個（ポップ短文型のみ最大3個）
 - NGワードは使わない
 - 「今日」「明日」「今週」などの時間表現は必ず推定投稿時刻を基準にすること
+- 季節・節気（秋分・春分・夏至・冬至など）は必ず上記「実際の季節情報」に合った内容のみ使用すること。NG節気は絶対に使わない
 
 ## 出力
 投稿本文のみ。説明・メタ情報は不要。"""
