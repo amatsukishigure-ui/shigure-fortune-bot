@@ -111,8 +111,9 @@ def approve_pending(indices: list = None) -> int:
     for _, post in to_approve:
         enqueue_post(post)
         count += 1
-        # X対応パターンならXキューにも追加
-        if post.get("x_eligible"):
+        # X対応パターンならXキューにも追加（一時停止中は追加しない）
+        from config import X_POSTING_ENABLED
+        if post.get("x_eligible") and X_POSTING_ENABLED:
             enqueue_x_post(post)
 
     save_pending(remaining)

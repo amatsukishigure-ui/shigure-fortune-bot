@@ -91,11 +91,11 @@ def cmd_daily():
     print(f"{'='*55}\n")
 
 
-def cmd_post(platform: str = "both"):
+def cmd_post(platform: str = "threads"):
     """
     1投稿スロット分の実行（cronから複数回/日呼ぶ）。
 
-    platform: 'both' | 'threads' | 'x'
+    platform: 'threads' | 'both' | 'x'
     """
     if is_killed():
         print("⛔ Kill Switchがアクティブです")

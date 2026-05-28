@@ -78,6 +78,7 @@ HOOK_EXAMPLES_FILE = KNOWLEDGE_DIR / "hook_examples.json"
 PERSONAS_FILE = KNOWLEDGE_DIR / "personas.json"
 
 # Platform settings
+X_POSTING_ENABLED = False   # True に戻すと X への自動投稿が再開する
 X_CHAR_LIMIT = 280
 THREADS_CHAR_LIMIT = 500
 X_HASHTAGS = ["#占い", "#吉方位", "#風水", "#龍脈命術", "#時雨"]
