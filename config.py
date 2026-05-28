@@ -42,7 +42,7 @@ SIMILARITY_HISTORY_SIZE = 100      # 比較対象の過去投稿数
 # Posting schedule
 DAILY_POST_LIMIT = 15
 MIN_POST_INTERVAL_HOURS = 1
-POST_SLOTS = [8, 10, 12, 14, 16, 18, 20, 21, 22, 23]  # 投稿時刻リスト
+POST_SLOTS = [7, 12, 18, 20, 21, 22]  # 投稿時刻リスト（朝・昼・夜の峰に集中）
 
 # Pattern rotation
 MAX_SAME_PATTERN_CONSECUTIVE = 3   # 同パターン連続上限
@@ -56,6 +56,7 @@ DATA_DIR = BASE_DIR / "data"
 KNOWLEDGE_DIR = BASE_DIR / "knowledge"
 
 POST_QUEUE_FILE = DATA_DIR / "post_queue.json"
+PENDING_POSTS_FILE = DATA_DIR / "pending_posts.json"   # 承認待ち投稿
 POST_HISTORY_FILE = DATA_DIR / "post_history.json"
 PERFORMANCE_FILE = DATA_DIR / "performance_data.json"
 RESEARCH_FILE = DATA_DIR / "research_data.json"

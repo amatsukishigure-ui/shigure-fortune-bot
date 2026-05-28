@@ -2,18 +2,17 @@ name: shigure-auto-post
 
 on:
   schedule:
-    # 2時間ごとに起動（JST 奇数時）
-    - cron: '0 1 * * *'   #  10:00 JST
-    - cron: '0 3 * * *'   #  12:00 JST
-    - cron: '0 5 * * *'   #  14:00 JST
-    - cron: '0 7 * * *'   #  16:00 JST
-    - cron: '0 9 * * *'   #  18:00 JST
-    - cron: '0 11 * * *'  #  20:00 JST
-    - cron: '0 13 * * *'  #  22:00 JST
+    # 朝・昼・夜の峰に集中（JST）
+    - cron: '0 22 * * *'  #  07:00 JST（朝の通勤）
+    - cron: '0 3 * * *'   #  12:00 JST（昼休み）
+    - cron: '0 9 * * *'   #  18:00 JST（夕方通勤）
+    - cron: '0 11 * * *'  #  20:00 JST（夜プライム①）
+    - cron: '0 12 * * *'  #  21:00 JST（夜プライム②）
+    - cron: '0 13 * * *'  #  22:00 JST（夜プライム③）
   workflow_dispatch:
     inputs:
       command:
-        description: 'command (daily / post / status)'
+        description: 'command (daily / post / review / approve / approve 0 2 / reject 1 / status)'
         required: true
         default: 'status'
 
@@ -53,15 +52,16 @@ jobs:
             echo "Manual: python main.py $CMD"
             python main.py $CMD
           else
-            # キューが3件以下なら補充（daily実行）
-            QUEUE_LOW=$(python -c "
+            # キュー＋承認待ちが3件以下なら補充（daily実行）
+            NEED_REFILL=$(python -c "
           import json, pathlib
           q = json.loads(pathlib.Path('data/post_queue.json').read_text()) if pathlib.Path('data/post_queue.json').exists() else []
-          print('yes' if len(q) <= 3 else 'no')
+          p = json.loads(pathlib.Path('data/pending_posts.json').read_text()) if pathlib.Path('data/pending_posts.json').exists() else []
+          print('yes' if len(q) + len(p) <= 3 else 'no')
           " 2>/dev/null || echo "yes")
 
-            if [ "$QUEUE_LOW" = "yes" ]; then
-              echo "Queue low — running daily to refill"
+            if [ "$NEED_REFILL" = "yes" ]; then
+              echo "Queue + pending low — running daily to refill"
               python main.py daily
             fi
 

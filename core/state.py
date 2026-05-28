@@ -13,8 +13,10 @@ import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from config import (
-    POST_QUEUE_FILE, POST_HISTORY_FILE, PERFORMANCE_FILE,
-    RESEARCH_FILE, ERROR_LOG_FILE, KILL_SWITCH_FILE, DATA_DIR
+    POST_QUEUE_FILE, PENDING_POSTS_FILE,
+    POST_HISTORY_FILE, PERFORMANCE_FILE,
+    RESEARCH_FILE, ERROR_LOG_FILE, KILL_SWITCH_FILE, DATA_DIR,
+    X_QUEUE_FILE,
 )
 
 
@@ -62,6 +64,68 @@ def dequeue_post() -> dict | None:
     post = queue.pop(0)
     save_queue(queue)
     return post
+
+
+# ── Pending Posts（承認待ち） ─────────────────────────────────
+
+def load_pending() -> list:
+    return load_json(PENDING_POSTS_FILE, default=[])
+
+
+def save_pending(posts: list) -> None:
+    save_json(PENDING_POSTS_FILE, posts)
+
+
+def enqueue_pending(post: dict) -> None:
+    """生成した投稿を承認待ちリストに追加する"""
+    pending = load_pending()
+    post["pending_at"] = datetime.now().isoformat()
+    pending.append(post)
+    save_pending(pending)
+
+
+def approve_pending(indices: list = None) -> int:
+    """
+    承認待ちから指定インデックスをキューに移動。
+    indices=None で全件承認。
+    X対応投稿は X キューにも追加する。
+
+    Returns: 承認した件数
+    """
+    from agents.x_poster import enqueue_x_post  # 循環インポート回避
+
+    pending = load_pending()
+    if not pending:
+        return 0
+
+    if indices is None:
+        to_approve = list(enumerate(pending))
+        remaining = []
+    else:
+        idx_set = set(indices)
+        to_approve = [(i, p) for i, p in enumerate(pending) if i in idx_set]
+        remaining = [p for i, p in enumerate(pending) if i not in idx_set]
+
+    count = 0
+    for _, post in to_approve:
+        enqueue_post(post)
+        count += 1
+        # X対応パターンならXキューにも追加
+        if post.get("x_eligible"):
+            enqueue_x_post(post)
+
+    save_pending(remaining)
+    return count
+
+
+def reject_pending(index: int) -> bool:
+    """承認待ちから指定インデックスを削除する"""
+    pending = load_pending()
+    if index < 0 or index >= len(pending):
+        return False
+    removed = pending.pop(index)
+    save_pending(pending)
+    return True
 
 
 # ── Post History ──────────────────────────────────────────────

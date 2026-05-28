@@ -19,7 +19,7 @@ from config import (
     PERSONAS_FILE, CONTENT_SCHEDULE, DATA_DIR,
 )
 from core.state import (
-    load_json, load_history, load_research, enqueue_post,
+    load_json, load_history, load_research, enqueue_post, enqueue_pending,
 )
 from core.similarity import SimilarityChecker
 from core.quality import score_with_retry
@@ -821,6 +821,16 @@ def _build_prompt(
 - **フット・イン・ザ・ドア**: 読む→共感→納得→無料CTA の段階的誘導
 """
 
+    # ── 星座ブースト（if/elif チェーン完了後に適用） ─────────────────
+    zodiac_boost = extra_hint.get("zodiac_boost") if extra_hint else None
+    if zodiac_boost and pattern_id not in ("zodiac_target", "caligula", "hoshi_betsu", "empathy_thread"):
+        pattern_extra += f"""
+## 星座ターゲット（ソフト適用）
+このテーマを特に「{zodiac_boost}」の人に刺さるよう書く。
+「{zodiac_boost}の方へ」と冒頭に書く必要はない。言葉選び・具体例・感情描写が自然にその星座の特性にフィットするようにする。
+"""
+    # ─────────────────────────────────────────────────────────────
+
     return f"""あなたは占術家「時雨（しぐれ）」として、Threadsに投稿するテキストを1本生成してください。
 
 {post_time_block}
@@ -1006,9 +1016,14 @@ def run(batch_size: int = 5) -> dict:
         est_post_time = _estimate_post_time(current_queue_len, i)
 
         # パターン固有のヒント（星座を使うパターンは対象星座を決定）
+        import random as _random
         extra_hint = {"estimated_post_time": est_post_time}
         if pattern.get("id") in ("zodiac_target", "caligula"):
             extra_hint["zodiac"] = _pick_zodiac()
+        elif pattern.get("id") in ("kyokan", "list", "trivia", "empathy_funnel", "engagement_hook", "pop_short"):
+            # 50%の確率で星座ブーストを適用（コンテンツを特定星座に自然にターゲット）
+            if _random.random() < 0.5:
+                extra_hint["zodiac_boost"] = _pick_zodiac()
         elif pattern.get("id") == "persona_episode":
             persona = _pick_persona(knowledge.get("personas", []), recent_persona_ids)
             if persona:
@@ -1046,13 +1061,13 @@ def run(batch_size: int = 5) -> dict:
                 "quality_score": 0.0,
                 "attempts": 1,
             }
-            enqueue_post(post_obj)
+            enqueue_pending(post_obj)
             queued_threads += 1
             checker.add_to_corpus(representative)
             recent_patterns.append(pattern.get("id"))
             recent_themes.append(theme)
             details.append({
-                "status": "queued_thread",
+                "status": "pending_thread",
                 "theme": theme,
                 "pattern": pattern.get("name"),
                 "thread_count": len(thread_posts),
@@ -1101,6 +1116,7 @@ def run(batch_size: int = 5) -> dict:
             hashtags = get_x_hashtags_for_theme(theme)
             x_text = format_for_x(final_post, hashtags)
 
+            x_eligible = "x" in pattern.get("platforms", [])
             post_obj = {
                 "text": threads_text,
                 "x_text": x_text,
@@ -1108,18 +1124,16 @@ def run(batch_size: int = 5) -> dict:
                 "pattern_id": pattern.get("id"),
                 "quality_score": result["score_result"]["average"],
                 "attempts": result["attempts"],
+                "x_eligible": x_eligible,   # 承認時にXキューへ流すかどうか
             }
             # ペルソナIDを記録（重複防止のため）
             if extra_hint.get("persona"):
                 post_obj["persona_id"] = extra_hint["persona"].get("id")
 
-            # Threadsキューに追加
-            enqueue_post(post_obj)
+            # 承認待ちに追加（承認後にポスターが投稿する）
+            enqueue_pending(post_obj)
             queued_threads += 1
-
-            # X対応パターンならXキューにも追加
-            if "x" in pattern.get("platforms", []):
-                enqueue_x_post(post_obj)
+            if x_eligible:
                 queued_x += 1
 
             checker.add_to_corpus(final_post)
@@ -1127,11 +1141,11 @@ def run(batch_size: int = 5) -> dict:
             recent_themes.append(theme)
 
             details.append({
-                "status": "queued",
+                "status": "pending",
                 "score": result["score_result"]["average"],
                 "theme": theme,
                 "pattern": pattern.get("name"),
-                "x_queued": "x" in pattern.get("platforms", []),
+                "x_eligible": x_eligible,
                 "preview": threads_text[:50] + "...",
             })
 

@@ -60,10 +60,11 @@ def cmd_daily():
     result = writer.run(batch_size=12)
     print(
         f"   生成: {result['generated']}件 → "
-        f"Threads: {result['queued_threads']}件, "
+        f"承認待ち Threads: {result['queued_threads']}件, "
         f"X: {result['queued_x']}件, "
         f"棄却: {result['rejected']}件"
     )
+    print(f"   📋 python main.py review  で内容を確認 → approve で承認")
 
     print(f"\n{'='*55}")
     print(f"✅ Daily Run 完了 - 龍の気が整いました")
@@ -137,6 +138,111 @@ def cmd_status():
             print(f"    {i+1}. [{p.get('theme', '?')}] {p.get('x_text', '')[:45]}...")
 
 
+def cmd_review():
+    """承認待ち投稿を一覧表示する"""
+    from core.state import load_pending
+
+    pending = load_pending()
+    if not pending:
+        print("\n📋 承認待ちの投稿はありません。")
+        print("   python main.py daily  を実行して投稿を生成してください。")
+        return
+
+    print(f"\n{'='*60}")
+    print(f"📋 承認待ち投稿一覧  ({len(pending)}件)")
+    print(f"{'='*60}")
+
+    for i, p in enumerate(pending):
+        pattern = p.get("pattern_id", "?")
+        theme = p.get("theme", "?")
+        score = p.get("quality_score", 0)
+        x_mark = " [X対応]" if p.get("x_eligible") else ""
+        thread_count = len(p.get("thread_posts", []))
+        is_thread = thread_count > 1
+
+        print(f"\n┌─ [{i}] {pattern}{x_mark}{'  🌳ツリー'+str(thread_count)+'件' if is_thread else ''}")
+        print(f"│  テーマ: {theme}")
+        if score:
+            print(f"│  品質スコア: {score:.1f}")
+        print(f"│")
+
+        if is_thread:
+            for j, tp in enumerate(p.get("thread_posts", [])):
+                prefix = "│  1投稿目" if j == 0 else f"│  {j+1}投稿目"
+                print(f"{prefix}: {tp}")
+                if j < thread_count - 1:
+                    print(f"│  　↓")
+        else:
+            text = p.get("text", "")
+            for line in text.splitlines():
+                print(f"│  {line}")
+
+        print(f"└{'─'*58}")
+
+    print(f"\n操作コマンド:")
+    print(f"  python main.py approve          # 全件承認してキューへ")
+    print(f"  python main.py approve 0 2 4    # 指定番号だけ承認")
+    print(f"  python main.py reject 1         # 指定番号を削除")
+
+
+def cmd_approve(*args):
+    """
+    承認待ち投稿をキューに移す。
+    引数なし → 全件承認
+    数字を指定 → その番号だけ承認（例: approve 0 2 4）
+    """
+    from core.state import load_pending, approve_pending
+
+    pending = load_pending()
+    if not pending:
+        print("\n📋 承認待ちの投稿はありません。")
+        return
+
+    if args:
+        try:
+            indices = [int(a) for a in args]
+        except ValueError:
+            print("❌ 番号を数字で指定してください（例: approve 0 2）")
+            return
+        out_of_range = [i for i in indices if i < 0 or i >= len(pending)]
+        if out_of_range:
+            print(f"❌ 範囲外の番号があります: {out_of_range}（0〜{len(pending)-1}）")
+            return
+        count = approve_pending(indices)
+        print(f"\n✅ {count}件の投稿を承認してキューに追加しました（番号: {indices}）")
+    else:
+        count = approve_pending()
+        print(f"\n✅ 全{count}件の投稿を承認してキューに追加しました")
+
+    from core.state import load_queue
+    print(f"   Threadsキュー残数: {len(load_queue())}件")
+
+
+def cmd_reject(*args):
+    """承認待ちから指定番号の投稿を削除する（例: reject 2）"""
+    from core.state import load_pending, reject_pending
+
+    if not args:
+        print("❌ 削除する番号を指定してください（例: reject 2）")
+        return
+
+    try:
+        index = int(args[0])
+    except ValueError:
+        print("❌ 番号を数字で指定してください（例: reject 2）")
+        return
+
+    pending = load_pending()
+    if index < 0 or index >= len(pending):
+        print(f"❌ 範囲外の番号です（0〜{len(pending)-1}）")
+        return
+
+    post = pending[index]
+    reject_pending(index)
+    print(f"\n🗑  [{index}] {post.get('pattern_id','?')} を削除しました")
+    print(f"   承認待ち残数: {len(pending)-1}件")
+
+
 def cmd_kill():
     from agents.supervisor import kill
     kill("CLIから手動停止")
@@ -150,11 +256,14 @@ def cmd_revive():
 
 
 COMMANDS = {
-    "daily": cmd_daily,
-    "post": cmd_post,
-    "status": cmd_status,
-    "kill": cmd_kill,
-    "revive": cmd_revive,
+    "daily":   cmd_daily,
+    "post":    cmd_post,
+    "status":  cmd_status,
+    "review":  cmd_review,
+    "approve": cmd_approve,
+    "reject":  cmd_reject,
+    "kill":    cmd_kill,
+    "revive":  cmd_revive,
 }
 
 if __name__ == "__main__":
@@ -165,5 +274,7 @@ if __name__ == "__main__":
         print(f"Available: {', '.join(COMMANDS.keys())}")
     elif cmd == "post" and len(sys.argv) > 2:
         func(platform=sys.argv[2])
+    elif cmd in ("approve", "reject") and len(sys.argv) > 2:
+        func(*sys.argv[2:])
     else:
         func()
