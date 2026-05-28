@@ -8,7 +8,12 @@ Threads（shigure_fortune）と X（@Shigure_fortune）の両方に自動投稿�
   python main.py post         # 1投稿スロット：Threads + X 両方に投稿
   python main.py post threads # Threadsのみ投稿
   python main.py post x       # Xのみ投稿
-  python main.py status       # 状態確認
+  python main.py status       # 状態確認（フォロワー数・ベスト時間帯含む）
+  python main.py review       # 承認待ち投稿を確認
+  python main.py approve      # 全件承認してキューへ
+  python main.py approve 0 2  # 指定番号だけ承認
+  python main.py reject 1     # 指定番号を削除
+  python main.py optimize     # 投稿時間帯の最適化レポート
   python main.py kill         # 緊急停止
   python main.py revive       # Kill解除
 """
@@ -55,6 +60,21 @@ def cmd_daily():
 
     print("\n🔍 [4/5] リサーチャー: ネタ収集（吉方位・風水・占い）")
     researcher.run(max_themes=5)
+
+    print("\n📡 [+] トラッカー: フォロワー数・時間帯統計を更新")
+    from agents import tracker
+    tracker.run()
+
+    print("\n💬 [+] リプライヤー: コメント自動返信")
+    from agents import replier
+    r_result = replier.run()
+    if r_result["replied"] > 0:
+        print(f"   {r_result['replied']}件返信しました")
+
+    if datetime.now().weekday() == 0:  # 月曜日
+        print("\n♻️  [+] リポスター: 人気投稿の再掲（週1回）")
+        from agents import reposter
+        reposter.run()
 
     print("\n✍️  [5/5] ライター: 投稿生成（時雨として）")
     result = writer.run(batch_size=12)
@@ -103,7 +123,10 @@ def cmd_post(platform: str = "both"):
 def cmd_status():
     """現在の状態を表示"""
     from agents import supervisor
-    from core.state import load_queue, load_history, load_json
+    from core.state import (
+        load_queue, load_history, load_json, load_pending,
+        get_follower_growth, get_best_hours,
+    )
     from config import X_QUEUE_FILE, X_HISTORY_FILE
 
     sup = supervisor.run(auto_kill=False)
@@ -111,6 +134,7 @@ def cmd_status():
     threads_history = load_history(limit=50)
     x_queue = load_json(X_QUEUE_FILE, default=[])
     x_history = load_json(X_HISTORY_FILE, default=[])
+    pending = load_pending()
 
     today = datetime.now().date().isoformat()
     threads_today = [h for h in threads_history if h.get("posted_at", "").startswith(today)]
@@ -119,8 +143,22 @@ def cmd_status():
     print(f"\n📊 時雨 / 龍脈命術 - 状態レポート")
     print(f"   {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print(f"   Kill Switch: {'⛔ ON' if is_killed() else '✅ OFF'}")
+
+    # フォロワー情報
+    growth = get_follower_growth(7)
+    if growth["current"] is not None:
+        sign = "+" if (growth["delta"] or 0) >= 0 else ""
+        delta_str = f"（7日間: {sign}{growth['delta']}人）" if growth["delta"] is not None else ""
+        print(f"   👥 フォロワー数: {growth['current']:,}人 {delta_str}")
+
+    # ベスト時間帯
+    best = get_best_hours(3)
+    if best:
+        best_str = "、".join(f"{h}時" for h, *_ in best)
+        print(f"   ⭐ エンゲージ上位時間帯: {best_str}")
+
     print(f"\n   [Threads: shigure_fortune]")
-    print(f"     本日の投稿数: {len(threads_today)}件 / キュー残: {len(threads_queue)}件")
+    print(f"     本日の投稿数: {len(threads_today)}件 / キュー残: {len(threads_queue)}件 / 承認待ち: {len(pending)}件")
     print(f"\n   [X: @Shigure_fortune]")
     print(f"     本日の投稿数: {len(x_today)}件 / キュー残: {len(x_queue)}件")
     print(f"\n   エラー(直近1h): {sup['errors']['recent_error_count']}件")
@@ -243,6 +281,51 @@ def cmd_reject(*args):
     print(f"   承認待ち残数: {len(pending)-1}件")
 
 
+def cmd_optimize_schedule():
+    """
+    時間帯別パフォーマンスデータから最適な投稿スケジュールを提案する。
+    エンゲージメントが高い時間帯 TOP6 を表示。
+    """
+    from core.state import get_best_hours, load_json
+    from config import HOURLY_STATS_FILE
+
+    stats = load_json(HOURLY_STATS_FILE, default={})
+    if not stats:
+        print("\n📊 時間帯統計データがまだありません。")
+        print("   しばらく運用すると自動的にデータが蓄積されます。")
+        return
+
+    print(f"\n{'='*55}")
+    print(f"📊 投稿時間帯の最適化レポート")
+    print(f"   {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+    print(f"{'='*55}\n")
+
+    best = get_best_hours(top_n=24)  # 全時間帯を取得
+
+    print(f"   時間帯別エンゲージメント（データあり時間帯）:\n")
+    has_data = False
+    for hour, avg_views, avg_likes, count in best:
+        if count == 0:
+            continue
+        has_data = True
+        bar = "█" * min(int(avg_views / 20), 20)
+        print(f"   {hour:02d}時  {bar:<20} views:{avg_views:.0f}  likes:{avg_likes:.2f}  ({count}投稿)")
+
+    if not has_data:
+        print("   データなし")
+        return
+
+    top6 = [(h, v, l, c) for h, v, l, c in best if c > 0][:6]
+    if top6:
+        hours_str = " ".join(f"{h:02d}:00" for h, *_ in top6)
+        print(f"\n   ✅ 推奨スケジュール TOP6: {hours_str}")
+        print(f"\n   現在のスケジュール: 07:00 12:00 18:00 20:00 21:00 22:00")
+        print(f"\n   ※ .github/workflows/post.yml の cron を上記推奨時間に")
+        print(f"     合わせると最大エンゲージメントが期待できます。")
+
+    print(f"\n{'='*55}\n")
+
+
 def cmd_kill():
     from agents.supervisor import kill
     kill("CLIから手動停止")
@@ -256,14 +339,15 @@ def cmd_revive():
 
 
 COMMANDS = {
-    "daily":   cmd_daily,
-    "post":    cmd_post,
-    "status":  cmd_status,
-    "review":  cmd_review,
-    "approve": cmd_approve,
-    "reject":  cmd_reject,
-    "kill":    cmd_kill,
-    "revive":  cmd_revive,
+    "daily":    cmd_daily,
+    "post":     cmd_post,
+    "status":   cmd_status,
+    "review":   cmd_review,
+    "approve":  cmd_approve,
+    "reject":   cmd_reject,
+    "optimize": cmd_optimize_schedule,
+    "kill":     cmd_kill,
+    "revive":   cmd_revive,
 }
 
 if __name__ == "__main__":

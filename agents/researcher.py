@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 import anthropic
 from config import (
     ANTHROPIC_API_KEY, MODEL_HEAVY,
-    THEME_TREE_FILE, ACCOUNT_PROFILE_FILE,
+    THEME_TREE_FILE, ACCOUNT_PROFILE_FILE, EVENT_CALENDAR_FILE,
 )
 from core.state import load_json, load_research, save_research, load_history
 from core.kaiun_calendar import get_lucky_days
@@ -278,6 +278,50 @@ def _enrich_topics_with_claude(
 
 
 # ─────────────────────────────────────────
+# イベントカレンダー連携
+# ─────────────────────────────────────────
+
+def _get_upcoming_event_themes(lead_days_override: int = None) -> list:
+    """
+    直近 lead_days 以内に迫っているイベントを返す。
+    Returns: [{"name": ..., "theme": ..., "hook": ..., "days_until": ...}, ...]
+    """
+    calendar = load_json(EVENT_CALENDAR_FILE, default={})
+    events = calendar.get("annual_events", [])
+    if not events:
+        return []
+
+    today = datetime.now().date()
+    upcoming = []
+
+    for ev in events:
+        month = ev.get("month")
+        day = ev.get("day")
+        lead = lead_days_override or ev.get("lead_days", 7)
+        if not month or not day:
+            continue
+
+        # 今年 / 来年の日付を両方チェック
+        for year_offset in (0, 1):
+            try:
+                ev_date = datetime(today.year + year_offset, month, day).date()
+                days_until = (ev_date - today).days
+                if 0 <= days_until <= lead:
+                    upcoming.append({
+                        "name": ev["name"],
+                        "theme": ev["theme"],
+                        "hook": ev.get("hook", ""),
+                        "days_until": days_until,
+                    })
+                    break
+            except ValueError:
+                continue
+
+    upcoming.sort(key=lambda x: x["days_until"])
+    return upcoming
+
+
+# ─────────────────────────────────────────
 # メイン実行
 # ─────────────────────────────────────────
 
@@ -298,8 +342,17 @@ def run(max_themes: int = 5) -> dict:
         print("  ⚠️ リサーチャー: テーマツリーなし")
         return {"researched_themes": [], "new_topics": 0, "rss_count": 0, "cultural_count": 0}
 
-    # 不足テーマを特定
-    under_themes = _get_underrepresented_themes(theme_tree, history)[:max_themes]
+    # ── ステップ-1: イベントカレンダー確認（直近7日以内のイベントを優先）──
+    event_themes = _get_upcoming_event_themes()
+    if event_themes:
+        print(f"  📅 直近イベント優先テーマ: {[t['name'] for t in event_themes]}")
+
+    # 不足テーマを特定（イベントテーマがある場合は枠を調整）
+    event_count = min(len(event_themes), 2)
+    under_themes = _get_underrepresented_themes(theme_tree, history)[:max(max_themes - event_count, 1)]
+    # イベントテーマを先頭に挿入
+    for ev in reversed(event_themes[:event_count]):
+        under_themes.insert(0, ev["theme"])
     print(f"  📋 リサーチ対象テーマ: {under_themes}")
 
     # ── ステップ0: 開運日カレンダー計算（7日ごとにキャッシュ更新）──

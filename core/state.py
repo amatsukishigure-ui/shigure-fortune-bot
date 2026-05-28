@@ -17,6 +17,7 @@ from config import (
     POST_HISTORY_FILE, PERFORMANCE_FILE,
     RESEARCH_FILE, ERROR_LOG_FILE, KILL_SWITCH_FILE, DATA_DIR,
     X_QUEUE_FILE,
+    FOLLOWER_HISTORY_FILE, REPLIED_COMMENTS_FILE, HOURLY_STATS_FILE,
 )
 
 
@@ -225,3 +226,77 @@ def deactivate_kill_switch() -> None:
     if KILL_SWITCH_FILE.exists():
         KILL_SWITCH_FILE.unlink()
         print("✅ Kill switch deactivated")
+
+
+# ── Follower History ──────────────────────────────────────────
+
+def load_follower_history() -> list:
+    return load_json(FOLLOWER_HISTORY_FILE, default=[])
+
+
+def add_follower_snapshot(count: int) -> None:
+    """フォロワー数のスナップショットを保存（1日1回）"""
+    history = load_follower_history()
+    today = datetime.now().date().isoformat()
+    # 同日に既にある場合は上書き
+    history = [h for h in history if h.get("date") != today]
+    history.append({"count": count, "date": today})
+    history = sorted(history, key=lambda x: x["date"])[-365:]
+    save_json(FOLLOWER_HISTORY_FILE, history)
+
+
+def get_follower_growth(days: int = 7) -> dict:
+    """直近 N 日のフォロワー増減を返す"""
+    history = load_follower_history()
+    if len(history) < 2:
+        return {"current": None, "delta": None, "days": days}
+    current = history[-1]["count"]
+    target_date_obj = datetime.now().date()
+    from datetime import timedelta
+    cutoff = (target_date_obj - timedelta(days=days)).isoformat()
+    past = [h for h in history if h["date"] <= cutoff]
+    baseline = past[-1]["count"] if past else history[0]["count"]
+    return {"current": current, "delta": current - baseline, "days": days}
+
+
+# ── Replied Comments ──────────────────────────────────────────
+
+def load_replied_comments() -> set:
+    data = load_json(REPLIED_COMMENTS_FILE, default=[])
+    return set(data)
+
+
+def mark_comment_replied(comment_id: str) -> None:
+    replied = load_replied_comments()
+    replied.add(comment_id)
+    # 最新2000件のみ保持
+    save_json(REPLIED_COMMENTS_FILE, list(replied)[-2000:])
+
+
+# ── Hourly Stats ──────────────────────────────────────────────
+
+def update_hourly_stats(hour_jst: int, views: int, likes: int) -> None:
+    """投稿時間別のパフォーマンス集計を更新する"""
+    stats = load_json(HOURLY_STATS_FILE, default={})
+    key = str(hour_jst)
+    if key not in stats:
+        stats[key] = {"views_sum": 0, "likes_sum": 0, "count": 0}
+    stats[key]["views_sum"] += views
+    stats[key]["likes_sum"] += likes
+    stats[key]["count"] += 1
+    save_json(HOURLY_STATS_FILE, stats)
+
+
+def get_best_hours(top_n: int = 6) -> list:
+    """エンゲージメント率上位 N 時間帯を返す（JST）"""
+    stats = load_json(HOURLY_STATS_FILE, default={})
+    scored = []
+    for hour_str, s in stats.items():
+        if s["count"] < 3:
+            continue  # サンプル数不足はスキップ
+        avg_likes = s["likes_sum"] / s["count"]
+        avg_views = s["views_sum"] / s["count"]
+        score = avg_likes * 2 + avg_views * 0.1  # いいね重み付け
+        scored.append((int(hour_str), score, avg_views, avg_likes, s["count"]))
+    scored.sort(key=lambda x: x[1], reverse=True)
+    return scored[:top_n]
