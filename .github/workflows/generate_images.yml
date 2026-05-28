@@ -35,11 +35,7 @@ jobs:
           python-version: '3.11'
 
       - name: install dependencies
-        run: pip install openai pillow
-
-      - name: create env file
-        run: |
-          printf 'OPENAI_API_KEY=%s\n' '${{ secrets.OPENAI_API_KEY }}' > .env
+        run: pip install -r requirements.txt openai
 
       - name: generate images
         run: |
@@ -54,6 +50,7 @@ jobs:
           python scripts/generate_dalle_images.py $FLAGS
         env:
           PYTHONIOENCODING: utf-8
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
       - name: copy images to shigure-images
         run: |

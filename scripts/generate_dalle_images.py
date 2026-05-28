@@ -299,28 +299,21 @@ IMAGES = {
 
 
 def load_openai_key() -> str:
-    """config.py 経由で .env から OPENAI_API_KEY を読み込む"""
-    import sys
+    """環境変数 → .env ファイルの順で OPENAI_API_KEY を読み込む"""
     import os
-    sys.path.insert(0, str(BASE_DIR))
-    from config import BASE_DIR as _BD
-    from pathlib import Path
-    env_path = Path(_BD) / ".env"
-    key = ""
+    key = os.getenv("OPENAI_API_KEY", "")
+    if key:
+        return key
+    # ローカル実行時: .env ファイルから読み込む（UTF-8/UTF-16 両対応）
+    env_path = BASE_DIR / ".env"
     for enc in ("utf-8", "utf-16", "utf-8-sig"):
         try:
-            text = env_path.read_text(encoding=enc)
-            for line in text.splitlines():
+            for line in env_path.read_text(encoding=enc).splitlines():
                 if line.startswith("OPENAI_API_KEY="):
-                    key = line.split("=", 1)[1].strip()
-                    break
-            if key:
-                break
+                    return line.split("=", 1)[1].strip()
         except Exception:
             continue
-    if not key:
-        key = os.getenv("OPENAI_API_KEY", "")
-    return key
+    return ""
 
 
 def generate_image(client, prompt: str, filename: str) -> bytes:
