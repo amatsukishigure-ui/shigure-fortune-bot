@@ -63,6 +63,8 @@ jobs:
             if [ "$NEED_REFILL" = "yes" ]; then
               echo "Queue + pending low — running daily to refill"
               python main.py daily
+              echo "Auto-approving all pending posts"
+              python main.py approve
             fi
 
             echo "Running post"
