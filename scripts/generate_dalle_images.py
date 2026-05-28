@@ -38,261 +38,314 @@ ASSETS_DIR = BASE_DIR / "assets" / "images"
 # ── 共通スタイル指示（全プロンプトに付加） ─────────────────────────────
 
 STYLE_SUFFIX = (
-    "Dark background, no text, no watermark, no border frame. "
-    "Square 1:1 composition. High quality, artistic, mystical Japanese fortune-telling aesthetic. "
-    "Suitable for social media post header image."
+    "Digital art, highly detailed cosmic fantasy illustration. "
+    "Dark deep space background filled with nebula and stars. "
+    "No text, no watermark, no border frame. Square 1:1 composition. "
+    "Mystical, ethereal, Japanese fortune-telling aesthetic."
 )
 
 # ── 画像ごとのプロンプト ───────────────────────────────────────────────
 
 IMAGES = {
-    # ── 星座 ──────────────────────────────────────────────────────────
+    # ── 星座（動物・象徴が星雲として浮かび上がる構図） ──────────────────
     "zodiac/aries.jpg": (
-        "Aries zodiac constellation on a deep indigo night sky. "
-        "Golden star points connected by thin glowing lines forming the Ram constellation. "
-        "Delicate golden sparkles and nebula dust around the stars. "
-        "Warm golden and amber glow emanating from the center. "
+        "A majestic cosmic ram formed from golden nebula and stardust fills the composition. "
+        "Its powerful horns curve dramatically, radiating amber and gold light. "
+        "The Aries constellation star pattern with glowing gold connecting lines is overlaid "
+        "across the ram's body, each star a brilliant point of light. "
+        "Deep indigo and violet space background with golden nebula clouds. "
+        "The ram charges forward with fierce divine energy. "
         + STYLE_SUFFIX
     ),
     "zodiac/taurus.jpg": (
-        "Taurus zodiac constellation on a deep forest-green night sky. "
-        "Bright emerald-green star points connected by thin glowing lines forming the Bull. "
-        "The Pleiades star cluster visible nearby, soft green mist. "
-        "Lush, earth-energy aesthetic with jade and emerald tones. "
+        "A powerful cosmic bull emerges from emerald green nebula and stardust. "
+        "Its massive head is lowered, eyes glowing with ancient earth energy. "
+        "The Taurus constellation star pattern with glowing green connecting lines overlays "
+        "the bull's body. The Pleiades star cluster shimmers above its shoulder. "
+        "Deep forest-green cosmic background with jade and emerald nebula. "
+        "Sense of unshakeable strength and natural abundance. "
         + STYLE_SUFFIX
     ),
     "zodiac/gemini.jpg": (
-        "Gemini zodiac constellation on a dark violet night sky. "
-        "Twin columns of purple-white stars connected by glowing lines, two parallel paths of light. "
-        "Amethyst and lavender nebula swirling between the twin figures. "
-        "Dual symmetry with soft purple radiance. "
+        "Two ethereal twin figures formed from violet and silver stardust face each other "
+        "in a cosmic mirror. They hold hands, their forms merging into shared nebula energy. "
+        "The Gemini constellation star pattern with purple glowing lines runs across both figures. "
+        "Dark violet background with amethyst and lavender nebula swirling between the twins. "
+        "Dual symmetry, the dance of light and shadow, yin and yang. "
         + STYLE_SUFFIX
     ),
     "zodiac/cancer.jpg": (
-        "Cancer zodiac constellation on a deep midnight blue night sky. "
-        "Soft blue-white star points forming the Crab constellation, connected by silver threads. "
-        "Moonlight shimmer, gentle silver and pearl-blue nebula mist. "
-        "The Beehive Cluster as a bright central glow. "
+        "A luminous cosmic crab floats in moonlit space, its shell encrusted with pearl-blue stars. "
+        "Silver claws reach forward, trailing threads of moonlight. "
+        "The Cancer constellation pattern with silver-blue connecting lines is mapped across "
+        "its body. The Beehive Cluster glows at the center of its shell. "
+        "Deep midnight blue background with pearl and silver nebula shimmer. "
+        "Gentle, protective, lunar energy. "
         + STYLE_SUFFIX
     ),
     "zodiac/leo.jpg": (
-        "Leo zodiac constellation on a deep crimson-black night sky. "
-        "Bright golden-orange stars forming the Lion's sickle shape, Regulus blazing at the heart. "
-        "Bold golden rays radiating from the brightest star. "
-        "Fierce, regal energy with amber and gold glow. "
+        "A magnificent cosmic lion dominates the composition, its enormous mane radiating "
+        "golden and amber stardust like a solar corona. Regulus blazes at its heart. "
+        "The Leo constellation star pattern with brilliant gold connecting lines is overlaid "
+        "across the lion's mane and body. The lion gazes forward with regal, ancient power. "
+        "Deep crimson-black background with golden nebula clouds billowing outward. "
+        "Fierce solar divinity, the king of the cosmic beasts. "
         + STYLE_SUFFIX
     ),
     "zodiac/virgo.jpg": (
-        "Virgo zodiac constellation on a dark olive-green night sky. "
-        "Soft green-white stars forming the Maiden, Spica glowing like a blue-white diamond. "
-        "Delicate botanical elements, fern-like nebula wisps in jade and mint. "
-        "Pure, earth-goddess energy. "
+        "A serene cosmic goddess figure formed from jade-green and white starlight. "
+        "She holds a sheaf of wheat made of glowing stars, her robes flowing as nebula wisps. "
+        "The Virgo constellation pattern with soft green connecting lines traces her silhouette. "
+        "Spica gleams as a brilliant blue-white diamond near her hand. "
+        "Dark olive-green background with mint and jade nebula. "
+        "Pure, nurturing, harvest goddess energy. "
         + STYLE_SUFFIX
     ),
     "zodiac/libra.jpg": (
-        "Libra zodiac constellation on a dark navy blue night sky. "
-        "Blue-violet stars forming the Scales of Justice, two pans balanced in equilibrium. "
-        "Silver and periwinkle nebula haze, sense of perfect cosmic balance. "
-        "Elegant and harmonious composition. "
+        "A pair of cosmic scales floats in perfect equilibrium in deep space. "
+        "The scales are forged from blue-violet starlight, their pans holding nebula clouds "
+        "of equal weight — light and darkness perfectly balanced. "
+        "The Libra constellation pattern with periwinkle connecting lines frames the scales. "
+        "Behind the scales, a robed cosmic figure of justice is barely visible in nebula form. "
+        "Navy blue background with silver and violet nebula. "
         + STYLE_SUFFIX
     ),
     "zodiac/scorpio.jpg": (
-        "Scorpio zodiac constellation on a deep blood-red night sky. "
-        "Rich red-orange stars forming the Scorpion's curved tail, Antares blazing deep red. "
-        "Dark crimson nebula clouds, intense and mysterious energy. "
-        "The tail curves like a question mark trailing into darkness. "
+        "A massive cosmic scorpion emerges from dark crimson nebula, its segmented tail "
+        "curving upward in a deadly arc, the stinger glowing red as a dying star. "
+        "Antares blazes like a red supergiant at its heart. "
+        "The Scorpio constellation pattern with deep red connecting lines maps its body. "
+        "Blood-red and dark crimson background with shadowy nebula clouds. "
+        "Intense, transformative, death-and-rebirth energy. "
         + STYLE_SUFFIX
     ),
     "zodiac/sagittarius.jpg": (
-        "Sagittarius zodiac constellation on a dark cobalt-blue night sky. "
-        "Bright blue-white stars forming the Archer's bow and arrow aimed at the galactic center. "
-        "The Milky Way core glowing in the background with golden-blue stellar clouds. "
-        "Adventurous, expansive energy. "
+        "A cosmic centaur archer draws a blazing bow aimed at the galactic center. "
+        "Its arrow is a beam of pure cobalt-blue light shooting toward the Milky Way core. "
+        "The Sagittarius constellation pattern with electric blue connecting lines overlays "
+        "the centaur's body. The galactic center glows gold and blue behind the figure. "
+        "Deep cobalt-black background with the full sweep of the Milky Way. "
+        "Adventurous, expansive, truth-seeking energy. "
         + STYLE_SUFFIX
     ),
     "zodiac/capricorn.jpg": (
-        "Capricorn zodiac constellation on a charcoal-gray night sky. "
-        "Silver-white stars forming the Sea Goat, precise geometric lines connecting them. "
-        "Subtle silver and gunmetal nebula, austere and disciplined beauty. "
-        "Crystalline, structured, ancient energy. "
+        "A cosmic sea goat ascends from dark ocean depths into the stars above. "
+        "Its lower fish tail is made of silver nebula, its upper goat form solid as mountain rock. "
+        "The Capricorn constellation pattern with silver-grey connecting lines marks its form. "
+        "Charcoal and dark grey background with subtle silver and gunmetal nebula. "
+        "Ancient, disciplined, mountain-climbing-to-the-stars energy. "
         + STYLE_SUFFIX
     ),
     "zodiac/aquarius.jpg": (
-        "Aquarius zodiac constellation on a deep teal night sky. "
-        "Bright cyan-blue stars forming the Water Bearer, with flowing wavy lines representing water. "
-        "Electric blue and aquamarine ripples of light, futuristic and humanitarian. "
-        "Twin zigzag lines of stars like water waves. "
+        "A luminous cosmic water bearer pours an endless stream of electric-blue starwater "
+        "from a great urn. The water flows and becomes nebula, becomes galaxies. "
+        "The Aquarius constellation pattern with cyan connecting lines flows along the "
+        "water stream and across the figure. "
+        "Deep teal background with electric blue and aquamarine nebula ripples. "
+        "Visionary, humanitarian, future-seeing energy. "
         + STYLE_SUFFIX
     ),
     "zodiac/pisces.jpg": (
-        "Pisces zodiac constellation on a deep sapphire night sky. "
-        "Soft blue-violet stars forming Two Fish connected by a shimmering silver cord. "
-        "Flowing ribbons of blue and violet light, dreamy and oceanic. "
-        "The two fish swimming in opposite directions, spiritually connected. "
+        "Two luminous cosmic fish swim in opposite directions through deep space, "
+        "connected by a shimmering silver cord of stardust that binds them eternally. "
+        "Their scales are made of blue-violet nebula, their eyes hold the depth of oceans. "
+        "The Pisces constellation pattern with sapphire connecting lines traces both fish. "
+        "Deep sapphire background with flowing violet and blue nebula currents. "
+        "Dreamy, spiritual, ocean-of-souls energy. "
         + STYLE_SUFFIX
     ),
     "zodiac/general.jpg": (
-        "All twelve zodiac symbols arranged in a sacred circle on dark purple space. "
-        "Golden mandala geometry at the center, each sign glowing in its own color. "
-        "Celestial wheel of the zodiac with ancient astronomical markings. "
-        "Rich cosmic tapestry, mystical and grand. "
+        "Twelve cosmic zodiac creatures arranged in a great celestial wheel in deep space. "
+        "Each creature — ram, bull, twins, crab, lion, maiden, scales, scorpion, centaur, "
+        "sea goat, water bearer, fish — glows in its own unique nebula color. "
+        "A golden sacred geometry mandala connects them at the center. "
+        "Dark purple cosmic background, the full wheel of the year and the cosmos. "
         + STYLE_SUFFIX
     ),
-    # ── 方位 ──────────────────────────────────────────────────────────
+    # ── 方位（四神獣を用いた風水方位の守護神） ───────────────────────────
     "direction/north.jpg": (
-        "Ornate north compass point on deep navy blue background. "
-        "Elegant N marker in gold filigree, pointing upward with glowing blue aurora behind it. "
-        "Polar star Polaris shining at the tip. "
-        "Arctic-blue and sapphire tones, precise and directional. "
+        "Genbu, the Black Tortoise of the North — a massive cosmic black tortoise "
+        "entwined with a serpent rises from dark polar waters into star-filled space. "
+        "Its ancient shell is covered in star maps and constellation patterns. "
+        "Glowing blue-black armor plates, serpent with silver scales coiling around it. "
+        "Deep navy and black background with cold northern star light. "
+        "The guardian of winter, water, and wisdom. "
         + STYLE_SUFFIX
     ),
     "direction/northeast.jpg": (
-        "Northeast compass direction symbol on deep blue-slate background. "
-        "NE arrow with golden filigree, dawn light breaking at the horizon. "
-        "Pale gold meets arctic blue gradient, sense of new beginnings in the northeast direction. "
+        "The northeastern direction guardian — where the Black Tortoise meets the Azure Dragon. "
+        "A cosmic scene of dark water meeting the first light of dawn. "
+        "Blue-black tortoise scales blend into teal dragon scales at the horizon. "
+        "Aurora borealis in blue and teal sweeps across the background. "
+        "A sense of transition, from darkness into the first light of morning. "
         + STYLE_SUFFIX
     ),
     "direction/east.jpg": (
-        "East compass direction symbol on deep amber-black background. "
-        "Golden sunrise ray emanating eastward, ornate E marker with morning star above. "
-        "Warm amber, gold and sunrise orange tones. "
-        "Energy of new beginnings and rising light. "
+        "Seiryu, the Azure Dragon of the East — a magnificent cosmic blue-green dragon "
+        "soars eastward through golden dawn light, its scales shimmering like jade and sapphire. "
+        "It brings the energy of spring, wood, and new beginnings. "
+        "Its claws reach toward a rising star in the east. "
+        "Deep azure background with golden sunrise rays breaking through teal nebula. "
+        "The guardian of spring, wood energy, and the rising sun. "
         + STYLE_SUFFIX
     ),
     "direction/southeast.jpg": (
-        "Southeast compass direction symbol on dark warm background. "
-        "SE marker with golden-orange filigree, blend of sunrise warmth and earth energy. "
-        "Amber and terracotta tones, sense of harvest and abundance. "
+        "The southeastern direction — where the Azure Dragon meets the Vermilion Bird. "
+        "A cosmic scene of teal dragon scales fading into warm amber and orange phoenix feathers. "
+        "Dawn light warming into the heat of midday, spring blossoming into summer. "
+        "Gold and amber gradient background with wisps of jade green and rose. "
+        "Abundant, warm, growth energy at the threshold of fire and wood. "
         + STYLE_SUFFIX
     ),
     "direction/south.jpg": (
-        "South compass direction symbol on deep vermillion-black background. "
-        "Blazing S marker with phoenix-red filigree, flames rising upward. "
-        "Intense crimson, scarlet and fire-orange tones. "
-        "Passionate, active fire energy. "
+        "Suzaku, the Vermilion Bird of the South — a blazing cosmic phoenix spreads "
+        "its enormous wings of crimson and gold fire across the sky. "
+        "Each feather is a flame, each wingtip trails glowing embers and stardust. "
+        "It embodies summer fire, fame, and passionate transformation. "
+        "Deep vermilion and crimson background with golden flame-nebula erupting outward. "
+        "The guardian of summer, fire, and the blazing noon sun. "
         + STYLE_SUFFIX
     ),
     "direction/southwest.jpg": (
-        "Southwest compass direction symbol on dark amber-brown background. "
-        "SW marker with golden-bronze filigree, earth and harvest energy. "
-        "Rich amber, burnt orange and autumn gold tones. "
-        "Stable, grounding earth energy. "
+        "The southwestern direction — where the Vermilion Bird meets the White Tiger. "
+        "A cosmic scene of crimson phoenix feathers fading into white and gold tiger stripes. "
+        "Fire cooling into late summer earth, the harvest season at hand. "
+        "Amber and warm gold background with flickers of red and ivory. "
+        "The energy of completion, harvest, and the earth's abundance. "
         + STYLE_SUFFIX
     ),
     "direction/west.jpg": (
-        "West compass direction symbol on dark forest-green background. "
-        "Silver W marker with vine-like filigree, sunset over water in the distance. "
-        "Deep jade, moss-green and sage tones. "
-        "Reflective, introspective sunset energy. "
+        "Byakko, the White Tiger of the West — a great cosmic white tiger with blazing "
+        "silver-white stripes stalks through autumn starfields. "
+        "Its eyes are silver moons, its breath is cool autumn wind made visible as nebula. "
+        "It embodies autumn, metal, and righteous authority. "
+        "Deep grey-silver background with white and silver nebula, autumn leaves of light. "
+        "The guardian of autumn, metal energy, and the setting sun. "
         + STYLE_SUFFIX
     ),
     "direction/northwest.jpg": (
-        "Northwest compass direction symbol on deep teal-navy background. "
-        "NW marker with silver-teal filigree, twilight sky blending blue and silver. "
-        "Steel blue, silver and moonlit teal tones. "
-        "Celestial, heavenly energy. "
+        "The northwestern direction — where the White Tiger meets the Black Tortoise. "
+        "A cosmic scene of white tiger fur fading into dark tortoise shell patterns. "
+        "Twilight deepening into night, the last silver light before winter darkness. "
+        "Silver and dark blue-grey background with white stars emerging in the west. "
+        "The energy of completion, letting go, and the approach of rest. "
         + STYLE_SUFFIX
     ),
     "direction/compass.jpg": (
-        "Magnificent ornate 8-point compass rose on deep midnight blue background. "
-        "Eight diamond-pointed directions in gold and silver, intricate filigree details. "
-        "North point crowned with a polar star, concentric decorative rings. "
-        "Reminiscent of antique navigational instruments, majestic and authoritative. "
+        "All four celestial guardians united in a cosmic compass rose: "
+        "Black Tortoise in the north, Azure Dragon in the east, "
+        "Vermilion Bird in the south, White Tiger in the west. "
+        "Each guardian glows in its elemental color — black, azure, crimson, white. "
+        "They form a great mandala of protection around a golden compass center. "
+        "Deep midnight background, the complete feng shui guardian formation. "
         + STYLE_SUFFIX
     ),
     # ── 季節 ──────────────────────────────────────────────────────────
     "season/spring.jpg": (
-        "Magical spring cherry blossoms floating in soft pink and purple mystical energy. "
-        "Sakura petals swirling in a spiritual wind, glowing with inner light. "
-        "Dark purple-rose gradient background, luminous pale pink flowers. "
-        "Japanese spring spiritual energy, renewal and new beginnings. "
+        "A luminous Azure Dragon of spring soars through a storm of cherry blossom petals. "
+        "Its jade-green scales are adorned with sakura flowers. "
+        "Pink and white petals swirl around its coiling form in cosmic currents. "
+        "Deep purple-rose background with soft pink nebula and spring starlight. "
+        "The spirit of renewal, the dragon that brings the spring rains. "
         + STYLE_SUFFIX
     ),
     "season/summer.jpg": (
-        "Radiant summer sun symbol on deep navy ocean background. "
-        "Sixteen golden rays alternating long and short, like an ancient sun deity symbol. "
-        "Central sun disk glowing with intense golden-white light. "
-        "Bright azure sky reflected in dark blue water below. "
-        "Powerful, expansive solar energy. "
+        "A blazing Vermilion Phoenix rises from a cosmic sun at the height of summer. "
+        "The sun behind it erupts in sixteen great golden rays. "
+        "The phoenix's wings spread wide, each feather a tongue of golden flame. "
+        "Deep navy blue ocean below reflects the blazing summer sun above. "
+        "Intense golden-white solar energy, the peak of yang power. "
         + STYLE_SUFFIX
     ),
     "season/autumn.jpg": (
-        "Maple leaves in autumn colors swirling in mystical wind energy on dark background. "
-        "Rich crimson, orange and golden maple leaves in elegant spiral arrangement. "
-        "Dark warmly lit background, leaves glowing with inner amber light. "
-        "Japanese autumn wabi-sabi aesthetic, bittersweet beauty. "
+        "A majestic White Tiger walks through a cosmic autumn forest of maple trees. "
+        "The leaves are made of crimson, amber, and gold stardust, swirling in cosmic wind. "
+        "The tiger's white coat glows against the warm autumn nebula. "
+        "Deep amber-crimson background with falling leaves of light. "
+        "The spirit of autumn harvest, bittersweet beauty, and graceful letting go. "
         + STYLE_SUFFIX
     ),
     "season/winter.jpg": (
-        "Intricate crystal snowflake on deep midnight blue winter background. "
-        "Six-fold symmetry with complex geometric branches, each arm with three levels of structure. "
-        "Ice blue and pearl white crystal formations, faint aurora borealis in background. "
-        "Pure, crystalline winter silence. "
+        "A Black Tortoise rests at the bottom of a frozen cosmic sea beneath a field of stars. "
+        "Its shell is a perfect snowflake crystal, each plate an intricate ice pattern. "
+        "Aurora borealis in blue and green dances above the frozen surface. "
+        "Deep midnight blue background with ice-crystal stars and silver snow. "
+        "The deep silence of winter, dormant power, ancient wisdom waiting to emerge. "
         + STYLE_SUFFIX
     ),
     # ── 風水 ──────────────────────────────────────────────────────────
     "fengshui/general.jpg": (
-        "Perfect yin-yang taiji symbol in jade green and deep forest tones on dark background. "
-        "The S-curve dividing light and shadow in perfect harmony. "
-        "Jade green yang and deep forest shadow yin, glowing with chi energy. "
-        "Ancient Chinese philosophy made visible. "
+        "A cosmic yin-yang symbol formed by a jade dragon and a black tiger circling each other. "
+        "The dragon — luminous jade green — and the tiger — deep shadow black — "
+        "chase each other's tails in perfect cosmic balance. "
+        "Between them, the S-curve boundary glows with golden chi energy. "
+        "Deep forest green and black background with flowing chi lines of light. "
+        "The eternal dance of opposing forces in perfect harmony. "
         + STYLE_SUFFIX
     ),
     "fengshui/water.jpg": (
-        "Water element feng shui symbol: flowing mandala of concentric waves and ripples. "
-        "Deep navy blue and aquamarine tones, sacred geometry of water movement. "
-        "Central lotus-like pattern, rings of energy spreading outward like water drops. "
-        "Calm, flowing, purifying water energy. "
+        "A great cosmic water dragon coils through deep ocean-blue space. "
+        "Its body spirals in the shape of flowing water, leaving trails of aquamarine chi. "
+        "Sacred water mandalas — concentric rings like ripples — surround it. "
+        "Deep navy and teal background with flowing water-energy light patterns. "
+        "The purifying, cleansing, wealth-bringing energy of the water element. "
         + STYLE_SUFFIX
     ),
     # ── 汎用 ──────────────────────────────────────────────────────────
     "general/fortune_1.jpg": (
-        "Sacred geometric mandala for fortune and destiny on deep indigo background. "
-        "Intricate concentric rings with petal patterns, inner star polygon at center. "
-        "Purple and violet luminescence, ancient mystical symmetry. "
-        "Powerful spiritual energy for divination. "
+        "A luminous celestial lotus opens at the center of a vast cosmic mandala. "
+        "Each petal is a universe, each stamen a star. "
+        "Intricate golden sacred geometry rings expand outward from the lotus. "
+        "Deep indigo background with violet and gold nebula in perfect sacred symmetry. "
+        "The mandala of destiny, the wheel of fortune, ancient divine order. "
         + STYLE_SUFFIX
     ),
     "general/fortune_2.jpg": (
-        "Flower of Life sacred geometry on deep teal-black background. "
-        "Overlapping circles forming the ancient geometric pattern, glowing cyan and turquoise. "
-        "Mathematical perfection of the universe encoded in light. "
-        "Peaceful, unified field energy. "
+        "The Flower of Life sacred geometry pattern fills cosmic space, "
+        "each overlapping circle a world, a breath, a heartbeat of the universe. "
+        "Cyan and teal bioluminescent light traces the pattern against dark space. "
+        "Deep teal-black background with the eternal mathematical pattern of creation. "
+        "Peaceful, unified, the hidden order beneath all things. "
         + STYLE_SUFFIX
     ),
     "general/fortune_3.jpg": (
-        "Lotus mandala for spiritual fortune on dark purple-black background. "
-        "Eight-petaled lotus in amethyst and violet with golden center. "
-        "Sacred mandala rings extending outward, spiritual awakening energy. "
-        "Deep meditation and higher consciousness aesthetic. "
+        "An eight-petaled cosmic lotus mandala glows in deep amethyst and violet space. "
+        "Each petal contains a galaxy. The center blazes with golden-white enlightenment light. "
+        "Rings of sacred geometry — triangles, hexagons, circles — orbit the lotus. "
+        "Deep purple-black background with violet and gold nebula petals. "
+        "The mandala of spiritual awakening and higher consciousness. "
         + STYLE_SUFFIX
     ),
     "general/mystery_1.jpg": (
-        "Eye of Providence triangle on deep crimson-black background. "
-        "All-seeing eye within a radiant triangle, twelve light rays emanating outward. "
-        "Red and gold tones, mysterious and prophetic energy. "
-        "Ancient oracle symbol, mystical and powerful. "
+        "A great all-seeing eye floats within a radiant triangle of crimson fire in deep space. "
+        "The eye is wise, ancient, and all-knowing — its iris a galaxy, its pupil a black hole. "
+        "Twelve long rays of golden-red light radiate from the triangle's apex. "
+        "Deep crimson and dark background with mysterious red-gold energy. "
+        "The oracle, the prophet, the guardian who sees all destinies. "
         + STYLE_SUFFIX
     ),
     "general/mystery_2.jpg": (
-        "Eye of Providence on deep midnight blue-black background. "
-        "All-seeing eye within a luminous equilateral triangle, silver-blue light rays. "
-        "Cool silver and periwinkle tones, omniscient and cosmic energy. "
-        "Deep cosmic awareness and spiritual sight. "
+        "A cosmic all-seeing eye within a triangle of silver-blue starlight in deep space. "
+        "The eye gazes from beyond time — iris a swirling galaxy of blue and silver. "
+        "Cool starlight rays radiate outward, illuminating ancient symbols in the darkness. "
+        "Deep midnight blue-black background with silver-white cosmic energy. "
+        "Omniscient awareness, the eye that watches the wheel of fate. "
         + STYLE_SUFFIX
     ),
     "general/ichi_gon.jpg": (
-        "A single golden word or symbol of wisdom on deep black-gold background. "
-        "Ancient golden calligraphy energy in abstract form, no specific text. "
-        "Rich amber and gold mandala rings around the central glow. "
-        "One word of truth from the universe, powerful and concise. "
+        "A single luminous golden dragon coils around one brilliant star at the center of space. "
+        "The dragon is small yet contains infinite power — the essence of a single truth. "
+        "Golden light radiates outward from star and dragon in perfect circles. "
+        "Deep black-gold background with subtle dragon scale patterns in the nebula. "
+        "The power of one word, one truth, one moment of clarity from the universe. "
         + STYLE_SUFFIX
     ),
     "general/menu.jpg": (
-        "Mystical fortune-telling service menu background on warm dark amber background. "
-        "Flowing golden energy lines forming abstract decorative frame. "
-        "Dragon scales pattern subtly in background, warm amber and deep gold tones. "
-        "Premium, trustworthy aesthetic for professional fortune-telling services. "
+        "A silhouette of a mysterious fortune-teller in flowing robes stands against "
+        "a vast cosmic backdrop, surrounded by swirling celestial symbols. "
+        "Around the figure: dragon, stars, a crystal orb, zodiac symbols glowing softly. "
+        "Warm deep amber and gold background with dragon scale texture in the nebula. "
+        "Premium, authoritative, the presence of a true oracle. "
         + STYLE_SUFFIX
     ),
 }
