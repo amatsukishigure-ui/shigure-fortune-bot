@@ -69,7 +69,7 @@ EVENT_CALENDAR_FILE = KNOWLEDGE_DIR / "event_calendar.json"
 
 IMAGE_MAP_FILE = KNOWLEDGE_DIR / "image_map.json"
 IMAGE_ASSETS_DIR = BASE_DIR / "assets" / "images"
-GITHUB_RAW_BASE = "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-fortune-bot/master/assets/images"
+GITHUB_RAW_BASE = "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master"
 
 ACCOUNT_PROFILE_FILE = KNOWLEDGE_DIR / "account_profile.json"
 POST_PATTERNS_FILE = KNOWLEDGE_DIR / "post_patterns.json"
