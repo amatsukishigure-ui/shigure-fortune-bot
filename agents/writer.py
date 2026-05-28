@@ -665,9 +665,10 @@ def _build_prompt(
     elif pattern_id == "ichi_gon":
         pattern_extra = """
 ## 一言型の追加ルール
-- 1〜3行の断言型短文（80〜120文字）
+- 1〜3行の断言型短文（60〜100文字）
 - 1行目だけで「何かが変わる気がする」と思わせる言葉の密度にする
 - 説明しすぎない。余白が読者の想像力を引き出す
+- **必ず最後の1行**に「うなずいた人はいいね」「わかる人いる？」「これ、あなたのこと？」のいずれかを添える
 
 ### 心理効果
 - **アンカリング**: 断言口調（「〜だ」「〜に動く」）が「真実」として脳に刻まれやすい
@@ -755,12 +756,69 @@ def _build_prompt(
 - 構成: ① 読者の「気になるけど一歩踏み出せない」状況への共感 → ② LINEなら気軽に話せることを伝える → ③ LINE登録の誘導
 - 「鑑定の前に少し聞いてみたい」「質問だけしたい」という使い方を明示してハードルを下げる
 - 最後は「▷ LINE登録はこちら {line_url}」の形で添える
-- 150〜220文字程度。押しつけず「気軽にどうぞ」スタンスを保つ
+- 130〜180文字程度。押しつけず「気軽にどうぞ」スタンスを保つ
 
 ### 心理効果
 - **フット・イン・ザ・ドア**: LINEという最小コストの接点から始め、信頼を築いて鑑定へつなげる
 - **近接性効果**: LINEという親しみやすいツールで距離感を縮める
 - **決断の単純化**: 「登録するだけ」「質問するだけでOK」という簡単さが行動ハードルを下げる
+"""
+    elif pattern_id == "empathy_funnel":
+        pattern_extra = f"""
+## 共感ファネル型の追加ルール
+- 鑑定ページURL: {service_url}
+
+### 構成（この順番で書く）
+1. **悩みの共感フック（1〜2行）**: カギカッコで読者の内言を引用するか、「〜な人へ」で始める。誰でも「自分のことだ」と感じる状況を言語化する
+2. **龍脈命術的な原因（2〜3行）**: なぜその状態が起きているか。「方位のズレ」「気の停滞」「流れへの逆行」など龍脈命術の視点で短く説明する
+3. **解決の橋渡し（1行）**: 「向きを変えるだけで変わる」「方向を整えれば動ける」など具体的でシンプルな希望を伝える
+4. **CTA（1行）**: 「▷ まず無料鑑定から {service_url}」または「▷ 鑑定ページ {service_url}」
+
+### ルール
+- 全体140〜200文字
+- 「頑張れば変わる」ではなく「方向が変われば変わる」というメッセージに徹する
+- 読者を責めず、原因は「方位・気の流れ」に帰属させる
+- CTAは押しつけず「気になる人だけどうぞ」スタンス
+
+### 心理効果
+- **帰属の外在化**: 問題の原因を「自分の努力不足」から「方位・気の流れ」に移すことで罪悪感を取り除き、共感と安堵を生む
+- **社会的証明**: 「何人も見てきた」「よく来る相談」という表現が「自分だけじゃない」という安心を与える
+- **フット・イン・ザ・ドア**: 共感→納得→無料鑑定という段階的な誘導でハードルを下げる
+"""
+    elif pattern_id == "empathy_thread":
+        pattern_extra = f"""
+## ツリー型（共感→洞察→CTA）の追加ルール
+- 鑑定ページURL: {service_url}
+
+### 重要：出力形式
+以下の形式で3つの投稿テキストをJSON配列として出力すること：
+["1投稿目のテキスト", "2投稿目のテキスト", "3投稿目のテキスト"]
+
+### 各投稿の構成と文字数
+**1投稿目（共感フック）80〜120字**
+- 読者の「言えなかった本音」をカギカッコで引用して始める
+- 「その感覚、合ってるかもしれない」「それ、あなたのせいじゃない」で受け止める
+- この1投稿だけでも完結して読める内容にする
+
+**2投稿目（龍脈命術的洞察）100〜150字**
+- 「龍脈命術で見ると〜」で始める
+- なぜその状態が起きているか、方位・気の流れの観点から具体的に説明
+- 読んだ人が「なるほど、だからか」と思えるような原因の言語化
+
+**3投稿目（解決の一歩とCTA）80〜120字**
+- 「向かう方向がわかれば、動ける」など希望のメッセージ
+- 「まず確かめてみて」という低圧なCTA
+- 最後に「▷ 鑑定ページ {service_url}」を添える
+
+### ルール
+- 各投稿は独立して読んでも意味が通る完結した内容にする
+- 1投稿目がスクロールを止めるフックになること
+- 3投稿合計で読んで「納得→行動したい」という流れを作る
+
+### 心理効果
+- **段階的開示（ツァイガルニク効果）**: 1投稿目で「なぜ？」を作り、2投稿目で答え、3投稿目で行動へ
+- **帰属の外在化**: 問題の原因を方位・気に帰属させて共感を生む
+- **フット・イン・ザ・ドア**: 読む→共感→納得→無料CTA の段階的誘導
 """
 
     return f"""あなたは占術家「時雨（しぐれ）」として、Threadsに投稿するテキストを1本生成してください。
@@ -787,21 +845,27 @@ def _build_prompt(
 {hooks_sample}
 {rewrite_block}{pattern_extra}
 ## 生成ルール
-- 文字数: 80〜400文字（星座一覧は450文字まで可）。必ずこの範囲に収めること。
+- **文字数（最重要）**: 基本80〜180文字。パターン固有のルールがあればそちら優先。長くなるなら削る。
+  - 例外: 星座別一覧(hoshi_betsu)は〜350文字、自己診断・ランキングは〜280文字
+  - 300文字を超える投稿は読まれない。常に「削れるか？」を意識する
 - 口調は「時雨」として一貫させる
 - 1行目は必ずインパクトがある一文
 - 風水・吉方位・龍脈命術の世界観を自然に織り込む
 - 語尾に少しポップさを持たせる（「〜だよ」「〜よね」「〜してみて」なども自然に使う）
 - 最後の誘導文（「プロフィールから」等）は週1回のメニュー案内型のみ
-- 短文型（一言型・ポップ短文型）は5行以内
+- 短文型（一言型・ポップ短文型）は4行以内
 - 「占術家 時雨」のシグネチャは世界観投稿・エピソード投稿のみ末尾に追加
-- 絵文字は基本0〜2個（ポップ短文型のみ最大3個）
+- 絵文字は基本0〜1個（ポップ短文型のみ最大2個）
 - NGワードは使わない
 - 「今日」「明日」「今週」などの時間表現は必ず推定投稿時刻を基準にすること
 - 季節・節気（秋分・春分・夏至・冬至など）は必ず上記「実際の季節情報」に合った内容のみ使用すること。NG節気は絶対に使わない
 
 ## 出力
 投稿本文のみ。説明・メタ情報は不要。"""
+
+
+# ツリー投稿パターン（複数投稿を連結するパターン）
+THREAD_PATTERNS = {"empathy_thread"}
 
 
 def _generate_post(
@@ -830,6 +894,63 @@ def _generate_post(
                 return ""  # 短すぎる場合は不完全な生成として棄却
             return text
     return ""
+
+
+def _generate_thread(
+    client_obj: anthropic.Anthropic,
+    pattern: dict,
+    theme: str,
+    knowledge: dict,
+    research_topics: list,
+    analyst_feedback: str,
+    extra_hint: dict = None,
+) -> list:
+    """
+    ツリー型パターン用。Claude に JSON 配列を生成させ、投稿テキストのリストを返す。
+
+    Returns:
+        ["1投稿目", "2投稿目", "3投稿目"] または失敗時 []
+    """
+    prompt = _build_prompt(
+        pattern, theme, knowledge, research_topics,
+        analyst_feedback, "", extra_hint,
+    )
+    response = client_obj.messages.create(
+        model=MODEL_HEAVY,
+        max_tokens=4096,
+        messages=[{"role": "user", "content": prompt}],
+    )
+    raw = ""
+    for block in response.content:
+        if block.type == "text":
+            raw = block.text.strip()
+            break
+
+    if not raw:
+        return []
+
+    # JSON配列のパース（コードブロックに包まれている場合も処理）
+    import re
+    # ```json ... ``` を除去
+    cleaned = re.sub(r"```(?:json)?\s*([\s\S]*?)```", r"\1", raw).strip()
+    # 先頭の [ から末尾の ] までを抽出
+    match = re.search(r"\[[\s\S]*\]", cleaned)
+    if match:
+        cleaned = match.group(0)
+
+    try:
+        posts = json.loads(cleaned)
+        if isinstance(posts, list) and all(isinstance(p, str) for p in posts):
+            return [p.strip() for p in posts if p.strip()]
+    except json.JSONDecodeError:
+        pass
+
+    # パース失敗時：改行区切りを試みる（フォールバック）
+    lines = [l.strip() for l in raw.split("\n\n") if len(l.strip()) > 30]
+    if len(lines) >= 2:
+        return lines[:3]
+
+    return []
 
 
 def run(batch_size: int = 5) -> dict:
@@ -894,80 +1015,125 @@ def run(batch_size: int = 5) -> dict:
                 extra_hint["persona"] = persona
                 recent_persona_ids.append(persona.get("id"))
 
-        def rewrite_func(post_text: str, feedback: str, _p=pattern, _eh=extra_hint) -> str:
-            return _generate_post(
-                client_obj, _p, theme, knowledge,
+        is_thread_pattern = pattern.get("id") in THREAD_PATTERNS
+
+        if is_thread_pattern:
+            # ── ツリー投稿 ──────────────────────────────────────────
+            thread_posts = _generate_thread(
+                client_obj, pattern, theme, knowledge,
                 research_data.get("topics", []), analyst_feedback,
-                feedback_for_rewrite=feedback, extra_hint=_eh,
+                extra_hint=extra_hint,
             )
+            if not thread_posts or len(thread_posts) < 2:
+                rejected += 1
+                details.append({"status": "rejected_thread_empty", "theme": theme})
+                continue
 
-        # 初回生成
-        first_draft = _generate_post(
-            client_obj, pattern, theme, knowledge,
-            research_data.get("topics", []), analyst_feedback,
-            extra_hint=extra_hint,
-        )
-        if not first_draft:
-            rejected += 1
-            continue
+            # 先頭投稿を代表テキストとして扱う（品質・類似度チェック用）
+            representative = thread_posts[0]
+            is_dup, sim_score = checker.is_duplicate(representative)
+            if is_dup:
+                rejected += 1
+                details.append({"status": "rejected_similarity", "similarity": sim_score, "theme": theme})
+                continue
 
-        # 品質チェック
-        result = score_with_retry(
-            first_draft, knowledge["profile"],
-            rewrite_func=rewrite_func, max_retries=MAX_QUALITY_RETRIES,
-        )
-        if not result["accepted"]:
-            rejected += 1
-            details.append({"status": "rejected_quality", "score": result["score_result"]["average"], "theme": theme})
-            continue
+            threads_text = format_for_threads(representative)
+            post_obj = {
+                "text": threads_text,
+                "thread_posts": [format_for_threads(p) for p in thread_posts],
+                "theme": theme,
+                "pattern_id": pattern.get("id"),
+                "quality_score": 0.0,
+                "attempts": 1,
+            }
+            enqueue_post(post_obj)
+            queued_threads += 1
+            checker.add_to_corpus(representative)
+            recent_patterns.append(pattern.get("id"))
+            recent_themes.append(theme)
+            details.append({
+                "status": "queued_thread",
+                "theme": theme,
+                "pattern": pattern.get("name"),
+                "thread_count": len(thread_posts),
+                "preview": threads_text[:50] + "...",
+            })
+        else:
+            # ── 通常投稿 ─────────────────────────────────────────────
+            def rewrite_func(post_text: str, feedback: str, _p=pattern, _eh=extra_hint) -> str:
+                return _generate_post(
+                    client_obj, _p, theme, knowledge,
+                    research_data.get("topics", []), analyst_feedback,
+                    feedback_for_rewrite=feedback, extra_hint=_eh,
+                )
 
-        final_post = result["post"]
+            # 初回生成
+            first_draft = _generate_post(
+                client_obj, pattern, theme, knowledge,
+                research_data.get("topics", []), analyst_feedback,
+                extra_hint=extra_hint,
+            )
+            if not first_draft:
+                rejected += 1
+                continue
 
-        # 類似度チェック
-        is_dup, sim_score = checker.is_duplicate(final_post)
-        if is_dup:
-            rejected += 1
-            details.append({"status": "rejected_similarity", "similarity": sim_score, "theme": theme})
-            continue
+            # 品質チェック
+            result = score_with_retry(
+                first_draft, knowledge["profile"],
+                rewrite_func=rewrite_func, max_retries=MAX_QUALITY_RETRIES,
+            )
+            if not result["accepted"]:
+                rejected += 1
+                details.append({"status": "rejected_quality", "score": result["score_result"]["average"], "theme": theme})
+                continue
 
-        # Threads版・X版を生成
-        threads_text = format_for_threads(final_post)
-        hashtags = get_x_hashtags_for_theme(theme)
-        x_text = format_for_x(final_post, hashtags)
+            final_post = result["post"]
 
-        post_obj = {
-            "text": threads_text,
-            "x_text": x_text,
-            "theme": theme,
-            "pattern_id": pattern.get("id"),
-            "quality_score": result["score_result"]["average"],
-            "attempts": result["attempts"],
-        }
-        # ペルソナIDを記録（重複防止のため）
-        if extra_hint.get("persona"):
-            post_obj["persona_id"] = extra_hint["persona"].get("id")
+            # 類似度チェック
+            is_dup, sim_score = checker.is_duplicate(final_post)
+            if is_dup:
+                rejected += 1
+                details.append({"status": "rejected_similarity", "similarity": sim_score, "theme": theme})
+                continue
 
-        # Threadsキューに追加
-        enqueue_post(post_obj)
-        queued_threads += 1
+            # Threads版・X版を生成
+            threads_text = format_for_threads(final_post)
+            hashtags = get_x_hashtags_for_theme(theme)
+            x_text = format_for_x(final_post, hashtags)
 
-        # X対応パターンならXキューにも追加
-        if "x" in pattern.get("platforms", []):
-            enqueue_x_post(post_obj)
-            queued_x += 1
+            post_obj = {
+                "text": threads_text,
+                "x_text": x_text,
+                "theme": theme,
+                "pattern_id": pattern.get("id"),
+                "quality_score": result["score_result"]["average"],
+                "attempts": result["attempts"],
+            }
+            # ペルソナIDを記録（重複防止のため）
+            if extra_hint.get("persona"):
+                post_obj["persona_id"] = extra_hint["persona"].get("id")
 
-        checker.add_to_corpus(final_post)
-        recent_patterns.append(pattern.get("id"))
-        recent_themes.append(theme)
+            # Threadsキューに追加
+            enqueue_post(post_obj)
+            queued_threads += 1
 
-        details.append({
-            "status": "queued",
-            "score": result["score_result"]["average"],
-            "theme": theme,
-            "pattern": pattern.get("name"),
-            "x_queued": "x" in pattern.get("platforms", []),
-            "preview": threads_text[:50] + "...",
-        })
+            # X対応パターンならXキューにも追加
+            if "x" in pattern.get("platforms", []):
+                enqueue_x_post(post_obj)
+                queued_x += 1
+
+            checker.add_to_corpus(final_post)
+            recent_patterns.append(pattern.get("id"))
+            recent_themes.append(theme)
+
+            details.append({
+                "status": "queued",
+                "score": result["score_result"]["average"],
+                "theme": theme,
+                "pattern": pattern.get("name"),
+                "x_queued": "x" in pattern.get("platforms", []),
+                "preview": threads_text[:50] + "...",
+            })
 
     return {
         "generated": batch_size,
