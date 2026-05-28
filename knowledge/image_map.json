@@ -1,0 +1,66 @@
+{
+  "_comment": "画像ファイルは assets/images/ に置いてください。存在しないファイルは自動スキップされます。",
+  "image_post_probability": 0.45,
+
+  "zodiac": {
+    "牡羊座": "zodiac/aries.jpg",
+    "牡牛座": "zodiac/taurus.jpg",
+    "双子座": "zodiac/gemini.jpg",
+    "蟹座":   "zodiac/cancer.jpg",
+    "獅子座": "zodiac/leo.jpg",
+    "乙女座": "zodiac/virgo.jpg",
+    "天秤座": "zodiac/libra.jpg",
+    "蠍座":   "zodiac/scorpio.jpg",
+    "射手座": "zodiac/sagittarius.jpg",
+    "山羊座": "zodiac/capricorn.jpg",
+    "水瓶座": "zodiac/aquarius.jpg",
+    "魚座":   "zodiac/pisces.jpg"
+  },
+
+  "direction": {
+    "北":   "direction/north.jpg",
+    "北東": "direction/northeast.jpg",
+    "東":   "direction/east.jpg",
+    "南東": "direction/southeast.jpg",
+    "南":   "direction/south.jpg",
+    "南西": "direction/southwest.jpg",
+    "西":   "direction/west.jpg",
+    "北西": "direction/northwest.jpg"
+  },
+
+  "season": {
+    "春": "season/spring.jpg",
+    "夏": "season/summer.jpg",
+    "秋": "season/autumn.jpg",
+    "冬": "season/winter.jpg",
+    "梅雨": "season/summer.jpg",
+    "立春": "season/spring.jpg",
+    "春分": "season/spring.jpg",
+    "夏至": "season/summer.jpg",
+    "秋分": "season/autumn.jpg",
+    "冬至": "season/winter.jpg",
+    "節分": "season/winter.jpg"
+  },
+
+  "pattern_defaults": {
+    "zodiac_target":    "zodiac/general.jpg",
+    "hoshi_betsu":      "zodiac/general.jpg",
+    "kaiun_day":        "direction/compass.jpg",
+    "gyoretsu":         "fengshui/general.jpg",
+    "engimono":         "fengshui/general.jpg",
+    "mizu":             "fengshui/water.jpg",
+    "caligula":         "general/mystery_1.jpg",
+    "empathy_funnel":   "general/mystery_2.jpg",
+    "empathy_thread":   "general/mystery_2.jpg",
+    "ichi_gon":         "general/ichi_gon.jpg",
+    "menu_guide":       "general/menu.jpg",
+    "line_cta":         null,
+    "follow_cta":       null
+  },
+
+  "defaults": [
+    "general/fortune_1.jpg",
+    "general/fortune_2.jpg",
+    "general/fortune_3.jpg"
+  ]
+}
