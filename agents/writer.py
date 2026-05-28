@@ -1061,6 +1061,9 @@ def run(batch_size: int = 5) -> dict:
                 "quality_score": 0.0,
                 "attempts": 1,
             }
+            # 星座ブーストを記録（画像選択で使用）
+            if extra_hint.get("zodiac_boost"):
+                post_obj["zodiac_boost"] = extra_hint["zodiac_boost"]
             enqueue_pending(post_obj)
             queued_threads += 1
             checker.add_to_corpus(representative)
@@ -1129,6 +1132,10 @@ def run(batch_size: int = 5) -> dict:
             # ペルソナIDを記録（重複防止のため）
             if extra_hint.get("persona"):
                 post_obj["persona_id"] = extra_hint["persona"].get("id")
+
+            # 星座ブーストを記録（画像選択で使用）
+            if extra_hint.get("zodiac_boost"):
+                post_obj["zodiac_boost"] = extra_hint["zodiac_boost"]
 
             # 承認待ちに追加（承認後にポスターが投稿する）
             enqueue_pending(post_obj)

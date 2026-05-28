@@ -49,7 +49,9 @@ def _select_image(post: dict) -> str | None:
     pattern_id = post.get("pattern_id", "")
     theme = post.get("theme", "")
     text = post.get("text", "")
-    zodiac_boost = post.get("zodiac_boost", "")
+    # 絵文字プレフィックスを除去（例: "♌獅子座" → "獅子座"）
+    _raw_boost = post.get("zodiac_boost", "")
+    zodiac_boost = _raw_boost.lstrip("♈♉♊♋♌♍♎♏♐♑♒♓").strip() if _raw_boost else ""
 
     def resolve(filename: str | None) -> str | None:
         """ファイルが assets/images/ に実在すればGitHub Raw URLを返す"""
