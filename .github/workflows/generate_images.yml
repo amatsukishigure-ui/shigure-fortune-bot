@@ -6,7 +6,7 @@ on:
       force:
         description: '既存画像を上書き再生成する (yes / no)'
         required: false
-        default: 'no'
+        default: 'yes'
       only:
         description: '特定の画像だけ生成 (例: zodiac/leo.jpg、空欄=全件)'
         required: false
