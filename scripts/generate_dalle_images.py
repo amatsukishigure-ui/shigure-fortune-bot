@@ -6,9 +6,12 @@ gpt-image-1 による占い系素材画像 一括生成スクリプト（時雨 
 既存の Pillow 版画像を差し替えます。
 
 使い方:
-  python scripts/generate_dalle_images.py           # 全35枚を生成（スキップあり）
-  python scripts/generate_dalle_images.py --force   # すでにある画像も上書き
-  python scripts/generate_dalle_images.py --dry     # プロンプトだけ確認（API非消費）
+  python scripts/generate_dalle_images.py                          # 全35枚を生成（スキップあり）
+  python scripts/generate_dalle_images.py --force                  # すでにある画像も上書き
+  python scripts/generate_dalle_images.py --dry                    # プロンプトだけ確認（API非消費）
+  python scripts/generate_dalle_images.py --push                   # 生成後に shigure-images へ自動 push
+  python scripts/generate_dalle_images.py --force --push           # 上書き生成 + 自動 push
+  python scripts/generate_dalle_images.py --images-repo PATH       # shigure-images のパスを手動指定
 
 必要パッケージ:
   pip install openai pillow
@@ -21,6 +24,8 @@ import io
 import sys
 import base64
 import time
+import shutil
+import subprocess
 import argparse
 from pathlib import Path
 
@@ -341,11 +346,68 @@ def convert_to_jpeg(png_bytes: bytes, quality: int = 92) -> bytes:
     return buf.getvalue()
 
 
+def push_to_images_repo(images_repo: Path) -> bool:
+    """
+    assets/images/ の内容を shigure-images リポジトリにコピーして push する。
+    Returns: True=成功, False=失敗
+    """
+    if not images_repo.exists():
+        print(f"  ❌ shigure-images ディレクトリが見つかりません: {images_repo}")
+        print(f"     --images-repo オプションでパスを指定してください。")
+        return False
+
+    print(f"\n  📂 shigure-images へコピー: {images_repo}")
+    copied = 0
+    for src in ASSETS_DIR.rglob("*.jpg"):
+        if "_dalle_samples" in src.parts:
+            continue
+        rel = src.relative_to(ASSETS_DIR)
+        dst = images_repo / rel
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(src, dst)
+        copied += 1
+    print(f"  {copied} ファイルをコピー")
+
+    # git add / commit / push
+    try:
+        subprocess.run(
+            ["git", "-C", str(images_repo), "add", "-A"],
+            check=True, capture_output=True,
+        )
+        result = subprocess.run(
+            ["git", "-C", str(images_repo), "diff", "--cached", "--quiet"],
+            capture_output=True,
+        )
+        if result.returncode == 0:
+            print("  ℹ️  差分なし — push をスキップ")
+            return True
+
+        subprocess.run(
+            ["git", "-C", str(images_repo), "commit",
+             "-m", "update: gpt-image-1 assets"],
+            check=True, capture_output=True,
+        )
+        subprocess.run(
+            ["git", "-C", str(images_repo), "push"],
+            check=True, capture_output=True,
+        )
+        print("  ✅ shigure-images へ push しました")
+        return True
+
+    except subprocess.CalledProcessError as e:
+        print(f"  ❌ git エラー: {e.stderr.decode(errors='replace') if e.stderr else e}")
+        return False
+
+
 def main():
     parser = argparse.ArgumentParser(description="gpt-image-1 で占い素材画像を生成")
     parser.add_argument("--force", action="store_true", help="既存ファイルも上書き")
     parser.add_argument("--dry", action="store_true", help="プロンプト確認のみ（API非消費）")
     parser.add_argument("--only", type=str, default="", help="指定キーだけ生成 (例: zodiac/leo.jpg)")
+    parser.add_argument("--push", action="store_true",
+                        help="生成後に shigure-images リポジトリへ自動コピー＆push")
+    parser.add_argument("--images-repo", type=str, default="",
+                        help="shigure-images リポジトリのパス（省略時は ../shigure-images）")
     args = parser.parse_args()
 
     if args.dry:
@@ -420,12 +482,15 @@ def main():
     print(f"  完了: {done}枚生成 / {skipped}枚スキップ / {failed}枚失敗")
     print(f"{'='*60}\n")
 
-    if done > 0:
-        print("  次のステップ: shigure-images リポジトリに push")
-        print(f"  cd C:\\Users\\Uvoic\\.claude\\projects\\shigure-images")
-        print(f"  xcopy /E /Y ..\\threads_agent\\assets\\images\\* .\\")
-        print(f"  git add -A && git commit -m 'update: gpt-image-1 assets'")
-        print(f"  git push\n")
+    if done > 0 and args.push:
+        images_repo = (
+            Path(args.images_repo) if args.images_repo
+            else BASE_DIR.parent / "shigure-images"
+        )
+        push_to_images_repo(images_repo)
+    elif done > 0:
+        print("  ヒント: --push オプションを付けると shigure-images へ自動 push できます")
+        print(f"  例: python scripts/generate_dalle_images.py --force --push\n")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,78 @@
+name: shigure-generate-images
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: '既存画像を上書き再生成する (yes / no)'
+        required: false
+        default: 'no'
+      only:
+        description: '特定の画像だけ生成 (例: zodiac/leo.jpg、空欄=全件)'
+        required: false
+        default: ''
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout main repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+
+      - name: checkout shigure-images repo
+        uses: actions/checkout@v4
+        with:
+          repository: amatsukishigure-ui/shigure-images
+          path: shigure-images
+          token: ${{ secrets.GH_PAT }}
+
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: install dependencies
+        run: pip install openai pillow
+
+      - name: create env file
+        run: |
+          printf 'OPENAI_API_KEY=%s\n' '${{ secrets.OPENAI_API_KEY }}' > .env
+
+      - name: generate images
+        run: |
+          FLAGS=""
+          if [ "${{ github.event.inputs.force }}" = "yes" ]; then
+            FLAGS="--force"
+          fi
+          if [ -n "${{ github.event.inputs.only }}" ]; then
+            FLAGS="$FLAGS --only ${{ github.event.inputs.only }}"
+          fi
+          echo "Running: python scripts/generate_dalle_images.py $FLAGS"
+          python scripts/generate_dalle_images.py $FLAGS
+        env:
+          PYTHONIOENCODING: utf-8
+
+      - name: copy images to shigure-images
+        run: |
+          # assets/images/ の内容を shigure-images/ にコピー（_dalle_samples は除外）
+          rsync -av --exclude='_dalle_samples' assets/images/ shigure-images/
+
+      - name: push shigure-images
+        run: |
+          cd shigure-images
+          git config user.name "shigure-bot"
+          git config user.email "bot@shigure-fortune.local"
+          git add -A
+          git diff --cached --quiet || git commit -m "update: gpt-image-1 assets $(date -u +'%Y-%m-%d')"
+          git push
+
+      - name: save assets to main repo
+        run: |
+          git config user.name "shigure-bot"
+          git config user.email "bot@shigure-fortune.local"
+          git add assets/
+          git diff --cached --quiet || git commit -m "bot: update image assets $(date -u +'%Y-%m-%d')"
+          git push
