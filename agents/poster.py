@@ -345,7 +345,7 @@ def run() -> dict:
         post["posted_at"] = datetime.now().isoformat()
         post["is_mock"] = result.get("mock", False)
         post["has_image"] = result.get("has_image", False)
-        if image_url:
+        if post["has_image"] and image_url:   # フォールバックでテキスト投稿になった場合は記録しない
             post["image_url"] = image_url
         add_to_history(post)
         clear_errors("poster")

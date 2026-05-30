@@ -58,8 +58,8 @@ ZODIAC_SIGNS = [
     "♐射手座", "♑山羊座", "♒水瓶座", "♓魚座",
 ]
 
-# GitHub Actionsのスケジュール（JST）
-SCHEDULED_HOURS_JST = [10, 12, 14, 16, 18, 20, 22]
+# GitHub Actionsのスケジュール（JST） — config.POST_SLOTS と必ず一致させること
+from config import POST_SLOTS as SCHEDULED_HOURS_JST  # noqa: E402
 JST = timezone(timedelta(hours=9))
 WEEKDAY_JP = ["月", "火", "水", "木", "金", "土", "日"]
 
