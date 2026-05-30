@@ -62,27 +62,33 @@ def _select_image(post: dict) -> str | None:
             return f"{GITHUB_RAW_BASE}/{filename}"
         return None
 
-    # 優先1: zodiac_boost（星座ターゲット指定あり）
+    # 優先1: zodiac_boost（ライターが明示的に星座ターゲットを指定）
     if zodiac_boost:
         url = resolve(image_map.get("zodiac", {}).get(zodiac_boost))
         if url:
             return url
 
-    # 優先2: 星座キーワード（「東京」「関西」などの誤マッチを防ぐため方位より先）
+    # 優先2: パターンIDのデフォルト画像
+    #   投稿タイプ（方位・風水・メニューなど）が最も確実な指標。
+    #   例: kaiun_day（吉方位投稿）が「蟹座の方は…」と書いても
+    #       パターンに紐づく方位画像を優先する。
+    fname = image_map.get("pattern_defaults", {}).get(pattern_id)
+    url = resolve(fname)
+    if url:
+        return url
+
+    # 優先3: 星座キーワード
+    #   パターンデフォルトがない投稿でのみ発動（汎用・共感系など）
     for kw, fname in image_map.get("zodiac", {}).items():
         if kw in text or kw in theme:
             url = resolve(fname)
             if url:
                 return url
 
-    # 優先3: パターンIDのデフォルト画像（コンテンツ種別が最も信頼できる指標）
-    fname = image_map.get("pattern_defaults", {}).get(pattern_id)
-    url = resolve(fname)
-    if url:
-        return url
-
-    # 優先4: 方位キーワード（image_map.json 側で長めのキーワードに制限済み）
+    # 優先4: 方位キーワード（複合語のみ — 「東京」「関西」には反応しない）
     for kw, fname in image_map.get("direction", {}).items():
+        if kw.startswith("_"):   # _comment などのメタキーを無視
+            continue
         if kw in text or kw in theme:
             url = resolve(fname)
             if url:
