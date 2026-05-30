@@ -68,32 +68,32 @@ def _select_image(post: dict) -> str | None:
         if url:
             return url
 
-    # 優先2: テキスト・テーマに含まれる方位キーワード
-    for kw, fname in image_map.get("direction", {}).items():
-        if kw in text or kw in theme:
-            url = resolve(fname)
-            if url:
-                return url
-
-    # 優先3: 星座キーワード
+    # 優先2: 星座キーワード（「東京」「関西」などの誤マッチを防ぐため方位より先）
     for kw, fname in image_map.get("zodiac", {}).items():
         if kw in text or kw in theme:
             url = resolve(fname)
             if url:
                 return url
 
-    # 優先4: 季節キーワード
-    for kw, fname in image_map.get("season", {}).items():
+    # 優先3: パターンIDのデフォルト画像（コンテンツ種別が最も信頼できる指標）
+    fname = image_map.get("pattern_defaults", {}).get(pattern_id)
+    url = resolve(fname)
+    if url:
+        return url
+
+    # 優先4: 方位キーワード（image_map.json 側で長めのキーワードに制限済み）
+    for kw, fname in image_map.get("direction", {}).items():
         if kw in text or kw in theme:
             url = resolve(fname)
             if url:
                 return url
 
-    # 優先5: パターンIDのデフォルト画像
-    fname = image_map.get("pattern_defaults", {}).get(pattern_id)
-    url = resolve(fname)
-    if url:
-        return url
+    # 優先5: 季節キーワード
+    for kw, fname in image_map.get("season", {}).items():
+        if kw in text or kw in theme:
+            url = resolve(fname)
+            if url:
+                return url
 
     # 優先6: グローバルデフォルト（存在するものからランダム）
     available = [f for f in image_map.get("defaults", []) if resolve(f)]
