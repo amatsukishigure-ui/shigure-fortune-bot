@@ -2270,5 +2270,23 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-05-30T09:00:48.229828"
+  },
+  {
+    "text": "土曜の夜、窓を少しだけ開けてみて。\n\n週末の家には一週間ぶんの気が溜まってる。南側の窓がベストだけど、なければどこでも大丈夫。夜風が通り抜けた部屋で眠ると、日曜の流れがまるで変わるよ🌿",
+    "x_text": "土曜の夜、窓を少しだけ開けてみて。\n\n週末の家には一週間ぶんの気が溜まってる。南側の窓がベストだけど、なければどこでも大丈夫。夜風が通り抜けた部屋で眠ると、日曜の流れがまるで変わるよ🌿\n\n#占い #時雨 #開運 #風水",
+    "theme": "開運行動/週末の整え方",
+    "pattern_id": "pop_short",
+    "quality_score": 7.6,
+    "attempts": 2,
+    "x_eligible": true,
+    "zodiac_boost": "♋蟹座",
+    "pending_at": "2026-05-29T06:52:18.556043",
+    "queued_at": "2026-05-29T06:52:30.075020",
+    "threads_post_id": "17913696660392657",
+    "posted_at": "2026-05-30T10:43:16.130287",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/cancer.jpg",
+    "recorded_at": "2026-05-30T10:43:16.133432"
   }
 ]
