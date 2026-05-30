@@ -326,6 +326,18 @@ def cmd_optimize_schedule():
     print(f"\n{'='*55}\n")
 
 
+def cmd_reply():
+    """コメントへの自動返信（毎投稿スロットで呼ばれる）"""
+    if is_killed():
+        return
+    from agents import replier
+    result = replier.run()
+    if result["replied"] > 0:
+        print(f"💬 リプライヤー: {result['replied']}件返信")
+    elif result.get("errors", 0) > 0:
+        print(f"⚠️  リプライヤー: エラー {result['errors']}件")
+
+
 def cmd_kill():
     from agents.supervisor import kill
     kill("CLIから手動停止")
@@ -341,6 +353,7 @@ def cmd_revive():
 COMMANDS = {
     "daily":    cmd_daily,
     "post":     cmd_post,
+    "reply":    cmd_reply,
     "status":   cmd_status,
     "review":   cmd_review,
     "approve":  cmd_approve,

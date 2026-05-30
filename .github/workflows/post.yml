@@ -69,6 +69,9 @@ jobs:
 
             echo "Running post"
             python main.py post threads
+
+            echo "Running replier"
+            python main.py reply
           fi
         env:
           PYTHONIOENCODING: utf-8

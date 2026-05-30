@@ -44,8 +44,18 @@ def _get_post_replies(post_id: str) -> list:
     }
     try:
         resp = requests.get(url, params=params, timeout=10)
-        resp.raise_for_status()
-        return resp.json().get("data", [])
+        if not resp.ok:
+            body = resp.json() if resp.content else {}
+            err = body.get("error", {})
+            print(f"  コメント取得失敗 [{post_id}] HTTP{resp.status_code}: "
+                  f"{err.get('message', resp.text[:120])}")
+            # 権限不足（#200/#10/OAuthException）は早期リターン
+            if err.get("code") in (200, 10) or err.get("type") == "OAuthException":
+                print("  ⚠️  アクセストークンに threads_read_replies 権限が必要です")
+                return []
+            return []
+        data = resp.json().get("data", [])
+        return data
     except Exception as e:
         print(f"  コメント取得エラー [{post_id}]: {e}")
         return []
@@ -135,6 +145,8 @@ def run() -> dict:
     skipped = 0
     errors = 0
 
+    own_username = profile.get("accounts", {}).get("threads", "").lstrip("@").lower()
+
     for post in target_posts:
         if replied >= MAX_REPLIES_PER_RUN:
             break
@@ -150,8 +162,9 @@ def run() -> dict:
             cid = comment.get("id", "")
             comment_text = comment.get("text", "").strip()
 
-            # 自分自身のコメントはスキップ
-            if comment.get("username") == profile.get("accounts", {}).get("threads"):
+            # 自分自身のコメントはスキップ（@ なし・大小文字無視）
+            commenter = comment.get("username", "").lstrip("@").lower()
+            if own_username and commenter == own_username:
                 skipped += 1
                 continue
 
