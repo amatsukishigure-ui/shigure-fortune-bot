@@ -340,10 +340,13 @@ def _build_prompt(
 """
     elif pattern_id == "zodiac_target":
         zodiac = extra_hint.get("zodiac", "♈牡羊座")
+        # 絵文字マークを抽出（例: "♐射手座" → "♐"）
+        _zm = zodiac[0] if zodiac and not zodiac[0].isalpha() and not '぀' <= zodiac[0] <= '鿿' else ""
+        _zn = zodiac.lstrip("♈♉♊♋♌♍♎♏♐♑♒♓").strip()
         pattern_extra = f"""
 ## 星座ターゲット型の追加ルール
 - この投稿は「{zodiac}」の人向け
-- 冒頭を「{zodiac}さんへ。」で始める
+- **必須**: 冒頭1行目を「{_zm} {_zn}さんへ。」の形で始める（星座マーク {_zm} を必ず含める）
 - その星座に合った吉方位・今週の運気・アドバイスを1〜2点伝える
 - 100〜200文字のコンパクトな内容
 - 語尾はやや親しみやすく（「〜してみてね」「〜がいいよ」など）
@@ -435,9 +438,15 @@ def _build_prompt(
 """
     elif pattern_id == "caligula":
         zodiac = extra_hint.get("zodiac", "")
-        zodiac_hint = f"今回のターゲット星座: {zodiac}" if zodiac else ""
+        # 絵文字なし星座名（例: "♐射手座" → "射手座"）
+        zodiac_name = zodiac.lstrip("♈♉♊♋♌♍♎♏♐♑♒♓").strip() if zodiac else ""
+        # 絵文字のみ（例: "♐"）
+        zodiac_mark = zodiac[0] if zodiac and not zodiac[0].isalpha() and not '぀' <= zodiac[0] <= '鿿' else ""
+        zodiac_hint = f"今回のターゲット星座: {zodiac}（絵文字: {zodiac_mark}　名称: {zodiac_name}）" if zodiac else ""
         pattern_extra = f"""
 ## カリギュラ型の必須構造（3段構成）
+
+{"### ⚠️ 星座指定あり: 必ず冒頭1行目に「" + zodiac_mark + " " + zodiac_name + "さんへ」または「" + zodiac_mark + " " + zodiac_name + "は〜」の形で星座マークを入れること" if zodiac else ""}
 
 ### ① 制限ターゲット（冒頭）
 特定の状況・タイプ・星座を絞り込む。
@@ -1171,7 +1180,9 @@ def run(batch_size: int = 5) -> dict:
         import random as _random
         extra_hint = {"estimated_post_time": est_post_time}
         if pattern.get("id") in ("zodiac_target", "caligula"):
-            extra_hint["zodiac"] = _pick_zodiac()
+            _zodiac_val = _pick_zodiac()
+            extra_hint["zodiac"] = _zodiac_val
+            extra_hint["zodiac_boost"] = _zodiac_val  # 画像選択にも使う
         elif pattern.get("id") in ("kyokan", "list", "trivia", "empathy_funnel", "engagement_hook", "pop_short"):
             # 50%の確率で星座ブーストを適用（コンテンツを特定星座に自然にターゲット）
             if _random.random() < 0.5:
