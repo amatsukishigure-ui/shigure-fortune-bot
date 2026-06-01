@@ -756,16 +756,26 @@ def _build_prompt(
         pattern_extra = f"""
 ## LINE誘導型の追加ルール
 - LINE公式アカウントURL: {line_url}
-- 鑑定申込（有料）より一段ハードルの低い「まず話せる場所」として位置づける
-- 構成: ① 読者の「気になるけど一歩踏み出せない」状況への共感 → ② LINEなら気軽に話せることを伝える → ③ LINE登録の誘導
-- 「鑑定の前に少し聞いてみたい」「質問だけしたい」という使い方を明示してハードルを下げる
-- 最後は「▷ LINE登録はこちら {line_url}」の形で添える
-- 130〜180文字程度。押しつけず「気軽にどうぞ」スタンスを保つ
+- 鑑定ページURL（参考）: {service_url}
 
-### 心理効果
-- **フット・イン・ザ・ドア**: LINEという最小コストの接点から始め、信頼を築いて鑑定へつなげる
-- **近接性効果**: LINEという親しみやすいツールで距離感を縮める
-- **決断の単純化**: 「登録するだけ」「質問するだけでOK」という簡単さが行動ハードルを下げる
+### 構成（180〜240字）
+**① 読者の状況への共感（冒頭1〜2行）**
+- 「〇〇している人へ」「〇〇で止まっている人へ」など具体的な読者像を最初の一行に置く
+- HARM法則のいずれかの痛み（キャリア・恋愛・健康・お金）を選んで刺さる一行にする
+
+**② LINEで何ができるかを具体的に示す（2〜3行）**
+- 「質問だけでも大丈夫」「話を聞いてもらうだけでいい」など超低コストの行動を示す
+- 「申し込みの前に試せる場所」という位置づけを明確にする
+- 費用なし・申込不要・気軽の3点を自然に伝える
+
+**③ 行動指示（1行）**
+- 「▷ LINE {line_url}」でシンプルに締める
+- 「気が向いたら」「まずは登録だけ」など余裕のある誘導
+
+### 禁止
+- 「今すぐ」「急いで」「限定」などの強制的な表現
+- 長々とLINEのメリットを説明する（読まれない）
+- 「〜お待ちしております」などの硬い敬語
 """
     elif pattern_id == "empathy_funnel":
         pattern_extra = f"""
@@ -825,9 +835,15 @@ def _build_prompt(
 - **フット・イン・ザ・ドア**: 読む→共感→納得→無料CTA の段階的誘導
 """
 
-    elif pattern_id == "harm_funnel":
+    elif pattern_id in ("harm_funnel", "harm_line"):
         import random as _rnd2
         harm_data = knowledge.get("harm", {})
+        line_url = knowledge.get("profile", {}).get("line_url", "https://lin.ee/TJg5dru")
+        is_line_cta = (pattern_id == "harm_line")
+        cta_url = line_url if is_line_cta else service_url
+        cta_label = "LINE" if is_line_cta else "無料鑑定"
+        cta_action = f"▷ LINE https://lin.ee/TJg5dru" if is_line_cta else f"▷ まず無料鑑定から {service_url}"
+
         # カテゴリ選択（extra_hintで指定されていればそれを使う）
         harm_cat = (extra_hint or {}).get("harm_category")
         if not harm_cat or harm_cat not in harm_data:
@@ -860,9 +876,19 @@ def _build_prompt(
         else:
             persona_block = "（ペルソナなし：実際の鑑定例として自由に作成）"
 
+        cta_instruction = (
+            f"**④ LINE誘導（1〜2行）**\n"
+            f"- 「鑑定の申し込みより前に、まずLINEで話してほしい」という低コスト行動を提示\n"
+            f"- 「相談だけでも、聞いてもらうだけでも大丈夫」という安心感を添える\n"
+            f"- 「{cta_action}」で締める"
+        ) if is_line_cta else (
+            f"**④ 希望＋CTA（1〜2行）**\n"
+            f"- 「向きを変えるだけで動けた方を何人も見てきた」など変化の可能性を示す\n"
+            f"- 「{cta_action}」で締める"
+        )
+
         pattern_extra = f"""
-## HARM共感ファネル型の追加ルール
-- 鑑定ページURL: {service_url}
+## HARM共感{'LINE誘導' if is_line_cta else 'ファネル'}型の追加ルール
 
 ### 今回のHARMカテゴリ: {cat_label}
 このカテゴリの読者が抱えている痛みの例：
@@ -871,27 +897,21 @@ def _build_prompt(
 ### 参照ペルソナ（実際の鑑定例として活用）
 {persona_block}
 
-### 構成（200〜280字）
+### 構成（{'180〜240' if is_line_cta else '200〜280'}字）
 **① 痛みの言語化（冒頭1〜2行）**
 - 上記ペインの中から最も刺さるものを読者の内言「」で表現
-- 例: 「3年間、同じ場所で止まっている気がする」
 
 **② 受け止め（1行）**
 - 「それ、意志が弱いんじゃない」「あなたのせいじゃないかもしれない」など
-- 自己否定から解放する一言
 
 **③ 龍脈命術的原因の開示（2〜3行）**
-- なぜその状態が起きているか、方位・気の流れで説明
-- 参照ペルソナの revelation を参考に、具体的かつ納得感のある原因を示す
-- 「〇〇さんのように〜」と実例を匂わせてもよい
+- 方位・気の流れで具体的に説明
+- 参照ペルソナの revelation を参考にする
 
-**④ 希望＋CTA（1〜2行）**
-- 「向きを変えるだけで動けた方を何人も見てきた」など変化の可能性を示す
-- 「▷ まず無料鑑定から {service_url}」で締める
+{cta_instruction}
 
 ### 禁止事項
-- 「きっと大丈夫です」などの根拠のない励まし NG
-- 「方位を変えれば必ず〜」など断言しすぎ NG
+- 根拠のない励まし・断言しすぎ NG
 - 4行以上の長い一段落は避ける（空白行で呼吸を作ること）
 """
 
@@ -1131,7 +1151,7 @@ def run(batch_size: int = 5) -> dict:
             if persona:
                 extra_hint["persona"] = persona
                 recent_persona_ids.append(persona.get("id"))
-        elif pattern.get("id") == "harm_funnel":
+        elif pattern.get("id") in ("harm_funnel", "harm_line"):
             # HARMカテゴリをランダム選択してペルソナをマッチング
             harm_data = knowledge.get("harm", {})
             harm_cats = [k for k in harm_data if not k.startswith("_")]
