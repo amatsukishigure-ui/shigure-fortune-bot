@@ -16,7 +16,7 @@ from config import (
     ANTHROPIC_API_KEY, MODEL_HEAVY,
     MAX_QUALITY_RETRIES, MAX_SAME_PATTERN_CONSECUTIVE, MAX_SAME_THEME_CONSECUTIVE,
     ACCOUNT_PROFILE_FILE, POST_PATTERNS_FILE, THEME_TREE_FILE, HOOK_EXAMPLES_FILE,
-    PERSONAS_FILE, CONTENT_SCHEDULE, DATA_DIR,
+    PERSONAS_FILE, HARM_FILE, CONTENT_SCHEDULE, DATA_DIR,
 )
 from core.state import (
     load_json, load_history, load_research, enqueue_post, enqueue_pending,
@@ -35,6 +35,7 @@ def _load_knowledge() -> dict:
         "theme_tree": load_json(THEME_TREE_FILE, default={}),
         "hook_examples": load_json(HOOK_EXAMPLES_FILE, default=[]),
         "personas": personas_data.get("personas", []),
+        "harm": load_json(HARM_FILE, default={}),
     }
 
 
@@ -824,9 +825,79 @@ def _build_prompt(
 - **フット・イン・ザ・ドア**: 読む→共感→納得→無料CTA の段階的誘導
 """
 
+    elif pattern_id == "harm_funnel":
+        import random as _rnd2
+        harm_data = knowledge.get("harm", {})
+        # カテゴリ選択（extra_hintで指定されていればそれを使う）
+        harm_cat = (extra_hint or {}).get("harm_category")
+        if not harm_cat or harm_cat not in harm_data:
+            harm_cat = _rnd2.choice([k for k in harm_data if not k.startswith("_")])
+        cat = harm_data[harm_cat]
+        cat_label = cat.get("label", harm_cat)
+        pains = cat.get("pains", [])
+        # 3つのペイン例をランダム選択して提示
+        sample_pains = _rnd2.sample(pains, min(3, len(pains)))
+        pains_text = "\n".join(f"  - 「{p}」" for p in sample_pains)
+
+        # 対応するペルソナを探す
+        persona_tags = cat.get("persona_tags", [])
+        all_personas = knowledge.get("personas", [])
+        matched = [
+            p for p in all_personas
+            if any(tag in p.get("tags", []) for tag in persona_tags)
+        ]
+        persona = (extra_hint or {}).get("persona")
+        if not persona and matched:
+            persona = _rnd2.choice(matched)
+
+        if persona:
+            persona_block = (
+                f"年齢・職業: {persona.get('age')}歳・{persona.get('occupation')}\n"
+                f"悩み: {persona.get('struggle', '')[:120]}\n"
+                f"龍脈的原因: {persona.get('revelation', '')[:120]}\n"
+                f"変化後: {persona.get('result', '')[:100]}"
+            )
+        else:
+            persona_block = "（ペルソナなし：実際の鑑定例として自由に作成）"
+
+        pattern_extra = f"""
+## HARM共感ファネル型の追加ルール
+- 鑑定ページURL: {service_url}
+
+### 今回のHARMカテゴリ: {cat_label}
+このカテゴリの読者が抱えている痛みの例：
+{pains_text}
+
+### 参照ペルソナ（実際の鑑定例として活用）
+{persona_block}
+
+### 構成（200〜280字）
+**① 痛みの言語化（冒頭1〜2行）**
+- 上記ペインの中から最も刺さるものを読者の内言「」で表現
+- 例: 「3年間、同じ場所で止まっている気がする」
+
+**② 受け止め（1行）**
+- 「それ、意志が弱いんじゃない」「あなたのせいじゃないかもしれない」など
+- 自己否定から解放する一言
+
+**③ 龍脈命術的原因の開示（2〜3行）**
+- なぜその状態が起きているか、方位・気の流れで説明
+- 参照ペルソナの revelation を参考に、具体的かつ納得感のある原因を示す
+- 「〇〇さんのように〜」と実例を匂わせてもよい
+
+**④ 希望＋CTA（1〜2行）**
+- 「向きを変えるだけで動けた方を何人も見てきた」など変化の可能性を示す
+- 「▷ まず無料鑑定から {service_url}」で締める
+
+### 禁止事項
+- 「きっと大丈夫です」などの根拠のない励まし NG
+- 「方位を変えれば必ず〜」など断言しすぎ NG
+- 4行以上の長い一段落は避ける（空白行で呼吸を作ること）
+"""
+
     # ── 星座ブースト（if/elif チェーン完了後に適用） ─────────────────
     zodiac_boost = extra_hint.get("zodiac_boost") if extra_hint else None
-    if zodiac_boost and pattern_id not in ("zodiac_target", "caligula", "hoshi_betsu", "empathy_thread"):
+    if zodiac_boost and pattern_id not in ("zodiac_target", "caligula", "hoshi_betsu", "empathy_thread", "harm_funnel"):
         pattern_extra += f"""
 ## 星座ターゲット（ソフト適用）
 このテーマを特に「{zodiac_boost}」の人に刺さるよう書く。
@@ -1060,6 +1131,29 @@ def run(batch_size: int = 5) -> dict:
             if persona:
                 extra_hint["persona"] = persona
                 recent_persona_ids.append(persona.get("id"))
+        elif pattern.get("id") == "harm_funnel":
+            # HARMカテゴリをランダム選択してペルソナをマッチング
+            harm_data = knowledge.get("harm", {})
+            harm_cats = [k for k in harm_data if not k.startswith("_")]
+            if harm_cats:
+                harm_cat = _random.choice(harm_cats)
+                extra_hint["harm_category"] = harm_cat
+                # カテゴリに対応するペルソナを選ぶ
+                persona_tags = harm_data[harm_cat].get("persona_tags", [])
+                matched = [
+                    p for p in knowledge.get("personas", [])
+                    if any(tag in p.get("tags", []) for tag in persona_tags)
+                    and p.get("id") not in recent_persona_ids
+                ]
+                if not matched:
+                    matched = [
+                        p for p in knowledge.get("personas", [])
+                        if any(tag in p.get("tags", []) for tag in persona_tags)
+                    ]
+                if matched:
+                    persona = _random.choice(matched)
+                    extra_hint["persona"] = persona
+                    recent_persona_ids.append(persona.get("id"))
 
         is_thread_pattern = pattern.get("id") in THREAD_PATTERNS
 
@@ -1163,6 +1257,9 @@ def run(batch_size: int = 5) -> dict:
             # ペルソナIDを記録（重複防止のため）
             if extra_hint.get("persona"):
                 post_obj["persona_id"] = extra_hint["persona"].get("id")
+            # HARMカテゴリを記録
+            if extra_hint.get("harm_category"):
+                post_obj["harm_category"] = extra_hint["harm_category"]
 
             # 星座ブーストを記録（画像選択で使用）
             if extra_hint.get("zodiac_boost"):

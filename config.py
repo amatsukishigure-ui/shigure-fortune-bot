@@ -76,6 +76,7 @@ POST_PATTERNS_FILE = KNOWLEDGE_DIR / "post_patterns.json"
 THEME_TREE_FILE = KNOWLEDGE_DIR / "theme_tree.json"
 HOOK_EXAMPLES_FILE = KNOWLEDGE_DIR / "hook_examples.json"
 PERSONAS_FILE = KNOWLEDGE_DIR / "personas.json"
+HARM_FILE = KNOWLEDGE_DIR / "harm_pain_points.json"
 
 # Platform settings
 X_POSTING_ENABLED = False   # True に戻すと X への自動投稿が再開する
