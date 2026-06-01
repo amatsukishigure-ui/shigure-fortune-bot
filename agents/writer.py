@@ -73,19 +73,22 @@ def _estimate_post_time(queue_length: int, batch_position: int) -> datetime:
     """
     現在のキュー長とバッチ内の位置から投稿予定時刻を推定する。
     スケジュールは SCHEDULED_HOURS_JST（JST）の順で1投稿/1スロット消費。
+
+    queue_length には post_queue + pending_posts の合計を渡すこと。
     """
     now = datetime.now(JST)
 
-    # 今後3日分のスケジュールスロットを生成（現在時刻より後のみ）
+    # 今後5日分のスケジュールスロットを生成（現在時刻より後のみ）
+    # 3日だと夜遅い daily 実行時にスロット不足になるケースがあるため5日に拡張
     upcoming_slots = []
-    for delta_days in range(3):
+    for delta_days in range(5):
         day = now.date() + timedelta(days=delta_days)
         for h in SCHEDULED_HOURS_JST:
             slot = datetime(day.year, day.month, day.day, h, 0, tzinfo=JST)
             if slot > now:
                 upcoming_slots.append(slot)
 
-    # キューにある既存の投稿を先に消費し、その後のスロットにこの投稿が来る
+    # キュー＋承認待ちの既存投稿を先に消費し、その後のスロットにこの投稿が来る
     idx = queue_length + batch_position
     if idx < len(upcoming_slots):
         return upcoming_slots[idx]
@@ -1153,8 +1156,10 @@ def run(batch_size: int = 5) -> dict:
     jst_hour = _get_jst_hour()
 
     # 現在のキュー長を取得（投稿予定時刻の推定に使用）
+    # pending_posts（承認待ち）も含めないと推定時刻が早すぎるズレが生じる
     current_queue = load_json(DATA_DIR / "post_queue.json", default=[])
-    current_queue_len = len(current_queue)
+    current_pending = load_json(DATA_DIR / "pending_posts.json", default=[])
+    current_queue_len = len(current_queue) + len(current_pending)
 
     # ペルソナの直近使用IDを追跡（重複を避ける）
     recent_persona_ids = [
