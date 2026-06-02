@@ -304,24 +304,26 @@ def cmd_optimize_schedule():
 
     print(f"   時間帯別エンゲージメント（データあり時間帯）:\n")
     has_data = False
-    for hour, avg_views, avg_likes, count in best:
+    for hour, score, avg_views, avg_likes, count in best:
         if count == 0:
             continue
         has_data = True
-        bar = "█" * min(int(avg_views / 20), 20)
-        print(f"   {hour:02d}時  {bar:<20} views:{avg_views:.0f}  likes:{avg_likes:.2f}  ({count}投稿)")
+        bar = "█" * min(int(score / 3), 20)
+        print(f"   {hour:02d}時  {bar:<20} score:{score:.1f}  views:{avg_views:.0f}  likes:{avg_likes:.2f}  ({count}投稿)")
 
     if not has_data:
         print("   データなし")
         return
 
-    top6 = [(h, v, l, c) for h, v, l, c in best if c > 0][:6]
+    from config import POST_SLOTS
+    current_str = " ".join(f"{h:02d}:00" for h in POST_SLOTS)
+    top6 = [(h, sc, v, l, c) for h, sc, v, l, c in best if c > 0][:6]
     if top6:
         hours_str = " ".join(f"{h:02d}:00" for h, *_ in top6)
-        print(f"\n   ✅ 推奨スケジュール TOP6: {hours_str}")
-        print(f"\n   現在のスケジュール: 07:00 12:00 18:00 20:00 21:00 22:00")
-        print(f"\n   ※ .github/workflows/post.yml の cron を上記推奨時間に")
-        print(f"     合わせると最大エンゲージメントが期待できます。")
+        print(f"\n   ✅ データ推奨 TOP6: {hours_str}")
+        print(f"   現在のスケジュール: {current_str}")
+        print(f"\n   ※ .github/workflows/post.yml の cron と config.py の POST_SLOTS を")
+        print(f"     上記推奨時間に合わせると最大エンゲージメントが期待できます。")
 
     print(f"\n{'='*55}\n")
 

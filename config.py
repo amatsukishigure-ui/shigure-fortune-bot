@@ -42,7 +42,7 @@ SIMILARITY_HISTORY_SIZE = 100      # 比較対象の過去投稿数
 # Posting schedule
 DAILY_POST_LIMIT = 15
 MIN_POST_INTERVAL_HOURS = 1
-POST_SLOTS = [7, 12, 18, 20, 21, 22]  # 投稿時刻リスト（朝・昼・夜の峰に集中）
+POST_SLOTS = [7, 12, 15, 17, 21, 23]  # データ最適化済み（スコア順: 15>17>12>23>21>7）
 
 # Pattern rotation
 MAX_SAME_PATTERN_CONSECUTIVE = 3   # 同パターン連続上限
