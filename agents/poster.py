@@ -62,8 +62,11 @@ def _select_image(post: dict) -> str | None:
             return f"{GITHUB_RAW_BASE}/{filename}"
         return None
 
-    # 優先1: zodiac_boost（ライターが明示的に星座ターゲットを指定）
-    if zodiac_boost:
+    # 優先1: zodiac_boost — ただしテキストに星座名が実際に登場する場合のみ使用
+    #   zodiac_boost はライターの「文体調整ヒント」を兼ねるため、
+    #   テキストに星座名が出ていない投稿（list/trivia等のさりげないターゲット）に
+    #   星座画像を貼るのは内容と合わないため除外する。
+    if zodiac_boost and (zodiac_boost in text or zodiac_boost in theme):
         url = resolve(image_map.get("zodiac", {}).get(zodiac_boost))
         if url:
             return url
