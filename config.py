@@ -42,7 +42,7 @@ SIMILARITY_HISTORY_SIZE = 100      # 比較対象の過去投稿数
 # Posting schedule
 DAILY_POST_LIMIT = 15
 MIN_POST_INTERVAL_HOURS = 1
-POST_SLOTS = [7, 9, 12, 14, 15, 17, 21, 23]  # 8スロット/日（14時追加: スコア25、09時追加: 試験枠）
+POST_SLOTS = [7, 9, 12, 15, 17, 21, 23]  # 7スロット/日（14時削除: 15時と隣接しスキップリスクあり）
 
 # Pattern rotation
 MAX_SAME_PATTERN_CONSECUTIVE = 3   # 同パターン連続上限
