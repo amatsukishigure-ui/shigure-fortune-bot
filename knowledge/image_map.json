@@ -61,23 +61,33 @@
 
   "pattern_defaults": {
     "zodiac_target":    "zodiac/general.jpg",
-    "hoshi_betsu":      "zodiac/general.jpg",
-    "kaiun_day":        "direction/compass.jpg",
-    "gyoretsu":         "fengshui/general.jpg",
-    "engimono":         "fengshui/general.jpg",
+    "hoshi_betsu":      "brand/crystal_zodiac.jpg",
+    "kaiun_day":        "brand/fengshui_abundance.jpg",
+    "gyoretsu":         "brand/fengshui_abundance.jpg",
+    "engimono":         "brand/fengshui_abundance.jpg",
     "mizu":             "fengshui/water.jpg",
-    "caligula":         "general/mystery_1.jpg",
-    "empathy_funnel":   "general/mystery_2.jpg",
-    "empathy_thread":   "general/mystery_2.jpg",
+    "caligula":         "brand/crystal_zodiac.jpg",
+    "empathy_funnel":   "brand/ryumyaku_oracle.jpg",
+    "empathy_thread":   "brand/ryumyaku_oracle.jpg",
+    "harm_funnel":      "brand/ryumyaku_oracle.jpg",
+    "harm_line":        "brand/ryumyaku_oracle.jpg",
+    "nensu_pierce":     "brand/crystal_zodiac.jpg",
+    "hikaku_pierce":    "brand/crystal_zodiac.jpg",
+    "brand_ryumyaku":   "brand/ryumyaku_oracle.jpg",
+    "world_view":       "brand/ryumyaku_oracle.jpg",
     "ichi_gon":         "general/ichi_gon.jpg",
-    "menu_guide":       "general/menu.jpg",
+    "menu_guide":       "brand/ryumyaku_oracle.jpg",
+    "free_reading":     "brand/fengshui_abundance.jpg",
+    "cta_soft":         "brand/fengshui_abundance.jpg",
     "line_cta":         null,
     "follow_cta":       null
   },
 
   "defaults": [
+    "brand/ryumyaku_oracle.jpg",
+    "brand/crystal_zodiac.jpg",
+    "brand/fengshui_abundance.jpg",
     "general/fortune_1.jpg",
-    "general/fortune_2.jpg",
     "general/fortune_3.jpg"
   ]
 }
