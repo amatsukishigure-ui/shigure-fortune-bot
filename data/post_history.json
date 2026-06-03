@@ -2898,5 +2898,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
     "recorded_at": "2026-06-03T18:07:14.939775"
+  },
+  {
+    "text": "「自分の星座、今週どうなの？」が気になったあなたへ。\n\n龍脈命術で視た、今週特に流れが動く星座3つ。\n\n・蠍座──心の奥で隠してた本音が表に出る週\n→ 言葉にした瞬間、止まっていた関係が動き出す\n\n・魚座──直感が冴えるけど、動くのは金曜以降\n→ 芒種（6/6）の気の切り替わりに乗ると吉\n\n・獅子座──誰かの一言で迷いが晴れる暗示\n→ 自分から聞きにいく姿勢が鍵になる\n\n自分の星座、あった？",
+    "x_text": "「自分の星座、今週どうなの？」が気になったあなたへ。\n\n龍脈命術で視た、今週特に流れが動く星座3つ。\n\n・蠍座──心の奥で隠してた本音が表に出る週\n→ 言葉にした瞬間、止まっていた関係が動き出す\n\n・魚座──直感が冴えるけど、動くのは金曜以降\n→ 芒種（6/6）の気の切り替わりに乗ると吉\n\n・獅子座──誰かの一言で迷いが晴れる暗示\n→ 自分から聞きにいく姿勢が鍵になる\n\n自分の星座、あった？\n\n#占い #時雨 #星座占い #運勢",
+    "theme": "星座別メッセージ/今週の星座別メッセージ",
+    "pattern_id": "list",
+    "quality_score": 7.7,
+    "attempts": 1,
+    "x_eligible": true,
+    "zodiac_boost": "♏蠍座",
+    "pending_at": "2026-06-03T09:17:09.358478",
+    "queued_at": "2026-06-03T09:17:40.026025",
+    "threads_post_id": "17904816060265865",
+    "posted_at": "2026-06-03T22:58:51.599129",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/scorpio.jpg",
+    "recorded_at": "2026-06-03T22:58:51.602845"
   }
 ]
