@@ -4,19 +4,23 @@ on:
   schedule:
     # 遅延補正済みスケジュール（JST）7スロット/日
     # GitHub Actions の平均遅延を考慮してcronを前倒し設定
-    - cron: '0 21 * * *'  #  07:00 JST 狙い（UTC21+70分遅延=07:10）
-    - cron: '0 23 * * *'  #  09:00 JST 狙い（UTC23+60分遅延=09:00）
-    - cron: '0 3 * * *'   #  12:00 JST（遅延+14分 → 許容範囲）
-    - cron: '0 6 * * *'   #  15:00 JST（遅延+23分 → 許容範囲）★最高スコア28
-    - cron: '0 8 * * *'   #  17:00 JST（遅延+43分 → 許容範囲）スコア24
-    - cron: '0 12 * * *'  #  21:00 JST（遅延+27分 → 許容範囲）スコア14
-    - cron: '0 14 * * *'  #  23:00 JST（遅延+36分 → 許容範囲）スコア14
+    - cron: '0 21 * * *'  #  07:00 JST 狙い（UTC21+70分遅延≒07:10）
+    - cron: '0 23 * * *'  #  09:00 JST 狙い（UTC23+60分遅延≒09:00）
+    - cron: '0 3 * * *'   #  12:00 JST（遅延+14分 → 補正不要）
+    - cron: '0 6 * * *'   #  15:00 JST（遅延+23分 → 補正不要）★スコア28
+    - cron: '30 7 * * *'  #  17:00 JST 狙い（UTC7:30+34分遅延≒17:04）スコア24
+    - cron: '0 12 * * *'  #  21:00 JST（遅延≒0分 → 補正不要）スコア14
+    - cron: '30 13 * * *' #  23:00 JST 狙い（UTC13:30+24分遅延≒22:54）スコア14
   workflow_dispatch:
     inputs:
       command:
         description: 'command (daily / post / review / approve / approve 0 2 / reject 1 / status)'
         required: true
         default: 'status'
+
+concurrency:
+  group: shigure-post
+  cancel-in-progress: false   # 実行中のジョブを中断せず、次のジョブを待機させる
 
 jobs:
   run:
@@ -84,4 +88,5 @@ jobs:
           git config user.email "bot@shigure-fortune.local"
           git add data/
           git diff --cached --quiet || git commit -m "bot: state update $(date -u +'%Y-%m-%d %H:%M') UTC"
-          git push
+          # push失敗時はリモートの変更を取り込んでリトライ（状態未保存→重複投稿を防ぐ）
+          git push || (git fetch origin && git rebase origin/master && git push)
