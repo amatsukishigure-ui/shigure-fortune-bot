@@ -117,7 +117,35 @@ def approve_pending(indices: list = None) -> int:
             enqueue_x_post(post)
 
     save_pending(remaining)
+
+    # 承認後にキューをインパクト順に並び替え
+    # 高エンゲージパターン（caligula・zodiac_target・hoshi_betsu・ichi_gon）を先頭に
+    _sort_queue_by_impact()
+
     return count
+
+
+# 高インパクトパターン（avg views 実績順）
+_HIGH_IMPACT_PATTERNS = {
+    "caligula": 0,
+    "ichi_gon": 1,
+    "hoshi_betsu": 2,
+    "zodiac_target": 3,
+}
+
+
+def _sort_queue_by_impact() -> None:
+    """キューを高インパクトパターン優先に並び替える（15/17時スロットに最良の投稿を届ける）"""
+    queue = load_queue()
+    if len(queue) <= 1:
+        return
+
+    def _priority(post: dict) -> int:
+        return _HIGH_IMPACT_PATTERNS.get(post.get("pattern_id", ""), 99)
+
+    # stable sort: 高インパクトを先頭に、同優先度は元の順序を維持
+    queue.sort(key=_priority)
+    save_queue(queue)
 
 
 def reject_pending(index: int) -> bool:

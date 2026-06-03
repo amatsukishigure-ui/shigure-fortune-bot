@@ -71,8 +71,8 @@ def cmd_daily():
     if r_result["replied"] > 0:
         print(f"   {r_result['replied']}件返信しました")
 
-    if datetime.now().weekday() == 0:  # 月曜日
-        print("\n♻️  [+] リポスター: 人気投稿の再掲（週1回）")
+    if datetime.now().weekday() in (0, 2, 4):  # 月・水・金（週3回）
+        print("\n♻️  [+] リポスター: 人気投稿の再掲（週3回）")
         from agents import reposter
         reposter.run()
 

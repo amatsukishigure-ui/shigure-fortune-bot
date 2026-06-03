@@ -12,40 +12,54 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from config import X_CHAR_LIMIT, THREADS_CHAR_LIMIT, X_HASHTAGS
 
 
+THREADS_HASHTAGS = "#占い #龍脈命術"  # Threads投稿末尾に付加するタグ（発見性向上）
+THREADS_HASHTAG_LEN = len("\n\n" + THREADS_HASHTAGS)
+
+
 def format_for_threads(text: str) -> str:
     """
     Threads用に整形する（最大500字）。
     段落単位で収まる範囲まで含め、文の途中で切れないようにする。
+    末尾にハッシュタグを追加して投稿の発見性を高める。
     """
     text = text.strip()
-    if len(text) <= THREADS_CHAR_LIMIT:
-        return text
+
+    # 既にハッシュタグが含まれていたら追加しない
+    has_tag = "#占い" in text or "#龍脈命術" in text or "#吉方位" in text
+
+    # ハッシュタグ付きで収まるかチェック
+    body_limit = THREADS_CHAR_LIMIT - (THREADS_HASHTAG_LEN if not has_tag else 0)
+
+    if len(text) <= body_limit:
+        return text if has_tag else f"{text}\n\n{THREADS_HASHTAGS}"
 
     # 段落（空行区切り）単位で収まる範囲まで結合する
     blocks = text.split("\n\n")
     result = ""
     for block in blocks:
         candidate = (result + "\n\n" + block).strip() if result else block
-        if len(candidate) <= THREADS_CHAR_LIMIT:
+        if len(candidate) <= body_limit:
             result = candidate
         else:
             break
 
     if result:
-        return result
+        return result if has_tag else f"{result}\n\n{THREADS_HASHTAGS}"
 
     # 1段落でも500字を超える場合は文末（。）で切る
-    truncated = text[:THREADS_CHAR_LIMIT - 1]
+    truncated = text[:body_limit - 1]
     last_period = truncated.rfind("。")
-    if last_period > THREADS_CHAR_LIMIT // 2:
-        return truncated[:last_period + 1]
+    if last_period > body_limit // 2:
+        body = truncated[:last_period + 1]
+        return body if has_tag else f"{body}\n\n{THREADS_HASHTAGS}"
 
     # 改行で切る
     last_newline = truncated.rfind("\n")
-    if last_newline > THREADS_CHAR_LIMIT // 2:
-        return truncated[:last_newline]
+    if last_newline > body_limit // 2:
+        body = truncated[:last_newline]
+        return body if has_tag else f"{body}\n\n{THREADS_HASHTAGS}"
 
-    return truncated
+    return truncated if has_tag else f"{truncated}\n\n{THREADS_HASHTAGS}"
 
 
 def format_for_x(text: str, hashtags: list = None) -> str:
