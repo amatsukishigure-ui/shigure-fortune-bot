@@ -1383,6 +1383,20 @@ def run(batch_size: int = 5) -> dict:
                 rejected += 1
                 continue
 
+            # hoshi_betsu: 12星座すべて含まれているか検証（途中切断チェック）
+            if pattern.get("id") == "hoshi_betsu":
+                _ZODIAC_MARKS = "♈♉♊♋♌♍♎♏♐♑♒♓"
+                if not all(z in first_draft for z in _ZODIAC_MARKS):
+                    print(f"  ⚠️ hoshi_betsu: 12星座不完全（再生成）")
+                    first_draft = _generate_post(
+                        client_obj, pattern, theme, knowledge,
+                        research_data.get("topics", []), analyst_feedback,
+                        extra_hint=extra_hint,
+                    )
+                    if not first_draft or not all(z in first_draft for z in _ZODIAC_MARKS):
+                        rejected += 1
+                        continue
+
             # 品質チェック
             result = score_with_retry(
                 first_draft, knowledge["profile"],
