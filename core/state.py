@@ -135,15 +135,35 @@ _HIGH_IMPACT_PATTERNS = {
 
 
 def _sort_queue_by_impact() -> None:
-    """キューを高インパクトパターン優先に並び替える（15/17時スロットに最良の投稿を届ける）"""
+    """
+    キューを高インパクトパターン優先に並び替える。
+
+    ただし「今日」「明日」「曜日」「月日」を含む投稿は
+    並び替え対象から除外する。
+    これらは生成時の推定投稿時刻に基づいて書かれており、
+    スロットがずれると曜日・日付が狂うため元の順序を保つ。
+    """
     queue = load_queue()
     if len(queue) <= 1:
         return
 
+    # 時刻・曜日に敏感な投稿かどうか判定
+    _TIME_KEYWORDS = ("今日", "明日", "今週", "来週", "月曜", "火曜", "水曜",
+                       "木曜", "金曜", "土曜", "日曜", "6月", "7月", "8月")
+
+    def _is_time_sensitive(post: dict) -> bool:
+        text = post.get("text", "")
+        pattern = post.get("pattern_id", "")
+        if pattern in ("kaiun_day", "yoru_kichi", "hoshi_betsu"):
+            return True
+        return any(kw in text for kw in _TIME_KEYWORDS)
+
     def _priority(post: dict) -> int:
+        if _is_time_sensitive(post):
+            return 50  # 時刻敏感な投稿は中間優先度（並び替えの影響を最小化）
         return _HIGH_IMPACT_PATTERNS.get(post.get("pattern_id", ""), 99)
 
-    # stable sort: 高インパクトを先頭に、同優先度は元の順序を維持
+    # stable sort: 高インパクトを先頭に、時刻敏感な投稿は元の相対順序を維持
     queue.sort(key=_priority)
     save_queue(queue)
 
