@@ -40,9 +40,9 @@ SIMILARITY_THRESHOLD = 0.85        # 類似度上限（これ以上は棄却）
 SIMILARITY_HISTORY_SIZE = 100      # 比較対象の過去投稿数
 
 # Posting schedule
-DAILY_POST_LIMIT = 15
-MIN_POST_INTERVAL_HOURS = 1
-POST_SLOTS = [7, 9, 12, 15, 17, 21, 23]  # 7スロット/日（14時削除: 15時と隣接しスキップリスクあり）
+DAILY_POST_LIMIT = 20
+MIN_POST_INTERVAL_HOURS = 0.5  # 1h→0.5h: 夜帯1時間おきcronでもスキップされないよう緩和
+POST_SLOTS = [7, 9, 12, 15, 17, 19, 20, 21, 22, 23, 0]  # 11スロット/日（夜帯: 19〜0時追加）
 
 # Pattern rotation
 MAX_SAME_PATTERN_CONSECUTIVE = 3   # 同パターン連続上限
