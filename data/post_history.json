@@ -3273,5 +3273,22 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-06-05T23:59:06.266208"
+  },
+  {
+    "text": "「パワースポットに行っても何も変わらなかった」って人、多いと思う。\n\n龍脈命術では、神社にも\"方位の相性\"がある。\n自分にとって吉方位にある神社へ足を運ぶだけで、受け取れる気の質がまるで違う。\n\nどこへ行くかより、どの方角へ動くか。\n\n　　　占術家 時雨\n\n#占い #龍脈命術",
+    "x_text": "「パワースポットに行っても何も変わらなかった」って人、多いと思う。\n\n龍脈命術では、神社にも\"方位の相性\"がある。\n自分にとって吉方位にある神社へ足を運ぶだけで、受け取れる気の質がまるで違う。\n\nどこへ行くかより、どの方角へ動くか。\n\n#占い #時雨 #神社 #パワースポット",
+    "theme": "神社・パワースポット/方位別おすすめ神社",
+    "pattern_id": "world_view",
+    "quality_score": 7.7,
+    "attempts": 1,
+    "x_eligible": true,
+    "pending_at": "2026-06-05T00:03:12.715638",
+    "queued_at": "2026-06-05T00:04:59.063088",
+    "threads_post_id": "18052794137742885",
+    "posted_at": "2026-06-06T01:00:52.972448",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
+    "recorded_at": "2026-06-06T01:00:52.976214"
   }
 ]
