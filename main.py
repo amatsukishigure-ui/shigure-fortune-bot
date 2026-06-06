@@ -59,7 +59,7 @@ def cmd_daily():
     analyst.run()
 
     print("\n🔍 [4/5] リサーチャー: ネタ収集（吉方位・風水・占い）")
-    researcher.run(max_themes=5)
+    researcher.run(max_themes=3)
 
     print("\n📡 [+] トラッカー: フォロワー数・時間帯統計を更新")
     from agents import tracker
@@ -77,7 +77,7 @@ def cmd_daily():
         reposter.run()
 
     print("\n✍️  [5/5] ライター: 投稿生成（時雨として）")
-    result = writer.run(batch_size=12)
+    result = writer.run(batch_size=8)
     print(
         f"   生成: {result['generated']}件 → "
         f"承認待ち Threads: {result['queued_threads']}件, "

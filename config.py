@@ -28,12 +28,12 @@ X_ACCESS_TOKEN_SECRET = os.getenv("X_ACCESS_TOKEN_SECRET", "")
 X_BEARER_TOKEN = os.getenv("X_BEARER_TOKEN", "")
 
 # Models
-MODEL_HEAVY = "claude-opus-4-6"    # ライター・アナリスト
+MODEL_HEAVY = "claude-sonnet-4-6"  # ライター・アナリスト（opus→sonnet: ~40%コスト削減）
 MODEL_LIGHT = "claude-haiku-4-5"   # 品質スコア・類似度判定
 
 # Quality thresholds
 QUALITY_THRESHOLD = 7.0            # 合格ライン（10点満点の平均）
-MAX_QUALITY_RETRIES = 2            # 書き直し最大回数
+MAX_QUALITY_RETRIES = 1            # 書き直し最大回数（2→1: 最大2回生成に削減）
 
 # Similarity
 SIMILARITY_THRESHOLD = 0.85        # 類似度上限（これ以上は棄却）
