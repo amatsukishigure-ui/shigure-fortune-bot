@@ -243,15 +243,38 @@ def _post_thread(texts: list, lead_image_url: str = None) -> dict:
             resp = requests.post(container_url, data=data)
             lead_image_url = None
 
+        # コンテナ作成失敗時はリトライ（最大3回）
+        if not resp.ok:
+            for retry in range(2):
+                time.sleep(5)
+                resp = requests.post(container_url, data=data)
+                if resp.ok:
+                    break
+            else:
+                print(f"  ❌ ツリー {i+1}投稿目のコンテナ作成失敗（{resp.status_code}）")
+                return {"success": len(post_ids) > 0, "post_ids": post_ids,
+                        "has_image": has_image, "error": f"container failed at post {i+1}",
+                        "partial": True}
+
         resp.raise_for_status()
         container_id = resp.json().get("id")
 
-        # 公開
+        # 公開（リトライあり）
         publish_url = f"{THREADS_API_BASE}/{THREADS_USER_ID}/threads_publish"
-        resp = requests.post(publish_url, data={
-            "creation_id": container_id,
-            "access_token": THREADS_ACCESS_TOKEN,
-        })
+        pub_data = {"creation_id": container_id, "access_token": THREADS_ACCESS_TOKEN}
+        resp = requests.post(publish_url, data=pub_data)
+        if not resp.ok:
+            for retry in range(2):
+                time.sleep(5)
+                resp = requests.post(publish_url, data=pub_data)
+                if resp.ok:
+                    break
+            else:
+                print(f"  ❌ ツリー {i+1}投稿目の公開失敗（{resp.status_code}）")
+                return {"success": len(post_ids) > 0, "post_ids": post_ids,
+                        "has_image": has_image, "error": f"publish failed at post {i+1}",
+                        "partial": True}
+
         resp.raise_for_status()
         post_id = resp.json().get("id")
         post_ids.append(post_id)
@@ -260,7 +283,7 @@ def _post_thread(texts: list, lead_image_url: str = None) -> dict:
             has_image = True
 
         if i < len(texts) - 1:
-            time.sleep(2)
+            time.sleep(5)  # ツリー投稿間隔: 2s→5s（API安定性のため）
 
     return {"success": True, "post_ids": post_ids, "has_image": has_image, "mock": not THREADS_ACCESS_TOKEN}
 
