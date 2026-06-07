@@ -189,15 +189,46 @@ def _pick_persona(personas: list, recent_persona_ids: list = None) -> dict | Non
     return random.choice(pool)
 
 
-def _select_pattern(patterns: list, recent_patterns: list, platform_hint: str = "threads", hour: int = 12) -> dict:
+def _select_pattern(
+    patterns: list,
+    recent_patterns: list,
+    platform_hint: str = "threads",
+    hour: int = 12,
+    excluded_categories: set = None,
+) -> dict:
+    """
+    投稿パターンを重み付きランダムで選択する。
+
+    category + daily_limit の仕組み:
+        同じ category を持つパターンは、バッチ内で daily_limit 回まで。
+        run() が excluded_categories を管理し、上限に達したカテゴリを渡す。
+
+    format の種類（参考）:
+        short  … 1〜4行、120字以内のひとこと投稿（ici_gon / emoji_comment 等）
+        medium … 120〜280字の通常投稿（ほとんどのパターン）
+        long   … 280字超 or 箇条書き一覧型（hoshi_betsu / ranking / menu_guide 等）
+        tree   … 複数投稿ツリー（empathy_thread）
+    """
     import random
+    excluded_cats = excluded_categories or set()
     blocked = set(recent_patterns)
-    # プラットフォームに対応するパターンのみ
+
+    # プラットフォーム対応 & カテゴリ制限を除外
     available = [
         p for p in patterns
-        if p.get("id") not in blocked and platform_hint in p.get("platforms", ["threads"])
+        if p.get("id") not in blocked
+        and platform_hint in p.get("platforms", ["threads"])
+        and p.get("category", "") not in excluded_cats
     ]
     if not available:
+        # recent_patterns ブロックを解除して再試行（全件消費ガード）
+        available = [
+            p for p in patterns
+            if platform_hint in p.get("platforms", ["threads"])
+            and p.get("category", "") not in excluded_cats
+        ]
+    if not available:
+        # カテゴリ制限も解除（フォールバック）
         available = [p for p in patterns if platform_hint in p.get("platforms", ["threads"])]
 
     # 夜（20〜23時 JST）は yoru_kichi を3倍優先
@@ -892,29 +923,45 @@ NG: 🔮 vs 🐉（どちらも龍脈命術ブランドシンボルで対にな�
 - 他の占いを「間違っている」と否定する
 """
     elif pattern_id == "line_cta":
+        import random as _rnd3
         line_url = knowledge.get("profile", {}).get("line_url", "https://lin.ee/TJg5dru")
+        # HARM共感データを取得（旧harm_lineを統合、extra_hintから受け取る）
+        harm_data = knowledge.get("harm", {})
+        harm_cat = (extra_hint or {}).get("harm_category")
+        if not harm_cat or harm_cat not in harm_data:
+            harm_cats = [k for k in harm_data if not k.startswith("_")]
+            harm_cat = _rnd3.choice(harm_cats) if harm_cats else ""
+        cat_info = harm_data.get(harm_cat, {})
+        cat_label = cat_info.get("label", "")
+        pains = cat_info.get("pains", [])
+        sample_pains = _rnd3.sample(pains, min(3, len(pains))) if pains else []
+        pains_text = "\n".join(f"  - 「{p}」" for p in sample_pains) if sample_pains else "（ペインデータなし）"
+
         pattern_extra = f"""
-## LINE誘導型の追加ルール
+## LINE誘導型（HARM共感統合版）の追加ルール
 - LINE公式アカウントURL: {line_url}
-- 鑑定ページURL（参考）: {service_url}
+
+### 今回のHARMカテゴリ: {cat_label or '（自由に選択）'}
+このカテゴリの読者が抱えている痛みの例：
+{pains_text}
 
 ### 構成（180〜240字）
-**① 読者の状況への共感（冒頭1〜2行）**
-- 「〇〇している人へ」「〇〇で止まっている人へ」など具体的な読者像を最初の一行に置く
-- HARM法則のいずれかの痛み（キャリア・恋愛・健康・お金）を選んで刺さる一行にする
+**① 痛みの共感（冒頭1〜2行）**
+- 上記ペインから最も刺さるものを「〜の人へ」か読者の内言「」で表現
+- HARM法則（キャリア・恋愛・健康・お金）のいずれか1つに絞ること
 
-**② LINEで何ができるかを具体的に示す（2〜3行）**
-- 「質問だけでも大丈夫」「話を聞いてもらうだけでいい」など超低コストの行動を示す
-- 「申し込みの前に試せる場所」という位置づけを明確にする
-- 費用なし・申込不要・気軽の3点を自然に伝える
+**② LINEで話せることを提示（2〜3行）**
+- 「鑑定の申し込みより前に、まずLINEで話してほしい」という低コスト行動を提示
+- 「相談だけでも」「聞いてもらうだけでも大丈夫」という安心感を添える
+- 費用なし・気軽・申込不要の3点を自然に伝える
 
-**③ 行動指示（1行）**
+**③ LINE URL（1行）**
 - 「▷ LINE {line_url}」でシンプルに締める
 - 「気が向いたら」「まずは登録だけ」など余裕のある誘導
 
 ### 禁止
 - 「今すぐ」「急いで」「限定」などの強制的な表現
-- 長々とLINEのメリットを説明する（読まれない）
+- 長すぎる説明（180〜240字を守ること）
 - 「〜お待ちしております」などの硬い敬語
 """
     elif pattern_id == "empathy_funnel":
@@ -998,14 +1045,10 @@ NG: 🔮 vs 🐉（どちらも龍脈命術ブランドシンボルで対にな�
 - **社会的証明**: 「何人も見てきた」「全員に共通点がある」で信頼を積む
 """
 
-    elif pattern_id in ("harm_funnel", "harm_line"):
+    elif pattern_id == "harm_funnel":
         import random as _rnd2
         harm_data = knowledge.get("harm", {})
-        line_url = knowledge.get("profile", {}).get("line_url", "https://lin.ee/TJg5dru")
-        is_line_cta = (pattern_id == "harm_line")
-        cta_url = line_url if is_line_cta else service_url
-        cta_label = "LINE" if is_line_cta else "無料鑑定"
-        cta_action = f"▷ LINE https://lin.ee/TJg5dru" if is_line_cta else f"▷ まず無料鑑定から {service_url}"
+        cta_action = f"▷ まず無料鑑定から {service_url}"
 
         # カテゴリ選択（extra_hintで指定されていればそれを使う）
         harm_cat = (extra_hint or {}).get("harm_category")
@@ -1039,19 +1082,8 @@ NG: 🔮 vs 🐉（どちらも龍脈命術ブランドシンボルで対にな�
         else:
             persona_block = "（ペルソナなし：実際の鑑定例として自由に作成）"
 
-        cta_instruction = (
-            f"**④ LINE誘導（1〜2行）**\n"
-            f"- 「鑑定の申し込みより前に、まずLINEで話してほしい」という低コスト行動を提示\n"
-            f"- 「相談だけでも、聞いてもらうだけでも大丈夫」という安心感を添える\n"
-            f"- 「{cta_action}」で締める"
-        ) if is_line_cta else (
-            f"**④ 希望＋CTA（1〜2行）**\n"
-            f"- 「向きを変えるだけで動けた方を何人も見てきた」など変化の可能性を示す\n"
-            f"- 「{cta_action}」で締める"
-        )
-
         pattern_extra = f"""
-## HARM共感{'LINE誘導' if is_line_cta else 'ファネル'}型の追加ルール
+## HARM共感ファネル型の追加ルール
 
 ### 今回のHARMカテゴリ: {cat_label}
 このカテゴリの読者が抱えている痛みの例：
@@ -1060,7 +1092,7 @@ NG: 🔮 vs 🐉（どちらも龍脈命術ブランドシンボルで対にな�
 ### 参照ペルソナ（実際の鑑定例として活用）
 {persona_block}
 
-### 構成（{'180〜240' if is_line_cta else '200〜280'}字）
+### 構成（200〜280字）
 **① 痛みの言語化（冒頭1〜2行）**
 - 上記ペインの中から最も刺さるものを読者の内言「」で表現
 
@@ -1071,7 +1103,9 @@ NG: 🔮 vs 🐉（どちらも龍脈命術ブランドシンボルで対にな�
 - 方位・気の流れで具体的に説明
 - 参照ペルソナの revelation を参考にする
 
-{cta_instruction}
+**④ 希望＋CTA（1〜2行）**
+- 「向きを変えるだけで動けた方を何人も見てきた」など変化の可能性を示す
+- 「{cta_action}」で締める
 
 ### 禁止事項
 - 根拠のない励まし・断言しすぎ NG
@@ -1165,7 +1199,7 @@ NG: 🔮 vs 🐉（どちらも龍脈命術ブランドシンボルで対にな�
 投稿本文のみ。説明・メタ情報は不要。"""
 
 
-# ツリー投稿パターン（複数投稿を連結するパターン）
+# ツリー投稿パターン（format="tree"、複数投稿を連結するパターン）
 THREAD_PATTERNS = {"empathy_thread"}
 
 
@@ -1302,11 +1336,18 @@ def run(batch_size: int = 5) -> dict:
     rejected = 0
     details = []
 
+    # バッチ内カテゴリ使用カウント（category + daily_limit の1日1回制限に使用）
+    batch_cat_counts: dict = {}
+    excluded_cats: set = set()
+
     for i in range(batch_size):
         # スケジュールヒントを使ってテーマ選択（曜日固定コンテンツ）
         schedule_hint = todays_schedule[i % len(todays_schedule)]
         theme = _select_theme(knowledge["theme_tree"], recent_themes, schedule_hint)
-        pattern = _select_pattern(knowledge["patterns"], recent_patterns, hour=jst_hour)
+        pattern = _select_pattern(
+            knowledge["patterns"], recent_patterns,
+            hour=jst_hour, excluded_categories=excluded_cats,
+        )
 
         # 推定投稿時刻（キュー長 + バッチ内位置 から計算）
         est_post_time = _estimate_post_time(current_queue_len, i)
@@ -1327,8 +1368,9 @@ def run(batch_size: int = 5) -> dict:
             if persona:
                 extra_hint["persona"] = persona
                 recent_persona_ids.append(persona.get("id"))
-        elif pattern.get("id") in ("harm_funnel", "harm_line"):
+        elif pattern.get("id") in ("harm_funnel", "line_cta"):
             # HARMカテゴリをランダム選択してペルソナをマッチング
+            # harm_funnel: 鑑定CTA / line_cta: LINE誘導（旧harm_line統合済み）
             harm_data = knowledge.get("harm", {})
             harm_cats = [k for k in harm_data if not k.startswith("_")]
             if harm_cats:
@@ -1390,6 +1432,12 @@ def run(batch_size: int = 5) -> dict:
             checker.add_to_corpus(representative)
             recent_patterns.append(pattern.get("id"))
             recent_themes.append(theme)
+            # カテゴリ使用カウントを更新（daily_limit 制御）
+            _cat = pattern.get("category", "")
+            if _cat:
+                batch_cat_counts[_cat] = batch_cat_counts.get(_cat, 0) + 1
+                if batch_cat_counts[_cat] >= pattern.get("daily_limit", 99):
+                    excluded_cats.add(_cat)
             details.append({
                 "status": "pending_thread",
                 "theme": theme,
@@ -1484,6 +1532,12 @@ def run(batch_size: int = 5) -> dict:
             checker.add_to_corpus(final_post)
             recent_patterns.append(pattern.get("id"))
             recent_themes.append(theme)
+            # カテゴリ使用カウントを更新（daily_limit 制御）
+            _cat = pattern.get("category", "")
+            if _cat:
+                batch_cat_counts[_cat] = batch_cat_counts.get(_cat, 0) + 1
+                if batch_cat_counts[_cat] >= pattern.get("daily_limit", 99):
+                    excluded_cats.add(_cat)
 
             details.append({
                 "status": "pending",
