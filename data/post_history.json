@@ -3631,5 +3631,22 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aquarius.jpg",
     "recorded_at": "2026-06-07T14:56:45.705603"
+  },
+  {
+    "text": "転機が来るとき、人はたいてい「動かなかった選択」を先にする。\n\n止まることも、流れの一部だ。\n\nこれ、わかる？\n\n#占い #龍脈命術",
+    "x_text": "転機が来るとき、人はたいてい「動かなかった選択」を先にする。\n\n止まることも、流れの一部だ。\n\nこれ、わかる？\n\n#占い #時雨 #龍脈命術 #開運",
+    "theme": "鑑定エピソード/人生の転機",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.0,
+    "attempts": 1,
+    "x_eligible": true,
+    "pending_at": "2026-06-07T22:31:52.894265",
+    "queued_at": "2026-06-07T22:37:44.204835",
+    "threads_post_id": "18081811160647265",
+    "posted_at": "2026-06-07T16:05:18.397283",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
+    "recorded_at": "2026-06-07T16:05:18.401614"
   }
 ]
