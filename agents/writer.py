@@ -80,11 +80,18 @@ def _estimate_post_time(queue_length: int, batch_position: int) -> datetime:
 
     # 今後5日分のスケジュールスロットを生成（現在時刻より後のみ）
     # 3日だと夜遅い daily 実行時にスロット不足になるケースがあるため5日に拡張
+    # ※ h=0（深夜0時）は「その日の00:00」ではなく「翌日の00:00」として扱う
+    #   SCHEDULED_HOURS_JST = [..., 23, 0] の「0」は翌日深夜を意味するため
     upcoming_slots = []
     for delta_days in range(5):
         day = now.date() + timedelta(days=delta_days)
         for h in SCHEDULED_HOURS_JST:
-            slot = datetime(day.year, day.month, day.day, h, 0, tzinfo=JST)
+            if h == 0:
+                # 深夜0時スロット = 翌日 00:00（当日の0:00は00:00ではなく翌日扱い）
+                slot_day = day + timedelta(days=1)
+                slot = datetime(slot_day.year, slot_day.month, slot_day.day, 0, 0, tzinfo=JST)
+            else:
+                slot = datetime(day.year, day.month, day.day, h, 0, tzinfo=JST)
             if slot > now:
                 upcoming_slots.append(slot)
 
@@ -593,8 +600,25 @@ def _build_prompt(
 - **帰属の外在化**: 「差は才能じゃなく方位だ」という新解釈が「自分も変われるかも」を生む
 """
     elif pattern_id == "hoshi_betsu":
-        pattern_extra = """
+        # 公開時間帯による「今日 or 明日」の使い分け
+        _hb_action_day = est_tomorrow_jp if (est_dt and est_dt.hour >= 20) else (
+            est_date_jp.split("（")[0] + "（" + ("月火水木金土日"[est_dt.weekday()] if est_dt else "") + "）" if est_dt else "今日"
+        )
+        _hb_timing_note = (
+            f"この投稿は夜（{est_dt.hour}時）に公開される。"
+            f"読者は「今夜保存 → 明日使う」というフローになるため、"
+            f"**行動日 = 明日（{est_tomorrow_jp}）** として書くこと。"
+            f"冒頭フックも「今夜のうちに保存して、明日動くときに使って」系にする。"
+        ) if (est_dt and est_dt.hour >= 20) else (
+            f"この投稿は朝〜昼（{est_dt.hour}時）に公開される。"
+            f"**行動日 = 今日（{est_date_jp.split('（')[0]}）** として書くこと。"
+        ) if est_dt else ""
+        pattern_extra = f"""
 ## 星座別情報型の追加ルール
+
+### 【重要】行動日の指定
+{_hb_timing_note}
+行動日: **{_hb_action_day}**
 
 ### 必須ルール
 - **冒頭のスクロール停止フック（1行）**: 「今週、動くなら星座で方位が変わる。」など
@@ -602,6 +626,7 @@ def _build_prompt(
 - 12星座すべての吉方位または今週の運気を一覧で示す
 - 各星座1行（「♈ 牡羊座 → 方位・コメント」の形式）、方位と具体的な行動ヒントをセット
 - **末尾**: 「自分の星座だけでもいいから保存して、週末に試してみて。」で保存促進
+- 投稿に日付を入れる場合は必ず上記「行動日」の日付を使い、est_dtの「今日」と混同しないこと
 
 ### フォーマット（必須）
 12星座を4つずつ3グループに分け、グループ間に空白行を1行入れること。
@@ -961,18 +986,6 @@ NG: 🔮 vs 🐉（どちらも龍脈命術ブランドシンボルで対にな�
 - **アンカリング**: 断言口調（「〜だ」「〜に動く」）が「真実」として脳に刻まれやすい
 - **余白効果**: 短いほど読者が自分なりの解釈で補完し「自分に向けられた言葉」に変換される
 - **完結効果**: 1〜3行で完結した文は記憶に残りやすく、スクショ・保存されやすい
-"""
-    elif pattern_id == "hoshi_betsu":
-        pattern_extra = """
-## 星座別情報型の追加ルール
-- 12星座すべての吉方位または今週の運気を一覧で示す
-- 各星座2〜3行で、方位と具体的な行動ヒントをセットで
-- 最後に「自分の星座チェックして保存しておいて」でフォロー・保存を促す
-
-### 心理効果
-- **スポットライト効果**: 読者は一覧を全部読まず「自分の星座」だけを探す。その瞬間「自分だけへの情報」と感じる
-- **バーナム効果**: 各星座の記述は「その星座らしさ」を保ちながら、誰でも当てはまる普遍的な内容にする
-- **保存行動誘発**: 全星座一覧は「後で見返したい」コンテンツ。「保存して見返してね」を末尾に添える
 """
     elif pattern_id == "list":
         pattern_extra = """
