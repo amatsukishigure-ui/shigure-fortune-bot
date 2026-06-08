@@ -44,22 +44,27 @@ def format_for_threads(text: str) -> str:
             break
 
     if result:
-        return result if has_tag else f"{result}\n\n{THREADS_HASHTAGS}"
+        # カット後にハッシュタグが消えていたら再付加（has_tagは元テキストの判定なので再チェック）
+        result_has_tag = "#占い" in result or "#龍脈命術" in result or "#吉方位" in result
+        return result if result_has_tag else f"{result}\n\n{THREADS_HASHTAGS}"
 
     # 1段落でも500字を超える場合は文末（。）で切る
     truncated = text[:body_limit - 1]
     last_period = truncated.rfind("。")
     if last_period > body_limit // 2:
         body = truncated[:last_period + 1]
-        return body if has_tag else f"{body}\n\n{THREADS_HASHTAGS}"
+        body_has_tag = "#占い" in body or "#龍脈命術" in body or "#吉方位" in body
+        return body if body_has_tag else f"{body}\n\n{THREADS_HASHTAGS}"
 
     # 改行で切る
     last_newline = truncated.rfind("\n")
     if last_newline > body_limit // 2:
         body = truncated[:last_newline]
-        return body if has_tag else f"{body}\n\n{THREADS_HASHTAGS}"
+        body_has_tag = "#占い" in body or "#龍脈命術" in body or "#吉方位" in body
+        return body if body_has_tag else f"{body}\n\n{THREADS_HASHTAGS}"
 
-    return truncated if has_tag else f"{truncated}\n\n{THREADS_HASHTAGS}"
+    trunc_has_tag = "#占い" in truncated or "#龍脈命術" in truncated or "#吉方位" in truncated
+    return truncated if trunc_has_tag else f"{truncated}\n\n{THREADS_HASHTAGS}"
 
 
 def format_for_x(text: str, hashtags: list = None) -> str:

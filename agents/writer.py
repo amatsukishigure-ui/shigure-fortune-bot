@@ -1669,11 +1669,18 @@ def run(batch_size: int = 5) -> dict:
         else:
             # ── 通常投稿 ─────────────────────────────────────────────
             def rewrite_func(post_text: str, feedback: str, _p=pattern, _eh=extra_hint) -> str:
-                return _generate_post(
+                new_post = _generate_post(
                     client_obj, _p, theme, knowledge,
                     research_data.get("topics", []), analyst_feedback,
                     feedback_for_rewrite=feedback, extra_hint=_eh,
                 )
+                # hoshi_betsu: リライト後も12星座が揃っているか確認。欠落なら元のテキストを維持
+                if _p.get("id") == "hoshi_betsu" and new_post:
+                    _ZM = "♈♉♊♋♌♍♎♏♐♑♒♓"
+                    if not all(z in new_post for z in _ZM):
+                        print(f"  ⚠️ hoshi_betsu rewrite: 12星座不完全 → 元テキストを維持")
+                        return post_text  # 欠落があれば元テキストを返す（品質チェックを再実行させる）
+                return new_post
 
             # 初回生成
             first_draft = _generate_post(
@@ -1720,6 +1727,15 @@ def run(batch_size: int = 5) -> dict:
 
             # Threads版・X版を生成
             threads_text = format_for_threads(final_post)
+
+            # hoshi_betsu: フォーマット後にも12星座が揃っているか検証（rewriteや truncation で消えるケース対策）
+            if pattern.get("id") == "hoshi_betsu":
+                _ZODIAC_MARKS = "♈♉♊♋♌♍♎♏♐♑♒♓"
+                if not all(z in threads_text for z in _ZODIAC_MARKS):
+                    print(f"  ⚠️ hoshi_betsu: フォーマット後に星座欠落 → スキップ (len={len(threads_text)})")
+                    rejected += 1
+                    continue
+
             hashtags = get_x_hashtags_for_theme(theme)
             x_text = format_for_x(final_post, hashtags)
 
