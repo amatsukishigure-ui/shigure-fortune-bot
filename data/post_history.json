@@ -3917,5 +3917,23 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-06-08T22:18:49.110157"
+  },
+  {
+    "text": "旅行や引越し、今の時期に計画してる人へ。\n\n行き先より「方角」を先に決めてみて。\n吉方位に動くと、移動後の空気が全然違うよ。🧭\n\n#占い #龍脈命術",
+    "x_text": "旅行や引越し、今の時期に計画してる人へ。\n\n行き先より「方角」を先に決めてみて。\n吉方位に動くと、移動後の空気が全然違うよ。🧭\n\n#占い #時雨 #吉方位 #風水",
+    "theme": "吉方位・風水/星座別吉方位",
+    "pattern_id": "pop_short",
+    "quality_score": 7.1,
+    "attempts": 1,
+    "x_eligible": true,
+    "zodiac_boost": "♌獅子座",
+    "pending_at": "2026-06-08T10:23:56.915427",
+    "queued_at": "2026-06-08T10:24:51.559701",
+    "threads_post_id": "18100481197870156",
+    "posted_at": "2026-06-08T23:57:31.564879",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/fortune_3.jpg",
+    "recorded_at": "2026-06-08T23:57:31.568474"
   }
 ]
