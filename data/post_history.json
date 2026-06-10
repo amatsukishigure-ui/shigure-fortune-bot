@@ -4250,5 +4250,21 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/gemini.jpg",
     "recorded_at": "2026-06-10T07:05:26.572579"
+  },
+  {
+    "text": "鑑定で一番多い相談は「どうして頑張っても変わらないんですか」という問いだ。\n\n私の答えはいつも同じ。\n動き方じゃなく、動く方向が違っている。\n\n心当たりある？\n\n#占い #龍脈命術",
+    "x_text": "鑑定で一番多い相談は「どうして頑張っても変わらないんですか」という問いだ。\n\n私の答えはいつも同じ。\n動き方じゃなく、動く方向が違っている。\n\n心当たりある？\n\n#占い #時雨 #龍脈命術 #吉方位",
+    "theme": "時雨の世界観/鑑定で一番多い相談と、時雨の答え",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.9,
+    "attempts": 1,
+    "x_eligible": true,
+    "pending_at": "2026-06-10T07:04:09.879024",
+    "queued_at": "2026-06-10T07:05:19.130974",
+    "threads_post_id": "18068076362701764",
+    "posted_at": "2026-06-10T09:01:00.927854",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-06-10T09:01:00.932741"
   }
 ]
