@@ -42,7 +42,7 @@ SIMILARITY_HISTORY_SIZE = 100      # 比較対象の過去投稿数
 # Posting schedule
 DAILY_POST_LIMIT = 20
 MIN_POST_INTERVAL_HOURS = 0.5  # 1h→0.5h: 夜帯1時間おきcronでもスキップされないよう緩和
-POST_SLOTS = [7, 9, 12, 15, 17, 19, 20, 21, 22, 23, 0]  # 11スロット/日（夜帯: 19〜0時追加）
+POST_SLOTS = [7, 9, 12, 14, 15, 17, 19, 20, 21, 22, 23, 0]  # 12スロット/日（14時: 主婦向け昼下がり枠追加）
 
 # Pattern rotation
 MAX_SAME_PATTERN_CONSECUTIVE = 3   # 同パターン連続上限
