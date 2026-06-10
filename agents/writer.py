@@ -600,25 +600,27 @@ def _build_prompt(
 - **帰属の外在化**: 「差は才能じゃなく方位だ」という新解釈が「自分も変われるかも」を生む
 """
     elif pattern_id == "hoshi_betsu":
-        # 公開時間帯による「今日 or 明日」の使い分け
-        _hb_action_day = est_tomorrow_jp if (est_dt and est_dt.hour >= 20) else (
-            est_date_jp.split("（")[0] + "（" + ("月火水木金土日"[est_dt.weekday()] if est_dt else "") + "）" if est_dt else "今日"
-        )
+        # 公開時間帯による「今日 or 明日」の使い分け（日付は相対表現のみ、stale防止）
+        _hb_is_evening = est_dt and est_dt.hour >= 20
+        _hb_action_word = "明日" if _hb_is_evening else "今日"
         _hb_timing_note = (
             f"この投稿は夜（{est_dt.hour}時）に公開される。"
             f"読者は「今夜保存 → 明日使う」というフローになるため、"
-            f"**行動日 = 明日（{est_tomorrow_jp}）** として書くこと。"
+            f"**行動日 = 明日** として書くこと。"
             f"冒頭フックも「今夜のうちに保存して、明日動くときに使って」系にする。"
-        ) if (est_dt and est_dt.hour >= 20) else (
-            f"この投稿は朝〜昼（{est_dt.hour}時）に公開される。"
-            f"**行動日 = 今日（{est_date_jp.split('（')[0]}）** として書くこと。"
+        ) if _hb_is_evening else (
+            f"この投稿は朝〜昼（{est_dt.hour if est_dt else '?'}時）に公開される。"
+            f"**行動日 = 今日** として書くこと。"
         ) if est_dt else ""
         pattern_extra = f"""
 ## 星座別情報型の追加ルール
 
 ### 【重要】行動日の指定
 {_hb_timing_note}
-行動日: **{_hb_action_day}**
+行動日: **{_hb_action_word}**
+
+⚠️ **日付の括弧書き禁止**: 「今日（6/9）」「明日（6月10日）」のように具体的な日付を括弧で入れないこと。
+   「今日」「明日」「今週末」等の相対表現のみを使う（投稿がキューに溜まると日付がズレるため）。
 
 ### 必須ルール
 - **冒頭のスクロール停止フック（1行）**: 「今週、動くなら星座で方位が変わる。」など
@@ -626,7 +628,6 @@ def _build_prompt(
 - 12星座すべての吉方位または今週の運気を一覧で示す
 - 各星座1行（「♈ 牡羊座 → 方位・コメント」の形式）、方位と具体的な行動ヒントをセット
 - **末尾**: 「自分の星座だけでもいいから保存して、週末に試してみて。」で保存促進
-- 投稿に日付を入れる場合は必ず上記「行動日」の日付を使い、est_dtの「今日」と混同しないこと
 
 ### フォーマット（必須）
 12星座を4つずつ3グループに分け、グループ間に空白行を1行入れること。
@@ -1630,13 +1631,13 @@ def run(batch_size: int = 5) -> dict:
 
             # 先頭投稿を代表テキストとして扱う（品質・類似度チェック用）
             representative = thread_posts[0]
-            is_dup, sim_score = checker.is_duplicate(representative)
+            threads_text = format_for_threads(representative)
+            # 類似度チェック（formatted textで比較: historyと同形式）
+            is_dup, sim_score = checker.is_duplicate(threads_text)
             if is_dup:
                 rejected += 1
                 details.append({"status": "rejected_similarity", "similarity": sim_score, "theme": theme})
                 continue
-
-            threads_text = format_for_threads(representative)
             post_obj = {
                 "text": threads_text,
                 "thread_posts": [format_for_threads(p) for p in thread_posts],
@@ -1650,7 +1651,7 @@ def run(batch_size: int = 5) -> dict:
                 post_obj["zodiac_boost"] = extra_hint["zodiac_boost"]
             enqueue_pending(post_obj)
             queued_threads += 1
-            checker.add_to_corpus(representative)
+            checker.add_to_corpus(threads_text)  # formatted textをコーパスに追加（historyと同形式）
             recent_patterns.append(pattern.get("id"))
             recent_themes.append(theme)
             # カテゴリ使用カウントを更新（daily_limit 制御）
@@ -1718,14 +1719,7 @@ def run(batch_size: int = 5) -> dict:
 
             final_post = result["post"]
 
-            # 類似度チェック
-            is_dup, sim_score = checker.is_duplicate(final_post)
-            if is_dup:
-                rejected += 1
-                details.append({"status": "rejected_similarity", "similarity": sim_score, "theme": theme})
-                continue
-
-            # Threads版・X版を生成
+            # Threads版をフォーマット（類似度チェック前: historyはformatted textで保存されているため先に変換する）
             threads_text = format_for_threads(final_post)
 
             # hoshi_betsu: フォーマット後にも12星座が揃っているか検証（rewriteや truncation で消えるケース対策）
@@ -1735,6 +1729,13 @@ def run(batch_size: int = 5) -> dict:
                     print(f"  ⚠️ hoshi_betsu: フォーマット後に星座欠落 → スキップ (len={len(threads_text)})")
                     rejected += 1
                     continue
+
+            # 類似度チェック（formatted textで比較: historyがformatted textを格納しているため整合性を保つ）
+            is_dup, sim_score = checker.is_duplicate(threads_text)
+            if is_dup:
+                rejected += 1
+                details.append({"status": "rejected_similarity", "similarity": sim_score, "theme": theme})
+                continue
 
             hashtags = get_x_hashtags_for_theme(theme)
             x_text = format_for_x(final_post, hashtags)
@@ -1766,7 +1767,7 @@ def run(batch_size: int = 5) -> dict:
             if x_eligible:
                 queued_x += 1
 
-            checker.add_to_corpus(final_post)
+            checker.add_to_corpus(threads_text)  # formatted textをコーパスに追加（historyと同形式）
             recent_patterns.append(pattern.get("id"))
             recent_themes.append(theme)
             # カテゴリ使用カウントを更新（daily_limit 制御）
