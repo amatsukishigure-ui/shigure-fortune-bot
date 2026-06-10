@@ -4187,5 +4187,22 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-06-10T01:01:02.087914"
+  },
+  {
+    "text": "龍脈命術は、「仕事部屋の向き」まで読む。\n\n一般的な風水は、デスクの色や置き物を整える。\nでも龍脈命術が見るのは、その部屋が「どの方位にあるか」。\n\n北西に仕事部屋があるか、東にあるか。\nそれだけで、同じ努力が乗るかどうかが変わってくる。\n\n「頑張ってるのに空回りする」という人の部屋、だいたい方位がずれてる。\n\n占術家 時雨\n\n#占い #龍脈命術",
+    "x_text": "龍脈命術は、「仕事部屋の向き」まで読む。\n\n一般的な風水は、デスクの色や置き物を整える。\nでも龍脈命術が見るのは、その部屋が「どの方位にあるか」。\n\n北西に仕事部屋があるか、東にあるか。\nそれだけで、同じ努力が乗るかどうかが変わってくる。\n\n「頑張ってるのに空回りする」という人の部屋、だいたい方位がずれてる。\n\n占術家 時雨\n\n#占い #時雨 #風水 #開運",
+    "theme": "風水豆知識/書斎・仕事部屋",
+    "pattern_id": "brand_ryumyaku",
+    "quality_score": 7.8,
+    "attempts": 1,
+    "x_eligible": true,
+    "pending_at": "2026-06-09T06:46:26.838896",
+    "queued_at": "2026-06-09T06:46:35.478246",
+    "threads_post_id": "17852289894696946",
+    "posted_at": "2026-06-10T03:00:58.585021",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
+    "recorded_at": "2026-06-10T03:00:58.589859"
   }
 ]
