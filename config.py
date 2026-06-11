@@ -36,7 +36,7 @@ QUALITY_THRESHOLD = 7.0            # 合格ライン（10点満点の平均）
 MAX_QUALITY_RETRIES = 1            # 書き直し最大回数（2→1: 最大2回生成に削減）
 
 # Similarity
-SIMILARITY_THRESHOLD = 0.85        # 類似度上限（これ以上は棄却）
+SIMILARITY_THRESHOLD = 0.72        # 類似度上限（0.85→0.72: 重複投稿を防ぐため引き下げ）
 SIMILARITY_HISTORY_SIZE = 100      # 比較対象の過去投稿数
 
 # Posting schedule

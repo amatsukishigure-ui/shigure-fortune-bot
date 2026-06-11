@@ -7,7 +7,7 @@
 
 import json
 import requests
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
@@ -62,8 +62,8 @@ def _should_fetch(post: dict) -> bool:
         return False
 
     try:
-        posted_time = datetime.fromisoformat(posted_at)
-        return datetime.now() - posted_time >= timedelta(hours=24)
+        posted_time = datetime.fromisoformat(posted_at).replace(tzinfo=None)
+        return datetime.now(timezone.utc).replace(tzinfo=None) - posted_time >= timedelta(hours=24)
     except ValueError:
         return False
 
