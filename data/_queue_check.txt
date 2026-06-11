@@ -1,0 +1,43 @@
+[0] caligula len=224
+  末尾50: '\n\nそれを整理するのが、鑑定。\n何ができるかは、プロフィールから確認してみて。\n\n#占い #龍脈命術'
+  hashtag末尾=True 文末=clean
+
+[1] ichi_gon len=66
+  末尾50: 'かなかった選択」を先にする。\n\n止まることも、流れの一部だ。\n\nこれ、わかる？\n\n#占い #龍脈命術'
+  hashtag末尾=True 文末=clean
+
+[2] emoji_comment len=100
+  末尾50: 'い気持ちが溢れてきた → ✨\nなんか重くて止まったまま → 🌀\n\nどっちかな。\n\n#占い #龍脈命術'
+  hashtag末尾=True 文末=clean
+
+[3] zodiac_target len=140
+  末尾50: '。\n\nくたびれたマットをそのままにしてる人は、まずそこから。\n\n心当たりある？\n\n#占い #龍脈命術'
+  hashtag末尾=True 文末=clean
+
+[4] list len=210
+  末尾50: 'る。梅雨でも少しでいい\n\nいくつ当てはまった？\u3000保存して今日から試してみてね。\n\n#占い #龍脈命術'
+  hashtag末尾=True 文末=clean
+
+[5] hoshi_betsu len=358
+  末尾50: '境内の湧き水や池に注目して\n\n今夜のうちに保存して、明日動くときに使ってみて。\n\n#占い #龍脈命術'
+  hashtag末尾=True 文末=clean
+
+[6] empathy_thread len=105
+  末尾50: 'は、あなたが今いる空間の気の流れにある。龍脈命術で見えた正体を、次に話します。\n\n#占い #龍脈命術'
+  hashtag末尾=True 文末=clean
+
+[7] brand_ryumyaku len=159
+  末尾50: '鑑定だと思ってる。\n\n気になった人は、プロフィールから鑑定メニューを見てみて。\n\n#占い #龍脈命術'
+  hashtag末尾=True 文末=clean
+
+[8] episode len=168
+  末尾50: '「動けない」には、理由がある。\n\nこういうこと、心当たりある？\n\n占術家 時雨\n\n#占い #龍脈命術'
+  hashtag末尾=True 文末=clean
+
+[9] menu_guide len=292
+  末尾50: 'みは\nhttps://shigurerooms.hp.peraichi.com\n\n#占い #龍脈命術'
+  hashtag末尾=True 文末=clean
+
+[10] testimony_ask len=92
+  末尾50: '、なんとなく足を向けたらうまくいった、くらいのことでも。\n\n聞かせてもらえる？\n\n#占い #龍脈命術'
+  hashtag末尾=True 文末=clean
