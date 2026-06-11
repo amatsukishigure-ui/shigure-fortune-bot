@@ -4351,5 +4351,22 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-06-11T13:59:02.438180"
+  },
+  {
+    "text": "玄関が暗いまま「運が変わらない」と思っているなら、順番が逆かもしれない。\n\n気は、整えた場所から動き出す。\n\nうなずいた人、いる？\n\n#占い #龍脈命術",
+    "x_text": "玄関が暗いまま「運が変わらない」と思っているなら、順番が逆かもしれない。\n\n気は、整えた場所から動き出す。\n\nうなずいた人、いる？\n\n#占い #時雨 #風水 #開運",
+    "theme": "風水豆知識/玄関",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.5,
+    "attempts": 1,
+    "x_eligible": true,
+    "pending_at": "2026-06-11T09:34:17.097065",
+    "queued_at": "2026-06-11T10:00:06.872635",
+    "threads_post_id": "18233207764313602",
+    "posted_at": "2026-06-11T06:01:01.817229+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
+    "recorded_at": "2026-06-11T06:01:01.822235"
   }
 ]
