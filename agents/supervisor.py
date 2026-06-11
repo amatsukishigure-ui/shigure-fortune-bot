@@ -5,7 +5,7 @@
 """
 
 import json
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
@@ -24,12 +24,12 @@ def _check_posting_rhythm(history: list) -> dict:
     """投稿リズムの異常を検出する"""
     issues = []
 
-    today = datetime.now().date().isoformat()
+    today = datetime.now(timezone.utc).date().isoformat()
     today_posts = [h for h in history if h.get("posted_at", "").startswith(today)]
 
     # 1分以内に複数投稿（bot判定リスク）
     if len(today_posts) >= 2:
-        times = sorted([datetime.fromisoformat(p["posted_at"]) for p in today_posts])
+        times = sorted([datetime.fromisoformat(p["posted_at"]).replace(tzinfo=None) for p in today_posts])
         for i in range(1, len(times)):
             diff = (times[i] - times[i-1]).seconds
             if diff < 60:
@@ -47,10 +47,10 @@ def _check_error_log() -> dict:
     errors = load_json(ERROR_LOG_FILE, default=[])
 
     # 直近1時間のエラー
-    one_hour_ago = datetime.now() - timedelta(hours=1)
+    one_hour_ago = datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(hours=1)
     recent_errors = [
         e for e in errors
-        if datetime.fromisoformat(e["timestamp"]) > one_hour_ago
+        if datetime.fromisoformat(e["timestamp"]).replace(tzinfo=None) > one_hour_ago
     ]
 
     # エージェント別の連続エラー数
