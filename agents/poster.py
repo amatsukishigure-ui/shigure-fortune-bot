@@ -11,7 +11,7 @@ import json
 import time
 import random
 import requests
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
@@ -113,7 +113,7 @@ def _select_image(post: dict) -> str | None:
 
 
 def _count_today_posts(history: list) -> int:
-    today = datetime.now().date().isoformat()
+    today = datetime.now(timezone.utc).date().isoformat()
     return sum(
         1 for h in history
         if h.get("posted_at", "").startswith(today)
@@ -136,7 +136,7 @@ def _can_post(history: list) -> tuple[bool, str]:
 
     last_time = _get_last_post_time(history)
     if last_time:
-        elapsed = datetime.now() - last_time
+        elapsed = datetime.now(timezone.utc).replace(tzinfo=None) - last_time.replace(tzinfo=None)
         min_interval = timedelta(hours=MIN_POST_INTERVAL_HOURS)
         if elapsed < min_interval:
             wait = (min_interval - elapsed).seconds // 60
@@ -368,7 +368,7 @@ def run() -> dict:
 
         # 履歴に記録
         post["threads_post_id"] = post_id
-        post["posted_at"] = datetime.now().isoformat()
+        post["posted_at"] = datetime.now(timezone.utc).isoformat()
         post["is_mock"] = result.get("mock", False)
         post["has_image"] = result.get("has_image", False)
         if post["has_image"] and image_url:   # フォールバックでテキスト投稿になった場合は記録しない
