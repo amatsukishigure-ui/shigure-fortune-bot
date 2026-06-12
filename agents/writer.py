@@ -530,77 +530,6 @@ def _build_prompt(
 - **希少性・時限性**: 「この日だけ」「今日中に動いて」という限定表現が行動を後押しする
 - **損失回避**: 「この開運日を逃すと次は〇日後」という表現が「今動かないとまずい」感覚を生む
 """
-    elif pattern_id == "nensu_pierce":
-        import random as _rnd_nensu
-        _years_options = ["1年以上", "2年近く", "3年以上", "4〜5年", "5年近く", "何年も"]
-        _years = _rnd_nensu.choice(_years_options)
-
-        # ペルソナデータを連携（harm_funnelと同様）
-        all_personas_n = knowledge.get("personas", [])
-        persona_n = (extra_hint or {}).get("persona")
-        if not persona_n and all_personas_n:
-            persona_n = _rnd_nensu.choice(all_personas_n)
-
-        if persona_n:
-            persona_block_n = (
-                f"年齢・職業: {persona_n.get('age')}歳・{persona_n.get('occupation')}\n"
-                f"繰り返していた悩み: {persona_n.get('struggle', '')[:100]}\n"
-                f"龍脈的原因: {persona_n.get('revelation', '')[:100]}\n"
-                f"変化後: {persona_n.get('result', '')[:80]}"
-            )
-        else:
-            persona_block_n = "（ペルソナなし：「何年も繰り返した人の実例」として自由に作成）"
-
-        pattern_extra = f"""
-## 年数刺し型の追加ルール
-
-### 今回の年数指定: {_years}
-冒頭で「同じ悩みを{_years}繰り返している人に、正直に言う。」という形で始めること。
-
-### 参照ペルソナ（{_years}繰り返していた実例として活用）
-{persona_block_n}
-
-### 構成
-1. **年数フック（1行）**: 「同じ悩みを{_years}繰り返している人に、正直に言う。」
-2. **否定（1〜2行）**: 「努力が足りないじゃない。運が悪いでもない。」
-3. **参照ペルソナを活用した実例（1〜2行）**: 上記ペルソナの悩み・原因・変化を自然に匂わせる（名前・特定情報は出さない）
-4. **龍脈命術的原因（1〜2行）**: 「動いている方向が気の流れと逆になっている」
-5. **希望＋CTA（1〜2行）**: 「向きを変えない限り{_years}でも変わらない。でも向きを変えた瞬間に動いた人を見てきた」＋URL
-
-### ルール
-- ペルソナの情報は匿名化して活用（「〜な方を先月鑑定しました」など）
-- 200〜260字
-- 押しつけず「確かめてみて」スタンスのCTA
-
-### 心理効果
-- **具体的共感**: 年数を明示することで「まさに今の自分だ」という強い一致感
-- **社会的証明**: ペルソナの実例が「自分にも変えられるかも」という希望を与える
-- **帰属の外在化**: 「意志じゃなく方位の問題」で罪悪感を解放し、鑑定への動機付け
-"""
-    elif pattern_id == "hikaku_pierce":
-        pattern_extra = """
-## 比較痛み型の追加ルール
-
-### 必須ルール
-- 「あの人はうまくいくのに自分は」という嫉妬・比較の痛みを入口にする
-- 嫉妬を「感じて当然だ」と受け止めてから、原因を外在化する（責めない）
-- 比較のシチュエーションをバリエーションで変えること:
-  「仕事・昇進」「恋愛・結婚」「収入・お金」「転職成功」「起業・副業」など
-
-### 構成
-1. **フック（1行）**: 「「なんであの人だけ〇〇なんだろう」」（読者の内言カギカッコ）
-2. **受け止め（1〜2行）**: 「その感覚、持ったことある人へ。嫉妬を感じた後に来る自己嫌悪、よくわかる。」
-3. **外在化（2〜3行）**: 「差は才能じゃなく、気の流れに乗れているかどうか」
-4. **希望＋CTA（1〜2行）**: 「あなたにも合う方位がある」＋URL
-
-### ルール
-- 200〜250字
-- 嫉妬心を煽るのではなく「嫉妬を感じた自分を責めなくていい」という解放感を与える
-
-### 心理効果
-- **感情の正当化**: 嫉妬心を「感じて当然」と認められることで、信頼と安堵が生まれる
-- **帰属の外在化**: 「差は才能じゃなく方位だ」という新解釈が「自分も変われるかも」を生む
-"""
     elif pattern_id == "hoshi_betsu":
         # 公開時間帯による「今日 or 明日」の使い分け（日付は相対表現のみ、stale防止）
         _hb_is_evening = est_dt and est_dt.hour >= 20
@@ -704,8 +633,12 @@ def _build_prompt(
             menu_lines = "（メニューデータなし）"
 
         if pattern_id == "menu_guide":
-            pattern_extra = f"""
-## メニュー案内型の追加ルール
+            import random as _rnd_menu
+            _menu_format = _rnd_menu.choice(["menu", "line"])
+            _line_url_menu = knowledge.get("profile", {}).get("line_url", "https://lin.ee/TJg5dru")
+            if _menu_format == "menu":
+                pattern_extra = f"""
+## メニュー案内型の追加ルール（Aフォーマット: メニュー対応表）
 - 鑑定ページURL: {service_url}
 - 必ず以下の正確なメニュー名・価格・説明を使うこと（変更・省略・追加禁止）:
 
@@ -717,6 +650,36 @@ def _build_prompt(
 - メニューは全件ではなく読者の状況に合わせて**2〜3件に絞る**
 - 最後は「詳細・お申し込みは {service_url}」で締める
 - **200〜280文字**を目安に。全メニューを列挙しない
+"""
+            else:
+                # LINE誘導フォーマット
+                harm_data = knowledge.get("harm", {})
+                _harm_cats = [k for k in harm_data if not k.startswith("_")]
+                _harm_cat = _rnd_menu.choice(_harm_cats) if _harm_cats else ""
+                _cat_info = harm_data.get(_harm_cat, {})
+                _pains = _cat_info.get("pains", [])
+                _sample_pain = _rnd_menu.choice(_pains) if _pains else "同じ悩みを繰り返している"
+                pattern_extra = f"""
+## メニュー案内型の追加ルール（Bフォーマット: LINE誘導）
+- LINE URL: {_line_url_menu}
+- 今回の読者の痛みテーマ: 「{_sample_pain}」
+
+### 構成（180〜240字）
+**① 痛みの共感（冒頭1〜2行）**
+- 上記テーマから読者の内言「」か「〜な人へ」で始める
+
+**② LINEで話せることを提示（2〜3行）**
+- 「鑑定より前に、まずLINEで話してほしい」という低コスト行動
+- 「相談だけでも」「聞いてもらうだけでも大丈夫」という安心感
+- 費用なし・気軽・申込不要の3点を自然に伝える
+
+**③ LINE URL（1行）**
+- 「▷ LINE {_line_url_menu}」でシンプルに締める
+- 「気が向いたら」「まずは登録だけ」など余裕ある誘導
+
+### 禁止
+- 「今すぐ」「急いで」「限定」などの強制表現
+- 「〜お待ちしております」などの硬い敬語
 """
         else:  # cta_soft
             pattern_extra = f"""
@@ -1160,70 +1123,6 @@ NG: 🔮 vs 🐉（どちらも龍脈命術ブランドシンボルで対にな�
 - 「最強」「本物」「唯一」などの誇大表現
 - 他の占いを「間違っている」と否定する
 """
-    elif pattern_id == "line_cta":
-        import random as _rnd3
-        line_url = knowledge.get("profile", {}).get("line_url", "https://lin.ee/TJg5dru")
-        # HARM共感データを取得（旧harm_lineを統合、extra_hintから受け取る）
-        harm_data = knowledge.get("harm", {})
-        harm_cat = (extra_hint or {}).get("harm_category")
-        if not harm_cat or harm_cat not in harm_data:
-            harm_cats = [k for k in harm_data if not k.startswith("_")]
-            harm_cat = _rnd3.choice(harm_cats) if harm_cats else ""
-        cat_info = harm_data.get(harm_cat, {})
-        cat_label = cat_info.get("label", "")
-        pains = cat_info.get("pains", [])
-        sample_pains = _rnd3.sample(pains, min(3, len(pains))) if pains else []
-        pains_text = "\n".join(f"  - 「{p}」" for p in sample_pains) if sample_pains else "（ペインデータなし）"
-
-        pattern_extra = f"""
-## LINE誘導型（HARM共感統合版）の追加ルール
-- LINE公式アカウントURL: {line_url}
-
-### 今回のHARMカテゴリ: {cat_label or '（自由に選択）'}
-このカテゴリの読者が抱えている痛みの例：
-{pains_text}
-
-### 構成（180〜240字）
-**① 痛みの共感（冒頭1〜2行）**
-- 上記ペインから最も刺さるものを「〜の人へ」か読者の内言「」で表現
-- HARM法則（キャリア・恋愛・健康・お金）のいずれか1つに絞ること
-
-**② LINEで話せることを提示（2〜3行）**
-- 「鑑定の申し込みより前に、まずLINEで話してほしい」という低コスト行動を提示
-- 「相談だけでも」「聞いてもらうだけでも大丈夫」という安心感を添える
-- 費用なし・気軽・申込不要の3点を自然に伝える
-
-**③ LINE URL（1行）**
-- 「▷ LINE {line_url}」でシンプルに締める
-- 「気が向いたら」「まずは登録だけ」など余裕のある誘導
-
-### 禁止
-- 「今すぐ」「急いで」「限定」などの強制的な表現
-- 長すぎる説明（180〜240字を守ること）
-- 「〜お待ちしております」などの硬い敬語
-"""
-    elif pattern_id == "empathy_funnel":
-        pattern_extra = f"""
-## 共感ファネル型の追加ルール
-- 鑑定ページURL: {service_url}
-
-### 構成（この順番で書く）
-1. **悩みの共感フック（1〜2行）**: カギカッコで読者の内言を引用するか、「〜な人へ」で始める。誰でも「自分のことだ」と感じる状況を言語化する
-2. **龍脈命術的な原因（2〜3行）**: なぜその状態が起きているか。「方位のズレ」「気の停滞」「流れへの逆行」など龍脈命術の視点で短く説明する
-3. **解決の橋渡し（1行）**: 「向きを変えるだけで変わる」「方向を整えれば動ける」など具体的でシンプルな希望を伝える
-4. **CTA（1行）**: 「▷ まず無料鑑定から {service_url}」または「▷ 鑑定ページ {service_url}」
-
-### ルール
-- 全体140〜200文字
-- 「頑張れば変わる」ではなく「方向が変われば変わる」というメッセージに徹する
-- 読者を責めず、原因は「方位・気の流れ」に帰属させる
-- CTAは押しつけず「気になる人だけどうぞ」スタンス
-
-### 心理効果
-- **帰属の外在化**: 問題の原因を「自分の努力不足」から「方位・気の流れ」に移すことで罪悪感を取り除き、共感と安堵を生む
-- **社会的証明**: 「何人も見てきた」「よく来る相談」という表現が「自分だけじゃない」という安心を与える
-- **フット・イン・ザ・ドア**: 共感→納得→無料鑑定という段階的な誘導でハードルを下げる
-"""
     elif pattern_id == "empathy_thread":
         pattern_extra = f"""
 ## ツリー型（4投稿・続きが読みたくなる構成）の追加ルール
@@ -1283,33 +1182,29 @@ NG: 🔮 vs 🐉（どちらも龍脈命術ブランドシンボルで対にな�
 - **社会的証明**: 「何人も見てきた」「全員に共通点がある」で信頼を積む
 """
 
-    elif pattern_id == "harm_funnel":
-        import random as _rnd2
+    elif pattern_id == "harm_cta":
+        import random as _rnd_harm
         harm_data = knowledge.get("harm", {})
         cta_action = f"▷ まず無料鑑定から {service_url}"
 
-        # カテゴリ選択（extra_hintで指定されていればそれを使う）
+        # カテゴリ選択
         harm_cat = (extra_hint or {}).get("harm_category")
+        harm_keys = [k for k in harm_data if not k.startswith("_")]
         if not harm_cat or harm_cat not in harm_data:
-            harm_cat = _rnd2.choice([k for k in harm_data if not k.startswith("_")])
-        cat = harm_data[harm_cat]
+            harm_cat = _rnd_harm.choice(harm_keys) if harm_keys else ""
+        cat = harm_data.get(harm_cat, {})
         cat_label = cat.get("label", harm_cat)
         pains = cat.get("pains", [])
-        # 3つのペイン例をランダム選択して提示
-        sample_pains = _rnd2.sample(pains, min(3, len(pains)))
-        pains_text = "\n".join(f"  - 「{p}」" for p in sample_pains)
+        sample_pains = _rnd_harm.sample(pains, min(3, len(pains))) if pains else []
+        pains_text = "\n".join(f"  - 「{p}」" for p in sample_pains) if sample_pains else "（ペインデータなし）"
 
-        # 対応するペルソナを探す
+        # ペルソナ取得
         persona_tags = cat.get("persona_tags", [])
         all_personas = knowledge.get("personas", [])
-        matched = [
-            p for p in all_personas
-            if any(tag in p.get("tags", []) for tag in persona_tags)
-        ]
+        matched = [p for p in all_personas if any(t in p.get("tags", []) for t in persona_tags)]
         persona = (extra_hint or {}).get("persona")
         if not persona and matched:
-            persona = _rnd2.choice(matched)
-
+            persona = _rnd_harm.choice(matched)
         if persona:
             persona_block = (
                 f"年齢・職業: {persona.get('age')}歳・{persona.get('occupation')}\n"
@@ -1320,46 +1215,75 @@ NG: 🔮 vs 🐉（どちらも龍脈命術ブランドシンボルで対にな�
         else:
             persona_block = "（ペルソナなし：実際の鑑定例として自由に作成）"
 
-        pattern_extra = f"""
-## HARM共感ファネル型の追加ルール
+        # サブパターンをランダム選択: A=HARM法則型 / B=年数刺し型 / C=比較痛み型
+        _sub = _rnd_harm.choice(["A", "B", "C"])
+        _years_opts = ["1年以上", "2年近く", "3年以上", "4〜5年", "5年近く", "何年も"]
+        _years = _rnd_harm.choice(_years_opts)
+
+        if _sub == "A":
+            pattern_extra = f"""
+## 痛みCTA型 — Aパターン（HARM法則型）
 
 ### 今回のHARMカテゴリ: {cat_label}
-このカテゴリの読者が抱えている痛みの例：
+読者が抱えている痛みの例：
 {pains_text}
 
-### 参照ペルソナ（実際の鑑定例として活用）
+### 参照ペルソナ
 {persona_block}
 
-### 構成（200〜280字）
-**【冒頭スクロール停止フック（必須）】**
-1行目で必ずスクロールを止める。以下のいずれかを使うこと（毎回変える）:
-- 読者の内言型: 「〜」（ペインから最も刺さる一言を「」で引用）
-- 断言型: 「ぶっちゃけ〜」「正直に言う。〜」「これは大事なことだから言う。〜」
-- 年数刺し型: 「〇年以上同じ悩みを繰り返している人へ。」（1〜5年でバリエーション）
-- 比較型: 「同じように〜しているのに、なぜかあの人だけうまくいく。」
+### 構成（200〜260字）
+1. **スクロール停止フック（1行）**: 「〜の人へ」「正直に言う。〜」「ぶっちゃけ〜」から選ぶ
+2. **痛みの受け止め（1行）**: 「意志が弱いんじゃない」「あなたのせいじゃないかもしれない」
+3. **龍脈命術的原因（2〜3行）**: 方位・気の流れで具体的に。ペルソナの revelation を参考に
+4. **希望＋CTA（1〜2行）**: 「向きを変えた方を何人も見てきた」→「{cta_action}」
 
-**① 痛みの言語化（冒頭1〜2行）**
-- 上記フックで始めたら、その痛みをもう1文だけ深める
+### 禁止
+- 根拠のない励まし・断言しすぎ / 4行超の一段落
+"""
+        elif _sub == "B":
+            pattern_extra = f"""
+## 痛みCTA型 — Bパターン（年数刺し型）
 
-**② 受け止め（1行）**
-- 「それ、意志が弱いんじゃない」「あなたのせいじゃないかもしれない」など
+### 今回の年数指定: {_years}
+冒頭は「同じ悩みを{_years}繰り返している人に、正直に言う。」で始めること。
 
-**③ 龍脈命術的原因の開示（2〜3行）**
-- 方位・気の流れで具体的に説明
-- 参照ペルソナの revelation を参考にする
+### 参照ペルソナ（{_years}繰り返していた実例として活用）
+{persona_block}
 
-**④ 希望＋CTA（1〜2行）**
-- 「向きを変えるだけで動けた方を何人も見てきた」など変化の可能性を示す
-- 「{cta_action}」で締める
+### 構成（200〜260字）
+1. **年数フック（1行）**: 「同じ悩みを{_years}繰り返している人に、正直に言う。」
+2. **否定（1行）**: 「努力が足りないじゃない。運が悪いでもない。」
+3. **ペルソナ実例を匂わせる（1〜2行）**: 悩み・原因・変化を匿名で（名前・特定情報は出さない）
+4. **龍脈命術的原因（1〜2行）**: 「動いている方向が気の流れと逆」
+5. **希望＋CTA（1〜2行）**: 「向きを変えた瞬間に動いた人を見てきた」→「{cta_action}」
 
-### 禁止事項
-- 根拠のない励まし・断言しすぎ NG
-- 4行以上の長い一段落は避ける（空白行で呼吸を作ること）
+### 禁止
+- 4行超の一段落 / ペルソナの個人情報を特定できる形で記載
+"""
+        else:  # C
+            pattern_extra = f"""
+## 痛みCTA型 — Cパターン（比較痛み型）
+
+### 比較シチュエーション（毎回変える）
+「仕事・昇進」「恋愛・結婚」「収入・お金」「転職成功」「起業・副業」など
+
+### 今回のHARMカテゴリ参考
+{pains_text}
+
+### 構成（200〜250字）
+1. **フック（1行）**: 「「なんであの人だけ〇〇なんだろう」」（読者の内言カギカッコ）
+2. **受け止め（1〜2行）**: 「その感覚を持ったことある人へ。嫉妬の後の自己嫌悪、よくわかる。」
+3. **外在化（2〜3行）**: 「差は才能じゃなく、気の流れに乗れているかどうか」
+4. **希望＋CTA（1〜2行）**: 「あなたにも合う方位がある」→「{cta_action}」
+
+### 禁止
+- 嫉妬を煽る / 自己嫌悪を悪化させる表現 / 4行超の一段落
 """
 
     # ── conversion カテゴリ: 末尾URL必須ルール ──────────────────────────
     # kyokan / follow_cta など URL 未設定の conversion パターン向け（engagement_hook は kyokan に統合済み）
-    if pattern.get("category") == "conversion" and "https://" not in pattern_extra:
+    _conv_cats = {"conversion_soft", "conversion_story", "conversion_cta", "conversion_menu"}
+    if pattern.get("category") in _conv_cats and "https://" not in pattern_extra:
         _line_url = knowledge.get("profile", {}).get("line_url", "https://lin.ee/TJg5dru")
         pattern_extra += f"""
 ## 【必須】集客系パターンの末尾URL
@@ -1373,7 +1297,7 @@ NG: 🔮 vs 🐉（どちらも龍脈命術ブランドシンボルで対にな�
 
     # ── 星座ブースト（if/elif チェーン完了後に適用） ─────────────────
     zodiac_boost = extra_hint.get("zodiac_boost") if extra_hint else None
-    if zodiac_boost and pattern_id not in ("zodiac_target", "caligula", "hoshi_betsu", "empathy_thread", "harm_funnel"):
+    if zodiac_boost and pattern_id not in ("zodiac_target", "caligula", "hoshi_betsu", "empathy_thread", "harm_cta"):
         pattern_extra += f"""
 ## 星座ターゲット（ソフト適用）
 このテーマを特に「{zodiac_boost}」の人に刺さるよう書く。
@@ -1651,7 +1575,7 @@ def run(batch_size: int = 5) -> dict:
             _zodiac_val = _pick_zodiac()
             extra_hint["zodiac"] = _zodiac_val
             extra_hint["zodiac_boost"] = _zodiac_val  # 画像選択にも使う
-        elif pattern.get("id") in ("kyokan", "list", "trivia", "empathy_funnel", "pop_short"):
+        elif pattern.get("id") in ("kyokan", "list", "trivia", "pop_short"):
             # 50%の確率で星座ブーストを適用（コンテンツを特定星座に自然にターゲット）
             if _random.random() < 0.5:
                 extra_hint["zodiac_boost"] = _pick_zodiac()
@@ -1660,15 +1584,13 @@ def run(batch_size: int = 5) -> dict:
             if persona:
                 extra_hint["persona"] = persona
                 recent_persona_ids.append(persona.get("id"))
-        elif pattern.get("id") in ("harm_funnel", "line_cta"):
+        elif pattern.get("id") == "harm_cta":
             # HARMカテゴリをランダム選択してペルソナをマッチング
-            # harm_funnel: 鑑定CTA / line_cta: LINE誘導（旧harm_line統合済み）
             harm_data = knowledge.get("harm", {})
             harm_cats = [k for k in harm_data if not k.startswith("_")]
             if harm_cats:
                 harm_cat = _random.choice(harm_cats)
                 extra_hint["harm_category"] = harm_cat
-                # カテゴリに対応するペルソナを選ぶ
                 persona_tags = harm_data[harm_cat].get("persona_tags", [])
                 matched = [
                     p for p in knowledge.get("personas", [])

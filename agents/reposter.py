@@ -27,7 +27,7 @@ REPOST_MIN_LIKES = 3          # いいね 3 以上
 REPOST_MIN_VIEWS = 100        # views 100 以上
 REPOST_MAX_PER_RUN = 2        # 1回の実行で最大 2 件追加
 # リポストしないパターン（時事性が高すぎるもの）
-SKIP_PATTERNS = {"kaiun_day", "yoru_kichi", "menu_guide", "line_cta", "follow_cta"}
+SKIP_PATTERNS = {"kaiun_day", "yoru_kichi", "menu_guide", "follow_cta"}
 
 
 def _update_date_expressions(text: str, profile: dict) -> str:
