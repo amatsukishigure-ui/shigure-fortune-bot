@@ -12,26 +12,54 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from config import X_CHAR_LIMIT, THREADS_CHAR_LIMIT, X_HASHTAGS
 
 
-THREADS_HASHTAGS = "#占い #龍脈命術"  # Threads投稿末尾に付加するタグ（発見性向上）
-THREADS_HASHTAG_LEN = len("\n\n" + THREADS_HASHTAGS)
+THREADS_HASHTAGS_BASE = "#占い #龍脈命術"  # デフォルトタグ
+THREADS_HASHTAG_LEN = len("\n\n" + THREADS_HASHTAGS_BASE)
+
+# テーマ別Threadsハッシュタグ（新規層発見性向上）
+_THREADS_THEME_TAGS: dict[str, str] = {
+    "転職":    "#転職 #仕事運",
+    "引越":    "#引越し #風水",
+    "恋愛":    "#恋愛運 #縁",
+    "金運":    "#金運 #開運",
+    "仕事":    "#仕事運 #運気アップ",
+    "停滞":    "#開運 #運気アップ",
+    "対人":    "#人間関係 #開運",
+    "吉方位":  "#吉方位 #開運",
+    "星座":    "#星座占い #運勢",
+    "風水":    "#風水 #開運",
+    "健康":    "#健康運 #開運",
+    "転機":    "#開運 #運気アップ",
+    "環境":    "#風水 #開運",
+    "方位":    "#吉方位 #龍脈命術",
+}
 
 
-def format_for_threads(text: str) -> str:
+def _get_threads_tags(text: str, theme: str = "") -> str:
+    """テキスト・テーマに合ったThreadsハッシュタグを返す"""
+    for key, tags in _THREADS_THEME_TAGS.items():
+        if key in theme or key in text:
+            return f"#占い {tags}"
+    return THREADS_HASHTAGS_BASE
+
+
+def format_for_threads(text: str, theme: str = "") -> str:
     """
     Threads用に整形する（最大500字）。
     段落単位で収まる範囲まで含め、文の途中で切れないようにする。
-    末尾にハッシュタグを追加して投稿の発見性を高める。
+    末尾にテーマに合ったハッシュタグを追加して発見性を高める。
     """
     text = text.strip()
+    tags = _get_threads_tags(text, theme)
 
     # 既にハッシュタグが含まれていたら追加しない
     has_tag = "#占い" in text or "#龍脈命術" in text or "#吉方位" in text
 
     # ハッシュタグ付きで収まるかチェック
-    body_limit = THREADS_CHAR_LIMIT - (THREADS_HASHTAG_LEN if not has_tag else 0)
+    tag_len = len("\n\n" + tags)
+    body_limit = THREADS_CHAR_LIMIT - (tag_len if not has_tag else 0)
 
     if len(text) <= body_limit:
-        return text if has_tag else f"{text}\n\n{THREADS_HASHTAGS}"
+        return text if has_tag else f"{text}\n\n{tags}"
 
     # 段落（空行区切り）単位で収まる範囲まで結合する
     blocks = text.split("\n\n")
@@ -46,7 +74,7 @@ def format_for_threads(text: str) -> str:
     if result:
         # カット後にハッシュタグが消えていたら再付加（has_tagは元テキストの判定なので再チェック）
         result_has_tag = "#占い" in result or "#龍脈命術" in result or "#吉方位" in result
-        return result if result_has_tag else f"{result}\n\n{THREADS_HASHTAGS}"
+        return result if result_has_tag else f"{result}\n\n{tags}"
 
     # 1段落でも500字を超える場合は文末（。）で切る
     truncated = text[:body_limit - 1]
@@ -61,10 +89,10 @@ def format_for_threads(text: str) -> str:
     if last_newline > body_limit // 2:
         body = truncated[:last_newline]
         body_has_tag = "#占い" in body or "#龍脈命術" in body or "#吉方位" in body
-        return body if body_has_tag else f"{body}\n\n{THREADS_HASHTAGS}"
+        return body if body_has_tag else f"{body}\n\n{tags}"
 
     trunc_has_tag = "#占い" in truncated or "#龍脈命術" in truncated or "#吉方位" in truncated
-    return truncated if trunc_has_tag else f"{truncated}\n\n{THREADS_HASHTAGS}"
+    return truncated if trunc_has_tag else f"{truncated}\n\n{tags}"
 
 
 def format_for_x(text: str, hashtags: list = None) -> str:
@@ -125,38 +153,52 @@ def format_for_x(text: str, hashtags: list = None) -> str:
 
 
 def get_x_hashtags_for_theme(theme: str) -> list:
-    """テーマに合わせたハッシュタグを返す"""
+    """テーマに合わせたハッシュタグを返す（新規層発見性を重視）"""
     base = ["#占い", "#時雨"]
     theme_tags = {
-        "吉方位": ["#吉方位", "#風水"],
-        "風水": ["#風水", "#開運"],
-        "星座": ["#星座占い", "#運勢"],
-        "引越": ["#引越し", "#吉方位"],
-        "転機": ["#龍脈命術", "#開運"],
-        "金運": ["#金運", "#風水"],
-        "恋愛": ["#恋愛運", "#星座占い"],
-        "仕事": ["#仕事運", "#転職"],
-        "対人": ["#対人運", "#開運"],
-        "健康": ["#健康運", "#開運"],
-        "引き寄せ": ["#引き寄せ", "#龍脈命術"],
-        "神社": ["#神社", "#パワースポット"],
-        "開運行動": ["#開運", "#風水"],
+        # 既存フォロワー向け
+        "吉方位":     ["#吉方位", "#風水"],
+        "風水":       ["#風水", "#開運"],
+        "星座":       ["#星座占い", "#運勢"],
+        "引越":       ["#引越し", "#吉方位"],
+        "転機":       ["#龍脈命術", "#開運"],
+        "金運":       ["#金運", "#風水"],
+        "恋愛":       ["#恋愛運", "#星座占い"],
+        "仕事":       ["#仕事運", "#転職"],
+        "対人":       ["#対人運", "#開運"],
+        "健康":       ["#健康運", "#開運"],
+        "引き寄せ":   ["#引き寄せ", "#龍脈命術"],
+        "神社":       ["#神社", "#パワースポット"],
+        "開運行動":   ["#開運", "#風水"],
         "メッセージ": ["#星座占い", "#運勢"],
-        "総合運": ["#運勢", "#星座占い"],
-        "開運日": ["#開運日", "#一粒万倍日"],
-        "一粒万倍": ["#一粒万倍日", "#開運"],
-        "天赦": ["#天赦日", "#開運日"],
-        "大安": ["#大安", "#開運日"],
-        "寅の日": ["#寅の日", "#金運"],
-        "巳の日": ["#巳の日", "#金運"],
+        "総合運":     ["#運勢", "#星座占い"],
+        "開運日":     ["#開運日", "#一粒万倍日"],
+        "一粒万倍":   ["#一粒万倍日", "#開運"],
+        "天赦":       ["#天赦日", "#開運日"],
+        "大安":       ["#大安", "#開運日"],
+        "寅の日":     ["#寅の日", "#金運"],
+        "巳の日":     ["#巳の日", "#金運"],
         "インテリア": ["#風水インテリア", "#開運"],
-        "暮らし": ["#吉方位", "#開運"],
-        "季節": ["#開運", "#吉方位"],
-        "天文": ["#星座占い", "#開運"],
+        "暮らし":     ["#吉方位", "#開運"],
+        "季節":       ["#開運", "#吉方位"],
+        "天文":       ["#星座占い", "#開運"],
         "方位の基礎": ["#吉方位", "#風水"],
+        # 新規層発見タグ（普遍的悩みから検索する層）
+        "転職":       ["#転職", "#仕事運"],
+        "キャリア":   ["#転職", "#仕事運"],
+        "停滞":       ["#運気アップ", "#開運"],
+        "変化":       ["#運気アップ", "#開運"],
+        "人間関係":   ["#人間関係", "#対人運"],
+        "悩み":       ["#開運", "#運気アップ"],
+        "お金":       ["#金運", "#お金"],
+        "住まい":     ["#引越し", "#風水インテリア"],
+        "部屋":       ["#風水インテリア", "#開運"],
+        "玄関":       ["#風水インテリア", "#開運"],
+        "財布":       ["#金運", "#開運"],
+        "デスク":     ["#風水インテリア", "#仕事運"],
     }
     for key, tags in theme_tags.items():
         if key in theme:
             return base + tags
 
-    return base + ["#龍脈命術", "#吉方位"]
+    return base + ["#龍脈命術", "#開運"]
