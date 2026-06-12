@@ -239,17 +239,21 @@ def _select_pattern(
         available = [p for p in patterns if platform_hint in p.get("platforms", ["threads"])]
 
     # 時間帯・曜日による weight ブースト
+    from datetime import datetime, timezone
+    _today_wd = datetime.now(timezone.utc).weekday()  # 月=0
     weights = []
     for p in available:
         w = p.get("weight", 1.0)
-        if 20 <= hour <= 23 and p.get("id") == "yoru_kichi":
-            w *= 3.0
-        # 月曜（weekday=0）は weekly_forecast を2.5倍優先
-        if hour is not None:
-            from datetime import datetime, timezone
-            _wd = datetime.now(timezone.utc).weekday()  # 月=0
-            if _wd == 0 and p.get("id") == "weekly_forecast":
-                w *= 2.5
+        pid = p.get("id", "")
+
+        # preferred_hours ブースト: 最優先時間帯は 2.5x
+        if hour in p.get("preferred_hours", []):
+            w *= 2.5
+
+        # 月曜の weekly_forecast は追加 1.5x（月曜 preferred_hours との合計 = 3.75x）
+        if _today_wd == 0 and pid == "weekly_forecast":
+            w *= 1.5
+
         weights.append(w)
 
     return random.choices(available, weights=weights, k=1)[0]
