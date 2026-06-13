@@ -4623,5 +4623,22 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-06-13T06:01:03.229949"
+  },
+  {
+    "text": "「最近、なんか体が重い気がする」\n\nそれ、気のせいじゃないかもしれない。\n\n龍脈命術では、体調の変化は\"気の滞り\"のサインとして読む。梅雨の時期は特に、湿気とともに気の巡りが鈍くなりやすい。\n\n心当たりある？\n\n▷ LINE https://lin.ee/TJg5dru\n\n#占い #龍脈命術",
+    "x_text": "「最近、なんか体が重い気がする」\n\nそれ、気のせいじゃないかもしれない。\n\n龍脈命術では、体調の変化は\"気の滞り\"のサインとして読む。梅雨の時期は特に、湿気とともに気の巡りが鈍くなりやすい。\n\n心当たりある？\n\n▷ LINE https://lin.ee/TJg5dru\n\n#占い #時雨 #健康運 #開運",
+    "theme": "鑑定エピソード/健康・体調",
+    "pattern_id": "kyokan",
+    "quality_score": 7.5,
+    "attempts": 1,
+    "x_eligible": true,
+    "pending_at": "2026-06-11T21:42:33.572792",
+    "queued_at": "2026-06-11T21:42:52.966163",
+    "threads_post_id": "18114679987860714",
+    "posted_at": "2026-06-13T06:51:52.878605+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/season/summer.jpg",
+    "recorded_at": "2026-06-13T06:51:52.883664"
   }
 ]
