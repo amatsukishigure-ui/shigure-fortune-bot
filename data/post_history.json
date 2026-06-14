@@ -4946,5 +4946,22 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-06-14T08:43:12.871822"
+  },
+  {
+    "text": "開運日や天一天上の日に、吉方位へ動いてみた経験がある人っていますか？\n\n龍脈命術では、気の流れが開く日と方位が重なったとき、小さな行動でも流れが変わりやすいと見ている。\n\n「大きな変化」じゃなくていい。「なんか今日はスムーズだった」くらいのことでも、いたら聞かせてもらえますか。\n\n#占い #吉方位 #開運",
+    "x_text": "開運日や天一天上の日に、吉方位へ動いてみた経験がある人っていますか？\n\n龍脈命術では、気の流れが開く日と方位が重なったとき、小さな行動でも流れが変わりやすいと見ている。\n\n「大きな変化」じゃなくていい。「なんか今日はスムーズだった」くらいのことでも、いたら聞かせてもらえますか。\n\n#占い #時雨 #吉方位 #風水",
+    "theme": "開運日/天一天上と吉方位",
+    "pattern_id": "testimony_ask",
+    "quality_score": 7.2,
+    "attempts": 1,
+    "x_eligible": false,
+    "pending_at": "2026-06-14T08:42:11.633398",
+    "queued_at": "2026-06-14T08:43:07.010172",
+    "threads_post_id": "17992891028994017",
+    "posted_at": "2026-06-14T09:20:11.592148+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
+    "recorded_at": "2026-06-14T09:20:11.597383"
   }
 ]
