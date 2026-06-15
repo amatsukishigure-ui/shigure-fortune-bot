@@ -5216,5 +5216,22 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-06-15T08:54:43.875510"
+  },
+  {
+    "text": "朝の5分で、気の流れは変わる。\n\n【星座別・今月の開運モーニングアクション】\n\n♈ 牡羊座 → 窓を開けて東の風を入れる\n♉ 牡牛座 → 白湯をゆっくり一杯\n♊ 双子座 → 朝の散歩で南東へ歩く\n♋ 蟹座 → 玄関をひと拭きしてから出る\n♌ 獅子座 → 鏡の前で深呼吸を3回\n♍ 乙女座 → 朝日を浴びながらストレッチ\n♎ 天秤座 → 花か緑を視界に入れる\n♏ 蠍座 → 冷水で手首を清める\n♐ 射手座 → いつもと違う道を通る\n♑ 山羊座 → 靴を",
+    "theme": "開運アクション/朝の習慣",
+    "pattern_id": "hoshi_betsu",
+    "quality_score": 7.9,
+    "attempts": 1,
+    "x_eligible": false,
+    "is_repost": true,
+    "original_post_id": "18091262599927524",
+    "pending_at": "2026-06-15T08:53:21.695170",
+    "queued_at": "2026-06-15T08:54:35.341361",
+    "threads_post_id": "18081539192447451",
+    "posted_at": "2026-06-15T09:58:00.705006+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-06-15T09:58:00.710813"
   }
 ]
