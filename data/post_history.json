@@ -5333,5 +5333,21 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
     "recorded_at": "2026-06-15T17:59:22.606283"
+  },
+  {
+    "text": "今の自分、どのタイプ？\n\nA: 動きたいけど踏み出せない → 🌀\nB: 動いてるのに手応えがない → 🌧️\nC: まず気持ちを整えたい → 🌿\nD: 変化の予感がしてる → ✨\n\nどれかな。\n\n#占い #吉方位 #開運",
+    "x_text": "今の自分、どのタイプ？\n\nA: 動きたいけど踏み出せない → 🌀\nB: 動いてるのに手応えがない → 🌧️\nC: まず気持ちを整えたい → 🌿\nD: 変化の予感がしてる → ✨\n\nどれかな。\n\n#占い #時雨 #吉方位 #風水",
+    "theme": "季節・天文と方位/秋分と吉方位",
+    "pattern_id": "type_quiz",
+    "quality_score": 7.7,
+    "attempts": 1,
+    "x_eligible": false,
+    "pending_at": "2026-06-15T08:53:30.096076",
+    "queued_at": "2026-06-15T08:54:35.342150",
+    "threads_post_id": "17936529798266230",
+    "posted_at": "2026-06-15T18:59:28.781560+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-06-15T18:59:28.787447"
   }
 ]
