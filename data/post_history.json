@@ -5283,5 +5283,21 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/fengshui_abundance.jpg",
     "recorded_at": "2026-06-15T13:28:59.732334"
+  },
+  {
+    "text": "満月の夜、方位を意識して外に出た人っていますか？\n\n龍脈命術では、満月は「気の流れが最も動く日」とされている。\n\n大げさなことじゃなくても、「なんかいつもより澄んでいた」くらいでもいい。\n\nいたら、聞かせてもらえますか。\n\n#占い #吉方位 #開運",
+    "x_text": "満月の夜、方位を意識して外に出た人っていますか？\n\n龍脈命術では、満月は「気の流れが最も動く日」とされている。\n\n大げさなことじゃなくても、「なんかいつもより澄んでいた」くらいでもいい。\n\nいたら、聞かせてもらえますか。\n\n#占い #時雨 #吉方位 #風水",
+    "theme": "季節・天文と方位/満月の吉方位行動",
+    "pattern_id": "testimony_ask",
+    "quality_score": 7.7,
+    "attempts": 1,
+    "x_eligible": false,
+    "pending_at": "2026-06-14T16:19:45.405300",
+    "queued_at": "2026-06-14T16:20:01.331197",
+    "threads_post_id": "18566913373070871",
+    "posted_at": "2026-06-15T15:39:47.497843+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-06-15T15:39:47.503514"
   }
 ]
