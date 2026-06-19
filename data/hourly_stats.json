@@ -1,8 +1,8 @@
 {
   "2": {
-    "views_sum": 567,
+    "views_sum": 576,
     "likes_sum": 19,
-    "count": 7
+    "count": 8
   },
   "14": {
     "views_sum": 1536,
@@ -10,9 +10,9 @@
     "count": 10
   },
   "17": {
-    "views_sum": 3094,
+    "views_sum": 3332,
     "likes_sum": 119,
-    "count": 25
+    "count": 26
   },
   "19": {
     "views_sum": 1462,
@@ -25,9 +25,9 @@
     "count": 21
   },
   "15": {
-    "views_sum": 4419,
+    "views_sum": 4426,
     "likes_sum": 217,
-    "count": 36
+    "count": 37
   },
   "1": {
     "views_sum": 5602,
@@ -50,19 +50,19 @@
     "count": 14
   },
   "10": {
-    "views_sum": 1283,
+    "views_sum": 1465,
     "likes_sum": 46,
-    "count": 31
+    "count": 32
   },
   "12": {
-    "views_sum": 2443,
+    "views_sum": 2450,
     "likes_sum": 125,
-    "count": 33
+    "count": 34
   },
   "16": {
-    "views_sum": 698,
+    "views_sum": 2815,
     "likes_sum": 37,
-    "count": 13
+    "count": 14
   },
   "20": {
     "views_sum": 603,
@@ -95,9 +95,9 @@
     "count": 3
   },
   "7": {
-    "views_sum": 1923,
+    "views_sum": 1950,
     "likes_sum": 51,
-    "count": 11
+    "count": 12
   },
   "3": {
     "views_sum": 420,
@@ -105,8 +105,8 @@
     "count": 7
   },
   "9": {
-    "views_sum": 619,
+    "views_sum": 637,
     "likes_sum": 13,
-    "count": 9
+    "count": 10
   }
 }
