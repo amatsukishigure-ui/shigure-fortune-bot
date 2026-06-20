@@ -6509,5 +6509,22 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/fengshui_abundance.jpg",
     "recorded_at": "2026-06-20T05:21:37.939508"
+  },
+  {
+    "text": "夏至前夜、あなたの気の状態はどのタイプ？\n\nA: 動きたいのに一歩が出ない → 🌀\nB: なんとなく整えてから動きたい → 🌿\nC: もう動き出してる、波に乗ってる → 🔥\nD: 停滞してる気がして焦ってる → 💧\n\nどれに近い？\n\n#占い #開運 #運気アップ",
+    "x_text": "夏至前夜、あなたの気の状態はどのタイプ？\n\nA: 動きたいのに一歩が出ない → 🌀\nB: なんとなく整えてから動きたい → 🌿\nC: もう動き出してる、波に乗ってる → 🔥\nD: 停滞してる気がして焦ってる → 💧\n\nどれに近い？\n\n#占い #時雨 #開運 #風水",
+    "theme": "開運行動/週末の整え方",
+    "pattern_id": "type_quiz",
+    "quality_score": 7.7,
+    "attempts": 2,
+    "x_eligible": false,
+    "pending_at": "2026-06-19T09:08:08.482892",
+    "queued_at": "2026-06-19T09:08:32.402458",
+    "threads_post_id": "17894829087493268",
+    "posted_at": "2026-06-20T06:01:09.270919+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/season/summer.jpg",
+    "recorded_at": "2026-06-20T06:01:09.277403"
   }
 ]
