@@ -6862,5 +6862,22 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-06-21T09:37:04.987539"
+  },
+  {
+    "text": "占いに興味を持ったのって、どんな経験がきっかけでしたか？\n\n「なんとなく流れが変わった気がした」くらいでも、「あの時あれで救われた」でも。\n\n龍脈命術を届けていくうえで、みなさんの最初の一歩が気になってる。教えてもらえますか？\n\n#占い #龍脈命術",
+    "x_text": "占いに興味を持ったのって、どんな経験がきっかけでしたか？\n\n「なんとなく流れが変わった気がした」くらいでも、「あの時あれで救われた」でも。\n\n龍脈命術を届けていくうえで、みなさんの最初の一歩が気になってる。教えてもらえますか？\n\n#占い #時雨 #龍脈命術 #開運",
+    "theme": "時雨の世界観/占いへの想い",
+    "pattern_id": "testimony_ask",
+    "quality_score": 7.4,
+    "attempts": 1,
+    "x_eligible": false,
+    "pending_at": "2026-06-20T08:24:03.154755",
+    "queued_at": "2026-06-20T08:24:10.703785",
+    "threads_post_id": "18052672835685831",
+    "posted_at": "2026-06-21T10:51:10.853119+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/fengshui_abundance.jpg",
+    "recorded_at": "2026-06-21T10:51:10.860239"
   }
 ]
