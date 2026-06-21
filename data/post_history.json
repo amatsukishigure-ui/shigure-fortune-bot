@@ -6879,5 +6879,22 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/fengshui_abundance.jpg",
     "recorded_at": "2026-06-21T10:51:10.860239"
+  },
+  {
+    "text": "龍脈命術は、星座占いとちょっと違う場所を見ている。\n\n星座は「あなたがどんな人か」を読む。\n龍脈命術は「あなたが今いる場所の気の流れ」を読む。\n\n仕事がうまくいかないとき、多くの人は「自分を変えよう」と思う。\nでも必要なのは、向きを変えることだったりする。\n\n自分じゃなく、方向が合っていなかっただけ。\nそれだけで、動き出すことがある。\n\n心当たりある？\n\n#占い #仕事運 #運気アップ",
+    "x_text": "龍脈命術は、星座占いとちょっと違う場所を見ている。\n\n星座は「あなたがどんな人か」を読む。\n龍脈命術は「あなたが今いる場所の気の流れ」を読む。\n\n仕事がうまくいかないとき、多くの人は「自分を変えよう」と思う。\nでも必要なのは、向きを変えることだったりする。\n\n自分じゃなく、方向が合っていなかっただけ。\nそれだけで、動き出すことがある。\n\n心当たりある？\n\n#占い #時雨 #星座占い #運勢",
+    "theme": "星座占い/仕事運",
+    "pattern_id": "brand_ryumyaku",
+    "quality_score": 7.8,
+    "attempts": 1,
+    "x_eligible": true,
+    "pending_at": "2026-06-20T22:04:17.000083",
+    "queued_at": "2026-06-20T22:05:02.212722",
+    "threads_post_id": "17879654490670447",
+    "posted_at": "2026-06-21T12:01:06.345600+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
+    "recorded_at": "2026-06-21T12:01:06.352919"
   }
 ]
