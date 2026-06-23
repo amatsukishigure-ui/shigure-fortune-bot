@@ -7434,5 +7434,21 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-06-23T08:33:00.338910"
+  },
+  {
+    "text": "大地が揺れるとき、気の流れも乱れる。\n\n引越しや移転を考えているなら、今は「どこに動くか」より「いつ・どの方位に動くか」が問われている。龍脈命術では、動くタイミングと方位がずれると、どれだけの行動力も空振りになる。\n\n焦り、感じてる？\n\n#占い #引越し #風水",
+    "x_text": "大地が揺れるとき、気の流れも乱れる。\n\n引越しや移転を考えているなら、今は「どこに動くか」より「いつ・どの方位に動くか」が問われている。龍脈命術では、動くタイミングと方位がずれると、どれだけの行動力も空振りになる。\n\n焦り、感じてる？\n\n#占い #時雨 #吉方位 #風水",
+    "theme": "吉方位・風水/引越し方位",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.8,
+    "attempts": 1,
+    "x_eligible": true,
+    "pending_at": "2026-06-23T08:32:07.456879",
+    "queued_at": "2026-06-23T08:32:51.982472",
+    "threads_post_id": "17915270871199591",
+    "posted_at": "2026-06-23T10:45:48.911900+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-06-23T10:45:48.917795"
   }
 ]
