@@ -51,6 +51,51 @@ def _merge_history_and_performance(history: list, perf_data: list) -> list:
     return merged
 
 
+WEIGHT_ADJUSTMENTS_FILE = DATA_DIR / "pattern_weight_adjustments.json"
+
+
+def compute_pattern_weight_adjustments(history: list, perf_data: list, lookback_days: int = 30) -> dict:
+    """
+    過去N日間の実パフォーマンスからパターン別の重み補正係数を計算する。
+    戻り値: {"caligula": 1.3, "kyokan": 0.7, ...} (0.5〜2.0の範囲)
+    """
+    from datetime import timedelta
+    from collections import defaultdict
+
+    cutoff = (datetime.now() - timedelta(days=lookback_days)).isoformat()
+    perf_map = {p["post_id"]: p for p in perf_data if "post_id" in p}
+
+    pattern_scores: dict = defaultdict(list)
+    for post in history:
+        if post.get("posted_at", "") < cutoff:
+            continue
+        pid = post.get("pattern_id")
+        post_id = post.get("threads_post_id")
+        if not pid or not post_id:
+            continue
+        perf = perf_map.get(post_id, {})
+        score = perf.get("likes", 0) * 3 + perf.get("replies", 0) * 10 + perf.get("reposts", 0) * 5
+        pattern_scores[pid].append(score)
+
+    if not pattern_scores:
+        return {}
+
+    all_scores = [s for scores in pattern_scores.values() for s in scores]
+    global_avg = sum(all_scores) / len(all_scores) if all_scores else 1.0
+    if global_avg == 0:
+        return {}
+
+    adjustments = {}
+    for pid, scores in pattern_scores.items():
+        if len(scores) < 3:  # サンプル不足はスキップ（ノイズ防止）
+            continue
+        pattern_avg = sum(scores) / len(scores)
+        ratio = pattern_avg / global_avg
+        adjustments[pid] = round(max(0.5, min(2.0, ratio)), 3)
+
+    return adjustments
+
+
 def run() -> dict:
     """
     アナリストエージェントのメイン処理。
@@ -162,11 +207,23 @@ def run() -> dict:
     }
     save_json(ANALYSIS_REPORT_FILE, report)
 
+    # パターン重み補正係数を計算して保存（writer._select_patternが読む）
+    adjustments = compute_pattern_weight_adjustments(history, perf_data, lookback_days=30)
+    if adjustments:
+        adj_data = {
+            "updated_at": datetime.now().isoformat(),
+            "lookback_days": 30,
+            "adjustments": adjustments,
+        }
+        save_json(WEIGHT_ADJUSTMENTS_FILE, adj_data)
+        print(f"   重み補正係数を更新: {len(adjustments)}パターン")
+
     print(f"✅ アナリスト: {len(merged)}件分析完了")
     return {
         "top_patterns": top_patterns,
         "top_themes": top_themes,
         "feedback_saved": True,
+        "weight_adjustments": adjustments,
     }
 
 

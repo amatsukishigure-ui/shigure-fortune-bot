@@ -71,6 +71,12 @@ def cmd_daily():
     if r_result["replied"] > 0:
         print(f"   {r_result['replied']}件返信しました")
 
+    print("\n🐦 [+] Xアウトリーチ: ターゲット層への能動的リーチ")
+    from agents import x_outreach
+    xo_result = x_outreach.run()
+    if xo_result["replied"] > 0:
+        print(f"   {xo_result['replied']}件リプライ（{xo_result['searched']}件検索）")
+
     if datetime.now().weekday() in (0, 2, 4):  # 月・水・金（週3回）
         print("\n♻️  [+] リポスター: 人気投稿の再掲（週3回）")
         from agents import reposter

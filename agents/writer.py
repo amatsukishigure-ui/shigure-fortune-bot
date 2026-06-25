@@ -274,10 +274,11 @@ def _select_pattern(
     blocked = set(recent_patterns)
     recent30 = set(long_history_patterns or [])
 
-    # プラットフォーム対応 & daily_limit 制限を除外
+    # プラットフォーム対応 & daily_limit 制限を除外 & hold除外
     available = [
         p for p in patterns
-        if p.get("id") not in blocked
+        if p.get("status", "active") == "active"
+        and p.get("id") not in blocked
         and platform_hint in p.get("platforms", ["threads"])
         and p.get("id", "") not in excluded_pids
     ]
@@ -285,12 +286,17 @@ def _select_pattern(
         # recent_patterns ブロックを解除して再試行（全件消費ガード）
         available = [
             p for p in patterns
-            if platform_hint in p.get("platforms", ["threads"])
+            if p.get("status", "active") == "active"
+            and platform_hint in p.get("platforms", ["threads"])
             and p.get("id", "") not in excluded_pids
         ]
     if not available:
         # daily_limit 制限も解除（フォールバック）
-        available = [p for p in patterns if platform_hint in p.get("platforms", ["threads"])]
+        available = [
+            p for p in patterns
+            if p.get("status", "active") == "active"
+            and platform_hint in p.get("platforms", ["threads"])
+        ]
 
     # パフォーマンスフィードバックによる動的補正係数を取得
     perf_adjustments = _load_weight_adjustments()

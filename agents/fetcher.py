@@ -78,6 +78,13 @@ def run() -> dict:
     history = load_history()
     existing_perf = {p["post_id"]: p for p in load_performance()}
 
+    # history から threads_post_id → pattern_id の対照表を作成
+    pattern_id_map = {
+        h["threads_post_id"]: h.get("pattern_id", "")
+        for h in history
+        if h.get("threads_post_id")
+    }
+
     fetched = 0
     skipped = 0
 
@@ -95,9 +102,13 @@ def run() -> dict:
 
         metrics = _fetch_metrics(post_id)
         if metrics:
+            # pattern_id を performance_data に記録してパターン別分析を可能にする
+            pid = pattern_id_map.get(post_id, "")
+            if pid:
+                metrics["pattern_id"] = pid
             update_performance(post_id, metrics)
             fetched += 1
-            print(f"📊 フェッチャー: [{post_id}] views={metrics.get('views')} likes={metrics.get('likes')}")
+            print(f"📊 フェッチャー: [{post_id}] pattern={pid} views={metrics.get('views')} likes={metrics.get('likes')}")
 
     print(f"✅ フェッチャー: {fetched}件取得, {skipped}件スキップ")
     return {"fetched": fetched, "skipped": skipped}

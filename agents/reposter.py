@@ -27,7 +27,15 @@ REPOST_MIN_LIKES = 3          # いいね 3 以上
 REPOST_MIN_VIEWS = 100        # views 100 以上
 REPOST_MAX_PER_RUN = 2        # 1回の実行で最大 2 件追加
 # リポストしないパターン（時事性が高すぎるもの）
-SKIP_PATTERNS = {"kaiun_day", "yoru_kichi", "menu_guide", "follow_cta"}
+# 時事性高・CTA系・儀式系はリポスト不可（日付・時限表現が意味を失う）
+SKIP_PATTERNS = {
+    "kaiun_day",           # 開運日は日付依存
+    "yoru_kichi",          # 「明日」表現が古くなる
+    "weekly_forecast",     # 週情報は翌週に無意味化
+    "menu_guide",          # 料金・URL変更リスク
+    "ritual_window",       # 「今夜0:00まで」が無効化
+    "zodiac_rank_cta",     # 「今夜0:00まで」が無効化
+}
 
 
 def _update_date_expressions(text: str, profile: dict) -> str:
@@ -88,6 +96,10 @@ def _find_repost_candidates() -> list:
             continue
         if h.get("is_repost"):
             continue  # リポスト済みは除外
+        if pattern_id == "hoshi_betsu":
+            _zmarks = "♈♉♊♋♌♍♎♏♐♑♒♓"
+            if not all(z in h.get("text", "") for z in _zmarks):
+                continue  # 12星座不完全な截断済み投稿を除外
 
         # 投稿日が対象範囲内か
         if not (cutoff_far <= posted_at <= cutoff_near):

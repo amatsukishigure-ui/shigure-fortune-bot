@@ -82,7 +82,7 @@ def format_for_threads(text: str, theme: str = "") -> str:
     if last_period > body_limit // 2:
         body = truncated[:last_period + 1]
         body_has_tag = "#占い" in body or "#龍脈命術" in body or "#吉方位" in body
-        return body if body_has_tag else f"{body}\n\n{THREADS_HASHTAGS}"
+        return body if body_has_tag else f"{body}\n\n{THREADS_HASHTAGS_BASE}"
 
     # 改行で切る
     last_newline = truncated.rfind("\n")

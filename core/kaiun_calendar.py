@@ -56,6 +56,50 @@ def _weekday_jp(d: date) -> str:
     return ["月", "火", "水", "木", "金", "土", "日"][d.weekday()]
 
 
+def get_moon_phase(d: date = None) -> dict:
+    """
+    外部ライブラリ不要で月相を計算する。
+    基準新月: 2000-01-06 (J2000近傍の観測値)
+    朔望周期: 29.53058867日
+    """
+    if d is None:
+        d = date.today()
+    SYNODIC = 29.53058867
+    reference = date(2000, 1, 6)
+    days_since = (d - reference).days
+    phase = (days_since % SYNODIC) / SYNODIC
+
+    if phase < 0.0625:
+        name, emoji, energy = "新月", "🌑", "リセット・新しい始まり"
+    elif phase < 0.1875:
+        name, emoji, energy = "三日月", "🌒", "意図を定める・準備"
+    elif phase < 0.3125:
+        name, emoji, energy = "上弦の月", "🌓", "行動・決断・前進"
+    elif phase < 0.4375:
+        name, emoji, energy = "十三夜", "🌔", "勢い・拡大・加速"
+    elif phase < 0.5625:
+        name, emoji, energy = "満月", "🌕", "完成・解放・感謝"
+    elif phase < 0.6875:
+        name, emoji, energy = "十六夜", "🌖", "収穫・見直し・内省"
+    elif phase < 0.8125:
+        name, emoji, energy = "下弦の月", "🌗", "手放し・整理・浄化"
+    else:
+        name, emoji, energy = "晦日月", "🌘", "静寂・完了・次への準備"
+
+    # 新月・満月まであと何日かを計算
+    days_to_new = round((1.0 - phase) * SYNODIC) if phase >= 0.5 else round((0.5 - phase) * SYNODIC)
+    next_event = "新月" if phase >= 0.5 else "満月"
+
+    return {
+        "phase_name": name,
+        "phase_emoji": emoji,
+        "energy": energy,
+        "phase_value": round(phase, 3),
+        "days_to_next": int(days_to_new),
+        "next_event": next_event,
+    }
+
+
 def _calculate_lucky_days_via_claude(
     client_obj,
     start: date,
