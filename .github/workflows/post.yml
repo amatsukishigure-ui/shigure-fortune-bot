@@ -2,22 +2,16 @@ name: shigure-auto-post
 
 on:
   schedule:
-    # 遅延補正済みスケジュール（JST）14スロット/日
-    # GitHub Actions の平均遅延を考慮してcronを前倒し設定
-    - cron: '0 21 * * *'  #  07:00 JST 狙い（UTC21+遅延≒07:10）
-    - cron: '0 23 * * *'  #  09:00 JST 狙い（UTC23+遅延≒09:00）
-    - cron: '0 1 * * *'   #  10:00 JST（実績26件・補完枠）
-    - cron: '0 3 * * *'   #  12:00 JST
-    - cron: '0 4 * * *'   #  13:00 JST（ランチ後継続枠）
-    - cron: '0 5 * * *'   #  14:00 JST 昼下がり枠
-    - cron: '0 6 * * *'   #  15:00 JST
-    - cron: '30 7 * * *'  #  17:00 JST 狙い（UTC7:30+遅延≒17:04）
-    - cron: '0 10 * * *'  #  19:00 JST（実績20件・夕方枠復活）
-    - cron: '0 12 * * *'  #  21:00 JST
-    - cron: '0 13 * * *'  #  22:00 JST
-    - cron: '0 14 * * *'  #  23:00 JST
-    - cron: '0 15 * * *'  #  00:00 JST翌日
-    - cron: '0 16 * * *'  #  01:00 JST翌日
+    # POST_SLOTS = [6, 8, 12, 13, 16, 17, 18, 19, 22] に対応（JST = UTC+9）
+    - cron: '0 21 * * *'  #  06:00 JST (UTC21)
+    - cron: '0 23 * * *'  #  08:00 JST (UTC23)
+    - cron: '0 3 * * *'   #  12:00 JST (UTC03)
+    - cron: '0 4 * * *'   #  13:00 JST (UTC04)
+    - cron: '0 7 * * *'   #  16:00 JST (UTC07)
+    - cron: '0 8 * * *'   #  17:00 JST (UTC08)
+    - cron: '0 9 * * *'   #  18:00 JST (UTC09)
+    - cron: '0 10 * * *'  #  19:00 JST (UTC10)
+    - cron: '0 13 * * *'  #  22:00 JST (UTC13)
   workflow_dispatch:
     inputs:
       command:

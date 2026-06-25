@@ -17,7 +17,8 @@ from config import (
     POST_HISTORY_FILE, PERFORMANCE_FILE,
     RESEARCH_FILE, ERROR_LOG_FILE, KILL_SWITCH_FILE, DATA_DIR,
     X_QUEUE_FILE,
-    FOLLOWER_HISTORY_FILE, REPLIED_COMMENTS_FILE, HOURLY_STATS_FILE,
+    FOLLOWER_HISTORY_FILE, REPLIED_COMMENTS_FILE, OUR_REPLY_IDS_FILE,
+    HOURLY_STATS_FILE,
 )
 
 
@@ -320,6 +321,29 @@ def mark_comment_replied(comment_id: str) -> None:
     replied.add(comment_id)
     # 最新2000件のみ保持
     save_json(REPLIED_COMMENTS_FILE, list(replied)[-2000:])
+
+
+# ── Our Reply IDs（自分の返信ID追跡） ─────────────────────────
+
+def load_our_reply_ids() -> dict:
+    """自分が投稿した返信のIDとコンテキストを返す。{reply_id: {post_text, comment_text, replied_at}}"""
+    return load_json(OUR_REPLY_IDS_FILE, default={})
+
+
+def save_our_reply_id(reply_id: str, post_text: str, comment_text: str) -> None:
+    """投稿した返信のIDを記録する"""
+    our_replies = load_our_reply_ids()
+    our_replies[reply_id] = {
+        "post_text": post_text[:200],
+        "comment_text": comment_text[:200],
+        "replied_at": datetime.now().isoformat(),
+    }
+    # 最新500件のみ保持
+    if len(our_replies) > 500:
+        oldest_keys = sorted(our_replies, key=lambda k: our_replies[k].get("replied_at", ""))[:len(our_replies)-500]
+        for k in oldest_keys:
+            del our_replies[k]
+    save_json(OUR_REPLY_IDS_FILE, our_replies)
 
 
 # ── Hourly Stats ──────────────────────────────────────────────

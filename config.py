@@ -42,7 +42,12 @@ SIMILARITY_HISTORY_SIZE = 100      # 比較対象の過去投稿数
 # Posting schedule
 DAILY_POST_LIMIT = 20
 MIN_POST_INTERVAL_HOURS = 0.5  # 1h→0.5h: 夜帯1時間おきcronでもスキップされないよう緩和
-POST_SLOTS = [7, 9, 10, 12, 13, 14, 15, 17, 19, 21, 22, 23, 0, 1]  # 14スロット/日（10・13・19時追加: 実績上位帯を補完）
+POST_SLOTS = [6, 8, 12, 13, 16, 17, 18, 19, 22]  # 9スロット/日
+# 実績ベース修正（2026-06 n=150件 直近30日）:
+#   削除: 03時(avgV=53.7,n=15) — 13時(avgV=116.5,n=6)に劣る
+#   追加: 13時(avgV=116.5,n=6) — サンプル少ないが有望、16時に次ぐ昼帯
+#   維持: 06時(avgV=123.1)・08時(avgV=60.6)・12時(avgV=95.5)・16時(avgV=255.5 最強)
+#          17時(avgV=108.5)・18時(avgV=79.0)・19時(avgV=200.0)・22時(avgV=142.7)
 
 # Pattern rotation
 MAX_SAME_PATTERN_CONSECUTIVE = 3   # 同パターン連続上限
@@ -64,6 +69,7 @@ ERROR_LOG_FILE = DATA_DIR / "error_log.json"
 KILL_SWITCH_FILE = DATA_DIR / "KILL_SWITCH"
 FOLLOWER_HISTORY_FILE = DATA_DIR / "follower_history.json"
 REPLIED_COMMENTS_FILE = DATA_DIR / "replied_comments.json"
+OUR_REPLY_IDS_FILE = DATA_DIR / "our_reply_ids.json"
 HOURLY_STATS_FILE = DATA_DIR / "hourly_stats.json"
 EVENT_CALENDAR_FILE = KNOWLEDGE_DIR / "event_calendar.json"
 
