@@ -4523,5 +4523,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-06-26T00:04:13.393872"
+  },
+  {
+    "text": "今日って新月、気づいてた？🌑\n\n龍脈命術では、新月の朝は「気の入口が開く」タイミング。\n今日の朝だけ、窓を開けて外の空気を部屋に入れてみて。\nそれだけでいいよ。心当たりある？\n\n#占い #龍脈命術",
+    "x_text": "今日って新月、気づいてた？🌑\n\n龍脈命術では、新月の朝は「気の入口が開く」タイミング。\n今日の朝だけ、窓を開けて外の空気を部屋に入れてみて。\nそれだけでいいよ。心当たりある？\n\n#占い #時雨 #開運 #風水",
+    "theme": "開運行動/新月の朝にすること",
+    "pattern_id": "pop_short",
+    "quality_score": 7.5,
+    "attempts": 1,
+    "x_eligible": true,
+    "persona_id": "p012",
+    "zodiac_boost": "♋蟹座",
+    "pending_at": "2026-06-25T11:04:38.449241",
+    "queued_at": "2026-06-25T18:39:31.689243",
+    "threads_post_id": "18138314668483524",
+    "posted_at": "2026-06-26T01:01:03.567289+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-06-26T01:01:03.572496"
   }
 ]
