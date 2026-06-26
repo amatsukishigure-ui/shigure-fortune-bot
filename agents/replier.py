@@ -236,9 +236,36 @@ def run() -> dict:
             cid = comment.get("id", "")
             comment_text = comment.get("text", "").strip()
 
-            # 自分自身のコメントはスキップ
+            # 自分自身のコメント = ツリー2投稿目。そのIDへのユーザーコメントも返信対象にする
             commenter = comment.get("username", "").lstrip("@").lower()
             if own_username and commenter == own_username:
+                sub_post_id = cid
+                sub_post_text = comment_text
+                sub_comments = _get_replies(sub_post_id)
+                for sc in sub_comments:
+                    if replied + nested_replied >= MAX_REPLIES_PER_RUN:
+                        break
+                    sc_id = sc.get("id", "")
+                    sc_text = sc.get("text", "").strip()
+                    sc_user = sc.get("username", "").lstrip("@").lower()
+                    if own_username and sc_user == own_username:
+                        continue
+                    if sc_id in replied_ids or not sc_text:
+                        continue
+                    try:
+                        reply_text = _generate_reply(sc_text, sub_post_text, profile)
+                        reply_id = _post_reply(sc_id, reply_text)
+                        if reply_id:
+                            mark_comment_replied(sc_id)
+                            save_our_reply_id(reply_id, sub_post_text, sc_text)
+                            replied += 1
+                            print(f"  💬 ツリー返信: 「{sc_text[:30]}」→ 「{reply_text[:40]}」")
+                            time.sleep(3)
+                        else:
+                            errors += 1
+                    except Exception as e:
+                        print(f"  ツリーリプライ生成エラー: {e}")
+                        errors += 1
                 skipped += 1
                 continue
 
