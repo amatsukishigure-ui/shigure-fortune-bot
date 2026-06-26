@@ -12,6 +12,9 @@ on:
     - cron: '0 9 * * *'   #  18:00 JST (UTC09)
     - cron: '0 10 * * *'  #  19:00 JST (UTC10)
     - cron: '0 13 * * *'  #  22:00 JST (UTC13)
+    # 深夜返信専用スロット（22:00〜06:00 の8時間ギャップを埋める）
+    - cron: '0 16 * * *'  #  01:00 JST (UTC16) — reply only
+    - cron: '0 19 * * *'  #  04:00 JST (UTC19) — reply only
   workflow_dispatch:
     inputs:
       command:
@@ -59,26 +62,34 @@ jobs:
             echo "Manual: python main.py $CMD"
             python main.py $CMD
           else
-            # キュー＋承認待ちが3件以下なら補充（daily実行）
-            NEED_REFILL=$(python -c "
-          import json, pathlib
-          q = json.loads(pathlib.Path('data/post_queue.json').read_text()) if pathlib.Path('data/post_queue.json').exists() else []
-          p = json.loads(pathlib.Path('data/pending_posts.json').read_text()) if pathlib.Path('data/pending_posts.json').exists() else []
-          print('yes' if len(q) + len(p) <= 3 else 'no')
-          " 2>/dev/null || echo "yes")
+            HOUR_UTC=$(date -u +%H)
 
-            if [ "$NEED_REFILL" = "yes" ]; then
-              echo "Queue + pending low — running daily to refill"
-              python main.py daily
-              echo "Auto-approving all pending posts"
-              python main.py approve
+            # 深夜返信専用スロット（01:00/04:00 JST = UTC 16/19）はリプライのみ
+            if [ "$HOUR_UTC" = "16" ] || [ "$HOUR_UTC" = "19" ]; then
+              echo "夜間返信専用スロット — reply only"
+              python main.py reply
+            else
+              # キュー＋承認待ちが3件以下なら補充（daily実行）
+              NEED_REFILL=$(python -c "
+            import json, pathlib
+            q = json.loads(pathlib.Path('data/post_queue.json').read_text()) if pathlib.Path('data/post_queue.json').exists() else []
+            p = json.loads(pathlib.Path('data/pending_posts.json').read_text()) if pathlib.Path('data/pending_posts.json').exists() else []
+            print('yes' if len(q) + len(p) <= 3 else 'no')
+            " 2>/dev/null || echo "yes")
+
+              if [ "$NEED_REFILL" = "yes" ]; then
+                echo "Queue + pending low — running daily to refill"
+                python main.py daily
+                echo "Auto-approving all pending posts"
+                python main.py approve
+              fi
+
+              echo "Running post"
+              python main.py post threads
+
+              echo "Running replier"
+              python main.py reply
             fi
-
-            echo "Running post"
-            python main.py post threads
-
-            echo "Running replier"
-            python main.py reply
           fi
         env:
           PYTHONIOENCODING: utf-8
