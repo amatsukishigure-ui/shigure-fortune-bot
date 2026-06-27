@@ -2,16 +2,15 @@ name: shigure-auto-post
 
 on:
   schedule:
-    # POST_SLOTS = [6, 8, 12, 13, 16, 17, 18, 19, 22] に対応（JST = UTC+9）
+    # POST_SLOTS = [6, 8, 12, 16, 19, 21, 22] に対応（JST = UTC+9）
+    # 各スロット最低2時間間隔 → concurrency キャンセル防止
     - cron: '0 21 * * *'  #  06:00 JST (UTC21)
-    - cron: '0 23 * * *'  #  08:00 JST (UTC23)
-    - cron: '0 3 * * *'   #  12:00 JST (UTC03)
-    - cron: '0 4 * * *'   #  13:00 JST (UTC04)
-    - cron: '0 7 * * *'   #  16:00 JST (UTC07)
-    - cron: '0 8 * * *'   #  17:00 JST (UTC08)
-    - cron: '0 9 * * *'   #  18:00 JST (UTC09)
-    - cron: '0 10 * * *'  #  19:00 JST (UTC10)
-    - cron: '0 13 * * *'  #  22:00 JST (UTC13)
+    - cron: '0 23 * * *'  #  08:00 JST (UTC23) — 通勤ピーク
+    - cron: '0 3 * * *'   #  12:00 JST (UTC03) — 昼ピーク
+    - cron: '0 7 * * *'   #  16:00 JST (UTC07) — 帰宅前
+    - cron: '0 10 * * *'  #  19:00 JST (UTC10) — 夕食・ゴールデン
+    - cron: '0 12 * * *'  #  21:00 JST (UTC12) — 就寝前チェック
+    - cron: '0 13 * * *'  #  22:00 JST (UTC13) — 深夜前
     # 深夜返信専用スロット（22:00〜06:00 の8時間ギャップを埋める）
     - cron: '0 16 * * *'  #  01:00 JST (UTC16) — reply only
     - cron: '0 19 * * *'  #  04:00 JST (UTC19) — reply only
