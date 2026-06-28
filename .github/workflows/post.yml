@@ -42,7 +42,7 @@ jobs:
           python --version
 
       - name: install dependencies
-        run: python -m pip install --quiet -r requirements.txt
+        run: python -m pip install --quiet --break-system-packages -r requirements.txt
 
       - name: create env file
         run: |
