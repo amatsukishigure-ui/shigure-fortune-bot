@@ -4957,5 +4957,24 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-06-28T14:56:26.960956"
+  },
+  {
+    "text": "♎ 天秤座で今、恋愛・縁が気になっている人へ。\n\n「この人でいいのかな」って、ずっと答えが出ないままでいない？\n\n龍脈命術では今、天秤座の縁の気は南西に流れてる。迷いが続くときは、南西方向に意識を向けてみて。カフェでも散歩でも、動く方向を少し変えるだけでいい。\n\n心当たりある？\n\n#占い #恋愛運 #縁",
+    "x_text": "♎ 天秤座で今、恋愛・縁が気になっている人へ。\n\n「この人でいいのかな」って、ずっと答えが出ないままでいない？\n\n龍脈命術では今、天秤座の縁の気は南西に流れてる。迷いが続くときは、南西方向に意識を向けてみて。カフェでも散歩でも、動く方向を少し変えるだけでいい。\n\n心当たりある？\n\n#占い #時雨 #引き寄せ #龍脈命術",
+    "theme": "引き寄せ/言葉と気の流れ",
+    "pattern_id": "zodiac_target",
+    "quality_score": 8.1,
+    "attempts": 1,
+    "x_eligible": false,
+    "persona_id": "p001",
+    "zodiac_boost": "♎天秤座",
+    "pending_at": "2026-06-28T17:20:08.338170",
+    "queued_at": "2026-06-28T17:20:17.640450",
+    "threads_post_id": "18115603352497200",
+    "posted_at": "2026-06-28T17:20:26.012630+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/libra.jpg",
+    "recorded_at": "2026-06-28T17:20:26.017232"
   }
 ]
