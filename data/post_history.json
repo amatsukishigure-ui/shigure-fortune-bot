@@ -4884,5 +4884,23 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-06-28T09:01:08.106505"
+  },
+  {
+    "text": "「頑張ってるのに、なんで変わらないんだろう」\n\nそう思い続けて、もう何年も経ってない？\n\n意志が弱いわけじゃない。努力が足りないわけでもない。龍脈命術の視点でいうと、気の向きがズレたまま動いているだけ。\n\n同じ力でも、方向が整っている人は変わっていく。そうじゃない人は、同じ場所をぐるぐる回り続ける。\n\nこれ、心当たりある？\n\n#占い #龍脈命術",
+    "x_text": "「頑張ってるのに、なんで変わらないんだろう」\n\nそう思い続けて、もう何年も経ってない？\n\n意志が弱いわけじゃない。努力が足りないわけでもない。龍脈命術の視点でいうと、気の向きがズレたまま動いているだけ。\n\n同じ力でも、方向が整っている人は変わっていく。そうじゃない人は、同じ場所をぐるぐる回り続ける。\n\nこれ、心当たりある？\n\n#占い #時雨 #龍脈命術 #開運",
+    "theme": "メニュー誘導/鑑定メニュー案内",
+    "pattern_id": "soft_discovery",
+    "quality_score": 8.0,
+    "attempts": 1,
+    "x_eligible": true,
+    "persona_id": "p005",
+    "pending_at": "2026-06-25T11:05:08.743822",
+    "queued_at": "2026-06-25T18:39:31.694599",
+    "threads_post_id": "18101635397168213",
+    "posted_at": "2026-06-28T11:22:05.868549+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/fortune_1.jpg",
+    "recorded_at": "2026-06-28T11:22:05.873220"
   }
 ]
