@@ -4855,7 +4855,8 @@
     "posted_at": "2026-06-28T01:01:04.714947+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-06-28T01:01:04.719500"
+    "recorded_at": "2026-06-28T01:01:04.719500",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今、部屋にいて「なんか落ち着かない」感じと、「ここ、いい気がする」感じ、どっちに近い？\n\n気が巡ってる、居心地いい → 🌿\n重い、なんかここじゃない感 → 🌀\n\nどっちかな。\n\n#占い #風水 #開運",
@@ -4871,7 +4872,8 @@
     "posted_at": "2026-06-28T03:01:12.635135+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-06-28T03:01:12.639158"
+    "recorded_at": "2026-06-28T03:01:12.639158",
+    "hourly_stats_recorded": true
   },
   {
     "text": "満月の夜、なんとなく眠れない。\nそれ、気のせいじゃない。\n\n月が満ちる夜は、空間の「気」が最も動く。\nこの夜をただ寝て終わらせている人と、使いこなしている人では、半年後が変わってくる。\n\n原因は──満月の気の性質にある。\n\n#占い #龍脈命術",
@@ -4891,7 +4893,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
-    "recorded_at": "2026-06-28T06:01:39.955742"
+    "recorded_at": "2026-06-28T06:01:39.955742",
+    "hourly_stats_recorded": true
   },
   {
     "text": "500人以上を龍脈命術で鑑定してわかったこと。\n\n「方向が違う」と悩む人より、「向きがほんの少しズレている」だけの人が圧倒的に多い。\n\n十二支と方位には深い対応関係がある。自分の生まれ年の十二支が指す方角を知るだけで、気の乗り方がまるで変わる人を何人も見てきた。\n\n努力の質より、向いている方向。\n\n心当たりある？\n\n#占い #吉方位 #龍脈命術",
@@ -5087,5 +5090,22 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/libra.jpg",
     "recorded_at": "2026-06-29T06:01:12.344726"
+  },
+  {
+    "text": "♒水瓶座で「運気の波」が気になり始めた人以外は、読まなくていい。\n\nなぜなら今、水瓶座の龍脈は切り替わりの直前にある。\nこのタイミングで波の読み方を間違えると、\n「動くべき日」と「待つべき日」が完全に逆転する。\n\n運気の波って、上がる・下がるの二択じゃない。\n\"流れの向き\"がある。\n\n今の水瓶座は北東からの気が強まっていて、\n焦って南西に動くと空回りしやすい配置。\n\nやることはシンプル。\nこの先、大きな決断を迫られたら「一晩だけ」置いてみて。\n\n波の向きが読めると、同じ努力でも届く場所が変わるよ。",
+    "theme": "運気/運気の波の読み方",
+    "pattern_id": "caligula",
+    "quality_score": 8.3,
+    "attempts": 1,
+    "x_eligible": false,
+    "is_repost": true,
+    "original_post_id": "18158503657456428",
+    "pending_at": "2026-06-29T07:25:58.497981",
+    "queued_at": "2026-06-29T07:27:26.325066",
+    "threads_post_id": "18135525334585994",
+    "posted_at": "2026-06-29T07:27:32.365963+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-06-29T07:27:32.370711"
   }
 ]
