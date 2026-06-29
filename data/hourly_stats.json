@@ -108,5 +108,10 @@
     "views_sum": 339,
     "likes_sum": 11,
     "count": 6
+  },
+  "5": {
+    "views_sum": 11,
+    "likes_sum": 0,
+    "count": 1
   }
 }
