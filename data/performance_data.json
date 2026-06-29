@@ -3289,5 +3289,27 @@
     "pattern_id": "empathy_thread",
     "post_id": "18128099245594519",
     "fetched_at": "2026-06-29T07:22:49.568851"
+  },
+  {
+    "views": 16,
+    "likes": 0,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "jisseki_ninshou",
+    "post_id": "18170087374426078",
+    "fetched_at": "2026-06-29T11:59:58.082488"
+  },
+  {
+    "views": 109,
+    "likes": 0,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "soft_discovery",
+    "post_id": "18101635397168213",
+    "fetched_at": "2026-06-29T11:59:58.666214"
   }
 ]

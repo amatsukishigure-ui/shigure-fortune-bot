@@ -4910,7 +4910,8 @@
     "posted_at": "2026-06-28T09:01:08.102032+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-06-28T09:01:08.106505"
+    "recorded_at": "2026-06-28T09:01:08.106505",
+    "hourly_stats_recorded": true
   },
   {
     "text": "「頑張ってるのに、なんで変わらないんだろう」\n\nそう思い続けて、もう何年も経ってない？\n\n意志が弱いわけじゃない。努力が足りないわけでもない。龍脈命術の視点でいうと、気の向きがズレたまま動いているだけ。\n\n同じ力でも、方向が整っている人は変わっていく。そうじゃない人は、同じ場所をぐるぐる回り続ける。\n\nこれ、心当たりある？\n\n#占い #龍脈命術",
@@ -4928,7 +4929,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/fortune_1.jpg",
-    "recorded_at": "2026-06-28T11:22:05.873220"
+    "recorded_at": "2026-06-28T11:22:05.873220",
+    "hourly_stats_recorded": true
   },
   {
     "text": "よく聞かれること。\n「吉方位って、気のせいじゃないの？」\n\n気のせいかもしれない。\n\nでも龍脈命術で見ると、方位には気の流れがある。信じるかどうかより、試したかどうかが大事。\n\n梅雨のこの時期、少し方向を変えた帰り道だけでいい。動いた人から、変わっていく。\n\nこれ、試してみたくなった？\n\n#占い #吉方位 #開運",
@@ -5124,5 +5126,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
     "recorded_at": "2026-06-29T09:01:08.198971"
+  },
+  {
+    "text": "♒ 水瓶座で今、金運・収入が気になっている人へ。\n\n頑張ってるのに収入が動かない——それ、努力不足じゃなく「向き」のズレかもしれない。\n\n龍脈命術では今、水瓶座に北西の気が流れやすい時期。財布を出す・お金の相談をする・副業の一歩を踏み出す、そういう行動は北西を意識してみてね。\n\n心当たりある？\n\n#占い #金運 #開運",
+    "x_text": "♒ 水瓶座で今、金運・収入が気になっている人へ。\n\n頑張ってるのに収入が動かない——それ、努力不足じゃなく「向き」のズレかもしれない。\n\n龍脈命術では今、水瓶座に北西の気が流れやすい時期。財布を出す・お金の相談をする・副業の一歩を踏み出す、そういう行動は北西を意識してみてね。\n\n心当たりある？\n\n#占い #時雨 #吉方位 #風水",
+    "theme": "吉方位・風水/日常での吉方位活用",
+    "pattern_id": "zodiac_target",
+    "quality_score": 7.5,
+    "attempts": 1,
+    "x_eligible": false,
+    "persona_id": "p011",
+    "zodiac_boost": "♒水瓶座",
+    "pending_at": "2026-06-29T12:03:55.250496",
+    "queued_at": "2026-06-29T12:05:20.399220",
+    "threads_post_id": "18050224907553382",
+    "posted_at": "2026-06-29T12:05:28.312176+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-06-29T12:05:28.317213"
   }
 ]
