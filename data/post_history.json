@@ -5461,5 +5461,22 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/fortune_1.jpg",
     "recorded_at": "2026-06-30T21:03:08.885985"
+  },
+  {
+    "text": "好きな人と、うまく距離が縮まらない？\n\n龍脈命術では、恋愛の気は「方位」でも動く。相手と会うとき、自分の吉方位に向かうルートを選ぶだけで気の流れが変わるよ。🧭\n\n今夜、明日デートの待ち合わせ場所、どっちの方角か確認してみて。\n\n#占い #恋愛運 #縁",
+    "x_text": "好きな人と、うまく距離が縮まらない？\n\n龍脈命術では、恋愛の気は「方位」でも動く。相手と会うとき、自分の吉方位に向かうルートを選ぶだけで気の流れが変わるよ。🧭\n\n今夜、明日デートの待ち合わせ場所、どっちの方角か確認してみて。\n\n#占い #時雨 #吉方位 #風水",
+    "theme": "吉方位・風水/恋愛・結婚の吉方位",
+    "pattern_id": "pop_short",
+    "quality_score": 7.8,
+    "attempts": 1,
+    "x_eligible": true,
+    "persona_id": "p009",
+    "pending_at": "2026-06-29T07:27:26.187353",
+    "queued_at": "2026-06-29T07:27:26.336932",
+    "threads_post_id": "18084226112443345",
+    "posted_at": "2026-06-30T22:13:03.636185+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-06-30T22:13:03.641477"
   }
 ]
