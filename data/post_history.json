@@ -5397,7 +5397,8 @@
     "posted_at": "2026-06-30T12:01:30.366192+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-06-30T12:01:30.371492"
+    "recorded_at": "2026-06-30T12:01:30.371492",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今年もまだ変わってないと思ってる、あなたへ。\n\n龍脈命術で見ると、流れが来ていないのに動こうとすると、エネルギーだけが消耗する。\n\n星が動いている。小暑まであと数日。\n夏の気は、今、静かに方向を変えようとしている。\n\nこれ、あなたのこと？\n\n#占い #星座占い #運勢",
@@ -5628,5 +5629,22 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-07-01T12:01:16.632419"
+  },
+  {
+    "text": "行先を変えるより先に、向きを整える。\n\n龍脈命術では、方位はゴールじゃなくて「乗り方」だと見る。\n\nどっちに近い？「方位って知らなかった」か「なんとなく気にしてた」か、コメントで教えて。\n\n#占い #吉方位 #龍脈命術",
+    "x_text": "行先を変えるより先に、向きを整える。\n\n龍脈命術では、方位はゴールじゃなくて「乗り方」だと見る。\n\nどっちに近い？「方位って知らなかった」か「なんとなく気にしてた」か、コメントで教えて。\n\n#占い #時雨 #吉方位 #風水",
+    "theme": "方位の基礎知識/龍脈命術の方位論",
+    "pattern_id": "ichi_gon",
+    "quality_score": 8.1,
+    "attempts": 1,
+    "x_eligible": true,
+    "pending_at": "2026-07-01T12:33:08.520450",
+    "queued_at": "2026-07-01T12:33:38.520198",
+    "threads_post_id": "18121019203742838",
+    "posted_at": "2026-07-01T12:33:46.664519+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
+    "recorded_at": "2026-07-01T12:33:46.669658"
   }
 ]
