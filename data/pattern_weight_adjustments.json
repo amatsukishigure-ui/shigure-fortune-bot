@@ -1,8 +1,7 @@
 {
-  "updated_at": "2026-07-01T17:59:36.073415",
+  "updated_at": "2026-07-01T20:49:25.949067",
   "lookback_days": 30,
   "adjustments": {
-    "pop_short": 0.5,
     "trivia": 0.5,
     "yoru_kichi": 0.5,
     "list": 0.939,
@@ -10,10 +9,11 @@
     "zodiac_target": 1.574,
     "world_view": 0.5,
     "kaiun_day": 1.089,
-    "caligula": 1.705,
+    "caligula": 1.715,
     "harm_funnel": 0.5,
     "ichi_gon": 0.576,
     "hoshi_betsu": 0.503,
+    "pop_short": 0.5,
     "brand_ryumyaku": 0.5,
     "emoji_comment": 1.725,
     "empathy_thread": 1.362,
