@@ -5267,7 +5267,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/cancer.jpg",
-    "recorded_at": "2026-06-29T23:58:44.363043"
+    "recorded_at": "2026-06-29T23:58:44.363043",
+    "hourly_stats_recorded": true
   },
   {
     "text": "7月3日（明日）、寅の日が重なる。\n\n龍脈命術で長年見てきてわかったこと。金運が動いた人の多くは、特別なことをしていたわけじゃない。開運日に「財布に触る」「お金の流れを整える」という小さな行動を、ちゃんとやっていた。\n\n運がいい人は敏感なんじゃなく、気の節目を使うのが上手いだけ。\n\n明日、財布の中を一度きれいにしてみて。心当たりある？\n\n#占い #金運 #開運",
@@ -5284,7 +5285,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/fortune_1.jpg",
-    "recorded_at": "2026-06-30T01:01:13.986208"
+    "recorded_at": "2026-06-30T01:01:13.986208",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♎天秤座さん、来週についてまだ何も決めていないなら読まないほうがいい。\n\n読んだら動きたくなるから。\n\n龍脈命術で6月末から7月初めを読むと、天秤座は西の気が急に強まる配置。これは「人からの誘い」や「予想外の提案」が増えるサイン。\n\nただし、ここで全部に応じると気が分散して空回りする。\n\n来週のポイントはひとつだけ。\n「最初に来たものを選ぶ」こと。\n\n迷って比較し始めた瞬間、西の気は濁る。直感が冴えている週だからこそ、考えすぎが一番の敵になる。",
@@ -5302,7 +5304,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-06-30T03:01:12.318392"
+    "recorded_at": "2026-06-30T03:01:12.318392",
+    "hourly_stats_recorded": true
   },
   {
     "text": "「なんか今じゃない気がする」でずっと止まってる人に話す。\n\n今日は十六夜。満月を過ぎた月は\"見直し・内省\"の気が流れる。\n龍脈命術では、この時期の花の入れ替えが室内の気を一番動かしやすいとされている。\n\n玄関か窓辺に白か黄色の花を1輪置くだけでいい。\n次の新月まであと11日。そこで動けないとまた一回り同じ場所に戻る。\n\n特別なことは何もない。今日、花屋に寄れる？\n\n#占い #風水 #開運",
@@ -5318,7 +5321,8 @@
     "posted_at": "2026-06-30T06:01:15.900606+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-06-30T06:01:15.905875"
+    "recorded_at": "2026-06-30T06:01:15.905875",
+    "hourly_stats_recorded": true
   },
   {
     "text": "運気の波は、感じるより先に「読む」もの。\n\n乗れている人は特別じゃない。\n龍脈命術で言えば、気の満ち引きを知っているだけ。\n\nこれ、わかる？\n\n#占い #龍脈命術",
@@ -5335,7 +5339,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
-    "recorded_at": "2026-06-30T06:53:56.800158"
+    "recorded_at": "2026-06-30T06:53:56.800158",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♉ 牡牛座で今、転職・キャリアが気になっている人へ。\n\n「頑張ってるのに、なぜか動けない」\nそれ、意志の問題じゃないよ。\n\n龍脈命術で見ると、今の牡牛座は南西の気が滞りやすい。北東に意識を向けるだけで、止まっていた流れが動き始める。\n\n転職の面談・相談ごとがあるなら、北東方向の場所を選んでみて。\n\n心当たりある？\n\n#占い #転職 #仕事運",
@@ -5549,5 +5554,22 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
     "recorded_at": "2026-07-01T06:01:19.316368"
+  },
+  {
+    "text": "♒水瓶座で「運気の波」が気になり始めた人以外は、読まなくていい。\n\nなぜなら今、水瓶座の龍脈は切り替わりの直前にある。\nこのタイミングで波の読み方を間違えると、\n「動くべき日」と「待つべき日」が完全に逆転する。\n\n運気の波って、上がる・下がるの二択じゃない。\n\"流れの向き\"がある。\n\n今の水瓶座は北東からの気が強まっていて、\n焦って南西に動くと空回りしやすい配置。\n\nやることはシンプル。\n来週、大きな決断を迫られたら「一晩だけ」置いてみて。\n\n波の向きが読めると、同じ努力でも届く場所が変わるよ。",
+    "theme": "運気/運気の波の読み方",
+    "pattern_id": "caligula",
+    "quality_score": 8.3,
+    "attempts": 1,
+    "x_eligible": false,
+    "is_repost": true,
+    "original_post_id": "18158503657456428",
+    "pending_at": "2026-06-29T18:12:47.083369",
+    "queued_at": "2026-06-29T18:14:12.580138",
+    "threads_post_id": "18214167127338030",
+    "posted_at": "2026-07-01T07:09:33.521022+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-07-01T07:09:33.526166"
   }
 ]
