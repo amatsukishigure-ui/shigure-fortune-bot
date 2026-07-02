@@ -5773,5 +5773,21 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/fengshui_abundance.jpg",
     "recorded_at": "2026-07-02T01:01:18.805378"
+  },
+  {
+    "text": "明日、参拝する神社がある人へ。\n\n龍脈命術では、神社もただ「東西南北どこにあるか」で気の種類が変わる。\n\n仕事運を動かしたいなら、東側にある神社へ。\n新しい出会いや縁なら、南側へ向かうと気が入りやすい。\n\nどっちの方角に行く予定？コメントで教えて。\n\n#占い #仕事運 #運気アップ",
+    "x_text": "明日、参拝する神社がある人へ。\n\n龍脈命術では、神社もただ「東西南北どこにあるか」で気の種類が変わる。\n\n仕事運を動かしたいなら、東側にある神社へ。\n新しい出会いや縁なら、南側へ向かうと気が入りやすい。\n\nどっちの方角に行く予定？コメントで教えて。\n\n#占い #時雨 #神社 #パワースポット",
+    "theme": "神社・パワースポット/方位別おすすめ神社",
+    "pattern_id": "ritual_action",
+    "quality_score": 7.9,
+    "attempts": 1,
+    "x_eligible": true,
+    "pending_at": "2026-06-30T15:41:35.386122",
+    "queued_at": "2026-06-30T15:41:35.529612",
+    "threads_post_id": "17959727703140910",
+    "posted_at": "2026-07-02T03:01:22.298528+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-07-02T03:01:22.303573"
   }
 ]
