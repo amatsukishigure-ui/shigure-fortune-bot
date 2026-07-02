@@ -3707,5 +3707,27 @@
     "pattern_id": "caligula",
     "post_id": "18113644108906601",
     "fetched_at": "2026-07-02T10:10:29.401332"
+  },
+  {
+    "views": 173,
+    "likes": 2,
+    "replies": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "empathy_thread",
+    "post_id": "18117814012881191",
+    "fetched_at": "2026-07-02T12:05:25.254356"
+  },
+  {
+    "views": 4,
+    "likes": 1,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "list",
+    "post_id": "18609661348021159",
+    "fetched_at": "2026-07-02T12:05:25.452373"
   }
 ]
