@@ -1,10 +1,9 @@
 {
-  "updated_at": "2026-07-03T17:28:34.484677",
+  "updated_at": "2026-07-03T20:18:09.235651",
   "lookback_days": 30,
   "adjustments": {
-    "harm_funnel": 0.5,
     "list": 0.918,
-    "ichi_gon": 0.597,
+    "ichi_gon": 0.562,
     "hoshi_betsu": 0.5,
     "zodiac_target": 1.042,
     "pop_short": 0.5,
