@@ -3861,5 +3861,27 @@
     "pattern_id": "ichi_gon",
     "post_id": "18004900268944493",
     "fetched_at": "2026-07-03T10:05:31.920017"
+  },
+  {
+    "views": 37,
+    "likes": 2,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "weekly_forecast",
+    "post_id": "18118026430880015",
+    "fetched_at": "2026-07-03T12:03:49.522266"
+  },
+  {
+    "views": 109,
+    "likes": 1,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "hoshi_betsu",
+    "post_id": "17962704627128513",
+    "fetched_at": "2026-07-03T12:03:49.994445"
   }
 ]
