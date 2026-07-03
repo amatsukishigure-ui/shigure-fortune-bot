@@ -5911,7 +5911,8 @@
     "posted_at": "2026-07-02T13:28:54.827721+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-07-02T13:28:54.832802"
+    "recorded_at": "2026-07-02T13:28:54.832802",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♏ 蠍座で、今の自分のお金の使い方に「これでいいのかな」がある人以外は、読まなくていい。\n\n龍脈命術では、小暑のタイミングは「流れの切り替え目」にあたる。\nここで動いた人と、動かなかった人で、半年後の景色がはっきり変わる。\n\n今、時雨の鑑定モニターを少数募集している。\n「何から整えればいいかわからない」という人に、まず方位と気の流れから道筋を見せる。\n\n気になった人は、プロフィールのリンクからどうぞ。\n当てはまった人、コメントで教えて。\n\n#占い #吉方位 #龍脈命術",
@@ -6126,5 +6127,24 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/sagittarius.jpg",
     "recorded_at": "2026-07-03T13:32:31.058584"
+  },
+  {
+    "text": "♈ 牡羊座で今、恋愛・縁が気になっている人へ。\n\n七夕の今夜、龍脈命術では「南の気」が縁をつなぐ方位とされてる。\n好きな人への連絡も、気になるアプリも、南側の部屋や窓の近くで試してみて。\n\n「出会いがない」んじゃなくて、動く方向がズレてるだけかもしれないよ。\n\n牡羊座さん、今恋愛で気になってる人いる？コメントで教えて。\n\n#占い #恋愛運 #縁",
+    "x_text": "♈ 牡羊座で今、恋愛・縁が気になっている人へ。\n\n七夕の今夜、龍脈命術では「南の気」が縁をつなぐ方位とされてる。\n好きな人への連絡も、気になるアプリも、南側の部屋や窓の近くで試してみて。\n\n「出会いがない」んじゃなくて、動く方向がズレてるだけかもしれないよ。\n\n牡羊座さん、今恋愛で気になってる人いる？コメントで教えて。\n\n#占い #時雨 #金運 #風水",
+    "theme": "開運行動/金運アップ行動",
+    "pattern_id": "zodiac_target",
+    "quality_score": 7.6,
+    "attempts": 1,
+    "x_eligible": false,
+    "persona_id": "p016",
+    "zodiac_boost": "♈牡羊座",
+    "pending_at": "2026-07-03T13:32:22.400237",
+    "queued_at": "2026-07-03T13:32:22.595238",
+    "threads_post_id": "18131786377566946",
+    "posted_at": "2026-07-03T15:21:46.650048+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
+    "recorded_at": "2026-07-03T15:21:46.655517"
   }
 ]
