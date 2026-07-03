@@ -1,6 +1,6 @@
 {
   "_comment": "画像ファイルは assets/images/ に置いてください。存在しないファイルは自動スキップされます。",
-  "image_post_probability": 0.45,
+  "image_post_probability": 0.65,
 
   "zodiac": {
     "牡羊座": "zodiac/aries.jpg",
@@ -80,7 +80,23 @@
     "free_reading":     "brand/fengshui_abundance.jpg",
     "cta_soft":         "brand/fengshui_abundance.jpg",
     "line_cta":         null,
-    "follow_cta":       null
+    "follow_cta":       null,
+    "zodiac_deep":      "zodiac/general.jpg",
+    "list":             "brand/fengshui_abundance.jpg",
+    "jisseki_ninshou":  "brand/ryumyaku_oracle.jpg",
+    "faq_myth":         "brand/ryumyaku_oracle.jpg",
+    "pop_short":        "general/fortune_1.jpg",
+    "soft_discovery":   "brand/ryumyaku_oracle.jpg",
+    "weekly_forecast":  "brand/fengshui_abundance.jpg",
+    "harm_cta":         "brand/ryumyaku_oracle.jpg",
+    "before_after":     "brand/fengshui_abundance.jpg",
+    "monitor_cta":      "brand/ryumyaku_oracle.jpg",
+    "line_add":         "brand/ryumyaku_oracle.jpg",
+    "emoji_comment":    "general/mystery_1.jpg",
+    "kotodama_rank":    "brand/crystal_zodiac.jpg",
+    "card_pick":        "brand/crystal_zodiac.jpg",
+    "fuusui_tip":       "fengshui/water.jpg",
+    "life_event":       "brand/fengshui_abundance.jpg"
   },
 
   "defaults": [

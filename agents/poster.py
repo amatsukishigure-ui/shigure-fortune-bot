@@ -21,6 +21,7 @@ from config import (
     DAILY_POST_LIMIT, MIN_POST_INTERVAL_HOURS,
     MAX_CONSECUTIVE_ERRORS,
     IMAGE_MAP_FILE, IMAGE_ASSETS_DIR, GITHUB_RAW_BASE,
+    POST_PATTERNS_FILE,
 )
 from core.state import (
     dequeue_post, load_history, add_to_history,
@@ -314,6 +315,36 @@ def _post_comment(post_id: str, text: str) -> dict:
     return {"success": True, "comment_id": resp.json().get("id")}
 
 
+_SELF_REPLY_VARIANTS = [
+    "気になった方へ 🔮\n\nまず話したい → LINE https://lin.ee/TJg5dru\nすぐ試したい → Coconala https://coconala.com/services/4292937",
+    "質問・相談はいつでも 🌿\n気軽にLINEへ → https://lin.ee/TJg5dru",
+    "龍脈命術、気になる方へ ⭐\n▷ まずLINEで話してみて https://lin.ee/TJg5dru",
+    "コメントに質問があれば返信するよ 🔮",
+    "鑑定に興味が出てきた方へ 🐉\n▷ モニター価格で試せます https://coconala.com/services/4292937",
+    "気の流れ、一緒に整えていきましょう 🌿\nコメントで気軽に声をかけてね",
+]
+
+
+def _add_self_reply_cta(post_id: str, category: str) -> bool:
+    """
+    投稿後の自己リプライを投稿する。
+
+    - reach / engage パターン: ランダムCTAを自己リプライとして投稿
+      → 「会話が始まった」シグナルでアルゴリズム評価向上
+    - convert パターン: 本文にURLが含まれるためスキップ（二重CTA防止）
+    """
+    if category == "convert":
+        return False
+
+    cta = random.choice(_SELF_REPLY_VARIANTS)
+    try:
+        result = _post_comment(post_id, cta)
+        return result.get("success", False)
+    except Exception as e:
+        print(f"  ⚠️ 自己リプライ失敗: {e}")
+        return False
+
+
 def run() -> dict:
     """
     ポスターエージェントのメイン処理（1投稿スロット分）。
@@ -375,6 +406,24 @@ def run() -> dict:
             post["image_url"] = image_url
         add_to_history(post)
         clear_errors("poster")
+
+        # ① 自己リプライCTA（アルゴリズム評価向上：会話開始シグナル）
+        patterns = load_json(POST_PATTERNS_FILE, default=[])
+        pat_info = next((p for p in patterns if p.get("id") == post.get("pattern_id")), {})
+        category = pat_info.get("category", "reach")
+        time.sleep(3)
+        replied = _add_self_reply_cta(post_id, category)
+        if replied:
+            print(f"  💬 自己リプライCTA送信済み [{category}]")
+
+        # ③ 投稿直後に即時リプライヤー起動（初速30分以内のコメント返しシグナル）
+        try:
+            from agents import replier as _replier
+            r = _replier.run()
+            if r.get("replied", 0) > 0:
+                print(f"  💬 即時リプライ: {r['replied']}件返信")
+        except Exception:
+            pass  # リプライヤーの失敗はポスターの成否に影響させない
 
         return {"posted": True, "post_id": post_id, "reason": ""}
 
