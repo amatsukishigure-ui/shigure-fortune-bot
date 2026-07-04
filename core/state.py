@@ -351,11 +351,9 @@ def save_our_reply_id(reply_id: str, post_text: str, comment_text: str) -> None:
         "comment_text": comment_text[:200],
         "replied_at": datetime.now().isoformat(),
     }
-    # 最新500件のみ保持
-    if len(our_replies) > 500:
-        oldest_keys = sorted(our_replies, key=lambda k: our_replies[k].get("replied_at", ""))[:len(our_replies)-500]
-        for k in oldest_keys:
-            del our_replies[k]
+    # REPLY_TARGET_DAYS=14 に合わせて30日より古いエントリを削除
+    cutoff = (datetime.now() - timedelta(days=30)).isoformat()
+    our_replies = {k: v for k, v in our_replies.items() if v.get("replied_at", "") >= cutoff}
     save_json(OUR_REPLY_IDS_FILE, our_replies)
 
 
