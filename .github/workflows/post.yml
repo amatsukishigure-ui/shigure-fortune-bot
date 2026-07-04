@@ -2,16 +2,15 @@ name: shigure-auto-post
 
 on:
   schedule:
-    # POST_SLOTS = [6, 8, 12, 16, 19, 21, 22] に対応（JST = UTC+9）
-    # 各スロット最低2時間間隔 → concurrency キャンセル防止
-    - cron: '0 21 * * *'  #  06:00 JST (UTC21)
-    - cron: '0 23 * * *'  #  08:00 JST (UTC23) — 通勤ピーク
-    - cron: '0 3 * * *'   #  12:00 JST (UTC03) — 昼ピーク
-    - cron: '0 7 * * *'   #  16:00 JST (UTC07) — 帰宅前
-    - cron: '0 8 * * *'   #  17:00 JST (UTC08) — 退勤ピーク（ENG率最高）
-    - cron: '0 12 * * *'  #  21:00 JST (UTC12) — 就寝前チェック
-    - cron: '0 13 * * *'  #  22:00 JST (UTC13) — 深夜前
-    # 深夜返信専用スロット（22:00〜06:00 の8時間ギャップを埋める）
+    # POST_SLOTS = [7, 9, 12, 18, 21, 22] に対応（JST = UTC+9）
+    # ENGスコア実績ベースで最適化 (2026-07-04): 07=75.0 21=42.7 18=38.2 12=37.4 09=27.4 22=13.2
+    - cron: '0 22 * * *'  #  07:00 JST (UTC22) — 朝ピーク ENG score:75.0
+    - cron: '0 0 * * *'   #  09:00 JST (UTC00) — 朝の落ち着き ENG score:27.4
+    - cron: '0 3 * * *'   #  12:00 JST (UTC03) — 昼ピーク ENG score:37.4
+    - cron: '0 9 * * *'   #  18:00 JST (UTC09) — 帰宅後ピーク ENG score:38.2
+    - cron: '0 12 * * *'  #  21:00 JST (UTC12) — 就寝前ピーク ENG score:42.7
+    - cron: '0 13 * * *'  #  22:00 JST (UTC13) — before_sleep専用枠
+    # 深夜返信専用スロット
     - cron: '0 16 * * *'  #  01:00 JST (UTC16) — reply only
     - cron: '0 19 * * *'  #  04:00 JST (UTC19) — reply only
   workflow_dispatch:

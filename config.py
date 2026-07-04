@@ -42,12 +42,8 @@ SIMILARITY_HISTORY_SIZE = 100      # 比較対象の過去投稿数
 # Posting schedule
 DAILY_POST_LIMIT = 20
 MIN_POST_INTERVAL_HOURS = 0.5  # 1h→0.5h: 夜帯1時間おきcronでもスキップされないよう緩和
-POST_SLOTS = [6, 8, 12, 13, 16, 17, 18, 19, 22]  # 9スロット/日
-# 実績ベース修正（2026-06 n=150件 直近30日）:
-#   削除: 03時(avgV=53.7,n=15) — 13時(avgV=116.5,n=6)に劣る
-#   追加: 13時(avgV=116.5,n=6) — サンプル少ないが有望、16時に次ぐ昼帯
-#   維持: 06時(avgV=123.1)・08時(avgV=60.6)・12時(avgV=95.5)・16時(avgV=255.5 最強)
-#          17時(avgV=108.5)・18時(avgV=79.0)・19時(avgV=200.0)・22時(avgV=142.7)
+POST_SLOTS = [7, 9, 12, 18, 21, 22]  # 6スロット/日（ENGスコア実績ベース最適化 2026-07-04）
+# 07=75.0 / 21=42.7 / 18=38.2 / 12=37.4 / 09=27.4 / 22=13.2（before_sleep専用枠）
 
 # Pattern rotation
 MAX_SAME_PATTERN_CONSECUTIVE = 3   # 同パターン連続上限
