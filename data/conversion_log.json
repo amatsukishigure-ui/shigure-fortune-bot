@@ -1,0 +1,5 @@
+{
+  "_comment": "週次コンバージョン記録。毎週月曜に手動で入力してください。",
+  "_how_to_update": "python main.py log_conversion でも入力できます（未実装の場合は直接編集）",
+  "entries": []
+}

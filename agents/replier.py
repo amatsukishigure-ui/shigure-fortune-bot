@@ -336,12 +336,20 @@ def run() -> dict:
     skipped = 0
     errors = 0
 
+    # reply_magnet 投稿が今日のターゲットに含まれる場合は上限を拡大する
+    today_str = datetime.now().strftime("%Y-%m-%d")
+    has_reply_magnet_today = any(
+        p.get("pattern_id") == "reply_magnet" and p.get("posted_at", "").startswith(today_str)
+        for p in target_posts
+    )
+    effective_max = 30 if has_reply_magnet_today else MAX_REPLIES_PER_RUN
+
     own_username = profile.get("accounts", {}).get("threads", "").lstrip("@").lower()
 
     # ── フェーズ1: 投稿への新規コメントに返信 ────────────────
 
     for post in target_posts:
-        if replied + nested_replied >= MAX_REPLIES_PER_RUN:
+        if replied + nested_replied >= effective_max:
             break
 
         post_id = post["threads_post_id"]
@@ -350,7 +358,7 @@ def run() -> dict:
         comments = _get_replies(post_id)
 
         for comment in comments:
-            if replied + nested_replied >= MAX_REPLIES_PER_RUN:
+            if replied + nested_replied >= effective_max:
                 break
 
             cid = comment.get("id", "")
@@ -363,7 +371,7 @@ def run() -> dict:
                 sub_post_text = comment_text
                 sub_comments = _get_replies(sub_post_id)
                 for sc in sub_comments:
-                    if replied + nested_replied >= MAX_REPLIES_PER_RUN:
+                    if replied + nested_replied >= effective_max:
                         break
                     sc_id = sc.get("id", "")
                     sc_text = sc.get("text", "").strip()
@@ -421,12 +429,12 @@ def run() -> dict:
     replied_ids = load_replied_comments()  # フェーズ1後に再読み込み
 
     for our_reply_id, ctx in our_reply_ids.items():
-        if replied + nested_replied >= MAX_REPLIES_PER_RUN:
+        if replied + nested_replied >= effective_max:
             break
 
         nested_comments = _get_replies(our_reply_id)
         for nc in nested_comments:
-            if replied + nested_replied >= MAX_REPLIES_PER_RUN:
+            if replied + nested_replied >= effective_max:
                 break
 
             nid = nc.get("id", "")
