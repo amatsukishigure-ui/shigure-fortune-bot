@@ -157,6 +157,58 @@ def _generate_card_pick_reply(choice_key: str, profile: dict) -> str:
     return f"{emoji} {msg}\nもっと詳しく知りたい人は LINE {line_url} へ。"
 
 
+_HESITATION_BREAK_REPLIES = {
+    "A": (
+        "💰",
+        "まずLINEで話すのは完全無料。申込みも不要だし、話してみてやっぱり違うと思えばそれでいい。\n"
+        "お金のことを気にせずに、まず話しかけてみて。\n"
+        "▷ LINE {line_url}",
+    ),
+    "B": (
+        "🔮",
+        "「本当に変わるか」という不安は正直だと思う。\n"
+        "変わった人の話を直接聞かせるから、LINEで話してみて。\n"
+        "変わらなかったら変わらなかったで、それも正直に伝える。\n"
+        "▷ LINE {line_url}",
+    ),
+    "C": (
+        "💬",
+        "生年月日だけでいい。あとは私が聞く。\n"
+        "「何を話せばいいかわからない」人ほど、見えてくるものが多かったりする。\n"
+        "準備しなくていいから、そのままLINEに来て。\n"
+        "▷ LINE {line_url}",
+    ),
+}
+
+
+def _is_hesitation_comment(text: str) -> str | None:
+    """hesitation_break の A/B/C 回答コメントを検出。該当キーを返す、なければ None"""
+    t = text.strip().upper()
+    for key in ("A", "B", "C"):
+        if t == key:
+            return key
+    for key in ("A", "B", "C"):
+        if t.startswith(key) and len(t) <= len(key) + 5:
+            return key
+    # キーワード補完（より長い自然語コメント向け）
+    if any(kw in text for kw in ("値段", "料金", "費用", "いくら")):
+        return "A"
+    if any(kw in text for kw in ("本当に変わる", "効果あるか", "変わるか不安")):
+        return "B"
+    if any(kw in text for kw in ("何を話", "話せばいい", "何を言")):
+        return "C"
+    return None
+
+
+def _generate_hesitation_reply(choice_key: str, profile: dict) -> str:
+    emoji, msg_template = _HESITATION_BREAK_REPLIES.get(
+        choice_key, ("🔮", "迷いは迷いのまま来てくれていい。まずLINEで話してみて。\n▷ LINE {line_url}")
+    )
+    line_url = profile.get("line_url", "https://lin.ee/TJg5dru")
+    msg = msg_template.format(line_url=line_url)
+    return f"{emoji} {msg}"
+
+
 def _generate_reply(comment_text: str, post_text: str, profile: dict, pattern_id: str = "") -> str:
     """
     コメントへの時雨らしい返信を生成する。
@@ -168,6 +220,12 @@ def _generate_reply(comment_text: str, post_text: str, profile: dict, pattern_id
         choice = _is_card_pick_comment(comment_text)
         if choice:
             return _generate_card_pick_reply(choice, profile)
+
+    # hesitation_break: 踏み切れない理由 A/B/C には専用返信
+    if pattern_id == "hesitation_break":
+        choice = _is_hesitation_comment(comment_text)
+        if choice:
+            return _generate_hesitation_reply(choice, profile)
 
     has_signal = _has_consult_signal(comment_text)
     line_url = profile.get("line_url", "https://lin.ee/TJg5dru")

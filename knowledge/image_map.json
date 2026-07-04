@@ -98,7 +98,9 @@
     "fuusui_tip":       "fengshui/water.jpg",
     "reply_magnet":     "brand/ryumyaku_oracle.jpg",
     "before_sleep":     "general/mystery_1.jpg",
-    "life_event":       "brand/fengshui_abundance.jpg"
+    "life_event":       "brand/fengshui_abundance.jpg",
+    "client_voice":     "brand/ryumyaku_oracle.jpg",
+    "hesitation_break": "brand/ryumyaku_oracle.jpg"
   },
 
   "defaults": [
