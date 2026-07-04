@@ -103,12 +103,47 @@ def _post_reply(comment_id: str, text: str) -> str | None:
         return None
 
 
-def _generate_reply(comment_text: str, post_text: str, profile: dict) -> str:
+_CARD_PICK_MESSAGES = {
+    "A": ("🌊", "流れに乗りたい気持ちがある時期だね。北東か東の方位を意識して動き出してみて。小さな一歩でいい。"),
+    "B": ("🔥", "加速の気が来ている。今いる場所から南か東南へ意識を向けると、その勢いがさらに増す。"),
+    "C": ("🌿", "整える時期にいる。西か北西に静かな場所を作って、そこでゆっくり考えると答えが見えてくる。"),
+    "🌊": ("🌊", "流れに乗りたい気持ちがある時期だね。北東か東の方位を意識して動き出してみて。"),
+    "🔥": ("🔥", "加速の気が来ている。南か東南へ意識を向けると、その勢いがさらに増す。"),
+    "🌿": ("🌿", "整える時期にいる。西か北西に静かな場所を作ると、答えが見えてくる。"),
+}
+
+
+def _is_card_pick_comment(text: str) -> str | None:
+    """A/B/C または 🌊🔥🌿 のカード回答か判定。該当キーを返す、なければ None"""
+    t = text.strip().upper()
+    for key in ("A", "B", "C", "🌊", "🔥", "🌿"):
+        if t == key or t == key.upper():
+            return key
+    # 「Aです」「Bかな」など軽い付加語も拾う
+    for key in ("A", "B", "C", "🌊", "🔥", "🌿"):
+        if t.startswith(key) and len(t) <= len(key) + 5:
+            return key
+    return None
+
+
+def _generate_card_pick_reply(choice_key: str, profile: dict) -> str:
+    emoji, msg = _CARD_PICK_MESSAGES.get(choice_key, ("🔮", "気の流れを確認してみて。"))
+    line_url = profile.get("line_url", "https://lin.ee/TJg5dru")
+    return f"{emoji} {msg}\n詳しく知りたい人は LINE {line_url} へ。"
+
+
+def _generate_reply(comment_text: str, post_text: str, profile: dict, pattern_id: str = "") -> str:
     """
     コメントへの時雨らしい返信を生成する。
     短く（60〜130字）、押しつけがましくなく、温かく。
     悩みキーワードがあれば自然に鑑定へ誘導する。
     """
+    # card_pick: A/B/C コメントには専用返信
+    if pattern_id == "card_pick":
+        choice = _is_card_pick_comment(comment_text)
+        if choice:
+            return _generate_card_pick_reply(choice, profile)
+
     has_signal = _has_consult_signal(comment_text)
     line_url = profile.get("line_url", "https://lin.ee/TJg5dru")
 
@@ -227,6 +262,7 @@ def run() -> dict:
 
         post_id = post["threads_post_id"]
         post_text = post.get("text", "")
+        post_pattern_id = post.get("pattern_id", "")
         comments = _get_replies(post_id)
 
         for comment in comments:
@@ -253,7 +289,7 @@ def run() -> dict:
                     if sc_id in replied_ids or not sc_text:
                         continue
                     try:
-                        reply_text = _generate_reply(sc_text, sub_post_text, profile)
+                        reply_text = _generate_reply(sc_text, sub_post_text, profile, post_pattern_id)
                         reply_id = _post_reply(sc_id, reply_text)
                         if reply_id:
                             mark_comment_replied(sc_id)
@@ -280,7 +316,7 @@ def run() -> dict:
                 continue
 
             try:
-                reply_text = _generate_reply(comment_text, post_text, profile)
+                reply_text = _generate_reply(comment_text, post_text, profile, post_pattern_id)
                 reply_id = _post_reply(cid, reply_text)
                 if reply_id:
                     mark_comment_replied(cid)

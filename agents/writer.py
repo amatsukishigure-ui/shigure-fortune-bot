@@ -592,11 +592,12 @@ def _build_prompt(
 
 **1投稿目（160〜210字）— フック×気の傾向×吉方位1点**
 目的: 「自分専用の情報だ」という引力を作り、2投稿目への期待を作る
-1. 冒頭（1行）: 「{_zm_d}{_zn_d}さん、今週だけ読んでほしい。」
-2. 今週の気の傾向（2〜3行）: 龍脈命術で読む{_zn_d}の今週の特徴。「〜の気が強まる週」「〜のタイミングがある」
+1. 冒頭（1行）: 「{_zm_d}{_zn_d}さんへ。」または「今の{_zm_d}{_zn_d}さんへ。」
+   【絶対禁止】「今週だけ読んでほしい」「今週の{_zn_d}」は使わない。時事表現は禁止。
+2. 今の気の傾向（2〜3行）: 龍脈命術で読む{_zn_d}の現在の特徴。「〜の気が強まっている」「〜のタイミングにある」
 3. 吉方位×行動（1点）: 「・○方向 → 具体的にやること（理由）」
 4. 引き（1行・言いかけて止める型）: 吉方位2点目やNG注意点の断片を投げて切る
-   例: 「ただし、今週だけ避けてほしい方位がある。」
+   例: 「ただし、避けてほしい方位がある。」
    例: 「もう一点、動き方に注意があって──」
    例: 「使える方角はもう1つ。ただし条件がある。」
    禁止: 「続けます。」「次に書きます。」「次で残りを話します。」
@@ -1933,6 +1934,23 @@ Q: 「{_q}」
 THREAD_PATTERNS = {"empathy_thread", "harm_revelation", "zodiac_deep", "harm_cta", "menu_guide"}
 
 
+_FORBIDDEN_PHRASES: dict = {
+    "zodiac_deep": [
+        "今週だけ読んでほしい",
+        "今週の♈", "今週の♉", "今週の♊", "今週の♋",
+        "今週の♌", "今週の♍", "今週の♎", "今週の♏",
+        "今週の♐", "今週の♑", "今週の♒", "今週の♓",
+        "今週だけ",
+    ],
+}
+
+
+def _check_forbidden(text: str, pattern_id: str) -> list:
+    """禁止フレーズチェック。違反フレーズのリストを返す（空なら合格）"""
+    phrases = _FORBIDDEN_PHRASES.get(pattern_id, [])
+    return [p for p in phrases if p in text]
+
+
 def _strip_markdown(text: str) -> str:
     """投稿本文からマークダウン記法を除去する（AI的な**強調**などが混入した場合の後処理）"""
     import re
@@ -2179,6 +2197,17 @@ def run(batch_size: int = 5) -> dict:
             if _target_z and pattern.get("id") in ("zodiac_deep",):
                 thread_posts = [_fix_zodiac(p, _target_z) for p in thread_posts]
 
+            # NGワードバリデーション（ツリー全投稿をチェック）
+            _pid_check = pattern.get("id", "")
+            _forbidden_hits = []
+            for _tp in thread_posts:
+                _forbidden_hits.extend(_check_forbidden(_tp, _pid_check))
+            if _forbidden_hits:
+                rejected += 1
+                print(f"  🚫 NGワード自動棄却 [{_pid_check}]: {_forbidden_hits[0]}")
+                details.append({"status": "rejected_forbidden", "pattern": _pid_check, "phrase": _forbidden_hits[0]})
+                continue
+
             # 先頭投稿を代表テキストとして扱う（品質・類似度チェック用）
             representative = thread_posts[0]
             threads_text = format_for_threads(representative, theme=theme)
@@ -2273,6 +2302,14 @@ def run(batch_size: int = 5) -> dict:
                 continue
 
             final_post = result["post"]
+
+            # NGワードバリデーション
+            _forbidden_hits = _check_forbidden(final_post, pattern.get("id", ""))
+            if _forbidden_hits:
+                rejected += 1
+                print(f"  🚫 NGワード自動棄却 [{pattern.get('id')}]: {_forbidden_hits[0]}")
+                details.append({"status": "rejected_forbidden", "pattern": pattern.get("id"), "phrase": _forbidden_hits[0]})
+                continue
 
             # Threads版をフォーマット（類似度チェック前: historyはformatted textで保存されているため先に変換する）
             threads_text = format_for_threads(final_post, theme=theme)

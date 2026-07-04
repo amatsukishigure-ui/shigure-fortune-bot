@@ -94,6 +94,16 @@ jobs:
         env:
           PYTHONIOENCODING: utf-8
 
+      - name: weekly weight update (Sunday 21:00 JST = UTC 12:00)
+        if: github.event_name == 'schedule'
+        run: |
+          HOUR_UTC=$(date -u +%H)
+          DOW=$(date -u +%u)  # 1=Mon ... 7=Sun
+          if [ "$HOUR_UTC" = "12" ] && [ "$DOW" = "7" ]; then
+            echo "Weekly weight update"
+            python scripts/update_weights.py || echo "weight update skipped"
+          fi
+
       - name: save state files
         run: |
           git config user.name "shigure-bot"
