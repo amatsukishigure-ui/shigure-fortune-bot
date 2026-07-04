@@ -174,6 +174,13 @@ def cmd_status():
     print(f"   ステータス: {sup['status']}")
 
     if threads_queue:
+        from collections import Counter
+        pat_counts = Counter(p.get("pattern_id", "?") for p in threads_queue)
+        print(f"\n   📊 キューのパターン分布 ({len(threads_queue)}件):")
+        for pat, cnt in sorted(pat_counts.items(), key=lambda x: -x[1]):
+            bar = "█" * min(cnt, 20)
+            print(f"     {pat:<26} {bar} {cnt}")
+
         print(f"\n   📋 Threadsキュー 次の3件:")
         for i, p in enumerate(threads_queue[:3]):
             score = p.get("quality_score", 0)

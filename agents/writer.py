@@ -215,9 +215,33 @@ def _get_season_context(dt: datetime) -> str:
     )
 
 
-def _pick_zodiac() -> str:
+def _get_recent_zodiac_deep_signs(history: list, days: int = 14) -> list:
+    """直近N日のzodiac_deep投稿で使われた星座のリストを返す"""
+    import re
+    cutoff = (datetime.now() - timedelta(days=days)).isoformat()
+    marks = "♈♉♊♋♌♍♎♏♐♑♒♓"
+    used = []
+    for h in history:
+        if h.get("pattern_id") != "zodiac_deep":
+            continue
+        if h.get("posted_at", "") < cutoff:
+            continue
+        # thread_posts があれば先頭テキスト、なければ text フィールドから星座記号を抽出
+        thread_posts = h.get("thread_posts", [])
+        text = thread_posts[0] if thread_posts else h.get("text", "")
+        m = re.search(f"([{marks}])", text)
+        if m:
+            for z in ZODIAC_SIGNS:
+                if z[0] == m.group(1):
+                    used.append(z)
+                    break
+    return used
+
+
+def _pick_zodiac(exclude: list | None = None) -> str:
     import random
-    return random.choice(ZODIAC_SIGNS)
+    available = [z for z in ZODIAC_SIGNS if z not in (exclude or [])]
+    return random.choice(available if available else ZODIAC_SIGNS)
 
 
 def _pick_persona(personas: list, recent_persona_ids: list = None) -> dict | None:
@@ -2131,7 +2155,11 @@ def run(batch_size: int = 5) -> dict:
         import random as _random
         extra_hint = {"estimated_post_time": est_post_time}
         if pattern.get("id") in ("zodiac_target", "caligula", "zodiac_deep"):
-            _zodiac_val = _pick_zodiac()
+            if pattern.get("id") == "zodiac_deep":
+                _recent_used = _get_recent_zodiac_deep_signs(history, days=14)
+                _zodiac_val = _pick_zodiac(exclude=_recent_used)
+            else:
+                _zodiac_val = _pick_zodiac()
             extra_hint["zodiac"] = _zodiac_val
             extra_hint["zodiac_boost"] = _zodiac_val  # 画像選択にも使う
             # B改善: 悩みジャンルで読者層を絞り込む（12星座×4ジャンル=精密ターゲット）

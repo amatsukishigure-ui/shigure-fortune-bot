@@ -6,7 +6,7 @@ JSON状態管理モジュール
 
 import json
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any
 import sys
@@ -311,16 +311,29 @@ def get_follower_growth(days: int = 7) -> dict:
 
 # ── Replied Comments ──────────────────────────────────────────
 
+_REPLIED_RETENTION_DAYS = 90
+
+
 def load_replied_comments() -> set:
     data = load_json(REPLIED_COMMENTS_FILE, default=[])
-    return set(data)
+    if isinstance(data, list):
+        return set(data)
+    if isinstance(data, dict):
+        return set(data.keys())
+    return set()
 
 
 def mark_comment_replied(comment_id: str) -> None:
-    replied = load_replied_comments()
-    replied.add(comment_id)
-    # 最新2000件のみ保持
-    save_json(REPLIED_COMMENTS_FILE, list(replied)[-2000:])
+    data = load_json(REPLIED_COMMENTS_FILE, default={})
+    # 旧フォーマット（list）→ dict に移行（タイムスタンプは30日前で保持）
+    if isinstance(data, list):
+        placeholder = (datetime.now() - timedelta(days=30)).isoformat()[:16]
+        data = {cid: placeholder for cid in data}
+    data[comment_id] = datetime.now().isoformat()[:16]
+    # 90日より古いエントリを削除
+    cutoff = (datetime.now() - timedelta(days=_REPLIED_RETENTION_DAYS)).isoformat()[:16]
+    data = {cid: ts for cid, ts in data.items() if ts >= cutoff}
+    save_json(REPLIED_COMMENTS_FILE, data)
 
 
 # ── Our Reply IDs（自分の返信ID追跡） ─────────────────────────
