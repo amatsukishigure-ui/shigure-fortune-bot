@@ -6450,5 +6450,24 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-07-05T14:49:03.729418"
+  },
+  {
+    "text": "♒ 水瓶座で今、恋愛・縁が気になっている人へ。\n\n「なんで私だけ、縁がつながらないんだろう」\nそう感じているなら、方位のズレかもしれない。\n\n龍脈命術では、縁は\"向かう方向\"で引き寄せる。\n今の水瓶座に動きやすいのは南西。\n出会いや関係の深まりを求めるなら、そちらに足を向けてみて。\n\n水瓶座さん、これ今の自分に当てはまってる？\n\n#占い #恋愛運 #縁",
+    "x_text": "♒ 水瓶座で今、恋愛・縁が気になっている人へ。\n\n「なんで私だけ、縁がつながらないんだろう」\nそう感じているなら、方位のズレかもしれない。\n\n龍脈命術では、縁は\"向かう方向\"で引き寄せる。\n今の水瓶座に動きやすいのは南西。\n出会いや関係の深まりを求めるなら、そちらに足を向けてみて。\n\n水瓶座さん、これ今の自分に当てはまってる？\n\n#占い #時雨 #吉方位 #風水",
+    "theme": "吉方位・風水/今日の吉方位",
+    "pattern_id": "zodiac_target",
+    "quality_score": 7.7,
+    "attempts": 1,
+    "x_eligible": false,
+    "persona_id": "p007",
+    "zodiac_boost": "♒水瓶座",
+    "pending_at": "2026-07-05T20:22:43.386019",
+    "queued_at": "2026-07-05T20:22:50.969750",
+    "threads_post_id": "18103044416171386",
+    "posted_at": "2026-07-05T20:23:03.151214+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aquarius.jpg",
+    "recorded_at": "2026-07-05T20:23:03.157051"
   }
 ]
