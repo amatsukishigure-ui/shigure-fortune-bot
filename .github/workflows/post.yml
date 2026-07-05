@@ -68,12 +68,13 @@ jobs:
               echo "夜間返信専用スロット — reply only"
               python main.py reply
             else
-              # キュー＋承認待ちが3件以下なら補充（daily実行）
+              # キュー＋承認待ちが10件以下なら補充、20件超なら上限制御でスキップ（daily実行）
               NEED_REFILL=$(python -c "
             import json, pathlib
             q = json.loads(pathlib.Path('data/post_queue.json').read_text()) if pathlib.Path('data/post_queue.json').exists() else []
             p = json.loads(pathlib.Path('data/pending_posts.json').read_text()) if pathlib.Path('data/pending_posts.json').exists() else []
-            print('yes' if len(q) + len(p) <= 3 else 'no')
+            total = len(q) + len(p)
+            print('yes' if total <= 10 else 'no')
             " 2>/dev/null || echo "yes")
 
               if [ "$NEED_REFILL" = "yes" ]; then

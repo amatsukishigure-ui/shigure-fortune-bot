@@ -71,8 +71,8 @@ def _check_queue_health() -> dict:
 
     if len(queue) == 0:
         issues.append("ℹ️ 投稿キューが空です")
-    elif len(queue) > 50:
-        issues.append(f"⚠️ キューが溜まりすぎています: {len(queue)}件")
+    elif len(queue) > 20:
+        issues.append(f"⚠️ キューが溜まりすぎています: {len(queue)}件（目安: 10〜20件）")
 
     return {"queue_size": len(queue), "issues": issues}
 
