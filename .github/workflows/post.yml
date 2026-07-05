@@ -100,34 +100,7 @@ jobs:
           DOW=$(date -u +%u)
           if [ "$HOUR_UTC" = "23" ] && [ "$DOW" = "7" ]; then
             echo "Checking Threads token validity..."
-            python - <<'PYEOF'
-import os, json, pathlib, datetime, requests
-
-token = os.environ.get("THREADS_ACCESS_TOKEN", "")
-if not token:
-    print("WARN: THREADS_ACCESS_TOKEN not set")
-    exit(0)
-
-resp = requests.get(
-    "https://graph.threads.net/v1.0/me",
-    params={"fields": "id", "access_token": token},
-    timeout=10,
-)
-
-err_path = pathlib.Path("data/error_log.json")
-log = json.loads(err_path.read_text(encoding="utf-8")) if err_path.exists() else []
-
-if resp.ok:
-    print(f"Token OK — user_id={resp.json().get('id')}")
-    # 有効期限は60日。トークン取得日が記録されていれば残日数を出す
-else:
-    err = resp.json().get("error", {})
-    msg = f"TOKEN_INVALID: {err.get('message','unknown')} (code={err.get('code')})"
-    print(f"ERROR: {msg}")
-    log.append({"timestamp": datetime.datetime.now().isoformat()[:16], "type": "token_health", "message": msg})
-    err_path.write_text(json.dumps(log, ensure_ascii=False, indent=2), encoding="utf-8")
-    exit(1)
-PYEOF
+            python scripts/check_token.py
           fi
         env:
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
