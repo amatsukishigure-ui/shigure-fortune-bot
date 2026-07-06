@@ -6289,7 +6289,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/fengshui_abundance.jpg",
-    "recorded_at": "2026-07-05T09:14:54.978803"
+    "recorded_at": "2026-07-05T09:14:54.978803",
+    "hourly_stats_recorded": true
   },
   {
     "text": "「なんで自分だけ、変われないんだろう」\nそれ、意志が弱いからじゃない。\n\n明日は七夕。空が星を結ぶように、人にも「つながるべき方向」がある。\n\n止まっている理由は、向きだ。\n\n#占い #吉方位 #開運",
@@ -6309,7 +6310,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
-    "recorded_at": "2026-07-05T01:02:11.585988"
+    "recorded_at": "2026-07-05T01:02:11.585988",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今日、7月8日。\n\n金運を動かしたいなら、日付を味方につける話をする。\n\n龍脈命術では、気には「開く日」と「蓄える日」がある。\n寅の日・巳の日は、その「開く日」に当たる。\n\n次の巳の日は7月9日（明日）。\n財布を新しくする、通帳を整える、不要な出費を手放す——\nそのどれかを、明日一つだけやってみてほしい。\n\n「大げさなことをしなくてもいいの？」と思うかもしれない。\nでも気の流れって、特別な儀式より、日付に沿って動く小さな一歩のほうが通りやすい。\n\n明日、何か一つ試せそう？\n\n---\n\n【今夜の龍脈言霊ランキング】金運の気が動く順\n\n🥇第1位　さそり座\n「気の扉が、今この瞬間に開いている」\n\n🥈第2位　やぎ座\n「流れに乗るより先に、向きを整える」\n\n🥉第3位　おうし座\n「受け取る方位が、静かに整い始めている」\n\n🏅第4位　てんびん座\n「龍脈の気が、私の動いた方向へ向かう」\n\n第5位　うお座\n「止まった流れが、明日の一手で変わる」\n\n第6位　ふたご座\n「気の通り道が、今ここから開かれていく」\n\n第7位　おひつじ座\n「向きを変えただけで、気は私に従う」\n\n#占い #金運 #開運",
@@ -6326,7 +6328,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-05T03:01:25.145378"
+    "recorded_at": "2026-07-05T03:01:25.145378",
+    "hourly_stats_recorded": true
   },
   {
     "text": "知ってから後悔しても遅いかもしれない。\n\n7月の開運日 ワースト→ベスト TOP3\n\n3位 天赦日後の過ごし方を知らない\n→ 7月の天赦日に動いても、その後に「気の向き」を整えないと、せっかく乗った流れがすぐ止まる。\n\n2位 吉方位を調べずに動いている\n→ 龍脈命術では「何をするか」より「どの方角に動くか」が運気の乗り方を決める。方角がズレると努力が空回りする。\n\n1位 新月と開運日が重なる日を見逃している\n→ 7月10日（木）は新月と吉日が重なる希少なタイミング。新しいことを始める・決断する・願いを声に出す、どれでもいい。この日に動いた人と動かなかった人では、夏の後半の流れが変わる。\n\n1位、知ってた？コメントで教えて。\n\n#占い #吉方位 #開運",
@@ -6520,5 +6523,24 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
     "recorded_at": "2026-07-06T03:01:28.792879"
+  },
+  {
+    "text": "♐ 射手座で今、恋愛・縁が気になっている人へ。\n\n3年間、誰かを好きになれていない。\nそのしびれた感覚、気のせいじゃないよ。\n\n今の射手座、南西方位に縁の気が動いている。\n週末、南西方向にあるカフェや公園に足を向けてみて。\n龍脈命術は「出会いを待つ」より「気が流れる方向に動く」占い。\n\n射手座さん、今これ当てはまってる？コメントで教えて。\n\n#占い #恋愛運 #縁",
+    "x_text": "♐ 射手座で今、恋愛・縁が気になっている人へ。\n\n3年間、誰かを好きになれていない。\nそのしびれた感覚、気のせいじゃないよ。\n\n今の射手座、南西方位に縁の気が動いている。\n週末、南西方向にあるカフェや公園に足を向けてみて。\n龍脈命術は「出会いを待つ」より「気が流れる方向に動く」占い。\n\n射手座さん、今これ当てはまってる？コメントで教えて。\n\n#占い #時雨 #吉方位 #風水",
+    "theme": "吉方位・風水/日常での吉方位活用",
+    "pattern_id": "zodiac_target",
+    "quality_score": 8.2,
+    "attempts": 1,
+    "x_eligible": false,
+    "persona_id": "p009",
+    "zodiac_boost": "♐射手座",
+    "pending_at": "2026-07-06T03:50:01.405116",
+    "queued_at": "2026-07-06T03:50:18.085422",
+    "threads_post_id": "18107061007977851",
+    "posted_at": "2026-07-06T03:50:26.656626+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/sagittarius.jpg",
+    "recorded_at": "2026-07-06T03:50:26.662277"
   }
 ]

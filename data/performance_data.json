@@ -4103,5 +4103,38 @@
     "pattern_id": "caligula",
     "post_id": "18088166705322392",
     "fetched_at": "2026-07-05T14:43:58.102220"
+  },
+  {
+    "views": 61,
+    "likes": 1,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "weekly_forecast",
+    "post_id": "18602399293007527",
+    "fetched_at": "2026-07-06T03:45:46.212730"
+  },
+  {
+    "views": 32,
+    "likes": 3,
+    "replies": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "empathy_thread",
+    "post_id": "18126349888653728",
+    "fetched_at": "2026-07-06T03:45:46.414762"
+  },
+  {
+    "views": 123,
+    "likes": 3,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "kotodama_rank",
+    "post_id": "18599114872014363",
+    "fetched_at": "2026-07-06T03:45:46.632093"
   }
 ]
