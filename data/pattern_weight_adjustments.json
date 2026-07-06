@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-07-06T20:55:16.585855",
+  "updated_at": "2026-07-06T23:15:43.397628",
   "lookback_days": 30,
   "adjustments": {
-    "hoshi_betsu": 0.5,
     "brand_ryumyaku": 0.5,
-    "emoji_comment": 0.81,
+    "emoji_comment": 0.811,
+    "hoshi_betsu": 0.5,
     "kaiun_day": 0.5,
     "yoru_kichi": 0.5,
     "pop_short": 0.5,
@@ -12,7 +12,7 @@
     "ichi_gon": 0.5,
     "zodiac_target": 0.704,
     "list": 0.5,
-    "empathy_thread": 1.02,
+    "empathy_thread": 1.021,
     "weekly_forecast": 0.5,
     "jisseki_ninshou": 0.5,
     "zodiac_deep": 2.0,
