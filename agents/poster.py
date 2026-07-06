@@ -49,7 +49,9 @@ def _select_image(post: dict) -> str | None:
 
     pattern_id = post.get("pattern_id", "")
     theme = post.get("theme", "")
-    text = post.get("text", "")
+    # スレッド投稿は全投稿テキストを結合してキーワードマッチング（hookのみだと情報不足）
+    _thread_posts = post.get("thread_posts", [])
+    text = "\n".join(_thread_posts) if len(_thread_posts) > 1 else post.get("text", "")
     # 絵文字プレフィックスを除去（例: "♌獅子座" → "獅子座"）
     _raw_boost = post.get("zodiac_boost", "")
     zodiac_boost = _raw_boost.lstrip("♈♉♊♋♌♍♎♏♐♑♒♓").strip() if _raw_boost else ""
@@ -402,8 +404,13 @@ def run() -> dict:
         post["posted_at"] = datetime.now(timezone.utc).isoformat()
         post["is_mock"] = result.get("mock", False)
         post["has_image"] = result.get("has_image", False)
-        if post["has_image"] and image_url:   # フォールバックでテキスト投稿になった場合は記録しない
+        if post["has_image"] and image_url:
             post["image_url"] = image_url
+        # スレッド形式フラグ（アナリストがパフォーマンス比較に使用）
+        _tp = post.get("thread_posts", [])
+        if len(_tp) > 1:
+            post["is_thread"] = True
+            post["thread_count"] = len(_tp)
         add_to_history(post)
         clear_errors("poster")
 

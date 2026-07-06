@@ -153,12 +153,26 @@ def cmd_status():
     print(f"   {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print(f"   Kill Switch: {'⛔ ON' if is_killed() else '✅ OFF'}")
 
-    # フォロワー情報
+    # フォロワー情報 + 7日間スパークライン
     growth = get_follower_growth(7)
     if growth["current"] is not None:
         sign = "+" if (growth["delta"] or 0) >= 0 else ""
         delta_str = f"（7日間: {sign}{growth['delta']}人）" if growth["delta"] is not None else ""
         print(f"   👥 フォロワー数: {growth['current']:,}人 {delta_str}")
+        # 7日間の日次増減スパークライン
+        from core.state import load_follower_history
+        fh = load_follower_history()
+        if len(fh) >= 2:
+            recent = fh[-8:]  # 最大8日分
+            bars = "▁▂▃▄▅▆▇█"
+            daily = []
+            for j in range(1, len(recent)):
+                daily.append(recent[j]["count"] - recent[j-1]["count"])
+            if daily:
+                mn, mx = min(daily), max(daily)
+                span = mx - mn if mx != mn else 1
+                sparkline = "".join(bars[int((v - mn) / span * 7)] for v in daily)
+                print(f"   📈 日次増減: {sparkline}  ({daily[-1]:+}人/昨日)")
 
     # ベスト時間帯
     best = get_best_hours(3)

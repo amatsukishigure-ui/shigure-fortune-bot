@@ -226,7 +226,30 @@ def _get_recent_zodiac_deep_signs(history: list, days: int = 14) -> list:
             continue
         if h.get("posted_at", "") < cutoff:
             continue
-        # thread_posts があれば先頭テキスト、なければ text フィールドから星座記号を抽出
+        thread_posts = h.get("thread_posts", [])
+        text = thread_posts[0] if thread_posts else h.get("text", "")
+        m = re.search(f"([{marks}])", text)
+        if m:
+            for z in ZODIAC_SIGNS:
+                if z[0] == m.group(1):
+                    used.append(z)
+                    break
+    return used
+
+
+def _get_recent_zodiac_signs_any(history: list, hours: int = 24) -> list:
+    """直近N時間に zodiac 系パターンで使われた星座を返す（同日の重複投稿防止用）"""
+    import re
+    cutoff = (datetime.now() - timedelta(hours=hours)).isoformat()
+    marks = "♈♉♊♋♌♍♎♏♐♑♒♓"
+    zodiac_patterns = {"zodiac_deep", "caligula", "zodiac_target"}
+    used = []
+    for h in history:
+        if h.get("pattern_id") not in zodiac_patterns:
+            continue
+        posted = h.get("posted_at") or h.get("queued_at", "")
+        if posted < cutoff:
+            continue
         thread_posts = h.get("thread_posts", [])
         text = thread_posts[0] if thread_posts else h.get("text", "")
         m = re.search(f"([{marks}])", text)
@@ -2119,7 +2142,11 @@ def run(batch_size: int = 5) -> dict:
 
     # 類似度チェッカー初期化
     checker = SimilarityChecker()
-    checker.load_history([h.get("text", "") for h in history if h.get("text")])
+    # スレッド投稿は thread_posts 全文を結合して登録（hookのみでは類似度が不正確になるため）
+    def _history_full_text(h: dict) -> str:
+        tp = h.get("thread_posts", [])
+        return "\n".join(tp) if len(tp) > 1 else h.get("text", "")
+    checker.load_history([_history_full_text(h) for h in history if h.get("text") or h.get("thread_posts")])
 
     recent_patterns = _get_recent_patterns(history)
     recent_themes = _get_recent_themes(history)
@@ -2169,6 +2196,10 @@ def run(batch_size: int = 5) -> dict:
             if pattern.get("id") == "zodiac_deep":
                 _recent_used = _get_recent_zodiac_deep_signs(history, days=14)
                 _zodiac_val = _pick_zodiac(exclude=_recent_used)
+            elif pattern.get("id") in ("caligula", "zodiac_target"):
+                # 直近24時間に同一星座が投稿済みの場合は別の星座を選ぶ（連続重複防止）
+                _recent_zodiac_used = _get_recent_zodiac_signs_any(history, hours=24)
+                _zodiac_val = _pick_zodiac(exclude=_recent_zodiac_used)
             else:
                 _zodiac_val = _pick_zodiac()
             extra_hint["zodiac"] = _zodiac_val
@@ -2267,26 +2298,30 @@ def run(batch_size: int = 5) -> dict:
             # 先頭投稿を代表テキストとして扱う（品質・類似度チェック用）
             representative = thread_posts[0]
             threads_text = format_for_threads(representative, theme=theme)
-            # 類似度チェック（formatted textで比較: historyと同形式）
-            is_dup, sim_score = checker.is_duplicate(threads_text)
+            # 類似度チェックはスレッド全文で判定（hookのみだと短すぎて誤棄却が起きる）
+            _full_thread_text = "\n".join(format_for_threads(p, theme=theme) for p in thread_posts)
+            is_dup, sim_score = checker.is_duplicate(_full_thread_text)
             if is_dup:
                 rejected += 1
                 details.append({"status": "rejected_similarity", "similarity": sim_score, "theme": theme})
                 continue
+            _formatted_posts = [format_for_threads(p, theme=theme) for p in thread_posts]
             post_obj = {
                 "text": threads_text,
-                "thread_posts": [format_for_threads(p, theme=theme) for p in thread_posts],
+                "thread_posts": _formatted_posts,
                 "theme": theme,
                 "pattern_id": pattern.get("id"),
                 "quality_score": 0.0,
                 "attempts": 1,
+                "is_thread": True,
+                "thread_count": len(thread_posts),
             }
             # 星座ブーストを記録（画像選択で使用）
             if extra_hint.get("zodiac_boost"):
                 post_obj["zodiac_boost"] = extra_hint["zodiac_boost"]
             enqueue_pending(post_obj)
             queued_threads += 1
-            checker.add_to_corpus(threads_text)  # formatted textをコーパスに追加（historyと同形式）
+            checker.add_to_corpus(_full_thread_text)  # 全文でコーパスに追加
             recent_patterns.append(pattern.get("id"))
             recent_themes.append(theme)
             # パターン使用カウントを更新（daily_limit 制御）
@@ -2396,8 +2431,15 @@ def run(batch_size: int = 5) -> dict:
                 "pattern_id": pattern.get("id"),
                 "quality_score": result["score_result"]["average"],
                 "attempts": result["attempts"],
-                "x_eligible": x_eligible,   # 承認時にXキューへ流すかどうか
+                "x_eligible": x_eligible,
             }
+            # 時間限定コンテンツの expires_on 自動設定
+            # 「今日」「明日」「今週」「今夜」を含む投稿は推定投稿日＋1日で期限切れに
+            _date_keywords = ("今日", "今夜", "今朝", "明日", "今週", "今月")
+            if any(kw in threads_text for kw in _date_keywords) and est_post_time:
+                from datetime import date as _date
+                _expires = (est_post_time.date() + timedelta(days=1)).isoformat()
+                post_obj["expires_on"] = _expires
             # ペルソナIDを記録（重複防止のため）
             if extra_hint.get("persona"):
                 post_obj["persona_id"] = extra_hint["persona"].get("id")

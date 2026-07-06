@@ -68,7 +68,13 @@ jobs:
               echo "夜間返信専用スロット — reply only"
               python main.py reply
             else
-              # キュー＋承認待ちが10件以下なら補充、20件超なら上限制御でスキップ（daily実行）
+              # 期限切れコンテンツをクリーンアップしてからリフィル判断
+              python -c "
+            import sys; sys.path.insert(0,'.')
+            from core.state import clean_expired_queue; clean_expired_queue()
+            " 2>/dev/null || true
+
+              # キュー＋承認待ちが10件以下なら補充（daily実行）
               NEED_REFILL=$(python -c "
             import json, pathlib
             q = json.loads(pathlib.Path('data/post_queue.json').read_text()) if pathlib.Path('data/post_queue.json').exists() else []
@@ -123,4 +129,4 @@ jobs:
           git add data/
           git diff --cached --quiet || git commit -m "bot: state update $(date -u +'%Y-%m-%d %H:%M') UTC"
           # push失敗時はリモートの変更を取り込んでリトライ（状態未保存→重複投稿を防ぐ）
-          git push || (git fetch origin && git rebase origin/master && git push)
+          git push || (git fetch origin && git merge origin/master --no-edit -m "bot: merge remote state" && git push)

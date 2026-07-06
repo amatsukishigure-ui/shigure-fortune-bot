@@ -58,11 +58,34 @@ def enqueue_post(post: dict) -> None:
     save_queue(queue)
 
 
+def clean_expired_queue() -> int:
+    """expires_on を過ぎたキューアイテムを除去し、削除件数を返す"""
+    queue = load_queue()
+    today = datetime.now().date().isoformat()
+    fresh = [p for p in queue if p.get("expires_on", "9999-99-99") >= today]
+    removed = len(queue) - len(fresh)
+    if removed:
+        save_queue(fresh)
+        print(f"🗑 期限切れ投稿を除去: {removed}件")
+    return removed
+
+
 def dequeue_post() -> dict | None:
-    """キューから次の投稿を取り出す"""
+    """キューから次の投稿を取り出す（期限切れは自動スキップ）"""
     queue = load_queue()
     if not queue:
         return None
+    today = datetime.now().date().isoformat()
+    # 期限切れを飛ばして最初の有効な投稿を取り出す
+    valid_idx = next(
+        (i for i, p in enumerate(queue) if p.get("expires_on", "9999-99-99") >= today),
+        None,
+    )
+    if valid_idx is None:
+        return None
+    if valid_idx > 0:
+        print(f"⏭ 期限切れ {valid_idx}件をスキップ")
+        queue = queue[valid_idx:]
     post = queue.pop(0)
     save_queue(queue)
     return post
