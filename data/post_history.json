@@ -6478,7 +6478,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aquarius.jpg",
-    "recorded_at": "2026-07-05T20:23:03.157051"
+    "recorded_at": "2026-07-05T20:23:03.157051",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今夜が、七夕の前夜。\n\n龍脈命術では、七夕の前夜を「縁と方位が最も交差する夜」と読む。\n短冊に願いを書くより前に、あなたが今向いている方位を整えてほしい。\n\n今夜の吉方位は南〜南東。この方向に頭を向けて眠ると、明日の七夕の気を最大限に受け取れる。\n\n縁がつながらない、流れが変わらないと感じている人へ。\n今夜だけでいいから、眠る向きを変えてみて。\n\n明日、何を願う？コメントで教えて。\n\n占術家 時雨\n#占い #七夕 #吉方位 #風水",
@@ -6705,5 +6706,22 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/scorpio.jpg",
     "recorded_at": "2026-07-06T18:10:53.230658"
+  },
+  {
+    "text": "夏の夜、方位は静かに答えを持っている。\n\n今夜どこへ行くかより、どちらに向かうかのほうが、龍脈命術では大事にする。\n\n方位の気を知っている人と、知らない人では、同じ行動でも積み重なるものが違う。\n\n「方位なんて気にしたことなかった」と「ずっと意識してた」、どっちに近い？コメントで教えて。\n\n#占い #吉方位 #開運",
+    "x_text": "夏の夜、方位は静かに答えを持っている。\n\n今夜どこへ行くかより、どちらに向かうかのほうが、龍脈命術では大事にする。\n\n方位の気を知っている人と、知らない人では、同じ行動でも積み重なるものが違う。\n\n「方位なんて気にしたことなかった」と「ずっと意識してた」、どっちに近い？コメントで教えて。\n\n#占い #時雨 #吉方位 #風水",
+    "theme": "吉方位・風水/星座別吉方位",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.7,
+    "attempts": 1,
+    "x_eligible": true,
+    "expires_on": "2026-07-12",
+    "pending_at": "2026-07-06T20:58:49.166106",
+    "queued_at": "2026-07-06T20:59:50.216911",
+    "threads_post_id": "18214147078338190",
+    "posted_at": "2026-07-06T20:59:55.902840+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-07-06T20:59:55.909651"
   }
 ]
