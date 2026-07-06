@@ -1839,6 +1839,18 @@ Q: 「{_q}」
 """
     # ────────────────────────────────────────────────────────────────
 
+    _output_as_thread = (extra_hint or {}).get("output_as_thread", False)
+    output_instruction = (
+        "## 出力形式（必須）\n"
+        "2投稿のJSON配列のみ出力すること:\n\n"
+        "[\"フック投稿\", \"詳細投稿\"]\n\n"
+        "- フック投稿: 30〜70文字。強い一言・問いかけ・宣言。ハッシュタグなし。読んだ瞬間に続きが気になる文\n"
+        "- 詳細投稿: 120〜220文字。龍脈命術の視点で解説・体験談・行動指示 + 締め問いかけ + ハッシュタグ2〜3個\n"
+        "- JSON配列以外のテキスト（前置き・説明・コードブロック記号）は不要"
+    ) if _output_as_thread else (
+        "## 出力\n投稿本文のみ。説明・メタ情報・マークダウン記法は不要。プレーンテキストで出力すること。"
+    )
+
     return f"""あなたは占術家「時雨（しぐれ）」として、Threadsに投稿するテキストを1本生成してください。
 
 {post_time_block}
@@ -1958,8 +1970,7 @@ Q: 「{_q}」
 - 季節・節気（秋分・春分・夏至・冬至など）は必ず上記「実際の季節情報」に合った内容のみ使用すること。NG節気は絶対に使わない
 - **【絶対禁止】投稿本文にマークダウン記法を使わない**: `**太字**` `*斜体*` `# 見出し` `- 箇条書き` `` `コード` `` などのマークダウン記号は投稿文に一切含めない。SNS投稿はプレーンテキストで書くこと。箇条書きが必要な場合は「・」を使う。
 
-## 出力
-投稿本文のみ。説明・メタ情報・マークダウン記法は不要。プレーンテキストで出力すること。"""
+{output_instruction}"""
 
 
 # ツリー投稿パターン（format="tree"、複数投稿を連結するパターン）
@@ -2214,14 +2225,23 @@ def run(batch_size: int = 5) -> dict:
                     extra_hint["persona"] = persona
                     recent_persona_ids.append(persona.get("id"))
 
-        is_thread_pattern = pattern.get("id") in THREAD_PATTERNS
+        _fmt = pattern.get("format", "medium")
+        # medium/long パターンも2投稿ツリー形式で生成（short・hoshi_betsu は単発のまま）
+        is_thread_pattern = (
+            pattern.get("id") in THREAD_PATTERNS
+            or (_fmt in ("medium", "long") and pattern.get("id") != "hoshi_betsu")
+        )
 
         if is_thread_pattern:
             # ── ツリー投稿 ──────────────────────────────────────────
+            # 既存 tree パターン以外（medium/long）はJSONフォーマット出力を指示
+            _thread_hint = dict(extra_hint or {})
+            if pattern.get("id") not in THREAD_PATTERNS:
+                _thread_hint["output_as_thread"] = True
             thread_posts = _generate_thread(
                 client_obj, pattern, theme, knowledge,
                 research_data.get("topics", []), analyst_feedback,
-                extra_hint=extra_hint,
+                extra_hint=_thread_hint,
             )
             if not thread_posts or len(thread_posts) < 2:
                 rejected += 1
