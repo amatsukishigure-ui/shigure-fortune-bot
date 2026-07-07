@@ -6733,7 +6733,8 @@
     "posted_at": "2026-07-06T20:59:55.902840+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-07-06T20:59:55.909651"
+    "recorded_at": "2026-07-06T20:59:55.909651",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今日、7月10日は一粒万倍日。",
@@ -6959,5 +6960,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-07-07T20:56:57.503504"
+  },
+  {
+    "text": "♍ 乙女座で今、「このままでいいのかな」が止まらない人へ。\n\n#占い #吉方位 #龍脈命術",
+    "thread_posts": [
+      "♍ 乙女座で今、「このままでいいのかな」が止まらない人へ。\n\n#占い #吉方位 #龍脈命術",
+      "♍ 乙女座さんへ。\n\n今、動きたいのに動けない感覚があるなら、意志の問題じゃないよ。\n\n龍脈命術で見ると、乙女座が停滞する時期は「方向がズレている」サインのことが多い。\n\n今週の吉方位は北東。転職・環境の変化を考えているなら、まず北東方向に少し足を向けてみてね。カフェでも散歩でも、移動するだけでいい。\n\n気の流れは、悩む前に動いた人が先に変わっていく。\n\n乙女座さん、今「停滞してる」って感じてる？\n\n#乙女座 #吉方位 #龍脈命術"
+    ],
+    "theme": "龍脈命術の世界観/なぜ「方位を変えるだけ」で結果が変わるのか",
+    "pattern_id": "zodiac_target",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♍乙女座",
+    "pending_at": "2026-07-07T23:12:58.589411",
+    "queued_at": "2026-07-07T23:13:14.275712",
+    "threads_post_id": "18157475020478580",
+    "posted_at": "2026-07-07T23:13:43.002805+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/virgo.jpg",
+    "recorded_at": "2026-07-07T23:13:43.009592"
   }
 ]
