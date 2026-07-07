@@ -1,8 +1,7 @@
 {
-  "updated_at": "2026-07-06T23:15:43.397628",
+  "updated_at": "2026-07-07T03:37:18.492225",
   "lookback_days": 30,
   "adjustments": {
-    "brand_ryumyaku": 0.5,
     "emoji_comment": 0.811,
     "hoshi_betsu": 0.5,
     "kaiun_day": 0.5,
