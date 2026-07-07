@@ -6601,7 +6601,8 @@
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "is_thread": true,
     "thread_count": 2,
-    "recorded_at": "2026-07-06T07:25:22.653662"
+    "recorded_at": "2026-07-06T07:25:22.653662",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♉牡牛座で、今いる場所が「なんか重い」と感じている人以外は、読まなくていい。",
@@ -6625,7 +6626,8 @@
     "has_image": false,
     "is_thread": true,
     "thread_count": 2,
-    "recorded_at": "2026-07-06T09:01:49.036866"
+    "recorded_at": "2026-07-06T09:01:49.036866",
+    "hourly_stats_recorded": true
   },
   {
     "text": "【今週の残りの気の流れ】",
@@ -6864,5 +6866,23 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-07-07T09:01:37.622869"
+  },
+  {
+    "text": "♎天秤座さん、来週についてまだ何も決めていないなら読まないほうがいい。\n\n読んだら動きたくなるから。\n\n龍脈命術で7月中旬を読むと、天秤座は西の気が急に強まる配置。これは「人からの誘い」や「予想外の提案」が増えるサイン。\n\nただし、ここで全部に応じると気が分散して空回りする。\n\n来週のポイントはひとつだけ。\n「最初に来たものを選ぶ」こと。\n\n迷って比較し始めた瞬間、西の気は濁る。直感が冴えている週だからこそ、考えすぎが一番の敵になる。",
+    "theme": "星座占い/来週の運気予報",
+    "pattern_id": "caligula",
+    "quality_score": 8.4,
+    "attempts": 1,
+    "x_eligible": true,
+    "is_repost": true,
+    "original_post_id": "18553903486069045",
+    "pending_at": "2026-07-06T15:23:32.557544",
+    "queued_at": "2026-07-06T15:24:41.954858",
+    "threads_post_id": "17985305663846912",
+    "posted_at": "2026-07-07T11:40:36.151811+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-07-07T11:40:36.158128"
   }
 ]
