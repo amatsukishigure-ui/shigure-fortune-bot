@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-07-07T17:53:27.663514",
+  "updated_at": "2026-07-07T20:52:13.349595",
   "lookback_days": 30,
   "adjustments": {
     "emoji_comment": 0.558,
-    "zodiac_target": 0.577,
+    "zodiac_target": 0.639,
     "list": 0.5,
     "hoshi_betsu": 0.5,
-    "empathy_thread": 0.719,
+    "empathy_thread": 0.718,
     "caligula": 2.0,
     "ichi_gon": 0.5,
     "pop_short": 0.5,
