@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-07-08T20:24:54.704629",
+  "updated_at": "2026-07-08T23:17:59.842893",
   "lookback_days": 30,
   "adjustments": {
     "pop_short": 0.5,
-    "emoji_comment": 0.643,
+    "emoji_comment": 0.633,
     "list": 0.5,
     "caligula": 2.0,
     "ichi_gon": 0.5,
-    "zodiac_target": 0.562,
+    "zodiac_target": 0.59,
     "kaiun_day": 0.5,
     "hoshi_betsu": 0.5,
     "weekly_forecast": 0.5,
@@ -16,7 +16,7 @@
     "zodiac_rank_cta": 0.5,
     "faq_myth": 0.5,
     "soft_discovery": 0.5,
-    "empathy_thread": 0.615,
+    "empathy_thread": 0.606,
     "before_sleep": 0.5
   }
 }

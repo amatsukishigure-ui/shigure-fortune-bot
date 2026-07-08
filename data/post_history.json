@@ -6970,7 +6970,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-07T20:56:57.503504"
+    "recorded_at": "2026-07-07T20:56:57.503504",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♍ 乙女座で今、「このままでいいのかな」が止まらない人へ。\n\n#占い #吉方位 #龍脈命術",
@@ -6992,7 +6993,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/virgo.jpg",
-    "recorded_at": "2026-07-07T23:13:43.009592"
+    "recorded_at": "2026-07-07T23:13:43.009592",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今日7月12日（日）、動くなら今日がいい。\n\n#占い #吉方位 #開運",
@@ -7155,5 +7157,21 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-07-08T17:26:03.411474"
+  },
+  {
+    "text": "嵐が来る前日、なんとなく落ち着かない感覚がある。\nあれは気象だけの話じゃない。\n\n天が荒れるとき、地の気も揺れている。\nだから龍脈命術では、嵐の中に動くより、明けてから方位を選ぶことを重視する。\n\n「今じゃない気がする」は、勘じゃなくて気が教えてくれているサインだ。\n\n荒れた時期に大きな決断をした経験、AかBか教えて。\nA：あとで後悔した　B：なぜかうまくいった\n\n#占い #引越し #風水",
+    "x_text": "嵐が来る前日、なんとなく落ち着かない感覚がある。\nあれは気象だけの話じゃない。\n\n天が荒れるとき、地の気も揺れている。\nだから龍脈命術では、嵐の中に動くより、明けてから方位を選ぶことを重視する。\n\n「今じゃない気がする」は、勘じゃなくて気が教えてくれているサインだ。\n\n荒れた時期に大きな決断をした経験、AかBか教えて。\nA：あとで後悔した　B：なぜかうまくいった\n\n#占い #時雨 #吉方位 #風水",
+    "theme": "吉方位・風水/引越し方位",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.9,
+    "attempts": 1,
+    "x_eligible": true,
+    "pending_at": "2026-07-08T20:30:02.235547",
+    "queued_at": "2026-07-08T20:30:02.339914",
+    "threads_post_id": "18101551904129031",
+    "posted_at": "2026-07-08T23:23:25.966789+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-07-08T23:23:25.973448"
   }
 ]
