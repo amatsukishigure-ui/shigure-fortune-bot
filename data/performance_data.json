@@ -4411,5 +4411,27 @@
     "pattern_id": "zodiac_deep",
     "post_id": "17880070203478416",
     "fetched_at": "2026-07-08T06:04:26.650265"
+  },
+  {
+    "views": 365,
+    "likes": 30,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "caligula",
+    "post_id": "18418243945194506",
+    "fetched_at": "2026-07-08T10:53:22.972896"
+  },
+  {
+    "views": 32,
+    "likes": 2,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "emoji_comment",
+    "post_id": "18169095877445909",
+    "fetched_at": "2026-07-08T10:53:23.272899"
   }
 ]

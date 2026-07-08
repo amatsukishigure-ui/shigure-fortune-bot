@@ -6858,7 +6858,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-07T06:57:14.232774"
+    "recorded_at": "2026-07-07T06:57:14.232774",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今夜、金運の気持ち、どっちに近い？\n\nお金を動かしたい、動かせる気がする → ✨\nまだ整えてから、今じゃない気がする → 🌿\n\n明日7/11は寅の日。龍脈命術では「気が外に向かいやすい日」として金運の行動に向く。\n\nどっちかな。\n\n#占い #金運 #開運",
@@ -6875,7 +6876,8 @@
     "posted_at": "2026-07-07T09:01:37.617245+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-07-07T09:01:37.622869"
+    "recorded_at": "2026-07-07T09:01:37.622869",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♎天秤座さん、来週についてまだ何も決めていないなら読まないほうがいい。\n\n読んだら動きたくなるから。\n\n龍脈命術で7月中旬を読むと、天秤座は西の気が急に強まる配置。これは「人からの誘い」や「予想外の提案」が増えるサイン。\n\nただし、ここで全部に応じると気が分散して空回りする。\n\n来週のポイントはひとつだけ。\n「最初に来たものを選ぶ」こと。\n\n迷って比較し始めた瞬間、西の気は濁る。直感が冴えている週だからこそ、考えすぎが一番の敵になる。",
@@ -7062,5 +7064,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-07-08T09:01:40.422884"
+  },
+  {
+    "text": "♒水瓶座で「運気の波」が気になり始めた人以外は、読まなくていい。\n\nなぜなら今、水瓶座の龍脈は切り替わりの直前にある。\nこのタイミングで波の読み方を間違えると、\n「動くべき日」と「待つべき日」が完全に逆転する。\n\n運気の波って、上がる・下がるの二択じゃない。\n\"流れの向き\"がある。\n\n今の水瓶座は北東からの気が強まっていて、\n焦って南西に動くと空回りしやすい配置。\n\nやることはシンプル。\n来週、大きな決断を迫られたら「一晩だけ」置いてみて。\n\n波の向きが読めると、同じ努力でも届く場所が変わるよ。",
+    "theme": "運気/運気の波の読み方",
+    "pattern_id": "caligula",
+    "quality_score": 8.3,
+    "attempts": 1,
+    "x_eligible": false,
+    "is_repost": true,
+    "original_post_id": "18158503657456428",
+    "pending_at": "2026-07-06T20:58:36.304369",
+    "queued_at": "2026-07-06T20:59:50.213484",
+    "threads_post_id": "17889788604399136",
+    "posted_at": "2026-07-08T10:58:17.667825+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-07-08T10:58:17.673574"
   }
 ]
