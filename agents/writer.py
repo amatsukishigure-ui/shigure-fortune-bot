@@ -463,38 +463,30 @@ def _build_prompt(
     # 鑑定ページURL（メニュー誘導・ソフト誘導パターンで使用）
     service_url = knowledge.get("profile", {}).get("service_url", "https://shigurerooms.hp.peraichi.com")
 
-    # ── 推定投稿時刻ブロック ──────────────────────────────────────
+    # ── 推定投稿時刻ブロック（季節コンテキストのみ。具体的日付は注入しない） ──
+    # 注意: キューが変動するため「今日=○月○日」の日付注入は日付ズレを招く。
+    # 季節・節気の正確さだけ維持し、日付は相対表現（今日/明日）のみを許可する。
     est_dt: datetime | None = extra_hint.get("estimated_post_time")
     if est_dt and isinstance(est_dt, datetime):
-        est_date_str   = est_dt.date().isoformat()           # "2026-05-18"
-        est_date_jp    = _format_datetime_jp(est_dt)         # "5月18日（月）10:00"
-        est_tomorrow   = (est_dt.date() + timedelta(days=1)).isoformat()
-        tm = est_dt + timedelta(days=1)
-        est_tomorrow_jp = f"{tm.month}月{tm.day}日（{WEEKDAY_JP[tm.weekday()]}）"
+        est_date_str  = est_dt.date().isoformat()
+        est_tomorrow  = (est_dt.date() + timedelta(days=1)).isoformat()
         season_ctx = _get_season_context(est_dt)
-        post_time_block = (
-            f"## 推定投稿時刻・季節コンテキスト（必ず守ること）\n"
-            f"この投稿は **{est_date_jp} JST** に公開される予定です。\n"
-            f"「今日」= {est_date_jp.split('（')[0]}、"
-            f"「明日」= {est_tomorrow_jp}、"
-            f"「昨日」= その前日 として投稿本文を書いてください。\n"
-            f"生成時刻と投稿時刻はずれる場合があるため、必ずこの推定時刻を基準にすること。\n\n"
-            f"### 実際の季節情報\n"
-            f"{season_ctx}\n\n"
-            f"⛔ 上記NG節気・季節語は絶対に使わないこと。\n"
-            f"   正しい節気・季節のみを使い、季節と内容が一致しない投稿を生成しないこと。\n"
-        )
     else:
         now_jst = datetime.now(JST)
         est_date_str  = now_jst.date().isoformat()
         est_tomorrow  = (now_jst.date() + timedelta(days=1)).isoformat()
         season_ctx = _get_season_context(now_jst)
-        post_time_block = (
-            f"## 季節コンテキスト（必ず守ること）\n"
-            f"### 実際の季節情報\n"
-            f"{season_ctx}\n\n"
-            f"⛔ 上記NG節気・季節語は絶対に使わないこと。\n"
-        )
+    post_time_block = (
+        f"## 季節コンテキスト（必ず守ること）\n"
+        f"### 実際の季節情報\n"
+        f"{season_ctx}\n\n"
+        f"⛔ 上記NG節気・季節語は絶対に使わないこと。\n"
+        f"   正しい節気・季節のみを使い、季節と内容が一致しない投稿を生成しないこと。\n\n"
+        f"⛔ **日付の数字書き禁止（最重要）**: 「今日（7/11）」「明日（7月12日）」「7月13日は」のように\n"
+        f"   具体的な月日を投稿に書かないこと。\n"
+        f"   「今日」「明日」「今週」「今夜」などの相対表現のみを使うこと。\n"
+        f"   キューに溜まると実際の投稿日と必ずズレるため、日付の数字は絶対禁止。\n"
+    )
     # ─────────────────────────────────────────────────────────────
 
     rewrite_block = ""
@@ -2435,9 +2427,11 @@ def run(batch_size: int = 5) -> dict:
             }
             # 時間限定コンテンツの expires_on 自動設定
             # 「今日」「明日」「今週」「今夜」を含む投稿は推定投稿日＋1日で期限切れに
-            _date_keywords = ("今日", "今夜", "今朝", "明日", "今週", "今月")
-            if any(kw in threads_text for kw in _date_keywords) and est_post_time:
-                from datetime import date as _date
+            # 特定の月日数字を含む場合のみ expires_on を設定
+            # （「今日」「今夜」は相対表現なので期限を設けない）
+            import re as _re_exp
+            _specific_date_pat = _re_exp.compile(r'[0-9１-９]+月[0-9１-９]+日')
+            if _specific_date_pat.search(threads_text) and est_post_time:
                 _expires = (est_post_time.date() + timedelta(days=1)).isoformat()
                 post_obj["expires_on"] = _expires
             # ペルソナIDを記録（重複防止のため）
