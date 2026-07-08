@@ -464,13 +464,11 @@ def _build_prompt(
     # 季節・節気の正確さだけ維持し、日付は相対表現（今日/明日）のみを許可する。
     est_dt: datetime | None = extra_hint.get("estimated_post_time")
     if est_dt and isinstance(est_dt, datetime):
-        est_date_str  = est_dt.date().isoformat()
-        est_tomorrow  = (est_dt.date() + timedelta(days=1)).isoformat()
+        est_date_str = est_dt.date().isoformat()
         season_ctx = _get_season_context(est_dt)
     else:
         now_jst = datetime.now(JST)
-        est_date_str  = now_jst.date().isoformat()
-        est_tomorrow  = (now_jst.date() + timedelta(days=1)).isoformat()
+        est_date_str = now_jst.date().isoformat()
         season_ctx = _get_season_context(now_jst)
     post_time_block = (
         f"## 季節コンテキスト（必ず守ること）\n"
@@ -2152,10 +2150,12 @@ def run(batch_size: int = 5) -> dict:
                     recent_persona_ids.append(persona.get("id"))
 
         _fmt = pattern.get("format", "medium")
-        # medium/long パターンも2投稿ツリー形式で生成（short・hoshi_betsu は単発のまま）
+        # 単発投稿専用パターン（long/mediumでもスレッド化しない）
+        _SINGLE_POST_ONLY = {"hoshi_betsu", "zodiac_rank_cta"}
+        # medium/long パターンも2投稿ツリー形式で生成（short・単発専用パターンを除く）
         is_thread_pattern = (
             pattern.get("id") in THREAD_PATTERNS
-            or (_fmt in ("medium", "long") and pattern.get("id") != "hoshi_betsu")
+            or (_fmt in ("medium", "long") and pattern.get("id") not in _SINGLE_POST_ONLY)
         )
 
         if is_thread_pattern:
@@ -2214,6 +2214,12 @@ def run(batch_size: int = 5) -> dict:
             # 星座ブーストを記録（画像選択で使用）
             if extra_hint.get("zodiac_boost"):
                 post_obj["zodiac_boost"] = extra_hint["zodiac_boost"]
+            # ツリー投稿の expires_on 処理
+            # X月X日を含む投稿は推定投稿日+1日で期限切れ
+            import re as _re_exp_t
+            _full_for_expiry = "\n".join(_formatted_posts)
+            if _re_exp_t.search(r'[0-9１-９]+月[0-9１-９]+日', _full_for_expiry) and est_post_time:
+                post_obj["expires_on"] = (est_post_time.date() + timedelta(days=1)).isoformat()
             enqueue_pending(post_obj)
             queued_threads += 1
             checker.add_to_corpus(_full_thread_text)  # 全文でコーパスに追加
@@ -2337,6 +2343,10 @@ def run(batch_size: int = 5) -> dict:
             if _specific_date_pat.search(threads_text) and est_post_time:
                 _expires = (est_post_time.date() + timedelta(days=1)).isoformat()
                 post_obj["expires_on"] = _expires
+            # 「今夜0:00まで」型パターンは当日中に期限切れ（翌日キューで陳腐化するため）
+            if pattern.get("id") in ("zodiac_rank_cta", "ritual_window"):
+                _today_exp = est_post_time.date().isoformat() if est_post_time else datetime.now(JST).date().isoformat()
+                post_obj["expires_on"] = _today_exp
             # ペルソナIDを記録（重複防止のため）
             if extra_hint.get("persona"):
                 post_obj["persona_id"] = extra_hint["persona"].get("id")

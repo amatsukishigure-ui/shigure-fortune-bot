@@ -172,13 +172,19 @@ def _sort_queue_by_impact() -> None:
         return
 
     # 時刻・曜日に敏感な投稿かどうか判定
-    _TIME_KEYWORDS = ("今日", "明日", "今週", "来週", "月曜", "火曜", "水曜",
-                       "木曜", "金曜", "土曜", "日曜", "6月", "7月", "8月")
+    _TIME_KEYWORDS = (
+        "今日", "明日", "今週", "来週", "今夜",
+        "月曜", "火曜", "水曜", "木曜", "金曜", "土曜", "日曜",
+        "1月", "2月", "3月", "4月", "5月", "6月",
+        "7月", "8月", "9月", "10月", "11月", "12月",
+    )
 
     def _is_time_sensitive(post: dict) -> bool:
         text = post.get("text", "")
         pattern = post.get("pattern_id", "")
-        if pattern in ("kaiun_day", "yoru_kichi", "hoshi_betsu"):
+        # zodiac_rank_cta・ritual_window は「今夜0:00まで」型で当日限定
+        # hoshi_betsu・yoru_kichi は時間帯表現が本文に固定される
+        if pattern in ("zodiac_rank_cta", "ritual_window", "yoru_kichi", "hoshi_betsu"):
             return True
         return any(kw in text for kw in _TIME_KEYWORDS)
 
