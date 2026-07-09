@@ -7015,7 +7015,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/fengshui/water.jpg",
-    "recorded_at": "2026-07-08T01:01:48.520826"
+    "recorded_at": "2026-07-08T01:01:48.520826",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今夜寝る前に、足先の向きだけ確認してみて。\n\n龍脈命術では、足先が向く方位から「翌朝の気の受け取り方」が変わると読む。\n吉方位に足先を向けて眠ると、起きたときの体の軽さが違う。\n\n南か東に足先を向けて、目を閉じてみて。\n明日の朝、気分が変わるか教えてね 🌙\n\n#占い #吉方位 #開運",
@@ -7033,7 +7034,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/mystery_1.jpg",
-    "recorded_at": "2026-07-08T02:57:54.880789"
+    "recorded_at": "2026-07-08T02:57:54.880789",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♎天秤座さん、来週についてまだ何も決めていないなら読まないほうがいい。\n\n読んだら動きたくなるから。\n\n龍脈命術で7月中旬を読むと、天秤座は西の気が急に強まる配置。これは「人からの誘い」や「予想外の提案」が増えるサイン。\n\nただし、ここで全部に応じると気が分散して空回りする。\n\n来週のポイントはひとつだけ。\n「最初に来たものを選ぶ」こと。\n\n迷って比較し始めた瞬間、西の気は濁る。直感が冴えている週だからこそ、考えすぎが一番の敵になる。",
@@ -7213,5 +7215,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/mystery_1.jpg",
     "recorded_at": "2026-07-09T03:01:35.968390"
+  },
+  {
+    "text": "♒水瓶座で、「引き寄せ思考」をやっているのに何も動いていない人以外は、読まなくていい。\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "♒水瓶座で、「引き寄せ思考」をやっているのに何も動いていない人以外は、読まなくていい。\n\n#占い #吉方位 #開運",
+      "♒水瓶座さん、今の時期に「思うだけ」で止まっているなら、それは意志の問題じゃない。\n\n龍脈命術では、潜在意識と吉方位は連動していると読む。どんなにイメージしても、気の流れと逆の方向を向いていれば、引き寄せは空振りになる。\n\n今夜、寝るときだけでも頭を北か東に向けてみて。気の受け取り方が変わる向きがある。\n\n「引き寄せ、ちゃんとやってるのに…」ってなってる人、わかる？ 🌟\n\n#龍脈命術 #吉方位 #引き寄せ"
+    ],
+    "theme": "引き寄せ/潜在意識と吉方位",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♉牡牛座",
+    "pending_at": "2026-07-09T03:35:30.793741",
+    "queued_at": "2026-07-09T03:36:27.653217",
+    "threads_post_id": "18114066871907689",
+    "posted_at": "2026-07-09T03:36:52.879611+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-07-09T03:36:52.885961"
   }
 ]

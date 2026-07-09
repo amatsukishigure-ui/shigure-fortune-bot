@@ -50,9 +50,9 @@
     "count": 15
   },
   "10": {
-    "views_sum": 4765,
-    "likes_sum": 132,
-    "count": 38
+    "views_sum": 4870,
+    "likes_sum": 139,
+    "count": 39
   },
   "12": {
     "views_sum": 9790,
@@ -113,5 +113,10 @@
     "views_sum": 2668,
     "likes_sum": 122,
     "count": 8
+  },
+  "11": {
+    "views_sum": 31,
+    "likes_sum": 2,
+    "count": 1
   }
 }
