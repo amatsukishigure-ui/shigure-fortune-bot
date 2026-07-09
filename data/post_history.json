@@ -7164,7 +7164,8 @@
     "posted_at": "2026-07-08T17:26:03.405267+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-07-08T17:26:03.411474"
+    "recorded_at": "2026-07-08T17:26:03.411474",
+    "hourly_stats_recorded": true
   },
   {
     "text": "嵐が来る前日、なんとなく落ち着かない感覚がある。\nあれは気象だけの話じゃない。\n\n天が荒れるとき、地の気も揺れている。\nだから龍脈命術では、嵐の中に動くより、明けてから方位を選ぶことを重視する。\n\n「今じゃない気がする」は、勘じゃなくて気が教えてくれているサインだ。\n\n荒れた時期に大きな決断をした経験、AかBか教えて。\nA：あとで後悔した　B：なぜかうまくいった\n\n#占い #引越し #風水",
@@ -7343,5 +7344,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/sagittarius.jpg",
     "recorded_at": "2026-07-09T16:02:29.067822"
+  },
+  {
+    "text": "♐ 射手座で、縁がうまく続かないと感じてる人へ。\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "♐ 射手座で、縁がうまく続かないと感じてる人へ。\n\n#占い #吉方位 #開運",
+      "♐ 射手座さんへ。\n\n今、人との縁が途切れやすい感覚があるなら、方位が原因かもしれない。\n\n龍脈命術では、縁を呼ぶのは「南西の気」。今の時期、南西方向への移動や食事が縁の流れを整えてくれる。\n\n「また裏切られた」じゃなくて、向かう方向がズレてただけかもしれないよ。\n\n射手座さん、今これ当てはまってる？コメントで教えて。\n\n#射手座 #吉方位 #龍脈命術"
+    ],
+    "theme": "季節・天文と方位/冬至と吉方位",
+    "pattern_id": "zodiac_target",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♐射手座",
+    "pending_at": "2026-07-09T14:46:53.007723",
+    "queued_at": "2026-07-09T14:47:18.180177",
+    "threads_post_id": "18178096933406703",
+    "posted_at": "2026-07-09T17:53:57.590698+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/sagittarius.jpg",
+    "recorded_at": "2026-07-09T17:53:57.596829"
   }
 ]
