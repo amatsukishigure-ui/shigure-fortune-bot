@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-09T14:41:32.747095",
+  "updated_at": "2026-07-09T15:57:00.282557",
   "lookback_days": 30,
   "adjustments": {
     "ichi_gon": 0.5,
@@ -8,7 +8,7 @@
     "emoji_comment": 0.5,
     "caligula": 2.0,
     "hoshi_betsu": 0.5,
-    "zodiac_target": 0.556,
+    "zodiac_target": 0.536,
     "weekly_forecast": 0.5,
     "jisseki_ninshou": 0.5,
     "pop_short": 0.5,
@@ -16,7 +16,7 @@
     "zodiac_rank_cta": 0.5,
     "faq_myth": 0.5,
     "soft_discovery": 0.5,
-    "empathy_thread": 0.585,
+    "empathy_thread": 0.565,
     "before_sleep": 0.5
   }
 }

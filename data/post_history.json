@@ -7146,7 +7146,8 @@
     "posted_at": "2026-07-08T15:28:30.091275+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-07-08T15:28:30.097227"
+    "recorded_at": "2026-07-08T15:28:30.097227",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♒水瓶座で「運気の波」が気になり始めた人以外は、読まなくていい。\n\nなぜなら今、水瓶座の龍脈は切り替わりの直前にある。\nこのタイミングで波の読み方を間違えると、\n「動くべき日」と「待つべき日」が完全に逆転する。\n\n運気の波って、上がる・下がるの二択じゃない。\n\"流れの向き\"がある。\n\n今の水瓶座は北東からの気が強まっていて、\n焦って南西に動くと空回りしやすい配置。\n\nやることはシンプル。\n来週、大きな決断を迫られたら「一晩だけ」置いてみて。\n\n波の向きが読めると、同じ努力でも届く場所が変わるよ。",
@@ -7320,5 +7321,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/mystery_1.jpg",
     "recorded_at": "2026-07-09T11:52:53.475605"
+  },
+  {
+    "text": "♐️射手座で、「頑張っているのに3年以上何も変わっていない」なら、この先読まないほうがいい。\n\n#占い #開運 #運気アップ",
+    "thread_posts": [
+      "♐️射手座で、「頑張っているのに3年以上何も変わっていない」なら、この先読まないほうがいい。\n\n#占い #開運 #運気アップ",
+      "♐️射手座さん、今の停滞は意志の問題じゃない。\n\n龍脈命術で見ると、停滞が長引いているとき、ほぼ例外なく「向かっている方位がズレている」。\n努力の量より、気の流れと向きが合っているかどうか。同じ行動でも、方位が整うと結果の出方がまるで変わる。\n\n夏の気は特に流れが速い。乗れている人と、空回りしている人の差が出やすい時期。\n\n当てはまった人、✨ コメントに置いてって。\n\n#龍脈命術 #方位 #停滞"
+    ],
+    "theme": "龍脈命術の世界観/龍脈命術で見る「停滞」の意味",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♐射手座",
+    "pending_at": "2026-07-09T16:02:00.983596",
+    "queued_at": "2026-07-09T16:02:01.139385",
+    "threads_post_id": "18123163555746764",
+    "posted_at": "2026-07-09T16:02:29.061246+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/sagittarius.jpg",
+    "recorded_at": "2026-07-09T16:02:29.067822"
   }
 ]
