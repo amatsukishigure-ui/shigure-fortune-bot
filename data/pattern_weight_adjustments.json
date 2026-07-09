@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-07-09T20:51:23.090183",
+  "updated_at": "2026-07-09T23:20:06.826724",
   "lookback_days": 30,
   "adjustments": {
-    "list": 0.5,
     "emoji_comment": 0.5,
     "caligula": 2.0,
     "ichi_gon": 0.5,
     "hoshi_betsu": 0.5,
+    "list": 0.5,
     "zodiac_target": 0.509,
     "weekly_forecast": 0.5,
     "jisseki_ninshou": 0.5,
