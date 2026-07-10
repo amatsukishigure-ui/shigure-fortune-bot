@@ -7246,7 +7246,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-09T03:36:52.885961"
+    "recorded_at": "2026-07-09T03:36:52.885961",
+    "hourly_stats_recorded": true
   },
   {
     "text": "向かいたい方向、決まってる？\n\n引き寄せって「思うだけ」じゃ動かない。\n龍脈命術は、願う方向に体ごと向くことで気が流れると考えてる。\n\n今日の夜、南か東に向いて5分だけ過ごしてみて ☀️\n\n南か東、どっちにした？コメントで教えて\n\n#占い #吉方位 #龍脈命術",
@@ -7264,7 +7265,8 @@
     "posted_at": "2026-07-09T06:01:34.755688+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-07-09T06:01:34.762350"
+    "recorded_at": "2026-07-09T06:01:34.762350",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♈牡羊座さんへ。\n\n今の牡羊座には「突破の気」が強まっている。\nずっと迷っていたこと、動けなかったこと——そのモヤが晴れやすいタイミングにある。ただし牡羊座の気質上、焦って全部一気に動こうとすると気が分散する。1点に絞って動くほうが流れに乗れる。\n\n龍脈命術では、気の方向を1つ定めることで、同じ行動の結果が大きく変わる。\n\n【吉方位×行動】\n・東方向 → 新しい仕事・情報を取りに行くなら東側の窓を開けた部屋で作業する。今週の企画・提案はここで考えて。\n\nもう1点、動き方に注意があって──\n\n#占い #仕事運 #運気アップ",
@@ -7479,5 +7481,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
     "recorded_at": "2026-07-10T06:01:37.486621"
+  },
+  {
+    "text": "♑山羊座で、最近「頑張っているのに何も変わらない」が続いている人以外は、読まなくていい。\n\n#占い #風水 #開運",
+    "thread_posts": [
+      "♑山羊座で、最近「頑張っているのに何も変わらない」が続いている人以外は、読まなくていい。\n\n#占い #風水 #開運",
+      "産後復帰して1年、転職を迷ったまま2年。「なぜ自分だけ止まっているんだろう」という感覚がある人へ。\n\nある鑑定で、依頼者の住まいの方位を確認したら、引っ越し以来ずっと凶方位の流れの中にいた。\n努力の量じゃなく、向きの問題だった。\n\n北東の窓を週3回以上開けるよう伝えてから2週間後、「急に話が動いた」と連絡が来た。\n\n龍脈命術は「当てる」占いじゃない。動ける方向を見つける占いだ。\n\n当てはまる感覚、ある？\n\n#龍脈命術 #吉方位 #占術家時雨"
+    ],
+    "theme": "鑑定エピソード/風水を整えたら運気が動いた話",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♑山羊座",
+    "pending_at": "2026-07-10T06:56:20.490755",
+    "queued_at": "2026-07-10T06:56:43.189660",
+    "threads_post_id": "17897498514476086",
+    "posted_at": "2026-07-10T06:57:12.339423+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/capricorn.jpg",
+    "recorded_at": "2026-07-10T06:57:12.345702"
   }
 ]

@@ -1,8 +1,7 @@
 {
-  "updated_at": "2026-07-10T03:32:46.735315",
+  "updated_at": "2026-07-10T06:52:21.644883",
   "lookback_days": 30,
   "adjustments": {
-    "emoji_comment": 0.5,
     "caligula": 2.0,
     "ichi_gon": 0.5,
     "hoshi_betsu": 0.5,
@@ -17,6 +16,7 @@
     "faq_myth": 0.5,
     "soft_discovery": 0.5,
     "empathy_thread": 0.567,
+    "emoji_comment": 0.5,
     "before_sleep": 0.5
   }
 }
