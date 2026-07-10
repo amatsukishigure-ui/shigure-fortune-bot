@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-10T15:32:54.973156",
+  "updated_at": "2026-07-10T17:42:11.877425",
   "lookback_days": 30,
   "adjustments": {
     "list": 0.5,
@@ -15,7 +15,7 @@
     "zodiac_rank_cta": 0.5,
     "faq_myth": 0.5,
     "soft_discovery": 0.5,
-    "empathy_thread": 0.547,
+    "empathy_thread": 0.549,
     "emoji_comment": 0.5,
     "before_sleep": 0.5
   }
