@@ -7181,7 +7181,8 @@
     "posted_at": "2026-07-08T23:23:25.966789+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-07-08T23:23:25.973448"
+    "recorded_at": "2026-07-08T23:23:25.973448",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♊ 双子座で今、金運・収入が気になっている人へ。\n\n#占い #金運 #開運",
@@ -7203,7 +7204,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/gemini.jpg",
-    "recorded_at": "2026-07-09T01:01:49.974491"
+    "recorded_at": "2026-07-09T01:01:49.974491",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今夜寝る前に、窓を少しだけ開けてみて。\n\n龍脈命術では、夏の夜は南西から「休息の気」が流れ込む。\nその気を部屋に通してから眠ると、体の回復力が変わる。\n\nやってみて、明日の朝の目覚めが違うか教えてね 🌙\n\n#占い #吉方位 #開運",
@@ -7221,7 +7223,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/mystery_1.jpg",
-    "recorded_at": "2026-07-09T03:01:35.968390"
+    "recorded_at": "2026-07-09T03:01:35.968390",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♒水瓶座で、「引き寄せ思考」をやっているのに何も動いていない人以外は、読まなくていい。\n\n#占い #吉方位 #開運",
@@ -7438,5 +7441,26 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-07-10T03:01:28.352361"
+  },
+  {
+    "text": "「今日は何座？」って聞いて安心する占いじゃなく、今夜、星座ごとに「次の動き」を渡す。\n\n#占い #星座占い #運勢",
+    "thread_posts": [
+      "「今日は何座？」って聞いて安心する占いじゃなく、今夜、星座ごとに「次の動き」を渡す。\n\n#占い #星座占い #運勢",
+      "晦日月の夜。気が静まり、次の新月（あと2日）へ向けてエネルギーがリセットされていく時間帯。\n\n龍脈命術は性格を読む占いじゃない。あなたが今、どの方向へ動けば気の流れに乗れるかを読む。\n\n今夜あなたの星座は何を手放す時期か、一言だけ。\n\n牡羊・獅子・射手：執着を声に出して手放して。\n牡牛・乙女・山羊：南へ意識を向けて眠りに就いて。\n双子・天秤・水瓶：迷っていること、明後日の新月に預けていい。\n蟹・蠍・魚：今夜だけ、完全に休む許可を自分に出して。\n\nあなたは何座？ #龍脈命術 #新月前夜 #星座別メッセージ"
+    ],
+    "theme": "星座別メッセージ/星座別・今すべきこと",
+    "pattern_id": "kaiun_day",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "pending_at": "2026-07-07T23:13:14.082742",
+    "queued_at": "2026-07-07T23:13:14.282825",
+    "threads_post_id": "18157782049481859",
+    "posted_at": "2026-07-10T03:37:41.434793+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/fengshui_abundance.jpg",
+    "recorded_at": "2026-07-10T03:37:41.441037"
   }
 ]
