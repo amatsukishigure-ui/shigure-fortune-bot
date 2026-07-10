@@ -7374,7 +7374,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/sagittarius.jpg",
-    "recorded_at": "2026-07-09T17:53:57.596829"
+    "recorded_at": "2026-07-09T17:53:57.596829",
+    "hourly_stats_recorded": true
   },
   {
     "text": "使っていないものが床に積まれているとき、\n気はそこで止まる。\n\n収納の奥に眠っているものは、\nあなたが「まだ決めていないこと」の数だけある。\n\n龍脈命術は空間の気の滞りを、\n人生の停滞と同じものとして読む。\n\n部屋の詰まりと、心の詰まりは連動しているよ。\n\n「思い当たる場所がある」か「うちは大丈夫」か、コメントで教えて。\n\n#占い #開運 #運気アップ",
@@ -7607,5 +7608,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-07-10T17:47:25.947066"
+  },
+  {
+    "text": "♎天秤座さん、来週についてまだ何も決めていないなら読まないほうがいい。\n\n読んだら動きたくなるから。\n\n龍脈命術で7月中旬を読むと、天秤座は西の気が急に強まる配置。これは「人からの誘い」や「予想外の提案」が増えるサイン。\n\nただし、ここで全部に応じると気が分散して空回りする。\n\n来週のポイントはひとつだけ。\n「最初に来たものを選ぶ」こと。\n\n迷って比較し始めた瞬間、西の気は濁る。直感が冴えている週だからこそ、考えすぎが一番の敵になる。",
+    "theme": "星座占い/来週の運気予報",
+    "pattern_id": "caligula",
+    "quality_score": 8.4,
+    "attempts": 1,
+    "x_eligible": true,
+    "is_repost": true,
+    "original_post_id": "18553903486069045",
+    "pending_at": "2026-07-08T13:51:28.102608",
+    "queued_at": "2026-07-08T13:52:35.354323",
+    "threads_post_id": "18055737245518766",
+    "posted_at": "2026-07-10T20:33:57.631128+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-07-10T20:33:57.637289"
   }
 ]
