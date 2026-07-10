@@ -7287,7 +7287,8 @@
     "posted_at": "2026-07-09T06:57:28.191626+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-07-09T06:57:28.198167"
+    "recorded_at": "2026-07-09T06:57:28.198167",
+    "hourly_stats_recorded": true
   },
   {
     "text": "言葉が気を動かすって、知ってた？\n\n#占い #龍脈命術",
@@ -7308,7 +7309,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/fengshui_abundance.jpg",
-    "recorded_at": "2026-07-09T09:02:01.948623"
+    "recorded_at": "2026-07-09T09:02:01.948623",
+    "hourly_stats_recorded": true
   },
   {
     "text": "布団に入る前に、スマホをひとつ「北向き」に置いてみて。\n\n龍脈命術では、北は\"回復の気\"が流れる方位。眠る時間に近くにある物の向きも、気の影響を受ける。\n\n充電しながら枕元に置くなら、画面を北に向けるだけでいい。\n\nやってみて、明日の目覚めが少し変わるか教えてね 🌙\n\n#占い #吉方位 #龍脈命術",
@@ -7524,5 +7526,27 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-07-10T09:01:46.152857"
+  },
+  {
+    "text": "♍ 乙女座で今、恋愛・縁が気になっている人へ。\n\n一粒万倍日、使えてる？\n\n#占い #恋愛運 #縁",
+    "thread_posts": [
+      "♍ 乙女座で今、恋愛・縁が気になっている人へ。\n\n一粒万倍日、使えてる？\n\n#占い #恋愛運 #縁",
+      "♍ 乙女座さんへ。\n\n今、縁が動きにくいと感じているなら、それは「タイミングの気」が合っていないサインかもしれない。\n\n龍脈命術では、一粒万倍日は「出した気が何倍にもなって返ってくる日」として読む。\nこの日に南西へ少し動くだけで、縁の流れが変わりやすくなるよ。\n\nLINEを送る、会いに行く、気になる場所へ足を向ける。\n小さな一歩でいい。今週の一粒万倍日、どう使うか決めてみて。\n\n乙女座さん、心当たりある？\n\n#乙女座 #一粒万倍日 #龍脈命術"
+    ],
+    "theme": "開運日/一粒万倍日の使い方",
+    "pattern_id": "zodiac_target",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♍乙女座",
+    "pending_at": "2026-07-10T11:44:39.501344",
+    "queued_at": "2026-07-10T11:45:10.770130",
+    "threads_post_id": "18117178516851309",
+    "posted_at": "2026-07-10T11:45:34.365173+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/virgo.jpg",
+    "recorded_at": "2026-07-10T11:45:34.371689"
   }
 ]
