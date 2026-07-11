@@ -7558,7 +7558,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/virgo.jpg",
-    "recorded_at": "2026-07-10T11:45:34.371689"
+    "recorded_at": "2026-07-10T11:45:34.371689",
+    "hourly_stats_recorded": true
   },
   {
     "text": "明日から動きたいと思ってる人へ。\n\n7月13日（月）は一粒万倍日。「まいた種が万倍になる日」と言われる、気の流れが整いやすいタイミング。\n\nでも龍脈命術の視点で言うと、日付より大事なのは「向き」。吉日に動くなら、自分の吉方位に向かって動くかどうかで、同じ行動の結果が全然変わる。\n\n生年月日か星座をコメントに書いてくれたら、明日の吉方位を返信するよ。できる限り全員に返信する 🔮\n\n#占い #吉方位 #開運",
@@ -7748,5 +7749,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-07-11T12:01:30.724841"
+  },
+  {
+    "text": "♎天秤座さん、来週についてまだ何も決めていないなら読まないほうがいい。\n\n読んだら動きたくなるから。\n\n龍脈命術で7月中旬を読むと、天秤座は西の気が急に強まる配置。これは「人からの誘い」や「予想外の提案」が増えるサイン。\n\nただし、ここで全部に応じると気が分散して空回りする。\n\n来週のポイントはひとつだけ。\n「最初に来たものを選ぶ」こと。\n\n迷って比較し始めた瞬間、西の気は濁る。直感が冴えている週だからこそ、考えすぎが一番の敵になる。",
+    "theme": "星座占い/来週の運気予報",
+    "pattern_id": "caligula",
+    "quality_score": 8.4,
+    "attempts": 1,
+    "x_eligible": true,
+    "is_repost": true,
+    "original_post_id": "18553903486069045",
+    "pending_at": "2026-07-08T23:22:06.398343",
+    "queued_at": "2026-07-08T23:23:15.487992",
+    "threads_post_id": "17868266946651951",
+    "posted_at": "2026-07-11T13:09:08.898745+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-07-11T13:09:08.904787"
   }
 ]
