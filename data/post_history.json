@@ -7450,7 +7450,8 @@
     "posted_at": "2026-07-10T03:01:28.346655+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-07-10T03:01:28.352361"
+    "recorded_at": "2026-07-10T03:01:28.352361",
+    "hourly_stats_recorded": true
   },
   {
     "text": "「今日は何座？」って聞いて安心する占いじゃなく、今夜、星座ごとに「次の動き」を渡す。\n\n#占い #星座占い #運勢",
@@ -7471,7 +7472,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/fengshui_abundance.jpg",
-    "recorded_at": "2026-07-10T03:37:41.441037"
+    "recorded_at": "2026-07-10T03:37:41.441037",
+    "hourly_stats_recorded": true
   },
   {
     "text": "大地が揺れ、空が乱れる7月。こういう時代に、あなたはどこへ向かっているか。\n\n龍脈命術では天・地・人は繋がっていると見る。外の乱れは、自分の気の流れとも無縁じゃない。\n\n今の気持ちをひとことコメントしてくれたら、今のあなたの気の流れを返信するよ。絵文字だけでも大丈夫。できる限り全員に返信する 🔮\n\n#占い #風水 #開運",
@@ -7667,5 +7669,27 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-07-11T02:54:00.165427"
+  },
+  {
+    "text": "♈ 牡羊座で今、金運・収入が気になっている人へ。\n\n頑張っているのに数字が変わらないのは、努力の問題じゃない。\n\n#占い #金運 #開運",
+    "thread_posts": [
+      "♈ 牡羊座で今、金運・収入が気になっている人へ。\n\n頑張っているのに数字が変わらないのは、努力の問題じゃない。\n\n#占い #金運 #開運",
+      "♈ 牡羊座さんへ。\n\n今の時期、龍脈命術では牡羊座の金運は「北東」に動くことで流れが変わりやすい。\n\n同じ行動をしていても、向かう方向が違うだけで気の受け取り方が変わる。\nそれが龍脈命術の考え方。\n\n今週、打ち合わせや商談があるなら北東を意識して動いてみて。\nランチや買い物でも北東方向でいい。小さく動くところから気は変わるよ。\n\n♈ 牡羊座さん、今これ当てはまってる？コメントで教えて。\n\n#牡羊座 #金運 #吉方位"
+    ],
+    "theme": "季節・天文と方位/春分と吉方位",
+    "pattern_id": "zodiac_target",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♈牡羊座",
+    "pending_at": "2026-07-11T05:51:19.969406",
+    "queued_at": "2026-07-11T05:51:33.524206",
+    "threads_post_id": "17963129829134827",
+    "posted_at": "2026-07-11T05:52:01.930333+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
+    "recorded_at": "2026-07-11T05:52:01.936248"
   }
 ]
