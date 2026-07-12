@@ -7795,7 +7795,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-11T14:28:40.790169"
+    "recorded_at": "2026-07-11T14:28:40.790169",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♏ 蠍座で今、転職・キャリアが気になっている人へ。\n\n動けないのは意志が弱いからじゃない。向きがズレてるだけ。\n\n#占い #転職 #仕事運",
@@ -7996,5 +7997,26 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/capricorn.jpg",
     "recorded_at": "2026-07-12T14:33:27.454222"
+  },
+  {
+    "text": "♊ 双子座で、好きな人との縁がどこかすれ違う気がしている人へ。\n\n#占い #龍脈命術",
+    "thread_posts": [
+      "♊ 双子座で、好きな人との縁がどこかすれ違う気がしている人へ。\n\n#占い #龍脈命術",
+      "♊ 双子座さんへ。\n\n今、縁が結ばれにくいと感じているなら、方位を見直してみて。\n\n一粒万倍日は「蒔いた種が万倍になる日」。龍脈命術では、この日に東南の方角へ動くことで、縁の気を最大限に引き込めると読む。\n\n待っているだけじゃ縁はつかめない。この開運日に、カフェでも散歩でも、東南へ一歩踏み出すだけでいい。\n\n双子座さん、心当たりある？\n\n#双子座 #一粒万倍日 #開運\n\n#占い #吉方位 #龍脈命術"
+    ],
+    "theme": "開運日/一粒万倍日の使い方",
+    "pattern_id": "zodiac_target",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♊双子座",
+    "pending_at": "2026-07-12T20:15:13.531218",
+    "queued_at": "2026-07-12T20:15:29.042217",
+    "threads_post_id": "18123166684779669",
+    "posted_at": "2026-07-12T20:15:49.548044+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-07-12T20:15:49.555525"
   }
 ]
