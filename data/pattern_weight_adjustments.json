@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-12T13:04:18.320731",
+  "updated_at": "2026-07-12T14:27:04.812174",
   "lookback_days": 30,
   "adjustments": {
     "list": 0.5,
@@ -15,9 +15,9 @@
     "empathy_thread": 0.5,
     "emoji_comment": 0.5,
     "ichi_gon": 0.5,
-    "zodiac_target": 0.563,
-    "caligula": 1.902,
-    "kotodama_rank": 1.541,
+    "zodiac_target": 0.565,
+    "caligula": 1.916,
+    "kotodama_rank": 1.545,
     "before_sleep": 0.5
   }
 }
