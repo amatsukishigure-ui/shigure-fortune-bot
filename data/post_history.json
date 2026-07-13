@@ -7879,7 +7879,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-12T03:02:57.435002"
+    "recorded_at": "2026-07-12T03:02:57.435002",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今週、自分の星座が何位か気になった方だけ読んでください。\n\n#占い #星座占い #運勢",
@@ -7899,7 +7900,8 @@
     "posted_at": "2026-07-12T06:01:48.142371+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-07-12T06:01:48.149395"
+    "recorded_at": "2026-07-12T06:01:48.149395",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♋ 蟹座で、「頑張り続けているのになぜか空回りする」という感覚がある人だけ読んで。\n\n#占い #龍脈命術",
@@ -8090,5 +8092,25 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-07-13T06:01:33.470409"
+  },
+  {
+    "text": "週末、何もせずに終わる人と、月曜が変わる人。その差、動き方じゃなくて「整え方」だった。\n\n#占い #龍脈命術",
+    "thread_posts": [
+      "週末、何もせずに終わる人と、月曜が変わる人。その差、動き方じゃなくて「整え方」だった。\n\n#占い #龍脈命術",
+      "龍脈命術を1000人以上みてきて気づいたことがある。\n\n変わった人は、週末に「特別なこと」をしていなかった。\nただ、気の流れを整えていた。\n\n窓を開けて空気を動かす。\n靴をそろえる。\n寝る前に翌週向かいたい方角を決める。\n\n龍脈命術は「当てる」占いじゃなく、「動ける」占い。\n向きが整うと、同じ月曜がまったく違う入り口になる。\n\n週末の使い方、今どっちに近い？\n\n#龍脈命術 #開運行動 #週末の過ごし方"
+    ],
+    "theme": "開運行動/週末の整え方",
+    "pattern_id": "world_view",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "pending_at": "2026-07-10T03:37:03.703259",
+    "queued_at": "2026-07-10T03:37:19.700620",
+    "threads_post_id": "18095501135354561",
+    "posted_at": "2026-07-13T06:32:04.213927+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-07-13T06:32:04.220209"
   }
 ]
