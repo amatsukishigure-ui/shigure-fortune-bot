@@ -8005,7 +8005,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/capricorn.jpg",
-    "recorded_at": "2026-07-12T14:33:27.454222"
+    "recorded_at": "2026-07-12T14:33:27.454222",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♊ 双子座で、好きな人との縁がどこかすれ違う気がしている人へ。\n\n#占い #龍脈命術",
@@ -8170,5 +8171,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-07-13T14:23:39.592842"
+  },
+  {
+    "text": "♏ 蠍座で今、なんか動けない感じがしている人へ。\n\n#占い #恋愛運 #縁",
+    "thread_posts": [
+      "♏ 蠍座で今、なんか動けない感じがしている人へ。\n\n#占い #恋愛運 #縁",
+      "♏ 蠍座さんへ。\n\n今、停滞してる感覚があるなら、それはサボりじゃない。蠍座は今、気が内側に向く時期。\n\n龍脈命術では「動けない＝準備の気」と読む。今週、吉方位は北西。静かに計画を整えるのに向いてる方角だよ。\n\n夏の盛りに向けて、焦らず向きだけ整えてみて。動き出すタイミングは、必ずくる。\n\n蠍座さん、今これ当てはまってる？🌟をひとつコメントで。\n\n#蠍座 #吉方位 #龍脈命術"
+    ],
+    "theme": "鑑定エピソード/恋愛",
+    "pattern_id": "zodiac_target",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♏蠍座",
+    "pending_at": "2026-07-13T15:48:14.469294",
+    "queued_at": "2026-07-13T15:48:48.003927",
+    "threads_post_id": "17947017507212954",
+    "posted_at": "2026-07-13T15:49:10.616491+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/scorpio.jpg",
+    "recorded_at": "2026-07-13T15:49:10.623531"
   }
 ]
