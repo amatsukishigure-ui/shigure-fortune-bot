@@ -5016,5 +5016,27 @@
     "pattern_id": "ichi_gon",
     "post_id": "18072113411372146",
     "fetched_at": "2026-07-13T11:48:20.772086"
+  },
+  {
+    "views": 6,
+    "likes": 1,
+    "replies": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "kaiun_day",
+    "post_id": "18096587321462650",
+    "fetched_at": "2026-07-13T14:17:41.095636"
+  },
+  {
+    "views": 509,
+    "likes": 1,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "before_after",
+    "post_id": "18106427150016332",
+    "fetched_at": "2026-07-13T14:17:42.083799"
   }
 ]
