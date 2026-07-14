@@ -1,8 +1,7 @@
 {
-  "updated_at": "2026-07-14T17:05:35.707956",
+  "updated_at": "2026-07-14T20:17:36.783478",
   "lookback_days": 30,
   "adjustments": {
-    "pop_short": 0.5,
     "zodiac_deep": 2.0,
     "zodiac_rank_cta": 0.5,
     "list": 0.5,
@@ -14,8 +13,9 @@
     "emoji_comment": 0.5,
     "jisseki_ninshou": 0.5,
     "ichi_gon": 0.5,
-    "zodiac_target": 0.731,
-    "caligula": 1.518,
+    "zodiac_target": 0.729,
+    "caligula": 1.5,
+    "pop_short": 0.5,
     "kaiun_day": 0.5,
     "kotodama_rank": 2.0,
     "before_sleep": 0.5
