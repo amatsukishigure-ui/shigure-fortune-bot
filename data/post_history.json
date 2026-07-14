@@ -8083,7 +8083,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-13T03:03:11.965621"
+    "recorded_at": "2026-07-13T03:03:11.965621",
+    "hourly_stats_recorded": true
   },
   {
     "text": "布団に入る前に、スマホを枕元に置くのをやめてみて。\n\n龍脈命術では、就寝中に「回復の気」を取り込む時間帯。電子機器の気の乱れは、その流れを遮断する。\n\n今夜だけ、スマホを手の届かない場所に置いて眠ってみて。\n\nやってみて、明日の朝の目覚めが変わるか教えてね 🌙\n\n#占い #龍脈命術",
@@ -8270,5 +8271,22 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/pisces.jpg",
     "recorded_at": "2026-07-14T02:44:59.616303"
+  },
+  {
+    "text": "今夜寝る前に1つだけ。\n\n布団に入ったら、スマホを頭の横じゃなく足元に置いてみて。\n龍脈命術では、頭まわりに「情報の気」が滞ると、夜中に気が休まらなくなる。\n週末の朝、いつもより少し違う感覚があるはず。\n\nやってみて、明日の気分が変わるか教えてね 🌙\n\n#占い #龍脈命術",
+    "x_text": "今夜寝る前に1つだけ。\n\n布団に入ったら、スマホを頭の横じゃなく足元に置いてみて。\n龍脈命術では、頭まわりに「情報の気」が滞ると、夜中に気が休まらなくなる。\n週末の朝、いつもより少し違う感覚があるはず。\n\nやってみて、明日の気分が変わるか教えてね 🌙\n\n#占い #時雨 #開運 #風水",
+    "theme": "開運行動/週末の整え方",
+    "pattern_id": "before_sleep",
+    "quality_score": 8.0,
+    "attempts": 1,
+    "x_eligible": false,
+    "pending_at": "2026-07-10T14:11:37.212811",
+    "queued_at": "2026-07-10T14:11:53.858352",
+    "threads_post_id": "17950314546204952",
+    "posted_at": "2026-07-14T05:44:15.034366+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/mystery_1.jpg",
+    "recorded_at": "2026-07-14T05:44:15.040007"
   }
 ]

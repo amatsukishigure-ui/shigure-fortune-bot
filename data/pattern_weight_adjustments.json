@@ -1,8 +1,7 @@
 {
-  "updated_at": "2026-07-14T02:39:44.072195",
+  "updated_at": "2026-07-14T05:38:13.473719",
   "lookback_days": 30,
   "adjustments": {
-    "list": 0.5,
     "weekly_forecast": 0.5,
     "jisseki_ninshou": 0.5,
     "hoshi_betsu": 0.5,
@@ -10,13 +9,14 @@
     "pop_short": 0.5,
     "zodiac_deep": 2.0,
     "zodiac_rank_cta": 0.5,
+    "list": 0.5,
     "faq_myth": 0.5,
     "soft_discovery": 0.5,
     "empathy_thread": 0.5,
     "emoji_comment": 0.5,
     "ichi_gon": 0.5,
-    "zodiac_target": 0.667,
-    "caligula": 1.562,
+    "zodiac_target": 0.634,
+    "caligula": 1.581,
     "kotodama_rank": 2.0,
     "before_sleep": 0.5
   }
