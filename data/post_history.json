@@ -8238,7 +8238,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
-    "recorded_at": "2026-07-13T23:08:18.041778"
+    "recorded_at": "2026-07-13T23:08:18.041778",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♒水瓶座で「運気の波」が気になり始めた人以外は、読まなくていい。\n\nなぜなら今、水瓶座の龍脈は切り替わりの直前にある。\nこのタイミングで波の読み方を間違えると、\n「動くべき日」と「待つべき日」が完全に逆転する。\n\n運気の波って、上がる・下がるの二択じゃない。\n\"流れの向き\"がある。\n\n今の水瓶座は北東からの気が強まっていて、\n焦って南西に動くと空回りしやすい配置。\n\nやることはシンプル。\n来週、大きな決断を迫られたら「一晩だけ」置いてみて。\n\n波の向きが読めると、同じ努力でも届く場所が変わるよ。",
@@ -8255,7 +8256,8 @@
     "posted_at": "2026-07-14T01:01:32.434604+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-07-14T01:01:32.442329"
+    "recorded_at": "2026-07-14T01:01:32.442329",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♓ 魚座で今、転職・キャリアが気になっている人へ。\n\nその「動けない感覚」、意志の弱さじゃないよ。\n\n#占い #転職 #仕事運",
@@ -8277,7 +8279,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/pisces.jpg",
-    "recorded_at": "2026-07-14T02:44:59.616303"
+    "recorded_at": "2026-07-14T02:44:59.616303",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今夜寝る前に1つだけ。\n\n布団に入ったら、スマホを頭の横じゃなく足元に置いてみて。\n龍脈命術では、頭まわりに「情報の気」が滞ると、夜中に気が休まらなくなる。\n週末の朝、いつもより少し違う感覚があるはず。\n\nやってみて、明日の気分が変わるか教えてね 🌙\n\n#占い #龍脈命術",
@@ -8447,5 +8450,27 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-07-14T23:09:28.294266"
+  },
+  {
+    "text": "♑ 山羊座で今、停滞・変化が気になっている人へ。\n\n#占い #開運 #運気アップ",
+    "thread_posts": [
+      "♑ 山羊座で今、停滞・変化が気になっている人へ。\n\n#占い #開運 #運気アップ",
+      "♑ 山羊座さんへ。\n\n真面目に動いているのに、何も変わらない。\nそれ、努力の問題じゃなく「向き」の問題かもしれない。\n\n今週、山羊座に流れている気は北西に集まってる。\n龍脈命術では、停滞は「気のズレ」が原因になることが多い。\n北西方向への小さな移動、窓を開ける、散歩コースを変えるだけでいい。\n\n読んだ ♑ さん、🌟 でいいから置いてみて。\n\n#山羊座 #吉方位 #停滞打破"
+    ],
+    "theme": "開運日/天赦日と吉方位",
+    "pattern_id": "zodiac_target",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♑山羊座",
+    "pending_at": "2026-07-15T05:43:35.986505",
+    "queued_at": "2026-07-15T05:43:57.691793",
+    "threads_post_id": "17884735077667798",
+    "posted_at": "2026-07-15T05:44:19.306419+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/capricorn.jpg",
+    "recorded_at": "2026-07-15T05:44:19.313224"
   }
 ]
