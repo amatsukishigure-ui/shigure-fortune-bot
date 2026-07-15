@@ -1,8 +1,7 @@
 {
-  "updated_at": "2026-07-14T23:03:43.015647",
+  "updated_at": "2026-07-15T02:38:07.358419",
   "lookback_days": 30,
   "adjustments": {
-    "zodiac_rank_cta": 0.5,
     "list": 0.5,
     "hoshi_betsu": 0.5,
     "zodiac_deep": 2.0,
