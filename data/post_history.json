@@ -8413,7 +8413,8 @@
     "posted_at": "2026-07-14T17:11:14.212033+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-07-14T17:11:14.218623"
+    "recorded_at": "2026-07-14T17:11:14.218623",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♊双子座さんへ。\n\n今、双子座には「情報過多の気」が流れている。\n頭の中でいくつもの選択肢が同時に動いて、どれも中途半端なまま止まっている感じ。\n「相手が合わないのか、自分に問題があるのか」さえわからなくなる時期。それは判断力が鈍ったんじゃなく、向きがズレているだけ。\n\n龍脈命術は「なぜ動けないか」を方位から読む。今の双子座に必要なのは考え方を変えることより、動く方向を整えること。\n\n・東方向 → 出会いや縁の気が開く方位。待ち合わせ場所を選べるなら東口・東側を選んで。「どこでもいい」の一言が流れを止めている。\n\nただ、もう一点。今週避けてほしい方位がある──\n\n#占い #吉方位 #龍脈命術",
@@ -8569,5 +8570,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
     "recorded_at": "2026-07-15T17:13:24.939468"
+  },
+  {
+    "text": "♌ 獅子座で今、恋愛・縁がなかなか動かないと感じている人へ。\n\n#占い #恋愛運 #縁",
+    "thread_posts": [
+      "♌ 獅子座で今、恋愛・縁がなかなか動かないと感じている人へ。\n\n#占い #恋愛運 #縁",
+      "♌ 獅子座さんへ。\n\n恋愛の縁が動かないとき、気を向ける方向がズレていることが多い。\n今は南西の方角が縁を結ぶ気の通り道。休日に南西方向へ少し足を伸ばしてみて。\n\n龍脈命術は「誰と出会うか」より「どこに向かうか」を読む占い。気の流れに乗ると、同じ行動でも出会いの質が変わってくるよ。\n\n獅子座さん、心当たりある？\n\n#獅子座 #吉方位 #恋愛運"
+    ],
+    "theme": "時雨の世界観/時雨が見てきた「変わった人」と「変わらなかった人」の違い",
+    "pattern_id": "zodiac_target",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♌獅子座",
+    "pending_at": "2026-07-15T17:12:34.851649",
+    "queued_at": "2026-07-15T17:13:14.491998",
+    "threads_post_id": "18064300370724894",
+    "posted_at": "2026-07-15T20:20:34.237144+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/leo.jpg",
+    "recorded_at": "2026-07-15T20:20:34.243378"
   }
 ]
