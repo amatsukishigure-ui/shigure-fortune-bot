@@ -8436,7 +8436,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/gemini.jpg",
-    "recorded_at": "2026-07-14T20:24:07.130930"
+    "recorded_at": "2026-07-14T20:24:07.130930",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今の部屋、なんとなく落ち着かない気がする——それ、気のせいじゃない。\n\n気づいた方だけ受け取ってください。\n\n【夏の龍脈言霊ランキング｜開運カラー×方位の流れ】\n\n🥇第1位　てんびん座\n「色を選ぶとき、気の向きが変わっている」\n\n🥈第2位　おひつじ座\n「置く場所より、向かう方位が流れを作る」\n\n🥉第3位　みずがめ座\n「部屋の気が整うと、動ける自分に戻っていく」\n\n🏅第4位　さそり座\n「受け取る色が、滞った流れを動かしていく」\n\n第5位　いて座\n「方位に合わせた色が、龍脈の気を引き込む扉になる」\n\n第6位　ふたご座\n「今いる場所の気の色が、進む向きを教えている」\n\n第7位　うお座\n「自分の吉方位に、好きな色を置いてみて」\n\n第8位　おうし座\n「色で整えた気が、静かに背中を押し始める」\n\n第9位　やぎ座\n「気の流れに乗る色を選ぶだけで、道が変わる」\n\n第10位　かに座\n「止まっていた気が、色ひとつで動き出す」\n\n第11位　おとめ座\n「整えた部屋の気が、今週の流れを決めている」\n\n第12位　しし座\n「蓄えてきた気が、色の力で次のステージへ向かう」\n\n#占い #吉方位 #開運",
@@ -8592,5 +8593,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/leo.jpg",
     "recorded_at": "2026-07-15T20:20:34.243378"
+  },
+  {
+    "text": "♒水瓶座で「運気の波」が気になり始めた人以外は、読まなくていい。\n\nなぜなら今、水瓶座の龍脈は切り替わりの直前にある。\nこのタイミングで波の読み方を間違えると、\n「動くべき日」と「待つべき日」が完全に逆転する。\n\n運気の波って、上がる・下がるの二択じゃない。\n\"流れの向き\"がある。\n\n今の水瓶座は北東からの気が強まっていて、\n焦って南西に動くと空回りしやすい配置。\n\nやることはシンプル。\n来週、大きな決断を迫られたら「一晩だけ」置いてみて。\n\n波の向きが読めると、同じ努力でも届く場所が変わるよ。",
+    "theme": "運気/運気の波の読み方",
+    "pattern_id": "caligula",
+    "quality_score": 8.3,
+    "attempts": 1,
+    "x_eligible": false,
+    "is_repost": true,
+    "original_post_id": "18158503657456428",
+    "pending_at": "2026-07-10T23:10:04.237181",
+    "queued_at": "2026-07-10T23:11:06.880292",
+    "threads_post_id": "18072379565378183",
+    "posted_at": "2026-07-15T23:09:58.895956+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-07-15T23:09:58.902113"
   }
 ]
