@@ -1,8 +1,7 @@
 {
-  "updated_at": "2026-07-15T14:51:47.496628",
+  "updated_at": "2026-07-15T17:07:55.943756",
   "lookback_days": 30,
   "adjustments": {
-    "zodiac_deep": 2.0,
     "weekly_forecast": 0.5,
     "hoshi_betsu": 0.5,
     "faq_myth": 0.5,
@@ -12,7 +11,8 @@
     "jisseki_ninshou": 0.5,
     "ichi_gon": 0.5,
     "zodiac_target": 0.676,
-    "caligula": 1.45,
+    "caligula": 1.429,
+    "zodiac_deep": 2.0,
     "list": 0.5,
     "pop_short": 0.5,
     "kaiun_day": 0.5,
