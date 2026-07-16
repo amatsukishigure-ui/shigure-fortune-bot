@@ -8599,7 +8599,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/leo.jpg",
-    "recorded_at": "2026-07-15T20:20:34.243378"
+    "recorded_at": "2026-07-15T20:20:34.243378",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♒水瓶座で「運気の波」が気になり始めた人以外は、読まなくていい。\n\nなぜなら今、水瓶座の龍脈は切り替わりの直前にある。\nこのタイミングで波の読み方を間違えると、\n「動くべき日」と「待つべき日」が完全に逆転する。\n\n運気の波って、上がる・下がるの二択じゃない。\n\"流れの向き\"がある。\n\n今の水瓶座は北東からの気が強まっていて、\n焦って南西に動くと空回りしやすい配置。\n\nやることはシンプル。\n来週、大きな決断を迫られたら「一晩だけ」置いてみて。\n\n波の向きが読めると、同じ努力でも届く場所が変わるよ。",
@@ -8799,5 +8800,25 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/fengshui/water.jpg",
     "recorded_at": "2026-07-16T20:11:22.089673"
+  },
+  {
+    "text": "「科学的根拠ないんでしょ？」——そう言いながら、今日も同じ場所で止まっている人へ。\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "「科学的根拠ないんでしょ？」——そう言いながら、今日も同じ場所で止まっている人へ。\n\n#占い #吉方位 #開運",
+      "よく聞かれること。\n「吉方位って、科学的に証明されてるの？」\n\n正直に答える。厳密な証明はない。\nでも「北東に引っ越した月から仕事が動いた」「通勤路を変えたら縁が繋がった」という体験は、確かに積み上がっている。\n\n龍脈命術は信じるより試す占い。\n方位を整えると、同じ行動の結果が変わる——それを実感した人が続いている。\n\n証明を待つより、試した方が早い。\n\nこれ、知ってた？コメントで教えて。\n\n#吉方位 #龍脈命術 #開運"
+    ],
+    "theme": "吉方位・風水/今週の吉方位",
+    "pattern_id": "faq_myth",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "pending_at": "2026-07-12T03:01:53.995429",
+    "queued_at": "2026-07-12T03:02:33.434275",
+    "threads_post_id": "18097017245338218",
+    "posted_at": "2026-07-16T23:11:08.123422+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-07-16T23:11:08.129709"
   }
 ]
