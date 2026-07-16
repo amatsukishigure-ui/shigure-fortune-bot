@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-07-16T13:28:20.682546",
+  "updated_at": "2026-07-16T15:03:30.422182",
   "lookback_days": 30,
   "adjustments": {
-    "empathy_thread": 0.5,
     "emoji_comment": 0.5,
+    "empathy_thread": 0.5,
     "jisseki_ninshou": 0.5,
     "ichi_gon": 0.5,
-    "zodiac_target": 0.665,
-    "caligula": 1.404,
+    "zodiac_target": 0.63,
+    "caligula": 1.425,
     "zodiac_deep": 2.0,
     "list": 0.5,
     "pop_short": 0.5,
