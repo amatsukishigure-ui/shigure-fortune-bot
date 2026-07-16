@@ -8499,7 +8499,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-15T10:47:17.806516"
+    "recorded_at": "2026-07-15T10:47:17.806516",
+    "hourly_stats_recorded": true
   },
   {
     "text": "引越し先、決める前に少しだけ待って。方位だけ見て動くのは、地図の半分しか読んでいない。\n\n#占い #引越し #風水",
@@ -8676,5 +8677,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
     "recorded_at": "2026-07-16T05:52:06.871458"
+  },
+  {
+    "text": "♉牡牛座で、「頑張っているのに同じ場所にいる気がする」という感覚がある人以外は、読まなくていい。\n\n#占い #開運 #運気アップ",
+    "thread_posts": [
+      "♉牡牛座で、「頑張っているのに同じ場所にいる気がする」という感覚がある人以外は、読まなくていい。\n\n#占い #開運 #運気アップ",
+      "♉牡牛座さん、今の停滞は意志の問題じゃない。\n\n龍脈命術でいう「向き」がずれているだけ。\n\n正面突破できない時に無理に押しても、気は動かない。ルートを変える。それだけで同じ努力が全然ちがう結果になる。これが龍脈命術の核心で「当てる」じゃなく「動ける」方向を見つける占いだから。\n\n今夏は東〜東南の方位に動きが出やすい季節。迂回路こそが吉方位になる時期。\n\n当てはまる人、コメントで教えて。\n\n#龍脈命術 #吉方位 #牡牛座"
+    ],
+    "theme": "鑑定エピソード/人生の転機",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♉牡牛座",
+    "pending_at": "2026-07-16T10:52:39.182855",
+    "queued_at": "2026-07-16T10:52:39.394046",
+    "threads_post_id": "18108791105010080",
+    "posted_at": "2026-07-16T10:53:02.960552+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
+    "recorded_at": "2026-07-16T10:53:02.967432"
   }
 ]
