@@ -8576,7 +8576,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
-    "recorded_at": "2026-07-15T17:13:24.939468"
+    "recorded_at": "2026-07-15T17:13:24.939468",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♌ 獅子座で今、恋愛・縁がなかなか動かないと感じている人へ。\n\n#占い #恋愛運 #縁",
@@ -8777,5 +8778,26 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
     "recorded_at": "2026-07-16T17:11:28.707642"
+  },
+  {
+    "text": "台風が近づく今週、「気が乱れている」ときに大きな決断をするのは待って。\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "台風が近づく今週、「気が乱れている」ときに大きな決断をするのは待って。\n\n#占い #吉方位 #開運",
+      "嵐の前後は、気の流れが急激に入れ替わる時期。\n\n龍脈命術では、自然現象と方位のエネルギーは連動していると読む。台風が通過した後の空気の軽さ、あれは気の入れ替わりが起きたサイン。\n\n今週やること1つだけ。\n嵐が去った後、自分が向かいたい方角の窓を開けてみて。滞っていた気が動き出すきっかけになる。\n\n「動くなら今じゃない」と感じているなら、それは正しい直感かもしれない。\n\n今の家、この方角の窓、開けられそう？\n\n#龍脈命術 #吉方位 #風水生活"
+    ],
+    "theme": "吉方位・風水/今週の吉方位",
+    "pattern_id": "fuusui_tip",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "pending_at": "2026-07-11T20:12:38.980399",
+    "queued_at": "2026-07-11T20:12:39.139658",
+    "threads_post_id": "18208347445359090",
+    "posted_at": "2026-07-16T20:11:22.083072+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/fengshui/water.jpg",
+    "recorded_at": "2026-07-16T20:11:22.089673"
   }
 ]
