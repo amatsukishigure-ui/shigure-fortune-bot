@@ -8756,5 +8756,26 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-07-16T15:09:38.607318"
+  },
+  {
+    "text": "今週、なんか動けない感じがするなら——それ、向きの問題かもしれない。\n\n#占い #星座占い #運勢",
+    "thread_posts": [
+      "今週、なんか動けない感じがするなら——それ、向きの問題かもしれない。\n\n#占い #星座占い #運勢",
+      "星座占いが「あなたの性格」を読むのに対し、龍脈命術は「今向かうべき方向」を読む。\n\n今週の気の流れ、全体的に重めだ。\nこういう週は、無理に動こうとするより「向きを整える」ほうが早い。\n\n今夜だけでいい。枕の向きを北か東に変えてみて。それだけで、明日の感じ方が変わる人がいる。\n\nモニター価格で龍脈命術を試せる枠が今ある。あなた自身の吉方位を一緒に確かめませんか。\n\n▷ ここから https://coconala.com/services/4292937?ref=threads\n\n#龍脈命術 #吉方位 #今週の運気"
+    ],
+    "theme": "星座占い/今週の運気（全体）",
+    "pattern_id": "monitor_cta",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "pending_at": "2026-07-11T20:12:16.060137",
+    "queued_at": "2026-07-11T20:12:39.123262",
+    "threads_post_id": "18072354365379910",
+    "posted_at": "2026-07-16T17:11:28.700937+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
+    "recorded_at": "2026-07-16T17:11:28.707642"
   }
 ]
