@@ -8618,7 +8618,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-15T23:09:58.902113"
+    "recorded_at": "2026-07-15T23:09:58.902113",
+    "hourly_stats_recorded": true
   },
   {
     "text": "玄関が整っていない人は、気が家に入ってこれない。\n\n#占い #龍脈命術",
@@ -8639,7 +8640,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/fengshui_abundance.jpg",
-    "recorded_at": "2026-07-16T01:01:46.784517"
+    "recorded_at": "2026-07-16T01:01:46.784517",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♌獅子座さんへ。\n\n今の獅子座には「火の気」が強まっている。\n夏の盛気と獅子座の本来のエネルギーが重なり、内側から突き動かされるような感覚が出やすいタイミング。\nただ、その熱さを「どの方向に向けるか」で結果が全然変わってくる。\n\n龍脈命術は星座の性格を読むのではなく、今いる場所・向かう方向を読む占い。だから今の獅子座に必要なのは、熱量の「向き」を整えること。\n\n【今週の吉方位①】\n・南方向 → 人前に出る機会に動く。発表・提案・自己表現はこの方角の気が後押しする。南口から出る、南向きの席を選ぶだけでいい。\n\nただし、避けてほしい方位がある──\n\n#占い #吉方位 #開運",
@@ -8837,5 +8839,26 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/mystery_1.jpg",
     "recorded_at": "2026-07-17T01:01:16.227346"
+  },
+  {
+    "text": "「このまま今週終わっていいのかな」と思っているなら、週の残りの気の流れを知っておいて。\n\n#占い #開運 #運気アップ",
+    "thread_posts": [
+      "「このまま今週終わっていいのかな」と思っているなら、週の残りの気の流れを知っておいて。\n\n#占い #開運 #運気アップ",
+      "【今週の残りの気の流れ】\n\n今週は南〜南西の気が強まる「停滞を整える週」。龍脈命術では、動けない時期を「気が溜まっているサイン」と読む。空回りじゃなく、準備期間。\n\n✔ 動くなら: 週末（土・日）\n✔ 意識する方位: 南・南西\n✔ 避けたいこと: 今週中の即断・衝動的な返答\n\n今週の残りは「整える」に使って。動くのは週末でいい。\n今週、動く？待つ？コメントで教えて。\n\n#龍脈命術 #今週の運気 #開運"
+    ],
+    "theme": "龍脈命術の世界観/龍脈命術で見る「停滞」の意味",
+    "pattern_id": "weekly_forecast",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "pending_at": "2026-07-12T14:32:11.656091",
+    "queued_at": "2026-07-12T14:33:07.115799",
+    "threads_post_id": "18009346130928189",
+    "posted_at": "2026-07-17T02:53:48.493877+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/fengshui_abundance.jpg",
+    "recorded_at": "2026-07-17T02:53:48.500952"
   }
 ]
