@@ -8684,7 +8684,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
-    "recorded_at": "2026-07-16T05:52:06.871458"
+    "recorded_at": "2026-07-16T05:52:06.871458",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♉牡牛座で、「頑張っているのに同じ場所にいる気がする」という感覚がある人以外は、読まなくていい。\n\n#占い #開運 #運気アップ",
@@ -8901,5 +8902,26 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/fortune_1.jpg",
     "recorded_at": "2026-07-17T09:01:14.095472"
+  },
+  {
+    "text": "「なんで自分だけうまくいかないんだろう」\nそう思いながら、また今日も同じ場所にいる——\n\nその停滞、努力不足じゃない。\n龍脈命術では、向かう方向が気の流れとズレているとき、どれだけ動いても結果が出にくい状態が続くと読む。\n\n方位を整えると、同じ行動の効き方が変わる。\nどのメニューが今の自分に合うか、次に書く。\n\n#占い #開運 #運気アップ",
+    "thread_posts": [
+      "「なんで自分だけうまくいかないんだろう」\nそう思いながら、また今日も同じ場所にいる——\n\nその停滞、努力不足じゃない。\n龍脈命術では、向かう方向が気の流れとズレているとき、どれだけ動いても結果が出にくい状態が続くと読む。\n\n方位を整えると、同じ行動の効き方が変わる。\nどのメニューが今の自分に合うか、次に書く。\n\n#占い #開運 #運気アップ",
+      "今の状況に合わせて選んでみて。\n\n・まず試したい　→ 初回無料鑑定　0円\n・今月どこへ動けばいいか知りたい　→ 吉方位レポート　2,000円\n・なぜ停滞しているか根本から知りたい　→ 龍脈命術 基本鑑定　8,000円\n・引越し・転職など大きな動きを控えている　→ 引越し・移転 方位鑑定　15,000円\n\n「動けない」には、必ず理由がある。\nそれを一緒に読みにいこう。\n\n詳細・お申し込みは https://shigurerooms.hp.peraichi.com\n\n#占い #転職 #仕事運"
+    ],
+    "theme": "龍脈命術の世界観/龍脈とは何か（基礎）",
+    "pattern_id": "menu_guide",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "pending_at": "2026-07-12T23:04:07.227401",
+    "queued_at": "2026-07-12T23:04:07.390686",
+    "threads_post_id": "18121528132691656",
+    "posted_at": "2026-07-17T10:34:39.568390+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
+    "recorded_at": "2026-07-17T10:34:39.575401"
   }
 ]
