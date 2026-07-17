@@ -8707,7 +8707,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
-    "recorded_at": "2026-07-16T10:53:02.967432"
+    "recorded_at": "2026-07-16T10:53:02.967432",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今日、複数の開運日が重なっている。\n\nこういう日に動いた人と、知らずに過ごした人とでは、同じ行動でも気の乗り方が違う。\n\n龍脈命術は「いつ動くか」も方位と同じくらい重く見る。タイミングは努力より先に整えるものだから。\n\n「知ってた」か「初めて聞いた」か、コメントで教えて。\n\n#占い #吉方位 #龍脈命術",
@@ -8724,7 +8725,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
-    "recorded_at": "2026-07-16T12:01:32.350093"
+    "recorded_at": "2026-07-16T12:01:32.350093",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♈ 牡羊座で今、「なんか停滞してる気がする」と感じている人へ。\n\n#占い #開運 #運気アップ",
@@ -8940,5 +8942,21 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-07-17T12:01:12.310093"
+  },
+  {
+    "text": "人間関係が「なんかしんどい」と感じるとき、相手の問題より先に、自分の気の向きがズレていることが多い。\n\n龍脈命術では、対人運は方位で読む。向かっている方向が変わるだけで、出会う人の質が変わる。\n\n「心当たりある」か「初めて聞いた」か、コメントで教えて。\n\n#占い #人間関係 #開運",
+    "x_text": "人間関係が「なんかしんどい」と感じるとき、相手の問題より先に、自分の気の向きがズレていることが多い。\n\n龍脈命術では、対人運は方位で読む。向かっている方向が変わるだけで、出会う人の質が変わる。\n\n「心当たりある」か「初めて聞いた」か、コメントで教えて。\n\n#占い #時雨 #対人運 #開運",
+    "theme": "運気/対人運",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.8,
+    "attempts": 1,
+    "x_eligible": true,
+    "pending_at": "2026-07-17T13:18:46.408754",
+    "queued_at": "2026-07-17T13:19:10.041146",
+    "threads_post_id": "18142691434470290",
+    "posted_at": "2026-07-17T13:19:16.172327+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-07-17T13:19:16.179457"
   }
 ]
