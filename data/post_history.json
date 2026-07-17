@@ -8883,5 +8883,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/sagittarius.jpg",
     "recorded_at": "2026-07-17T05:52:57.783646"
+  },
+  {
+    "text": "マッチングアプリ、続かなくていつも同じとこで終わる？\n\nそれ、アプリより先に「向かう方角」を整えるといいよ。\n龍脈命術では縁の気は西からくると読む——今日、西の方角に花か小物をひとつ置いてみて 🌸\n\nやってみた？コメントで教えて\n\n#占い #恋愛運 #縁",
+    "x_text": "マッチングアプリ、続かなくていつも同じとこで終わる？\n\nそれ、アプリより先に「向かう方角」を整えるといいよ。\n龍脈命術では縁の気は西からくると読む——今日、西の方角に花か小物をひとつ置いてみて 🌸\n\nやってみた？コメントで教えて\n\n#占い #時雨 #恋愛運 #星座占い",
+    "theme": "鑑定エピソード/恋愛",
+    "pattern_id": "pop_short",
+    "quality_score": 8.2,
+    "attempts": 1,
+    "x_eligible": true,
+    "persona_id": "p006",
+    "pending_at": "2026-07-12T23:03:28.393375",
+    "queued_at": "2026-07-12T23:04:07.356830",
+    "threads_post_id": "18067832327463346",
+    "posted_at": "2026-07-17T09:01:14.089726+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/fortune_1.jpg",
+    "recorded_at": "2026-07-17T09:01:14.095472"
   }
 ]
