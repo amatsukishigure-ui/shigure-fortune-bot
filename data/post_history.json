@@ -8808,7 +8808,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/fengshui/water.jpg",
-    "recorded_at": "2026-07-16T20:11:22.089673"
+    "recorded_at": "2026-07-16T20:11:22.089673",
+    "hourly_stats_recorded": true
   },
   {
     "text": "「科学的根拠ないんでしょ？」——そう言いながら、今日も同じ場所で止まっている人へ。\n\n#占い #吉方位 #開運",
@@ -9015,5 +9016,22 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-07-17T20:15:23.495907"
+  },
+  {
+    "text": "♒水瓶座で「運気の波」が気になり始めた人以外は、読まなくていい。\n\nなぜなら今、水瓶座の龍脈は切り替わりの直前にある。\nこのタイミングで波の読み方を間違えると、\n「動くべき日」と「待つべき日」が完全に逆転する。\n\n運気の波って、上がる・下がるの二択じゃない。\n\"流れの向き\"がある。\n\n今の水瓶座は北東からの気が強まっていて、\n焦って南西に動くと空回りしやすい配置。\n\nやることはシンプル。\n今月中に大きな決断を迫られたら「一晩だけ」置いてみて。\n\n波の向きが読めると、同じ努力でも届く場所が変わるよ。",
+    "theme": "運気/運気の波の読み方",
+    "pattern_id": "caligula",
+    "quality_score": 8.3,
+    "attempts": 1,
+    "x_eligible": false,
+    "is_repost": true,
+    "original_post_id": "18158503657456428",
+    "pending_at": "2026-07-17T23:01:24.588713",
+    "queued_at": "2026-07-17T23:02:41.385430",
+    "threads_post_id": "18107059580096295",
+    "posted_at": "2026-07-17T23:02:47.317776+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-07-17T23:02:47.324300"
   }
 ]
