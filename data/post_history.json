@@ -8662,7 +8662,8 @@
     "posted_at": "2026-07-16T02:50:51.754455+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-07-16T02:50:51.760212"
+    "recorded_at": "2026-07-16T02:50:51.760212",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今の自分、なんか止まってる気がする——そう感じている人に届けたい。\n\n努力はしている。でも変わらない。\nそれは意志の問題じゃない。\n龍脈命術で見ると、動く方向がズレているだけのことが多い。\n\n星座別に「今週動くといい方角」を読んでいると、止まっていた流れが動き出す人が出てくる。\n気になる人に向けて、メニューを書く。\n\n#占い #星座占い #運勢",
@@ -8860,5 +8861,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/fengshui_abundance.jpg",
     "recorded_at": "2026-07-17T02:53:48.500952"
+  },
+  {
+    "text": "♐ 射手座で今、何かが止まっている感覚がある人へ。\n\n#占い #星座占い #運勢",
+    "thread_posts": [
+      "♐ 射手座で今、何かが止まっている感覚がある人へ。\n\n#占い #星座占い #運勢",
+      "♐ 射手座さんへ。\n\n動けないのは意志の弱さじゃない。向きがズレているだけ。\n\n龍脈命術では、停滞は「気の充電期間」として読む。今の射手座は、東南の方位に動きが出やすい配置。買い物でも食事でも、東南方向に体を向けるだけでいい。\n\n「このままでいいのか」が口癖になっているなら、まず今週、東南を意識してみてね。\n\n射手座さん、今これ当てはまってる？コメントで教えて。\n\n#射手座 #吉方位 #龍脈命術"
+    ],
+    "theme": "星座別メッセージ/星座別・相性のいい方位",
+    "pattern_id": "zodiac_target",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♐射手座",
+    "pending_at": "2026-07-17T05:52:12.041809",
+    "queued_at": "2026-07-17T05:52:31.700464",
+    "threads_post_id": "18065787542709261",
+    "posted_at": "2026-07-17T05:52:57.776589+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/sagittarius.jpg",
+    "recorded_at": "2026-07-17T05:52:57.783646"
   }
 ]
