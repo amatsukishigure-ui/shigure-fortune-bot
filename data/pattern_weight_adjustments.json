@@ -1,16 +1,16 @@
 {
-  "_updated": "2026-07-18T09:02",
-  "_overall_avg_eng": 20.2363,
+  "_updated": "2026-07-18T09:34",
+  "_overall_avg_eng": 31.1938,
   "adjustments": {
-    "zodiac_deep": 1.798,
-    "list": 1.629,
-    "ichi_gon": 1.142,
-    "kaiun_day": 1.115,
-    "empathy_thread": 1.063,
-    "caligula": 0.916,
-    "zodiac_target": 0.899,
-    "soft_discovery": 0.882,
-    "emoji_comment": 0.523,
-    "pop_short": 0.5
+    "kotodama_rank": 1.438,
+    "kaiun_day": 1.436,
+    "zodiac_deep": 1.18,
+    "list": 1.057,
+    "zodiac_target": 1.034,
+    "before_sleep": 0.887,
+    "ichi_gon": 0.873,
+    "caligula": 0.833,
+    "empathy_thread": 0.689,
+    "soft_discovery": 0.572
   }
 }
