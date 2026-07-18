@@ -1,13 +1,13 @@
 {
   "2": {
-    "views_sum": 644,
-    "likes_sum": 18,
-    "count": 6
+    "views_sum": 3466,
+    "likes_sum": 183,
+    "count": 14
   },
   "14": {
-    "views_sum": 1459,
-    "likes_sum": 25,
-    "count": 8
+    "views_sum": 2442,
+    "likes_sum": 72,
+    "count": 12
   },
   "17": {
     "views_sum": 1775,
@@ -15,49 +15,49 @@
     "count": 18
   },
   "19": {
-    "views_sum": 5964,
-    "likes_sum": 78,
-    "count": 28
+    "views_sum": 8942,
+    "likes_sum": 230,
+    "count": 34
   },
   "23": {
-    "views_sum": 2884,
-    "likes_sum": 93,
-    "count": 24
+    "views_sum": 9188,
+    "likes_sum": 244,
+    "count": 31
   },
   "15": {
-    "views_sum": 7477,
-    "likes_sum": 307,
-    "count": 45
+    "views_sum": 10154,
+    "likes_sum": 400,
+    "count": 53
   },
   "1": {
-    "views_sum": 5281,
-    "likes_sum": 125,
-    "count": 19
+    "views_sum": 5286,
+    "likes_sum": 126,
+    "count": 20
   },
   "21": {
-    "views_sum": 8858,
-    "likes_sum": 297,
-    "count": 33
+    "views_sum": 10068,
+    "likes_sum": 380,
+    "count": 39
   },
   "0": {
-    "views_sum": 13445,
-    "likes_sum": 154,
-    "count": 14
+    "views_sum": 17184,
+    "likes_sum": 296,
+    "count": 19
   },
   "22": {
-    "views_sum": 5192,
-    "likes_sum": 253,
-    "count": 15
+    "views_sum": 10353,
+    "likes_sum": 353,
+    "count": 21
   },
   "10": {
-    "views_sum": 4765,
-    "likes_sum": 132,
-    "count": 38
+    "views_sum": 10118,
+    "likes_sum": 357,
+    "count": 46
   },
   "12": {
-    "views_sum": 9790,
-    "likes_sum": 209,
-    "count": 41
+    "views_sum": 12019,
+    "likes_sum": 520,
+    "count": 47
   },
   "16": {
     "views_sum": 8159,
@@ -65,14 +65,14 @@
     "count": 15
   },
   "20": {
-    "views_sum": 402,
-    "likes_sum": 10,
-    "count": 12
+    "views_sum": 989,
+    "likes_sum": 43,
+    "count": 16
   },
   "18": {
-    "views_sum": 11784,
-    "likes_sum": 115,
-    "count": 26
+    "views_sum": 17008,
+    "likes_sum": 324,
+    "count": 33
   },
   "6": {
     "views_sum": 161,
@@ -80,9 +80,9 @@
     "count": 5
   },
   "8": {
-    "views_sum": 343,
-    "likes_sum": 21,
-    "count": 12
+    "views_sum": 1181,
+    "likes_sum": 70,
+    "count": 20
   },
   "13": {
     "views_sum": 72,
@@ -110,8 +110,13 @@
     "count": 12
   },
   "5": {
-    "views_sum": 2528,
-    "likes_sum": 107,
-    "count": 7
+    "views_sum": 10429,
+    "likes_sum": 357,
+    "count": 15
+  },
+  "11": {
+    "views_sum": 1855,
+    "likes_sum": 119,
+    "count": 4
   }
 }
