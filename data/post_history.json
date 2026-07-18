@@ -8892,7 +8892,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/sagittarius.jpg",
-    "recorded_at": "2026-07-17T05:52:57.783646"
+    "recorded_at": "2026-07-17T05:52:57.783646",
+    "hourly_stats_recorded": true
   },
   {
     "text": "マッチングアプリ、続かなくていつも同じとこで終わる？\n\nそれ、アプリより先に「向かう方角」を整えるといいよ。\n龍脈命術では縁の気は西からくると読む——今日、西の方角に花か小物をひとつ置いてみて 🌸\n\nやってみた？コメントで教えて\n\n#占い #恋愛運 #縁",
@@ -9101,5 +9102,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-07-18T05:39:08.706548"
+  },
+  {
+    "text": "♍乙女座で、今夏「頑張る方向が合っているのか」じわじわ不安になってきた人以外は、読まなくていい。\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "♍乙女座で、今夏「頑張る方向が合っているのか」じわじわ不安になってきた人以外は、読まなくていい。\n\n#占い #吉方位 #開運",
+      "♍乙女座さん、今の時期は龍脈的に「火の気」が極まる季節。\nこの気の中で無理に動くと、努力が空回りしやすい。\n\n乙女座が今やるべきは、動くことじゃなく「どの方向に動くか」を整えること。\n吉方位を把握していない状態で動き続けるのは、向きのズレたまま全力で走るようなもの。\n\n龍脈命術では「いつ動くか」と「どこへ動くか」が揃って初めて気が味方になる。\n\n今、動く方向に確信がある？それとも「なんとなく」で動いてる？コメントで教えて。\n\n#龍脈命術 #吉方位 #乙女座",
+      "「このままでいいのかな」\nその言葉、今月だけで何回呟きましたか？\n\n占いというと「当たる・当たらない」で語られがちですが、私が大事にしているのはそこじゃありません。\n\n風水×吉方位×星読みを組み合わせた、動くための占い「龍脈命術」について、無料noteにまとめました🔮\n誰のための占いか、どんな悩みに効くか。よければ覗いてみてください👇\nhttps://note.com/shigure_fortune/n/nab07df599219\n\n続きの記事も随時公開していくので、noteのフォローもしていただけると嬉しいです🙏\n\n#占い #吉方位 #開運"
+    ],
+    "theme": "吉方位・風水/凶方位の対処法",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "zodiac_boost": "♍乙女座",
+    "pending_at": "2026-07-18T08:53:40.799618",
+    "queued_at": "2026-07-18T08:54:23.342250",
+    "threads_post_id": "18206924923348737",
+    "posted_at": "2026-07-18T08:54:59.094731+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/virgo.jpg",
+    "recorded_at": "2026-07-18T08:54:59.101946"
   }
 ]
