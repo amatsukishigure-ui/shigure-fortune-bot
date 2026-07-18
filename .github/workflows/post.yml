@@ -64,7 +64,8 @@ jobs:
             HOUR_UTC=$(date -u +%H)
 
             # 深夜返信専用スロット（01:00/04:00 JST = UTC 16/19）はリプライのみ
-            if [ "$HOUR_UTC" = "16" ] || [ "$HOUR_UTC" = "19" ]; then
+            # GHAのcron遅延(最大1h)を考慮して UTC 16-17 と 19-20 を両方カバー
+            if [ "$HOUR_UTC" = "16" ] || [ "$HOUR_UTC" = "17" ] || [ "$HOUR_UTC" = "19" ] || [ "$HOUR_UTC" = "20" ]; then
               echo "夜間返信専用スロット — reply only"
               python main.py reply
             else
