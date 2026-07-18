@@ -27,6 +27,12 @@ def run() -> dict:
 
     perf_data = json.loads(perf_path.read_text(encoding="utf-8"))
 
+    # 現行パターンのIDセットを取得（削除済みパターンを除外するため）
+    patterns_path = pathlib.Path(__file__).parent.parent / "knowledge" / "post_patterns.json"
+    active_pattern_ids: set = set()
+    if patterns_path.exists():
+        active_pattern_ids = {p["id"] for p in json.loads(patterns_path.read_text(encoding="utf-8"))}
+
     # post_history から threads_post_id → pattern_id マップを作成
     # performance_data は post_id フィールドを使う（threads_post_id と同値）
     id_to_pattern: dict = {}
@@ -38,9 +44,15 @@ def run() -> dict:
             if pid and pat:
                 id_to_pattern[str(pid)] = pat
 
-    # パターン別 ENG% を集計
+    # パターン別 ENG% を集計（直近 LOOKBACK_DAYS 日のみ）
+    LOOKBACK_DAYS = 30
+    import datetime as _dt
+    _cutoff = (_dt.datetime.now(_dt.timezone.utc) - _dt.timedelta(days=LOOKBACK_DAYS)).isoformat()
+
     pattern_stats: dict = {}
     for rec in perf_data:
+        if rec.get("fetched_at", "") < _cutoff:
+            continue
         # performance_data は post_id キーを使う
         post_id = str(rec.get("post_id") or rec.get("threads_post_id") or rec.get("id") or "")
         pat = id_to_pattern.get(post_id)
@@ -52,9 +64,8 @@ def run() -> dict:
         likes    = rec.get("likes", 0) or 0
         replies  = rec.get("replies", 0) or 0
         reposts  = rec.get("reposts", 0) or 0
-        quotes   = rec.get("quotes", 0) or 0
-        shares   = rec.get("shares", 0) or 0
-        eng = (likes + replies + reposts + quotes + shares) / views * 100
+        # writer.py と同じ重み付き ENG 計算式（×1000 スケール）
+        eng = (likes * 0.4 + replies * 0.35 + reposts * 0.25) / views * 1000
 
         if pat not in pattern_stats:
             pattern_stats[pat] = {"total_eng": 0.0, "count": 0}
@@ -65,11 +76,12 @@ def run() -> dict:
         print("No joined records — skip")
         return {}
 
-    # パターン別平均 ENG%
+    # パターン別平均 ENG%（現行パターンのみ・削除済みパターンを除外）
     avg_engs = {
         pat: s["total_eng"] / s["count"]
         for pat, s in pattern_stats.items()
         if s["count"] >= 3  # 3件以上のデータがあるパターンのみ
+        and (not active_pattern_ids or pat in active_pattern_ids)  # 現行パターンのみ
     }
 
     if not avg_engs:

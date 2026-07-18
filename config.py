@@ -42,8 +42,8 @@ SIMILARITY_HISTORY_SIZE = 100      # 比較対象の過去投稿数
 # Posting schedule
 DAILY_POST_LIMIT = 20
 MIN_POST_INTERVAL_HOURS = 0.5  # 1h→0.5h: 夜帯1時間おきcronでもスキップされないよう緩和
-POST_SLOTS = [7, 9, 12, 18, 21, 22]  # 6スロット/日（ENGスコア実績ベース最適化 2026-07-04）
-# 07=75.0 / 21=42.7 / 18=38.2 / 12=37.4 / 09=27.4 / 22=13.2（before_sleep専用枠）
+POST_SLOTS = [7, 9, 12, 16, 21, 22]  # 6スロット/日（2026-07-12: 18→16に変更。hourly_stats: 16時ENG4.0%/22likes vs 18時ENG0.98%/4.4likes）
+# 07=75.0 / 21=42.7 / 16=4.0%(544avg views) / 12=37.4 / 09=27.4 / 22=13.2（before_sleep専用枠）
 
 # Pattern rotation
 MAX_SAME_PATTERN_CONSECUTIVE = 3   # 同パターン連続上限
@@ -92,9 +92,9 @@ X_PERFORMANCE_FILE = DATA_DIR / "x_performance_data.json"
 # Content calendar (曜日×投稿スロットのテーマ固定)
 # ブランドサイクル設計:
 #   月: 認知・運気情報（今週の方向性を届ける）
-#   火: ブランド認知（龍脈命術の差別化・原理）← brand_ryumyaku 2.0x ブースト
+#   火: ブランド認知（龍脈命術の差別化・原理）
 #   水: ストーリー・信頼（鑑定エピソード・共感）
-#   木: 実績・証拠（見てきた事実を共有）← jisseki_ninshou 2.0x ブースト
+#   木: 実績・証拠（見てきた事実を共有）
 #   金: 行動促進（週末の実践・吉方位活用）
 #   土: 哲学・世界観（時雨という人物・信念）← world_view 2.0x ブースト
 #   日: 統合・案内（来週準備＋メニュー）

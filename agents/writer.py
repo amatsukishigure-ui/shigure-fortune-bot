@@ -368,15 +368,14 @@ def _select_pattern(
         if hour in p.get("preferred_hours", []):
             w *= 2.5
 
-        # 木曜（wd=3）: world_view Eモード（実績語り）と shigure_voice を週次強化
-        if _today_wd == 3 and pid in ("world_view", "shigure_voice"):
+        # 木曜（wd=3）: world_view（ブランド教育・実績語り）を週次強化
+        if _today_wd == 3 and pid == "world_view":
             w *= 1.5
 
-        # 月初め（1〜3日）: hoshi_betsu を月次スパイク狙いで 3.0x
-        # 実績: 6月1日〜版 v=1022（全月トップ）— 月変わりのタイミングに強い
+        # 月初め（1〜3日）: kotodama_rank（今月の言霊）を月次スパイク狙いで 2.5x
         _today_dom = datetime.now().day
-        if 1 <= _today_dom <= 3 and pid == "hoshi_betsu":
-            w *= 3.0
+        if 1 <= _today_dom <= 3 and pid == "kotodama_rank":
+            w *= 2.5
 
         weights.append(w)
 
@@ -457,7 +456,7 @@ def _build_prompt(
         extra_hint = {}
 
     # 鑑定ページURL（メニュー誘導・ソフト誘導パターンで使用）
-    service_url = knowledge.get("profile", {}).get("service_url", "https://shigurerooms.hp.peraichi.com")
+    service_url = knowledge.get("profile", {}).get("service_url", "https://coconala.com/services/4292937?ref=threads")
 
     # ── 推定投稿時刻ブロック（季節コンテキストのみ。具体的日付は注入しない） ──
     # 注意: キューが変動するため「今日=○月○日」の日付注入は日付ズレを招く。
@@ -585,7 +584,12 @@ def _build_prompt(
             f"「そうそう」と思った人は 🌟 を置いてって。",
             f"読んだ {_zm} さん、🌟 でいいから置いてみて。",
         ]
-        _zt_cta = _rnd_zt.choice(_zt_emoji_ctas) if _zt_cta_mode == "emoji" else ("保存してね" if _rnd_zt.random() > 0.5 else "心当たりある？")
+        _zt_text_ctas = [
+            f"{_zn}座さん、今これ当てはまってる？コメントで教えて",
+            f"心当たりある？コメントで教えて",
+            f"{_zn}座さん、「動きたい」か「待ちたい」か、コメントで教えて",
+        ]
+        _zt_cta = _rnd_zt.choice(_zt_emoji_ctas) if _zt_cta_mode == "emoji" else _rnd_zt.choice(_zt_text_ctas)
         pattern_extra = f"""
 ## 星座ターゲット型の追加ルール
 - この投稿は「{zodiac}」の人向け
@@ -639,7 +643,7 @@ def _build_prompt(
 目的: 情報を使い切ってもらい保存と絵文字コメントを促す
 1. 吉方位×行動（1点）: 「・○方向 → 具体的にやること（理由）」（1投稿目と違う方位）
 2. NG・注意点（1点）: 「・避けたい方位・行動 → なぜか（龍脈的理由）」
-3. 締め（2行）: 「保存して今週の参考にして。」＋「{_zn_d}さん、今週気になること ✨ をコメントで。」
+3. 締め（3行）: 「保存して今週の参考にして。」＋「当てはまると思ったらいいね🩷」＋「{_zn_d}さん、今週気になること ✨ をコメントで。」
 
 ### 書き方ルール
 - 冒頭1行目を必ず「{_zm_d}{_zn_d}さん、〜」で始める
@@ -753,7 +757,7 @@ def _build_prompt(
   禁止テーマ（実績でeng=3の底値）:
   - 哲学・信念系（「動ける占いとは」「届けたいのは次の一歩」）
   - 概念説明系（「龍脈命術の意味」「吉方位の誤解」だけで終わるもの）
-  → これらはworld_view/shigure_voiceに任せる
+  → これらはworld_viewに任せる
 
 - テーマを毎投稿で必ず変える（連続使用しない）:
   今週の吉方位×行動 / 寝る向き / モーニングアクション / 金運整え / 神社参拝方位 / 玄関整え / 今月のターニングポイント
@@ -837,7 +841,7 @@ def _build_prompt(
 ### 構成（必須）
 1. 冒頭（1行）: {_hook_guide.split(chr(10))[0]}
 2. 中盤（3〜4行）: 龍脈命術的な根拠・核心情報。「なぜ今の{zodiac_name}座にこれが起きるのか」を時期感を伴って具体的に
-3. 締め（1行）: 「わかる人は ✨ をコメントに」「当てはまった人 🌟 置いてって」など絵文字1文字CTA
+3. 締め（1行）: 読者が1行で答えられる問いかけで終える。「当てはまる？AかBコメントで教えて」「当てはまった人 🌟 置いてって」などテキスト2択質問でも絵文字1文字CTAでも可。返信を引き出すことが目的。
 
 ### 文字数
 250〜290文字（実績: 250〜299字帯 v=454avg > 200〜249字帯 v=132avg > 300字超=壊滅的）
@@ -946,10 +950,6 @@ def _build_prompt(
 - **損失回避**: 「無料なのにやらないのは損」という感覚が背中を押す
 - **決断の単純化**: 「生年月日だけでOK」という具体的な簡単さが行動ハードルを下げる
 """
-    elif pattern_id == "persona_episode":
-        # persona_episode は harm_cta の D パターンに統合済み。フォールバック。
-        pattern_extra = ""
-
     elif pattern_id in ("emoji_comment", "type_quiz"):
         import random as _rnd_ec
         # type_quizはemoji_commentの3〜4択submode（パターン統合）
@@ -1040,221 +1040,6 @@ NG: 🔮 vs 🐉（どちらもブランドシンボルで対になっていな�
 
 ### 禁止
 - 5択以上・鑑定URL・長い説明
-"""
-
-    elif pattern_id == "zodiac_rank_cta":
-        import random as _rnd_zrc
-        # カリギュラフックのバリエーション
-        _zrc_hooks = [
-            "今夜0:00までに、自分の星座を確認して。",
-            "知りたくない人は読まないで。今夜の星座別 気の序列。",
-            "正直に言う。今週、気の流れが止まっている星座がある。",
-            "これ、明日になると意味がなくなる情報。今夜だけ。",
-            "読んだ後に後悔するかもしれないけど、教えておく。",
-            "今夜、気が動く星座と動かない星座が分かれている。",
-            "0:00までに読んだほうがいい理由がある。",
-        ]
-        _zrc_hook = _rnd_zrc.choice(_zrc_hooks)
-
-        # ティアのラベルバリエーション
-        _zrc_tier_sets = [
-            ("✨ 気が一番動く層", "⭐ 整いはじめている層", "🌙 今夜は静かに蓄える層"),
-            ("🔥 今週ここが旬", "🌿 流れが整う", "🌀 内側を深める時期"),
-            ("✨ 動くと変わる", "⭐ 準備が整う", "🌙 静観が吉"),
-            ("🔮 気の流れが来ている", "⭐ 流れの途中", "🌿 充電期間"),
-        ]
-        _t1, _t2, _t3 = _rnd_zrc.choice(_zrc_tier_sets)
-
-        # CTA バリエーション（神秘的予言型・時限儀式）
-        _zrc_ctas = [
-            "今夜0:00までに🌟を置いた人だけ、流れが変わる。",
-            "今夜0:00までに🌟を置いた人だけ、何かが動く。",
-            "23:59までに🌟を置いた人に、明日から流れが来る。",
-            "この投稿を見た縁がある。0:00までに🌟を置いた人の流れが、今夜から動き始める。",
-            "自分の星座を見つけた人は、0:00までに🌟を置いて。その人だけ、転機の予兆がある。",
-            "今夜の境界線は0:00。🌟を置いた人の中から、気の流れが変わる人が出る。",
-            "コメントに🌟を置いた人だけ、今夜気の窓が開く。0:00まで。",
-            "見た縁を信じるなら、🌟を今夜0:00までに。置いた人だけ、光が入る隙間ができる。",
-        ]
-        _zrc_cta = _rnd_zrc.choice(_zrc_ctas)
-
-        # タイトルバリエーション
-        _zrc_titles = [
-            "【今夜 気の流れ 星座ランキング】",
-            "【今週の星座別 気の序列】",
-            "【龍脈命術でみる 今夜の星座ティア】",
-            "【今夜の星座別 気の勢いランキング】",
-        ]
-        _zrc_title = _rnd_zrc.choice(_zrc_titles)
-
-        pattern_extra = f"""
-## 星座ティアランキング＋時限CTA型の追加ルール
-
-### 冒頭フック（使用するもの・そのまま使う）
-「{_zrc_hook}」
-
-### タイトル行（使用するもの）
-「{_zrc_title}」
-
-### ティアラベル（この3段階を使う）
-- 1位層: 「{_t1}」
-- 2位層: 「{_t2}」
-- 3位層: 「{_t3}」
-
-### 末尾CTA（そのまま使う）
-「{_zrc_cta}」
-
-### 必須フォーマット（この順で書く）
-1. **冒頭フック（1行）**: 上記フックをそのまま
-2. **タイトル（1行）**: 上記タイトルをそのまま
-3. **空行**
-4. **ティア1（2行）**: ラベル行 → 4星座を「♈ 牡羊座 / ♌ 獅子座 / ♐ 射手座 / ♎ 天秤座」の形式で1行
-5. **空行**
-6. **ティア2（2行）**: 同形式
-7. **空行**
-8. **ティア3（2行）**: 同形式
-9. **空行**
-10. **末尾CTA（1行）**: 上記CTAをそのまま
-
-### 星座配分ルール
-- 12星座すべてをティア1〜3に4つずつ振り分ける
-- 今週・今夜の龍脈命術的な気の流れに合わせて配分すること（テーマ・季節を参考に）
-- 同じ星座が毎回同じティアに入らないよう、龍脈的根拠を持って変化させる
-
-### 心理設計
-- **カリギュラ効果**: 冒頭フックで「読まずにはいられない」衝動を生む
-- **スポットライト効果**: 自分の星座がどの層か即座に探したくなる
-- **時限希少性**: 「0:00まで」「今夜だけ」が損失回避の動機を強化する
-- **絵文字CTA（最重要）**: ✨1文字を置くだけ = emoji_comment型の最小行動原理。コメント率が大幅に上がる
-- **FOMO**: 「✨ を集めてみる」という表現が読者を参加型にする
-
-### 禁止
-- hoshi_betsu のように全星座を縦並びフラット一覧にする（ティア構造が崩れる）
-- ティアごとの星座数が4以外（必ず4/4/4）
-- 末尾CTAを省略・変更する
-- 「保存してね」で締める（このパターンはコメントCTAで締める）
-"""
-
-    elif pattern_id == "ritual_window":
-        import random as _rnd_rw
-        _rw_windows = [
-            ("22:00〜23:59", "今夜0:00"),
-            ("21:00〜23:59", "今夜0:00"),
-            ("23:00〜0:00", "日付が変わる前"),
-            ("20:00〜22:00", "今夜22:00"),
-        ]
-        _rw_window, _rw_deadline = _rnd_rw.choice(_rw_windows)
-        _rw_phenomena = [
-            "気の窓が開いている",
-            "龍脈の流れが集まってくる時間帯",
-            "方位の気が最も活性化する",
-            "運気の切り替わりが起きやすい夜",
-        ]
-        _rw_rituals = [
-            "窓を少しだけ開けて、外の空気を入れてみて",
-            "深呼吸を3回、北か東に向かってやってみて",
-            "今夜の自分に一言だけ声をかけてみて",
-            "寝る前に財布か手帳を決まった場所に置いてみて",
-        ]
-        _rw_ctas = [
-            f"今夜{_rw_deadline}までに🌟を置いた人だけ、道が拓ける。",
-            f"{_rw_deadline}までに🌟を置いた人に、明日から光明が差し込む。",
-            f"🌟を置いた人だけ、この窓から気が流れ込む。{_rw_deadline}まで。",
-            f"今夜の気の窓に🌟を置いて。{_rw_deadline}までに置いた人だけ、流れが変わる。",
-        ]
-        _rw_hooks = [
-            f"今夜{_rw_window}の間だけ、{_rnd_rw.choice(_rw_phenomena)}。",
-            f"今この時間に読んでいる人へ（{_rw_window}限定の話）。",
-            f"今夜{_rw_window}だけ開いている気の窓がある。",
-            f"これを読んでいる時間（{_rw_window}）に意味がある。",
-        ]
-        _rw_hook = _rnd_rw.choice(_rw_hooks)
-        _rw_ritual = _rnd_rw.choice(_rw_rituals)
-        _rw_cta = _rnd_rw.choice(_rw_ctas)
-        pattern_extra = f"""
-## 気の窓型の追加ルール（時限儀式投稿）
-
-### 今回の設定
-- 時間窓: {_rw_window}
-- フック: {_rw_hook}
-- 今夜の儀式アクション: {_rw_ritual}
-
-### 必須構成（この順番で）
-1. **フック（1行）**: {_rw_hook}
-2. **現象の説明（2〜3行）**: なぜこの時間帯に気の窓が開くのか、龍脈命術的な根拠を詩的かつ平易に語る
-3. **今夜の儀式（1行）**: 「{_rw_ritual}」— 誰でも今すぐできる小さな一つの行動
-4. **時限CTA（1行）**: {_rw_cta}
-
-### ルール
-- **150〜200文字**
-- 時間窓（{_rw_window}）を必ず本文に入れる
-- zodiac_rank_ctaとの差別化: 星座ランキングは入れない。純粋な「時間窓×儀式」
-- 儀式は外出不要・体を大きく動かす必要がないシンプルなもの
-- 締めはCTA1行のみ。説明不要
-
-### 心理効果
-- **時限儀式**: 締め切り + 神秘的報酬 = 行動に意味が生まれる
-- **参加の証明**: 🌟コメントが「自分はその時間にいた」という証拠になる
-- **排他性**: 「置いた人だけ」という限定がコメントを価値化する
-"""
-
-    elif pattern_id == "prophecy_serendipity":
-        import random as _rnd_ps
-        _ps_openings = [
-            "今この投稿を見ているあなたへ。",
-            "今夜、これを読んでいるあなたに。",
-            "偶然ここに来たと思っている人へ。",
-            "今このタイミングで見つけた人、聞いて。",
-        ]
-        _ps_fates = [
-            "偶然ではないと思う。",
-            "縁があって、ここに来たと思う。",
-            "気の流れがここに連れてきた。",
-            "このタイミングで読んでいることに、意味がある。",
-        ]
-        _ps_readings = [
-            ("あなたに今、変化の予兆がある", "何かが動き始めようとしているサインだと思う"),
-            ("何かを手放す時期に来ている", "執着を外すと、流れが来る。その直前にいる"),
-            ("動くべきタイミングが近い", "迷っているなら、その迷いがタイミングのサインかもしれない"),
-            ("止まっていたものが、動き始めようとしている", "その準備ができているから、この投稿に来た"),
-        ]
-        _ps_ctas = [
-            "縁を感じた人は、🌟をひとつコメントに。確認しておきたい。",
-            "「来た」と思った人は🌟を。あなたとの縁を記録しておきたい。",
-            "ここまで読んだ縁を大事にしたい。🌟をひとつ置いていって。",
-            "この投稿とあなたの縁を、🌟で教えてもらえると嬉しい。",
-        ]
-        _ps_opening = _rnd_ps.choice(_ps_openings)
-        _ps_fate = _rnd_ps.choice(_ps_fates)
-        _ps_reading_title, _ps_reading_body = _rnd_ps.choice(_ps_readings)
-        _ps_cta = _rnd_ps.choice(_ps_ctas)
-        pattern_extra = f"""
-## 縁の予言型の追加ルール（この投稿を見た縁）
-
-### 今回の設定
-- 書き出し: {_ps_opening} {_ps_fate}
-- 読み: {_ps_reading_title}
-- 展開: {_ps_reading_body}
-
-### 必須構成（この順番で）
-1. **書き出し（1行）**: {_ps_opening} {_ps_fate}
-2. **縁の読み（2〜3行）**: 「このタイミングで見ている人には〜がある」という龍脈的な読みを語る
-   - テーマ: {_ps_reading_title}
-   - 展開: {_ps_reading_body}
-3. **時雨からのメッセージ（1〜2行）**: 「焦らなくていい」「このタイミングを無駄にしないでほしい」など個人に語りかける温かい一言
-4. **CTA（1行）**: {_ps_cta}
-
-### ルール
-- **140〜190文字**
-- 「あなたへ」という2人称で徹底的に個人に語りかける
-- 龍脈的根拠を1行だけ添える（「龍脈命術で見ると〜」）
-- soft_discoveryとの差別化: 概念説明は入れない。「あなたという個人との縁」に集中する
-- 押しつけがましくなく「見てくれたことを喜んでいる」スタンスで
-
-### 心理効果
-- **パラソーシャル**: 「あなたに話しかけている」感覚が強い帰属意識を生む
-- **バーナム効果**: 「このタイミングで読んでいる人」という設定が自己照合を促す
-- **縁の権威**: 占術家が「縁がある」と言うことの重さが行動動機になる
 """
 
     elif pattern_id == "harm_revelation":
@@ -1459,55 +1244,6 @@ NG: 🔮 vs 🐉（どちらもブランドシンボルで対になっていな�
 - 「みなさん」「皆様」などの書き言葉（時雨の語りはカジュアルな一人称）
 """
 
-    elif pattern_id == "faq_myth":
-        import random as _rnd_faq
-        _faq_topics = [
-            ("吉方位って引越しだけ？", "違う。通勤・買い物・散歩など日常の移動でも効く。「大きく動かないと変わらない」が一番の思い込み。"),
-            ("占いは信じないと効かない？", "信じる・信じないは関係ない。方位の気の流れは客観的なもの。信じなくても動けば結果は出る。"),
-            # 懐疑層向けQ&A（新規層への入口として重要）
-            ("科学的根拠はあるの？", "厳密な意味での科学的証明はない。でも「東を向いて仕事したら集中できた」「引越しで縁が変わった」という体験は事実として積み上がる。信じるより試す方が早い。"),
-            ("気のせいじゃないの？", "気のせいかもしれない。でも「気のせい」でも動いた人が変わっていく事実は変わらない。信じるかどうかより、試したかどうかが大事。"),
-            ("他の占いと何が違うの？（初めて知った人へ）", "星座・タロット・数秘は「あなたの性格・運命」を読む。龍脈命術は「あなたが今いる場所・向かう方向」を読む。自分を変えるより向きを変える占い。"),
-            ("吉方位に行ったけど何も変わらなかった", "1回では変わらない。方位は継続的に意識するもの。「行ったのに変わらない」は1回で諦めたケースが多い。"),
-            ("龍脈命術って他の占いと何が違う？", "星座・数秘が「性質を読む」のに対し、龍脈命術は「今いる場所の気の流れ」を読む。自分を変えるより向きを変える占い。"),
-            ("凶方位に住んでいたらもうダメ？", "ダメじゃない。凶方位に住んでいても、吉方位への日常的な移動で補える。住む場所だけが全てではない。"),
-            ("鑑定を受けたほうがいい人は？", "同じ悩みを1年以上繰り返している・大きな決断を控えている人に特に向く。"),
-            ("吉方位は毎月変わる？", "変わる。年間を通じた「大吉方位」と月ごとの「月吉方位」の2層がある。月で変わるのは月命星の動き。"),
-            ("占いって当てにしていいの？", "「当てる」占いじゃなく「方向を示す」占い。当たる・外れるより、動いた後に変わったかどうかが大事。"),
-            ("悪い鑑定結果が出たら怖い", "龍脈命術に「もうダメ」という結果は出ない。悪い流れも「今は整える時期」と読む。判断材料として使うもの。"),
-        ]
-        _faq = _rnd_faq.choice(_faq_topics)
-        _q, _hint = _faq
-        pattern_extra = f"""
-## FAQ・誤解解消型の追加ルール
-
-### 今回のFAQテーマ
-Q: 「{_q}」
-方向性のヒント: {_hint}
-
-### フォーマット（2つのアプローチから選ぶ）
-**Aアプローチ（直接Q&A型）**:
-- 「よく聞かれること。」で始め、Qを1行で提示
-- 「違います。」「答えは〇〇。」で直接回答
-- 龍脈命術的な理由を2〜3行で説明
-- 「試してみて」か「これだけ知っておいて」で締め
-
-**Bアプローチ（誤解→真実型）**:
-- 「よくある誤解があって。」で始め、誤解を1行で示す
-- 「実際は〜」で真実を提示
-- 「この違いを知ってると、行動が変わる」で締め
-
-### ルール
-- **130〜200文字**
-- 難しい専門用語なし・読者を責めないトーン
-- URLは不要（ブランド・教育系）
-- 末尾に「これ、知ってた？」「当てはまった人いる？」などコメント誘発を添えてもよい
-
-### 心理効果
-- **誤解解消**: 「信じていない」「怖い」という心理的ハードルを下げる
-- **権威性**: 誤解に正面から答えることで「知識がある信頼できる占術家」の印象を作る
-- **教育マーケティング**: 知識を与えることでフォロー・保存が増える
-"""
     elif pattern_id == "empathy_thread":
         pattern_extra = f"""
 ## ツリー型（3投稿・続きが読みたくなる構成）の追加ルール
@@ -1730,7 +1466,7 @@ Q: 「{_q}」
 
     # ── 星座ブースト（if/elif チェーン完了後に適用） ─────────────────
     zodiac_boost = extra_hint.get("zodiac_boost") if extra_hint else None
-    if zodiac_boost and pattern_id not in ("zodiac_target", "caligula", "hoshi_betsu", "empathy_thread", "harm_cta"):
+    if zodiac_boost and pattern_id not in ("zodiac_target", "caligula", "empathy_thread", "harm_cta"):
         pattern_extra += f"""
 ## 星座ターゲット（ソフト適用）
 このテーマを特に「{zodiac_boost}」の人に刺さるよう書く。
@@ -1738,9 +1474,9 @@ Q: 「{_q}」
 """
     # ─────────────────────────────────────────────────────────────
 
-    # ── D改善: ペルソナ参照ヒント（persona_episode・harm_cta 以外の全パターンに適用）──
+    # ── D改善: ペルソナ参照ヒント（harm_cta 以外の全パターンに適用）──
     _persona_ref = (extra_hint or {}).get("persona")
-    _patterns_own_persona = {"persona_episode", "harm_cta"}
+    _patterns_own_persona = {"harm_cta"}
     if _persona_ref and pattern_id not in _patterns_own_persona:
         _pg_ref = "女性" if _persona_ref.get("gender") == "female" else "男性"
         _tried_ref = "、".join(_persona_ref.get("tried", [])[:2])
@@ -2090,8 +1826,8 @@ def run(batch_size: int = 5) -> dict:
                 _recent_used = _get_recent_zodiac_deep_signs(history, days=14)
                 _zodiac_val = _pick_zodiac(exclude=_recent_used)
             elif pattern.get("id") in ("caligula", "zodiac_target"):
-                # 直近24時間に同一星座が投稿済みの場合は別の星座を選ぶ（連続重複防止）
-                _recent_zodiac_used = _get_recent_zodiac_signs_any(history, hours=24)
+                # 直近7日に同一星座が投稿済みの場合は別の星座を選ぶ（zodiac_deep同様に延長）
+                _recent_zodiac_used = _get_recent_zodiac_signs_any(history, hours=24 * 7)
                 _zodiac_val = _pick_zodiac(exclude=_recent_zodiac_used)
             else:
                 _zodiac_val = _pick_zodiac()
@@ -2106,22 +1842,15 @@ def run(batch_size: int = 5) -> dict:
             if persona:
                 extra_hint["persona"] = persona
                 recent_persona_ids.append(persona.get("id"))
-        elif pattern.get("id") in ("kyokan", "list", "trivia", "pop_short"):
+        elif pattern.get("id") in ("list", "pop_short"):
             # 50%の確率で星座ブーストを適用（コンテンツを特定星座に自然にターゲット）
             if _random.random() < 0.5:
                 extra_hint["zodiac_boost"] = _pick_zodiac()
-            # D改善: pop_short/kyokan にもペルソナ参照を追加
             persona = _pick_persona(knowledge.get("personas", []), recent_persona_ids)
             if persona:
                 extra_hint["persona"] = persona
                 recent_persona_ids.append(persona.get("id"))
         elif pattern.get("id") == "soft_discovery":
-            # D改善: ターゲット層の言葉を参照して普遍的な問いを書く
-            persona = _pick_persona(knowledge.get("personas", []), recent_persona_ids)
-            if persona:
-                extra_hint["persona"] = persona
-                recent_persona_ids.append(persona.get("id"))
-        elif pattern.get("id") == "persona_episode":
             persona = _pick_persona(knowledge.get("personas", []), recent_persona_ids)
             if persona:
                 extra_hint["persona"] = persona
@@ -2151,7 +1880,10 @@ def run(batch_size: int = 5) -> dict:
 
         _fmt = pattern.get("format", "medium")
         # 単発投稿専用パターン（long/mediumでもスレッド化しない）
-        _SINGLE_POST_ONLY = {"hoshi_betsu", "zodiac_rank_cta"}
+        # kaiun_day: 日付禁止ルールがツリー2投稿目で破られやすい／140-200字設計で分割不要
+        # zodiac_target: 120-180字設計でhook+body分割が成立しない
+        # fuusui_tip: 130-200字の1アクション完結型、分割すると薄くなる
+        _SINGLE_POST_ONLY = {"kaiun_day", "zodiac_target", "fuusui_tip"}
         # medium/long パターンも2投稿ツリー形式で生成（short・単発専用パターンを除く）
         is_thread_pattern = (
             pattern.get("id") in THREAD_PATTERNS
@@ -2193,13 +1925,27 @@ def run(batch_size: int = 5) -> dict:
             # 先頭投稿を代表テキストとして扱う（品質・類似度チェック用）
             representative = thread_posts[0]
             threads_text = format_for_threads(representative, theme=theme)
-            # 類似度チェックはスレッド全文で判定（hookのみだと短すぎて誤棄却が起きる）
             _full_thread_text = "\n".join(format_for_threads(p, theme=theme) for p in thread_posts)
+            # 二段階重複チェック:
+            # 1) full thread text で判定（新しい履歴はフル保存されているため）
+            # 2) hook のみでも判定（旧履歴は text フィールド＝hook のみで保存されているため
+            #    full text との類似度が低くなり重複を見逃す問題を補完する）
             is_dup, sim_score = checker.is_duplicate(_full_thread_text)
+            if not is_dup:
+                is_dup_hook, sim_hook = checker.is_duplicate(threads_text)
+                if is_dup_hook:
+                    is_dup, sim_score = True, sim_hook
             if is_dup:
                 rejected += 1
                 details.append({"status": "rejected_similarity", "similarity": sim_score, "theme": theme})
                 continue
+            # note CTA 追記（reach/engage パターンのスレッドに 60% の確率で追加）
+            _NOTE_CTA_RATE = 0.6
+            _note_cta_variants = knowledge.get("profile", {}).get("note_cta_variants", [])
+            if _note_cta_variants and pattern.get("category") in ("reach", "engage"):
+                import random as _rand_note
+                if _rand_note.random() < _NOTE_CTA_RATE:
+                    thread_posts.append(_rand_note.choice(_note_cta_variants))
             _formatted_posts = [format_for_threads(p, theme=theme) for p in thread_posts]
             post_obj = {
                 "text": threads_text,
@@ -2343,10 +2089,6 @@ def run(batch_size: int = 5) -> dict:
             if _specific_date_pat.search(threads_text) and est_post_time:
                 _expires = (est_post_time.date() + timedelta(days=1)).isoformat()
                 post_obj["expires_on"] = _expires
-            # 「今夜0:00まで」型パターンは当日中に期限切れ（翌日キューで陳腐化するため）
-            if pattern.get("id") in ("zodiac_rank_cta", "ritual_window"):
-                _today_exp = est_post_time.date().isoformat() if est_post_time else datetime.now(JST).date().isoformat()
-                post_obj["expires_on"] = _today_exp
             # ペルソナIDを記録（重複防止のため）
             if extra_hint.get("persona"):
                 post_obj["persona_id"] = extra_hint["persona"].get("id")

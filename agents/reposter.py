@@ -26,6 +26,7 @@ REPOST_MAX_DAYS_AGO = 90      # 最大 90 日前まで遡る
 REPOST_MIN_LIKES = 3          # いいね 3 以上
 REPOST_MIN_VIEWS = 100        # views 100 以上
 REPOST_MAX_PER_RUN = 2        # 1回の実行で最大 2 件追加
+REPOST_COOLDOWN_DAYS = 14     # 同じ元投稿は 14 日に 1 回まで（スパム防止）
 # リポストしないパターン（時事性が高すぎるもの）
 # 時事性高・CTA系・儀式系はリポスト不可（日付・時限表現が意味を失う）
 SKIP_PATTERNS = {
@@ -33,8 +34,6 @@ SKIP_PATTERNS = {
     "yoru_kichi",          # 「明日」表現が古くなる
     "weekly_forecast",     # 週情報は翌週に無意味化
     "menu_guide",          # 料金・URL変更リスク
-    "ritual_window",       # 「今夜0:00まで」が無効化
-    "zodiac_rank_cta",     # 「今夜0:00まで」が無効化
 }
 
 
@@ -84,6 +83,14 @@ def _find_repost_candidates() -> list:
     cutoff_near = (now - timedelta(days=REPOST_MIN_DAYS_AGO)).isoformat()
     cutoff_far  = (now - timedelta(days=REPOST_MAX_DAYS_AGO)).isoformat()
 
+    # REPOST_COOLDOWN_DAYS 以内にリポスト済みの元投稿IDセット（スパム防止）
+    cooldown_cutoff = (now - timedelta(days=REPOST_COOLDOWN_DAYS)).isoformat()
+    recently_reposted_ids = {
+        h.get("original_post_id")
+        for h in history
+        if h.get("is_repost") and h.get("posted_at", "") >= cooldown_cutoff
+    }
+
     candidates = []
     for h in history:
         tid = h.get("threads_post_id")
@@ -96,6 +103,8 @@ def _find_repost_candidates() -> list:
             continue
         if h.get("is_repost"):
             continue  # リポスト済みは除外
+        if tid in recently_reposted_ids:
+            continue  # 同じ元投稿を14日以内に再リポストしない
         if pattern_id == "hoshi_betsu":
             _zmarks = "♈♉♊♋♌♍♎♏♐♑♒♓"
             if not all(z in h.get("text", "") for z in _zmarks):

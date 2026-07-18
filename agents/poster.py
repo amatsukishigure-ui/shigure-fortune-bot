@@ -372,6 +372,13 @@ def run() -> dict:
     thread_posts = post.get("thread_posts")  # ツリー投稿用リスト
     affiliate_link = post.get("affiliate_link", "")
 
+    # 直近14日以内に同一テキストを投稿済みならスキップ（git push 失敗による queue 未保存の重複投稿を防ぐ）
+    _cutoff = (datetime.now(timezone.utc) - timedelta(days=14)).isoformat()
+    _recent_texts = {h.get("text", "") for h in history if h.get("posted_at", "") >= _cutoff}
+    if text in _recent_texts:
+        print(f"⚠️ ポスター: 重複スキップ（直近14日以内に同一テキストを投稿済み）{text[:40]}...")
+        return {"posted": False, "reason": "duplicate_recent"}
+
     # 画像URLを選択（存在しなければNone → テキストのみ）
     image_url = _select_image(post)
 
