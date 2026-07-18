@@ -8829,7 +8829,8 @@
     "posted_at": "2026-07-16T23:11:08.123422+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-07-16T23:11:08.129709"
+    "recorded_at": "2026-07-16T23:11:08.129709",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今夜寝る前に、1つだけ。\n\n寝室の窓を少し開けて、夏の夜風を入れてから閉めてみて。\n龍脈命術では、大暑に向かうこの時期は熱気が気を滞らせる。\n寝る前に古い気を一度流すだけで、眠りの質が変わる。\n\nやってみて、明日の朝の目覚め、教えてね 🌙\n\n#占い #吉方位 #開運",
@@ -8846,7 +8847,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/mystery_1.jpg",
-    "recorded_at": "2026-07-17T01:01:16.227346"
+    "recorded_at": "2026-07-17T01:01:16.227346",
+    "hourly_stats_recorded": true
   },
   {
     "text": "「このまま今週終わっていいのかな」と思っているなら、週の残りの気の流れを知っておいて。\n\n#占い #開運 #運気アップ",
@@ -9054,5 +9056,27 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-07-18T01:01:22.991565"
+  },
+  {
+    "text": "有料鑑定を受けた方に毎回話していることを、今夜だけここに出す。\n\nテーマは「転機を見逃す人の共通点」。\n\n意志が弱いわけじゃない。タイミングが悪いわけでもない。\n\n止まっている理由は──向きにある。\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "有料鑑定を受けた方に毎回話していることを、今夜だけここに出す。\n\nテーマは「転機を見逃す人の共通点」。\n\n意志が弱いわけじゃない。タイミングが悪いわけでもない。\n\n止まっている理由は──向きにある。\n\n#占い #吉方位 #開運",
+      "龍脈命術で1000人以上を見てきて、転機を逃し続ける人にほぼ全員、同じ問題があった。\n\n気の流れが変わる瞬間は、必ず「方位の切り替わり」と重なっている。\nその瞬間に、向かっている方向が吉方位とズレていると、気の波に乗れない。波は来ているのに、体ごと横を向いている状態だ。\n\n龍脈命術は「当てる占い」じゃなく、今いる場所と向かう方向を読む占い。\nだから転機を「待つ」より「向く」ことで動けるようになる。\n\nこれを知ってしまうと、止まっていた理由がわかる。\n\n#占い #吉方位 #開運",
+      "知ってしまった以上、気づかなかったふりはできない。\n\n自分の今の方位と、転機のタイミングを確かめたい方は鑑定で見ます。\n▷ https://coconala.com/services/4292937?ref=threads\n\n#占い #吉方位 #開運"
+    ],
+    "theme": "開運日/天赦日と吉方位",
+    "pattern_id": "harm_revelation",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "pending_at": "2026-07-18T02:44:14.921997",
+    "queued_at": "2026-07-18T02:44:48.422403",
+    "threads_post_id": "17953909644192722",
+    "posted_at": "2026-07-18T02:45:27.361618+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-07-18T02:45:27.369152"
   }
 ]
