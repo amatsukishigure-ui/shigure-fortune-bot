@@ -9190,7 +9190,8 @@
     "posted_at": "2026-07-18T14:26:09.594160+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-07-18T14:26:09.603717"
+    "recorded_at": "2026-07-18T14:26:09.603717",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今日のランチ、どの方角に行くか決めてる？\n\n実はそれ、気の流れを選んでいる。\n\n#占い #吉方位 #開運",
@@ -9351,5 +9352,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/cancer.jpg",
     "recorded_at": "2026-07-19T14:29:31.828532"
+  },
+  {
+    "text": "本来は書くつもりがなかった。\n有料鑑定でしか話していないことを今夜だけ書く。\n\nテーマは「鑑定でほぼ全員に言うこと」。\n\n止まっている理由は──向きの問題だ。\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "本来は書くつもりがなかった。\n有料鑑定でしか話していないことを今夜だけ書く。\n\nテーマは「鑑定でほぼ全員に言うこと」。\n\n止まっている理由は──向きの問題だ。\n\n#占い #吉方位 #開運",
+      "龍脈命術で1000人以上を見てきて、ほぼ全員に伝えてきたことがある。\n\n「動けないのは、意志が弱いからじゃない。」\n\n気が滞っている方位に居続けると、どれだけ努力しても空回りする。\n北東・南西の鬼門ライン上に長く居場所を置いている人ほど、「頑張っているのに変わらない」という状態が続きやすい。\n\n問題は性格でも才能でもなく、今いる場所と向かっている方向が、気の流れと噛み合っていないだけだった。\n\nこれを知ると、止まっていた理由がわかる。\n\n#占い #吉方位 #開運",
+      "知ってしまった以上、気づかなかったふりはできない。\n\n自分の方位を確かめたい方 → https://coconala.com/services/4292937?ref=threads\n\n#占い #吉方位 #開運"
+    ],
+    "theme": "方位の基礎知識/吉方位と凶方位の違い",
+    "pattern_id": "harm_revelation",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "pending_at": "2026-07-19T23:05:14.467487",
+    "queued_at": "2026-07-19T23:05:29.209701",
+    "threads_post_id": "18071974361387044",
+    "posted_at": "2026-07-19T23:06:06.774046+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-07-19T23:06:06.782033"
   }
 ]
