@@ -1,6 +1,10 @@
 {
-  "generated_at": "2026-07-18T22:57:59.177348",
+  "generated_at": "2026-07-19T02:54:16.895730",
   "top_patterns": [
+    [
+      "jisseki_ninshou",
+      68.1818
+    ],
     [
       "ritual_action",
       67.7419
@@ -10,16 +14,12 @@
       66.30435
     ],
     [
+      "harm_revelation",
+      55.5556
+    ],
+    [
       "soft_discovery",
       53.5714
-    ],
-    [
-      "fuusui_tip",
-      50.64515
-    ],
-    [
-      "zodiac_deep",
-      50.07957272727273
     ]
   ],
   "top_themes": [
@@ -58,6 +58,6 @@
       3.6697
     ]
   ],
-  "total_analyzed": 192,
-  "feedback_preview": "# 占術家 時雨 ライター向けフィードバック指示書\n**対象アカウント：** @shigure_fortune（Threads）\n**分析ベース：** 投稿192件のパフォーマンスデータ\n\n---\n\n## 1. 積極的に使うべきパターン・テーマ\n\n### 🔥 優先パターン（スコア順）\n\n- **`ritual_action`（スコア67.7）**\n  → 「今夜〜してみて」「寝る前に1つだけ」など"
+  "total_analyzed": 193,
+  "feedback_preview": "# ライター向けフィードバック指示書\n**アカウント：占術家 時雨 / @shigure_fortune**\n**作成日：次バッチ用**\n\n---\n\n## 1. 積極的に使うべきパターン・テーマ\n\n### 📌 優先パターン（スコア順）\n\n- **`jisseki_ninshou`（実績認証）** スコア68.2\n  - 「鑑定を受けた方が〇〇した」「実際にこう変わった」という実績提示型\n  - 信"
 }
