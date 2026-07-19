@@ -9156,7 +9156,8 @@
     "posted_at": "2026-07-18T12:01:17.722209+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-07-18T12:01:17.729688"
+    "recorded_at": "2026-07-18T12:01:17.729688",
+    "hourly_stats_recorded": true
   },
   {
     "text": "デスクの向きを変えただけで、仕事の流れが変わった人がいる。\n\n龍脈命術では「どこで働くか」より「どこを向いて働くか」を先に見る。\n気は方向に乗って動くから。\n\nデスク、窓側を向いてる？壁向き？コメントで教えて。\n\n#占い #仕事運 #運気アップ",
@@ -9309,5 +9310,22 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/fengshui_abundance.jpg",
     "recorded_at": "2026-07-19T12:01:28.921677"
+  },
+  {
+    "text": "世界が揺れているとき、あなたはどこへ向かっているか。\n\n龍脈命術では天・地・人は繋がっていると見る。外の乱れは、自分の気の流れとも無縁じゃない。\n\n今の気持ちをひとことコメントしてくれたら、今のあなたの気の流れを返信するよ。絵文字だけでも大丈夫。できる限り全員に返信する 🔮\n\n#占い #風水 #開運",
+    "x_text": "世界が揺れているとき、あなたはどこへ向かっているか。\n\n龍脈命術では天・地・人は繋がっていると見る。外の乱れは、自分の気の流れとも無縁じゃない。\n\n今の気持ちをひとことコメントしてくれたら、今のあなたの気の流れを返信するよ。絵文字だけでも大丈夫。できる限り全員に返信する 🔮\n\n#占い #時雨 #龍脈命術 #開運",
+    "theme": "龍脈命術の世界観/龍脈命術の3要素（方位・命・環境）",
+    "pattern_id": "reply_magnet",
+    "quality_score": 7.7,
+    "attempts": 1,
+    "x_eligible": false,
+    "pending_at": "2026-07-08T02:56:42.673718",
+    "queued_at": "2026-07-08T02:57:46.377643",
+    "threads_post_id": "18418096408181699",
+    "posted_at": "2026-07-19T13:06:28.320119+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
+    "recorded_at": "2026-07-19T13:06:28.327442"
   }
 ]
