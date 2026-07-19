@@ -9288,5 +9288,26 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-07-19T09:01:04.285954"
+  },
+  {
+    "text": "新月前日を「晦日月（みそかつき）」と呼ぶ、知ってた？\n\n#占い #龍脈命術",
+    "thread_posts": [
+      "新月前日を「晦日月（みそかつき）」と呼ぶ、知ってた？\n\n気が静まり、次のサイクルへ向けてエネルギーがリセットされる時間帯。\n龍脈命術では、この「静まりの局面」に方位を整えると次の新月から気の流れが変わると見る。\n\n星座ごとに、今手放すべきことがある——\n\n#占い #龍脈命術",
+      "牡羊・獅子・射手：執着を声に出して手放して。\n牡牛・乙女・山羊：南へ意識を向けて眠りに就いて。\n双子・天秤・水瓶：迷っていること、次の新月に預けていい。\n蟹・蠍・魚：完全に休む許可を自分に出して。\n\nあなたは何座？コメントで教えて。\n\n#龍脈命術 #新月 #星座別メッセージ"
+    ],
+    "theme": "星座別メッセージ/星座別・今すべきこと",
+    "pattern_id": "kaiun_day",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "pending_at": "2026-07-07T23:13:14.082742",
+    "queued_at": "2026-07-07T23:13:14.282825",
+    "threads_post_id": "18059403002735132",
+    "posted_at": "2026-07-19T12:01:28.913756+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/fengshui_abundance.jpg",
+    "recorded_at": "2026-07-19T12:01:28.921677"
   }
 ]
