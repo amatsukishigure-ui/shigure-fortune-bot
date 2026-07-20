@@ -8,6 +8,7 @@
 """
 
 import json
+import random
 import time
 import requests
 from datetime import datetime, timedelta
@@ -103,39 +104,22 @@ def _post_reply(comment_id: str, text: str) -> str | None:
         return None
 
 
-_CARD_PICK_MESSAGES = {
-    "A": (
-        "🌊",
-        "流れに乗りたい気持ちがある時期だね。\n"
-        "龍脈命術では「流れの気」は北東〜東の方位にある。今日、その方向に少し意識を向けてみて。\n"
-        "小さな一歩でいい。"
-    ),
-    "B": (
-        "🔥",
-        "加速の気が来ている。\n"
-        "龍脈命術で見ると南〜東南は「躍動の気」が強い方位。今いる場所からその方向に動いてみると、勢いがさらに増す。"
-    ),
-    "C": (
-        "🌿",
-        "今は整える時期にいる。\n"
-        "龍脈命術では西〜北西が「受け取りの気」の方位。静かな場所をそちらに作ると、答えが自然と見えてくる。"
-    ),
-    "🌊": (
-        "🌊",
-        "流れに乗りたい時期だね。\n"
-        "龍脈命術では北東〜東の方位が「流れの気」。今日その方向に意識を向けてみて。"
-    ),
-    "🔥": (
-        "🔥",
-        "加速の気が来ている。\n"
-        "龍脈命術で南〜東南は「躍動の気」の方位。その方向に動くとさらに勢いが増す。"
-    ),
-    "🌿": (
-        "🌿",
-        "整える時期にいる。\n"
-        "龍脈命術で西〜北西は「受け取りの気」の方位。そちらに静かな場所を作ると答えが見えてくる。"
-    ),
+_CARD_PICK_CONTEXT = {
+    "A":  ("🌊", "流れに乗りたいが踏み出せていない状態",   "北東〜東（流れの気）"),
+    "B":  ("🔥", "動き始めた・加速したい状態",             "南〜東南（躍動の気）"),
+    "C":  ("🌿", "いったん整えてじっくり動きたい状態",     "西〜北西（受け取りの気）"),
+    "🌊": ("🌊", "流れに乗りたいが踏み出せていない状態",   "北東〜東（流れの気）"),
+    "🔥": ("🔥", "動き始めた・加速したい状態",             "南〜東南（躍動の気）"),
+    "🌿": ("🌿", "いったん整えてじっくり動きたい状態",     "西〜北西（受け取りの気）"),
 }
+
+# 返信スタイルのバリエーション（毎回ランダムに選ぶ）
+_REPLY_STYLES_CARD = [
+    "相手の状態を受け止め→方位と今日できる1アクション→軽い問いかけ",
+    "その選択肢を選んだ理由を想像して共感→龍脈的な見立て1行→続きを促す",
+    "「その感覚、わかるな」という共鳴から入り→方位アドバイスを短く→何か変化があったら聞かせてという締め",
+    "状態を一言で言い当てる（「ちょうど転換点にいる感じ」など）→龍脈的理由1行→問いかけ",
+]
 
 
 def _is_card_pick_comment(text: str) -> str | None:
@@ -144,41 +128,61 @@ def _is_card_pick_comment(text: str) -> str | None:
     for key in ("A", "B", "C", "🌊", "🔥", "🌿"):
         if t == key or t == key.upper():
             return key
-    # 「Aです」「Bかな」など軽い付加語も拾う
     for key in ("A", "B", "C", "🌊", "🔥", "🌿"):
         if t.startswith(key) and len(t) <= len(key) + 5:
             return key
     return None
 
 
-def _generate_card_pick_reply(choice_key: str, profile: dict) -> str:
-    emoji, msg = _CARD_PICK_MESSAGES.get(choice_key, ("🔮", "龍脈命術で気の流れを確認してみて。"))
-    line_url = profile.get("line_url", "https://lin.ee/TJg5dru")
-    return f"{emoji} {msg}\nもっと詳しく知りたい人は LINE {line_url} へ。"
+def _generate_card_pick_reply(choice_key: str, comment_text: str, profile: dict) -> str:
+    ctx = _CARD_PICK_CONTEXT.get(choice_key, ("🔮", "気の流れを確認したい状態", "東〜南東"))
+    emoji, state_desc, direction = ctx
+    style = random.choice(_REPLY_STYLES_CARD)
+
+    client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+    prompt = f"""あなたは占術家「時雨（しぐれ）」です。
+カード選択の投稿に「{comment_text}」というコメントが届きました。
+
+【選ばれたカード】
+絵文字: {emoji}
+選んだ人の状態: {state_desc}
+龍脈的な吉方位: {direction}
+
+【今回の返信スタイル】
+{style}
+
+【ルール】
+- 60〜110字で完結させる
+- 「ありがとうございます」は使わない
+- {emoji} の絵文字を冒頭1文字で使う（それ以外の絵文字は使わない）
+- コメント内容に何か具体的な言葉があれば1語拾って受け止める（なければ状態を受け止める）
+- 龍脈命術・方位・気の流れの視点を必ず含める（でも説明口調にしない）
+- 末尾に「何か変化あったら教えてね」「どんな感じだった？」など軽い問いかけを入れる
+- LINEへの誘導は不要（この返信では入れない）
+- 語尾は「〜だよ」「〜ね」「〜かも」「〜かな」など柔らかく
+
+返信文のみ出力してください。"""
+
+    resp = client.messages.create(
+        model=MODEL_LIGHT,
+        max_tokens=200,
+        messages=[{"role": "user", "content": prompt}],
+    )
+    return resp.content[0].text.strip()
 
 
-_HESITATION_BREAK_REPLIES = {
-    "A": (
-        "💰",
-        "まずLINEで話すのは完全無料。申込みも不要だし、話してみてやっぱり違うと思えばそれでいい。\n"
-        "お金のことを気にせずに、まず話しかけてみて。\n"
-        "▷ LINE {line_url}",
-    ),
-    "B": (
-        "🔮",
-        "「本当に変わるか」という不安は正直だと思う。\n"
-        "変わった人の話を直接聞かせるから、LINEで話してみて。\n"
-        "変わらなかったら変わらなかったで、それも正直に伝える。\n"
-        "▷ LINE {line_url}",
-    ),
-    "C": (
-        "💬",
-        "生年月日だけでいい。あとは私が聞く。\n"
-        "「何を話せばいいかわからない」人ほど、見えてくるものが多かったりする。\n"
-        "準備しなくていいから、そのままLINEに来て。\n"
-        "▷ LINE {line_url}",
-    ),
+_HESITATION_CONTEXT = {
+    "A": ("💰", "お金・料金の心配", "LINE相談は無料であること、申込み不要で気軽に話せること"),
+    "B": ("🔮", "本当に変わるか・効果への不安", "変化した人の経験を自分の言葉で語り、変わらなくても正直に言うという誠実さ"),
+    "C": ("💬", "何を話せばいいかわからない", "生年月日だけでいい・何も準備しなくていい・話しながら一緒に見えてくる"),
 }
+
+_REPLY_STYLES_HESITATION = [
+    "不安を受け止め→その不安の解消を1行→LINEへの自然な誘い",
+    "「その気持ち、わかる」から始め→ハードルを下げる具体的な一言→最後に誘導",
+    "相手の不安を一言で言い当てる→「だから〇〇で大丈夫」という安心の根拠→LINE案内",
+    "共感から入り→逆転の視点1行（不安な人ほど向いてる、など）→誘導",
+]
 
 
 def _is_hesitation_comment(text: str) -> str | None:
@@ -201,12 +205,37 @@ def _is_hesitation_comment(text: str) -> str | None:
 
 
 def _generate_hesitation_reply(choice_key: str, profile: dict) -> str:
-    emoji, msg_template = _HESITATION_BREAK_REPLIES.get(
-        choice_key, ("🔮", "迷いは迷いのまま来てくれていい。まずLINEで話してみて。\n▷ LINE {line_url}")
-    )
+    ctx = _HESITATION_CONTEXT.get(choice_key, ("🔮", "何となく踏み出せない気持ち", "話しながら一緒に見えてくることを伝える"))
+    emoji, concern_desc, resolution_hint = ctx
+    style = random.choice(_REPLY_STYLES_HESITATION)
     line_url = profile.get("line_url", "https://lin.ee/TJg5dru")
-    msg = msg_template.format(line_url=line_url)
-    return f"{emoji} {msg}"
+
+    client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+    prompt = f"""あなたは占術家「時雨（しぐれ）」です。
+「{concern_desc}」という不安を持つ人が選択肢を選びました。LINEへの相談に背中を押す返信を書いてください。
+
+【今回の返信スタイル】
+{style}
+
+【伝えたいこと（自然に含める）】
+{resolution_hint}
+
+【ルール】
+- 70〜120字で完結させる
+- {emoji} の絵文字を冒頭1文字で使う
+- 押しつけがましくなく、温かく、迷っている人に寄り添う
+- 最後に「LINE {line_url}」へ自然に誘導する（URL丸出しでも可）
+- 「ありがとうございます」は使わない
+- 語尾は「〜だよ」「〜ね」「〜から」「〜していい」など柔らかく
+
+返信文のみ出力してください。"""
+
+    resp = client.messages.create(
+        model=MODEL_LIGHT,
+        max_tokens=200,
+        messages=[{"role": "user", "content": prompt}],
+    )
+    return resp.content[0].text.strip()
 
 
 def _generate_reply(comment_text: str, post_text: str, profile: dict, pattern_id: str = "") -> str:
@@ -219,7 +248,7 @@ def _generate_reply(comment_text: str, post_text: str, profile: dict, pattern_id
     if pattern_id == "card_pick":
         choice = _is_card_pick_comment(comment_text)
         if choice:
-            return _generate_card_pick_reply(choice, profile)
+            return _generate_card_pick_reply(choice, comment_text, profile)
 
     # hesitation_break: 踏み切れない理由 A/B/C には専用返信
     if pattern_id == "hesitation_break":
@@ -238,6 +267,15 @@ def _generate_reply(comment_text: str, post_text: str, profile: dict, pattern_id
         else "- 鑑定への直接誘導は不要（自然な会話の中で信頼を積む）"
     )
 
+    _REPLY_STYLES = [
+        "受け止め共感→龍脈の視点で状況を一言→短い問いかけ",
+        "コメントの1語を引用して受け止め→方位・気の流れ解釈1行→余韻のある締め",
+        "驚きや嬉しさを最初に→その人の状況に合った気の流れ解釈→「何か変化あったら教えてね」",
+        "相手の状況を1行で言い当てる→龍脈命術的な読み→背中を押す一言",
+        "シンプルな共感1行→吉方位ヒントを自然に→軽い問いかけ",
+    ]
+    style = random.choice(_REPLY_STYLES)
+
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
     prompt = f"""あなたは占術家「時雨（しぐれ）」です。
 Threadsへの投稿にコメントが届きました。時雨として返信してください。
@@ -248,13 +286,16 @@ Threadsへの投稿にコメントが届きました。時雨として返信し�
 【届いたコメント】
 {comment_text}
 
+【今回の返信スタイル（これに従う）】
+{style}
+
 【返信ルール】
 - 60〜130字で返す
 - 「ありがとうございます」は使わない（代わりに「嬉しい」「届いてよかった」など）
 - コメントの具体的な言葉を1つ拾って受け止める（「〜って感じてるんだね」など）
-- 龍脈命術・吉方位・気の流れの視点から、その人の状況に合った一言を添える
-- 【ブランド教育】自然なタイミングで「龍脈命術は方位と気の流れで動く方向を示す占い」という視点を1行だけ忍ばせる。ただし説明口調は禁止。「龍脈命術では〜なんだよ」のような会話の流れで出す。すべての返信に無理に入れなくていい（文脈に合う場合のみ）。
-- 返信の末尾に軽い問いかけを入れてスレッドを続かせる（「どんなこと感じてた？」「何か変化があったら教えてね」など）
+- 龍脈命術・吉方位・気の流れの視点を必ず含める（説明口調は禁止）
+- 龍脈命術の説明は文脈に合う場合のみ1行で自然に入れる（無理に入れない）
+- 返信の末尾に軽い問いかけを入れてスレッドを続かせる
 {cta_rule}
 - 語尾は「〜だよ」「〜ね」「〜かも」など柔らかく
 - 絵文字は0〜1個
@@ -269,6 +310,26 @@ Threadsへの投稿にコメントが届きました。時雨として返信し�
     return resp.content[0].text.strip()
 
 
+def _classify_nested_comment(text: str) -> str:
+    """ネストコメントの種別を判定：high_interest / question / casual"""
+    question_words = ["どうすれ", "どうやって", "なぜ", "なんで", "教えて", "知りたい", "気になる", "具体的", "詳しく", "相談"]
+    casual_words = ["ありがとう", "感謝", "笑", "w", "🙏", "😊", "なるほど", "そうなんだ", "へえ"]
+    high_words = ["やってみたい", "試してみたい", "お願い", "お願いしたい", "鑑定", "申し込み", "LINE"]
+
+    text_lower = text.lower()
+    if any(w in text for w in high_words):
+        return "high_interest"
+    if (any(w in text for w in question_words) and "？" in text) or text.endswith("？") or text.endswith("?"):
+        return "question"
+    if any(w in text_lower for w in casual_words) and len(text) < 30:
+        return "casual"
+    if "？" in text or "?" in text:
+        return "question"
+    if len(text) < 20:
+        return "casual"
+    return "high_interest"
+
+
 def _generate_closing_reply(
     nested_comment: str,
     original_comment: str,
@@ -276,15 +337,31 @@ def _generate_closing_reply(
     profile: dict,
 ) -> str:
     """
-    自分の返信に届いた再コメントへのソフトクロージング返信を生成する。
-    50〜90字、自然にLINEまたはプロフィールへ誘導。
+    自分の返信に届いた再コメントへの返信を生成する。
+    コメントの種別によってCTAを変える：
+    - high_interest/question → 自然にLINEへ誘導
+    - casual → 温かく受け止めてCTA不要
     """
     line_url = profile.get("line_url", "https://lin.ee/TJg5dru")
+    comment_type = _classify_nested_comment(nested_comment)
+
+    if comment_type == "casual":
+        cta_instruction = "- LINEやプロフィールへの誘導は不要。会話を温かく受け止めて自然に締める。"
+        length_rule = "- 30〜60字で完結させる（短く温かく）"
+    elif comment_type == "question":
+        cta_instruction = (
+            f"- 質問に1行で答えたあと、「もっと詳しくはLINE（{line_url}）でも聞けるよ」と軽く添える"
+        )
+        length_rule = "- 60〜100字で完結させる"
+    else:  # high_interest
+        cta_instruction = (
+            f"- 「気になることがあれば」「もっと話したいなら」など軽いきっかけを添えてLINE（{line_url}）へ案内する"
+        )
+        length_rule = "- 50〜90字で完結させる"
 
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
     prompt = f"""あなたは占術家「時雨（しぐれ）」です。
 Threadsでの会話が続いています。相手からまた返信が届きました。
-自然な流れで「より詳しく話したい場合はLINEかプロフィールへ」とソフトに案内してください。
 
 【元の投稿】
 {post_text[:150]}
@@ -296,9 +373,9 @@ Threadsでの会話が続いています。相手からまた返信が届きま�
 {nested_comment}
 
 【ルール】
-- 50〜90字で完結させる
+{length_rule}
 - 押しつけがましくなく、温かく、会話の自然な続きとして書く
-- 「もっと話したいなら」「気になることがあれば」など軽いきっかけを添えてLINE（{line_url}）またはプロフィールのリンクへ案内する
+{cta_instruction}
 - 「ありがとうございます」は使わない
 - 語尾は「〜だよ」「〜ね」「〜かも」など柔らかく
 - 絵文字は0〜1個
