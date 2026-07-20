@@ -9381,7 +9381,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-19T23:06:06.782033"
+    "recorded_at": "2026-07-19T23:06:06.782033",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♎天秤座さんへ。\n\n今の天秤座には「判断の気」が集まってきている。ずっと答えを出せずにいたことが、動き出すタイミングにある。ただ、天秤座が陥りやすいのは「もう少し情報を集めてから」と先送りすること。龍脈命術で見ると、今は考える時間より向かう方向を整えることのほうが結果を変える。\n\n・東方向 → 朝のうちに東向きの窓を開けて10分過ごす。決断に必要な「踏み出す気」が入ってくる\n\nもう一点、避けてほしい方位がある──\n\n#占い #風水 #開運",
@@ -9513,5 +9514,23 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-07-20T15:17:57.346577"
+  },
+  {
+    "text": "♐射手座で、今「このままでいいのか」がずっと頭にある人だけ読んで。\n\nそれ以外の人には関係ない話をする。\n\n射手座は今、龍脈の流れが大きく切り替わるタイミングに入ってる。\nこのときに「迷ったまま止まる」のが一番もったいない配置。\n\n動きたいのに動けないのは、意志が弱いんじゃなくて\n自分に合った方角がわかっていないだけ。\n\n方位がわかると、迷いの正体が見える。\n正体が見えたら、人は動ける。\n\n射手座の今の気の流れ、プロフィールの鑑定メニューから観れるよ。",
+    "theme": "メニュー誘導/鑑定メニュー案内",
+    "pattern_id": "caligula",
+    "quality_score": 8.1,
+    "attempts": 1,
+    "x_eligible": false,
+    "is_repost": true,
+    "original_post_id": "17928834984101044",
+    "pending_at": "2026-07-20T23:11:31.285006",
+    "queued_at": "2026-07-20T23:12:47.088319",
+    "threads_post_id": "18070811834407381",
+    "posted_at": "2026-07-20T23:12:54.424469+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-07-20T23:12:54.432328"
   }
 ]
