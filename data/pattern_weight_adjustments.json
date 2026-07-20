@@ -1,12 +1,11 @@
 {
-  "updated_at": "2026-07-20T10:11:15.114101",
+  "updated_at": "2026-07-20T13:53:33.654129",
   "lookback_days": 30,
   "adjustments": {
-    "pop_short": 0.5,
-    "caligula": 1.409,
+    "caligula": 1.391,
     "list": 0.5,
     "ichi_gon": 0.5,
-    "zodiac_target": 0.941,
+    "zodiac_target": 0.945,
     "weekly_forecast": 0.5,
     "hoshi_betsu": 0.5,
     "kaiun_day": 0.5,
