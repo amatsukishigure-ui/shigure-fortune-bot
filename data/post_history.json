@@ -9422,7 +9422,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-20T06:01:17.199252"
+    "recorded_at": "2026-07-20T06:01:17.199252",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♏ 蠍座さん、現在お金の不安がない人はこの先読まなくていい。\n\n「頑張っているのに貯まらない」\n「周りは資産を増やしてるのに自分だけ取り残されてる気がする」\n\nこれ、能力の差じゃない。\n\n蠍座は現在、龍脈命術で見ると財の気が南西に偏っている時期。お金を動かす方位とタイミングがずれていると、同じ努力でも流れに乗れない。\n\n景気がいいニュースを見るたびに焦る人ほど、まず自分の金運の「向き」を確認してみて。\n\n動く前に、向きを知る。それだけで次の判断が変わる。\n\n#占い #龍脈命術",
@@ -9440,7 +9441,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-20T09:01:10.581062"
+    "recorded_at": "2026-07-20T09:01:10.581062",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♏ 蠍座さん、占いに興味ない人にこそ一度だけ聞いてほしいことがある。\n\n#占い #吉方位 #龍脈命術",
@@ -9570,5 +9572,22 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-07-21T06:02:40.723471"
+  },
+  {
+    "text": "収入が変わった人の話、正直に言う。\n\n転職も副業も、何も変えていない。\n変えたのは、動くタイミングと向かう方位だけだった。\n\n龍脈命術は「当たる占い」じゃなく、「動くための占い」。\n気の流れが整った方向に動くと、同じ行動でも結果の重さが変わる。\n\nそれを体感した人ほど、「なぜあの頃の自分は空回りしていたのか」がわかる、と言う。\n\n努力してたのに届かなかった経験、AとBどっちに近い？\nA. 思い当たる　B. 今まさにその最中\n\n#占い #転職 #仕事運",
+    "x_text": "収入が変わった人の話、正直に言う。\n\n転職も副業も、何も変えていない。\n変えたのは、動くタイミングと向かう方位だけだった。\n\n龍脈命術は「当たる占い」じゃなく、「動くための占い」。\n気の流れが整った方向に動くと、同じ行動でも結果の重さが変わる。\n\nそれを体感した人ほど、「なぜあの頃の自分は空回りしていたのか」がわかる、と言う。\n\n努力してたのに届かなかった経験、AとBどっちに近い？\nA. 思い当たる　B. 今まさにその最中\n\n#占い #時雨 #金運 #風水",
+    "theme": "鑑定エピソード/金運・収入が変わった話",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.8,
+    "attempts": 1,
+    "x_eligible": true,
+    "pending_at": "2026-07-21T09:32:06.271564",
+    "queued_at": "2026-07-21T09:32:06.439541",
+    "threads_post_id": "18110871061961218",
+    "posted_at": "2026-07-21T09:32:16.836867+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
+    "recorded_at": "2026-07-21T09:32:16.844424"
   }
 ]
