@@ -9465,7 +9465,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/scorpio.jpg",
-    "recorded_at": "2026-07-20T10:16:58.825758"
+    "recorded_at": "2026-07-20T10:16:58.825758",
+    "hourly_stats_recorded": true
   },
   {
     "text": "「あの人と、またすれ違った」と感じてから、何ヶ月経った？\n\n縁は、タイミングではなく気の流れで動く。\n龍脈命術では、向かう方向が整ったとき、止まっていた縁が静かに動き始める。\n\n最近「あれ、縁が動いた気がする」と「まだ止まってる感じ」、どっちに近い？コメントで教えて。\n\n#占い #恋愛運 #縁",
@@ -9482,7 +9483,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
-    "recorded_at": "2026-07-20T12:01:14.030613"
+    "recorded_at": "2026-07-20T12:01:14.030613",
+    "hourly_stats_recorded": true
   },
   {
     "text": "夏の盛りに向かっている今、熱はあるのに動き方がわからない——そんな感覚、ない？\n\n方位学では「南」は情熱と名誉の方角。\n火の気が最も強くなるこの季節に、南を背にして動いているか前にして動いているかで、同じ熱量でも届く距離が変わる。\n\n「南に背を向けがち」と「南に向かって動いてる」、どっちに近い？コメントで教えて。\n\n#占い #吉方位 #開運",
@@ -9589,5 +9591,22 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
     "recorded_at": "2026-07-21T09:32:16.844424"
+  },
+  {
+    "text": "♑ 山羊座さんへ。\n\n今週末、南西の方角を意識してみて。\n\n山羊座は今、積み上げてきたものが評価されやすい気の配置に入ってる。\nただし「いつも通りの道」ばかり選んでると、その追い風を受け取れない。\n\nランチや買い物、ちょっとした用事でいい。\n南西方向に足を運ぶだけで、仕事や人間関係に小さな転機が差し込みやすくなるよ。\n\nもうひとつ。\n今週は「誰かに頼る」が開運の鍵。\n全部自分で背負おうとしがちな山羊座だからこそ、一言お願いしてみるだけで気の流れが変わる。\n\n動ける人から運は変わっていくよ。",
+    "theme": "吉方位・風水/星座別吉方位",
+    "pattern_id": "zodiac_target",
+    "quality_score": 8.4,
+    "attempts": 1,
+    "x_eligible": false,
+    "is_repost": true,
+    "original_post_id": "17865689205564728",
+    "pending_at": "2026-07-20T10:14:49.993796",
+    "queued_at": "2026-07-20T10:16:05.451759",
+    "threads_post_id": "18081321911265030",
+    "posted_at": "2026-07-21T13:28:36.261738+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-07-21T13:28:36.269479"
   }
 ]
