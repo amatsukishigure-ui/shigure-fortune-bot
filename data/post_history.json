@@ -9558,7 +9558,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/gemini.jpg",
-    "recorded_at": "2026-07-21T02:56:23.249797"
+    "recorded_at": "2026-07-21T02:56:23.249797",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♒水瓶座で「トイレ掃除はしてる」と思っている人は、この先を読まないほうがいい。読むと今週から気になって仕方なくなるから。\n\n水瓶座は今、生活空間の\"水回りの気\"が運気に直結しやすい配置に入っている。\n\nトイレやバスルームは、家の中で最も気が淀みやすい場所。\n掃除しているつもりでも、換気が甘かったり、使わないボトルが棚に並んでいるだけで、気の流れは止まる。\n\n龍脈命術では、水回りの停滞は「判断力の鈍り」として出やすい。\n\n最近なんとなく決断が遅い、動き出せないと感じているなら、まずトイレの蓋を閉めて、バスルームの不要なものを3つ減らしてみて。\n\n気の通り道ができると、思考もちゃんと動き出すよ。",
@@ -9665,5 +9666,22 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/pisces.jpg",
     "recorded_at": "2026-07-22T02:53:43.076648"
+  },
+  {
+    "text": "♊双子座さんへ。\n\n転職や異動を迷ってるなら、今月中に南東を意識して動いてみて。\n\n以前、双子座の方を鑑定した時も「迷いすぎて動けない」と言っていたけど、南東の吉方位を使った翌月に面接が決まったよ。\n\n双子座は情報が多いぶん迷いやすい星。でも今の配置、風は確実にきてる。\n\n考えるより先に、南東のカフェで求人を開いてみて。",
+    "theme": "鑑定エピソード/転職・仕事",
+    "pattern_id": "zodiac_target",
+    "quality_score": 8.0,
+    "attempts": 1,
+    "x_eligible": false,
+    "is_repost": true,
+    "original_post_id": "18296266972304062",
+    "pending_at": "2026-07-22T06:00:13.396861",
+    "queued_at": "2026-07-22T06:01:25.413042",
+    "threads_post_id": "18217478476334059",
+    "posted_at": "2026-07-22T06:01:31.232766+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-07-22T06:01:31.239934"
   }
 ]
