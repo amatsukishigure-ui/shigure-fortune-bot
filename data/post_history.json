@@ -9538,7 +9538,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-20T23:12:54.432328"
+    "recorded_at": "2026-07-20T23:12:54.432328",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♊ 双子座で今、金運・収入が気になっている人へ。\n\n努力はしてる。でも、なぜかお金の流れだけが変わらない——それ、向きがズレてる可能性がある。\n\n今の双子座の吉方位は北東。財布を北側に置く、北東向きに座って作業するだけで気の通り道が整いやすくなるよ。\n\n龍脈命術は「当てる」占いじゃなく、「動ける」占い。収入の流れも、場所と向きから変えていく。\n\n読んだ ♊ さん、🌟 でいいから置いてみて。\n\n#占い #恋愛運 #縁",
@@ -9645,5 +9646,24 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/general.jpg",
     "recorded_at": "2026-07-22T01:01:09.514170"
+  },
+  {
+    "text": "♓ 魚座で今、転職・キャリアが気になっている人へ。\n\n頑張ってるのに結果が出ない、それ意志の問題じゃない。\n龍脈命術で見ると、魚座は今、北西の気が整いやすい時期。\n転職活動・キャリアの相談は、北西方向にある場所で動くと流れが変わりやすいよ。\nまず今週、北西にあるカフェや図書館で書類を見直してみて。\n\n魚座さん、今これ当てはまってる？コメントで教えて。\n\n#占い #転職 #仕事運",
+    "x_text": "♓ 魚座で今、転職・キャリアが気になっている人へ。\n\n頑張ってるのに結果が出ない、それ意志の問題じゃない。\n龍脈命術で見ると、魚座は今、北西の気が整いやすい時期。\n転職活動・キャリアの相談は、北西方向にある場所で動くと流れが変わりやすいよ。\nまず今週、北西にあるカフェや図書館で書類を見直してみて。\n\n魚座さん、今これ当てはまってる？コメントで教えて。\n\n#占い #時雨 #龍脈命術 #開運",
+    "theme": "転機のサイン/頑張っているのに結果が出ない理由",
+    "pattern_id": "zodiac_target",
+    "quality_score": 8.0,
+    "attempts": 1,
+    "x_eligible": false,
+    "persona_id": "p001",
+    "zodiac_boost": "♓魚座",
+    "pending_at": "2026-07-20T15:17:21.393640",
+    "queued_at": "2026-07-20T15:17:51.264908",
+    "threads_post_id": "18110774080781570",
+    "posted_at": "2026-07-22T02:53:43.070605+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/pisces.jpg",
+    "recorded_at": "2026-07-22T02:53:43.076648"
   }
 ]
