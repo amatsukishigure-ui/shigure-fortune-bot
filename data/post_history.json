@@ -9797,7 +9797,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/cancer.jpg",
-    "recorded_at": "2026-07-22T15:10:03.561618"
+    "recorded_at": "2026-07-22T15:10:03.561618",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♐射手座で、今「方角を変えれば変わるかも」と思い始めた人以外は、読まなくていい。\n\n#占い #吉方位 #龍脈命術",
@@ -9913,5 +9914,24 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-07-23T15:15:34.371859"
+  },
+  {
+    "text": "♉ 牡牛座で今、恋愛や縁が気になっている人へ。\n\n「好きな人ができても、なんか一歩が踏み出せない」\nそれ、意志の問題じゃなくて気の流れが滞ってるだけかもしれない。\n\n今の牡牛座、南西の方角に縁をつなぐ気が動いてるよ。\n言葉を大切にして。気持ちを伝えようか迷ってるなら、今がそのタイミング。\n\n龍脈命術は「当たる占い」より「動ける占い」。\n言葉にした瞬間に気が動き出す。\n\n牡牛座さん、今これ当てはまってる？コメントで教えて🌙\n\n#占い #恋愛運 #縁",
+    "x_text": "♉ 牡牛座で今、恋愛や縁が気になっている人へ。\n\n「好きな人ができても、なんか一歩が踏み出せない」\nそれ、意志の問題じゃなくて気の流れが滞ってるだけかもしれない。\n\n今の牡牛座、南西の方角に縁をつなぐ気が動いてるよ。\n言葉を大切にして。気持ちを伝えようか迷ってるなら、今がそのタイミング。\n\n龍脈命術は「当たる占い」より「動ける占い」。\n言葉にした瞬間に気が動き出す。\n\n牡牛座さん、今これ当てはまってる？コメントで教えて🌙\n\n#占い #時雨 #引き寄せ #龍脈命術",
+    "theme": "引き寄せ/言葉と気の流れ",
+    "pattern_id": "zodiac_target",
+    "quality_score": 7.3,
+    "attempts": 1,
+    "x_eligible": false,
+    "persona_id": "p008",
+    "zodiac_boost": "♉牡牛座",
+    "pending_at": "2026-07-23T23:09:57.367541",
+    "queued_at": "2026-07-23T23:10:10.772659",
+    "threads_post_id": "18170562586446299",
+    "posted_at": "2026-07-23T23:10:19.889580+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
+    "recorded_at": "2026-07-23T23:10:19.896610"
   }
 ]

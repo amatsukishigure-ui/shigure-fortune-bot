@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-07-23T15:09:50.067573",
+  "updated_at": "2026-07-23T23:05:18.513716",
   "lookback_days": 30,
   "adjustments": {
-    "caligula": 1.321,
+    "caligula": 1.318,
     "zodiac_deep": 2.0,
     "zodiac_target": 1.025,
     "list": 0.5,
