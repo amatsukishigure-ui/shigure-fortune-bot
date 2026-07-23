@@ -9650,7 +9650,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/general.jpg",
-    "recorded_at": "2026-07-22T01:01:09.514170"
+    "recorded_at": "2026-07-22T01:01:09.514170",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♓ 魚座で今、転職・キャリアが気になっている人へ。\n\n頑張ってるのに結果が出ない、それ意志の問題じゃない。\n龍脈命術で見ると、魚座は今、北西の気が整いやすい時期。\n転職活動・キャリアの相談は、北西方向にある場所で動くと流れが変わりやすいよ。\nまず今週、北西にあるカフェや図書館で書類を見直してみて。\n\n魚座さん、今これ当てはまってる？コメントで教えて。\n\n#占い #転職 #仕事運",
@@ -9669,7 +9670,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/pisces.jpg",
-    "recorded_at": "2026-07-22T02:53:43.076648"
+    "recorded_at": "2026-07-22T02:53:43.076648",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♊双子座さんへ。\n\n転職や異動を迷ってるなら、今月中に南東を意識して動いてみて。\n\n以前、双子座の方を鑑定した時も「迷いすぎて動けない」と言っていたけど、南東の吉方位を使った翌月に面接が決まったよ。\n\n双子座は情報が多いぶん迷いやすい星。でも今の配置、風は確実にきてる。\n\n考えるより先に、南東のカフェで求人を開いてみて。",
@@ -9814,5 +9816,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-07-22T23:17:36.904626"
+  },
+  {
+    "text": "♌ 獅子座で今、恋愛・縁が気になっている人へ。\n\n「誰かと繋がりたいのに、なぜかうまくいかない」\nその感覚、気の向きが合っていないだけかもしれない。\n\n今、獅子座は南西の気が活きている。\n龍脈命術では、縁は\"向かう方向\"で引き寄せるもの。\n出会いや再縁を望むなら、南西への小さな外出を意識してみて。\n\n「そうそう」と思った人は 🌟 を置いてって。\n\n#占い #恋愛運 #縁",
+    "x_text": "♌ 獅子座で今、恋愛・縁が気になっている人へ。\n\n「誰かと繋がりたいのに、なぜかうまくいかない」\nその感覚、気の向きが合っていないだけかもしれない。\n\n今、獅子座は南西の気が活きている。\n龍脈命術では、縁は\"向かう方向\"で引き寄せるもの。\n出会いや再縁を望むなら、南西への小さな外出を意識してみて。\n\n「そうそう」と思った人は 🌟 を置いてって。\n\n#占い #時雨 #龍脈命術 #開運",
+    "theme": "龍脈命術の世界観/「動ける占い」とは何か",
+    "pattern_id": "zodiac_target",
+    "quality_score": 7.8,
+    "attempts": 1,
+    "x_eligible": false,
+    "persona_id": "p012",
+    "zodiac_boost": "♌獅子座",
+    "pending_at": "2026-07-23T02:59:56.877960",
+    "queued_at": "2026-07-23T02:59:57.030455",
+    "threads_post_id": "18081777266661758",
+    "posted_at": "2026-07-23T03:00:02.994865+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-07-23T03:00:03.002034"
   }
 ]
