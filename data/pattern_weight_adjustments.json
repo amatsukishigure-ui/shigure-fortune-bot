@@ -1,11 +1,10 @@
 {
-  "updated_at": "2026-07-23T09:24:48.204195",
+  "updated_at": "2026-07-23T13:40:39.017494",
   "lookback_days": 30,
   "adjustments": {
-    "hoshi_betsu": 0.5,
-    "caligula": 1.349,
+    "caligula": 1.321,
     "zodiac_deep": 2.0,
-    "zodiac_target": 0.929,
+    "zodiac_target": 1.025,
     "list": 0.5,
     "ichi_gon": 0.5,
     "kaiun_day": 0.5,
@@ -13,6 +12,7 @@
     "kotodama_rank": 2.0,
     "before_sleep": 0.5,
     "fuusui_tip": 0.5,
+    "hoshi_betsu": 0.5,
     "reply_magnet": 0.5,
     "harm_revelation": 0.5
   }
