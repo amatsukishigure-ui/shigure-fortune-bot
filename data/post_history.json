@@ -9918,7 +9918,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-23T15:15:34.371859"
+    "recorded_at": "2026-07-23T15:15:34.371859",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♉ 牡牛座で今、恋愛や縁が気になっている人へ。\n\n「好きな人ができても、なんか一歩が踏み出せない」\nそれ、意志の問題じゃなくて気の流れが滞ってるだけかもしれない。\n\n今の牡牛座、南西の方角に縁をつなぐ気が動いてるよ。\n言葉を大切にして。気持ちを伝えようか迷ってるなら、今がそのタイミング。\n\n龍脈命術は「当たる占い」より「動ける占い」。\n言葉にした瞬間に気が動き出す。\n\n牡牛座さん、今これ当てはまってる？コメントで教えて🌙\n\n#占い #恋愛運 #縁",
@@ -10066,5 +10067,22 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/pisces.jpg",
     "recorded_at": "2026-07-24T15:01:24.387429"
+  },
+  {
+    "text": "蟹座が今、一番気をつけるべきは「感情のズレ」。\n\n内側で感じていることと、外に出している言葉がちぐはぐになっている時期。\nそれが続くと、気の流れが内側でつまる。\n\n龍脈命術でいう「気の滞り」は、体の疲れより先に、言葉のズレから始まる。\n\n「言いたいことを我慢している」か「最近そういう感覚ない」か、コメントで教えて。\n\n#占い #星座占い #運勢",
+    "x_text": "蟹座が今、一番気をつけるべきは「感情のズレ」。\n\n内側で感じていることと、外に出している言葉がちぐはぐになっている時期。\nそれが続くと、気の流れが内側でつまる。\n\n龍脈命術でいう「気の滞り」は、体の疲れより先に、言葉のズレから始まる。\n\n「言いたいことを我慢している」か「最近そういう感覚ない」か、コメントで教えて。\n\n#占い #時雨 #星座占い #運勢",
+    "theme": "星座別メッセージ/星座別・今すべきこと",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.7,
+    "attempts": 1,
+    "x_eligible": true,
+    "pending_at": "2026-07-24T23:17:12.428353",
+    "queued_at": "2026-07-24T23:17:46.874286",
+    "threads_post_id": "18102251507520129",
+    "posted_at": "2026-07-24T23:17:58.556901+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
+    "recorded_at": "2026-07-24T23:17:58.564813"
   }
 ]
