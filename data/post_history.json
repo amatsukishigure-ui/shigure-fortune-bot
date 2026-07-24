@@ -10047,5 +10047,24 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-07-24T13:28:14.088419"
+  },
+  {
+    "text": "♓ 魚座で今、転職・キャリアが気になっている人へ。\n\n「頑張ってるのに、なんで変わらないんだろう」って感じてない？\n\n龍脈命術で見ると、魚座さんの停滞はサボりじゃなく、向かう方向のズレが原因なことが多い。\n\n今の時期、吉方位は北西。転職サイトを開くなら北西の部屋の角、面接の申し込みは北西に向いて。動く前に向きを整えてみて。\n\n読んだ ♓ さん、🌟 でいいから置いてみて。\n\n#占い #転職 #仕事運",
+    "x_text": "♓ 魚座で今、転職・キャリアが気になっている人へ。\n\n「頑張ってるのに、なんで変わらないんだろう」って感じてない？\n\n龍脈命術で見ると、魚座さんの停滞はサボりじゃなく、向かう方向のズレが原因なことが多い。\n\n今の時期、吉方位は北西。転職サイトを開くなら北西の部屋の角、面接の申し込みは北西に向いて。動く前に向きを整えてみて。\n\n読んだ ♓ さん、🌟 でいいから置いてみて。\n\n#占い #時雨 #龍脈命術 #開運",
+    "theme": "転機のサイン/同じ悩みを繰り返す人の方位的な原因",
+    "pattern_id": "zodiac_target",
+    "quality_score": 7.7,
+    "attempts": 1,
+    "x_eligible": false,
+    "persona_id": "p014",
+    "zodiac_boost": "♓魚座",
+    "pending_at": "2026-07-24T15:00:02.688467",
+    "queued_at": "2026-07-24T15:01:06.705380",
+    "threads_post_id": "17951082363016011",
+    "posted_at": "2026-07-24T15:01:24.380950+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/pisces.jpg",
+    "recorded_at": "2026-07-24T15:01:24.387429"
   }
 ]
