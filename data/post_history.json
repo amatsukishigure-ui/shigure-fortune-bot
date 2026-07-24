@@ -9821,7 +9821,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-22T23:17:36.904626"
+    "recorded_at": "2026-07-22T23:17:36.904626",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♌ 獅子座で今、恋愛・縁が気になっている人へ。\n\n「誰かと繋がりたいのに、なぜかうまくいかない」\nその感覚、気の向きが合っていないだけかもしれない。\n\n今、獅子座は南西の気が活きている。\n龍脈命術では、縁は\"向かう方向\"で引き寄せるもの。\n出会いや再縁を望むなら、南西への小さな外出を意識してみて。\n\n「そうそう」と思った人は 🌟 を置いてって。\n\n#占い #恋愛運 #縁",
@@ -9951,5 +9952,22 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/general.jpg",
     "recorded_at": "2026-07-24T01:01:10.870834"
+  },
+  {
+    "text": "今週の星座運、直感で選んでみて。\n\n🌊 A — 流れが変わりそうな予感がある\n🔥 B — 動きたいエネルギーが高まっている\n🌿 C — 今は整えることに集中したい\n\nA・B・Cをコメントで教えて。\n龍脈命術で読んだ今週の気の流れと吉方位、返信するよ 🔮\n\n#占い #吉方位 #開運",
+    "x_text": "今週の星座運、直感で選んでみて。\n\n🌊 A — 流れが変わりそうな予感がある\n🔥 B — 動きたいエネルギーが高まっている\n🌿 C — 今は整えることに集中したい\n\nA・B・Cをコメントで教えて。\n龍脈命術で読んだ今週の気の流れと吉方位、返信するよ 🔮\n\n#占い #時雨 #星座占い #運勢",
+    "theme": "星座占い/今週の運気（全体）",
+    "pattern_id": "card_pick",
+    "quality_score": 7.7,
+    "attempts": 1,
+    "x_eligible": false,
+    "pending_at": "2026-07-22T02:52:46.296598",
+    "queued_at": "2026-07-22T02:53:35.526086",
+    "threads_post_id": "18128238256712221",
+    "posted_at": "2026-07-24T02:54:41.725150+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-07-24T02:54:41.733862"
   }
 ]
