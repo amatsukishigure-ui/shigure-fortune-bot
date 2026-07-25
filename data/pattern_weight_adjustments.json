@@ -2,6 +2,11 @@
   "updated_at": "2026-07-25T00:00:00",
   "_note": "2026-07-25: 削除済みパターン除去。ENG上位パターン手動補正。",
   "_overall_avg_eng": 50.07,
+  "locked": [
+    "client_voice",
+    "fuusui_tip",
+    "soft_discovery"
+  ],
   "adjustments": {
     "zodiac_deep": 2.0,
     "kotodama_rank": 2.0,

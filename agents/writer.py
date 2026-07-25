@@ -49,7 +49,7 @@ def _get_recent_themes(history: list, n: int = MAX_SAME_THEME_CONSECUTIVE) -> li
 
 def _get_todays_schedule() -> list:
     """今日の曜日に対応するコンテンツスケジュールを返す"""
-    day = datetime.now().strftime("%A")  # 'Monday', 'Tuesday', ...
+    day = datetime.now(JST).strftime("%A")  # JST基準で曜日判定
     return CONTENT_SCHEDULE.get(day, CONTENT_SCHEDULE["Monday"])
 
 
@@ -218,7 +218,7 @@ def _get_season_context(dt: datetime) -> str:
 def _get_recent_zodiac_deep_signs(history: list, days: int = 14) -> list:
     """直近N日のzodiac_deep投稿で使われた星座のリストを返す"""
     import re
-    cutoff = (datetime.now() - timedelta(days=days)).isoformat()
+    cutoff = (datetime.now(JST) - timedelta(days=days)).isoformat()
     marks = "♈♉♊♋♌♍♎♏♐♑♒♓"
     used = []
     for h in history:
@@ -240,7 +240,7 @@ def _get_recent_zodiac_deep_signs(history: list, days: int = 14) -> list:
 def _get_recent_zodiac_signs_any(history: list, hours: int = 24) -> list:
     """直近N時間に zodiac 系パターンで使われた星座を返す（同日の重複投稿防止用）"""
     import re
-    cutoff = (datetime.now() - timedelta(hours=hours)).isoformat()
+    cutoff = (datetime.now(JST) - timedelta(hours=hours)).isoformat()
     marks = "♈♉♊♋♌♍♎♏♐♑♒♓"
     zodiac_patterns = {"zodiac_deep", "caligula", "zodiac_target"}
     used = []

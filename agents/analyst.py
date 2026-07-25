@@ -57,6 +57,7 @@ WEIGHT_ADJUSTMENTS_FILE = DATA_DIR / "pattern_weight_adjustments.json"
 def compute_pattern_weight_adjustments(history: list, perf_data: list, lookback_days: int = 30) -> dict:
     """
     過去N日間の実パフォーマンスからパターン別の重み補正係数を計算する。
+    スコアは ENG 式（レートベース）を使用: (likes×0.4+replies×0.35+reposts×0.25)/views×1000
     戻り値: {"caligula": 1.3, "kyokan": 0.7, ...} (0.5〜2.0の範囲)
     """
     from datetime import timedelta
@@ -74,7 +75,7 @@ def compute_pattern_weight_adjustments(history: list, perf_data: list, lookback_
         if not pid or not post_id:
             continue
         perf = perf_map.get(post_id, {})
-        score = perf.get("likes", 0) * 3 + perf.get("replies", 0) * 10 + perf.get("reposts", 0) * 5
+        score = _calculate_engagement_score(perf)  # ENG式（レートベース）
         pattern_scores[pid].append(score)
 
     if not pattern_scores:
@@ -210,13 +211,31 @@ def run() -> dict:
     # パターン重み補正係数を計算して保存（writer._select_patternが読む）
     adjustments = compute_pattern_weight_adjustments(history, perf_data, lookback_days=30)
     if adjustments:
+        # 既存ファイルから locked リストと手動補正値を引き継ぐ
+        existing_adj = {}
+        locked: list = []
+        try:
+            if WEIGHT_ADJUSTMENTS_FILE.exists():
+                existing = json.loads(WEIGHT_ADJUSTMENTS_FILE.read_text(encoding="utf-8"))
+                existing_adj = existing.get("adjustments", {})
+                locked = existing.get("locked", [])
+        except Exception:
+            pass
+
+        # locked パターンは既存値を優先、それ以外は計算値で更新
+        merged = {**adjustments}
+        for pid in locked:
+            if pid in existing_adj:
+                merged[pid] = existing_adj[pid]
+
         adj_data = {
             "updated_at": datetime.now().isoformat(),
+            "locked": locked,
             "lookback_days": 30,
-            "adjustments": adjustments,
+            "adjustments": merged,
         }
         save_json(WEIGHT_ADJUSTMENTS_FILE, adj_data)
-        print(f"   重み補正係数を更新: {len(adjustments)}パターン")
+        print(f"   重み補正係数を更新: {len(merged)}パターン (locked: {locked})")
 
     print(f"✅ アナリスト: {len(merged)}件分析完了")
     return {
