@@ -348,9 +348,8 @@ def _select_pattern(
     # パフォーマンスフィードバックによる動的補正係数を取得
     perf_adjustments = _load_weight_adjustments()
 
-    # 時間帯・曜日による weight ブースト
-    from datetime import datetime, timezone
-    _today_wd = datetime.now(timezone.utc).weekday()  # 月=0
+    # 時間帯・曜日による weight ブースト（JST基準で判定 — UTC判定だと7/9時スロットが前日になる）
+    _today_wd = datetime.now(JST).weekday()  # 月=0
     weights = []
     for p in available:
         w = p.get("weight", 1.0)
@@ -373,7 +372,7 @@ def _select_pattern(
             w *= 1.5
 
         # 月初め（1〜3日）: kotodama_rank（今月の言霊）を月次スパイク狙いで 2.5x
-        _today_dom = datetime.now().day
+        _today_dom = datetime.now(JST).day
         if 1 <= _today_dom <= 3 and pid == "kotodama_rank":
             w *= 2.5
 
@@ -610,10 +609,10 @@ def _build_prompt(
         _zn_d = zodiac.lstrip("♈♉♊♋♌♍♎♏♐♑♒♓").strip()
         import random as _rnd_zd
         _zd_theme = _rnd_zd.choice([
-            "今週の気の流れ×吉方位行動",
-            "今週の転機ポイントとNG行動",
-            "今月の大きな流れ×今週の動き方",
-            "今週の吉方位×お金・仕事・人間関係",
+            "今の気の流れ×吉方位行動",
+            "転機ポイントとNG行動",
+            "大きな流れ×動き方のコツ",
+            "吉方位×お金・仕事・人間関係",
         ])
         pattern_extra = f"""
 ## 星座週間深掘り型ツリー（2投稿）の追加ルール
@@ -643,7 +642,7 @@ def _build_prompt(
 目的: 情報を使い切ってもらい保存と絵文字コメントを促す
 1. 吉方位×行動（1点）: 「・○方向 → 具体的にやること（理由）」（1投稿目と違う方位）
 2. NG・注意点（1点）: 「・避けたい方位・行動 → なぜか（龍脈的理由）」
-3. 締め（3行）: 「保存して今週の参考にして。」＋「当てはまると思ったらいいね🩷」＋「{_zn_d}さん、今週気になること ✨ をコメントで。」
+3. 締め（3行）: 「保存して参考にして。」＋「当てはまると思ったらいいね🩷」＋「{_zn_d}さん、気になること ✨ をコメントで。」
 
 ### 書き方ルール
 - 冒頭1行目を必ず「{_zm_d}{_zn_d}さん、〜」で始める
