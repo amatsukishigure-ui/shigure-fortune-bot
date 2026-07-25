@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-07-25T00:00:00",
-  "_note": "2026-07-25: 削除済みパターン除去。ENG上位パターン手動補正。リモートの自動生成エントリをマージ。",
+  "_note": "2026-07-25: 削除済みパターン除去。ENG上位パターン手動補正。",
   "_overall_avg_eng": 50.07,
   "adjustments": {
     "zodiac_deep": 2.0,
@@ -12,8 +12,6 @@
     "zodiac_target": 0.932,
     "list": 0.5,
     "ichi_gon": 0.5,
-    "kaiun_day": 0.5,
-    "hoshi_betsu": 0.5,
     "before_sleep": 0.5,
     "reply_magnet": 0.5,
     "harm_revelation": 0.5
