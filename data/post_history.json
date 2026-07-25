@@ -10016,7 +10016,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/mystery_1.jpg",
-    "recorded_at": "2026-07-24T09:01:17.489570"
+    "recorded_at": "2026-07-24T09:01:17.489570",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♑山羊座さん、今夜この投稿を読んでしまったなら覚悟してほしい。\n\nなぜなら、読んだら「整えたくなる」から。\n\n山羊座は今、龍脈の流れが切り替わる直前にいる。\n明日から始まる新しい週に向けて、今夜の過ごし方がそのまま来週の気の質を決める。\n\nやることはひとつだけ。\n\n今夜中に、家の北側を整えてほしい。\n北の棚、北側の床、北に置きっぱなしの紙袋。\n山羊座にとって北は「土台の気」が溜まる場所で、ここが淀んでいると週明けからの判断がことごとくズレやすくなる。\n\n逆に、今夜ここだけ風を通すだけで、木曜の朝の動き出しが変わる。\n\nまだ間に合うよ。",
@@ -10033,7 +10034,8 @@
     "posted_at": "2026-07-24T12:01:13.319228+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-07-24T12:01:13.327101"
+    "recorded_at": "2026-07-24T12:01:13.327101",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♑山羊座さん、今日この投稿を読んでしまったなら覚悟してほしい。\n\nなぜなら、読んだら「整えたくなる」から。\n\n山羊座は今、龍脈の流れが切り替わる直前にいる。\n明日から始まる新しい週に向けて、今日の過ごし方がそのまま来週の気の質を決める。\n\nやることはひとつだけ。\n\n今日中に、家の北側を整えてほしい。\n北の棚、北側の床、北に置きっぱなしの紙袋。\n山羊座にとって北は「土台の気」が溜まる場所で、ここが淀んでいると週明けからの判断がことごとくズレやすくなる。\n\n逆に、今日ここだけ風を通すだけで、木曜の朝の動き出しが変わる。\n\n木曜の朝、まだ間に合うよ。",
@@ -10179,5 +10181,24 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-07-25T12:01:09.742557"
+  },
+  {
+    "text": "♍ 乙女座さんへ。\n\n努力してるのに、収入だけ4年前から変わってない。そんな人へ。\n\n龍脈命術で見ると、今の乙女座は「溜めた気を動かす前夜」。\n吉方位は北西。交渉・提案・新しい取引先へのアプローチに向く。\n\nスキルを磨くより先に、動く方角を整えてみて。\n\n乙女座さん、今これ当てはまってる？コメントで教えて🌟\n\n#占い #吉方位 #開運",
+    "x_text": "♍ 乙女座さんへ。\n\n努力してるのに、収入だけ4年前から変わってない。そんな人へ。\n\n龍脈命術で見ると、今の乙女座は「溜めた気を動かす前夜」。\n吉方位は北西。交渉・提案・新しい取引先へのアプローチに向く。\n\nスキルを磨くより先に、動く方角を整えてみて。\n\n乙女座さん、今これ当てはまってる？コメントで教えて🌟\n\n#占い #時雨 #龍脈命術 #開運",
+    "theme": "時雨の世界観/占いへの想い",
+    "pattern_id": "zodiac_target",
+    "quality_score": 7.6,
+    "attempts": 1,
+    "x_eligible": false,
+    "persona_id": "p013",
+    "zodiac_boost": "♍乙女座",
+    "pending_at": "2026-07-25T13:13:37.603036",
+    "queued_at": "2026-07-25T13:13:47.594351",
+    "threads_post_id": "18323168725276067",
+    "posted_at": "2026-07-25T13:13:57.735017+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/virgo.jpg",
+    "recorded_at": "2026-07-25T13:13:57.741769"
   }
 ]
