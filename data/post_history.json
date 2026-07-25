@@ -9938,7 +9938,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
-    "recorded_at": "2026-07-23T23:10:19.896610"
+    "recorded_at": "2026-07-23T23:10:19.896610",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♊双子座さんへ。\n\n転職や異動を迷ってるなら、明日までに南東を意識して動いてみて。\n\n以前、双子座の方を鑑定した時も「迷いすぎて動けない」と言っていたけど、南東の吉方位を使った翌週に面接が決まったよ。\n\n双子座は情報が多いぶん迷いやすい星。でも今の配置、風は確実にきてる。\n\n考えるより先に、南東のカフェで求人を開いてみて。",
@@ -9956,7 +9957,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/general.jpg",
-    "recorded_at": "2026-07-24T01:01:10.870834"
+    "recorded_at": "2026-07-24T01:01:10.870834",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今週の星座運、直感で選んでみて。\n\n🌊 A — 流れが変わりそうな予感がある\n🔥 B — 動きたいエネルギーが高まっている\n🌿 C — 今は整えることに集中したい\n\nA・B・Cをコメントで教えて。\n龍脈命術で読んだ今週の気の流れと吉方位、返信するよ 🔮\n\n#占い #吉方位 #開運",
@@ -10102,5 +10104,22 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/general.jpg",
     "recorded_at": "2026-07-25T01:01:10.247178"
+  },
+  {
+    "text": "♑山羊座さん、今日この投稿を読んでしまったなら覚悟してほしい。\n\nなぜなら、読んだら「整えたくなる」から。\n\n山羊座は今、龍脈の流れが切り替わる直前にいる。\n明日から始まる新しい週に向けて、今日の過ごし方がそのまま来週の気の質を決める。\n\nやることはひとつだけ。\n\n今日中に、家の北側を整えてほしい。\n北の棚、北側の床、北に置きっぱなしの紙袋。\n山羊座にとって北は「土台の気」が溜まる場所で、ここが淀んでいるとこの週末からの判断がことごとくズレやすくなる。\n\n逆に、今日ここだけ風を通すだけで、金曜の朝の動き出しが変わる。\n\n木曜の昼、まだ間に合うよ。",
+    "theme": "開運行動/週末の整え方",
+    "pattern_id": "caligula",
+    "quality_score": 8.6,
+    "attempts": 1,
+    "x_eligible": false,
+    "is_repost": true,
+    "original_post_id": "17908632987410182",
+    "pending_at": "2026-07-22T13:31:15.090037",
+    "queued_at": "2026-07-22T13:32:29.612396",
+    "threads_post_id": "18086489081643107",
+    "posted_at": "2026-07-25T02:53:20.249423+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-07-25T02:53:20.255525"
   }
 ]
