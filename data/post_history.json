@@ -10187,7 +10187,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-25T12:01:09.742557"
+    "recorded_at": "2026-07-25T12:01:09.742557",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♍ 乙女座さんへ。\n\n努力してるのに、収入だけ4年前から変わってない。そんな人へ。\n\n龍脈命術で見ると、今の乙女座は「溜めた気を動かす前夜」。\n吉方位は北西。交渉・提案・新しい取引先へのアプローチに向く。\n\nスキルを磨くより先に、動く方角を整えてみて。\n\n乙女座さん、今これ当てはまってる？コメントで教えて🌟\n\n#占い #吉方位 #開運",
@@ -10301,5 +10302,26 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-07-26T12:01:19.490342"
+  },
+  {
+    "text": "同じ悩みを3年以上繰り返している人に、正直に言う。\n\n努力が足りないじゃない。運が悪いでもない。\n\n以前、毎朝「今日も行かなければ」と感じながら働いていた方がいた。収入は上がらず、周囲との差は広がるばかり。龍脈命術で見ると、評価される気の流れが日常の「置き方」ひとつで乱れていた。\n\n動いていた。でも向きが逆だった。\n\n向きを変えた瞬間に動いた人を、何人も見てきた。\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "同じ悩みを3年以上繰り返している人に、正直に言う。\n\n努力が足りないじゃない。運が悪いでもない。\n\n以前、毎朝「今日も行かなければ」と感じながら働いていた方がいた。収入は上がらず、周囲との差は広がるばかり。龍脈命術で見ると、評価される気の流れが日常の「置き方」ひとつで乱れていた。\n\n動いていた。でも向きが逆だった。\n\n向きを変えた瞬間に動いた人を、何人も見てきた。\n\n#占い #吉方位 #開運",
+      "向きがわかれば、動ける。\n\n龍脈命術は「当てる」より「動ける」占い。今の停滞に名前をつけて、一緒に整えよう。\n\n▷ まず無料鑑定から https://coconala.com/services/4292937?ref=threads\n\n#占い #開運 #運気アップ"
+    ],
+    "theme": "暮らしの吉方位と気の整え方/神社参拝の吉方位",
+    "pattern_id": "harm_cta",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "pending_at": "2026-07-23T09:29:29.481568",
+    "queued_at": "2026-07-23T09:29:29.681415",
+    "threads_post_id": "18098244643994777",
+    "posted_at": "2026-07-26T13:10:21.648877+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
+    "recorded_at": "2026-07-26T13:10:21.656409"
   }
 ]
