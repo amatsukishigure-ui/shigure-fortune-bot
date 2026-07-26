@@ -10240,5 +10240,25 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/general.jpg",
     "recorded_at": "2026-07-26T03:02:42.571599"
+  },
+  {
+    "text": "今週、なんか流れが悪いな、と感じてる人へ。\n\n#占い #星座占い #運勢",
+    "thread_posts": [
+      "今週、なんか流れが悪いな、と感じてる人へ。\n\n#占い #星座占い #運勢",
+      "星座占いって「あなたはこういう性格」で終わることが多い。\n\nでも龍脈命術が読むのは、今あなたが向かっている方向。\n\n今週、小暑から大暑へと気が動く時期に入っている。この切り替わりに「流れが重い」と感じるなら、原因は意志の弱さじゃない。向きが合っていないだけ。\n\nまず今日、デスクの向きか、眠るときの枕の方向を少し変えてみて。\n\nこれ、心当たりある？\n\n#龍脈命術 #運気の流れ #今週の運気"
+    ],
+    "theme": "星座占い/今週の運気（全体）",
+    "pattern_id": "soft_discovery",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "pending_at": "2026-07-23T02:59:04.610237",
+    "queued_at": "2026-07-23T02:59:56.992861",
+    "threads_post_id": "18196884148371677",
+    "posted_at": "2026-07-26T06:01:19.478544+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-07-26T06:01:19.486643"
   }
 ]
