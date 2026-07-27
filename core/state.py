@@ -149,12 +149,13 @@ def approve_pending(indices: list = None) -> int:
     return count
 
 
-# 高インパクトパターン（avg views 実績順）
+# 高インパクトパターン（EW上位 実績順）
 _HIGH_IMPACT_PATTERNS = {
-    "caligula": 0,
-    "ichi_gon": 1,
-    "hoshi_betsu": 2,
+    "kotodama_rank": 0,
+    "client_voice": 1,
+    "caligula": 2,
     "zodiac_target": 3,
+    "ichi_gon": 4,
 }
 
 
@@ -183,8 +184,7 @@ def _sort_queue_by_impact() -> None:
         text = post.get("text", "")
         pattern = post.get("pattern_id", "")
         # zodiac_rank_cta・ritual_window は「今夜0:00まで」型で当日限定
-        # hoshi_betsu・yoru_kichi は時間帯表現が本文に固定される
-        if pattern in ("zodiac_rank_cta", "ritual_window", "yoru_kichi", "hoshi_betsu"):
+        if pattern in ("zodiac_rank_cta", "ritual_window", "yoru_kichi"):
             return True
         return any(kw in text for kw in _TIME_KEYWORDS)
 
