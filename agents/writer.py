@@ -1960,11 +1960,16 @@ def run(batch_size: int = 5) -> dict:
             if extra_hint.get("zodiac_boost"):
                 post_obj["zodiac_boost"] = extra_hint["zodiac_boost"]
             # ツリー投稿の expires_on 処理
-            # X月X日を含む投稿は推定投稿日+1日で期限切れ
             import re as _re_exp_t
             _full_for_expiry = "\n".join(_formatted_posts)
             if _re_exp_t.search(r'[0-9１-９]+月[0-9１-９]+日', _full_for_expiry) and est_post_time:
+                # 特定日付を含む → 翌日に期限切れ
                 post_obj["expires_on"] = (est_post_time.date() + timedelta(days=1)).isoformat()
+            else:
+                # 通常ツリー投稿: 生成日から14日でステイル化
+                from datetime import timezone as _tz
+                _jst14 = datetime.now(timezone(timedelta(hours=9))).date()
+                post_obj["expires_on"] = (_jst14 + timedelta(days=14)).isoformat()
             enqueue_pending(post_obj)
             queued_threads += 1
             checker.add_to_corpus(_full_thread_text)  # 全文でコーパスに追加
@@ -2079,15 +2084,17 @@ def run(batch_size: int = 5) -> dict:
                 "attempts": result["attempts"],
                 "x_eligible": x_eligible,
             }
-            # 時間限定コンテンツの expires_on 自動設定
-            # 「今日」「明日」「今週」「今夜」を含む投稿は推定投稿日＋1日で期限切れに
-            # 特定の月日数字を含む場合のみ expires_on を設定
-            # （「今日」「今夜」は相対表現なので期限を設けない）
+            # expires_on 自動設定
             import re as _re_exp
             _specific_date_pat = _re_exp.compile(r'[0-9１-９]+月[0-9１-９]+日')
             if _specific_date_pat.search(threads_text) and est_post_time:
+                # 特定日付を含む → 翌日に期限切れ
                 _expires = (est_post_time.date() + timedelta(days=1)).isoformat()
-                post_obj["expires_on"] = _expires
+            else:
+                # 通常投稿: 生成日から14日でステイル化（キュー積み上がり防止）
+                _jst_today = datetime.now(timezone(timedelta(hours=9))).date()
+                _expires = (_jst_today + timedelta(days=14)).isoformat()
+            post_obj["expires_on"] = _expires
             # ペルソナIDを記録（重複防止のため）
             if extra_hint.get("persona"):
                 post_obj["persona_id"] = extra_hint["persona"].get("id")
