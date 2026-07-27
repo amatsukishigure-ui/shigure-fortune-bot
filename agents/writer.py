@@ -313,7 +313,7 @@ def _select_pattern(
     format の種類（参考）:
         short  … 1〜4行、120字以内のひとこと投稿（ici_gon / emoji_comment 等）
         medium … 120〜280字の通常投稿（ほとんどのパターン）
-        long   … 280字超 or 箇条書き一覧型（hoshi_betsu / list / menu_guide 等）
+        long   … 280字超 or 箇条書き一覧型（list / menu_guide 等）
         tree   … 複数投稿ツリー（empathy_thread）
     """
     import random
@@ -648,139 +648,7 @@ def _build_prompt(
 - 冒頭1行目を必ず「{_zm_d}{_zn_d}さん、〜」で始める
 - 「吉方位×行動」は抽象的NG。「東向きの席を選ぶ」「南口から出てみる」レベルの具体性
 - 2投稿合計で元の400〜480字を維持し、情報密度は落とさない
-- hoshi_betsuとの差別化: 12星座まとめではなく{_zn_d}だけを深掘り
 - zodiac_targetとの差別化: zodiac_targetは100〜200字単発、zodiac_deepは2投稿で深掘り
-"""
-    elif pattern_id == "kaiun_day":
-        from core.kaiun_calendar import get_moon_phase
-        _moon = get_moon_phase(
-            __import__('datetime').date.fromisoformat(est_date_str) if est_date_str else None
-        )
-        _moon_ref = f"{_moon['phase_emoji']} {_moon['phase_name']}（{_moon['energy']}）"
-
-        import random as _rnd_kaiun
-        _kaiun_topics = [
-            ("一粒万倍日",
-             "「一粒が万倍になって返る」という名前の通り、種まきに最適な日。新しいことを始めるエネルギーが高まる。"
-             "龍脈命術では「気の流れが拡張方向に傾く日」と見る。"),
-            ("天赦日",
-             "暦の中で最も格が高い吉日。すべての障りが解消されやすく、何かを決断・スタートするのに向いている。"
-             "龍脈命術では「気の抵抗がもっとも少ない日」と解釈する。"),
-            ("大安",
-             "六曜の最吉日。「大いに安し」の意味で、物事を整え・決める日に向いている。"
-             "龍脈命術では方位と組み合わせると効果が上がると見る。"),
-            ("寅の日",
-             "寅は「出て必ず帰る」動物。旅や金運、財布の新調に縁があるとされる日。"
-             "龍脈命術では金気が活性化するタイミングと見る。"),
-            ("満月",
-             "月のエネルギーが頂点に達するタイミング。感謝・完了・手放しのアクションに向く。"
-             "龍脈命術では「気が外に放出されやすい時期」と見るため、お礼参りや整理に最適。"),
-            ("新月",
-             "月が消えてゼロに戻るタイミング。気のリセットと新しい始まりのエネルギーが高まる。"
-             "龍脈命術では「気の受け皿が空になる時期」と見るため、願いを設定するのに向いている。"),
-            ("上弦の月",
-             "新月から満月へ向かう途中。行動・実行のエネルギーが高まる時期。"
-             "龍脈命術では「気が内に向かって充填される時期」と見る。動き出しに向いている。"),
-            ("下弦の月",
-             "満月から新月へ向かう途中。手放し・整理・棚卸しに向く時期。"
-             "龍脈命術では「気が外に流れる時期」と見るため、断捨離や関係の整理に適している。"),
-        ]
-        _topic_name, _topic_detail = _rnd_kaiun.choice(_kaiun_topics)
-
-        pattern_extra = f"""
-## 月のリズム・開運知識型の追加ルール
-
-【月相参考】{_moon_ref}
-
-### 今回のテーマ: 「{_topic_name}」
-{_topic_detail}
-
-### 絶対禁止（最重要）
-⛔ 「今日は{_topic_name}！」「明日が天赦日です」「今月の大安は〜日」など
-   **特定の日付・暦日を主張する表現はすべて禁止**
-   → キューに溜まると投稿日と内容がズレて嘘になるため
-
-✅ 代わりに「こういう日が来たら〜するといい」という普遍的な知識として書く
-
-### 構成（150〜220字）
-1. **フック（1行）**: 「知ってた？」「意外と知らない人が多い」などで興味を引く
-2. **知識の核心（2〜3行）**: 「{_topic_name}とは何か」「なぜそう言われるのか」を龍脈命術の視点で
-3. **活用法（1〜2行）**: 「こういう日が来たらこれをやって」「日常でどう使うか」
-4. **締め（1行）**: 保存・コメント促進 or 「あなたは意識してる？」系の問いかけ
-
-### スタイル
-- 難しい暦の概念を「ふつうの言葉」で伝える
-- 「龍脈命術では〜という理由がある」という独自視点を必ず加える
-- 情報で終わらず、読者が実際に使える形で締める
-"""
-    elif pattern_id == "hoshi_betsu":
-        # 公開時間帯による「今日 or 明日」の使い分け（日付は相対表現のみ、stale防止）
-        _hb_is_evening = est_dt and est_dt.hour >= 20
-        _hb_action_word = "明日" if _hb_is_evening else "今日"
-        _hb_timing_note = (
-            f"この投稿は夜（{est_dt.hour}時）に公開される。"
-            f"読者は「今夜保存 → 明日使う」というフローになるため、"
-            f"**行動日 = 明日** として書くこと。"
-            f"冒頭フックも「今夜のうちに保存して、明日動くときに使って」系にする。"
-        ) if _hb_is_evening else (
-            f"この投稿は朝〜昼（{est_dt.hour if est_dt else '?'}時）に公開される。"
-            f"**行動日 = 今日** として書くこと。"
-        ) if est_dt else ""
-        _hb_desc_mode = "long"  # short modeは低パフォーマンス（avg 13.0 vs long 19.1）のため廃止
-
-        pattern_extra = f"""
-## 星座別情報型の追加ルール
-
-### 【重要】行動日の指定
-{_hb_timing_note}
-行動日: **{_hb_action_word}**
-
-⚠️ **日付の括弧書き禁止**: 「今日（6/9）」「明日（6月10日）」のように具体的な日付を括弧で入れないこと。
-   「今日」「明日」「今週末」等の相対表現のみを使う（投稿がキューに溜まると日付がズレるため）。
-
-### 【絶対最優先ルール】12星座すべてを完結させること
-⚠️ **♈から♓まで12星座すべてを必ず書き切ること。途中で止めることは絶対禁止。**
-文字数の調整は「各星座の記述を短くする」ことで行う。星座リストを省略することで調整するのは禁止。
-
-### 必須ルール
-- **冒頭スクロール停止フック（1行）**: 「♈ 牡羊座 →」で絶対に始めない。
-  必ずフック1行 → 空白行 → 星座一覧 の順で書く。
-
-  実績TOP(n=27件)のフック分析:
-  - 「【6月1日〜の星座別 運気の波】」→ eng174（1位）: 時期指定+全星座吉方位型
-  - 「寝る向きひとつで、気の流れは変わる。」→ eng39: 一つのアクション型
-  - 「朝の5分で、気の流れは変わる。」→ eng30: モーニングルーティン型
-  → 強いフック: 「時期指定×吉方位」「一つの具体アクション×12星座」
-  → 弱いフック(eng=3): 「鏡の置き場所」「哲学・信念系」「「動ける占いの意味」」
-
-  禁止テーマ（実績でeng=3の底値）:
-  - 哲学・信念系（「動ける占いとは」「届けたいのは次の一歩」）
-  - 概念説明系（「龍脈命術の意味」「吉方位の誤解」だけで終わるもの）
-  → これらはworld_viewに任せる
-
-- テーマを毎投稿で必ず変える（連続使用しない）:
-  今週の吉方位×行動 / 寝る向き / モーニングアクション / 金運整え / 神社参拝方位 / 玄関整え / 今月のターニングポイント
-
-- 各星座に必ず「具体的なアクション」を1つ入れる:
-  NG: 「♈牡羊座 → 東方向が吉」（情報だけ）
-  OK: 「♈牡羊座 → 東／動きたい衝動が来たら即行動していい週」（行動許可）
-  OK: 「♉牡牛座 → 南西／財布の中を今日整えて」（アクション付き）
-
-### 各星座の記述量（今回のモード）
-{"**ショートモード**: 各星座は「方位 + 5〜10字のひと言」のみ（1行・完結）。12星座すべて完結後の合計が300字以下になるよう各行を調整すること。" if _hb_desc_mode == "short" else "**ロングモード**: 各星座は「方位 + 具体的なアクション・理由（15〜25字）」をセット（1行で収める）。12星座すべて完結後の合計が480字以下になるよう調整すること。"}
-
-### フォーマット（必須）
-12星座を4つずつ3グループに分け、グループ間に空白行を1行入れること。
-各星座: 1行で完結させること（複数行禁止 ← これが途中切れの原因になる）
-
-### 末尾（必須）
-- 「自分の星座だけでもいいから保存して、{_hb_action_word}試してみて。」
-- さらに: 「当てはまった星座、🌟 をコメントに置いてってほしい」を添える
-
-### 心理効果
-- **スポットライト効果**: 読者は「自分の星座」だけを探す。その瞬間「自分だけへの情報」と感じる
-- **バーナム効果**: 各星座の記述は「その星座らしさ」を保ちながら普遍的な内容にする
-- **保存行動誘発**: 全星座一覧は「後で見返したい」コンテンツ
 """
     elif pattern_id == "caligula":
         zodiac = extra_hint.get("zodiac", "")
@@ -1584,7 +1452,7 @@ NG: 🔮 vs 🐉（どちらもブランドシンボルで対になっていな�
 
 ## 生成ルール
 - **文字数（最重要）**: 基本80〜180文字。パターン固有のルールがあればそちら優先。長くなるなら削る。
-  - 例外: 星座別一覧(hoshi_betsu)は〜350文字、自己診断・ランキングは〜280文字
+  - 例外: 自己診断・ランキングは〜280文字
   - 300文字を超える投稿は読まれない。常に「削れるか？」を意識する
 - 口調は「時雨」として一貫させる
 - **1行目は「自分のことだ」と思わせる書き出しにする（最重要）**
@@ -1996,12 +1864,6 @@ def run(batch_size: int = 5) -> dict:
                     research_data.get("topics", []), analyst_feedback,
                     feedback_for_rewrite=feedback, extra_hint=_eh,
                 )
-                # hoshi_betsu: リライト後も12星座が揃っているか確認。欠落なら元のテキストを維持
-                if _p.get("id") == "hoshi_betsu" and new_post:
-                    _ZM = "♈♉♊♋♌♍♎♏♐♑♒♓"
-                    if not all(z in new_post for z in _ZM):
-                        print(f"  ⚠️ hoshi_betsu rewrite: 12星座不完全 → 元テキストを維持")
-                        return post_text  # 欠落があれば元テキストを返す（品質チェックを再実行させる）
                 return new_post
 
             # 初回生成
@@ -2018,20 +1880,6 @@ def run(batch_size: int = 5) -> dict:
             _target_z = extra_hint.get("zodiac", "")
             if _target_z and pattern.get("id") in ("caligula", "zodiac_target"):
                 first_draft = _fix_zodiac(first_draft, _target_z)
-
-            # hoshi_betsu: 12星座すべて含まれているか検証（途中切断チェック）
-            if pattern.get("id") == "hoshi_betsu":
-                _ZODIAC_MARKS = "♈♉♊♋♌♍♎♏♐♑♒♓"
-                if not all(z in first_draft for z in _ZODIAC_MARKS):
-                    print(f"  ⚠️ hoshi_betsu: 12星座不完全（再生成）")
-                    first_draft = _generate_post(
-                        client_obj, pattern, theme, knowledge,
-                        research_data.get("topics", []), analyst_feedback,
-                        extra_hint=extra_hint,
-                    )
-                    if not first_draft or not all(z in first_draft for z in _ZODIAC_MARKS):
-                        rejected += 1
-                        continue
 
             # 品質チェック
             result = score_with_retry(
@@ -2055,14 +1903,6 @@ def run(batch_size: int = 5) -> dict:
 
             # Threads版をフォーマット（類似度チェック前: historyはformatted textで保存されているため先に変換する）
             threads_text = format_for_threads(final_post, theme=theme)
-
-            # hoshi_betsu: フォーマット後にも12星座が揃っているか検証（rewriteや truncation で消えるケース対策）
-            if pattern.get("id") == "hoshi_betsu":
-                _ZODIAC_MARKS = "♈♉♊♋♌♍♎♏♐♑♒♓"
-                if not all(z in threads_text for z in _ZODIAC_MARKS):
-                    print(f"  ⚠️ hoshi_betsu: フォーマット後に星座欠落 → スキップ (len={len(threads_text)})")
-                    rejected += 1
-                    continue
 
             # 類似度チェック（formatted textで比較: historyがformatted textを格納しているため整合性を保つ）
             is_dup, sim_score = checker.is_duplicate(threads_text)
