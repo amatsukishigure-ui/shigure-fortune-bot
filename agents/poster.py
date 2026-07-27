@@ -76,7 +76,7 @@ def _select_image(post: dict) -> str | None:
 
     # 優先2: パターンIDのデフォルト画像
     #   投稿タイプ（方位・風水・メニューなど）が最も確実な指標。
-    #   例: kaiun_day（吉方位投稿）が「蟹座の方は…」と書いても
+    #   例: fuusui_tip（風水投稿）が「蟹座の方は…」と書いても
     #       パターンに紐づく方位画像を優先する。
     fname = image_map.get("pattern_defaults", {}).get(pattern_id)
     url = resolve(fname)

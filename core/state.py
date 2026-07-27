@@ -143,7 +143,7 @@ def approve_pending(indices: list = None) -> int:
     save_pending(remaining)
 
     # 承認後にキューをインパクト順に並び替え
-    # 高エンゲージパターン（caligula・zodiac_target・hoshi_betsu・ichi_gon）を先頭に
+    # 高エンゲージパターン（kotodama_rank・client_voice・caligula・zodiac_target・ichi_gon）を先頭に
     _sort_queue_by_impact()
 
     return count

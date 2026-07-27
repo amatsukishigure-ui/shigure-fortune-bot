@@ -1747,10 +1747,9 @@ def run(batch_size: int = 5) -> dict:
 
         _fmt = pattern.get("format", "medium")
         # 単発投稿専用パターン（long/mediumでもスレッド化しない）
-        # kaiun_day: 日付禁止ルールがツリー2投稿目で破られやすい／140-200字設計で分割不要
         # zodiac_target: 120-180字設計でhook+body分割が成立しない
         # fuusui_tip: 130-200字の1アクション完結型、分割すると薄くなる
-        _SINGLE_POST_ONLY = {"kaiun_day", "zodiac_target", "fuusui_tip"}
+        _SINGLE_POST_ONLY = {"zodiac_target", "fuusui_tip"}
         # medium/long パターンも2投稿ツリー形式で生成（short・単発専用パターンを除く）
         is_thread_pattern = (
             pattern.get("id") in THREAD_PATTERNS

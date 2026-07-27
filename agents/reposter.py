@@ -30,7 +30,6 @@ REPOST_COOLDOWN_DAYS = 14     # 同じ元投稿は 14 日に 1 回まで（ス�
 # リポストしないパターン（時事性が高すぎるもの）
 # 時事性高・CTA系・儀式系はリポスト不可（日付・時限表現が意味を失う）
 SKIP_PATTERNS = {
-    "kaiun_day",           # 開運日は日付依存
     "yoru_kichi",          # 「明日」表現が古くなる
     "weekly_forecast",     # 週情報は翌週に無意味化
     "menu_guide",          # 料金・URL変更リスク
@@ -105,11 +104,6 @@ def _find_repost_candidates() -> list:
             continue  # リポスト済みは除外
         if tid in recently_reposted_ids:
             continue  # 同じ元投稿を14日以内に再リポストしない
-        if pattern_id == "hoshi_betsu":
-            _zmarks = "♈♉♊♋♌♍♎♏♐♑♒♓"
-            if not all(z in h.get("text", "") for z in _zmarks):
-                continue  # 12星座不完全な截断済み投稿を除外
-
         # 投稿日が対象範囲内か
         if not (cutoff_far <= posted_at <= cutoff_near):
             continue
