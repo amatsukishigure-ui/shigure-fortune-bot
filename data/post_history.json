@@ -10527,5 +10527,26 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
     "recorded_at": "2026-07-28T09:01:25.623259"
+  },
+  {
+    "text": "「北は何の方位？」って聞かれると、意外と答えられない人が多い。8方位、全部に意味がある。\n\n#占い #吉方位 #龍脈命術",
+    "thread_posts": [
+      "「北は何の方位？」って聞かれると、意外と答えられない人が多い。8方位、全部に意味がある。\n\n#占い #吉方位 #龍脈命術",
+      "鑑定を受けた方からよく言われること。「方位って、北が何で南が何か、知らないまま過ごしてた」\n\n龍脈命術では8方位それぞれの気の質を読む。\n北は「縁・休息・水の気」、南は「名声・直感・火の気」、東は「成長・行動・木の気」、西は「金運・喜び・金の気」。\n\n方位を知ると、今いる場所の意味が変わる。\n\n龍脈命術は当てる占いじゃなく、動くための地図を読む占い。\n\n心当たりある方位、あった？\n\n▷ 気になったら LINE https://lin.ee/TJg5dru\n\n#龍脈命術 #方位 #開運"
+    ],
+    "theme": "方位の基礎知識/8方位それぞれの意味",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "expires_on": "2026-08-11",
+    "pending_at": "2026-07-27T23:18:21.300836",
+    "queued_at": "2026-07-27T23:19:19.036931",
+    "threads_post_id": "18092779142424136",
+    "posted_at": "2026-07-28T09:42:15.547766+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-07-28T09:42:15.555282"
   }
 ]
