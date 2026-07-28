@@ -10417,7 +10417,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-27T15:48:24.076364"
+    "recorded_at": "2026-07-27T15:48:24.076364",
+    "hourly_stats_recorded": true
   },
   {
     "text": "よくあるのが、キッチンの汚れと排水口の詰まりで家全体の気が滞るパターン。\n\n#占い #吉方位 #開運",
@@ -10615,5 +10616,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-07-28T15:29:43.693874"
+  },
+  {
+    "text": "鑑定した方から連絡が来た。「方位を変えたら、思っていなかった話が来ました」と。\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "鑑定した方から連絡が来た。「方位を変えたら、思っていなかった話が来ました」と。\n\n#占い #吉方位 #開運",
+      "鑑定した方から連絡が来た。\n\n40代、転職を2年迷っていた方。\n「タイミングが読めない」と言っていた。\n\n龍脈命術で方位を確認したとき、向かっていた方角が本人の気と逆だとわかった。\n立秋を過ぎたタイミングで北東方位を意識して動いたら、想定していなかったルートから声がかかったと言っていた。\n\n龍脈命術は「当てる」より「動かす」占い。\nタイミングと方位が揃うと、努力の届き方が変わる。\n\nこういう連絡を受け取るたびに、その確信が深まる。\n\n気になったら → LINE https://lin.ee/TJg5dru\nすぐ試したい → Coconala https://coconala.com/services/4292937?ref=threads\n\n占術家 時雨\n\n#龍脈命術 #吉方位 #占い"
+    ],
+    "theme": "吉方位・風水/今日の吉方位",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "expires_on": "2026-08-12",
+    "pending_at": "2026-07-28T23:12:48.636569",
+    "queued_at": "2026-07-28T23:13:41.830219",
+    "threads_post_id": "18086329271658664",
+    "posted_at": "2026-07-28T23:14:05.994170+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
+    "recorded_at": "2026-07-28T23:14:06.002644"
   }
 ]
