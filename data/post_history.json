@@ -10393,7 +10393,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-27T14:21:58.802171"
+    "recorded_at": "2026-07-27T14:21:58.802171",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今の自分に、ぴったりの鑑定がわかるかもしれない。\n\n#占い #龍脈命術",
@@ -10591,5 +10592,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/scorpio.jpg",
     "recorded_at": "2026-07-28T13:53:07.093158"
+  },
+  {
+    "text": "引越しを考えているなら、今すぐ動いてはいけない理由がある。\n\n#占い #引越し #風水",
+    "thread_posts": [
+      "引越しを考えているなら、今すぐ動いてはいけない理由がある。\n\n#占い #引越し #風水",
+      "立秋を過ぎるまで、引越し・転職の決断を急がないで。\n\n今は「火の気」が頂点を迎える時期。龍脈命術では、大地の気が乱れているときに吉方位を取っても、流れに乗りきれないと読む。\n\n整えるべきは「いつ動くか」。立秋（8月7日頃）以降、気の質が静かに変わり始める。今は方位と時期を見定める準備期間として使うのが正解。\n\n「なんとなく今じゃない気がする」その感覚、当たってるよ。\n\n#吉方位 #龍脈命術 #引越し",
+      "「龍脈命術」という名前、実は由来があります。\n\n風水でいう龍脈＝気が流れる道。土地に流れがあるように、人にも生まれ持った〝流れ〟がある。その流れを読み解いて、今どこへ向かえば気が味方するかを示す占いです。\n\n自己紹介と一緒に、無料noteにまとめました🔮\nhttps://note.com/shigure_fortune/n/nab07df599219\n\nこれから龍脈命術の話をもっと発信していく予定なので、noteのフォローで応援していただけると励みになります✨\n\n#占い #引越し #風水"
+    ],
+    "theme": "吉方位・風水/引越し方位",
+    "pattern_id": "kotodama_rank",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "expires_on": "2026-08-03",
+    "pending_at": "2026-07-28T15:28:18.028286",
+    "queued_at": "2026-07-28T15:29:05.739202",
+    "threads_post_id": "18434400394125512",
+    "posted_at": "2026-07-28T15:29:43.686596+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-07-28T15:29:43.693874"
   }
 ]
