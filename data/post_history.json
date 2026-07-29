@@ -10532,7 +10532,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
-    "recorded_at": "2026-07-28T09:01:25.623259"
+    "recorded_at": "2026-07-28T09:01:25.623259",
+    "hourly_stats_recorded": true
   },
   {
     "text": "「北は何の方位？」って聞かれると、意外と答えられない人が多い。8方位、全部に意味がある。\n\n#占い #吉方位 #龍脈命術",
@@ -10719,5 +10720,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
     "recorded_at": "2026-07-29T09:01:13.411817"
+  },
+  {
+    "text": "引越しで流れが変わった人を、何人も見てきた。\n\n新しい場所に移っただけなのに、仕事の話が急に動いた。連絡が来なかった人から声がかかった。体が軽くなった、と言った人もいる。\n\n偶然じゃない。龍脈命術は「どこに行くか」で気の質が変わると読む。場所が変わると、そこに流れ込む気が変わる。気が変わると、引き寄せる縁も変わる。\n\n「たまたま運が向いた」んじゃなくて、向かう方向が整ったんだよ。\n\n引越しを考えている、か全く考えていない、どっちに近い？コメントで教えて。\n\n#占い #引越し #風水",
+    "x_text": "引越しで流れが変わった人を、何人も見てきた。\n\n新しい場所に移っただけなのに、仕事の話が急に動いた。連絡が来なかった人から声がかかった。体が軽くなった、と言った人もいる。\n\n偶然じゃない。龍脈命術は「どこに行くか」で気の質が変わると読む。場所が変わると、そこに流れ込む気が変わる。気が変わると、引き寄せる縁も変わる。\n\n「たまたま運が向いた」んじゃなくて、向かう方向が整ったんだよ。\n\n引越しを考えている、か全く考えていない、どっちに近い？コメントで教えて。\n\n#占い #時雨 #引越し #吉方位",
+    "theme": "鑑定エピソード/引越し・移転で流れが変わった話",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.8,
+    "attempts": 1,
+    "x_eligible": true,
+    "expires_on": "2026-08-12",
+    "pending_at": "2026-07-28T15:28:57.996266",
+    "queued_at": "2026-07-28T15:29:05.785919",
+    "threads_post_id": "18209683135342590",
+    "posted_at": "2026-07-29T09:42:37.088323+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
+    "recorded_at": "2026-07-29T09:42:37.096088"
   }
 ]
