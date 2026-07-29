@@ -10554,7 +10554,8 @@
     "posted_at": "2026-07-28T09:42:15.547766+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-07-28T09:42:15.555282"
+    "recorded_at": "2026-07-28T09:42:15.555282",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♐ 射手座で、「このままもう一年同じ場所にいるのかも」という感覚がある人以外は、読まなくていい。\n\n立秋を境に、気の流れが夏の「広がり」から秋の「収束」へ動き始める。この切り替えのタイミングで方位が合っていない人は、頑張るほど空回りする。龍脈命術では方向を整えるだけで、同じ行動の結果が変わると見る。努力量の問題じゃない。\n\n今、「動きたいのに動けない」感覚、ある？\n\n#占い #星座占い #運勢",
@@ -10577,7 +10578,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-28T12:01:35.807162"
+    "recorded_at": "2026-07-28T12:01:35.807162",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♏ 蠍座で今、転職・キャリアが気になっている人へ。\n\n評価は悪くない、でも結果が出ない。\nその焦り、意志の弱さじゃないよ。\n龍脈命術的に言うと、向かう方向がズレているだけ。\n\n今の蠍座、北西の気が動きやすい時期。\n転職の相談・面談・自己分析は北西方向のカフェや図書館でやってみて。\n同じ行動でも、方位が整うと結果の出方が変わるから。\n\n「そうそう」と思った人は 🌟 を置いてって。\n\n#占い #転職 #仕事運",
@@ -10597,7 +10599,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/scorpio.jpg",
-    "recorded_at": "2026-07-28T13:53:07.093158"
+    "recorded_at": "2026-07-28T13:53:07.093158",
+    "hourly_stats_recorded": true
   },
   {
     "text": "引越しを考えているなら、今すぐ動いてはいけない理由がある。\n\n#占い #引越し #風水",
@@ -10755,5 +10758,29 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-07-29T12:01:03.891548"
+  },
+  {
+    "text": "♋ 蟹座で、「引越したいな」という気持ちが何度も浮かんでいる人以外は、読まなくていい。\n\n#占い #引越し #風水",
+    "thread_posts": [
+      "♋ 蟹座で、「引越したいな」という気持ちが何度も浮かんでいる人以外は、読まなくていい。\n\n#占い #引越し #風水",
+      "♋ 蟹座さん、その「なんとなく今の場所が窮屈」という感覚、気のせいじゃない。\n\n龍脈命術では、今いる場所の方位が合わなくなると、努力しても流れが変わらないサインとして「移りたい衝動」が出ることがある。\n\nある鑑定で、3年間転職も恋愛も止まっていた方が、吉方位への引越し後に半年で両方動いた。変えたのは「場所の向き」だけ。\n\n今の場所、居心地どう？コメントで教えて。\n\n#龍脈命術 #吉方位 #引越し風水",
+      "「このままでいいのかな」\nその言葉、今月だけで何回呟きましたか？\n\n占いというと「当たる・当たらない」で語られがちですが、私が大事にしているのはそこじゃありません。\n\n風水×吉方位×星読みを組み合わせた、動くための占い「龍脈命術」について、無料noteにまとめました🔮\n誰のための占いか、どんな悩みに効くか。よければ覗いてみてください👇\nhttps://note.com/shigure_fortune/n/nab07df599219\n\n続きの記事も随時公開していくので、noteのフォローもしていただけると嬉しいです🙏\n\n#占い #引越し #風水"
+    ],
+    "theme": "鑑定エピソード/引越し・移転で流れが変わった話",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "zodiac_boost": "♋蟹座",
+    "expires_on": "2026-08-12",
+    "pending_at": "2026-07-29T13:57:20.385607",
+    "queued_at": "2026-07-29T13:58:09.655580",
+    "threads_post_id": "18090668573427948",
+    "posted_at": "2026-07-29T13:58:50.551960+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/cancer.jpg",
+    "recorded_at": "2026-07-29T13:58:50.560479"
   }
 ]
