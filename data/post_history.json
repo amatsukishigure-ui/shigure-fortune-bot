@@ -10440,7 +10440,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
-    "recorded_at": "2026-07-27T23:19:42.974976"
+    "recorded_at": "2026-07-27T23:19:42.974976",
+    "hourly_stats_recorded": true
   },
   {
     "text": "「占いって、結局、当たる当たらないでしょ」——そう思ってた時期が、私にもある。\n\n#占い #龍脈命術",
@@ -10462,7 +10463,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
-    "recorded_at": "2026-07-28T01:01:34.578918"
+    "recorded_at": "2026-07-28T01:01:34.578918",
+    "hourly_stats_recorded": true
   },
   {
     "text": "北・東・南・西、それぞれの方位に「得意なこと」がある。知らないまま動くのは、地図なしで旅するようなもの。\n\n#占い #吉方位 #龍脈命術",
@@ -10483,7 +10485,8 @@
     "posted_at": "2026-07-28T02:46:24.327986+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-07-28T02:46:24.335081"
+    "recorded_at": "2026-07-28T02:46:24.335081",
+    "hourly_stats_recorded": true
   },
   {
     "text": "引き寄せを信じて、でも動けないまま1年以上経ってる人へ。\n\n#占い #龍脈命術",
@@ -10655,5 +10658,27 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-07-29T01:01:05.245852"
+  },
+  {
+    "text": "♒ 水瓶座で、「引き寄せようとするほど遠ざかる気がする」な人以外は、読まなくていい。\n\n#占い #龍脈命術",
+    "thread_posts": [
+      "♒ 水瓶座で、「引き寄せようとするほど遠ざかる気がする」な人以外は、読まなくていい。\n\n#占い #龍脈命術",
+      "引き寄せは「念じる力」じゃなく「向きを整える力」だと龍脈命術は読む。\n\n立秋を過ぎた今、気の流れが夏から秋へと切り替わるタイミング。この時期にどこへ向かっているかで、引き寄せの精度がまるで変わる。\n\n「ほしいものを思い続ける」より「気が流れている方向に体を向ける」方が、動きが出やすい。\n\n今、何かを引き寄せようと頑張っている感覚がある？それとも自然と流れてきている感覚？どっちか教えて。\n\n#龍脈命術 #引き寄せ #水瓶座"
+    ],
+    "theme": "引き寄せ/引き寄せ×タイミングの読み方",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♒水瓶座",
+    "expires_on": "2026-08-12",
+    "pending_at": "2026-07-29T02:52:01.899778",
+    "queued_at": "2026-07-29T02:52:08.700897",
+    "threads_post_id": "17879514033615771",
+    "posted_at": "2026-07-29T02:52:31.011157+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-07-29T02:52:31.018791"
   }
 ]
