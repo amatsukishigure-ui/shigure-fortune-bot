@@ -10623,7 +10623,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-28T15:29:43.693874"
+    "recorded_at": "2026-07-28T15:29:43.693874",
+    "hourly_stats_recorded": true
   },
   {
     "text": "鑑定した方から連絡が来た。「方位を変えたら、思っていなかった話が来ました」と。\n\n#占い #吉方位 #開運",
@@ -10805,5 +10806,26 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-07-29T15:13:57.892345"
+  },
+  {
+    "text": "「自分の星座、もう信じてない」って思ったことない？\n\n#占い #星座占い #運勢",
+    "thread_posts": [
+      "「自分の星座、もう信じてない」って思ったことない？\n\n#占い #星座占い #運勢",
+      "星座占いが「性格」を読むのに対し、龍脈命術は「今いる場所・向かう方向」を読む。\n\n同じ星座でも、住む方位・デスクの向き・移動する方角が違えば、流れの引き方がまるで変わる。\n\nたとえば、今年の夏から秋にかけて動きたい人へ。\n立秋を境に気の流れが変わる。今が、方位を整えるタイミング。\n\n気になったら → 鑑定ページ https://coconala.com/services/4292937?ref=threads\n\n#龍脈命術 #吉方位 #星座占い"
+    ],
+    "theme": "星座別メッセージ/星座別・相性のいい方位",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "expires_on": "2026-08-13",
+    "pending_at": "2026-07-29T23:11:13.858143",
+    "queued_at": "2026-07-29T23:11:54.505553",
+    "threads_post_id": "18127290745732886",
+    "posted_at": "2026-07-29T23:12:17.951856+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-07-29T23:12:17.959772"
   }
 ]
