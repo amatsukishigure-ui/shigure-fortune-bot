@@ -10746,7 +10746,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
-    "recorded_at": "2026-07-29T09:42:37.096088"
+    "recorded_at": "2026-07-29T09:42:37.096088",
+    "hourly_stats_recorded": true
   },
   {
     "text": "住む場所を変えただけで、止まっていた話が動き出した。\n\nそれ、偶然じゃない。\n龍脈命術では、「どこにいるか」が運気の8割を決めると見る。\n\n「引越し前後で人生が変わった」か「環境と運は関係ない気がする」か、コメントで教えて。\n\n#占い #引越し #風水",
@@ -10763,7 +10764,8 @@
     "posted_at": "2026-07-29T12:01:03.883975+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-07-29T12:01:03.891548"
+    "recorded_at": "2026-07-29T12:01:03.891548",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♋ 蟹座で、「引越したいな」という気持ちが何度も浮かんでいる人以外は、読まなくていい。\n\n#占い #引越し #風水",
@@ -10950,5 +10952,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
     "recorded_at": "2026-07-30T12:01:26.278146"
+  },
+  {
+    "text": "気の流れは、頑張り方じゃなくて向きの問題。\n\n龍脈命術は方位を読む。同じ行動でも、向きが整っていれば結果が変わる。\n\n「そうだよ」か「初めて聞いた」か、コメントで教えて。\n\n#占い #吉方位 #龍脈命術",
+    "x_text": "気の流れは、頑張り方じゃなくて向きの問題。\n\n龍脈命術は方位を読む。同じ行動でも、向きが整っていれば結果が変わる。\n\n「そうだよ」か「初めて聞いた」か、コメントで教えて。\n\n#占い #時雨 #龍脈命術 #開運",
+    "theme": "龍脈命術の世界観/「動ける占い」とは何か",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.5,
+    "attempts": 1,
+    "x_eligible": true,
+    "expires_on": "2026-08-13",
+    "pending_at": "2026-07-30T13:48:55.109565",
+    "queued_at": "2026-07-30T13:49:43.441575",
+    "threads_post_id": "18020899979907108",
+    "posted_at": "2026-07-30T13:49:53.392136+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
+    "recorded_at": "2026-07-30T13:49:53.399815"
   }
 ]
