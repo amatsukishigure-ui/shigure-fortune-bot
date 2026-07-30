@@ -10789,7 +10789,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/cancer.jpg",
-    "recorded_at": "2026-07-29T13:58:50.560479"
+    "recorded_at": "2026-07-29T13:58:50.560479",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今月、どの方位に「気」が流れているか。知っている人と知らない人では、秋の動き出しが変わる。\n\n#占い #吉方位 #開運",
@@ -10970,5 +10971,29 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
     "recorded_at": "2026-07-30T13:49:53.399815"
+  },
+  {
+    "text": "♉ 牡牛座さん、今仕事がうまく回っていないなら、一度だけ聞いてほしいことがある。\n\n#占い #仕事運 #運気アップ",
+    "thread_posts": [
+      "♉ 牡牛座さん、今仕事がうまく回っていないなら、一度だけ聞いてほしいことがある。\n\n#占い #仕事運 #運気アップ",
+      "♉ 牡牛座さん、占いに興味ない人にこそ一度だけ聞いてほしいことがある。\n\n仕事部屋やデスクの「向き」、意識したことある？\n\n龍脈命術では、作業中に向く方位で気の質が変わると見る。北東に向かって座ると思考が研ぎ澄まれ、南西向きは気が散りやすい。努力してるのに空回りするとき、方位がズレていることが多い。\n\nまず今日、デスクの向きを少しだけ北東寄りに変えてみて。\n\n今の仕事部屋、どっちを向いて座ってる？コメントで教えて。\n\n#龍脈命術 #吉方位 #開運",
+      "「このままでいいのかな」\nその言葉、今月だけで何回呟きましたか？\n\n占いというと「当たる・当たらない」で語られがちですが、私が大事にしているのはそこじゃありません。\n\n風水×吉方位×星読みを組み合わせた、動くための占い「龍脈命術」について、無料noteにまとめました🔮\n誰のための占いか、どんな悩みに効くか。よければ覗いてみてください👇\nhttps://note.com/shigure_fortune/n/nab07df599219\n\n続きの記事も随時公開していくので、noteのフォローもしていただけると嬉しいです🙏\n\n#占い #仕事運 #運気アップ"
+    ],
+    "theme": "暮らしの吉方位と気の整え方/仕事部屋・デスクの方位",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "zodiac_boost": "♉牡牛座",
+    "expires_on": "2026-08-14",
+    "pending_at": "2026-07-30T15:17:15.592209",
+    "queued_at": "2026-07-30T15:17:22.961905",
+    "threads_post_id": "17898370149518846",
+    "posted_at": "2026-07-30T15:18:05.357553+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
+    "recorded_at": "2026-07-30T15:18:05.365219"
   }
 ]

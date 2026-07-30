@@ -6525,7 +6525,7 @@
     "fetched_at": "2026-07-30T09:30:48.373252"
   },
   {
-    "views": 0,
+    "views": 14,
     "likes": 1,
     "replies": 1,
     "reposts": 0,
@@ -6533,7 +6533,7 @@
     "shares": 0,
     "pattern_id": "ichi_gon",
     "post_id": "18209683135342590",
-    "fetched_at": "2026-07-30T13:43:15.046922"
+    "fetched_at": "2026-07-30T15:10:26.668549"
   },
   {
     "views": 89,
@@ -6545,5 +6545,16 @@
     "pattern_id": "ichi_gon",
     "post_id": "18103713155335588",
     "fetched_at": "2026-07-30T13:43:15.445969"
+  },
+  {
+    "views": 1536,
+    "likes": 26,
+    "replies": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "caligula",
+    "post_id": "18090668573427948",
+    "fetched_at": "2026-07-30T15:10:27.027281"
   }
 ]
