@@ -11065,5 +11065,23 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-07-31T03:04:58.890394"
+  },
+  {
+    "text": "吉方位は、努力の「効き方」を変える。\n\n同じ行動でも、向きが合えば気が通る。\n向きがズレていれば、どれだけ動いても気は滞る。\n\n「心当たりある」か「初耳だった」か、コメントで教えて。\n\n#占い #金運 #開運",
+    "x_text": "吉方位は、努力の「効き方」を変える。\n\n同じ行動でも、向きが合えば気が通る。\n向きがズレていれば、どれだけ動いても気は滞る。\n\n「心当たりある」か「初耳だった」か、コメントで教えて。\n\n#占い #時雨 #吉方位 #風水",
+    "theme": "吉方位・風水/金運アップの吉方位",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.6,
+    "attempts": 1,
+    "x_eligible": true,
+    "expires_on": "2026-08-14",
+    "pending_at": "2026-07-31T03:04:34.350470",
+    "queued_at": "2026-07-31T03:04:34.501604",
+    "threads_post_id": "17974158359914171",
+    "posted_at": "2026-07-31T06:01:06.805270+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
+    "recorded_at": "2026-07-31T06:01:06.812060"
   }
 ]
