@@ -10912,7 +10912,8 @@
     "posted_at": "2026-07-30T09:01:05.505381+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-07-30T09:01:05.512893"
+    "recorded_at": "2026-07-30T09:01:05.512893",
+    "hourly_stats_recorded": true
   },
   {
     "text": "気が乱れるとき、人は焦って動きたくなる。でも、それが一番危ない。\n\n#占い #引越し #風水",
@@ -10935,7 +10936,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-30T09:36:16.087780"
+    "recorded_at": "2026-07-30T09:36:16.087780",
+    "hourly_stats_recorded": true
   },
   {
     "text": "3年ひとりで、マッチングも続かない。そんな方から連絡が来た。\n\n#占い #恋愛運 #縁",
@@ -11108,5 +11110,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-07-31T09:01:45.937281"
+  },
+  {
+    "text": "デスクが散らかったまま仕事してない？\n\n龍脈命術では、デスクの上は「仕事運の気が集まる場所」。\n物が積み重なっていると、気が滞って思考も詰まる。頭が重い感覚、気のせいじゃないよ。\n\n今日やること1つだけ。\nデスクの右上の角、そこだけ何もない空白を作って。\n気は空いている場所に流れ込む。\n\n今の机、これできてる？コメントで教えて。\n\n#占い #仕事運 #運気アップ",
+    "x_text": "デスクが散らかったまま仕事してない？\n\n龍脈命術では、デスクの上は「仕事運の気が集まる場所」。\n物が積み重なっていると、気が滞って思考も詰まる。頭が重い感覚、気のせいじゃないよ。\n\n今日やること1つだけ。\nデスクの右上の角、そこだけ何もない空白を作って。\n気は空いている場所に流れ込む。\n\n今の机、これできてる？コメントで教えて。\n\n#占い #時雨 #星座占い #運勢",
+    "theme": "星座占い/仕事運",
+    "pattern_id": "fuusui_tip",
+    "quality_score": 8.0,
+    "attempts": 1,
+    "x_eligible": true,
+    "expires_on": "2026-08-10",
+    "pending_at": "2026-07-27T14:20:23.517160",
+    "queued_at": "2026-07-27T14:21:16.574641",
+    "threads_post_id": "18084903149416280",
+    "posted_at": "2026-07-31T09:50:24.534069+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/fengshui/water.jpg",
+    "recorded_at": "2026-07-31T09:50:24.540945"
   }
 ]
