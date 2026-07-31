@@ -10978,7 +10978,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
-    "recorded_at": "2026-07-30T13:49:53.399815"
+    "recorded_at": "2026-07-30T13:49:53.399815",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♉ 牡牛座さん、今仕事がうまく回っていないなら、一度だけ聞いてほしいことがある。\n\n#占い #仕事運 #運気アップ",
@@ -11002,7 +11003,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
-    "recorded_at": "2026-07-30T15:18:05.365219"
+    "recorded_at": "2026-07-30T15:18:05.365219",
+    "hourly_stats_recorded": true
   },
   {
     "text": "寅の日・巳の日に動いた人が、なぜか「うまくいく」のには理由がある。\n\n#占い #金運 #開運",
@@ -11151,5 +11153,23 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-07-31T13:54:07.023514"
+  },
+  {
+    "text": "♒ 水瓶座さんへ。\n\n「動きたいのに、なぜか止まってる」そんな感覚、最近ない？\n\nこの週末は南西の方角を意識してみて。龍脈命術で観ると、水瓶座の気の流れが南西方向で大きく開く配置になってる。\n\n考えすぎて止まってた決断、この週末中に一歩だけ動かしてみてね。方角が合えば、驚くほど軽く進むよ。",
+    "theme": "龍脈命術の世界観/龍脈命術と他の占いの違い",
+    "pattern_id": "zodiac_target",
+    "quality_score": 7.9,
+    "attempts": 1,
+    "x_eligible": false,
+    "is_repost": true,
+    "original_post_id": "17919311640165392",
+    "pending_at": "2026-07-31T13:52:18.803969",
+    "queued_at": "2026-07-31T13:53:32.071801",
+    "threads_post_id": "18066689576720188",
+    "posted_at": "2026-07-31T15:25:16.255542+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/general.jpg",
+    "recorded_at": "2026-07-31T15:25:16.262793"
   }
 ]
