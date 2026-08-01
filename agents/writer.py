@@ -637,6 +637,8 @@ def _build_prompt(
    例: 「もう一点、動き方に注意があって──」
    例: 「使える方角はもう1つ。ただし条件がある。」
    禁止: 「続けます。」「次に書きます。」「次で残りを話します。」
+5. いいね誘導（任意・引きの直後、50%の確率で追加）: 「続きはいいね🩷してもらえると届きます」「いいね🩷で次が受け取れます」
+   ※ 固定化するとスパム感が出るので毎回ではなく自然に
 
 **2投稿目（190〜230字）— 吉方位2点目×NG×保存CTA**
 目的: 情報を使い切ってもらい保存と絵文字コメントを促す
@@ -1671,6 +1673,8 @@ def run(batch_size: int = 5) -> dict:
     # バッチ内パターン使用カウント（pattern_id + daily_limit の1日制限に使用）
     batch_pid_counts: dict = {}
     excluded_pids: set = set()
+    # バッチ内で既に使った星座（同バッチ内での重複を防ぐ）
+    batch_used_zodiacs: list = []
 
     for i in range(batch_size):
         # スケジュールヒントを使ってテーマ選択（曜日固定コンテンツ）
@@ -1691,13 +1695,14 @@ def run(batch_size: int = 5) -> dict:
         if pattern.get("id") in ("zodiac_target", "caligula", "zodiac_deep"):
             if pattern.get("id") == "zodiac_deep":
                 _recent_used = _get_recent_zodiac_deep_signs(history, days=14)
-                _zodiac_val = _pick_zodiac(exclude=_recent_used)
+                _zodiac_val = _pick_zodiac(exclude=_recent_used + batch_used_zodiacs)
             elif pattern.get("id") in ("caligula", "zodiac_target"):
-                # 直近7日に同一星座が投稿済みの場合は別の星座を選ぶ（zodiac_deep同様に延長）
+                # 直近7日 + バッチ内使用済みを除外（バッチ内重複防止）
                 _recent_zodiac_used = _get_recent_zodiac_signs_any(history, hours=24 * 7)
-                _zodiac_val = _pick_zodiac(exclude=_recent_zodiac_used)
+                _zodiac_val = _pick_zodiac(exclude=_recent_zodiac_used + batch_used_zodiacs)
             else:
                 _zodiac_val = _pick_zodiac()
+            batch_used_zodiacs.append(_zodiac_val)
             extra_hint["zodiac"] = _zodiac_val
             extra_hint["zodiac_boost"] = _zodiac_val  # 画像選択にも使う
             # B改善: 悩みジャンルで読者層を絞り込む（12星座×4ジャンル=精密ターゲット）
