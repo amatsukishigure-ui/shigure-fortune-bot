@@ -237,6 +237,25 @@ def _get_recent_zodiac_deep_signs(history: list, days: int = 14) -> list:
     return used
 
 
+def _get_recent_caligula_sign(history: list, days: int = 5) -> str | None:
+    """直近N日のcaligula投稿で最後に使われた星座を返す（zodiac_deepコンボ用）"""
+    import re
+    cutoff = (datetime.now(JST) - timedelta(days=days)).isoformat()
+    marks = "♈♉♊♋♌♍♎♏♐♑♒♓"
+    for h in reversed(history):
+        if h.get("pattern_id") != "caligula":
+            continue
+        if h.get("posted_at", "") < cutoff:
+            break
+        text = h.get("text", "")
+        m = re.search(f"([{marks}])", text)
+        if m:
+            for z in ZODIAC_SIGNS:
+                if z[0] == m.group(1):
+                    return z
+    return None
+
+
 def _get_recent_zodiac_signs_any(history: list, hours: int = 24) -> list:
     """直近N時間に zodiac 系パターンで使われた星座を返す（同日の重複投稿防止用）"""
     import re
@@ -370,6 +389,10 @@ def _select_pattern(
         # 木曜（wd=3）: world_view（ブランド教育・実績語り）を週次強化
         if _today_wd == 3 and pid == "world_view":
             w *= 1.5
+
+        # 月曜（wd=0）: kotodama_rank を週次安定稼働のため 4.0x（avg 56 likes、最高実績）
+        if _today_wd == 0 and pid == "kotodama_rank":
+            w *= 4.0
 
         # 月初め（1〜3日）: kotodama_rank（今月の言霊）を月次スパイク狙いで 2.5x
         _today_dom = datetime.now(JST).day
@@ -651,6 +674,47 @@ def _build_prompt(
 - 「吉方位×行動」は抽象的NG。「東向きの席を選ぶ」「南口から出てみる」レベルの具体性
 - 2投稿合計で元の400〜480字を維持し、情報密度は落とさない
 - zodiac_targetとの差別化: zodiac_targetは100〜200字単発、zodiac_deepは2投稿で深掘り
+"""
+    elif pattern_id == "zodiac_problem":
+        zodiac = extra_hint.get("zodiac", "♈牡羊座")
+        _zm_p = zodiac[0] if zodiac and not zodiac[0].isalpha() and not '぀' <= zodiac[0] <= '鿿' else ""
+        _zn_p = zodiac.lstrip("♈♉♊♋♌♍♎♏♐♑♒♓").strip()
+        _pg_p = (extra_hint or {}).get("pain_genre", "停滞・変化")
+        import random as _rnd_zp
+        _zp_cta = _rnd_zp.choice([
+            f"心当たりある？コメントで教えて。",
+            f"{_zn_p}座さん、今これ当てはまってる？",
+            f"「そうそう」と思った人、コメントで教えて。",
+            f"今どっちに近い？コメントで。",
+        ])
+        pattern_extra = f"""
+## 星座×悩み直撃型の追加ルール
+
+対象星座: {zodiac}（記号: {_zm_p}　名称: {_zn_p}）
+今回の悩みジャンル: {_pg_p}
+
+### 構成（150〜220字）
+1. **冒頭（1行）**: 「{_zm_p}{_zn_p}で、{_pg_p}に悩んでいる人へ。」または「{_zm_p}{_zn_p}で、{_pg_p}がうまくいかないと感じてる人へ。」
+2. **原因の外在化（2行）**: 龍脈命術の視点で「あなたのせいじゃない、方向・気の流れの問題」として外在化する
+   例: 「龍脈命術で見ると、今の{_zn_p}座には〜の気がある。努力の問題じゃなく、向きの問題。」
+3. **解決行動（1行）**: 具体的な方位×行動1点。「○方向に〜するだけで〜が変わる」レベルの具体性
+4. **CTA（末尾必須）**: {_zp_cta}
+
+### 禁止
+- 「今週」「今月」「今夜」などの時事表現（投稿が時間経過で嘘になる）
+- 「信じれば変わる」「気持ちの問題」など主観押し付け表現
+- 220字を超えること（コンパクトさが命）
+
+### 差別化ポイント
+- zodiac_target: 吉方位アドバイス中心（What to do）
+- zodiac_problem: 悩みの原因外在化＋「あなたのせいじゃない」共感（Why it's happening）
+- caligula: 排除・禁止フックで引き込む
+- zodiac_problem: 共感フックで引き込む（「自分の話だ」という認識）
+
+### 心理効果
+- **スポットライト効果**: 星座+悩みの二重指名で「自分への手紙」感
+- **外在化効果**: 原因を外在化することで「自分のせいじゃない」安心感と信頼が同時に生まれる
+- **最小行動CTA**: 具体的な1行動だけを提示して敷居を下げる
 """
     elif pattern_id == "caligula":
         zodiac = extra_hint.get("zodiac", "")
@@ -1692,11 +1756,17 @@ def run(batch_size: int = 5) -> dict:
         # パターン固有のヒント（星座を使うパターンは対象星座を決定）
         import random as _random
         extra_hint = {"estimated_post_time": est_post_time}
-        if pattern.get("id") in ("zodiac_target", "caligula", "zodiac_deep"):
+        if pattern.get("id") in ("zodiac_target", "caligula", "zodiac_deep", "zodiac_problem"):
             if pattern.get("id") == "zodiac_deep":
                 _recent_used = _get_recent_zodiac_deep_signs(history, days=14)
-                _zodiac_val = _pick_zodiac(exclude=_recent_used + batch_used_zodiacs)
-            elif pattern.get("id") in ("caligula", "zodiac_target"):
+                # caligula コンボ: 直近5日のcaligula星座と同じ星座を60%確率で使う（シリーズ効果）
+                _combo_sign = _get_recent_caligula_sign(history, days=5)
+                if (_combo_sign and _combo_sign not in _recent_used + batch_used_zodiacs
+                        and _random.random() < 0.6):
+                    _zodiac_val = _combo_sign
+                else:
+                    _zodiac_val = _pick_zodiac(exclude=_recent_used + batch_used_zodiacs)
+            elif pattern.get("id") in ("caligula", "zodiac_target", "zodiac_problem"):
                 # 直近7日 + バッチ内使用済みを除外（バッチ内重複防止）
                 _recent_zodiac_used = _get_recent_zodiac_signs_any(history, hours=24 * 7)
                 _zodiac_val = _pick_zodiac(exclude=_recent_zodiac_used + batch_used_zodiacs)
