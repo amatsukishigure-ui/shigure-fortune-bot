@@ -11177,7 +11177,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/general.jpg",
-    "recorded_at": "2026-07-31T15:25:16.262793"
+    "recorded_at": "2026-07-31T15:25:16.262793",
+    "hourly_stats_recorded": true
   },
   {
     "text": "停滞が長い人には、共通点がある。\n\n#占い #開運 #運気アップ",
@@ -11342,5 +11343,26 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-08-01T14:32:48.362448"
+  },
+  {
+    "text": "寅の日に動いた人の話をしてもいい？\n\n#占い #金運 #開運",
+    "thread_posts": [
+      "寅の日に動いた人の話をしてもいい？\n\n#占い #金運 #開運",
+      "先月、お金の流れに悩んでいた40代の方が鑑定を受けた。\n\n以前：収入源を増やしたいのに、何をしても空回りしていた。\n今：寅の日に合わせて北西方位へ動き、副収入の話が入ってきた。\n\n龍脈命術は「いつ動くか」より「どの方位に動くか」で気の流れが変わる。開運日と吉方位を重ねると、同じ行動の結果が変わってくるよ。\n\n心当たりある？\n\n気になったら → Coconala https://coconala.com/services/4292937?ref=threads\n\n#龍脈命術 #寅の日 #金運"
+    ],
+    "theme": "開運日/寅の日・巳の日と金運",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "expires_on": "2026-08-16",
+    "pending_at": "2026-08-01T23:06:30.761939",
+    "queued_at": "2026-08-01T23:07:12.804129",
+    "threads_post_id": "18090223070428987",
+    "posted_at": "2026-08-01T23:07:38.828962+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-01T23:07:38.836760"
   }
 ]
