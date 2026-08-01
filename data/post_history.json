@@ -11135,7 +11135,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/fengshui/water.jpg",
-    "recorded_at": "2026-07-31T09:50:24.540945"
+    "recorded_at": "2026-07-31T09:50:24.540945",
+    "hourly_stats_recorded": true
   },
   {
     "text": "お金の流れを変えたいなら、家計より先に「向き」を変えてみて。\n\n#占い #金運 #開運",
@@ -11293,5 +11294,29 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
     "recorded_at": "2026-08-01T12:01:13.654632"
+  },
+  {
+    "text": "「このままでいいのかな」が口癖になって、もう何年も経っている。そういう人だけ読んで。\n\n#占い #龍脈命術",
+    "thread_posts": [
+      "「このままでいいのかな」が口癖になって、もう何年も経っている。そういう人だけ読んで。\n\n#占い #龍脈命術",
+      "♑山羊座で、「変わりたいのに動けない」が何年も続いている人に話をする。\n\nそれ、意志が弱いんじゃない。\n\n龍脈命術では、気の流れが滞ると「わかってるのに体が動かない」状態が起きる。向きが合っていない場所にいると、エネルギーが空回りし続ける。\n\nまず今夜、枕の頭側を北か東に向けてみて。それだけでいい。同じ行動なのに「動けた」と感じる日が来る。\n\n当てはまる？コメントで教えて。\n\n#龍脈命術 #運気を整える #山羊座",
+      "「このままでいいのかな」\nその言葉、今月だけで何回呟きましたか？\n\n占いというと「当たる・当たらない」で語られがちですが、私が大事にしているのはそこじゃありません。\n\n風水×吉方位×星読みを組み合わせた、動くための占い「龍脈命術」について、無料noteにまとめました🔮\n誰のための占いか、どんな悩みに効くか。よければ覗いてみてください👇\nhttps://note.com/shigure_fortune/n/nab07df599219\n\n続きの記事も随時公開していくので、noteのフォローもしていただけると嬉しいです🙏\n\n#占い #吉方位 #開運"
+    ],
+    "theme": "時雨の世界観/占いへの想い",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "zodiac_boost": "♍乙女座",
+    "expires_on": "2026-08-15",
+    "pending_at": "2026-08-01T13:08:21.893228",
+    "queued_at": "2026-08-01T13:09:42.373801",
+    "threads_post_id": "18094441955287645",
+    "posted_at": "2026-08-01T13:10:25.066350+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-08-01T13:10:25.072457"
   }
 ]
