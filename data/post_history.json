@@ -11026,7 +11026,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-30T23:18:51.888803"
+    "recorded_at": "2026-07-30T23:18:51.888803",
+    "hourly_stats_recorded": true
   },
   {
     "text": "気づいた方だけ受け取ってください。\n\n【今週の龍脈言霊ランキング｜暮らしの気を整える一言】\n\n🥇第1位　みずがめ座\n「鏡の向きを整えると、気の反射が変わる」\n\n🥈第2位　てんびん座\n「住む場所の気が、私の流れを決めている」\n\n🥉第3位　ふたご座\n「向きを変えるだけで、気の扉が開く」\n\n🏅第4位　うお座\n「整えた暮らしが、龍脈の気を呼び込む」\n\n第5位　おひつじ座\n「気の流れが、日々の選択を後押しする」\n\n第6位　いて座\n「方位に沿って動くと、暮らしの重さが抜ける」\n\n第7位　さそり座\n「受け取る場所を整えると、気が満ちてくる」\n\n第8位　おうし座\n「滞った気は、置き方ひとつで動き始める」\n\n第9位　やぎ座\n「気の流れに乗った暮らしが、次の道を開く」\n\n第10位　かに座\n「反射した気が、静かに部屋を満たしていく」\n\n第11位　しし座\n「動線の向きが整うと、気の流れが変わる」\n\n第12位　おとめ座\n「蓄えた気が、暮らしの底から押し上げてくる」\n\n🔮をそっと置いた方から、\n滞っていた暮らしの気が整い始め、\n吉方位の流れが静かに動き出します。\n\n#占い #吉方位 #開運",
@@ -11049,7 +11050,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-07-31T01:01:42.431775"
+    "recorded_at": "2026-07-31T01:01:42.431775",
+    "hourly_stats_recorded": true
   },
   {
     "text": "鏡の位置、なんとなく決めてない？\n\n#占い #吉方位 #開運",
@@ -11211,5 +11213,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
     "recorded_at": "2026-08-01T01:01:06.681735"
+  },
+  {
+    "text": "♌獅子座で、「引き寄せを試したけど何も変わらなかった」人以外は読まなくていい。\n\n#占い #吉方位 #龍脈命術",
+    "thread_posts": [
+      "♌獅子座で、「引き寄せを試したけど何も変わらなかった」人以外は読まなくていい。\n\n#占い #吉方位 #龍脈命術",
+      "♌獅子座さん、引き寄せがうまくいかない人に聞きたいことがある。\n\nどの方向に向かって「引き寄せ」ていたか、覚えてる？\n\n龍脈命術では、気の流れには方位ごとに質がある。同じ言葉を唱えても、凶方位に向けていると気が散って戻ってくる。引き寄せは「思い方」より先に「向き」の問題だと思っている。\n\n立秋を過ぎると気の流れが切り替わるタイミング。今、自分がどの方向に意識を向けているか、一度確認してみて。\n\n引き寄せ、試したことある？当てはまる人コメントで教えて。\n\n#龍脈命術 #引き寄せ #吉方位"
+    ],
+    "theme": "引き寄せ/方位が引き寄せを加速する仕組み",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♌獅子座",
+    "expires_on": "2026-08-15",
+    "pending_at": "2026-08-01T03:01:41.317751",
+    "queued_at": "2026-08-01T03:02:39.329431",
+    "threads_post_id": "18064725773740756",
+    "posted_at": "2026-08-01T03:03:07.040044+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/leo.jpg",
+    "recorded_at": "2026-08-01T03:03:07.047607"
   }
 ]
