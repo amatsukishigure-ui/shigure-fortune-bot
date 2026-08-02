@@ -11325,7 +11325,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-08-01T13:10:25.072457"
+    "recorded_at": "2026-08-01T13:10:25.072457",
+    "hourly_stats_recorded": true
   },
   {
     "text": "変わった人と変わらなかった人、龍脈命術で見ると違いは一つだった。\n\n#占い #龍脈命術",
@@ -11348,7 +11349,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-08-01T14:32:48.362448"
+    "recorded_at": "2026-08-01T14:32:48.362448",
+    "hourly_stats_recorded": true
   },
   {
     "text": "寅の日に動いた人の話をしてもいい？\n\n#占い #金運 #開運",
@@ -11495,5 +11497,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-08-02T13:11:14.105575"
+  },
+  {
+    "text": "有料鑑定を受けた方に、毎回伝えていることがある。今夜だけ、ここに出す。\n\nテーマは「転機を見逃す人の共通点」。\n\n転機が来ていないんじゃない。気づけていないだけだ。\n\nその理由は──方位にある。\n\n#占い #開運 #運気アップ",
+    "thread_posts": [
+      "有料鑑定を受けた方に、毎回伝えていることがある。今夜だけ、ここに出す。\n\nテーマは「転機を見逃す人の共通点」。\n\n転機が来ていないんじゃない。気づけていないだけだ。\n\nその理由は──方位にある。\n\n#占い #開運 #運気アップ",
+      "龍脈命術で1000人以上を見てきたが、転機を逃し続ける人には全員、同じ問題があった。\n\n気の流れが変わる瞬間は、必ず「特定の方角」から入ってくる。\nでも多くの人は、その方角に背を向けた生活をしている。\n\n北東に気の変わり目があるのに、南西の部屋で仕事をしている。\n行くべき方向と、向いている方向がズレている。\n\n意志の問題じゃない。向きの問題だ。\n\nこれを知ってしまうと、止まっていた理由がわかる。\n\n#占い #仕事運 #運気アップ",
+      "知ってしまった以上、気づかなかったふりはできない。\n\n自分の「転機の方角」を確かめたい方は、鑑定で話しましょう。\n▷ https://coconala.com/services/4292937?ref=threads\n\n#占い #開運 #運気アップ"
+    ],
+    "theme": "転機のサイン/転換点を龍脈命術で見ると",
+    "pattern_id": "harm_revelation",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "expires_on": "2026-08-11",
+    "pending_at": "2026-07-27T23:19:18.873647",
+    "queued_at": "2026-07-27T23:19:19.045521",
+    "threads_post_id": "18615353533053567",
+    "posted_at": "2026-08-02T14:41:49.445752+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-02T14:41:49.453994"
   }
 ]
