@@ -11243,7 +11243,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/leo.jpg",
-    "recorded_at": "2026-08-01T03:03:07.047607"
+    "recorded_at": "2026-08-01T03:03:07.047607",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♓ 魚座さんへ。\n\n「このままでいいのかな」が口癖になっていない？\n\n今、魚座は気が内向きに滞りやすい時期。\n動けない感覚があるなら、意志の問題じゃない。\n\n龍脈命術で見ると、魚座は今、北東の方位に流れを変えるきっかけがある。\n散歩でも買い物でも、意識的に北東へ足を向けてみてね。\n\n魚座さん、「動きたい」か「待ちたい」か、コメントで教えて。\n\n#占い #吉方位 #開運",
@@ -11412,5 +11413,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/season/autumn.jpg",
     "recorded_at": "2026-08-02T03:01:55.468240"
+  },
+  {
+    "text": "「この日に動けばいい」ってわかってても、動けない人の話。\n\n今日、7月28日は一粒万倍日。\n種が万倍になる吉日とされてるけど、知っても「でも…」って止まる人がいる。\n\n吉方位は東〜東南。\n今夜、その方向にあるカフェや本屋にふらっと入るだけでいい。\n\n龍脈命術では「停滞」は流れが止まったんじゃなく、次の波を溜めている状態。\nでも溜めすぎると、流れは別の人のところへ行く。\n\n次の一粒万倍日まで数日ある。\n今日の夕方、一歩でいい。\n\n心当たりある？\n\n#占い #龍脈命術",
+    "theme": "龍脈命術の世界観/龍脈命術で見る「停滞」の意味",
+    "pattern_id": "kaiun_day",
+    "quality_score": 8.0,
+    "attempts": 1,
+    "x_eligible": true,
+    "is_repost": true,
+    "original_post_id": "18094674950462754",
+    "pending_at": "2026-07-27T23:18:05.626863",
+    "queued_at": "2026-07-27T23:19:19.034291",
+    "threads_post_id": "18408678874158421",
+    "posted_at": "2026-08-02T06:13:59.494617+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/direction/east.jpg",
+    "recorded_at": "2026-08-02T06:13:59.502171"
   }
 ]
