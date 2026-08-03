@@ -11419,7 +11419,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/season/autumn.jpg",
-    "recorded_at": "2026-08-02T03:01:55.468240"
+    "recorded_at": "2026-08-02T03:01:55.468240",
+    "hourly_stats_recorded": true
   },
   {
     "text": "「この日に動けばいい」ってわかってても、動けない人の話。\n\n今日、7月28日は一粒万倍日。\n種が万倍になる吉日とされてるけど、知っても「でも…」って止まる人がいる。\n\n吉方位は東〜東南。\n今夜、その方向にあるカフェや本屋にふらっと入るだけでいい。\n\n龍脈命術では「停滞」は流れが止まったんじゃなく、次の波を溜めている状態。\nでも溜めすぎると、流れは別の人のところへ行く。\n\n次の一粒万倍日まで数日ある。\n今日の夕方、一歩でいい。\n\n心当たりある？\n\n#占い #龍脈命術",
@@ -11437,7 +11438,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/direction/east.jpg",
-    "recorded_at": "2026-08-02T06:13:59.502171"
+    "recorded_at": "2026-08-02T06:13:59.502171",
+    "hourly_stats_recorded": true
   },
   {
     "text": "旅行の前に「方角」を確認したことある？\n\n龍脈命術では、向かう方位によって旅先での気の質が変わると読む。星座占いが性格を見るのに対して、龍脈命術は「どこへ向かうか」で流れを読む。\n\n立秋を越えたこの時期は、夏の乱れた気が落ち着きはじめる転換点。\n\n今日できること1つ。\n次に行く場所が自宅から見てどの方角か、地図で確認してみて。\n\nその方角、今のあなたに合ってる？\n\n#占い #吉方位 #開運",
@@ -11583,5 +11585,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
     "recorded_at": "2026-08-03T06:01:13.193225"
+  },
+  {
+    "text": "気が乱れる日に、動いてはいけない方角がある。\n\n#占い #金運 #開運",
+    "thread_posts": [
+      "気が乱れる日に、動いてはいけない方角がある。\n\n#占い #金運 #開運",
+      "気づいた方だけ受け取ってください。\n\n【金運が動く吉方位・言霊ランキング】\n\n🥇第1位　おうし座\n「流れに乗る方向へ、一歩だけ踏み出す」\n\n🥈第2位　やぎ座\n「北の気が、蓄えた力を今動かし始める」\n\n🥉第3位　てんびん座\n「受け取る向きを整えると、気が集まってくる」\n\n🏅第4位　いて座\n「動いた方角に、龍脈の流れが重なっていく」\n\n第5位　おひつじ座\n「向きを変えるだけで、金の気の通り道ができる」\n\n第6位　ふたご座\n「気の扉が今開く方向へ、意識を向けてみて」\n\n第7位　しし座\n「蓄えた気が、吉方位に乗って動き出す」\n\n第8位　さそり座\n「流れを読む目が、今最も研ぎ澄まされている」\n\n第9位　うお座\n「方位の気を味方にした分だけ、道が拓ける」\n\n第10位　みずがめ座\n「止まっていた流れが、方角ひとつで変わり始める」\n\n第11位　かに座\n「居場所の気を整えると、金運の入り口が開く」\n\n第12位　おとめ座\n「整えた先に、気の流れが静かに集まってくる」\n\n🐉を置いた方から、\n滞っていた金運の龍脈が動き始め、\n吉方位への扉が今静かに開いていきます。\n\n#龍脈命術 #金運吉方位 #吉方位風水",
+      "こんな方、いませんか？\n□ 引っ越し・転職・独立、決め手がなくて動けない\n□ 「このままでいいのか」がずっと頭の片隅にある\n□ 占いを受けたことはあるけど、聞いて終わりだった\n\n2つ以上当てはまったら、読んでほしいnoteを書きました。\n\n「動ける占い」龍脈命術について、無料で公開しています🔮\nhttps://note.com/shigure_fortune/n/nab07df599219\n\n見逃したくない方は、noteのフォローもぜひ👀\n\n#占い #転職 #仕事運"
+    ],
+    "theme": "吉方位・風水/金運アップの吉方位",
+    "pattern_id": "kotodama_rank",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "expires_on": "2026-08-17",
+    "pending_at": "2026-08-03T06:34:46.264414",
+    "queued_at": "2026-08-03T06:35:47.858982",
+    "threads_post_id": "18097329617207597",
+    "posted_at": "2026-08-03T06:36:23.216882+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-08-03T06:36:23.224775"
   }
 ]
