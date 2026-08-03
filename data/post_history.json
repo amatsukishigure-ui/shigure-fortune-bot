@@ -11525,7 +11525,8 @@
     "posted_at": "2026-08-02T14:41:49.445752+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-02T14:41:49.453994"
+    "recorded_at": "2026-08-02T14:41:49.453994",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♊ 双子座で、今夏「動きたいのに動けない」感覚がある人以外は、読まなくていい。\n\n#占い #吉方位 #開運",
@@ -11698,5 +11699,26 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-08-03T14:29:34.819298"
+  },
+  {
+    "text": "3年ひとりのままで、「私って魅力ないのかな」って思ってた。でも、方位のズレだった。\n\n#占い #恋愛運 #縁",
+    "thread_posts": [
+      "3年ひとりのままで、「私って魅力ないのかな」って思ってた。でも、方位のズレだった。\n\n#占い #恋愛運 #縁",
+      "先月、鑑定した方から連絡が来た。\n\n30代、3年以上恋愛が動かなかった方。\nマッチングアプリも続かず「自分に問題があるのかも」と思い始めていた。\n\n鑑定でわかったのは、意識の向け方ではなく方位のズレ。\n寝室の枕の向きを北東に変えた。それだけ。\n\n立秋を過ぎたころ、「好きな人ができた」と連絡が来た。\n\n龍脈命術は「当てる」占いじゃなく「動かす」占い。\n縁が来ていないんじゃなく、向きがずれていただけのことが多い。\n\n心当たりある？\n\n気になったら → LINE https://lin.ee/TJg5dru\n▷ 鑑定ページ https://coconala.com/services/4292937?ref=threads\n\n#龍脈命術 #恋愛運 #吉方位"
+    ],
+    "theme": "鑑定エピソード/恋愛・縁が動いた話",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "expires_on": "2026-08-17",
+    "pending_at": "2026-08-03T14:28:21.673570",
+    "queued_at": "2026-08-03T14:28:57.109786",
+    "threads_post_id": "18110653051801945",
+    "posted_at": "2026-08-03T15:51:07.430502+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-03T15:51:07.436949"
   }
 ]
