@@ -11456,7 +11456,8 @@
     "posted_at": "2026-08-02T09:01:02.396871+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-02T09:01:02.404828"
+    "recorded_at": "2026-08-02T09:01:02.404828",
+    "hourly_stats_recorded": true
   },
   {
     "text": "頑張ってるのに結果が出ない。それ、努力の問題じゃないかもしれない。\n\n#占い #仕事運 #運気アップ",
@@ -11631,5 +11632,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/fortune_1.jpg",
     "recorded_at": "2026-08-03T09:02:12.895733"
+  },
+  {
+    "text": "向かう方角が合っているだけで、\n同じ努力が違う場所に届く。\n\n吉方位って、そういうことだよ。\n\n「知ってた」か「初めて聞いた」か、コメントで教えて。\n\n#占い #吉方位 #開運",
+    "x_text": "向かう方角が合っているだけで、\n同じ努力が違う場所に届く。\n\n吉方位って、そういうことだよ。\n\n「知ってた」か「初めて聞いた」か、コメントで教えて。\n\n#占い #時雨 #吉方位 #風水",
+    "theme": "吉方位・風水/星座別吉方位",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.5,
+    "attempts": 1,
+    "x_eligible": true,
+    "expires_on": "2026-08-17",
+    "pending_at": "2026-08-03T10:46:27.161686",
+    "queued_at": "2026-08-03T10:47:19.334042",
+    "threads_post_id": "18386605024204984",
+    "posted_at": "2026-08-03T10:47:27.675505+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
+    "recorded_at": "2026-08-03T10:47:27.683516"
   }
 ]
