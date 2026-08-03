@@ -11371,7 +11371,8 @@
     "posted_at": "2026-08-01T23:07:38.828962+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-01T23:07:38.836760"
+    "recorded_at": "2026-08-01T23:07:38.836760",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♊ 双子座さん、来週についてまだ何も動いていないなら読まないほうがいい。\n\n#占い #星座占い #運勢",
@@ -11394,7 +11395,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-08-02T01:01:23.949306"
+    "recorded_at": "2026-08-02T01:01:23.949306",
+    "hourly_stats_recorded": true
   },
   {
     "text": "普段は投稿に書かないことにしている。でも今夜だけ書く。\n\nテーマは「停滞の本当の原因」。\n\n頑張り方の問題じゃない。もっと手前の話だ。\n\n止まっている理由は──向きにある。\n\n#占い #開運 #運気アップ",
@@ -11542,5 +11544,26 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-08-02T23:09:03.655763"
+  },
+  {
+    "text": "開運日が重なる日、知ってる？ただのラッキーデーじゃない。\n\n#占い #龍脈命術",
+    "thread_posts": [
+      "開運日が重なる日、知ってる？ただのラッキーデーじゃない。\n\n#占い #龍脈命術",
+      "鑑定した方から連絡が来た。\n\n40代、長年迷っていた独立の話。「いつ動けばいいか」がずっとわからなかったと言っていた。\n\n龍脈命術では、開運日の「重なり」を見る。一粒万倍日でも天赦日でも、方位と噛み合っていない日に動くと空回りする。逆に、吉日×吉方位が重なった日に動いた人は、同じ行動でも流れが違う。\n\n立秋を過ぎ、気の流れが切り替わるこの時期。重なりの日を知って動いた方は、今月中に開業届を出せた。\n\n龍脈命術は「いい日」より「自分に合う日」を読む占い。\n\nあなたは開運日、使いこなせてる？\n\n気になったら → LINE https://lin.ee/TJg5dru\n\n#龍脈命術 #開運日 #吉方位"
+    ],
+    "theme": "開運日/開運日の重なりと優先度",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "expires_on": "2026-08-17",
+    "pending_at": "2026-08-03T03:02:09.749610",
+    "queued_at": "2026-08-03T03:02:54.837700",
+    "threads_post_id": "18132922894618824",
+    "posted_at": "2026-08-03T03:03:21.108352+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-03T03:03:21.117299"
   }
 ]
