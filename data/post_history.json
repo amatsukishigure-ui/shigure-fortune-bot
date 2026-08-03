@@ -11478,7 +11478,8 @@
     "posted_at": "2026-08-02T12:01:21.994439+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-02T12:01:22.002221"
+    "recorded_at": "2026-08-02T12:01:22.002221",
+    "hourly_stats_recorded": true
   },
   {
     "text": "「最近、恋愛の流れが止まってる気がする」と感じているあなたへ。\n気の向きが乱れているとき、待っていても流れは来ない。\n\n#占い #恋愛運 #縁",
@@ -11501,7 +11502,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-08-02T13:11:14.105575"
+    "recorded_at": "2026-08-02T13:11:14.105575",
+    "hourly_stats_recorded": true
   },
   {
     "text": "有料鑑定を受けた方に、毎回伝えていることがある。今夜だけ、ここに出す。\n\nテーマは「転機を見逃す人の共通点」。\n\n転機が来ていないんじゃない。気づけていないだけだ。\n\nその理由は──方位にある。\n\n#占い #開運 #運気アップ",
@@ -11673,5 +11675,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/fengshui_abundance.jpg",
     "recorded_at": "2026-08-03T12:01:53.142148"
+  },
+  {
+    "text": "気の流れが最高に整う日、知ってる？\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "気の流れが最高に整う日、知ってる？\n\n#占い #吉方位 #開運",
+      "立秋を過ぎたこの時期、天一天上（てんいちてんじょう）が明けると、気の神様が空から地に降りてくる。\n\nこの日に吉方位へ動くと、龍脈の気を最短で味方にできる。\n\n龍脈命術は「いつ・どこへ向かうか」を読む占い。努力より先に、向きと日を整えるだけで同じ一歩の重さが変わる。\n\n今週動こうと思っていた人、タイミング合ってるかもよ。\n\n#龍脈命術 #吉方位 #開運日",
+      "「このままでいいのかな」\nその言葉、今月だけで何回呟きましたか？\n\n占いというと「当たる・当たらない」で語られがちですが、私が大事にしているのはそこじゃありません。\n\n風水×吉方位×星読みを組み合わせた、動くための占い「龍脈命術」について、無料noteにまとめました🔮\n誰のための占いか、どんな悩みに効くか。よければ覗いてみてください👇\nhttps://note.com/shigure_fortune/n/nab07df599219\n\n続きの記事も随時公開していくので、noteのフォローもしていただけると嬉しいです🙏\n\n#占い #吉方位 #開運"
+    ],
+    "theme": "開運日/天一天上と吉方位",
+    "pattern_id": "kotodama_rank",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "expires_on": "2026-08-17",
+    "pending_at": "2026-08-03T14:28:28.640443",
+    "queued_at": "2026-08-03T14:28:57.118430",
+    "threads_post_id": "17949984900246965",
+    "posted_at": "2026-08-03T14:29:34.812838+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-08-03T14:29:34.819298"
   }
 ]
