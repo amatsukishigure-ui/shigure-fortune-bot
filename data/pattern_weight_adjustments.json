@@ -6,6 +6,7 @@
   "lookback_days": 30,
   "adjustments": {
     "kotodama_rank": 2.000,
+    "lucky_combo": 1.200,
     "zodiac_deep": 1.600,
     "caligula": 1.500,
     "zodiac_target": 1.339,
