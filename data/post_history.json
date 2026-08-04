@@ -11590,7 +11590,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
-    "recorded_at": "2026-08-03T06:01:13.193225"
+    "recorded_at": "2026-08-03T06:01:13.193225",
+    "hourly_stats_recorded": true
   },
   {
     "text": "気が乱れる日に、動いてはいけない方角がある。\n\n#占い #金運 #開運",
@@ -11613,7 +11614,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-08-03T06:36:23.224775"
+    "recorded_at": "2026-08-03T06:36:23.224775",
+    "hourly_stats_recorded": true
   },
   {
     "text": "普段は投稿に書かないことにしている。でも今夜は書く。\n\n鑑定でほぼ全員に伝えていること。\n\n「なんで動けないんだろう」と悩んでいる人に、ずっと同じことを言い続けている。\n\n原因は、意志じゃない──。\n\n#占い #龍脈命術",
@@ -11636,7 +11638,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/fortune_1.jpg",
-    "recorded_at": "2026-08-03T09:02:12.895733"
+    "recorded_at": "2026-08-03T09:02:12.895733",
+    "hourly_stats_recorded": true
   },
   {
     "text": "向かう方角が合っているだけで、\n同じ努力が違う場所に届く。\n\n吉方位って、そういうことだよ。\n\n「知ってた」か「初めて聞いた」か、コメントで教えて。\n\n#占い #吉方位 #開運",
@@ -11829,5 +11832,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
     "recorded_at": "2026-08-04T09:01:14.611944"
+  },
+  {
+    "text": "「なんか今じゃない気がする」って、何年言い続けてる？\n\n#占い #吉方位 #龍脈命術",
+    "thread_posts": [
+      "「なんか今じゃない気がする」って、何年言い続けてる？\n\n#占い #吉方位 #龍脈命術",
+      "鑑定を受けた方から連絡が来た。\n\n40代、独立を5年迷っていた方。\n「タイミングを見ている」と言いながら動けないままだったと。\n\n鑑定でわかったのは、方位のズレ。\n作業する向きが「気の滞る方角」だった。\n\nデスクを南東に向け直した翌月、初めてのクライアントが決まったと連絡が来た。\n\n龍脈命術は「当てる」より「動かす」占い。\nタイミングじゃなく、向きの問題だったりする。\n\nこれ、心当たりある？\n\n▷ 気になったら LINE https://lin.ee/TJg5dru\n\n#龍脈命術 #吉方位 #開運"
+    ],
+    "theme": "龍脈命術の世界観/なぜ「方位を変えるだけ」で結果が変わるのか",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "expires_on": "2026-08-18",
+    "pending_at": "2026-08-04T09:43:04.659262",
+    "queued_at": "2026-08-04T09:43:54.133351",
+    "threads_post_id": "18139851385567601",
+    "posted_at": "2026-08-04T09:44:41.530924+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
+    "recorded_at": "2026-08-04T09:44:41.537109"
   }
 ]
