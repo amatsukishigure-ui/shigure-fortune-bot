@@ -11796,7 +11796,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
-    "recorded_at": "2026-08-04T02:47:13.540254"
+    "recorded_at": "2026-08-04T02:47:13.540254",
+    "hourly_stats_recorded": true
   },
   {
     "text": "引き寄せが起きない人、方位を後回しにしてない？\n\n#占い #吉方位 #龍脈命術",
@@ -11939,5 +11940,22 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-08-05T03:01:13.857514"
+  },
+  {
+    "text": "♓魚座で「感情を抑えながら、ずっと正しくあろうとしてきた」人以外は、読まなくていい。\n\n今夜の龍脈は、魚座に「解放の気」が流れ込んでくるタイミングにある。\nこの気を受け取れる人と、見逃す人がいる。違いは「今夜、どこへ向かうか」だ。\n\n魚座の今の吉方位は北西。\n感情をそのまま持って、その方角へ静かに向く。\n特別な行動はいらない。窓を開けるだけでもいい。\n\nずっと抑えてきた気が、少しずつ溶けていく感覚があるはず。\n\n今夜、深呼吸を一つだけして。\nそれが、流れを受け取る合図になる。\n\n#占い #吉方位 #龍脈命術",
+    "x_text": "♓魚座で「感情を抑えながら、ずっと正しくあろうとしてきた」人以外は、読まなくていい。\n\n今夜の龍脈は、魚座に「解放の気」が流れ込むタイミングにある。\n\n#占い #時雨 #吉方位 #龍脈命術",
+    "theme": "感情・転機/感情の解放と流れの転換",
+    "pattern_id": "caligula",
+    "quality_score": 8.4,
+    "attempts": 1,
+    "x_eligible": false,
+    "pending_at": "2026-08-04T00:00:00",
+    "queued_at": "2026-08-04T00:00:00",
+    "expires_on": "2026-08-25",
+    "threads_post_id": "17866740330601733",
+    "posted_at": "2026-08-05T05:58:45.350485+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-05T05:58:45.358959"
   }
 ]
