@@ -11905,7 +11905,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-08-04T14:00:05.947211"
+    "recorded_at": "2026-08-04T14:00:05.947211",
+    "hourly_stats_recorded": true
   },
   {
     "text": "キッチンの排水口、最後に掃除したのはいつ？\n\n金運が止まっている人のほぼ全員に、共通していることがある。\n\n#占い #吉方位 #開運",
@@ -12040,5 +12041,29 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-08-05T13:57:46.691799"
+  },
+  {
+    "text": "♐射手座で、引越し先をもう「なんとなく」で決めようとしている人以外は、読まなくていい。\n\n#占い #引越し #風水",
+    "thread_posts": [
+      "♐射手座で、引越し先をもう「なんとなく」で決めようとしている人以外は、読まなくていい。\n\n#占い #引越し #風水",
+      "♐射手座さん、立秋が過ぎたこの時期に動きたいなら、方位だけは確認してほしい。\n\n家賃と路線図で決めた引越し先が「なんか違う」になるのは、偶然じゃない。龍脈命術では、土地の気が人の気を書き換えると見る。どこに移るかより、どの方向に移るかが先。\n\n吉方位に移った人が「ここに来てから流れが変わった」と言う理由は、努力じゃなく向きが整ったから。\n\n今、引越しを検討中か迷い中か、どっちかな。\n\n#吉方位 #龍脈命術 #引越し",
+      "「このままでいいのかな」\nその言葉、今月だけで何回呟きましたか？\n\n占いというと「当たる・当たらない」で語られがちですが、私が大事にしているのはそこじゃありません。\n\n風水×吉方位×星読みを組み合わせた、動くための占い「龍脈命術」について、無料noteにまとめました🔮\n誰のための占いか、どんな悩みに効くか。よければ覗いてみてください👇\nhttps://note.com/shigure_fortune/n/nab07df599219\n\n続きの記事も随時公開していくので、noteのフォローもしていただけると嬉しいです🙏\n\n#占い #引越し #風水"
+    ],
+    "theme": "吉方位・風水/引越し方位",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "zodiac_boost": "♏蠍座",
+    "expires_on": "2026-08-19",
+    "pending_at": "2026-08-05T13:57:25.964670",
+    "queued_at": "2026-08-05T13:57:26.094872",
+    "threads_post_id": "18109107953055637",
+    "posted_at": "2026-08-05T15:20:39.368422+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-08-05T15:20:39.376893"
   }
 ]
