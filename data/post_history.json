@@ -11820,7 +11820,8 @@
     "posted_at": "2026-08-04T06:01:10.369774+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-04T06:01:10.376835"
+    "recorded_at": "2026-08-04T06:01:10.376835",
+    "hourly_stats_recorded": true
   },
   {
     "text": "「運気が上がるタイミング、待ってればいつか来る」\n\nそう思って何年経った？\n\n龍脈命術では、タイミングは待つものじゃなく、気の流れを読んで整えるもの。\n\n立秋を過ぎると、夏の「火の気」が少しずつ落ち着き始める。\nその切れ目こそ、動くための気が整いやすい。\n\n「タイミングを待っている」か「整えようとしている」か、どっちに近い？\n\n#占い #龍脈命術",
@@ -11838,7 +11839,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
-    "recorded_at": "2026-08-04T09:01:14.611944"
+    "recorded_at": "2026-08-04T09:01:14.611944",
+    "hourly_stats_recorded": true
   },
   {
     "text": "「なんか今じゃない気がする」って、何年言い続けてる？\n\n#占い #吉方位 #龍脈命術",
@@ -11975,5 +11977,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/general.jpg",
     "recorded_at": "2026-08-05T09:01:12.378446"
+  },
+  {
+    "text": "頑張っているのに結果が出ない。それ、努力の問題じゃないかもしれない。\n\n#占い #開運 #運気アップ",
+    "thread_posts": [
+      "頑張っているのに結果が出ない。それ、努力の問題じゃないかもしれない。\n\n#占い #開運 #運気アップ",
+      "「なんでこんなに動いているのに、何も変わらないんだろう」\n\nそう感じている人に伝えたいことがある。\n\n龍脈命術でよく見えるのは、方向のズレ。\n努力の量じゃなく、向かっている方位が合っていないだけで、同じ行動でも気の流れに乗れない。\n\n先日、転職活動を1年続けても内定が出なかった30代の方を鑑定した。\nデスクの向きを南東に変えてもらったら、翌月に2社から連絡が来たと報告があった。\n\n努力を変えなくても、向きを整えると動き出す。これが龍脈命術の見方。\n\n心当たり、ある？\n\n▷ 鑑定ページ https://coconala.com/services/4292937?ref=threads\n\n#龍脈命術 #吉方位 #転機のサイン"
+    ],
+    "theme": "転機のサイン/頑張っているのに結果が出ない理由",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "expires_on": "2026-08-19",
+    "pending_at": "2026-08-05T09:42:55.702367",
+    "queued_at": "2026-08-05T09:43:11.323999",
+    "threads_post_id": "17983592907047159",
+    "posted_at": "2026-08-05T09:43:38.461547+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
+    "recorded_at": "2026-08-05T09:43:38.470058"
   }
 ]
