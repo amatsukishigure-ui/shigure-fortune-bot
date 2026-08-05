@@ -11862,7 +11862,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
-    "recorded_at": "2026-08-04T09:44:41.537109"
+    "recorded_at": "2026-08-04T09:44:41.537109",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今夜布団に入る前に1つだけ。\n\nスマホを枕元に置かないで、部屋の入口側の壁際に伏せて置いてみて。\n\n龍脈命術では、眠っている間が「気を最も吸収する時間」。画面から出る微弱な乱れが、回復の気をブロックする。\n\nお盆のこの時期、夜の気は特に繊細に動いてる。\n\n明日の朝、すっきり感が変わるか試してみて。やってみた？🌙\n\n#占い #龍脈命術",
@@ -11880,7 +11881,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/mystery_1.jpg",
-    "recorded_at": "2026-08-04T12:01:09.528976"
+    "recorded_at": "2026-08-04T12:01:09.528976",
+    "hourly_stats_recorded": true
   },
   {
     "text": "「なんで自分だけうまくいかないんだろう」\n\nそれ、努力の問題じゃないよ。\n\n#占い #龍脈命術",
@@ -12017,5 +12019,26 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/general.jpg",
     "recorded_at": "2026-08-05T12:01:13.025987"
+  },
+  {
+    "text": "気づいた方だけ受け取ってください。\n\n#占い #引越し #風水",
+    "thread_posts": [
+      "気づいた方だけ受け取ってください。\n\n#占い #引越し #風水",
+      "気づいた方だけ受け取ってください。\n\n【立秋の龍脈言霊ランキング｜方位が開く言葉】\n\n🥇第1位　いて座\n「向きを変えた瞬間、気の扉が開く」\n\n🥈第2位　てんびん座\n「整えた方位が、静かに私を運ぶ」\n\n🥉第3位　おひつじ座\n「動いた方向に、龍脈の気が流れ込む」\n\n🏅第4位　みずがめ座\n「方位の流れに乗ると、道が見えてくる」\n\n第5位　うお座\n「受け取る向きが整うと、気が届き始める」\n\n第6位　ふたご座\n「今いる場所の気が、次の扉を示している」\n\n第7位　しし座\n「蓄えた気が、吉の方角へ背中を押す」\n\n第8位　さそり座\n「止まっていた龍脈が、今静かに動き出す」\n\n第9位　かに座\n「気の流れを受け取ると、重さが抜けていく」\n\n第10位　おうし座\n「向かう方位を決めた分だけ、道が開く」\n\n第11位　やぎ座\n「方位の気が整うと、行動の重さが変わる」\n\n第12位　おとめ座\n「気の向きを整えた先に、流れが待っている」\n\n今週あなたの星座を見て何か感じたなら——\n「🔮」をそっと置いてみて。\n\n#龍脈命術 #吉方位 #立秋"
+    ],
+    "theme": "吉方位・風水/引越し方位",
+    "pattern_id": "kotodama_rank",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "expires_on": "2026-08-19",
+    "pending_at": "2026-08-05T13:56:34.690742",
+    "queued_at": "2026-08-05T13:57:26.083917",
+    "threads_post_id": "18029527589659424",
+    "posted_at": "2026-08-05T13:57:46.683414+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-05T13:57:46.691799"
   }
 ]
