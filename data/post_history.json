@@ -12005,7 +12005,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
-    "recorded_at": "2026-08-05T09:43:38.470058"
+    "recorded_at": "2026-08-05T09:43:38.470058",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♍ 乙女座さんへ。\n\n8月後半にかけて、東の方角を意識してみて。\n\n乙女座は今、「積み上げてきたものが評価される気」の配置にある。\nただし「正確にやること」への意識が強すぎると、流れを受け取り損ねる。\n\nランチや用事で、東方向に少し足を向けてみて。\n新しい情報や、思わぬ縁が入ってきやすくなる。\n\nもうひとつ。\n今週の乙女座に必要なのは「完璧さより、動くこと」。\n80%の出来でも、動いた人のほうが気は味方する。\n\n行動できる人から、流れは変わっていく。\n\n#占い #吉方位 #開運",
@@ -12023,7 +12024,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/general.jpg",
-    "recorded_at": "2026-08-05T12:01:13.025987"
+    "recorded_at": "2026-08-05T12:01:13.025987",
+    "hourly_stats_recorded": true
   },
   {
     "text": "気づいた方だけ受け取ってください。\n\n#占い #引越し #風水",
@@ -12205,5 +12207,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/scorpio.jpg",
     "recorded_at": "2026-08-06T12:01:36.194579"
+  },
+  {
+    "text": "普段は投稿に書かないことにしている。でも今夜だけ書く。\n\nテーマは「運気が落ちる前に出るサイン」。\n\n鑑定を重ねてきてわかったことがある。転落には必ず、3ヶ月前に兆候が出る。\n\nその正体は──空間だった。\n\n#占い #金運 #開運",
+    "thread_posts": [
+      "普段は投稿に書かないことにしている。でも今夜だけ書く。\n\nテーマは「運気が落ちる前に出るサイン」。\n\n鑑定を重ねてきてわかったことがある。転落には必ず、3ヶ月前に兆候が出る。\n\nその正体は──空間だった。\n\n#占い #金運 #開運",
+      "前置きなしに言う。\n\n龍脈命術で1000人以上を見てきたが、運気が崩れる前の人にはほぼ共通した空間の変化があった。\n\n北西か北東、どちらかの方位に「物が溜まり始める」。意識してやっているわけじゃない。気の流れが乱れると、自然とその方位が塞がっていく。\n\n財運でいえば北。この方位が暗くなり、湿気が籠り始めた頃から、お金の流れが詰まる人が多い。立秋を過ぎ、気が動き始めるこの時期に、まず北側を確かめてほしい。\n\n方位を整えるのは、努力の前にやるべきことだと、私は鑑定で伝え続けている。\n\n#占い #金運 #開運",
+      "知ってしまった以上、気づかなかったふりはできない。\n\n自分の方位と、今の運気の流れを確かめたい方へ。\n→ https://coconala.com/services/4292937?ref=threads\n\n#占い #金運 #開運"
+    ],
+    "theme": "運気/金運",
+    "pattern_id": "harm_revelation",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "expires_on": "2026-08-19",
+    "pending_at": "2026-08-04T23:14:52.297540",
+    "queued_at": "2026-08-04T23:15:36.173806",
+    "threads_post_id": "17928568650379363",
+    "posted_at": "2026-08-06T13:53:58.048564+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/season/autumn.jpg",
+    "recorded_at": "2026-08-06T13:53:58.057208"
   }
 ]
