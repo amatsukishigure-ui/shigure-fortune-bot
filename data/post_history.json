@@ -12171,7 +12171,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/scorpio.jpg",
-    "recorded_at": "2026-08-06T09:01:20.095459"
+    "recorded_at": "2026-08-06T09:01:20.095459",
+    "hourly_stats_recorded": true
   },
   {
     "text": "人生が変わった鑑定、というのがある。\n\nその人は「向いていないのかも」と3年間思い続けていた。でも龍脈命術で見えたのは、才能の問題じゃなく、向きの問題だった。\n\n立秋を過ぎたこの時期、気の流れが静かに入れ替わる。そういう転換点に来た鑑定は、よく動き出す。\n\n「向いていないかも」と思ったことある？それとも「向きの問題かも」と感じたことある？コメントで教えて。\n\n占術家 時雨\n\n#占い #開運 #運気アップ",
@@ -12188,7 +12189,8 @@
     "posted_at": "2026-08-06T09:45:07.258981+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-06T09:45:07.268068"
+    "recorded_at": "2026-08-06T09:45:07.268068",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♏ 蠍座で、「頑張ってるのに、なんで同じところにいるんだろう」って感覚がある人だけ読んで。\n\nそれ、努力が足りないんじゃない。\n龍脈命術では「向き」を読む。気の流れには方向があって、凶方位に動き続けると同じ悩みが年単位で繰り返される。\n蠍座は今、立秋を越えて気が切り替わる時期。このタイミングで向きを正せると、同じ努力が初めて通り始める。\n今週中に「最後に大きく動いた方向」を思い出してみて。\n\n当てはまる？コメントで教えて。\n\n#龍脈命術 #蠍座 #運気の流れ",
@@ -12212,7 +12214,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/scorpio.jpg",
-    "recorded_at": "2026-08-06T12:01:36.194579"
+    "recorded_at": "2026-08-06T12:01:36.194579",
+    "hourly_stats_recorded": true
   },
   {
     "text": "普段は投稿に書かないことにしている。でも今夜だけ書く。\n\nテーマは「運気が落ちる前に出るサイン」。\n\n鑑定を重ねてきてわかったことがある。転落には必ず、3ヶ月前に兆候が出る。\n\nその正体は──空間だった。\n\n#占い #金運 #開運",
@@ -12384,5 +12387,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
     "recorded_at": "2026-08-07T12:01:20.681995"
+  },
+  {
+    "text": "「当たる占い」と「動ける占い」、あなたはどちらを求めてる？\n\n#占い #龍脈命術",
+    "thread_posts": [
+      "「当たる占い」と「動ける占い」、あなたはどちらを求めてる？\n\n#占い #龍脈命術",
+      "「この占い、当たってた」で終わる鑑定が、私は苦手だった。\n\n当たっても、動けなければ何も変わらない。\n\n龍脈命術が見るのは「あなたの性格」じゃなく、「今あなたが向かっている方位と気の流れ」。\n\n読んだ後に「じゃあ今日これをしよう」が出てくる占いを、ずっと届けたかった。\n\n当たる占いより、動ける占いを。\n\n占術家 時雨\n\n#龍脈命術 #占い #開運"
+    ],
+    "theme": "時雨の世界観/「当たる占い」より「動ける占い」を選んだ理由",
+    "pattern_id": "kotodama_rank",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "expires_on": "2026-08-21",
+    "pending_at": "2026-08-07T12:50:32.910259",
+    "queued_at": "2026-08-07T12:50:39.835039",
+    "threads_post_id": "18095618516290953",
+    "posted_at": "2026-08-07T12:51:05.238388+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-08-07T12:51:05.246886"
   }
 ]
