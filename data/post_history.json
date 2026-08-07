@@ -12290,5 +12290,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
     "recorded_at": "2026-08-07T01:36:43.885137"
+  },
+  {
+    "text": "♉牡牛座で、この季節が「なんか重い」と感じている人以外は、読まなくていい。",
+    "theme": "風水豆知識/窓と採光・気の流れ",
+    "pattern_id": "caligula",
+    "quality_score": 8.6,
+    "attempts": 1,
+    "x_eligible": true,
+    "is_repost": true,
+    "original_post_id": "18103208060123154",
+    "pending_at": "2026-08-07T01:35:09.932905",
+    "queued_at": "2026-08-07T01:36:20.694814",
+    "threads_post_id": "18161789635475983",
+    "posted_at": "2026-08-07T02:50:36.270222+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-08-07T02:50:36.278710"
   }
 ]
