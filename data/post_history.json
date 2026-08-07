@@ -12256,7 +12256,8 @@
     "posted_at": "2026-08-06T15:24:25.923180+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-06T15:24:25.931952"
+    "recorded_at": "2026-08-06T15:24:25.931952",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♓魚座さん、来週までに読んでほしい。\n\n龍脈命術で見ると、今の魚座には「感覚が戻ってくる気」が流れている。ずっと麻痺していたものが、少しずつ溶け始めるタイミング。頑張りすぎて感情ごと閉じてしまっていた人ほど、この流れを使ってほしい。\n\n・東方向 → 朝、東側のカーテンを開けて光を入れるだけでいい。眠っていた五感が目を覚ます方位。特別なことは何もしなくていい。\n\nただし、立秋前までは避けてほしい方位がある。\n\n#占い #吉方位 #龍脈命術",
@@ -12432,5 +12433,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
     "recorded_at": "2026-08-07T14:19:07.260509"
+  },
+  {
+    "text": "「頑張っているのに恋愛だけ上手くいかない」——星座じゃなく、向きの問題かもしれない。\n\n#占い #恋愛運 #縁",
+    "thread_posts": [
+      "「頑張っているのに恋愛だけ上手くいかない」——星座じゃなく、向きの問題かもしれない。\n\n#占い #恋愛運 #縁",
+      "先月、鑑定した方から連絡が来た。\n\n30代、マッチングアプリを3年続けても続かない、という方。\n「自分に魅力がないのかも」と思い込んでいたが、龍脈命術で見えたのは方位のズレだった。\n\n寝室の枕を南西から北北西へ。\n変えて2ヶ月後、「初めて次のデートの約束が続いています」と連絡が来た。\n\n龍脈命術は「当てる」占いじゃなく、「動かす」占い。\nあなたの星座が何座かより、今どこを向いているかを読む。\n\nまず話したい → LINE https://lin.ee/TJg5dru\nすぐ試したい → Coconala https://coconala.com/services/4292937?ref=threads\n\n#龍脈命術 #吉方位 #恋愛運"
+    ],
+    "theme": "星座別メッセージ/星座別・相性のいい方位",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "expires_on": "2026-08-21",
+    "pending_at": "2026-08-07T14:18:08.314628",
+    "queued_at": "2026-08-07T14:18:31.421379",
+    "threads_post_id": "18135935134606458",
+    "posted_at": "2026-08-07T22:51:17.050194+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
+    "recorded_at": "2026-08-07T22:51:17.058164"
   }
 ]
