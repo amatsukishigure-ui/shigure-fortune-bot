@@ -12150,7 +12150,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
-    "recorded_at": "2026-08-06T06:02:39.988841"
+    "recorded_at": "2026-08-06T06:02:39.988841",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♏ 蠍座で今、お金のことが頭から離れない人へ。\n\n蠍座は今、北西の気が動きやすい時期。\n金運を引き寄せたいなら、財布や通帳を北西の棚に置いてみて。\n\n龍脈命術は「当てる」より「動ける」占い。方位を整えるだけで、お金の流れ方が変わってくる。\n\n蠍座さん、今これ当てはまってる？🌟をひとつコメントで。\n\n#占い #金運 #開運",
@@ -12329,5 +12330,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/capricorn.jpg",
     "recorded_at": "2026-08-07T06:01:05.753026"
+  },
+  {
+    "text": "立秋を越えた今、気の流れは静かに方向を変えている。\n\n夏の熱は残っていても、動かすべき「向き」はもう秋のそれだ。\n龍脈命術でいう気の転換点——ここで方位を読み直した人と、読まない人とでは、秋以降の結果がじわりと変わってくる。\n\n「もう少し待ってから動こう」と「今がちょうど変わり目かも」、どっちに近い？コメントで教えて。\n\n#占い #吉方位 #龍脈命術",
+    "x_text": "立秋を越えた今、気の流れは静かに方向を変えている。\n\n夏の熱は残っていても、動かすべき「向き」はもう秋のそれだ。\n龍脈命術でいう気の転換点——ここで方位を読み直した人と、読まない人とでは、秋以降の結果がじわりと変わってくる。\n\n「もう少し待ってから動こう」と「今がちょうど変わり目かも」、どっちに近い？コメントで教えて。\n\n#占い #時雨 #開運 #吉方位",
+    "theme": "季節・天文と方位/二十四節気と開運",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.7,
+    "attempts": 1,
+    "x_eligible": true,
+    "expires_on": "2026-08-21",
+    "pending_at": "2026-08-07T01:36:12.572344",
+    "queued_at": "2026-08-07T01:36:20.715256",
+    "threads_post_id": "18211361554344745",
+    "posted_at": "2026-08-07T08:20:06.221133+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
+    "recorded_at": "2026-08-07T08:20:06.229750"
   }
 ]
