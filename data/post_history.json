@@ -12238,7 +12238,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/season/autumn.jpg",
-    "recorded_at": "2026-08-06T13:53:58.057208"
+    "recorded_at": "2026-08-06T13:53:58.057208",
+    "hourly_stats_recorded": true
   },
   {
     "text": "「引き寄せを信じてるのに、なぜか動けない」\n\nそれ、意志の問題じゃない。\n\n龍脈命術では、引き寄せは「気を受け取る力」と「気を動かす力」の両方があって初めて機能すると見る。思い描くだけでは\"受け取り口\"が開かない。\n\n今日できること1つ。\nデスクの上から使っていないものを1つ外に出す。\n気は空いた空間に流れ込む。引き寄せたいなら、まず場所を空ける。\n\n今の机、余白ある？\n\n#占い #龍脈命術",
@@ -12409,5 +12410,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-08-07T12:51:05.246886"
+  },
+  {
+    "text": "寝室の枕の向き、最後に変えたのはいつ？\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "寝室の枕の向き、最後に変えたのはいつ？\n\n#占い #吉方位 #開運",
+      "鑑定した方から連絡が来た。\n\n40代、慢性的な疲れが取れないと悩んでいた方。\n「休んでも回復しない」という状態が2年続いていたと言う。\n\n鑑定でわかったのは、枕の向きが気の流れに逆らっていたこと。\n北枕に変えただけで、1ヶ月後には「朝の目覚めが変わった」と連絡が来た。\n\n龍脈命術は「当てる」より「動かす」占い。\n寝ている間に気を整えると、起きてからの動き方が変わる。\n\n今夜、枕の向きを見直してみて。心当たりある？\n\n気になったら → LINE https://lin.ee/TJg5dru\n▷ 鑑定ページ https://coconala.com/services/4292937?ref=threads\n\n#吉方位 #龍脈命術 #開運"
+    ],
+    "theme": "暮らしの吉方位と気の整え方/寝室と枕の向き",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "expires_on": "2026-08-21",
+    "pending_at": "2026-08-07T12:50:16.492463",
+    "queued_at": "2026-08-07T12:50:39.826076",
+    "threads_post_id": "18084289046235273",
+    "posted_at": "2026-08-07T14:19:07.251326+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
+    "recorded_at": "2026-08-07T14:19:07.260509"
   }
 ]
