@@ -12417,7 +12417,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-08-07T12:51:05.246886"
+    "recorded_at": "2026-08-07T12:51:05.246886",
+    "hourly_stats_recorded": true
   },
   {
     "text": "寝室の枕の向き、最後に変えたのはいつ？\n\n#占い #吉方位 #開運",
@@ -12650,5 +12651,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/leo.jpg",
     "recorded_at": "2026-08-08T12:38:35.228896"
+  },
+  {
+    "text": "開運日と一粒万倍日、ただ「いい日だ」と眺めてるだけで終わってない？\n\n#占い #龍脈命術",
+    "thread_posts": [
+      "開運日と一粒万倍日、ただ「いい日だ」と眺めてるだけで終わってない？\n\n#占い #龍脈命術",
+      "一粒万倍日は「種を蒔く日」。\nでも龍脈命術の見方だと、日柄より大事なのは「どちらへ動くか」。\n\nいい日にいい行動をしても、向きがズレていたら気は流れない。\n逆に、吉方位へ向かった日の一歩は、何倍にもなって返ってくる。\n\n開運日は「背中を押してくれる気」。\n方位は「流れに乗る道」。\n両方揃って、はじめて動ける。\n\n次の一粒万倍日、どの方向へ動くか決めてる？\n\n#龍脈命術 #一粒万倍日 #開運",
+      "「このままでいいのかな」\nその言葉、今月だけで何回呟きましたか？\n\n占いというと「当たる・当たらない」で語られがちですが、私が大事にしているのはそこじゃありません。\n\n風水×吉方位×星読みを組み合わせた、動くための占い「龍脈命術」について、無料noteにまとめました🔮\n誰のための占いか、どんな悩みに効くか。よければ覗いてみてください👇\nhttps://note.com/shigure_fortune/n/nab07df599219\n\n続きの記事も随時公開していくので、noteのフォローもしていただけると嬉しいです🙏\n\n#占い #吉方位 #開運"
+    ],
+    "theme": "開運日/一粒万倍日の正しい使い方",
+    "pattern_id": "kotodama_rank",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "expires_on": "2026-08-22",
+    "pending_at": "2026-08-08T13:50:55.227413",
+    "queued_at": "2026-08-08T13:51:21.459072",
+    "threads_post_id": "17904860094530195",
+    "posted_at": "2026-08-08T13:52:03.502797+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-08-08T13:52:03.512107"
   }
 ]
