@@ -7348,5 +7348,38 @@
     "pattern_id": "zodiac_target",
     "post_id": "18002352428990802",
     "fetched_at": "2026-08-08T07:50:08.990973"
+  },
+  {
+    "views": 16,
+    "likes": 1,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "ichi_gon",
+    "post_id": "18211361554344745",
+    "fetched_at": "2026-08-08T12:32:58.893194"
+  },
+  {
+    "views": 75,
+    "likes": 2,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "ichi_gon",
+    "post_id": "18085654322198508",
+    "fetched_at": "2026-08-08T12:32:59.156514"
+  },
+  {
+    "views": 16,
+    "likes": 1,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "ichi_gon",
+    "post_id": "18119929139508047",
+    "fetched_at": "2026-08-08T12:32:59.541656"
   }
 ]
