@@ -12316,7 +12316,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-08-07T02:50:36.278710"
+    "recorded_at": "2026-08-07T02:50:36.278710",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♑ 山羊座で今、恋愛・縁が気になっている人へ。\n\n頑張り屋ほど、気を張りすぎて縁を遠ざけてる。\n\n今、南西の方角が山羊座の「縁のドア」。\n寝室を南西に整えるだけで、気の通りが変わるよ。\n龍脈命術は性格より「今いる場所の向き」を読む。\n\n心当たりある？コメントで教えて。\n\n#占い #恋愛運 #縁",
@@ -12517,5 +12518,27 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-08-08T03:01:25.124546"
+  },
+  {
+    "text": "鑑定した方から連絡が来た。「部屋の鏡の位置を変えただけで、気持ちが軽くなりました」と。\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "鑑定した方から連絡が来た。「部屋の鏡の位置を変えただけで、気持ちが軽くなりました」と。\n\n#占い #吉方位 #開運",
+      "40代・長年なんとなく部屋が重い感じがしていた方。\n整理できないまま何年も同じ場所に鏡を置いていた。\n\n龍脈命術で見ると、鏡が玄関正面にあり、入ってきた気を跳ね返していた。\n位置を90度ずらしただけで、流れが変わった。\n\n「判断が早くなった気がする」という言葉が印象的だった。\n\n龍脈命術は「当てる」占いじゃなく「動かす」占い。鏡1枚の向きも、気の通り道になる。\n\n気になったら ▷ LINE https://lin.ee/TJg5dru\n\n#吉方位 #龍脈命術 #風水"
+    ],
+    "theme": "暮らしの吉方位と気の整え方/鏡の位置と気の反射",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "expires_on": "2026-08-22",
+    "pending_at": "2026-08-08T04:20:43.743284",
+    "queued_at": "2026-08-08T04:21:05.305729",
+    "threads_post_id": "18114139451485073",
+    "posted_at": "2026-08-08T04:21:26.499184+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
+    "recorded_at": "2026-08-08T04:21:26.508195"
   }
 ]
