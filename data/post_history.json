@@ -12274,7 +12274,8 @@
     "posted_at": "2026-08-07T00:48:16.305026+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-07T00:48:16.311886"
+    "recorded_at": "2026-08-07T00:48:16.311886",
+    "hourly_stats_recorded": true
   },
   {
     "text": "部屋の収納が詰まっていると、人生も詰まる。これ、比喩じゃない。\n\n#占い #吉方位 #開運",
@@ -12296,7 +12297,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
-    "recorded_at": "2026-08-07T01:36:43.885137"
+    "recorded_at": "2026-08-07T01:36:43.885137",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♉牡牛座で、この季節が「なんか重い」と感じている人以外は、読まなくていい。",
@@ -12472,5 +12474,27 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-08-08T01:01:09.431301"
+  },
+  {
+    "text": "ぶっちゃけ、引越しで人生が動いた人を何人も見てきた。\n\n#占い #引越し #風水",
+    "thread_posts": [
+      "ぶっちゃけ、引越しで人生が動いた人を何人も見てきた。\n\n#占い #引越し #風水",
+      "「転職も恋愛も、何をしてもうまくいかない」と言っていた方がいた。\n\n龍脈命術で見ると、長年住んでいた部屋の方位が、その人の気の流れと真逆だった。\n\n引越し先を吉方位で選んで3ヶ月。\n転職先が決まり、半年後に出会いが来た。\n\n変えたのは「場所の向き」だけ。\n努力の量じゃなく、気の流れに乗れる場所にいるかどうかで、同じ行動の結果が変わる。\n\n今いる場所、なんとなく重くない？\n\n#龍脈命術 #吉方位 #引越し開運"
+    ],
+    "theme": "鑑定エピソード/引越し・移転で流れが変わった話",
+    "pattern_id": "kotodama_rank",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "expires_on": "2026-08-22",
+    "pending_at": "2026-08-08T01:50:46.500009",
+    "queued_at": "2026-08-08T01:50:46.635492",
+    "threads_post_id": "18092274713529864",
+    "posted_at": "2026-08-08T01:51:16.854383+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-08-08T01:51:16.863500"
   }
 ]
