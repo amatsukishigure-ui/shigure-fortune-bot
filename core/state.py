@@ -91,6 +91,23 @@ def dequeue_post() -> dict | None:
     return post
 
 
+def dequeue_by_pattern(pattern_id: str) -> dict | None:
+    """指定パターンIDのキュー先頭アイテムを優先取り出し（なければNone）"""
+    queue = load_queue()
+    today = datetime.now().date().isoformat()
+    idx = next(
+        (i for i, p in enumerate(queue)
+         if p.get("pattern_id") == pattern_id
+         and p.get("expires_on", "9999-99-99") >= today),
+        None,
+    )
+    if idx is None:
+        return None
+    post = queue.pop(idx)
+    save_queue(queue)
+    return post
+
+
 # ── Pending Posts（承認待ち） ─────────────────────────────────
 
 def load_pending() -> list:
