@@ -12573,7 +12573,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/fengshui_abundance.jpg",
-    "recorded_at": "2026-08-08T06:01:41.911206"
+    "recorded_at": "2026-08-08T06:01:41.911206",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♓魚座さん、今週だけ読んでほしい。\n\n龍脈命術で見ると、今の魚座には「感覚が戻ってくる気」が流れている。ずっと麻痺していたものが、少しずつ溶け始めるタイミング。頑張りすぎて感情ごと閉じてしまっていた人ほど、この流れを使ってほしい。\n\n・東方向 → 朝、東側のカーテンを開けて光を入れるだけでいい。眠っていた五感が目を覚ます方位。特別なことは何もしなくていい。\n\nただし、立秋を前にした今週だけ避けてほしい方位がある。\n\n#占い #吉方位 #龍脈命術",
@@ -12752,5 +12753,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
     "recorded_at": "2026-08-09T06:01:21.305935"
+  },
+  {
+    "text": "「今月の運勢、調べたのに何も変わらなかった」という人へ。\n\n#占い #星座占い #運勢",
+    "thread_posts": [
+      "「今月の運勢、調べたのに何も変わらなかった」という人へ。\n\n#占い #星座占い #運勢",
+      "星座占いで「今月は〇〇座が好調」と読んでも、動けないままだった経験はない？\n\n龍脈命術は「誰が」より「どこに・どう向かうか」を読む。\n同じ努力でも、向きが整っていないと力が空回りする。\n\n夏の気が最も動くのは、立秋を越えた今この時期。\n今週、自分の部屋の向きを一度確認してみて。\n\nまず話したい → LINE https://lin.ee/TJg5dru\nすぐ試したい → Coconala https://coconala.com/services/4292937?ref=threads\n\n#龍脈命術 #吉方位 #開運"
+    ],
+    "theme": "星座占い/今月の運気まとめ",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "expires_on": "2026-08-23",
+    "pending_at": "2026-08-09T07:58:16.965637",
+    "queued_at": "2026-08-09T07:58:42.883871",
+    "threads_post_id": "18165149332476263",
+    "posted_at": "2026-08-09T07:59:09.919438+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
+    "recorded_at": "2026-08-09T07:59:09.928772"
   }
 ]
