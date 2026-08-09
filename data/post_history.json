@@ -12526,7 +12526,8 @@
     "posted_at": "2026-08-08T03:01:25.116161+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-08T03:01:25.124546"
+    "recorded_at": "2026-08-08T03:01:25.124546",
+    "hourly_stats_recorded": true
   },
   {
     "text": "鑑定した方から連絡が来た。「部屋の鏡の位置を変えただけで、気持ちが軽くなりました」と。\n\n#占い #吉方位 #開運",
@@ -12548,7 +12549,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
-    "recorded_at": "2026-08-08T04:21:26.508195"
+    "recorded_at": "2026-08-08T04:21:26.508195",
+    "hourly_stats_recorded": true
   },
   {
     "text": "有料鑑定を受けた方に毎回伝えていることを、今夜だけここに出す。\n\n「なんで自分だけ動けないんだろう」と思っている人に、特に読んでほしい。\n\n止まっている理由は、意志の弱さじゃない。\n原因は──気の停滞だ。\n\n#占い #引越し #風水",
@@ -12714,5 +12716,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/general.jpg",
     "recorded_at": "2026-08-09T01:56:43.619157"
+  },
+  {
+    "text": "部屋の照明が暗い人、気の滞りを「居心地のよさ」と勘違いしていることが多い。\n\n龍脈命術では、光は気の入口。暗い空間は動かない気を溜め込む。\n\n「薄暗いほうが落ち着く」か「明るいほうが好き」か、コメントで教えて。\n\n#占い #吉方位 #開運",
+    "x_text": "部屋の照明が暗い人、気の滞りを「居心地のよさ」と勘違いしていることが多い。\n\n龍脈命術では、光は気の入口。暗い空間は動かない気を溜め込む。\n\n「薄暗いほうが落ち着く」か「明るいほうが好き」か、コメントで教えて。\n\n#占い #時雨 #吉方位 #風水",
+    "theme": "暮らしの吉方位と気の整え方/照明と運気の関係",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.8,
+    "attempts": 1,
+    "x_eligible": true,
+    "expires_on": "2026-08-23",
+    "pending_at": "2026-08-09T04:28:40.684950",
+    "queued_at": "2026-08-09T04:29:37.884559",
+    "threads_post_id": "18609935794054577",
+    "posted_at": "2026-08-09T04:29:46.791847+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
+    "recorded_at": "2026-08-09T04:29:46.800092"
   }
 ]
