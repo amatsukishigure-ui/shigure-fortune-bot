@@ -12592,7 +12592,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/general.jpg",
-    "recorded_at": "2026-08-08T07:55:21.927497"
+    "recorded_at": "2026-08-08T07:55:21.927497",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♒水瓶座さん、今週だけ読んでほしい。\n\n龍脈命術で読むと、今週の水瓶座は「突破の気」が静かに満ちてくる週。\nずっと答えが出なかったこと——特に「私のどこが問題なのか」という問いに、動きが出やすいタイミング。\nただし、気は「待つ人」より「先に動いた人」に乗る。\n\n【吉方位×行動①】\n・東方向 → 今週の面談・相談・連絡はすべて東側の席か東に向いた場所から。情報が通りやすくなり、相手の反応が変わる。\n\nもう1つ、使える方角がある。ただし、動き方に条件があって——\n\n#占い #吉方位 #開運",
@@ -12610,7 +12611,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/general.jpg",
-    "recorded_at": "2026-08-08T09:01:08.471855"
+    "recorded_at": "2026-08-08T09:01:08.471855",
+    "hourly_stats_recorded": true
   },
   {
     "text": "本来は書くつもりがなかった。有料鑑定でしか話していないことを今夜だけ書く。\n\nテーマは「停滞の本当の原因」。\n\n頑張り方の問題じゃない。向きの問題だ。\n\n止まっている理由は──方角にある。\n\n#占い #金運 #開運",
@@ -12633,7 +12635,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
-    "recorded_at": "2026-08-08T12:01:47.521557"
+    "recorded_at": "2026-08-08T12:01:47.521557",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♌獅子座で、「開運日を調べたのに何も変わらなかった」経験がある人以外は読まなくていい。\n\n#占い #龍脈命術",
@@ -12810,5 +12813,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-08-09T12:01:12.608666"
+  },
+  {
+    "text": "♌獅子座の方へ。努力は本物なのに、なぜか結果が出ない。その理由、気の向きにあるかもしれない。\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "♌獅子座の方へ。努力は本物なのに、なぜか結果が出ない。その理由、気の向きにあるかもしれない。\n\n#占い #吉方位 #開運",
+      "♌獅子座は表現力と誇りを持つ星座。でも、その力が空回りしているとき、たいてい「発信する方向」がズレている。\n\n龍脈命術では、向かう方向で気の質が変わると読む。同じ提案書、同じポートフォリオでも、気の流れに乗った方向から出すと届き方が変わる。\n\n今夜まず一つ。仕事の発信先や連絡を送る相手を「新しい方向」に変えてみて。北東か南西、どちらかに意識を向けると、立秋を越えた今の時期は気が動きやすい。\n\nプライドがあるから「助けを求められない」と感じているなら、それは弱さじゃない。ただ向きが整っていないだけ。\n\n心当たりある？\n\n#龍脈命術 #吉方位 #獅子座"
+    ],
+    "theme": "暮らしの吉方位と気の整え方/断捨離と運気の関係",
+    "pattern_id": "zodiac_ranking",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♌獅子座",
+    "expires_on": "2026-08-23",
+    "pending_at": "2026-08-09T12:41:42.546719",
+    "queued_at": "2026-08-09T12:42:53.035256",
+    "threads_post_id": "18214052653352587",
+    "posted_at": "2026-08-09T12:43:17.959058+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/leo.jpg",
+    "recorded_at": "2026-08-09T12:43:17.968457"
   }
 ]
