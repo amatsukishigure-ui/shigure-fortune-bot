@@ -12684,7 +12684,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-08-08T13:52:03.512107"
+    "recorded_at": "2026-08-08T13:52:03.512107",
+    "hourly_stats_recorded": true
   },
   {
     "text": "寝室の窓、どっち向きに開けてる？\n\n龍脈命術では、夏の気は「動いている方向」で質が変わる。\n立秋を過ぎた今、熱気だけを逃がして涼気を引き込むなら、北側の窓を先に開けるのが先。南から入れると、気ごと熱が家に滞る。\n\n今日やること1つ。\n北側の窓を10秒だけ先に開けてから、反対側を開ける。それだけで気の抜け方が違う。\n\n今の家、これできてる？コメントで教えて。\n\n#占い #開運 #運気アップ",
@@ -12860,5 +12861,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
     "recorded_at": "2026-08-09T13:56:38.625648"
+  },
+  {
+    "text": "方位を変えたら、想定外のことが起きた。\n\n#占い #吉方位 #龍脈命術",
+    "thread_posts": [
+      "方位を変えたら、想定外のことが起きた。\n\n#占い #吉方位 #龍脈命術",
+      "鑑定に来た30代の男性の話。\n\n「何年頑張っても変わらない」と言っていた彼に、龍脈命術で方位を読んだ。\n\n変えたのは、通勤ルートの「向き」だけ。\n\nその翌月、社内異動の打診が来た。\n彼が一番避けていた部署だった。\n\nでも、そこで出会った人が、次のキャリアへの扉を開けた。\n\n龍脈命術は「いい出来事だけ引き寄せる」じゃない。\n気の流れが動いた時、想定外の道が現れる。\n\n「思ってたのと違う」が、本当の転機だったりする。\n\nこれ、わかる？\n\n#龍脈命術 #吉方位 #占い師"
+    ],
+    "theme": "鑑定エピソード/方位を変えたら想定外のことが起きた話",
+    "pattern_id": "kotodama_rank",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "expires_on": "2026-08-24",
+    "pending_at": "2026-08-09T22:43:48.955908",
+    "queued_at": "2026-08-09T22:44:32.570111",
+    "threads_post_id": "18094099922457233",
+    "posted_at": "2026-08-09T22:45:03.625311+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-08-09T22:45:03.632941"
   }
 ]

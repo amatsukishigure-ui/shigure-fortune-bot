@@ -1,46 +1,6 @@
 {
   "topics": [
     {
-      "title": "米大統領 対イラン発言は二転三転",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "車両集中 地震の復旧阻む大渋滞",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "地震で家倒壊 避難直後に盗難被害",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "自民・小渕氏 消費減税方針に反対",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "河口近くから海に流され 高1死亡",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "京都・高台寺 岡林院の施設全焼",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "極真館の盧山初雄会長が死去 78歳",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "新山千春 マチアプから再婚の経緯",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
       "title": "東京 多摩動物公園 ライオン3頭が相次ぎ死ぬ 熱中症か",
       "description": "東京 日野市の多摩動物公園では2日までに飼育していたライオン3頭が相次いで死んだと発表しました。動物園は熱中症の疑いがあるとみていて、今後詳しい調査を行うことにしています。",
       "source": "NHK社会"
@@ -3588,9 +3548,49 @@
       "source": "news_rss",
       "cultural_angle": "風水における天候浄化の思想、台風と気の洗浄・リセット",
       "season_note": "台風シーズン（8〜9月）。立秋を過ぎ気が秋へ切り替わるタイミングと重なる"
+    },
+    {
+      "title": "台風 11日に東北～関東に上陸恐れ",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "自衛隊の指揮統制に国産AI 検討",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "AI「暴走」自律的攻撃に米危機感",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "イオン 自己判断で店内戻った人も",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "孫運転の車にはねられ 女性死亡",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "元中日・SB又吉克樹が現役引退へ",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "佐藤佳奈アナ 古巣で結婚生報告",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "W結婚発表 STARTOでは5年ぶり",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
     }
   ],
-  "last_updated": "2026-08-09T13:52:43.707610",
+  "last_updated": "2026-08-09T22:42:17.315376",
   "last_rss_count": 31,
   "last_cultural_count": 0
 }
