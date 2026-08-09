@@ -24,7 +24,7 @@ from config import (
     POST_PATTERNS_FILE,
 )
 from core.state import (
-    dequeue_post, load_history, add_to_history,
+    dequeue_post, dequeue_by_pattern, load_history, add_to_history,
     is_killed, log_error, clear_errors, activate_kill_switch,
     load_json,
 )
@@ -363,7 +363,24 @@ def run() -> dict:
         print(f"⏸ ポスター: {reason}")
         return {"posted": False, "reason": reason}
 
-    post = dequeue_post()
+    # 21:00 JST アンカー枠: zodiac_ranking を優先デキュー（本日未投稿の場合）
+    _ANCHOR_PID = "zodiac_ranking"
+    _ANCHOR_JST_HOUR = 21
+    _jst_now = datetime.now(timezone(timedelta(hours=9)))
+    _jst_hour = _jst_now.hour
+    post = None
+    if _jst_hour == _ANCHOR_JST_HOUR:
+        _today_str = _jst_now.date().isoformat()
+        _posted_today = any(
+            h.get("pattern_id") == _ANCHOR_PID and h.get("posted_at", "")[:10] == _today_str
+            for h in history
+        )
+        if not _posted_today:
+            post = dequeue_by_pattern(_ANCHOR_PID)
+            if post:
+                print(f"📌 アンカー投稿: {_ANCHOR_PID} を21時枠で優先デキュー")
+    if post is None:
+        post = dequeue_post()
     if not post:
         print("⏸ ポスター: キューが空です")
         return {"posted": False, "reason": "Queue empty"}
