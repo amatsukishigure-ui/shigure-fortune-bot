@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-04T00:00:00",
+  "updated_at": "2026-08-09T00:00:00",
   "locked": [
     "fuusui_tip"
   ],
@@ -12,17 +12,19 @@
     "zodiac_target": 1.339,
     "fuusui_tip": 1.2,
     "client_voice": 1.0,
-    "card_pick": 0.8,
-    "hesitation_break": 0.8,
-    "empathy_thread": 0.7,
+    "card_pick": 1.0,
+    "hesitation_break": 0.9,
+    "empathy_thread": 0.9,
     "menu_guide": 0.7,
     "list": 0.7,
     "ichi_gon": 0.8,
-    "harm_revelation": 0.6,
+    "harm_revelation": 0.9,
     "before_sleep": 0.5,
-    "reply_magnet": 0.4,
-    "world_view": 0.15,
-    "soft_discovery": 0.1,
-    "zodiac_ranking": 2.0
+    "reply_magnet": 0.8,
+    "world_view": 0.05,
+    "soft_discovery": 0.05,
+    "zodiac_ranking": 2.0,
+    "harm_cta": 0.8,
+    "zodiac_problem": 0.05
   }
 }
