@@ -1481,6 +1481,78 @@ NG: 🔮 vs 🐉（どちらもブランドシンボルで対になっていな�
 200〜280字
 """
 
+    elif pattern_id == "zodiac_ranking":
+        import random as _rnd_zr
+        from datetime import datetime as _dt_zr
+        _zr_dow = _dt_zr.now().weekday()  # 0=Mon
+        _zr_type = _zr_dow % 3
+        if _zr_type == 0:
+            _zr_label = "運勢予報型"
+            _zr_title = "今週、流れが変わる星座ランキング"
+            _zr_hook = "今週だけ読んでほしい。"
+            _zr_sign_hint = "各星座の今週の運気・流れの変化を10〜18字で（龍脈命術の観点から: 気の動き・方位・タイミング）"
+            _zr_cta_emojis = ["🔮", "🐉", "⭐"]
+        elif _zr_type == 1:
+            _zr_themes = ["金運", "ご縁・恋愛", "天職・仕事運", "転換期"]
+            _zr_theme = _rnd_zr.choice(_zr_themes)
+            _zr_label = f"テーマ別（{_zr_theme}）型"
+            _zr_title = f"今月{_zr_theme}が動き出す星座ランキング"
+            _zr_hook = "今月の流れを先に知っておいてほしい。"
+            _zr_sign_hint = f"各星座の今月の{_zr_theme}の動き・タイミングを10〜18字で（具体的に。「流れが来る」より「動いた先に豊かさがある」レベルで）"
+            _zr_cta_emojis = ["🔮", "💰", "🌙"]
+        else:
+            _zr_label = "行動促進型"
+            _zr_title = "今週中にやると流れが変わる行動ランキング｜星座別"
+            _zr_hook = "今週中に動いてほしい人だけ読んで。"
+            _zr_sign_hint = "各星座が今週中にやると運気が変わる具体的な行動を1つ（10〜18字。「掃除する」より「玄関の北側を片付ける」レベルで）"
+            _zr_cta_emojis = ["⭐", "🔮", "🐉"]
+        _zr_emoji = _rnd_zr.choice(_zr_cta_emojis)
+        _zr_cta_variants = [
+            f"「{_zr_emoji}」を置いた方から、今週の気の流れが整い始めます。あなたの流れが動き出しますように。",
+            f"「{_zr_emoji}」をそっと置いた方から、止まっていた気の流れが動き始めます。",
+            f"気になった方は「{_zr_emoji}」を置いてみて。今週の龍脈の気が届きますように。",
+        ]
+        _zr_cta = _rnd_zr.choice(_zr_cta_variants)
+        pattern_extra = f"""
+## 12星座ランキング（日次アンカー）の追加ルール
+
+### タイプ: {_zr_label}
+- 冒頭フック（1行）: 「{_zr_hook}」（必ずこのフレーズか類似のtime urgencyで始める）
+- タイトル（1行）: 【{_zr_title}】
+- 空行
+- ランキング（全12星座を必ず全部含める）:
+  🥇1位 ♈牡羊座｜フレーズ
+  🥈2位 ♉牡牛座｜フレーズ
+  🥉3位 ♊双子座｜フレーズ
+  🏅4位 ♋蟹座｜フレーズ
+  5位 ♌獅子座｜フレーズ
+  6位 ♍乙女座｜フレーズ
+  7位 ♎天秤座｜フレーズ
+  8位 ♏蠍座｜フレーズ
+  9位 ♐射手座｜フレーズ
+  10位 ♑山羊座｜フレーズ
+  11位 ♒水瓶座｜フレーズ
+  12位 ♓魚座｜フレーズ
+- 空行
+- 絵文字CTA（2〜3行）:
+{_zr_cta}
+
+### フレーズの作り方
+{_zr_sign_hint}
+- 各星座の特性（牡羊=スタート、牡牛=じっくり、双子=情報、蟹=内向き、獅子=表現、乙女=整理、天秤=判断、蠍=変容、射手=拡大、山羊=実績、水瓶=独自路線、魚=受容）を踏まえて書く
+- 星座ごとに違うフレーズ（コピーNG）
+- 順位は今週（or今月）の龍脈命術的な気の流れで決める（でたらめはNG）
+- 星座記号（♈♉♊♋♌♍♎♏♐♑♒♓）を必ず各行の星座名前に付けること
+
+### 文字数
+380〜480字
+
+### 禁止
+- URLなし（engage系）
+- 同じフレーズの使いまわし
+- 「保証します」「絶対」などNG
+"""
+
     # ── convert カテゴリ: 末尾URL必須ルール（ツリーパターンは各投稿内で管理するため除外）──
     if (pattern.get("category") in ("convert", "conversion")
             and "https://" not in pattern_extra
@@ -1842,15 +1914,28 @@ def run(batch_size: int = 5) -> dict:
     # バッチ内で既に使った星座（同バッチ内での重複を防ぐ）
     batch_used_zodiacs: list = []
 
+    # zodiac_ranking アンカー: キューにまだなければバッチ先頭で強制生成
+    _ANCHOR_PID = "zodiac_ranking"
+    _anchor_in_queue = any(item.get("pattern_id") == _ANCHOR_PID for item in current_queue)
+    _anchor_pat = next(
+        (p for p in knowledge["patterns"] if p.get("id") == _ANCHOR_PID and p.get("status", "active") == "active"),
+        None
+    )
+    _force_anchor_first = (not _anchor_in_queue) and (_anchor_pat is not None)
+
     for i in range(batch_size):
         # スケジュールヒントを使ってテーマ選択（曜日固定コンテンツ）
         schedule_hint = todays_schedule[i % len(todays_schedule)]
         theme = _select_theme(knowledge["theme_tree"], recent_themes, schedule_hint)
-        pattern = _select_pattern(
-            knowledge["patterns"], recent_patterns,
-            hour=jst_hour, excluded_patterns=excluded_pids,
-            long_history_patterns=long_history_patterns,
-        )
+        # i=0 で zodiac_ranking がキューにない場合は強制選択
+        if i == 0 and _force_anchor_first:
+            pattern = _anchor_pat
+        else:
+            pattern = _select_pattern(
+                knowledge["patterns"], recent_patterns,
+                hour=jst_hour, excluded_patterns=excluded_pids,
+                long_history_patterns=long_history_patterns,
+            )
 
         # 推定投稿時刻（キュー長 + バッチ内位置 から計算）
         est_post_time = _estimate_post_time(current_queue_len, i)
