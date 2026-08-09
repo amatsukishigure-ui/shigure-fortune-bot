@@ -1498,11 +1498,14 @@ NG: 🔮 vs 🐉（どちらもブランドシンボルで対になっていな�
 
     # ── 星座ブースト（if/elif チェーン完了後に適用） ─────────────────
     zodiac_boost = extra_hint.get("zodiac_boost") if extra_hint else None
-    if zodiac_boost and pattern_id not in ("zodiac_target", "caligula", "empathy_thread", "harm_cta"):
+    _zodiac_self_managed = {"zodiac_target", "caligula", "zodiac_deep", "zodiac_problem", "kotodama_rank", "lucky_combo"}
+    if zodiac_boost and pattern_id not in _zodiac_self_managed:
         pattern_extra += f"""
-## 星座ターゲット（ソフト適用）
-このテーマを特に「{zodiac_boost}」の人に刺さるよう書く。
-「{zodiac_boost}の方へ」と冒頭に書く必要はない。言葉選び・具体例・感情描写が自然にその星座の特性にフィットするようにする。
+## 星座ターゲット（明示必須）
+このテーマを「{zodiac_boost}」の人に向けて書く。
+**必須**: 投稿テキストの冒頭（1行目または2行目まで）に星座記号「{zodiac_boost}」を必ず含めること。
+例: 「{zodiac_boost}の方へ。」「{zodiac_boost}さん、聞いてほしい。」「{zodiac_boost}の方からよく聞く言葉がある。」
+言葉選び・具体例・感情描写もその星座の特性（性格・悩みパターン・行動様式）に合わせて書く。
 """
     # ─────────────────────────────────────────────────────────────
 
@@ -1883,19 +1886,6 @@ def run(batch_size: int = 5) -> dict:
             if persona:
                 extra_hint["persona"] = persona
                 recent_persona_ids.append(persona.get("id"))
-        elif pattern.get("id") in ("list", "pop_short"):
-            # 50%の確率で星座ブーストを適用（コンテンツを特定星座に自然にターゲット）
-            if _random.random() < 0.5:
-                extra_hint["zodiac_boost"] = _pick_zodiac()
-            persona = _pick_persona(knowledge.get("personas", []), recent_persona_ids)
-            if persona:
-                extra_hint["persona"] = persona
-                recent_persona_ids.append(persona.get("id"))
-        elif pattern.get("id") == "soft_discovery":
-            persona = _pick_persona(knowledge.get("personas", []), recent_persona_ids)
-            if persona:
-                extra_hint["persona"] = persona
-                recent_persona_ids.append(persona.get("id"))
         elif pattern.get("id") == "harm_cta":
             # HARMカテゴリをランダム選択してペルソナをマッチング
             harm_data = knowledge.get("harm", {})
@@ -1918,6 +1908,19 @@ def run(batch_size: int = 5) -> dict:
                     persona = _random.choice(matched)
                     extra_hint["persona"] = persona
                     recent_persona_ids.append(persona.get("id"))
+            # harm_ctaも星座ブーストを適用（zodiac_boost section側でexcludeされないため有効）
+            extra_hint["zodiac_boost"] = _pick_zodiac(exclude=batch_used_zodiacs)
+            batch_used_zodiacs.append(extra_hint["zodiac_boost"])
+        else:
+            # kotodama_rank / lucky_combo 以外の全パターンに星座ブーストを適用
+            _no_zodiac_boost_pids = {"kotodama_rank", "lucky_combo"}
+            if pattern.get("id") not in _no_zodiac_boost_pids:
+                extra_hint["zodiac_boost"] = _pick_zodiac(exclude=batch_used_zodiacs)
+                batch_used_zodiacs.append(extra_hint["zodiac_boost"])
+            persona = _pick_persona(knowledge.get("personas", []), recent_persona_ids)
+            if persona:
+                extra_hint["persona"] = persona
+                recent_persona_ids.append(persona.get("id"))
 
         _fmt = pattern.get("format", "medium")
         # 単発投稿専用パターン（long/mediumでもスレッド化しない）
