@@ -1,18 +1,18 @@
 {
-  "updated_at": "2026-08-09T22:39:53.871417",
+  "updated_at": "2026-08-10T01:56:55.801703",
   "locked": [],
   "lookback_days": 30,
   "adjustments": {
-    "caligula": 0.598,
-    "ichi_gon": 0.817,
-    "zodiac_target": 1.045,
-    "before_sleep": 0.58,
-    "fuusui_tip": 0.885,
-    "zodiac_deep": 0.719,
-    "harm_revelation": 1.361,
+    "ichi_gon": 0.819,
+    "zodiac_target": 1.048,
+    "before_sleep": 0.581,
+    "fuusui_tip": 0.888,
+    "caligula": 0.6,
+    "zodiac_deep": 0.721,
+    "harm_revelation": 1.365,
     "kotodama_rank": 2.0,
-    "kaiun_day": 0.529,
+    "kaiun_day": 0.53,
     "card_pick": 0.5,
-    "client_voice": 0.576
+    "client_voice": 0.577
   }
 }
