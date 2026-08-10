@@ -12891,7 +12891,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-08-09T22:45:03.632941"
+    "recorded_at": "2026-08-09T22:45:03.632941",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♍乙女座さん、今週どの方向に動いてる？\n\nがんばってるのに何か空回りしてる感覚、それ方位がズレてるサインかもしれない。\n\n龍脈命術では、気の流れは「向き」で変わる。北西は決断力を後押しする方位。今週、意識的に北西へ出かけるか、デスクを北西に向けて座るだけでも、気の流れが変わりはじめる。\n\nまず今日、自分が向いてる方向だけ確認してみて。今の向き、北西になってる？\n\n#占い #吉方位 #開運",
@@ -12976,5 +12977,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-08-10T14:25:32.642899"
+  },
+  {
+    "text": "♒水瓶座の方へ。「もう遅いのかも」と思った瞬間、流れが止まる。\n\n#占い #龍脈命術",
+    "thread_posts": [
+      "♒水瓶座の方へ。「もう遅いのかも」と思った瞬間、流れが止まる。\n\n#占い #龍脈命術",
+      "♒水瓶座さんからよく聞く言葉がある。\n「冷静なふりをしているけど、誰かと深い話をするたびに泣きそうになる」\n\n先日鑑定した40代の方も、そうだった。再婚を意識し始めたのに、出会いが続かない。「自分には縁がないのかも」と思い始めていた。\n\n龍脈命術で見えたのは、方位のズレ。住まいの向きを整えたら、3ヶ月後に「自然に深く話せる人に出会えた」と連絡が来た。\n\n諦めた瞬間じゃなく、整えた瞬間から流れは変わる。\n\nまずは話すだけでもいい。\n▷ LINE https://lin.ee/TJg5dru\n▷ 鑑定ページ https://coconala.com/services/4292937?ref=threads\n\n#龍脈命術 #水瓶座 #恋愛運"
+    ],
+    "theme": "メニュー誘導/初回無料",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♒水瓶座",
+    "expires_on": "2026-08-24",
+    "pending_at": "2026-08-10T14:24:25.196097",
+    "queued_at": "2026-08-10T14:25:03.429698",
+    "threads_post_id": "18129785395568820",
+    "posted_at": "2026-08-10T22:54:27.501938+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aquarius.jpg",
+    "recorded_at": "2026-08-10T22:54:27.509172"
   }
 ]
