@@ -12868,7 +12868,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
-    "recorded_at": "2026-08-09T13:56:38.625648"
+    "recorded_at": "2026-08-09T13:56:38.625648",
+    "hourly_stats_recorded": true
   },
   {
     "text": "方位を変えたら、想定外のことが起きた。\n\n#占い #吉方位 #龍脈命術",
@@ -12953,5 +12954,27 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-08-10T13:00:08.065416"
+  },
+  {
+    "text": "転職したいのに、1年以上動けないままのあなたへ。\nそれ、意志の問題じゃないかもしれない。\n\n#占い #転職 #仕事運",
+    "thread_posts": [
+      "転職したいのに、1年以上動けないままのあなたへ。\nそれ、意志の問題じゃないかもしれない。\n\n#占い #転職 #仕事運",
+      "龍脈命術の鑑定で一番多い相談が「転職したいのに体が動かない」。\n\n話を聞いていくと、ほぼ共通点がある。\n動く方向（方位）がズレているだけで、エネルギーが空回りしている状態。\n\n龍脈命術は「当てる占い」じゃなく「動ける占い」。\n方位を整えた途端、面接が通り始めた、という話は珍しくない。\n\n努力の量より、向きが先。\n\n心当たりある？\n\n#龍脈命術 #転職 #仕事運"
+    ],
+    "theme": "鑑定エピソード/転職・仕事が動いた話",
+    "pattern_id": "kotodama_rank",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "expires_on": "2026-08-24",
+    "pending_at": "2026-08-10T14:24:14.789392",
+    "queued_at": "2026-08-10T14:25:03.427878",
+    "threads_post_id": "18059368676514103",
+    "posted_at": "2026-08-10T14:25:32.633775+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-08-10T14:25:32.642899"
   }
 ]
