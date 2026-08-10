@@ -62,6 +62,22 @@ ZODIAC_SIGNS = [
 # 星座記号→名前のマップ（置換に使用）
 _ZODIAC_MARK_TO_NAME = {z[0]: z[1:] for z in ZODIAC_SIGNS}
 _ZODIAC_NAME_TO_MARK = {z[1:]: z[0] for z in ZODIAC_SIGNS}
+_ZODIAC_MARKS_STR = "♈♉♊♋♌♍♎♏♐♑♒♓"
+
+# zodiac_boost が指定されても星座を自己管理するパターン（保証ロジック対象外）
+_ZODIAC_SELF_MANAGED_PIDS = frozenset({
+    "zodiac_target", "caligula", "zodiac_deep", "zodiac_problem",
+    "kotodama_rank", "lucky_combo", "zodiac_ranking",
+})
+
+
+def _ensure_zodiac(text: str, zodiac_boost: str) -> str:
+    """星座記号が本文にひとつもなければ冒頭行として追加する（zodiac_boost必須パターン用）"""
+    if not zodiac_boost or not text:
+        return text
+    if any(c in text for c in _ZODIAC_MARKS_STR):
+        return text
+    return f"{zodiac_boost}の方へ。\n\n{text}"
 
 
 def _fix_zodiac(text: str, target_zodiac: str) -> str:
@@ -1570,8 +1586,7 @@ NG: 🔮 vs 🐉（どちらもブランドシンボルで対になっていな�
 
     # ── 星座ブースト（if/elif チェーン完了後に適用） ─────────────────
     zodiac_boost = extra_hint.get("zodiac_boost") if extra_hint else None
-    _zodiac_self_managed = {"zodiac_target", "caligula", "zodiac_deep", "zodiac_problem", "kotodama_rank", "lucky_combo"}
-    if zodiac_boost and pattern_id not in _zodiac_self_managed:
+    if zodiac_boost and pattern_id not in _ZODIAC_SELF_MANAGED_PIDS:
         pattern_extra += f"""
 ## 星座ターゲット（明示必須）
 このテーマを「{zodiac_boost}」の人に向けて書く。
@@ -1997,9 +2012,8 @@ def run(batch_size: int = 5) -> dict:
             extra_hint["zodiac_boost"] = _pick_zodiac(exclude=batch_used_zodiacs)
             batch_used_zodiacs.append(extra_hint["zodiac_boost"])
         else:
-            # kotodama_rank / lucky_combo 以外の全パターンに星座ブーストを適用
-            _no_zodiac_boost_pids = {"kotodama_rank", "lucky_combo"}
-            if pattern.get("id") not in _no_zodiac_boost_pids:
+            # _ZODIAC_SELF_MANAGED_PIDS（自己管理）以外の全パターンに星座ブーストを適用
+            if pattern.get("id") not in _ZODIAC_SELF_MANAGED_PIDS:
                 extra_hint["zodiac_boost"] = _pick_zodiac(exclude=batch_used_zodiacs)
                 batch_used_zodiacs.append(extra_hint["zodiac_boost"])
             persona = _pick_persona(knowledge.get("personas", []), recent_persona_ids)
@@ -2038,6 +2052,11 @@ def run(batch_size: int = 5) -> dict:
             _target_z = extra_hint.get("zodiac", "")
             if _target_z and pattern.get("id") in ("zodiac_deep",):
                 thread_posts = [_fix_zodiac(p, _target_z) for p in thread_posts]
+            # zodiac_boost パターン: ツリー全体に星座記号がなければ先頭投稿冒頭に追加
+            _zb_thread = extra_hint.get("zodiac_boost", "")
+            if _zb_thread and pattern.get("id") not in _ZODIAC_SELF_MANAGED_PIDS:
+                if not any(c in "".join(thread_posts) for c in _ZODIAC_MARKS_STR):
+                    thread_posts[0] = f"{_zb_thread}の方へ。\n\n{thread_posts[0]}"
 
             # NGワードバリデーション（ツリー全投稿をチェック）
             _pid_check = pattern.get("id", "")
@@ -2141,6 +2160,10 @@ def run(batch_size: int = 5) -> dict:
             _target_z = extra_hint.get("zodiac", "")
             if _target_z and pattern.get("id") in ("caligula", "zodiac_target"):
                 first_draft = _fix_zodiac(first_draft, _target_z)
+            # zodiac_boost パターン: 星座記号が本文になければ冒頭に強制追加
+            _zb_single = extra_hint.get("zodiac_boost", "")
+            if _zb_single and pattern.get("id") not in _ZODIAC_SELF_MANAGED_PIDS:
+                first_draft = _ensure_zodiac(first_draft, _zb_single)
 
             # 品質チェック
             result = score_with_retry(
