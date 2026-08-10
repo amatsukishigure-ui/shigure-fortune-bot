@@ -126,6 +126,25 @@ jobs:
         env:
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
 
+      - name: refresh Threads token (weekly, Sun 00:00 UTC = 09:00 JST)
+        if: github.event_name == 'schedule'
+        env:
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          HOUR_UTC=$(date -u +%H)
+          DOW=$(date -u +%u)  # 7=Sun
+          if [ "$HOUR_UTC" = "0" ] && [ "$DOW" = "7" ]; then
+            echo "🔄 Threads token 週次 refresh (60日延長)..."
+            NEW_TOKEN=$(python scripts/refresh_token.py)
+            if [ $? -eq 0 ] && [ -n "$NEW_TOKEN" ]; then
+              echo "$NEW_TOKEN" | gh secret set THREADS_ACCESS_TOKEN --repo amatsukishigure-ui/shigure-fortune-bot
+              echo "✅ GitHub Secret THREADS_ACCESS_TOKEN を更新しました"
+            else
+              echo "⚠️ token refresh 失敗 — 手動更新が必要です"
+            fi
+          fi
+
       - name: weight update (Mon/Thu/Sun 21:00 JST = UTC 12:00)
         if: github.event_name == 'schedule'
         run: |
