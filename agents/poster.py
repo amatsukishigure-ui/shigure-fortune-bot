@@ -50,7 +50,7 @@ def _select_image(post: dict) -> str | None:
     pattern_id = post.get("pattern_id", "")
     theme = post.get("theme", "")
     # スレッド投稿は全投稿テキストを結合してキーワードマッチング（hookのみだと情報不足）
-    _thread_posts = post.get("thread_posts", [])
+    _thread_posts = post.get("thread_posts") or []
     text = "\n".join(_thread_posts) if len(_thread_posts) > 1 else post.get("text", "")
     # 絵文字プレフィックスを除去（例: "♌獅子座" → "獅子座"）
     _raw_boost = post.get("zodiac_boost", "")
@@ -396,10 +396,9 @@ def run() -> dict:
         print(f"⚠️ ポスター: 重複スキップ（直近14日以内に同一テキストを投稿済み）{text[:40]}...")
         return {"posted": False, "reason": "duplicate_recent"}
 
-    # 画像URLを選択（存在しなければNone → テキストのみ）
-    image_url = _select_image(post)
-
     try:
+        # 画像URLを選択（存在しなければNone → テキストのみ）
+        image_url = _select_image(post)
         if thread_posts and isinstance(thread_posts, list) and len(thread_posts) > 1:
             # ツリー投稿（1枚目のみ画像付き）
             result = _post_thread(thread_posts, lead_image_url=image_url)
