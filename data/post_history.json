@@ -13105,5 +13105,25 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
     "recorded_at": "2026-08-11T06:01:11.702894"
+  },
+  {
+    "text": "♎天秤座の方へ、聞いてほしい。\n\n神社に行くなら、「どの神社か」より「どの方角にある神社か」が先。\n龍脈命術では、方位を外した参拝は気の流れに逆らって動くのと同じだと見る。\n\n4年間、スキルも積んで、努力も正しいはず。でも何も動かない。\nそれ、向きの問題かもしれない。\n\n今の自分に近いのは「神社はよく行く」と「最近ご無沙汰」どっちかな。コメントで教えて。\n\n#占い #吉方位 #龍脈命術",
+    "x_text": "♎天秤座の方へ、聞いてほしい。\n\n神社に行くなら、「どの神社か」より「どの方角にある神社か」が先。\n龍脈命術では、方位を外した参拝は気の流れに逆らって動くのと同じだと見る。\n\n4年間、スキルも積んで、努力も正しいはず。でも何も動かない。\nそれ、向きの問題かもしれない。\n\n今の自分に近いのは「神社はよく行く」と「最近ご無沙汰」どっちかな。コメントで教えて。\n\n#占い #時雨 #神社 #パワースポット",
+    "theme": "神社・パワースポット/神社参拝と開運",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.9,
+    "attempts": 1,
+    "x_eligible": true,
+    "expires_on": "2026-08-25",
+    "persona_id": "p013",
+    "zodiac_boost": "♎天秤座",
+    "pending_at": "2026-08-11T04:31:00.815386",
+    "queued_at": "2026-08-11T04:31:36.456467",
+    "threads_post_id": "18190941286383387",
+    "posted_at": "2026-08-11T08:18:23.919264+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/libra.jpg",
+    "recorded_at": "2026-08-11T08:18:23.927436"
   }
 ]
