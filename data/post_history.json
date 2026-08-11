@@ -13065,5 +13065,25 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/libra.jpg",
     "recorded_at": "2026-08-11T03:01:09.959424"
+  },
+  {
+    "text": "♈牡羊座さんへ。\n\n「もう遅いかも」って、何度思った？\n\n龍脈命術は、今いる場所と向かう方位を読む。\n性格じゃなく、気の流れを整える占い。\n\n立秋を過ぎた今、吉方位の神社へ足を向けるだけで、止まっていた縁が動き出すことがある。\n\n「神社、最近行ってた」か「全然行ってない」か、コメントで教えて。\n\n#占い #吉方位 #開運",
+    "x_text": "♈牡羊座さんへ。\n\n「もう遅いかも」って、何度思った？\n\n龍脈命術は、今いる場所と向かう方位を読む。\n性格じゃなく、気の流れを整える占い。\n\n立秋を過ぎた今、吉方位の神社へ足を向けるだけで、止まっていた縁が動き出すことがある。\n\n「神社、最近行ってた」か「全然行ってない」か、コメントで教えて。\n\n#占い #時雨 #吉方位 #風水",
+    "theme": "神社・パワースポット/吉方位の神社参り",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.6,
+    "attempts": 1,
+    "x_eligible": true,
+    "expires_on": "2026-08-24",
+    "persona_id": "p003",
+    "zodiac_boost": "♈牡羊座",
+    "pending_at": "2026-08-10T12:59:10.561230",
+    "queued_at": "2026-08-10T12:59:31.813300",
+    "threads_post_id": "17989256831841120",
+    "posted_at": "2026-08-11T04:31:45.343618+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
+    "recorded_at": "2026-08-11T04:31:45.351749"
   }
 ]
