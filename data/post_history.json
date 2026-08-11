@@ -12956,7 +12956,8 @@
     "posted_at": "2026-08-10T13:00:08.055832+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-10T13:00:08.065416"
+    "recorded_at": "2026-08-10T13:00:08.065416",
+    "hourly_stats_recorded": true
   },
   {
     "text": "転職したいのに、1年以上動けないままのあなたへ。\nそれ、意志の問題じゃないかもしれない。\n\n#占い #転職 #仕事運",
@@ -13191,5 +13192,28 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-08-11T12:54:21.691777"
+  },
+  {
+    "text": "♎天秤座の方から、こんな連絡が来た。「引越し先が決まりました」——動けなかった2年間が、動いた話をしてもいい？\n\n#占い #引越し #風水",
+    "thread_posts": [
+      "♎天秤座の方から、こんな連絡が来た。「引越し先が決まりました」——動けなかった2年間が、動いた話をしてもいい？\n\n#占い #引越し #風水",
+      "♎天秤座さん、聞いてほしい。\n\n鑑定した方から連絡が来た。\n30代・転職も引越しも「どうせうまくいかない」と止まっていた方。\n\n天秤座は選択肢を比べすぎて、動けなくなりやすい。\nでもそれ、意志の問題じゃなかった。\n向かっていた方位が、凶方位だっただけ。\n\n吉方位に引越した翌月、転職先も決まったと言っていた。\n龍脈命術は「当てる」より「動ける」占い。\n向きを整えると、同じ行動の結果が変わる。\n\n心当たりある？\n\n▷ 気になったら LINE https://lin.ee/TJg5dru\n\n#吉方位 #風水 #天秤座"
+    ],
+    "theme": "吉方位・風水/引越し方位",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♎天秤座",
+    "expires_on": "2026-08-25",
+    "pending_at": "2026-08-11T14:24:21.961067",
+    "queued_at": "2026-08-11T14:24:22.115059",
+    "threads_post_id": "18024107792853992",
+    "posted_at": "2026-08-11T14:24:44.096198+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/libra.jpg",
+    "recorded_at": "2026-08-11T14:24:44.105721"
   }
 ]
