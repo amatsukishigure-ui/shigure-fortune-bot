@@ -446,15 +446,6 @@ def run() -> dict:
         if replied:
             print(f"  💬 自己リプライCTA送信済み [{category}]")
 
-        # ③ 投稿直後に即時リプライヤー起動（初速30分以内のコメント返しシグナル）
-        try:
-            from agents import replier as _replier
-            r = _replier.run()
-            if r.get("replied", 0) > 0:
-                print(f"  💬 即時リプライ: {r['replied']}件返信")
-        except Exception:
-            pass  # リプライヤーの失敗はポスターの成否に影響させない
-
         return {"posted": True, "post_id": post_id, "reason": ""}
 
     except Exception as e:
