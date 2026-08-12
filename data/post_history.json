@@ -13071,7 +13071,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/libra.jpg",
-    "recorded_at": "2026-08-11T03:01:09.959424"
+    "recorded_at": "2026-08-11T03:01:09.959424",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♈牡羊座さんへ。\n\n「もう遅いかも」って、何度思った？\n\n龍脈命術は、今いる場所と向かう方位を読む。\n性格じゃなく、気の流れを整える占い。\n\n立秋を過ぎた今、吉方位の神社へ足を向けるだけで、止まっていた縁が動き出すことがある。\n\n「神社、最近行ってた」か「全然行ってない」か、コメントで教えて。\n\n#占い #吉方位 #開運",
@@ -13091,7 +13092,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
-    "recorded_at": "2026-08-11T04:31:45.351749"
+    "recorded_at": "2026-08-11T04:31:45.351749",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♉牡牛座の方へ。\n\n「このままじゃいけない」と思いながら、もう何年経ちましたか。\n\n変わった人と変わらなかった人の違いを見てきて、気づいたことがある。\n努力の量じゃなかった。向かっていた方向が、ズレていただけ。\n\n龍脈命術は「当てる」より「動ける」占い。気の流れを整えると、同じ頑張りでも景色が変わる。\n\n「心当たりある」か「初めて聞いた」か、コメントで教えて。\n\n#占い #龍脈命術",
@@ -13302,5 +13304,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/general.jpg",
     "recorded_at": "2026-08-12T03:01:09.591650"
+  },
+  {
+    "text": "♎天秤座の方へ。\n\n引っ越しただけで人生変わるの？って思ってた。でも、変わった。\n\n#占い #引越し #風水",
+    "thread_posts": [
+      "♎天秤座の方へ。\n\n引っ越しただけで人生変わるの？って思ってた。でも、変わった。\n\n#占い #引越し #風水",
+      "鑑定した方から連絡が来た。\n\n40代、長年同じ部屋に住み続けて「なんとなく停滞してる」と感じていた方。\n転職も恋愛も、動き出せないまま数年が過ぎていたと言っていた。\n\n龍脈命術で方位を見ると、今の住所が気の滞りやすい向きだった。\n北西への引っ越しを提案した。\n\n3ヶ月後、「新しい職場から内定をもらいました」と連絡が来た。\n部屋が変わったら、自分が変わった、と。\n\n龍脈命術は「当てる」占いじゃなく「動かす」占い。\n場所を整えると、同じ自分でも動き方が変わる。\n\nこれ、心当たりある？\n\n気になったら → LINE https://lin.ee/TJg5dru\n▷ 鑑定ページ https://coconala.com/services/4292937?ref=threads\n\n#龍脈命術 #吉方位 #占術家時雨"
+    ],
+    "theme": "鑑定エピソード/引越し・移転で流れが変わった話",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♎天秤座",
+    "expires_on": "2026-08-26",
+    "pending_at": "2026-08-12T04:58:00.636911",
+    "queued_at": "2026-08-12T04:58:47.714485",
+    "threads_post_id": "18114582922963149",
+    "posted_at": "2026-08-12T04:59:29.240728+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/libra.jpg",
+    "recorded_at": "2026-08-12T04:59:29.248835"
   }
 ]
