@@ -13003,7 +13003,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aquarius.jpg",
-    "recorded_at": "2026-08-10T22:54:27.509172"
+    "recorded_at": "2026-08-10T22:54:27.509172",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♐射手座の方からよく聞く言葉がある。「頑張ってるのに、最後だけ届かない」。\n\n#占い #吉方位 #開運",
@@ -13025,7 +13026,8 @@
     "posted_at": "2026-08-11T01:01:24.419615+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-11T01:01:24.427444"
+    "recorded_at": "2026-08-11T01:01:24.427444",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♋ 蟹座で、3回以上マッチングアプリで会ったのに続かなかった人以外は、読まなくていい。\n\n#占い #龍脈命術",
@@ -13048,7 +13050,8 @@
     "posted_at": "2026-08-11T01:58:19.336796+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-11T01:58:19.346253"
+    "recorded_at": "2026-08-11T01:58:19.346253",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♎ 天秤座さんへ。\n\n頑張ってるのに、お金だけ増えない。\nそう感じてる天秤座さん、今は「向き」が大事な時期だよ。\n\n今の気の流れ、北西が金運に動きやすい。\n財布や通帳を置く場所を北西側に移してみて。\n龍脈命術は「当てる」より「動ける」占い。方位を整えると、同じ行動の効き方が変わるんだよ。\n\n立秋を過ぎた今、気の流れが切り替わり始めてる。動くなら今。\n\n天秤座さん、今これ当てはまってる？コメントで教えて🌟\n\n#占い #金運 #開運",
@@ -13259,5 +13262,27 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-08-12T01:01:12.558932"
+  },
+  {
+    "text": "引越しで人生が変わったと言うと、「たまたまだよ」と言われる。でも龍脈命術では、それを偶然とは読まない。\n\n#占い #引越し #風水",
+    "thread_posts": [
+      "引越しで人生が変わったと言うと、「たまたまだよ」と言われる。でも龍脈命術では、それを偶然とは読まない。\n\n#占い #引越し #風水",
+      "あるクライアントが、長年うまくいかなかった仕事の話をしてくれた。\n\nコロナ前まで月商180万あった店が、今は120万。融資か縮小か、決断できないまま1年が過ぎていた。\n\n龍脈命術で読んだのは星座じゃなく、今いる場所と向かう方向。\n\n「今の店の方位は気が滞っている。動くなら北東。移転じゃなく、店内の動線を北東向きに変えるだけでいい。」\n\n3ヶ月後、客単価が上がったと連絡が来た。\n\n星座占いは性格を読む。龍脈命術は、今いる場所の気を読む。そこが違う。\n\n「このままでいいのか」が口癖になっているなら、方向のズレかもしれない。\n\n心当たり、ある？\n\n占術家 時雨\n\n#龍脈命術 #吉方位 #運気の流れ"
+    ],
+    "theme": "鑑定エピソード/引越し・移転で流れが変わった話",
+    "pattern_id": "kotodama_rank",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "expires_on": "2026-08-26",
+    "pending_at": "2026-08-12T02:10:54.078847",
+    "queued_at": "2026-08-12T02:10:54.191255",
+    "threads_post_id": "17877418530622559",
+    "posted_at": "2026-08-12T02:11:18.889315+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-08-12T02:11:18.896707"
   }
 ]
