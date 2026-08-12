@@ -7634,5 +7634,104 @@
     "pattern_id": "kotodama_rank",
     "post_id": "18094099922457233",
     "fetched_at": "2026-08-10T22:48:01.394682"
+  },
+  {
+    "views": 80,
+    "likes": 2,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "fuusui_tip",
+    "post_id": "18110160740094164",
+    "fetched_at": "2026-08-11T12:48:00.144955"
+  },
+  {
+    "views": 244,
+    "likes": 5,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "before_sleep",
+    "post_id": "18112764764061819",
+    "fetched_at": "2026-08-11T12:48:00.733192"
+  },
+  {
+    "views": 42,
+    "likes": 1,
+    "replies": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "zodiac_ranking",
+    "post_id": "17911192518264516",
+    "fetched_at": "2026-08-11T14:19:31.084340"
+  },
+  {
+    "views": 147,
+    "likes": 2,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "kotodama_rank",
+    "post_id": "18059368676514103",
+    "fetched_at": "2026-08-11T22:52:46.215946"
+  },
+  {
+    "views": 81,
+    "likes": 5,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "client_voice",
+    "post_id": "18129785395568820",
+    "fetched_at": "2026-08-12T02:04:48.367935"
+  },
+  {
+    "views": 58,
+    "likes": 3,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "client_voice",
+    "post_id": "18583354027066261",
+    "fetched_at": "2026-08-12T02:04:48.712889"
+  },
+  {
+    "views": 370,
+    "likes": 1,
+    "replies": 3,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "caligula",
+    "post_id": "17897074500580128",
+    "fetched_at": "2026-08-12T02:04:49.179997"
+  },
+  {
+    "views": 106,
+    "likes": 8,
+    "replies": 5,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "zodiac_target",
+    "post_id": "18147986308524037",
+    "fetched_at": "2026-08-12T04:53:37.138466"
+  },
+  {
+    "views": 208,
+    "likes": 17,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "ichi_gon",
+    "post_id": "17989256831841120",
+    "fetched_at": "2026-08-12T04:53:37.436482"
   }
 ]
