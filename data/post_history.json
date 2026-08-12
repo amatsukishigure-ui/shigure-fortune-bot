@@ -13327,5 +13327,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/libra.jpg",
     "recorded_at": "2026-08-12T04:59:29.248835"
+  },
+  {
+    "text": "♑山羊座で、「このままじゃない気がする」が頭から離らない人以外は、読まなくていい。\n\n#占い #龍脈命術",
+    "theme": "時雨の世界観/動ける占いとは",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "x_eligible": false,
+    "is_repost": true,
+    "original_post_id": "17974953525113067",
+    "pending_at": "2026-08-12T04:57:34.667342",
+    "queued_at": "2026-08-12T04:58:47.478546",
+    "threads_post_id": "18108300875004271",
+    "posted_at": "2026-08-12T06:01:14.228275+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-08-12T06:01:14.237100"
   }
 ]
