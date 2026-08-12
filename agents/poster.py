@@ -406,6 +406,10 @@ def run() -> dict:
                 raise Exception("ツリー投稿失敗")
             post_id = result["post_ids"][0]
             img_mark = " 🖼" if result.get("has_image") else ""
+            if result.get("partial"):
+                posted_n = len(result["post_ids"])
+                print(f"  ⚠️ ツリー一部失敗: {result.get('error')} ({posted_n}/{len(thread_posts)}件成功)")
+                post["partial_thread_failure"] = True
             print(f"✅ ポスター: ツリー投稿成功{img_mark} [{post_id}] {len(thread_posts)}件 {text[:30]}...")
         else:
             # 通常投稿
