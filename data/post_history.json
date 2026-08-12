@@ -13225,7 +13225,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/libra.jpg",
-    "recorded_at": "2026-08-11T14:24:44.105721"
+    "recorded_at": "2026-08-11T14:24:44.105721",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♓ 魚座で、「頑張っているのになぜか結果に結びつかない」と感じている人以外は、読まなくていい。\n\n#占い #星座占い #運勢",
@@ -13458,5 +13459,25 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/sagittarius.jpg",
     "recorded_at": "2026-08-12T14:27:55.916913"
+  },
+  {
+    "text": "♍ 乙女座で今、転職・キャリアが気になっている人へ。\n\n頑張ってるのに、なぜか前に進めない感覚、ある？\n\n今の気の流れでいうと、乙女座は西方位が動きやすい時期。\n転職活動の面接や相談ごとは、西か北西方向の場所を意識してみてね。\n\n龍脈命術では「努力の方向」より「向かう方位」が先に来る。\n同じ行動でも、方位を整えると流れが変わるよ。\n\n乙女座さん、今これ心当たりある？コメントで教えて。\n\n#占い #転職 #仕事運",
+    "x_text": "♍ 乙女座で今、転職・キャリアが気になっている人へ。\n\n頑張ってるのに、なぜか前に進めない感覚、ある？\n\n今の気の流れでいうと、乙女座は西方位が動きやすい時期。\n転職活動の面接や相談ごとは、西か北西方向の場所を意識してみてね。\n\n龍脈命術では「努力の方向」より「向かう方位」が先に来る。\n同じ行動でも、方位を整えると流れが変わるよ。\n\n乙女座さん、今これ心当たりある？コメントで教えて。\n\n#占い #時雨 #龍脈命術 #開運",
+    "theme": "時雨の世界観/占いへの想い",
+    "pattern_id": "zodiac_target",
+    "quality_score": 7.6,
+    "attempts": 1,
+    "x_eligible": false,
+    "expires_on": "2026-08-27",
+    "persona_id": "p009",
+    "zodiac_boost": "♍乙女座",
+    "pending_at": "2026-08-12T22:56:10.068022",
+    "queued_at": "2026-08-12T22:56:51.581916",
+    "threads_post_id": "18031194743654263",
+    "posted_at": "2026-08-12T22:57:00.002387+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/virgo.jpg",
+    "recorded_at": "2026-08-12T22:57:00.011846"
   }
 ]
