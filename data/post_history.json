@@ -13113,7 +13113,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
-    "recorded_at": "2026-08-11T06:01:11.702894"
+    "recorded_at": "2026-08-11T06:01:11.702894",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♎天秤座の方へ、聞いてほしい。\n\n神社に行くなら、「どの神社か」より「どの方角にある神社か」が先。\n龍脈命術では、方位を外した参拝は気の流れに逆らって動くのと同じだと見る。\n\n4年間、スキルも積んで、努力も正しいはず。でも何も動かない。\nそれ、向きの問題かもしれない。\n\n今の自分に近いのは「神社はよく行く」と「最近ご無沙汰」どっちかな。コメントで教えて。\n\n#占い #吉方位 #龍脈命術",
@@ -13345,5 +13346,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-08-12T06:01:14.237100"
+  },
+  {
+    "text": "引越しただけで、人生が変わった。そんな話、信じる？\n\n#占い #引越し #風水",
+    "thread_posts": [
+      "引越しただけで、人生が変わった。そんな話、信じる？\n\n#占い #引越し #風水",
+      "龍脈命術の鑑定で「南西方位への移転」を伝えたお客様がいた。\n\n半信半疑で動いてくれた3ヶ月後、「転職が決まりました」「なぜか人間関係が楽になりました」と連絡が来た。\n\n環境を変えたんじゃない。\n気の流れの向きを変えただけ。\n\n龍脈命術は「当てる」占いじゃなく、「動ける」占い。引越し・移転には、気の流れを一気に変える力がある。\n\n「なんか今の場所、重いな」と感じてるなら——\nそれ、気のせいじゃないかもしれないよ。\n\n#龍脈命術 #引越し風水 #占術家時雨",
+      "「このままでいいのかな」\nその言葉、今月だけで何回呟きましたか？\n\n占いというと「当たる・当たらない」で語られがちですが、私が大事にしているのはそこじゃありません。\n\n風水×吉方位×星読みを組み合わせた、動くための占い「龍脈命術」について、無料noteにまとめました🔮\n誰のための占いか、どんな悩みに効くか。よければ覗いてみてください👇\nhttps://note.com/shigure_fortune/n/nab07df599219\n\n続きの記事も随時公開していくので、noteのフォローもしていただけると嬉しいです🙏\n\n#占い #引越し #風水"
+    ],
+    "theme": "鑑定エピソード/引越し・移転で流れが変わった話",
+    "pattern_id": "kotodama_rank",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "expires_on": "2026-08-26",
+    "pending_at": "2026-08-12T08:21:35.924037",
+    "queued_at": "2026-08-12T08:22:29.509171",
+    "threads_post_id": "18100438667253822",
+    "posted_at": "2026-08-12T08:23:19.028604+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-08-12T08:23:19.037609"
   }
 ]
