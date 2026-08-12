@@ -13284,5 +13284,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-08-12T02:11:18.896707"
+  },
+  {
+    "text": "♊ 双子座で、好きな人との縁がどこかすれ違う気がしている人へ。\n\n#占い #龍脈命術",
+    "theme": "開運日/一粒万倍日の使い方",
+    "pattern_id": "zodiac_target",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "x_eligible": false,
+    "is_repost": true,
+    "original_post_id": "18123166684779669",
+    "pending_at": "2026-08-12T02:09:25.950451",
+    "queued_at": "2026-08-12T02:10:54.173137",
+    "threads_post_id": "18132232567613712",
+    "posted_at": "2026-08-12T03:01:09.581339+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/general.jpg",
+    "recorded_at": "2026-08-12T03:01:09.591650"
   }
 ]
