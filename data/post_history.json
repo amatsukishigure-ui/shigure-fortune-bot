@@ -13134,7 +13134,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/libra.jpg",
-    "recorded_at": "2026-08-11T08:18:23.927436"
+    "recorded_at": "2026-08-11T08:18:23.927436",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♓魚座の方へ。有料鑑定を受けた方に毎回伝えていることを、今夜だけここに出す。\n\n「なんとなく最近うまくいかない」——その感覚、気のせいじゃない。\n\n運気が下がる前には、必ず小さなサインが出る。正体は──空間の向きにある。\n\n#占い #吉方位 #開運",
@@ -13158,7 +13159,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/pisces.jpg",
-    "recorded_at": "2026-08-11T09:01:50.798348"
+    "recorded_at": "2026-08-11T09:01:50.798348",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今週、流れが変わる星座を先に言う。\n\n#占い #吉方位 #開運",
@@ -13181,7 +13183,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
-    "recorded_at": "2026-08-11T12:01:51.667078"
+    "recorded_at": "2026-08-11T12:01:51.667078",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♎天秤座さんへ。\n\n今の天秤座には「判断の気」が集まってきている。ずっと答えを出せずにいたことが、今週末ようやく動き出すタイミングにある。ただ、天秤座が陥りやすいのは「もう少し情報を集めてから」と先送りすること。龍脈命術で見ると、今は考える時間より向かう方向を整えることのほうが結果を変える。\n\n・東方向 → 朝のうちに東向きの窓を開けて10分過ごす。決断に必要な「踏み出す気」が入ってくる\n\nもう一点、避けてほしい方位がある──\n\n#占い #風水 #開運",
@@ -13411,5 +13414,24 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-08-12T12:01:43.801429"
+  },
+  {
+    "text": "♓魚座の人へ、正直に話す。\n\n5年、年収が変わらなかった人が鑑定に来た。\n努力も実績もあった。ただ、向きがズレていた。\n\n龍脈命術は「なぜ結果が出ないか」を気の流れで読む。\n吉方位に動いた半年後、その人は転職ではなく昇格した。\n\n努力の量じゃなかった。向きの問題だった。\n\n「心当たりある」か「はじめて聞いた」か、コメントで教えて。\n\n#占い #転職 #仕事運",
+    "x_text": "♓魚座の人へ、正直に話す。\n\n5年、年収が変わらなかった人が鑑定に来た。\n努力も実績もあった。ただ、向きがズレていた。\n\n龍脈命術は「なぜ結果が出ないか」を気の流れで読む。\n吉方位に動いた半年後、その人は転職ではなく昇格した。\n\n努力の量じゃなかった。向きの問題だった。\n\n「心当たりある」か「はじめて聞いた」か、コメントで教えて。\n\n#占い #時雨 #金運 #風水",
+    "theme": "鑑定エピソード/金運・収入が変わった話",
+    "pattern_id": "ichi_gon",
+    "quality_score": 8.3,
+    "attempts": 1,
+    "x_eligible": true,
+    "expires_on": "2026-08-26",
+    "persona_id": "p004",
+    "zodiac_boost": "♓魚座",
+    "pending_at": "2026-08-12T12:58:06.347123",
+    "queued_at": "2026-08-12T12:59:18.659311",
+    "threads_post_id": "18113470324985517",
+    "posted_at": "2026-08-12T12:59:25.548581+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-12T12:59:25.557593"
   }
 ]

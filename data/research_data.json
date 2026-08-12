@@ -1,46 +1,6 @@
 {
   "topics": [
     {
-      "title": "台風13号 強い勢力で沖縄・奄美に接近へ 高波 暴風に厳重警戒",
-      "description": "大型で非常に強い台風13号は、今後、強い勢力で沖縄・奄美に近づく見込みで、高波と暴風に厳重な警戒が必要です。最新の情報を確認して早めの備えを進めてください。",
-      "source": "NHKニュース"
-    },
-    {
-      "title": "消費税減税 基本方針案 閣議決定へ 野党は国会でただす構え",
-      "description": "食料品の消費税減税をめぐり、政府は、来年4月から2年間1％に引き下げるなどとした基本方針案を5日に閣議決定したいとしています。これを受けて、与党は税制改正大綱の検討に入り、具体的な制度設計を本格化させる方針です。",
-      "source": "NHKニュース"
-    },
-    {
-      "title": "公取委30年ぶり組織再編へ 中小企業の価格転嫁へ監視強化",
-      "description": "立場が弱い中小企業がコストの上昇分を適切に価格に転嫁できる環境を整備しようと、公正取引委員会は、専門の局を新たに設ける方針です。実現すれば、公正取引委員会にとっては、およそ30年ぶりの大規模な組織再編となります。",
-      "source": "NHKニュース"
-    },
-    {
-      "title": "三菱重工業 次世代型原子炉「SMR」国内実用化に向け本格開発へ",
-      "description": "政府が原子力を最大限活用する方針を打ち出す中、大手機械メーカーの「三菱重工業」が、「SMR」と呼ばれる次世代型の原子炉の国内での実用化に向け、本格的な開発に乗り出す方針を固めたことがわかりました。",
-      "source": "NHKニュース"
-    },
-    {
-      "title": "NYダウ900ドル超高 連日の最高値",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "福岡県議会 第三者委を設置へ",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "威嚇射撃応じず警官発砲 男死亡",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "偽iPhone大量発見 不正還付発覚",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
       "title": "ドリーファンクジュニアさん死去",
       "description": "",
       "source": "Yahoo Japan ニュース"
@@ -3849,9 +3809,49 @@
       "source": "news_rss",
       "cultural_angle": "風水における居場所の気（陽宅風水）と心身への影響",
       "season_note": "酷暑の8月。夏の「火の気」が強すぎる時期は、方位・環境の選択が例年以上に重要とされる"
+    },
+    {
+      "title": "首相 15日の靖国参拝を見送る方向",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "中道の総支部解散が相次ぐ 30超",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "イオン爆発 ハビタが「補償模索」",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "砂浜に遺体 不明の22歳男性と判明",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "新幹線乗り遅れ緊急停止 動画拡散",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "夜間の墓参りも 変化する供養の形",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "阪神・佐藤輝明 プロ通算150号HR",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "アミューズ 誹謗中傷巡り法的措置",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
     }
   ],
-  "last_updated": "2026-08-12T08:19:44.147491",
+  "last_updated": "2026-08-12T12:55:58.511661",
   "last_rss_count": 31,
   "last_cultural_count": 0
 }
