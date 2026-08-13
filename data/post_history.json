@@ -13293,7 +13293,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-08-12T02:11:18.896707"
+    "recorded_at": "2026-08-12T02:11:18.896707",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♊ 双子座で、好きな人との縁がどこかすれ違う気がしている人へ。\n\n#占い #龍脈命術",
@@ -13311,7 +13312,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/general.jpg",
-    "recorded_at": "2026-08-12T03:01:09.591650"
+    "recorded_at": "2026-08-12T03:01:09.591650",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♎天秤座の方へ。\n\n引っ越しただけで人生変わるの？って思ってた。でも、変わった。\n\n#占い #引越し #風水",
@@ -13546,5 +13548,29 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-08-13T03:01:08.481760"
+  },
+  {
+    "text": "♐射手座で、「頑張るタイミングは今じゃない気がする」という感覚がある人だけ読んで。\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "♐射手座で、「頑張るタイミングは今じゃない気がする」という感覚がある人だけ読んで。\n\n#占い #吉方位 #開運",
+      "その感覚、意志の弱さじゃない。龍脈命術的に見ると、立秋前後はエネルギーの切り替わりが起きる。気の流れが変わる手前は、動いても空回りしやすい。逆に言うと、今この時期に吉方位を調べて「向かう方向」を整えておくだけで、次の動き出しが別物になる。開運日に何かをするより、方向を先に決めるほうが効く。今夜、自分が今どこへ向かっているか、考えてみてほしい。当てはまる人、コメントで教えて。\n\n#占い #龍脈命術 #吉方位",
+      "「龍脈命術」という名前、実は由来があります。\n\n風水でいう龍脈＝気が流れる道。土地に流れがあるように、人にも生まれ持った〝流れ〟がある。その流れを読み解いて、今どこへ向かえば気が味方するかを示す占いです。\n\n自己紹介と一緒に、無料noteにまとめました🔮\nhttps://note.com/shigure_fortune/n/nab07df599219\n\nこれから龍脈命術の話をもっと発信していく予定なので、noteのフォローで応援していただけると励みになります✨\n\n#占い #吉方位 #開運"
+    ],
+    "theme": "開運日/天赦日と吉方位",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "zodiac_boost": "♏蠍座",
+    "expires_on": "2026-08-27",
+    "pending_at": "2026-08-13T05:03:23.725820",
+    "queued_at": "2026-08-13T05:03:53.622748",
+    "threads_post_id": "17869625931635065",
+    "posted_at": "2026-08-13T05:04:35.205492+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-08-13T05:04:35.214974"
   }
 ]
