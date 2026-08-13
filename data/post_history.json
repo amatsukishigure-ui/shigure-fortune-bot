@@ -13527,5 +13527,24 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-08-13T02:12:37.443577"
+  },
+  {
+    "text": "♎天秤座さん、聞いてほしい。\n\n頑張っているのに、なぜか評価されない。\nその感覚、実力の問題じゃないかもしれない。\n\n龍脈命術で見えるのは「努力の方向」じゃなく、「気が流れている方向」。\n向きがズレていると、同じ行動でも気が味方しない。\n\n「そうかも」と「初めて聞いた」、どっちに近い？コメントで教えて。\n\n#占い #星座占い #運勢",
+    "x_text": "♎天秤座さん、聞いてほしい。\n\n頑張っているのに、なぜか評価されない。\nその感覚、実力の問題じゃないかもしれない。\n\n龍脈命術で見えるのは「努力の方向」じゃなく、「気が流れている方向」。\n向きがズレていると、同じ行動でも気が味方しない。\n\n「そうかも」と「初めて聞いた」、どっちに近い？コメントで教えて。\n\n#占い #時雨 #星座占い #運勢",
+    "theme": "星座占い/今月の運気まとめ",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.7,
+    "attempts": 1,
+    "x_eligible": true,
+    "expires_on": "2026-08-27",
+    "persona_id": "p008",
+    "zodiac_boost": "♎天秤座",
+    "pending_at": "2026-08-13T02:11:04.500033",
+    "queued_at": "2026-08-13T02:11:58.366767",
+    "threads_post_id": "17957713551196796",
+    "posted_at": "2026-08-13T03:01:08.469725+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-13T03:01:08.481760"
   }
 ]
