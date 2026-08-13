@@ -13336,7 +13336,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/libra.jpg",
-    "recorded_at": "2026-08-12T04:59:29.248835"
+    "recorded_at": "2026-08-12T04:59:29.248835",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♑山羊座で、「このままじゃない気がする」が頭から離らない人以外は、読まなくていい。\n\n#占い #龍脈命術",
@@ -13354,7 +13355,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-08-12T06:01:14.237100"
+    "recorded_at": "2026-08-12T06:01:14.237100",
+    "hourly_stats_recorded": true
   },
   {
     "text": "引越しただけで、人生が変わった。そんな話、信じる？\n\n#占い #引越し #風水",
@@ -13591,5 +13593,28 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-08-13T06:01:17.830713"
+  },
+  {
+    "text": "♋蟹座の方へ。観葉植物、枯らしてばかりって思ってない？\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "♋蟹座の方へ。観葉植物、枯らしてばかりって思ってない？\n\n#占い #吉方位 #開運",
+      "♋蟹座さん、聞いてほしい。\n\n鑑定した方から連絡が来た。\n40代・蟹座の専業主婦の方。「部屋に植物を置いても何度も枯れる。運がないのかも」と話していた。\n\n鑑定でわかったのは、置く方位のズレだった。\n龍脈命術では、気の流れが滞る場所では植物の生命力も落ちると見る。東の窓際に鉢を移して、週一で窓を開けた。\n\n「2ヶ月経って、初めて花が咲きました」と連絡が来た。\n\n龍脈命術は「当てる」より「動かす」占い。部屋の気が変わると、暮らしの流れが変わる。\n\n気になったら → ▷ LINE https://lin.ee/TJg5dru\n\n#吉方位 #龍脈命術 #蟹座"
+    ],
+    "theme": "暮らしの吉方位と気の整え方/観葉植物と気の浄化",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♋蟹座",
+    "expires_on": "2026-08-27",
+    "pending_at": "2026-08-13T08:26:30.813034",
+    "queued_at": "2026-08-13T08:26:30.958438",
+    "threads_post_id": "18050161700639757",
+    "posted_at": "2026-08-13T08:26:56.819176+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/cancer.jpg",
+    "recorded_at": "2026-08-13T08:26:56.828634"
   }
 ]
