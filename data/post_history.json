@@ -13379,7 +13379,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-08-12T08:23:19.037609"
+    "recorded_at": "2026-08-12T08:23:19.037609",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♈ 牡羊座さんへ。\n\n「頑張ってるのに、なぜか同じ場所にいる」\nそう感じてるなら、向きが合っていないだけかもしれない。\n\n今の牡羊座に動き出す気が来ている。\n立秋を越えたこの時期、北西の方角が転機を引き寄せやすい。\nいつもと違う道、いつもと違う場所。それだけでいい。\n\n動けないのは意志の問題じゃない。\n龍脈命術は「頑張り方」より「向き」を整えることを先に見る。\n\n牡羊座さん、今これ当てはまってる？コメントで教えて。\n\n#占い #開運 #運気アップ",
@@ -13399,7 +13400,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
-    "recorded_at": "2026-08-12T09:01:19.607424"
+    "recorded_at": "2026-08-12T09:01:19.607424",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今夜だけ、先に知っておいてほしい。【お盆明けに転換期が動き出す星座ランキング】\n\n#占い #星座占い #運勢",
@@ -13421,7 +13423,8 @@
     "posted_at": "2026-08-12T12:01:43.793088+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-12T12:01:43.801429"
+    "recorded_at": "2026-08-12T12:01:43.801429",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♓魚座の人へ、正直に話す。\n\n5年、年収が変わらなかった人が鑑定に来た。\n努力も実績もあった。ただ、向きがズレていた。\n\n龍脈命術は「なぜ結果が出ないか」を気の流れで読む。\n吉方位に動いた半年後、その人は転職ではなく昇格した。\n\n努力の量じゃなかった。向きの問題だった。\n\n「心当たりある」か「はじめて聞いた」か、コメントで教えて。\n\n#占い #転職 #仕事運",
@@ -13639,5 +13642,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
     "recorded_at": "2026-08-13T12:01:55.482708"
+  },
+  {
+    "text": "空回りが続いているなら、それは努力の問題じゃない。\n\n#占い #開運 #運気アップ",
+    "thread_posts": [
+      "空回りが続いているなら、それは努力の問題じゃない。\n\n#占い #開運 #運気アップ",
+      "頑張っているのに何も変わらない。\nそれ、向きがズレているサインかもしれない。\n\n龍脈命術では「動けない」より「向きが合っていない」を先に見る。\n方位と気の流れが噛み合っていないと、どれだけ動いても空回りする。\n\n今日できることはひとつ。\n朝、玄関の靴をそろえてから出るだけでいい。\n気の入口が整うと、流れの向きが少し変わり始める。\n\n「このままでいいのかな」が続いているなら、努力より先に整えるものがある。\n\n心当たりある？\n\n#龍脈命術 #転機のサイン #気の流れ",
+      "「このままでいいのかな」\nその言葉、今月だけで何回呟きましたか？\n\n占いというと「当たる・当たらない」で語られがちですが、私が大事にしているのはそこじゃありません。\n\n風水×吉方位×星読みを組み合わせた、動くための占い「龍脈命術」について、無料noteにまとめました🔮\n誰のための占いか、どんな悩みに効くか。よければ覗いてみてください👇\nhttps://note.com/shigure_fortune/n/nab07df599219\n\n続きの記事も随時公開していくので、noteのフォローもしていただけると嬉しいです🙏\n\n#占い #吉方位 #開運"
+    ],
+    "theme": "転機のサイン/空回りが続くときに見直すべきこと",
+    "pattern_id": "kotodama_rank",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "expires_on": "2026-08-27",
+    "pending_at": "2026-08-13T12:59:02.070993",
+    "queued_at": "2026-08-13T12:59:44.140834",
+    "threads_post_id": "18107810642274067",
+    "posted_at": "2026-08-13T13:00:26.336625+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-13T13:00:26.344940"
   }
 ]
