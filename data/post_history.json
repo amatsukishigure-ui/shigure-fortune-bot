@@ -13537,7 +13537,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-08-13T02:12:37.443577"
+    "recorded_at": "2026-08-13T02:12:37.443577",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♎天秤座さん、聞いてほしい。\n\n頑張っているのに、なぜか評価されない。\nその感覚、実力の問題じゃないかもしれない。\n\n龍脈命術で見えるのは「努力の方向」じゃなく、「気が流れている方向」。\n向きがズレていると、同じ行動でも気が味方しない。\n\n「そうかも」と「初めて聞いた」、どっちに近い？コメントで教えて。\n\n#占い #星座占い #運勢",
@@ -13556,7 +13557,8 @@
     "posted_at": "2026-08-13T03:01:08.469725+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-13T03:01:08.481760"
+    "recorded_at": "2026-08-13T03:01:08.481760",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♐射手座で、「頑張るタイミングは今じゃない気がする」という感覚がある人だけ読んで。\n\n#占い #吉方位 #開運",
@@ -13771,5 +13773,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/scorpio.jpg",
     "recorded_at": "2026-08-14T03:01:52.042162"
+  },
+  {
+    "text": "気づいた人だけ受け取ってください。\n\n【お盆明けの龍脈言霊ランキング｜転換の言霊】\n\n🥇第1位　いて座\n「向かう方向を変えたとき、気の流れが動き出す」\n\n🥈第2位　おひつじ座\n「止まって見えた流れが、今ここで動き始める」\n\n🥉第3位　ふたご座\n「受け取る向きが整うと、扉が静かに開く」\n\n🏅第4位　てんびん座\n「龍脈の気は、動いた分だけ応えてくれる」\n\n第5位　みずがめ座\n「方位の気が、今の私の背中を押している」\n\n第6位　おうし座\n「気の流れに乗るのに、特別な力はいらない」\n\n第7位　やぎ座\n「蓄えてきた気が、次の一歩を引き出していく」\n\n第8位　うお座\n「向きを変えるだけで、努力の届き先が変わる」\n\n第9位　しし座\n「気の扉は、整えた人のそばで先に開く」\n\n第10位　おとめ座\n「流れは止まっていない。私の向きがずれていただけ」\n\n第11位　かに座\n「龍脈の気は、受け取る準備ができた人に流れ込む」\n\n第12位　さそり座\n「今いる場所の気を整えると、次の道が見えてくる」\n\n#占い #吉方位 #龍脈命術",
+    "theme": "時雨の世界観/占術家として正直に話したいこと",
+    "pattern_id": "kotodama_rank",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "x_eligible": false,
+    "is_repost": true,
+    "original_post_id": "17978043762107613",
+    "pending_at": "2026-08-14T04:58:27.831689",
+    "queued_at": "2026-08-14T04:59:41.481234",
+    "threads_post_id": "18111030758045431",
+    "posted_at": "2026-08-14T04:59:51.202124+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-08-14T04:59:51.211801"
   }
 ]
