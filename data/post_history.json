@@ -13582,7 +13582,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-08-13T05:04:35.214974"
+    "recorded_at": "2026-08-13T05:04:35.214974",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♏蠍座さん、聞いてほしい。\n\n「信頼を積み上げたのに、また終わった」\nその虚脱感、方位のズレが長引かせている。\n\n龍脈命術では、引き寄せは「意図の強さ」ではなく「向かう方角の質」で変わる。\n蠍座が持つ集中力と誠実さは本物。ただ、それを発揮する方位が合っていないと、良縁が結ばれる前に霧散しやすい。\n\n今日できること1つだけ。\nデスクの向きを、北か東に変えてみて。\n龍脈命術では北・東は「流れを呼び込む方位」。努力を正しく届ける気の道を整えることが、引き寄せの前提になる。\n\n今の部屋、デスクはどっちを向いてる？\n\n#占い #吉方位 #龍脈命術",
@@ -13601,7 +13602,8 @@
     "posted_at": "2026-08-13T06:01:17.821596+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-13T06:01:17.830713"
+    "recorded_at": "2026-08-13T06:01:17.830713",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♋蟹座の方へ。観葉植物、枯らしてばかりって思ってない？\n\n#占い #吉方位 #開運",
@@ -13811,5 +13813,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/scorpio.jpg",
     "recorded_at": "2026-08-14T06:01:03.136488"
+  },
+  {
+    "text": "♍乙女座の方へ。財布の置き場所、決めてる？\n\n#占い #金運 #開運",
+    "thread_posts": [
+      "♍乙女座の方へ。財布の置き場所、決めてる？\n\n#占い #金運 #開運",
+      "♍乙女座の方からよく聞く言葉がある。「収入は安定してるのに、なぜかお金が残らない」。\n\n先月、鑑定した方（20代後半・保育士）から連絡が来た。\n鑑定前：手取りが少なく、将来への焦りが止まらない。\n鑑定後：財布の定位置を北西に変えただけで、翌月から不思議と出費が落ち着いたと。\n\n龍脈命術では「お金の気」は方位に宿る。置く場所が違えば、同じ収入でも流れが変わる。\n\nまずは今夜、財布を北西の引き出しに置いてみて。\nこれ、心当たりある？\n\n気になったら → 鑑定ページ https://coconala.com/services/4292937?ref=threads\n\n#金運 #吉方位 #乙女座"
+    ],
+    "theme": "暮らしの吉方位と気の整え方/財布・金運の定位置",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♍乙女座",
+    "expires_on": "2026-08-28",
+    "pending_at": "2026-08-14T08:21:50.376195",
+    "queued_at": "2026-08-14T08:21:50.533112",
+    "threads_post_id": "18423947581151363",
+    "posted_at": "2026-08-14T08:22:12.811381+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-14T08:22:12.819868"
   }
 ]
