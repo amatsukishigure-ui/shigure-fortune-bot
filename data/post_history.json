@@ -13694,7 +13694,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/libra.jpg",
-    "recorded_at": "2026-08-13T14:28:21.074122"
+    "recorded_at": "2026-08-13T14:28:21.074122",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♉牡牛座で、今の場所にいながら「ここじゃない気がする」がずっと消えない人以外は、読まなくていい。\n\n#占い #吉方位 #龍脈命術",
@@ -13922,5 +13923,27 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-08-14T14:22:20.544813"
+  },
+  {
+    "text": "♎天秤座の方からよく聞く言葉がある。「なんか今じゃない気がする」——その感覚、意志の問題じゃないかもしれない。\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "♎天秤座の方からよく聞く言葉がある。「なんか今じゃない気がする」——その感覚、意志の問題じゃないかもしれない。\n\n#占い #吉方位 #開運",
+      "♎天秤座さん、聞いてほしい。\n\n「今じゃない気がする」で、転職も引越しも先延ばしにしてきた30代の方がいた。\n\n鑑定でわかったのは、方位のズレだった。向かっていた方角が、気の流れに逆らっていた。\n\nデスクの向きを東南に変えて、1ヶ月。「動けた」と連絡が来た。\n\n龍脈命術は「当てる」じゃなく「動かす」占い。迷い続ける前に、まず向きを整える。\n\n心当たりある？\n\n▷ 鑑定ページ https://coconala.com/services/4292937?ref=threads\n\n#吉方位 #龍脈命術 #天秤座"
+    ],
+    "theme": "吉方位・風水/日常での吉方位活用",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♎天秤座",
+    "expires_on": "2026-08-29",
+    "pending_at": "2026-08-14T22:36:53.037177",
+    "queued_at": "2026-08-14T22:37:18.336744",
+    "threads_post_id": "18457818631188087",
+    "posted_at": "2026-08-14T22:37:35.648461+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-14T22:37:35.658510"
   }
 ]
