@@ -13791,5 +13791,25 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-08-14T04:59:51.211801"
+  },
+  {
+    "text": "♏ 蠍座で今、金運・収入が気になっている人へ。\n\n努力は正しいのに、数字が動かない。\nそのモヤモヤ、意志の弱さじゃないよ。\n\n龍脈命術でいうと、今の蠍座は北西の気が動きやすい時期。\nお金に関する書類・通帳・契約ごとは北西の引き出しや棚に集めてみて。\n気の定位置を整えると、同じ行動でも流れが変わる。\n\n自分の星座だった人、🌟 をひとつコメントで。\n\n#占い #金運 #開運",
+    "x_text": "♏ 蠍座で今、金運・収入が気になっている人へ。\n\n努力は正しいのに、数字が動かない。\nそのモヤモヤ、意志の弱さじゃないよ。\n\n龍脈命術でいうと、今の蠍座は北西の気が動きやすい時期。\nお金に関する書類・通帳・契約ごとは北西の引き出しや棚に集めてみて。\n気の定位置を整えると、同じ行動でも流れが変わる。\n\n自分の星座だった人、🌟 をひとつコメントで。\n\n#占い #時雨 #吉方位 #風水",
+    "theme": "暮らしの吉方位と気の整え方/財布・金運の定位置",
+    "pattern_id": "zodiac_target",
+    "quality_score": 7.8,
+    "attempts": 1,
+    "x_eligible": false,
+    "expires_on": "2026-08-28",
+    "persona_id": "p013",
+    "zodiac_boost": "♏蠍座",
+    "pending_at": "2026-08-14T04:58:54.483747",
+    "queued_at": "2026-08-14T04:59:41.499614",
+    "threads_post_id": "17904641163532012",
+    "posted_at": "2026-08-14T06:01:03.127563+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/scorpio.jpg",
+    "recorded_at": "2026-08-14T06:01:03.136488"
   }
 ]
