@@ -13489,7 +13489,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/virgo.jpg",
-    "recorded_at": "2026-08-12T22:57:00.011846"
+    "recorded_at": "2026-08-12T22:57:00.011846",
+    "hourly_stats_recorded": true
   },
   {
     "text": "「転職したい」と思い始めてから、もう1年以上経っていた。\n\n♎天秤座さんは、どうしても「完璧なタイミング」を待ってしまう。\n誰かを傷つけたくなくて、失敗が怖くて、気づけば動けないまま今日になっている。\n\nそれは意志が弱いからじゃない。\n気の向きが、今の場所に縛られているだけかもしれない。\n\nまず話してほしいことがある。\n\n#占い #転職 #仕事運",
@@ -13512,7 +13513,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/libra.jpg",
-    "recorded_at": "2026-08-13T01:01:35.193032"
+    "recorded_at": "2026-08-13T01:01:35.193032",
+    "hourly_stats_recorded": true
   },
   {
     "text": "転職したいのに動けないまま、また1年経った。その停滞、意志の問題じゃないかもしれない。\n\n#占い #転職 #仕事運",
@@ -13728,5 +13730,22 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-08-14T01:01:12.903337"
+  },
+  {
+    "text": "♈牡羊座さんへ。\n\n今の牡羊座には「突破の気」が流れている。\nずっと踏み出せなかったこと、迷ってきたこと──動けるタイミングにある。\nただ、方向を間違えると空回りする。龍脈命術では「気の向き」が同じ行動の結果を変える。\n\n・東方向 → 転職・新しい仕事・出会いの縁が動きやすい。今週末までメールの返信や連絡はなるべく東向きの席から。\n\nただし、避けてほしい方位がある──\n\n#占い #転職 #仕事運",
+    "theme": "風水豆知識/トイレ・バスルーム",
+    "pattern_id": "zodiac_deep",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "x_eligible": false,
+    "is_repost": true,
+    "original_post_id": "18082782905264893",
+    "pending_at": "2026-08-10T08:29:44.388644",
+    "queued_at": "2026-08-10T08:31:08.841532",
+    "threads_post_id": "18456888892187529",
+    "posted_at": "2026-08-14T02:10:15.708903+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-14T02:10:15.716125"
   }
 ]
