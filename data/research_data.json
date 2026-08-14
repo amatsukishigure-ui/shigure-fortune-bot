@@ -1,46 +1,6 @@
 {
   "topics": [
     {
-      "title": "政府AIを被災自治体に提供 利点は",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "地中から筒出現 責任は施工受注者",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "日産の新型キックス 売れ行き好調",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "飲酒後「締めラーメン欲」原因は",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "阪神ガルシア NPB初安打が満塁弾",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "甲子園出場の女性審判 試合後に涙",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "熊本地震 災害関連死の疑い含め38人死亡 避難所に7122人が避難",
-      "description": "熊本県内では、今回の地震で5日午後6時の時点で災害関連死の疑いがある人などを含めて38人が死亡し、避難所には7122人が避難しています。",
-      "source": "NHK社会"
-    },
-    {
-      "title": "食料品消費税減税 政府が基本方針決定 来年4月から2年間1％に",
-      "description": "食料品の消費税減税について、政府は、5日の臨時閣議で、来年4月から2年間、税率を1％に引き下げるなどとした基本方針を決定しました。決定された基本方針では、中低所得の人などの税や社会保険料の負担軽減を図っていく必要性などとともに、今後の減税や",
-      "source": "NHK社会"
-    },
-    {
       "title": "台風13号沖縄接近へ 影響長引くおそれ 熱中症対策も徹底を",
       "description": "大型で非常に強い台風13号は、6日以降、強い勢力で沖縄・奄美に近づく見込みで、沖縄を中心に風や雨などの影響が長引くおそれがあり、早めに対策を終えるようにしてください。一方、6日も西日本を中心に気温が上がり危険な暑さが予想されていて、熱中症へ",
       "source": "NHK社会"
@@ -4191,9 +4151,49 @@
       "source": "news_rss",
       "cultural_angle": "陰陽五行（火・水の関係）／夏の気の性質",
       "season_note": "真夏（8月）／夏の土用〜立秋。火の気が最強になる時期。水難・熱中症が重なるのも象徴的"
+    },
+    {
+      "title": "関東など 15日にかけ激しい雨注意",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "千葉豪雨 放置車両1200台超見通し",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "福岡県議長の辞職勧告決議案 提出",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "バスローブで報道対応 県職員処分",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "高さ日本一 観覧車8カ月以上停止",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "夏の甲子園 16強を前に公立勢全滅",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "横浜が日南学園に10得点快勝",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "ハマ・オカモト OKAMOTO'S脱退",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
     }
   ],
-  "last_updated": "2026-08-14T08:18:26.535886",
+  "last_updated": "2026-08-14T12:52:36.544360",
   "last_rss_count": 31,
   "last_cultural_count": 0
 }

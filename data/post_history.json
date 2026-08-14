@@ -13626,7 +13626,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/cancer.jpg",
-    "recorded_at": "2026-08-13T08:26:56.828634"
+    "recorded_at": "2026-08-13T08:26:56.828634",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今週中に動いてほしい人だけ読んで。\n\n【今週中にやると流れが変わる行動ランキング｜星座別】\n\n🥇1位 ♌獅子座｜北の部屋の電球を明るいものに変える\n🥈2位 ♈牡羊座｜迷っている選択肢をメモして西向きに置く\n🥉3位 ♐射手座｜行ったことのない方角のカフェで仕事する\n🏅4位 ♊双子座｜不要なLINEグループを3つ退会する\n5位 ♎天秤座｜玄関の靴を全部揃えてから出かける\n6位 ♒水瓶座｜寝室の窓を北側から開けて空気を入れ替える\n7位 ♏蠍座｜使わなくなったものを1つだけ手放す\n8位 ♍乙女座｜財布の中のレシートをすべて出し切る\n9位 ♉牡牛座｜今の部屋で「重い」と感じる場所に植物を置く\n10位 ♑山羊座｜名刺やプロフィールの文言を一語だけ変える\n11位 ♋蟹座｜実家か信頼できる人に近況を一言だけ伝える\n12位 ♓魚座｜今夜だけ枕の向きを南から東に変えてみる\n\n🐉をそっと置いた方から、止まっていた気の流れが動き始めます。\n\n#占い #引越し #風水",
@@ -13649,7 +13650,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
-    "recorded_at": "2026-08-13T12:01:55.482708"
+    "recorded_at": "2026-08-13T12:01:55.482708",
+    "hourly_stats_recorded": true
   },
   {
     "text": "空回りが続いているなら、それは努力の問題じゃない。\n\n#占い #開運 #運気アップ",
@@ -13878,5 +13880,24 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
     "recorded_at": "2026-08-14T12:01:32.918185"
+  },
+  {
+    "text": "♎ 天秤座さんへ。\n\n「なんか最近、動けてない気がする」って感じてない？\n\n立秋を過ぎた今、天秤座に溜まった気を動かすなら北西が吉。\n迷いや停滞は意志の問題じゃなく、気の流れのズレのことが多い。\n今日、北西方向に窓を少し開けてみて。\n\n読んだ ♎ さん、🌟 でいいから置いてみて。\n\n#占い #開運 #運気アップ",
+    "x_text": "♎ 天秤座さんへ。\n\n「なんか最近、動けてない気がする」って感じてない？\n\n立秋を過ぎた今、天秤座に溜まった気を動かすなら北西が吉。\n迷いや停滞は意志の問題じゃなく、気の流れのズレのことが多い。\n今日、北西方向に窓を少し開けてみて。\n\n読んだ ♎ さん、🌟 でいいから置いてみて。\n\n#占い #時雨 #引き寄せ #龍脈命術",
+    "theme": "引き寄せ/言葉と気の流れ",
+    "pattern_id": "zodiac_target",
+    "quality_score": 8.0,
+    "attempts": 1,
+    "x_eligible": false,
+    "expires_on": "2026-08-25",
+    "persona_id": "p011",
+    "zodiac_boost": "♎天秤座",
+    "pending_at": "2026-08-11T01:56:37.455975",
+    "queued_at": "2026-08-11T01:57:36.286245",
+    "threads_post_id": "18086673704442345",
+    "posted_at": "2026-08-14T12:55:58.128628+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-14T12:55:58.138148"
   }
 ]
