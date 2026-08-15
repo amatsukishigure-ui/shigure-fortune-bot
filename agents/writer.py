@@ -1423,7 +1423,7 @@ NG: 🔮 vs 🐉（どちらもブランドシンボルで対になっていな�
 ## 龍脈言霊ランキング型の追加ルール
 
 ### 構成（必須）
-1. 冒頭フック（1行）: 「気づいた方だけ受け取ってください。」または「気づいた人だけ受け取ってください。」で始める（実績top投稿から）
+1. 冒頭フック（1行）: 「♈♉♊♋♌♍♎♏♐♑♒♓ 気づいた方だけ受け取ってください。」の形式で始める。**先頭に12星座の記号を並べること（必須）。**
 2. ランキングタイトル（1行）: 「【今週の龍脈言霊ランキング｜◯◯の言霊】」形式。テーマは毎回変える（転換の言霊・方位が開く言葉・動き出しの言霊・豊かさの言霊など）
 3. ランキング本体（8〜12位まで）: 全12星座を網羅する。🥇🥈🥉🏅を1〜4位に使い、以下は「第◯位」
    - 各星座に「向き・方位・気の流れ」を使った15〜25文字の言霊フレーズ
@@ -1487,7 +1487,8 @@ NG: 🔮 vs 🐉（どちらもブランドシンボルで対になっていな�
 ### テーマ: {_theme_key}
 
 ### 構成（厳守）
-1. テーマ導入（1行）: 「{_th['intro']}」の形式で始める
+1. テーマ導入（1行）: 「{_th['intro']}」の形式で始める。**先頭または2行目までに「星座」または「♈〜♓」などの星座記号を必ず含めること。**
+   例: 「{_th['intro'][:-1]}。生まれ月と星座の組み合わせ。」
 2. ランキングタイトル（1行）: 「{_th['rank_label']} 生まれ月×星座 top5〜8」
 3. ランキング本体（5〜8項目・改行区切り）:
    形式: 「1位 〇月生まれ × △△座」
@@ -2063,10 +2064,10 @@ def run(batch_size: int = 5) -> dict:
             _target_z = extra_hint.get("zodiac", "")
             if _target_z and pattern.get("id") in ("zodiac_deep",):
                 thread_posts = [_fix_zodiac(p, _target_z) for p in thread_posts]
-            # zodiac_boost パターン: ツリー全体に星座記号がなければ先頭投稿冒頭に追加
+            # zodiac_boost パターン: 先頭投稿（フィードに表示される行）に星座記号がなければ冒頭に追加
             _zb_thread = extra_hint.get("zodiac_boost", "")
             if _zb_thread and pattern.get("id") not in _ZODIAC_SELF_MANAGED_PIDS:
-                if not any(c in "".join(thread_posts) for c in _ZODIAC_MARKS_STR):
+                if not any(c in thread_posts[0] for c in _ZODIAC_MARKS_STR):
                     thread_posts[0] = f"{_zb_thread}の方へ。\n\n{thread_posts[0]}"
 
             # NGワードバリデーション（ツリー全投稿をチェック）
@@ -2171,7 +2172,7 @@ def run(batch_size: int = 5) -> dict:
             _target_z = extra_hint.get("zodiac", "")
             if _target_z and pattern.get("id") in ("caligula", "zodiac_target"):
                 first_draft = _fix_zodiac(first_draft, _target_z)
-            # zodiac_boost パターン: 星座記号が本文になければ冒頭に強制追加
+            # zodiac_boost パターン: 星座記号が本文になければ冒頭に強制追加（品質チェック前）
             _zb_single = extra_hint.get("zodiac_boost", "")
             if _zb_single and pattern.get("id") not in _ZODIAC_SELF_MANAGED_PIDS:
                 first_draft = _ensure_zodiac(first_draft, _zb_single)
@@ -2187,6 +2188,9 @@ def run(batch_size: int = 5) -> dict:
                 continue
 
             final_post = result["post"]
+            # 品質チェックで書き直された場合も星座を保証（rewriteで星座が消えることへの安全弁）
+            if _zb_single and pattern.get("id") not in _ZODIAC_SELF_MANAGED_PIDS:
+                final_post = _ensure_zodiac(final_post, _zb_single)
 
             # NGワードバリデーション
             _forbidden_hits = _check_forbidden(final_post, pattern.get("id", ""))
