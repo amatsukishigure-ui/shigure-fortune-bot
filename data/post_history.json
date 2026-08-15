@@ -13945,5 +13945,22 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-08-14T22:37:35.658510"
+  },
+  {
+    "text": "♌ 獅子座で今、恋愛・縁がなかなか動かないと感じている人へ。\n\n#占い #恋愛運 #縁",
+    "theme": "時雨の世界観/時雨が見てきた「変わった人」と「変わらなかった人」の違い",
+    "pattern_id": "zodiac_target",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "x_eligible": false,
+    "is_repost": true,
+    "original_post_id": "18064300370724894",
+    "pending_at": "2026-08-14T22:35:59.954037",
+    "queued_at": "2026-08-14T22:37:18.295877",
+    "threads_post_id": "18023557100857453",
+    "posted_at": "2026-08-15T01:01:03.871724+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-15T01:01:03.880151"
   }
 ]
