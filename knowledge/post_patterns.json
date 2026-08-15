@@ -186,7 +186,7 @@
     "name": "星座深掘り型",
     "format": "tree",
     "category": "reach",
-    "daily_limit": 1,
+    "daily_limit": 2,
     "weight": 7.0,
     "platforms": [
       "threads"

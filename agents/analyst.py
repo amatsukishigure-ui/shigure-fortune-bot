@@ -57,7 +57,8 @@ WEIGHT_ADJUSTMENTS_FILE = DATA_DIR / "pattern_weight_adjustments.json"
 def compute_pattern_weight_adjustments(history: list, perf_data: list, lookback_days: int = 30) -> dict:
     """
     過去N日間の実パフォーマンスからパターン別の重み補正係数を計算する。
-    スコアは ENG 式（レートベース）を使用: (likes×0.4+replies×0.35+reposts×0.25)/views×1000
+    スコアは絶対エンゲージメント: likes + replies*3
+    （レートベースは高閲覧投稿を不当に低評価するため使わない）
     戻り値: {"caligula": 1.3, "kyokan": 0.7, ...} (0.5〜2.0の範囲)
     """
     from datetime import timedelta
@@ -75,8 +76,8 @@ def compute_pattern_weight_adjustments(history: list, perf_data: list, lookback_
         if not pid or not post_id:
             continue
         perf = perf_map.get(post_id, {})
-        score = _calculate_engagement_score(perf)  # ENG式（レートベース）
-        pattern_scores[pid].append(score)
+        eng = perf.get("likes", 0) + perf.get("replies", 0) * 3
+        pattern_scores[pid].append(eng)
 
     if not pattern_scores:
         return {}
