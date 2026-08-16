@@ -2058,7 +2058,13 @@ def run(batch_size: int = 5) -> dict:
         # 単発投稿専用パターン（long/mediumでもスレッド化しない）
         # zodiac_target: 120-180字設計でhook+body分割が成立しない
         # fuusui_tip: 130-200字の1アクション完結型、分割すると薄くなる
-        _SINGLE_POST_ONLY = {"zodiac_target", "fuusui_tip"}
+        _SINGLE_POST_ONLY = {
+            "zodiac_target",    # 120-180字設計でhook+body分割が成立しない
+            "fuusui_tip",       # 130-200字の1アクション完結型、分割すると薄くなる
+            "kotodama_rank",    # 350-450字の全12星座ランキング。汎用2投稿指示がフォーマットを破壊する
+            "zodiac_ranking",   # 380-480字の全12星座ランキング。同上
+            "lucky_combo",      # 200-280字の生まれ月×星座ランキング。分割不要
+        }
         # medium/long パターンも2投稿ツリー形式で生成（short・単発専用パターンを除く）
         is_thread_pattern = (
             pattern.get("id") in THREAD_PATTERNS
