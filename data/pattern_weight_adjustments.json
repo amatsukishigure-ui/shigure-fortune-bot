@@ -1,10 +1,9 @@
 {
-  "updated_at": "2026-08-16T13:31:51.938244",
+  "updated_at": "2026-08-16T22:29:41.774629",
   "locked": [],
   "lookback_days": 30,
   "adjustments": {
-    "card_pick": 1.607,
-    "caligula": 1.855,
+    "caligula": 1.8,
     "before_sleep": 0.5,
     "zodiac_target": 0.985,
     "ichi_gon": 0.696,
@@ -12,7 +11,7 @@
     "kotodama_rank": 0.861,
     "client_voice": 0.5,
     "harm_revelation": 1.224,
-    "zodiac_deep": 1.858,
+    "zodiac_deep": 1.857,
     "zodiac_ranking": 2.0
   }
 }
