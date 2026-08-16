@@ -14176,5 +14176,25 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-08-16T04:00:54.789934"
+  },
+  {
+    "text": "♌獅子座の方へ。\n\n最終面接で4回弾かれても、あなたの中身が問題なわけじゃない。\n気の向きがズレているだけだ。\n\n龍脈命術では「伝わらない」を実力不足より先に方位で読む。\nいる場所、向かう方向、それが整うと同じ言葉の届き方が変わる。\n\n「気のせいじゃないかも」か「初めて聞く考え方」か、コメントで教えて。\n\n#占い #吉方位 #龍脈命術",
+    "x_text": "♌獅子座の方へ。\n\n最終面接で4回弾かれても、あなたの中身が問題なわけじゃない。\n気の向きがズレているだけだ。\n\n龍脈命術では「伝わらない」を実力不足より先に方位で読む。\nいる場所、向かう方向、それが整うと同じ言葉の届き方が変わる。\n\n「気のせいじゃないかも」か「初めて聞く考え方」か、コメントで教えて。\n\n#占い #時雨 #龍脈命術 #開運",
+    "theme": "メニュー誘導/モニター募集",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.6,
+    "attempts": 1,
+    "x_eligible": true,
+    "expires_on": "2026-08-29",
+    "persona_id": "p007",
+    "zodiac_boost": "♌獅子座",
+    "pending_at": "2026-08-15T12:27:39.518664",
+    "queued_at": "2026-08-15T12:28:15.087721",
+    "threads_post_id": "18072325880422008",
+    "posted_at": "2026-08-16T06:00:58.232122+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/leo.jpg",
+    "recorded_at": "2026-08-16T06:00:58.240653"
   }
 ]
