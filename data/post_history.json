@@ -14040,7 +14040,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aquarius.jpg",
-    "recorded_at": "2026-08-15T06:01:03.120729"
+    "recorded_at": "2026-08-15T06:01:03.120729",
+    "hourly_stats_recorded": true
   },
   {
     "text": "同じ実家に帰っても、開運になる人とならない人がいる。\n\n#占い #吉方位 #龍脈命術",
@@ -14196,5 +14197,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/leo.jpg",
     "recorded_at": "2026-08-16T06:00:58.240653"
+  },
+  {
+    "text": "♏蠍座さんへ。「体は悲鳴を上げてるのに、頭が『まだ辞めるな』と言う」——その分離感、龍脈命術で見るとはっきり原因がわかる。\n\n#占い #龍脈命術",
+    "thread_posts": [
+      "♏蠍座さんへ。「体は悲鳴を上げてるのに、頭が『まだ辞めるな』と言う」——その分離感、龍脈命術で見るとはっきり原因がわかる。\n\n#占い #龍脈命術",
+      "♏蠍座の方から鑑定後に連絡が来た。\n\n外資系、週80時間労働。体調が崩れていても「ここで折れたら負け」と動けなかった方。\n\n鑑定でわかったのは、方位のズレ。\n仕事の向きと気の流れが完全に逆を向いていた。\n\n龍脈命術は「当てる」じゃなく「動かせる」占い。\n方位を整えた翌月、「転職の相談ができた。体がやっと楽になりました」と届いた。\n\n心当たりある？\n\n▷ 気になったらLINEへ https://lin.ee/TJg5dru\n\n#龍脈命術 #蠍座 #方位風水"
+    ],
+    "theme": "メニュー誘導/鑑定メニュー案内",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♏蠍座",
+    "expires_on": "2026-08-30",
+    "pending_at": "2026-08-16T07:36:33.387907",
+    "queued_at": "2026-08-16T07:37:14.883655",
+    "threads_post_id": "18615609898049430",
+    "posted_at": "2026-08-16T07:37:43.114898+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-16T07:37:43.124352"
   }
 ]

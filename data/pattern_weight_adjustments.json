@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-08-16T03:53:55.477994",
+  "updated_at": "2026-08-16T07:31:05.244630",
   "locked": [],
   "lookback_days": 30,
   "adjustments": {
-    "before_sleep": 0.5,
-    "caligula": 1.815,
+    "caligula": 1.792,
     "zodiac_target": 0.961,
     "card_pick": 1.61,
-    "ichi_gon": 0.744,
+    "before_sleep": 0.5,
+    "ichi_gon": 0.72,
     "fuusui_tip": 0.5,
     "kotodama_rank": 0.835,
     "client_voice": 0.5,
