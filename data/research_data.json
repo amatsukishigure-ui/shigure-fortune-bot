@@ -1,46 +1,6 @@
 {
   "topics": [
     {
-      "title": "スクーターと車衝突 高校生が死亡",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "大手ボーナス増 裏側で広がる格差",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "西鉄の駅で不適切音声 被害届検討",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "競泳の本多灯が活動自粛 昨年事故",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "大型で強い台風13号 沖縄本島・奄美 厳重警戒を【中継も】",
-      "description": "大型で強い台風13号は、この時間、沖縄本島地方や奄美地方に最も近づいていて、猛烈な風が吹いているところがあります。雨や風の影響が長引くおそれがあり、線状降水帯が発生する可能性もあります。暴風や高波のほか、大雨による土砂災害などにも厳重な警戒",
-      "source": "NHK社会"
-    },
-    {
-      "title": "熊本地震の被害を「激甚災害」に指定 自治体の復旧費用支援へ",
-      "description": "熊本県で最大震度7を観測した今回の熊本地震について、政府は7日の持ち回り閣議で「激甚災害」に指定し、復旧にかかる自治体の費用について支援することを決めました。",
-      "source": "NHK社会"
-    },
-    {
-      "title": "北海道 江別 強盗致死事件裁判 当時18歳被告に無期懲役の判決",
-      "description": "おととし、北海道江別市の公園で男子大学生から金品などを奪ったうえ、暴行を加えて死亡させた罪などに問われた当時18歳のアルバイト従業員の川口侑斗被告（19）に札幌地方裁判所は求刑どおり無期懲役の判決を言い渡しました。",
-      "source": "NHK社会"
-    },
-    {
-      "title": "妊婦や赤ちゃん 避難生活で気を付けること【専門家Q＆A】",
-      "description": "避難生活は妊婦や産後間もない母親、そして赤ちゃんにとって大きな負担となります。どんなことに注意して生活すればいいか、災害時の対応に詳しい産婦人科医と助産師に聞きました。",
-      "source": "NHK社会"
-    },
-    {
       "title": "在宅避難の高齢者を保健師たちが見回り【7日 被災地の動き】",
       "description": "最大震度7の地震で大きな被害のあった熊本県。8月7日の被災地や、支援の動きをまとめました。",
       "source": "NHK社会"
@@ -4434,9 +4394,49 @@
       "source": "news_rss",
       "cultural_angle": "気の転換・龍脈（転機のタイミング）",
       "season_note": "夏の甲子園（8月）。夏の終わり＝気の切り替わりの季節と重なる。"
+    },
+    {
+      "title": "熊本地震の断層破壊は約38km 調査",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "発電機で一酸化炭素中毒 注意点",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "指名手配中の男 建物侵入疑い逮捕",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "クマ3頭飛び出し 走行中の車衝突",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "9日に流され行方不明の女性 救助",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "ANAとJAL 互いにダイヤを調整へ",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "ロケットナウ つまみ食い動画拡散",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "永野芽郁が元キャバ嬢役 再起は",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
     }
   ],
-  "last_updated": "2026-08-17T12:32:00.861288",
+  "last_updated": "2026-08-17T13:41:58.583328",
   "last_rss_count": 31,
   "last_cultural_count": 0
 }

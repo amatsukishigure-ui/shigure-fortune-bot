@@ -14294,7 +14294,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/gemini.jpg",
-    "recorded_at": "2026-08-16T13:36:56.893471"
+    "recorded_at": "2026-08-16T13:36:56.893471",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♐射手座さん、今「頑張っているのに何も変わっていない」という感覚がある人のための話をする。\n\n#占い #星座占い #運勢",
@@ -14472,5 +14473,27 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-08-17T12:36:14.965599"
+  },
+  {
+    "text": "♒水瓶座で、「一粒万倍日に動いたのに、なんも変わらなかった」という感覚がある人以外は、読まなくていい。\n\n#占い #龍脈命術",
+    "thread_posts": [
+      "♒水瓶座で、「一粒万倍日に動いたのに、なんも変わらなかった」という感覚がある人以外は、読まなくていい。\n\n#占い #龍脈命術",
+      "一粒万倍日に動いても変わらなかったとしたら、タイミングじゃなく「向き」がズレていた可能性が高い。\n\n龍脈命術では、開運日は「方位と組み合わせて初めて機能する」と読む。吉日に凶方位へ動くと、種が10倍になるどころか、ズレが10倍になる。\n\n今の時期、水瓶座の龍脈は北東〜東の気が活きている。次の一粒万倍日、向かう方向を確認してから動いてみて。\n\n当てはまった？ 🔮 か ✨ コメントで教えて。\n\n#占い #龍脈命術 #開運"
+    ],
+    "theme": "開運日/一粒万倍日の正しい使い方",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♒水瓶座",
+    "expires_on": "2026-08-31",
+    "pending_at": "2026-08-17T13:44:29.071917",
+    "queued_at": "2026-08-17T13:44:29.250058",
+    "threads_post_id": "18146830720538233",
+    "posted_at": "2026-08-17T13:44:59.307978+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-17T13:44:59.317446"
   }
 ]
