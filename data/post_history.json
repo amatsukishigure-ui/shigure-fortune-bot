@@ -14246,7 +14246,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/scorpio.jpg",
-    "recorded_at": "2026-08-16T09:01:02.656054"
+    "recorded_at": "2026-08-16T09:01:02.656054",
+    "hourly_stats_recorded": true
   },
   {
     "text": "なぜ「方位」にたどり着いたのか、正直に話す。\n\n#占い #吉方位 #龍脈命術",
@@ -14268,7 +14269,8 @@
     "posted_at": "2026-08-16T12:01:38.951094+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-16T12:01:38.961601"
+    "recorded_at": "2026-08-16T12:01:38.961601",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♊双子座で、「このままでいいのかな」がここ最近また頭をよぎっている人以外は、読まなくていい。\n\n#占い #星座占い #運勢",
@@ -14453,5 +14455,22 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
     "recorded_at": "2026-08-17T12:01:01.272392"
+  },
+  {
+    "text": "♈ 牡羊座で今、「なんか停滞してる気がする」と感じている人へ。\n\n#占い #開運 #運気アップ",
+    "theme": "引き寄せ/感謝と運気の関係",
+    "pattern_id": "zodiac_target",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "x_eligible": false,
+    "is_repost": true,
+    "original_post_id": "17993020610812702",
+    "pending_at": "2026-08-17T12:34:46.479513",
+    "queued_at": "2026-08-17T12:36:07.750543",
+    "threads_post_id": "18055282316792577",
+    "posted_at": "2026-08-17T12:36:14.954857+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-17T12:36:14.965599"
   }
 ]
