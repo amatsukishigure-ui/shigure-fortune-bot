@@ -14379,7 +14379,8 @@
     "posted_at": "2026-08-17T04:01:44.947898+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-17T04:01:44.957639"
+    "recorded_at": "2026-08-17T04:01:44.957639",
+    "hourly_stats_recorded": true
   },
   {
     "text": "気づいた方だけ受け取ってください。\n\n【この週末の龍脈言霊ランキング｜方位が開く言葉】\n\n🥇第1位　いて座\n「向きを変えた瞬間、気の扉が開く」\n\n🥈第2位　みずがめ座\n「流れに乗る前に、方位を整える」\n\n🥉第3位　てんびん座\n「気の流れが、私の背中を押している」\n\n🏅第4位　おひつじ座\n「動いた分だけ、龍脈の気が応える」\n\n第5位　ふたご座\n「向かう方向が定まると、気が一気に動く」\n\n第6位　しし座\n「止まっていた流れが、今夜から動き始める」\n\n第7位　さそり座\n「受け取る向きを整えると、扉が静かに開く」\n\n第8位　かに座\n「方位の気が、次の一手を引き寄せている」\n\n第9位　やぎ座\n「気の流れに乗る準備が、静かに整っていく」\n\n第10位　おうし座\n「整えた向きの先に、道が続いている」\n\n第11位　おとめ座\n「龍脈の気が、今いる場所を通り始める」\n\n第12位　うお座\n「蓄えた気が、動くタイミングを待っている」\n\n🔮をそっと置いた方から、\n滞っていた龍脈の気が整い始め、\n方位の扉がこの週末静かに開いていきます。\n\n#占い #吉方位 #龍脈命術",
@@ -14397,7 +14398,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-08-17T06:01:03.770582"
+    "recorded_at": "2026-08-17T06:01:03.770582",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♌獅子座で、「なんか最近、行きつけの店でも気持ちが上がらない」感覚がある人以外は、読まなくていい。\n\n#占い #吉方位 #開運",
@@ -14579,5 +14581,25 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-08-18T06:01:04.422591"
+  },
+  {
+    "text": "♊ 双子座で今、恋愛・縁が動かないと感じている人へ。\n\n気が止まってるのは、あなたのせいじゃない。向いてる方向の問題かもしれない。\n\n龍脈命術で見ると、今の双子座は南西の気がゆるみやすい時期。新しい縁を引き寄せたいなら、南西方向に出かけることや、その方角に好きなものを置いてみて。\n\n双子座さん、今これ当てはまってる？コメントで教えて 🌟\n\n#占い #恋愛運 #縁",
+    "x_text": "♊ 双子座で今、恋愛・縁が動かないと感じている人へ。\n\n気が止まってるのは、あなたのせいじゃない。向いてる方向の問題かもしれない。\n\n龍脈命術で見ると、今の双子座は南西の気がゆるみやすい時期。新しい縁を引き寄せたいなら、南西方向に出かけることや、その方角に好きなものを置いてみて。\n\n双子座さん、今これ当てはまってる？コメントで教えて 🌟\n\n#占い #時雨 #龍脈命術 #開運",
+    "theme": "転機のサイン/動けない本当の理由",
+    "pattern_id": "zodiac_target",
+    "quality_score": 7.9,
+    "attempts": 1,
+    "x_eligible": false,
+    "expires_on": "2026-09-01",
+    "persona_id": "p004",
+    "zodiac_boost": "♊双子座",
+    "pending_at": "2026-08-18T07:42:51.044776",
+    "queued_at": "2026-08-18T07:43:14.675740",
+    "threads_post_id": "18376370737232874",
+    "posted_at": "2026-08-18T07:43:23.324124+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/gemini.jpg",
+    "recorded_at": "2026-08-18T07:43:23.334513"
   }
 ]
