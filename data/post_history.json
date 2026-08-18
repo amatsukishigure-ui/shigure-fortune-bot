@@ -14318,7 +14318,8 @@
     "posted_at": "2026-08-16T22:39:57.675505+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-16T22:39:57.684670"
+    "recorded_at": "2026-08-16T22:39:57.684670",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♋蟹座さんへ。\n\n「このままでいいのかな」が口癖になって、もう何年も経ってない？\n\n龍脈命術では、財布は金の気を「住まわせる場所」として見る。\n気が流れるためには、財布が「定位置」に戻ること。\nバッグの底・ポケット・テーブルに放置が続くと、金の気は落ち着く場所を失って散っていく。\n\n今日やること1つ。\n財布を北の引き出しに戻して眠らせるだけでいい。\n\n龍脈命術を受けた方がよく言う。「片付けじゃなくて、気を整えたら動けた」って。\n\n今の財布、定位置ある？\n\n#占い #金運 #開運",
@@ -14338,7 +14339,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/cancer.jpg",
-    "recorded_at": "2026-08-17T01:01:04.012299"
+    "recorded_at": "2026-08-17T01:01:04.012299",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♊ 双子座で今、なんか止まってる感じがする人へ。\n\nその「動けない感覚」、意志の問題じゃないよ。\n龍脈命術では、気の向きがズレると頑張っても空回りしやすくなる。\n\n今の双子座、南西の方角が重くなりやすい時期。\nなら北か東に向かって動いてみて。\n通勤ルートを変えるだけでもいい。\n\n双子座さん、今これ当てはまってる？コメントで教えて。\n\n#占い #吉方位 #開運",
@@ -14515,5 +14517,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/gemini.jpg",
     "recorded_at": "2026-08-17T22:39:16.421927"
+  },
+  {
+    "text": "♒水瓶座の方へ。3回会ったら終わる、その繰り返しに心当たりない？\n\n#占い #龍脈命術",
+    "thread_posts": [
+      "♒水瓶座の方へ。3回会ったら終わる、その繰り返しに心当たりない？\n\n#占い #龍脈命術",
+      "♒水瓶座の方からよく聞く言葉がある。\n「また同じところで終わった。私に問題があるのかな」\n\n違う。問題じゃなく、向きがズレているだけ。\n\n先日、30代・SNS関係の仕事をされている方から連絡が来た。マッチングで3回続かないを繰り返していたが、鑑定で恋愛方位を整えたら、4回目に出会った人と今も続いていると。\n\n龍脈命術は「当てる」より「動かせる」占い。意志じゃなく方位で変わることがある。\n\n気になったら → LINE https://lin.ee/TJg5dru\nすぐ試したい → https://coconala.com/services/4292937?ref=threads\n\n#龍脈命術 #水瓶座 #恋愛占い"
+    ],
+    "theme": "メニュー誘導/鑑定メニュー案内",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♒水瓶座",
+    "expires_on": "2026-09-01",
+    "pending_at": "2026-08-18T02:50:34.929381",
+    "queued_at": "2026-08-18T02:51:52.740104",
+    "threads_post_id": "18061187957603759",
+    "posted_at": "2026-08-18T02:52:17.579519+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aquarius.jpg",
+    "recorded_at": "2026-08-18T02:52:17.589277"
   }
 ]
