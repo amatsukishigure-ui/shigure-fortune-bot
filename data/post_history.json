@@ -14548,7 +14548,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aquarius.jpg",
-    "recorded_at": "2026-08-18T02:52:17.589277"
+    "recorded_at": "2026-08-18T02:52:17.589277",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♎天秤座の方へ。\n\n「このまま続けるべきか、やめるべきか」\nその問いが頭を離れない夜が続いているなら、それは意思が弱いんじゃない。\n\n龍脈命術でいえば、今いる場所の気が滞っているサインだ。\n努力の方向より先に、向きを整える必要がある。\n\n「ずっとそこにいる」か「少し場所を変えてみた」か、コメントで教えて。\n\n#占い #吉方位 #開運",
@@ -14730,5 +14731,29 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-08-19T02:53:27.841434"
+  },
+  {
+    "text": "♑ 山羊座で、「信頼を積み上げてきたのに、なぜか最後に手放される」という感覚がある人以外は、読まなくていい。\n\n#占い #吉方位 #龍脈命術",
+    "thread_posts": [
+      "♑ 山羊座で、「信頼を積み上げてきたのに、なぜか最後に手放される」という感覚がある人以外は、読まなくていい。\n\n#占い #吉方位 #龍脈命術",
+      "龍脈命術で山羊座の気の流れを読むと、今この時期は「動く方角」がズレていると関係が途切れやすくなる。\n努力や誠実さの問題じゃない。向かっている方向が、相手の気と噛み合っていない。\n\nお盆のこの時節、人と気が大きく動く。同じ方向に動いても、吉凶は人によって違う——それが龍脈命術の見方。\n今週、自分がよく向かう方角を一度確認してみて。\n\n心当たりある？ #占い #龍脈命術 #吉方位",
+      "「このままでいいのかな」\nその言葉、今月だけで何回呟きましたか？\n\n占いというと「当たる・当たらない」で語られがちですが、私が大事にしているのはそこじゃありません。\n\n風水×吉方位×星読みを組み合わせた、動くための占い「龍脈命術」について、無料noteにまとめました🔮\n誰のための占いか、どんな悩みに効くか。よければ覗いてみてください👇\nhttps://note.com/shigure_fortune/n/nab07df599219\n\n続きの記事も随時公開していくので、noteのフォローもしていただけると嬉しいです🙏\n\n#占い #吉方位 #開運"
+    ],
+    "theme": "方位の基礎知識/方位と五行（木火土金水）",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "zodiac_boost": "♑山羊座",
+    "expires_on": "2026-09-02",
+    "pending_at": "2026-08-19T03:56:41.254951",
+    "queued_at": "2026-08-19T03:56:51.161643",
+    "threads_post_id": "18091097579378167",
+    "posted_at": "2026-08-19T03:57:35.301272+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/capricorn.jpg",
+    "recorded_at": "2026-08-19T03:57:35.311210"
   }
 ]
