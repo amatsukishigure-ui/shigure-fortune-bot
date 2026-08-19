@@ -14609,7 +14609,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/gemini.jpg",
-    "recorded_at": "2026-08-18T07:43:23.334513"
+    "recorded_at": "2026-08-18T07:43:23.334513",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♏蠍座の方へ、聞いてほしい。\n\n普段は投稿に書かないことにしている。でも今夜だけ書く。\n\n「なんか最近うまくいかない」と感じ始めた時期、思い当たらない？\n\nその違和感、気のせいじゃない。\n正体は──空間にある。\n\n#占い #開運 #運気アップ",
@@ -14633,7 +14634,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/scorpio.jpg",
-    "recorded_at": "2026-08-18T09:01:39.426335"
+    "recorded_at": "2026-08-18T09:01:39.426335",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今週の流れを先に知っておいてほしい。\n\n【転機の兆しが動き出す星座ランキング】\n\n🥇1位 ♏蠍座｜手放した瞬間、次の扉が開く\n🥈2位 ♐射手座｜動いた方向に答えがある\n🥉3位 ♈牡羊座｜迷いを断ち切ると道が見える\n🏅4位 ♒水瓶座｜違和感を信じると転機になる\n5位 ♎天秤座｜どちらかを選んだ先に流れが来る\n6位 ♊双子座｜情報を受け取る時期。耳を開けて\n7位 ♋蟹座｜内側が静まると外が動き始める\n8位 ♑山羊座｜積み上げたものが、ようやく報われる\n9位 ♌獅子座｜表に出た分だけ、転機が近づく\n10位 ♉牡牛座｜焦らず整える。タイミングは来る\n11位 ♍乙女座｜手放す整理が、次を呼び込む\n12位 ♓魚座｜今は充電期。気を蓄える時間\n\n龍脈命術では「同じ悩みが繰り返される」とき、それを性格ではなく方位のズレとして読む。向きが変わると、努力の届き方が変わる。\n\n「🌀」を置いた方に、今週の転機の気が届きますように。\n\n#占い #星座占い #運勢",
@@ -14652,7 +14654,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
-    "recorded_at": "2026-08-18T12:01:01.637225"
+    "recorded_at": "2026-08-18T12:01:01.637225",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♎天秤座で、「玄関に帰るたびなんとなく重い感じ」がある人以外は、読まなくていい。\n\n#占い #吉方位 #開運",
@@ -14842,5 +14845,29 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-08-19T12:01:05.115869"
+  },
+  {
+    "text": "♋ 蟹座さん、今「このままでいいのか」がぐるぐるしている人だけ読んで。\n\n#占い #龍脈命術",
+    "thread_posts": [
+      "♋ 蟹座さん、今「このままでいいのか」がぐるぐるしている人だけ読んで。\n\n#占い #龍脈命術",
+      "暦の上では、もう秋が始まっている。立秋を境に、気の流れは「火」から「金」へと移行する。この切り替わりの時期、蟹座の龍脈は「現状維持の引力」が最も強く働く。動けないのは意志が弱いからじゃない。気の向きが、まだ夏のまま止まっているから。\n\n龍脈命術は「当てる占い」じゃなく「動ける占い」。今の時期にやるべきことは、北東に向かって窓を開けること——それだけで気の入れ替えが起きる。\n\n「このままでいいのか」、今週中に感じた人は🌀をコメントで。\n\n#占い #龍脈命術 #運気",
+      "こんな方、いませんか？\n□ 引っ越し・転職・独立、決め手がなくて動けない\n□ 「このままでいいのか」がずっと頭の片隅にある\n□ 占いを受けたことはあるけど、聞いて終わりだった\n\n2つ以上当てはまったら、読んでほしいnoteを書きました。\n\n「動ける占い」龍脈命術について、無料で公開しています🔮\nhttps://note.com/shigure_fortune/n/nab07df599219\n\n見逃したくない方は、noteのフォローもぜひ👀\n\n#占い #転職 #仕事運"
+    ],
+    "theme": "運気/運気が上がるタイミング",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "zodiac_boost": "♈牡羊座",
+    "expires_on": "2026-09-02",
+    "pending_at": "2026-08-19T12:36:17.628005",
+    "queued_at": "2026-08-19T12:37:31.342628",
+    "threads_post_id": "18076175165357131",
+    "posted_at": "2026-08-19T12:38:12.650913+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-08-19T12:38:12.660934"
   }
 ]
