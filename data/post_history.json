@@ -14738,7 +14738,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-08-19T02:53:27.841434"
+    "recorded_at": "2026-08-19T02:53:27.841434",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♑ 山羊座で、「信頼を積み上げてきたのに、なぜか最後に手放される」という感覚がある人以外は、読まなくていい。\n\n#占い #吉方位 #龍脈命術",
@@ -14956,5 +14957,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/virgo.jpg",
     "recorded_at": "2026-08-20T02:54:17.929754"
+  },
+  {
+    "text": "♊双子座の方へ。\n\nいろんな可能性を考えて、調べて、試して——それでも「どれが正解かわからない」まま止まっている。\n\n意志が弱いんじゃない。\n向きがズレているだけ。\n\n龍脈命術は「何をするか」より「どの方向に動くか」を見る占い。\n気の流れが詰まっている理由も、ここで見えてくる。\n\nその読み方を、今夜だけ書く。\n\n#占い #開運 #運気アップ",
+    "thread_posts": [
+      "♊双子座の方へ。\n\nいろんな可能性を考えて、調べて、試して——それでも「どれが正解かわからない」まま止まっている。\n\n意志が弱いんじゃない。\n向きがズレているだけ。\n\n龍脈命術は「何をするか」より「どの方向に動くか」を見る占い。\n気の流れが詰まっている理由も、ここで見えてくる。\n\nその読み方を、今夜だけ書く。\n\n#占い #開運 #運気アップ",
+      "♊双子座さんが止まりがちな理由、方位から読むとこうなる。\n\n気の出口がふさがっている状態。\n動けないのは、力が足りないんじゃなく、向かう先の気が重いだけ。\n\n今の状況に合わせて選んでみて。\n\n「まず試したい」\n→ 吉方位リーディング（モニター）1,000円\n\n「なぜ動けないか知りたい」\n→ 龍脈命術 基本鑑定 8,000円\n\n「これからの半年を整えたい」\n→ 龍脈命術 深掘り鑑定 18,000円\n\n詳細・お申し込みは https://coconala.com/services/4292937?ref=threads\n\n#占い #吉方位 #開運"
+    ],
+    "theme": "転機のサイン/気の流れが詰まっているサイン",
+    "pattern_id": "menu_guide",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♊双子座",
+    "expires_on": "2026-08-26",
+    "pending_at": "2026-08-12T12:58:50.141528",
+    "queued_at": "2026-08-12T12:59:18.675112",
+    "threads_post_id": "18110725076279306",
+    "posted_at": "2026-08-20T03:59:00.102927+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-20T03:59:00.113124"
   }
 ]
