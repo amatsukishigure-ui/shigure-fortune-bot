@@ -1,41 +1,6 @@
 {
   "topics": [
     {
-      "title": "お盆休みで下りの混雑ピーク 高速道路や新幹線は",
-      "description": "お盆休みをふるさとや行楽地で過ごす人たちの混雑は、8日がピークです。新幹線の下りでは多くの列車が満席となったほか、高速道路も各地で渋滞が発生しています。",
-      "source": "NHKニュース"
-    },
-    {
-      "title": "オープンAI 開発一時中断 AIみずからサイバー攻撃実行のおそれ",
-      "description": "生成AIの「ChatGPT」の開発を手がけるアメリカのオープンAIは、AIモデル「アストラ」の開発の一時中断を7日、発表しました。理由について、AIの能力が大幅に向上し、みずからの判断で重大なサイバー攻撃を実行するおそれが排除できないとして",
-      "source": "NHKニュース"
-    },
-    {
-      "title": "熊本地震 死者1人増える 災害関連死の疑い1人含め 死者39人に",
-      "description": "熊本県は8日午後6時の時点で、今回の地震による死者があわせて39人と発表しました。避難所には6320人が避難しているということです。",
-      "source": "NHKニュース"
-    },
-    {
-      "title": "夏休みに被災 ストレス感じる子も",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "避難で留守の家から窃盗疑い 逮捕",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "台風15号 11-12日に東北上陸恐れ",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "露軍がウ首都や周辺攻撃 4人死亡",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
       "title": "男性死亡 ひき逃げ疑いで女を逮捕",
       "description": "",
       "source": "Yahoo Japan ニュース"
@@ -4776,9 +4741,44 @@
       "title": "虎・伊原 暴行疑惑で球団通じ謝罪",
       "description": "",
       "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "内閣改造 来月中下旬で首相調整",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "26年産新米 大幅値下がりの見通し",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "飛び込みスポット 20歳が意識不明",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "経費高騰 全国で減少する花火大会",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "岡本が26号 球団新人最多を更新",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "中日サヨナラ負け 9回異例の敬遠",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "田中樹 24時間テレビドラマ出演",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
     }
   ],
-  "last_updated": "2026-08-20T13:49:42.917486",
+  "last_updated": "2026-08-20T22:38:36.640650",
   "last_rss_count": 31,
   "last_cultural_count": 0
 }
