@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-08-20T03:52:44.342045",
+  "updated_at": "2026-08-20T07:40:47.151915",
   "locked": [],
   "lookback_days": 30,
   "adjustments": {
-    "client_voice": 0.5,
+    "caligula": 1.502,
+    "zodiac_target": 0.989,
     "ichi_gon": 0.503,
-    "caligula": 1.431,
-    "zodiac_target": 1.006,
-    "kotodama_rank": 1.607,
-    "fuusui_tip": 0.744,
-    "harm_revelation": 1.237,
-    "zodiac_deep": 1.349,
-    "zodiac_ranking": 1.611
+    "kotodama_rank": 1.58,
+    "client_voice": 0.5,
+    "fuusui_tip": 0.732,
+    "harm_revelation": 1.115,
+    "zodiac_deep": 1.326,
+    "zodiac_ranking": 1.583
   }
 }

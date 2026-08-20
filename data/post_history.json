@@ -14763,7 +14763,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/capricorn.jpg",
-    "recorded_at": "2026-08-19T03:57:35.311210"
+    "recorded_at": "2026-08-19T03:57:35.311210",
+    "hourly_stats_recorded": true
   },
   {
     "text": "天職の気配が最も強く引き寄せられる組み合わせ。\n\n天職・仕事運の気が今月最も集まる 生まれ月×星座 top7\n\n1位 3月生まれ × 射手座\n2位 8月生まれ × 牡羊座\n3位 11月生まれ × 獅子座\n4位 5月生まれ × 双子座\n5位 1月生まれ × 天秤座\n6位 7月生まれ × 水瓶座\n7位 9月生まれ × 牡牛座\n\n龍脈命術では「仕事が合わない」は能力ではなく気の向きの問題。生まれ月×星座でその向きが読める。\n\n🐉を置いた人から、今の仕事に新しい展開が入ってきますように\n\n#占い #仕事運 #運気アップ",
@@ -14786,7 +14787,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
-    "recorded_at": "2026-08-19T06:01:41.827003"
+    "recorded_at": "2026-08-19T06:01:41.827003",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♓ 魚座さんへ。\n\n今、誰かのことが気になっているなら、それは気の流れが動いている証拠。\n\nこの時期、魚座の縁を引き寄せる吉方位は南西。週末、少しでもその方向へ動いてみてね。龍脈命術は「いつ・どこへ動くか」で縁の引き寄せ方が変わると読む。\n\n待つより、小さく動いた方が流れに乗れる季節だよ。\n\n魚座さん、「動きたい」か「待ちたい」か、コメントで教えて。\n\n#占い #吉方位 #開運",
@@ -15002,5 +15004,28 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-08-20T06:01:31.615307"
+  },
+  {
+    "text": "♓魚座の人が「なぜか最後で落とされる」と感じているなら、努力の方向より向きの問題かもしれない。\n\n#占い #龍脈命術",
+    "thread_posts": [
+      "♓魚座の人が「なぜか最後で落とされる」と感じているなら、努力の方向より向きの問題かもしれない。\n\n#占い #龍脈命術",
+      "♓魚座さんへ。\n\n「頑張ってるのに、なんで最後だけ通らないんだろう」\n\nその言葉、よく聞く。\n\n魚座は感受性が高く、人の気持ちを読む力がある。でも気の流れがズレていると、その繊細さが「迷い」として伝わってしまう。\n\n龍脈命術では、努力の前に「向き」を整える。鑑定で方位を確認したら、面接のたびに座る向きを変えていた方がいた。翌月、内定が来た。\n\n動けないのは意志の問題じゃない。\n\n心当たり、ある？\n\n▷ 鑑定ページ https://coconala.com/services/4292937?ref=threads\n\n#龍脈命術 #魚座 #吉方位"
+    ],
+    "theme": "引き寄せ/言葉と気の流れ",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♓魚座",
+    "expires_on": "2026-09-03",
+    "pending_at": "2026-08-20T07:45:26.524670",
+    "queued_at": "2026-08-20T07:46:01.133378",
+    "threads_post_id": "18142974841565573",
+    "posted_at": "2026-08-20T07:46:22.416708+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/pisces.jpg",
+    "recorded_at": "2026-08-20T07:46:22.424723"
   }
 ]
