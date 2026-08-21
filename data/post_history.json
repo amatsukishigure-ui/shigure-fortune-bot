@@ -14988,7 +14988,8 @@
     "posted_at": "2026-08-20T03:59:00.102927+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-20T03:59:00.113124"
+    "recorded_at": "2026-08-20T03:59:00.113124",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♎天秤座の方へ、一度だけ書く。\n\n鑑定の場でしか話していないことを、今夜ここに出す。\n\nテーマは「運気が下がる前に出るサイン」。\n\n気づいている人は、ほぼいない。\nでも知ってしまうと、あの頃の自分に言いたかったと思う。\n\n正体は──空間の向きだった。\n\n#占い #恋愛運 #縁",
@@ -15011,7 +15012,8 @@
     "posted_at": "2026-08-20T06:01:31.604765+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-20T06:01:31.615307"
+    "recorded_at": "2026-08-20T06:01:31.615307",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♓魚座の人が「なぜか最後で落とされる」と感じているなら、努力の方向より向きの問題かもしれない。\n\n#占い #龍脈命術",
@@ -15219,5 +15221,25 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/leo.jpg",
     "recorded_at": "2026-08-21T06:01:04.050441"
+  },
+  {
+    "text": "♎天秤座の方へ。\n\n努力は続けているのに、選ばれないまま3年が経つ。\nその感覚、実力の問題じゃないかもしれない。\n\n龍脈命術で見ると、気の向きがズレているとき、どれだけ動いても力が空中に散っていく。\n\n立秋を過ぎ、気の流れが静かに切り替わり始めている今が、向きを整えるタイミングだ。\n\n「選ばれない」と「向きがズレている」、どっちに近い？コメントで教えて。\n\n#占い #仕事運 #運気アップ",
+    "x_text": "♎天秤座の方へ。\n\n努力は続けているのに、選ばれないまま3年が経つ。\nその感覚、実力の問題じゃないかもしれない。\n\n龍脈命術で見ると、気の向きがズレているとき、どれだけ動いても力が空中に散っていく。\n\n立秋を過ぎ、気の流れが静かに切り替わり始めている今が、向きを整えるタイミングだ。\n\n「選ばれない」と「向きがズレている」、どっちに近い？コメントで教えて。\n\n#占い #時雨 #仕事運 #転職",
+    "theme": "運気/仕事運",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.9,
+    "attempts": 1,
+    "x_eligible": true,
+    "expires_on": "2026-09-04",
+    "persona_id": "p002",
+    "zodiac_boost": "♎天秤座",
+    "pending_at": "2026-08-21T04:00:18.974344",
+    "queued_at": "2026-08-21T04:00:50.394692",
+    "threads_post_id": "18112270450972312",
+    "posted_at": "2026-08-21T07:50:34.938573+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/libra.jpg",
+    "recorded_at": "2026-08-21T07:50:34.948540"
   }
 ]
