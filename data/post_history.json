@@ -14965,7 +14965,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/virgo.jpg",
-    "recorded_at": "2026-08-20T02:54:17.929754"
+    "recorded_at": "2026-08-20T02:54:17.929754",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♊双子座の方へ。\n\nいろんな可能性を考えて、調べて、試して——それでも「どれが正解かわからない」まま止まっている。\n\n意志が弱いんじゃない。\n向きがズレているだけ。\n\n龍脈命術は「何をするか」より「どの方向に動くか」を見る占い。\n気の流れが詰まっている理由も、ここで見えてくる。\n\nその読み方を、今夜だけ書く。\n\n#占い #開運 #運気アップ",
@@ -15176,5 +15177,27 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-08-21T03:00:42.736609"
+  },
+  {
+    "text": "♋蟹座さん、最終面接で何度も落ちているなら、努力より先に整えるべきものがあるかもしれない。\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "♋蟹座さん、最終面接で何度も落ちているなら、努力より先に整えるべきものがあるかもしれない。\n\n#占い #吉方位 #開運",
+      "♋蟹座の方からよく聞く言葉がある。\n「何がダメなのか、わからない」\n\n準備は完璧。練習も重ねた。それでも最後で弾かれる。\n\n鑑定した20代の方も、そうだった。\nわかったのは意志や実力の問題じゃなく、気の向きのズレだった。\n\n龍脈命術は「当てる」より「動かす」占い。\n面接に向かうとき、北東を背に座る位置を選ぶだけで、気の通りが変わる。\n\nその方は翌月、第一志望から内定をもらった。\n\n心当たりある？\n\n気になったら → LINE https://lin.ee/TJg5dru\n\n#蟹座 #吉方位 #龍脈命術"
+    ],
+    "theme": "暮らしの吉方位と気の整え方/ランチ・カフェで吉方位活用",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♋蟹座",
+    "expires_on": "2026-09-04",
+    "pending_at": "2026-08-21T04:00:10.829772",
+    "queued_at": "2026-08-21T04:00:50.385575",
+    "threads_post_id": "17952858096218624",
+    "posted_at": "2026-08-21T04:01:10.586703+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-21T04:01:10.596966"
   }
 ]
