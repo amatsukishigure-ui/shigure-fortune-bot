@@ -14920,7 +14920,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/cancer.jpg",
-    "recorded_at": "2026-08-19T22:38:13.676389"
+    "recorded_at": "2026-08-19T22:38:13.676389",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♍乙女座の方へ。\n\n「もう遅いのかも」って、何度思っただろう。\n\nでも龍脈命術では、出会いは意志より\"気の向き\"で変わると見る。\nインテリアの配置や観葉植物の置き場所ひとつで、部屋に入ってくる縁の質が変わる。\n\n南東に葉の丸い植物を置いてみて。それだけでいい。\n\n「やってみようかな」と「関係ない気がする」、どっちに近い？コメントで教えて。\n\n#占い #吉方位 #開運",
@@ -14940,7 +14941,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/virgo.jpg",
-    "recorded_at": "2026-08-20T01:01:05.196483"
+    "recorded_at": "2026-08-20T01:01:05.196483",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♍乙女座で、「このままでいいのか」がここ最近ずっと頭にある人以外は、読まなくていい。\n\n#占い #星座占い #運勢",
@@ -15156,5 +15158,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/gemini.jpg",
     "recorded_at": "2026-08-21T01:01:37.976632"
+  },
+  {
+    "text": "♉牡牛座で、この季節が「なんか重い」と感じている人以外は、読まなくていい。",
+    "theme": "風水豆知識/窓と採光・気の流れ",
+    "pattern_id": "caligula",
+    "quality_score": 8.6,
+    "attempts": 1,
+    "x_eligible": true,
+    "is_repost": true,
+    "original_post_id": "18103208060123154",
+    "pending_at": "2026-08-21T02:59:06.186557",
+    "queued_at": "2026-08-21T03:00:34.302858",
+    "threads_post_id": "18112927505287961",
+    "posted_at": "2026-08-21T03:00:42.726399+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-08-21T03:00:42.736609"
   }
 ]

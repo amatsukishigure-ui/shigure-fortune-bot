@@ -8635,5 +8635,27 @@
     "pattern_id": "kotodama_rank",
     "post_id": "18129281836584392",
     "fetched_at": "2026-08-20T22:35:50.823784"
+  },
+  {
+    "views": 1,
+    "likes": 1,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "client_voice",
+    "post_id": "18034096169648401",
+    "fetched_at": "2026-08-21T02:53:08.067283"
+  },
+  {
+    "views": 32,
+    "likes": 1,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "ichi_gon",
+    "post_id": "18075660347341620",
+    "fetched_at": "2026-08-21T02:53:08.457753"
   }
 ]
