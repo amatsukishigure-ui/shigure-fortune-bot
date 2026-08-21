@@ -15092,7 +15092,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-08-20T12:39:07.111117"
+    "recorded_at": "2026-08-20T12:39:07.111117",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♉牡牛座で、「信頼してきた相手に最後に裏切られる」という体験が続いている人以外は、読まなくていい。\n\n#占い #吉方位 #龍脈命術",
@@ -15301,5 +15302,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-08-21T12:38:34.029276"
+  },
+  {
+    "text": "♐射手座さん、今「大安なのに何も動けていない」という感覚がある人だけ読んで。\n\n#占い #吉方位 #龍脈命術",
+    "thread_posts": [
+      "♐射手座さん、今「大安なのに何も動けていない」という感覚がある人だけ読んで。\n\n#占い #吉方位 #龍脈命術",
+      "大安だから動けばいい、仏滅だから休めばいい。それは半分しか合っていない。\n\n龍脈命術では、吉凶日よりも「動く方角」が結果を左右すると読む。大安に凶方位へ動いても、気は味方してくれない。逆に、仏滅でも吉方位に向かって動いた人のほうが、その後の流れがよくなるケースが多い。\n\n大安に頑張ったのに空回りした記憶がある人は、日付より方角を疑ってみて。\n\n今の時期、射手座の吉方位は北東。当てはまる？ 🔮\n\n#占い #龍脈命術 #吉方位",
+      "「龍脈命術」という名前、実は由来があります。\n\n風水でいう龍脈＝気が流れる道。土地に流れがあるように、人にも生まれ持った〝流れ〟がある。その流れを読み解いて、今どこへ向かえば気が味方するかを示す占いです。\n\n自己紹介と一緒に、無料noteにまとめました🔮\nhttps://note.com/shigure_fortune/n/nab07df599219\n\nこれから龍脈命術の話をもっと発信していく予定なので、noteのフォローで応援していただけると励みになります✨\n\n#占い #風水 #開運"
+    ],
+    "theme": "開運日/大安・仏滅と方位の関係",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "zodiac_boost": "♒水瓶座",
+    "expires_on": "2026-09-04",
+    "pending_at": "2026-08-21T12:37:51.976339",
+    "queued_at": "2026-08-21T12:38:27.471871",
+    "threads_post_id": "18130958812573777",
+    "posted_at": "2026-08-21T13:50:50.555993+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-21T13:50:50.564709"
   }
 ]
