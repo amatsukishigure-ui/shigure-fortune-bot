@@ -15334,7 +15334,8 @@
     "posted_at": "2026-08-21T13:50:50.555993+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-21T13:50:50.564709"
+    "recorded_at": "2026-08-21T13:50:50.564709",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♍乙女座さんへ。「なんかこのタイミングじゃない気がする」って、開運日を前にして動けなかったことない？\n\n#占い #龍脈命術",
@@ -15524,5 +15525,29 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/scorpio.jpg",
     "recorded_at": "2026-08-22T13:38:18.337211"
+  },
+  {
+    "text": "♏蠍座さん、今「頑張っているのになぜか周りだけ動いている」という感覚がある人のための話をする。\n\n#占い #星座占い #運勢",
+    "thread_posts": [
+      "♏蠍座さん、今「頑張っているのになぜか周りだけ動いている」という感覚がある人のための話をする。\n\n#占い #星座占い #運勢",
+      "蠍座は今、立秋を境に龍脈の流れが切り替わる時期に入っている。この時期に「自分だけ止まっている」感覚が出るのは、意欲や能力の問題じゃない。龍脈命術で見ると、向かっている方角に気の停滞が起きているサインなんだ。今週中に、日常的に向く方向を意識して北東に体を向ける時間を作るだけでいい。同じ行動でも、向きが整うと流れの乗り方が変わる。「頑張り方」じゃなく「向き」の問題だった、という感覚ある人いる？ #占い #龍脈命術 #蠍座",
+      "「このままでいいのかな」\nその言葉、今月だけで何回呟きましたか？\n\n占いというと「当たる・当たらない」で語られがちですが、私が大事にしているのはそこじゃありません。\n\n風水×吉方位×星読みを組み合わせた、動くための占い「龍脈命術」について、無料noteにまとめました🔮\n誰のための占いか、どんな悩みに効くか。よければ覗いてみてください👇\nhttps://note.com/shigure_fortune/n/nab07df599219\n\n続きの記事も随時公開していくので、noteのフォローもしていただけると嬉しいです🙏\n\n#占い #吉方位 #開運"
+    ],
+    "theme": "星座占い/来週の運気予報",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "zodiac_boost": "♏蠍座",
+    "expires_on": "2026-09-06",
+    "pending_at": "2026-08-22T22:36:09.044989",
+    "queued_at": "2026-08-22T22:36:17.378872",
+    "threads_post_id": "18124502722838354",
+    "posted_at": "2026-08-22T22:37:02.229862+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/scorpio.jpg",
+    "recorded_at": "2026-08-22T22:37:02.240123"
   }
 ]
