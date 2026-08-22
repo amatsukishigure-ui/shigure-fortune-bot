@@ -15141,7 +15141,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/gemini.jpg",
-    "recorded_at": "2026-08-20T22:44:42.032066"
+    "recorded_at": "2026-08-20T22:44:42.032066",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♊双子座の方へ。\n\n本来は書くつもりがなかった。有料鑑定でしか話していないことを今夜だけ書く。\n\nテーマは「運気が下がる前に出るサイン」。\n\n転落の3ヶ月前に、ある変化が必ず起きている。\n正体は──空間の、ある方角だ。\n\n#占い #開運 #運気アップ",
@@ -15165,7 +15166,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/gemini.jpg",
-    "recorded_at": "2026-08-21T01:01:37.976632"
+    "recorded_at": "2026-08-21T01:01:37.976632",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♉牡牛座で、この季節が「なんか重い」と感じている人以外は、読まなくていい。",
@@ -15372,5 +15374,24 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-08-22T01:01:34.798024"
+  },
+  {
+    "text": "♍ 乙女座さんへ。\n\n「頑張ってるのに、なんで変わらないんだろう」——そのループ、方位のズレが原因かもしれない。\n\n龍脈命術は性格じゃなく「今いる場所・向かう方向」を読む。今の乙女座は、北西の気が動きやすい時期。日常の移動先、席の向きだけ少し意識してみて。\n\n乙女座さん、「動きたい」か「待ちたい」か、コメントで教えて。\n\n#占い #吉方位 #龍脈命術",
+    "x_text": "♍ 乙女座さんへ。\n\n「頑張ってるのに、なんで変わらないんだろう」——そのループ、方位のズレが原因かもしれない。\n\n龍脈命術は性格じゃなく「今いる場所・向かう方向」を読む。今の乙女座は、北西の気が動きやすい時期。日常の移動先、席の向きだけ少し意識してみて。\n\n乙女座さん、「動きたい」か「待ちたい」か、コメントで教えて。\n\n#占い #時雨 #吉方位 #風水",
+    "theme": "方位の基礎知識/方位磁石の使い方",
+    "pattern_id": "zodiac_target",
+    "quality_score": 7.7,
+    "attempts": 1,
+    "x_eligible": false,
+    "expires_on": "2026-09-04",
+    "persona_id": "p019",
+    "zodiac_boost": "♍乙女座",
+    "pending_at": "2026-08-21T12:36:59.579168",
+    "queued_at": "2026-08-21T12:38:27.226340",
+    "threads_post_id": "18112808374797328",
+    "posted_at": "2026-08-22T02:52:24.070320+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-22T02:52:24.080216"
   }
 ]
