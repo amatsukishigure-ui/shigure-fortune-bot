@@ -15658,5 +15658,25 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-08-23T07:42:25.992327"
+  },
+  {
+    "text": "♍乙女座さん、今夜寝る前に聞いてほしい。\n\n「頑張ってるのに、なんで変わらないんだろう」って、布団の中で考えてしまうこと、ない？\n\n今夜は寝るとき、足先を北向きに向けてみて。\n龍脈命術では北は「回復と蓄積の気」が流れる方位。消耗した気を補うのに、向きは思ったより大事。\n\n明日の朝、少しだけ気持ちが軽いか、確かめてみて 🌙\n\n#占い #星座占い #運勢",
+    "x_text": "♍乙女座さん、今夜寝る前に聞いてほしい。\n\n「頑張ってるのに、なんで変わらないんだろう」って、布団の中で考えてしまうこと、ない？\n\n今夜は寝るとき、足先を北向きに向けてみて。\n龍脈命術では北は「回復と蓄積の気」が流れる方位。消耗した気を補うのに、向きは思ったより大事。\n\n明日の朝、少しだけ気持ちが軽いか、確かめてみて 🌙\n\n#占い #時雨 #星座占い #運勢",
+    "theme": "星座別メッセージ/星座別・今月の開運行動",
+    "pattern_id": "before_sleep",
+    "quality_score": 8.0,
+    "attempts": 1,
+    "x_eligible": false,
+    "expires_on": "2026-08-28",
+    "persona_id": "p005",
+    "zodiac_boost": "♍乙女座",
+    "pending_at": "2026-08-13T22:57:43.482428",
+    "queued_at": "2026-08-13T22:58:24.862429",
+    "threads_post_id": "18112294993797289",
+    "posted_at": "2026-08-23T09:01:00.469883+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/virgo.jpg",
+    "recorded_at": "2026-08-23T09:01:00.480202"
   }
 ]
