@@ -363,14 +363,17 @@ def run() -> dict:
         print(f"⏸ ポスター: {reason}")
         return {"posted": False, "reason": reason}
 
+    # スロット別優先パターン選択
+    _jst_now = datetime.now(timezone(timedelta(hours=9)))
+    _jst_hour = _jst_now.hour
+    _jst_weekday = _jst_now.weekday()  # 0=月曜
+    _today_str = _jst_now.date().isoformat()
+    post = None
+
     # 21:00 JST アンカー枠: zodiac_ranking を優先デキュー（本日未投稿の場合）
     _ANCHOR_PID = "zodiac_ranking"
     _ANCHOR_JST_HOUR = 21
-    _jst_now = datetime.now(timezone(timedelta(hours=9)))
-    _jst_hour = _jst_now.hour
-    post = None
     if _jst_hour == _ANCHOR_JST_HOUR:
-        _today_str = _jst_now.date().isoformat()
         _posted_today = any(
             h.get("pattern_id") == _ANCHOR_PID and h.get("posted_at", "")[:10] == _today_str
             for h in history
@@ -379,6 +382,30 @@ def run() -> dict:
             post = dequeue_by_pattern(_ANCHOR_PID)
             if post:
                 print(f"📌 アンカー投稿: {_ANCHOR_PID} を21時枠で優先デキュー")
+
+    # 16:00 JST プレミアム枠: caligula > zodiac_deep を優先選択（avg_eng=43.8/29.7 高パフォーマー）
+    if post is None and _jst_hour == 16:
+        for _pref_pid in ["caligula", "zodiac_deep"]:
+            post = dequeue_by_pattern(_pref_pid)
+            if post:
+                print(f"📌 16時プレミアム枠: {_pref_pid} を優先デキュー")
+                break
+
+    # 月曜日プレミアム枠: zodiac_deep > caligula > zodiac_ranking を優先選択（月曜 avg_eng=28.2 最高）
+    # 16時と重複した場合は16時優先のため、post is None のときのみ発動
+    if post is None and _jst_weekday == 0:
+        _mon_already_premium = any(
+            h.get("pattern_id") in ("zodiac_deep", "caligula", "zodiac_ranking")
+            and h.get("posted_at", "")[:10] == _today_str
+            for h in history
+        )
+        if not _mon_already_premium:
+            for _mon_pid in ["zodiac_deep", "caligula", "zodiac_ranking"]:
+                post = dequeue_by_pattern(_mon_pid)
+                if post:
+                    print(f"📌 月曜プレミアム枠: {_mon_pid} を優先デキュー")
+                    break
+
     if post is None:
         post = dequeue_post()
     if not post:
