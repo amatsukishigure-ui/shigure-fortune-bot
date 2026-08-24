@@ -21,21 +21,12 @@ ANALYSIS_REPORT_FILE = DATA_DIR / "analysis_report.json"
 
 
 def _calculate_engagement_score(metrics: dict) -> float:
-    """エンゲージメントスコアを計算（閲覧数・いいね・コメントの加重平均）"""
-    views = metrics.get("views", 0)
+    """エンゲージメントスコアを計算（絶対値: likes + replies×3）
+    レートベース(likes/views)は高閲覧投稿を不当に低評価するため使わない。
+    """
     likes = metrics.get("likes", 0)
     replies = metrics.get("replies", 0)
-    reposts = metrics.get("reposts", 0)
-
-    if views == 0:
-        return 0.0
-
-    # いいね率・コメント率・拡散率を合算
-    like_rate = likes / views
-    reply_rate = replies / views
-    repost_rate = reposts / views
-
-    return round((like_rate * 0.4 + reply_rate * 0.35 + repost_rate * 0.25) * 1000, 4)
+    return float(likes + replies * 3)
 
 
 def _merge_history_and_performance(history: list, perf_data: list) -> list:
