@@ -15897,7 +15897,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/gemini.jpg",
-    "recorded_at": "2026-08-24T22:40:53.989302"
+    "recorded_at": "2026-08-24T22:40:53.989302",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♎天秤座で、「帰省」や「移動」がなんとなく気になり始めた人以外は、読まなくていい。\n\n#占い #吉方位 #開運",
@@ -16022,5 +16023,28 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-08-25T22:42:25.274495"
+  },
+  {
+    "text": "♌獅子座の方へ。5年間、同じ場所で止まっている理由、知ってる？\n\n#占い #金運 #開運",
+    "thread_posts": [
+      "♌獅子座の方へ。5年間、同じ場所で止まっている理由、知ってる？\n\n#占い #金運 #開運",
+      "♌獅子座の方からよく聞く言葉がある。「頑張ってるのに、なぜか報われない」。\n\n先月、鑑定した獅子座40代の方も同じだった。営業成績は悪くないのに年収が5年横ばい。話を聞くと、仕事をする向きが完全に凶方位だった。\n\nデスクの向きを北東に変えた翌月、異動の打診が来たと連絡があった。\n\n龍脈命術は「当てる」より「動かす」占い。寅の日の今日、方位を一つ見直してみて。\n\n気になったら → 鑑定ページ https://coconala.com/services/4292937?ref=threads\n\n#龍脈命術 #獅子座 #吉方位"
+    ],
+    "theme": "開運日/寅の日・巳の日と金運",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♌獅子座",
+    "expires_on": "2026-09-09",
+    "pending_at": "2026-08-26T03:01:42.650311",
+    "queued_at": "2026-08-26T03:02:00.996311",
+    "threads_post_id": "17891652594417715",
+    "posted_at": "2026-08-26T03:02:27.229729+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/leo.jpg",
+    "recorded_at": "2026-08-26T03:02:27.239227"
   }
 ]
