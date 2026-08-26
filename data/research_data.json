@@ -1,46 +1,6 @@
 {
   "topics": [
     {
-      "title": "関東で激しい雨 現地のSNS投稿",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "無人の農業運搬車にひかれ 死亡",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "そごう 19年ぶり「本店」名称復活",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "一太郎転落 振り返る当時の担当者",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "結婚式に見知らぬ300人参加 中国",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "TWICE・チェヨン JYPと契約終了",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "命守る行動を 千葉に大雨特別警報",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "埼玉・茨城で線状降水帯発生恐れ",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
       "title": "気象庁「経験のないような大雨」",
       "description": "",
       "source": "Yahoo Japan ニュース"
@@ -4740,9 +4700,49 @@
       "source": "news_rss",
       "cultural_angle": "日本の夏の風物詩・甲子園",
       "season_note": "8月・夏の甲子園シーズン。太陽が最も強い「火の気」が極まる時期と連動"
+    },
+    {
+      "title": "博多区で40.4℃ 福岡市初の酷暑日",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "石川に修学旅行 前年度から5割増",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "ChatGPTで不正利用 親露世論操作",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "富士山で遭難激増 シャリバテとは",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "ファミマ 服装や髪色に新ルール",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "ペンギン入りSuica 在庫限り終了",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "龍谷大の硬式野球部 活動を停止中",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "サンド伊達 体調不良で公演を欠席",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
     }
   ],
-  "last_updated": "2026-08-26T04:00:39.798874",
+  "last_updated": "2026-08-26T07:48:21.758589",
   "last_rss_count": 31,
   "last_cultural_count": 0
 }
