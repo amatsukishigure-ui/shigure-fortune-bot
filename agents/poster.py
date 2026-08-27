@@ -412,16 +412,25 @@ def run() -> dict:
         print("⏸ ポスター: キューが空です")
         return {"posted": False, "reason": "Queue empty"}
 
+    # 直近14日以内に同一テキストを投稿済みならスキップ（git push 失敗による queue 未保存の重複投稿を防ぐ）
+    # 重複が連続してもブロックされないよう最大5件まで次の投稿を試す
+    _cutoff = (datetime.now(timezone.utc) - timedelta(days=14)).isoformat()
+    _recent_texts = {h.get("text", "") for h in history if h.get("posted_at", "") >= _cutoff}
+    _dup_skip = 0
+    while post and post.get("text", "") in _recent_texts and _dup_skip < 5:
+        print(f"⚠️ ポスター: 重複スキップ({_dup_skip+1}件目)→次へ {post.get('text','')[:40]}...")
+        _dup_skip += 1
+        post = dequeue_post()
+    if not post:
+        print("⏸ ポスター: 重複スキップ後にキューが空になりました")
+        return {"posted": False, "reason": "duplicate_recent"}
+    if post.get("text", "") in _recent_texts:
+        print(f"⚠️ ポスター: 重複5件連続のためスキップ終了 {post.get('text','')[:40]}...")
+        return {"posted": False, "reason": "duplicate_recent"}
+
     text = post.get("text", "")
     thread_posts = post.get("thread_posts")  # ツリー投稿用リスト
     affiliate_link = post.get("affiliate_link", "")
-
-    # 直近14日以内に同一テキストを投稿済みならスキップ（git push 失敗による queue 未保存の重複投稿を防ぐ）
-    _cutoff = (datetime.now(timezone.utc) - timedelta(days=14)).isoformat()
-    _recent_texts = {h.get("text", "") for h in history if h.get("posted_at", "") >= _cutoff}
-    if text in _recent_texts:
-        print(f"⚠️ ポスター: 重複スキップ（直近14日以内に同一テキストを投稿済み）{text[:40]}...")
-        return {"posted": False, "reason": "duplicate_recent"}
 
     try:
         # 画像URLを選択（存在しなければNone → テキストのみ）
