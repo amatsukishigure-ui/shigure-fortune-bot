@@ -9218,5 +9218,49 @@
     "pattern_id": "client_voice",
     "post_id": "17891652594417715",
     "fetched_at": "2026-08-27T03:06:22.185556"
+  },
+  {
+    "views": 94,
+    "likes": 4,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "zodiac_target",
+    "post_id": "18157500526438478",
+    "fetched_at": "2026-08-27T12:04:55.585196"
+  },
+  {
+    "views": 1487,
+    "likes": 50,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "zodiac_deep",
+    "post_id": "18108104279130934",
+    "fetched_at": "2026-08-27T12:04:55.881420"
+  },
+  {
+    "views": 1744,
+    "likes": 96,
+    "replies": 26,
+    "reposts": 1,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "kotodama_rank",
+    "post_id": "17942320473300974",
+    "fetched_at": "2026-08-27T12:04:56.146712"
+  },
+  {
+    "views": 217,
+    "likes": 6,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "zodiac_ranking",
+    "post_id": "18489431647099679",
+    "fetched_at": "2026-08-27T12:04:56.430992"
   }
 ]
