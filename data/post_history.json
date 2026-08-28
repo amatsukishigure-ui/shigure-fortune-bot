@@ -16258,7 +16258,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
-    "recorded_at": "2026-08-27T18:14:08.137743"
+    "recorded_at": "2026-08-27T18:14:08.137743",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♈ 牡羊座さん、聞いてほしい。\n\n「頑張ってるのに、なんで私だけ変わらないんだろう」って、声に出せないまま今日も仕事に行った——そんな経験、ない？\n\nデスクの向きが、気の流れを止めてることがある。\n\n龍脈命術では、どの方角に向かって仕事するかで、同じ努力の「通り方」が変わると見る。頑張り方より先に、向きを整える。\n\n今日できることを一つ。仕事するとき、できれば東〜東南を向いてみて。夏の終わりの今、木の気が活発で、牡羊座の行動力と相性がいい時期だよ。\n\n生年月日か星座をコメントに書いてくれたら、今のあなたの吉方位を龍脈命術の視点から返信するよ。できる限り全員に返信する 🔮\n\n心当たりある？\n\n#占い #仕事運 #運気アップ",
@@ -16420,5 +16421,25 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/gemini.jpg",
     "recorded_at": "2026-08-28T15:20:00.073085"
+  },
+  {
+    "text": "♉牡牛座の方へ。\n\n「このままでいいのかな」が口癖になって、もう何年も経っていない？\n\nプライドがあるから「助けて」とも言えない。でも現状は変わらない。そのループ、意志の弱さじゃなく、気の向きがズレているだけだよ。\n\n龍脈命術は「当てる」占いじゃなく、「動ける」占い。方位を整えると、同じ努力の効き方が変わる。\n\n今夜、生年月日か星座をコメントに書いてくれたら、今のあなたの吉方位を返信するよ。できる限り全員に返信する。気軽に書いてみて 🔮\n\n占術家 時雨\n\n#占い #吉方位 #開運",
+    "x_text": "♉牡牛座の方へ。\n\n「このままでいいのかな」が口癖になって、もう何年も経っていない？\n\nプライドがあるから「助けて」とも言えない。でも現状は変わらない。そのループ、意志の弱さじゃなく、気の向きがズレているだけだよ。\n\n龍脈命術は「当てる」占いじゃなく、「動ける」占い。方位を整えると、同じ努力の効き方が変わる。\n\n今夜、生年月日か星座をコメントに書いてくれたら、今のあなたの吉方位を返信するよ。できる限り全員に返信する。気軽に書いてみて 🔮\n\n占術家 時雨\n\n#占い #時雨 #龍脈命術 #開運",
+    "theme": "時雨の世界観/占いへの想い",
+    "pattern_id": "reply_magnet",
+    "quality_score": 7.9,
+    "attempts": 1,
+    "x_eligible": false,
+    "expires_on": "2026-08-29",
+    "persona_id": "p006",
+    "zodiac_boost": "♉牡牛座",
+    "pending_at": "2026-08-15T03:51:44.097635",
+    "queued_at": "2026-08-15T03:51:54.465246",
+    "threads_post_id": "17933204016371549",
+    "posted_at": "2026-08-28T21:44:58.978106+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
+    "recorded_at": "2026-08-28T21:44:58.986709"
   }
 ]
