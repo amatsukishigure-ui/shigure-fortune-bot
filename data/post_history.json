@@ -16532,5 +16532,25 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-08-29T02:07:00.591929"
+  },
+  {
+    "text": "♓魚座の方へ。\n\n「仕事を辞めたい」と「ここで辞めたら負け」が、毎日戦ってる。\n\nそのしんどさ、意志が弱いんじゃない。\n龍脈命術で見ると、向かう方向がズレているとき、体が先にサインを出す。\n頭より先に、気が限界を知っている。\n\n転機の前には決まって「今の場所が窮屈に感じる」が来る。\nそれは弱さじゃなく、動き出す前の予兆だよ。\n\n「窮屈な感じ、今ある」か「まだそこまで来てない」か、コメントで教えて。\n\n#占い #仕事運 #運気アップ",
+    "x_text": "♓魚座の方へ。\n\n「仕事を辞めたい」と「ここで辞めたら負け」が、毎日戦ってる。\n\nそのしんどさ、意志が弱いんじゃない。\n龍脈命術で見ると、向かう方向がズレているとき、体が先にサインを出す。\n頭より先に、気が限界を知っている。\n\n転機の前には決まって「今の場所が窮屈に感じる」が来る。\nそれは弱さじゃなく、動き出す前の予兆だよ。\n\n「窮屈な感じ、今ある」か「まだそこまで来てない」か、コメントで教えて。\n\n#占い #時雨 #龍脈命術 #開運",
+    "theme": "転機のサイン/転機が近い時に起きること",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.9,
+    "attempts": 1,
+    "x_eligible": true,
+    "expires_on": "2026-09-12",
+    "persona_id": "p017",
+    "zodiac_boost": "♓魚座",
+    "pending_at": "2026-08-28T23:00:37.753676",
+    "queued_at": "2026-08-28T23:01:07.985707",
+    "threads_post_id": "18384642832230250",
+    "posted_at": "2026-08-29T03:01:06.020316+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/pisces.jpg",
+    "recorded_at": "2026-08-29T03:01:06.030796"
   }
 ]
