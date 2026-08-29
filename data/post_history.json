@@ -16298,7 +16298,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-08-28T00:49:00.156477"
+    "recorded_at": "2026-08-28T00:49:00.156477",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♐射手座さん、鑑定後に「引っ越したら人生変わった」と連絡が来た。\n\n#占い #金運 #開運",
@@ -16512,5 +16513,24 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
     "recorded_at": "2026-08-29T01:01:29.912775"
+  },
+  {
+    "text": "♈♉♊♋♌♍♎♏♐♑♒♓\n気づいた方だけ受け取ってください。\n\n【引き寄せ・感謝の言霊ランキング｜感謝が気を動かす言葉】\n\n🥇第1位　おひつじ座\n「感謝の向きを整えると、気が前に動き出す」\n\n🥈第2位　さそり座\n「受け取った分だけ、龍脈の流れが太くなる」\n\n🥉第3位　みずがめ座\n「気の扉は、ありがとうの意識が開く」\n\n🏅第4位　てんびん座\n「感謝の方向を変えると、流れの質が変わる」\n\n第5位　ふたご座\n「気づいた数だけ、受け取れるものが増えていく」\n\n第6位　かに座\n「今あるものへ向き直すと、気が温かく満ちてくる」\n\n第7位　うお座\n「感謝は、滞った気を溶かしていく力を持つ」\n\n第8位　やぎ座\n「積み上げを認めた瞬間、次の流れの扉が開く」\n\n第9位　おとめ座\n「丁寧に気づく人のところへ、運気が集まってくる」\n\n第10位　おうし座\n「受け取り上手な人の気は、静かに豊かになっていく」\n\n第11位　いて座\n「感謝の方位を持つ人に、龍脈の気は向かっていく」\n\n第12位　しし座\n「与えた気が巡って、別の扉から戻ってくる」\n\n#占い #星座占い #運勢",
+    "x_text": "♈♉♊♋♌♍♎♏♐♑♒♓\n\n他の星座はThreadsで👇\n\n#占い #時雨 #引き寄せ #龍脈命術",
+    "theme": "引き寄せ/感謝と運気の関係",
+    "pattern_id": "kotodama_rank",
+    "quality_score": 7.2,
+    "attempts": 1,
+    "x_eligible": false,
+    "expires_on": "2026-09-12",
+    "persona_id": "p017",
+    "pending_at": "2026-08-29T02:06:12.178349",
+    "queued_at": "2026-08-29T02:06:52.432154",
+    "threads_post_id": "18122239456868287",
+    "posted_at": "2026-08-29T02:07:00.581356+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-08-29T02:07:00.591929"
   }
 ]
