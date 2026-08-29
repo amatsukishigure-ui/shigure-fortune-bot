@@ -16341,7 +16341,8 @@
     "posted_at": "2026-08-28T03:38:11.954580+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-28T03:38:11.965702"
+    "recorded_at": "2026-08-28T03:38:11.965702",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♑山羊座の方へ。\n\n「部屋にいると、なんか重くてため息が出る」\n\nそれ、気の滞りが起きているサインかもしれない。\n\n龍脈命術では、家の中の植物の置き場所で気の流れが変わると読む。方位を整えると、同じ場所にいても気持ちの重さが変わってくる。\n\n今日、観葉植物を少し動かしてみて。まず一鉢だけ、東か南東の窓辺へ。\n\n生年月日か星座をコメントに書いてくれたら、今のあなたの吉方位と気の整え方を返信するよ。できる限り全員に返信する 🌿\n\n#占い #吉方位 #開運",
@@ -16361,7 +16362,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/capricorn.jpg",
-    "recorded_at": "2026-08-28T06:01:01.751319"
+    "recorded_at": "2026-08-28T06:01:01.751319",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♐射手座で、「部屋の気が重い気がする」が頭にある人以外は、読まなくていい。\n\n#占い #吉方位 #開運",
@@ -16592,5 +16594,28 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-08-29T06:01:01.768785"
+  },
+  {
+    "text": "♓魚座の人は、動けないんじゃない。向きが合っていないだけ。\n\n#占い #吉方位 #龍脈命術",
+    "thread_posts": [
+      "♓魚座の人は、動けないんじゃない。向きが合っていないだけ。\n\n#占い #吉方位 #龍脈命術",
+      "♓魚座の方からよく聞く言葉がある。\n「頑張っているのに、なぜか空回りする」\n\n感受性が高く、周りの気を吸いやすい魚座は、方位のズレが一番体に出やすい。\n案件を増やそうと動いても結果が出ないとき、努力の前に整えるべきものがある。\n\n龍脈命術は「当てる」より「動かす」占い。向きを変えると、同じ行動の効き方が変わる。\n\nまず話したい → LINE https://lin.ee/TJg5dru\nすぐ試したい → Coconala https://coconala.com/services/4292937?ref=threads\n\n#龍脈命術 #魚座 #方位"
+    ],
+    "theme": "季節・天文と方位/春分・秋分と方位",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♓魚座",
+    "expires_on": "2026-09-12",
+    "pending_at": "2026-08-29T08:26:41.903482",
+    "queued_at": "2026-08-29T08:27:41.423581",
+    "threads_post_id": "18030704027665809",
+    "posted_at": "2026-08-29T08:28:04.444744+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/pisces.jpg",
+    "recorded_at": "2026-08-29T08:28:04.453973"
   }
 ]

@@ -9361,5 +9361,27 @@
     "pattern_id": "client_voice",
     "post_id": "18131457175642977",
     "fetched_at": "2026-08-29T03:37:57.994217"
+  },
+  {
+    "views": 71,
+    "likes": 2,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "zodiac_target",
+    "post_id": "18112829533977069",
+    "fetched_at": "2026-08-29T08:21:43.215856"
+  },
+  {
+    "views": 139,
+    "likes": 2,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "reply_magnet",
+    "post_id": "18006554165979886",
+    "fetched_at": "2026-08-29T08:21:43.441702"
   }
 ]
