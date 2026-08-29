@@ -16427,7 +16427,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/gemini.jpg",
-    "recorded_at": "2026-08-28T15:20:00.073085"
+    "recorded_at": "2026-08-28T15:20:00.073085",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♉牡牛座の方へ。\n\n「このままでいいのかな」が口癖になって、もう何年も経っていない？\n\nプライドがあるから「助けて」とも言えない。でも現状は変わらない。そのループ、意志の弱さじゃなく、気の向きがズレているだけだよ。\n\n龍脈命術は「当てる」占いじゃなく、「動ける」占い。方位を整えると、同じ努力の効き方が変わる。\n\n今夜、生年月日か星座をコメントに書いてくれたら、今のあなたの吉方位を返信するよ。できる限り全員に返信する。気軽に書いてみて 🔮\n\n占術家 時雨\n\n#占い #吉方位 #開運",
@@ -16700,5 +16701,25 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/pisces.jpg",
     "recorded_at": "2026-08-29T13:04:27.976360"
+  },
+  {
+    "text": "♏蠍座が、今いちばん「見てほしい」と感じているのは実力じゃなくて、正当な評価だと思う。\n\n頑張っているのに5年変わらないのは、能力の問題じゃない。\n龍脈命術でいえば「向いている方向」の問題だ。\n\n鑑定を受けた人がよく言う。「占いなのに、動けた」と。\n\n今の詰まり感、気の流れから整えてみない？\nプロフィールのリンクから鑑定メニューが見られるよ。\n\n「気になった」か「まだ迷ってる」か、コメントで教えて。\n\n#占い #龍脈命術",
+    "x_text": "♏蠍座が、今いちばん「見てほしい」と感じているのは実力じゃなくて、正当な評価だと思う。\n\n頑張っているのに5年変わらないのは、能力の問題じゃない。\n龍脈命術でいえば「向いている方向」の問題だ。\n\n鑑定を受けた人がよく言う。「占いなのに、動けた」と。\n\n今の詰まり感、気の流れから整えてみない？\nプロフィールのリンクから鑑定メニューが見られるよ。\n\n「気になった」か「まだ迷ってる」か、コメントで教えて。\n\n#占い #時雨 #龍脈命術 #開運",
+    "theme": "メニュー誘導/鑑定メニュー案内",
+    "pattern_id": "ichi_gon",
+    "quality_score": 7.9,
+    "attempts": 1,
+    "x_eligible": true,
+    "expires_on": "2026-09-13",
+    "persona_id": "p004",
+    "zodiac_boost": "♏蠍座",
+    "pending_at": "2026-08-29T21:40:52.055867",
+    "queued_at": "2026-08-29T21:41:47.086461",
+    "threads_post_id": "17979261770897953",
+    "posted_at": "2026-08-29T21:41:57.385906+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/scorpio.jpg",
+    "recorded_at": "2026-08-29T21:41:57.396134"
   }
 ]
