@@ -16733,7 +16733,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/scorpio.jpg",
-    "recorded_at": "2026-08-29T21:41:57.396134"
+    "recorded_at": "2026-08-29T21:41:57.396134",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♑山羊座で、今「このまま続けるべきか」が頭から離れない人以外は、読まなくていい。\n\n#占い #星座占い #運勢",
@@ -16951,5 +16952,22 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-08-30T19:03:00.632910"
+  },
+  {
+    "text": "♓魚座さん、今日からの3日間だけ読んでほしい。\n\n龍脈命術で見ると、今の魚座には「感覚が戻ってくる気」が流れている。ずっと麻痺していたものが、少しずつ溶け始めるタイミング。頑張りすぎて感情ごと閉じてしまっていた人ほど、この流れを使ってほしい。\n\n・東方向 → 朝、東側のカーテンを開けて光を入れるだけでいい。眠っていた五感が目を覚ます方位。特別なことは何もしなくていい。\n\nただし、今日からの3日間だけ避けてほしい方位がある。\n\n#占い #吉方位 #龍脈命術",
+    "theme": "方位の基礎知識/方位と五行（木火土金水）",
+    "pattern_id": "zodiac_deep",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "x_eligible": false,
+    "is_repost": true,
+    "original_post_id": "18138901339510320",
+    "pending_at": "2026-08-24T22:39:21.595840",
+    "queued_at": "2026-08-24T22:40:45.020496",
+    "threads_post_id": "17995360550818153",
+    "posted_at": "2026-08-30T21:58:00.457681+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-08-30T21:58:00.467871"
   }
 ]
