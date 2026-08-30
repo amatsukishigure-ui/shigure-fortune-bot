@@ -9526,5 +9526,27 @@
     "pattern_id": "caligula",
     "post_id": "17942235015292735",
     "fetched_at": "2026-08-30T09:07:27.922419"
+  },
+  {
+    "views": 333,
+    "likes": 26,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "zodiac_target",
+    "post_id": "17990123646044295",
+    "fetched_at": "2026-08-30T12:37:29.371613"
+  },
+  {
+    "views": 180,
+    "likes": 13,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "zodiac_ranking",
+    "post_id": "17908266840523811",
+    "fetched_at": "2026-08-30T12:37:29.607874"
   }
 ]
