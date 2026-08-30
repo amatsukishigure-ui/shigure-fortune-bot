@@ -9416,5 +9416,27 @@
     "pattern_id": "before_sleep",
     "post_id": "18115210730062339",
     "fetched_at": "2026-08-29T21:34:22.295746"
+  },
+  {
+    "views": 71,
+    "likes": 3,
+    "replies": 3,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "reply_magnet",
+    "post_id": "17933204016371549",
+    "fetched_at": "2026-08-30T00:05:03.637738"
+  },
+  {
+    "views": 122,
+    "likes": 1,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "client_voice",
+    "post_id": "17876268969545330",
+    "fetched_at": "2026-08-30T00:05:04.034107"
   }
 ]

@@ -16448,7 +16448,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
-    "recorded_at": "2026-08-28T21:44:58.986709"
+    "recorded_at": "2026-08-28T21:44:58.986709",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♈牡羊座さん、売上が戻らない原因、努力じゃなくて「向き」かもしれない。\n\n#占い #金運 #開運",
@@ -16470,7 +16471,8 @@
     "posted_at": "2026-08-28T23:01:32.577960+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-08-28T23:01:32.588165"
+    "recorded_at": "2026-08-28T23:01:32.588165",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♍乙女座で、「もう遅いのかも」という気持ちと「でも諦めたくない」が毎日ぐるぐるしている人以外は、読まなくていい。\n\n#占い #龍脈命術",
@@ -16721,5 +16723,29 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/scorpio.jpg",
     "recorded_at": "2026-08-29T21:41:57.396134"
+  },
+  {
+    "text": "♑山羊座で、今「このまま続けるべきか」が頭から離れない人以外は、読まなくていい。\n\n#占い #星座占い #運勢",
+    "thread_posts": [
+      "♑山羊座で、今「このまま続けるべきか」が頭から離れない人以外は、読まなくていい。\n\n#占い #星座占い #運勢",
+      "龍脈命術的に見ると、今の時期は「秋分」に向かう気の切り替わり目。山羊座はもともと意志が強い分、方位のズレが出ているときほど「我慢」と「停滞」の区別がつきにくくなる。頑張り続けているのに結果が出ないなら、向きが合っていない可能性が高い。今週中に一度、北東方向へ短い外出を試してみて。気の流れに乗り直すきっかけになる。\n\n続けるべきか、いったん立ち止まるべきか。どっちに近い？ #占い #龍脈命術 #山羊座",
+      "「龍脈命術」という名前、実は由来があります。\n\n風水でいう龍脈＝気が流れる道。土地に流れがあるように、人にも生まれ持った〝流れ〟がある。その流れを読み解いて、今どこへ向かえば気が味方するかを示す占いです。\n\n自己紹介と一緒に、無料noteにまとめました🔮\nhttps://note.com/shigure_fortune/n/nab07df599219\n\nこれから龍脈命術の話をもっと発信していく予定なので、noteのフォローで応援していただけると励みになります✨\n\n#占い #星座占い #運勢"
+    ],
+    "theme": "星座占い/来週の運気予報",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "zodiac_boost": "♋蟹座",
+    "expires_on": "2026-09-13",
+    "pending_at": "2026-08-30T00:11:30.931776",
+    "queued_at": "2026-08-30T00:11:42.972276",
+    "threads_post_id": "18137931172523955",
+    "posted_at": "2026-08-30T00:12:22.741776+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-08-30T00:12:22.752855"
   }
 ]
