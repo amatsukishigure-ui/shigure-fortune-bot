@@ -76,25 +76,25 @@ jobs:
             from core.state import clean_expired_queue; clean_expired_queue()
             " 2>/dev/null || true
 
-              # キュー＋承認待ちが10件以下なら補充（daily実行）
-              # ただしキャップ: total>25 なら絶対に補充しない（積み上がり防止）
+              # キュー＋承認待ちが20件以下なら補充（daily実行）
+              # ただしキャップ: total>40 なら絶対に補充しない（積み上がり防止）
               NEED_REFILL=$(python -c "
             import json, pathlib
             q = json.loads(pathlib.Path('data/post_queue.json').read_text()) if pathlib.Path('data/post_queue.json').exists() else []
             p = json.loads(pathlib.Path('data/pending_posts.json').read_text()) if pathlib.Path('data/pending_posts.json').exists() else []
             total = len(q) + len(p)
-            print('yes' if total <= 10 else 'no')
+            print('yes' if total <= 20 else 'no')
             " 2>/dev/null || echo "yes")
 
-              # キューキャップ: 25件超なら補充スキップ（異常蓄積の安全弁）
+              # キューキャップ: 40件超なら補充スキップ（異常蓄積の安全弁）
               QUEUE_TOTAL=$(python -c "
             import json, pathlib
             q = json.loads(pathlib.Path('data/post_queue.json').read_text()) if pathlib.Path('data/post_queue.json').exists() else []
             p = json.loads(pathlib.Path('data/pending_posts.json').read_text()) if pathlib.Path('data/pending_posts.json').exists() else []
             print(len(q) + len(p))
             " 2>/dev/null || echo "0")
-              if [ "$QUEUE_TOTAL" -gt 25 ]; then
-                echo "⚠️ Queue cap hit (${QUEUE_TOTAL} items > 25) — skipping daily"
+              if [ "$QUEUE_TOTAL" -gt 40 ]; then
+                echo "⚠️ Queue cap hit (${QUEUE_TOTAL} items > 40) — skipping daily"
                 NEED_REFILL="no"
               fi
 

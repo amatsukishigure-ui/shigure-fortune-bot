@@ -322,7 +322,7 @@ _SELF_REPLY_VARIANTS = [
     "質問・相談はいつでも 🌿\n気軽にLINEへ → https://lin.ee/TJg5dru",
     "龍脈命術、気になる方へ ⭐\n▷ まずLINEで話してみて https://lin.ee/TJg5dru",
     "コメントに質問があれば返信するよ 🔮",
-    "鑑定に興味が出てきた方へ 🐉\n▷ 1,000円モニターで試せます https://coconala.com/services/4292937?ref=threads",
+    "鑑定に興味が出てきた方へ 🐉\n▷ 3,000円モニターで試せます https://coconala.com/services/4292937?ref=threads",
     "気の流れ、一緒に整えていきましょう 🌿\nコメントで気軽に声をかけてね",
 ]
 
