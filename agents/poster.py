@@ -432,6 +432,28 @@ def run() -> dict:
         print("⏸ ポスター: menu_guide除外後にキューが空です")
         return {"posted": False, "reason": "Queue empty after menu_guide skip"}
 
+    # 同パターン連続投稿スキップ（最大3連続まで、超えたらキュー末尾へ戻す）
+    # zodiac_deep は同パターン内でも星座が同じ場合は連続2回まで
+    _MAX_CONSECUTIVE = 3
+    _recent_sorted = sorted(
+        [h for h in history if h.get("posted_at")],
+        key=lambda x: x["posted_at"], reverse=True
+    )
+    _consecutive_same = 0
+    for _ph in _recent_sorted[:_MAX_CONSECUTIVE]:
+        if _ph.get("pattern_id") == post.get("pattern_id"):
+            _consecutive_same += 1
+        else:
+            break
+    if _consecutive_same >= _MAX_CONSECUTIVE:
+        print(f"⏭ 同パターン{_consecutive_same}連続({post.get('pattern_id')})→キュー末尾へ戻す")
+        from core.state import load_queue, save_queue as _sq2
+        _q2 = load_queue(); _q2.append(post); _sq2(_q2)
+        post = dequeue_post()
+    if not post:
+        print("⏸ ポスター: 連続スキップ後にキューが空です")
+        return {"posted": False, "reason": "Queue empty after consecutive skip"}
+
     # 直近14日以内に同一テキストを投稿済みならスキップ（git push 失敗による queue 未保存の重複投稿を防ぐ）
     # 重複が連続してもブロックされないよう最大5件まで次の投稿を試す
     _cutoff = (datetime.now(timezone.utc) - timedelta(days=14)).isoformat()
