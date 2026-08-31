@@ -77,7 +77,7 @@ jobs:
             " 2>/dev/null || true
 
               # キュー＋承認待ちが20件以下なら補充（daily実行）
-              # ただしキャップ: total>40 なら絶対に補充しない（積み上がり防止）
+              # ただしキャップ: total>40 なら補充しない（積み上がり防止）
               NEED_REFILL=$(python -c "
             import json, pathlib
             q = json.loads(pathlib.Path('data/post_queue.json').read_text()) if pathlib.Path('data/post_queue.json').exists() else []
@@ -98,11 +98,33 @@ jobs:
                 NEED_REFILL="no"
               fi
 
+              # kotodama_rank が0件ならキャップ内でも強制補充（top performer欠如防止）
+              KR_COUNT=$(python -c "
+            import json, pathlib
+            q = json.loads(pathlib.Path('data/post_queue.json').read_text()) if pathlib.Path('data/post_queue.json').exists() else []
+            print(sum(1 for x in q if x.get('pattern_id') == 'kotodama_rank'))
+            " 2>/dev/null || echo "1")
+              if [ "$KR_COUNT" = "0" ] && [ "$QUEUE_TOTAL" -le 40 ]; then
+                echo "📌 kotodama_rank=0 — forcing daily to replenish top performer"
+                NEED_REFILL="yes"
+              fi
+
               if [ "$NEED_REFILL" = "yes" ]; then
                 echo "Queue + pending low — running daily to refill"
                 python main.py daily
-                echo "Auto-approving all pending posts"
-                python main.py approve
+                # approve: キャップ(40件)を超えない範囲で品質スコア上位から承認
+                python -c "
+            import sys, json, pathlib; sys.path.insert(0,'.')
+            from core.state import load_pending, approve_pending, load_queue
+            q = load_queue(); pending = load_pending()
+            headroom = max(0, 40 - len(q))
+            if headroom == 0:
+                print('⚠️ キュー上限のため承認スキップ')
+            else:
+                idx = sorted(range(len(pending)), key=lambda i: pending[i].get('quality_score', 0), reverse=True)
+                approve_pending(idx[:headroom])
+                print(f'✅ {min(headroom, len(pending))}件承認（headroom={headroom}）')
+            "
               fi
 
               echo "Running post"
