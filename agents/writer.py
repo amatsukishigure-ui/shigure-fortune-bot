@@ -2306,9 +2306,13 @@ def run(batch_size: int = 5) -> dict:
                 first_draft = _ensure_zodiac(first_draft, _zb_single)
 
             # 品質チェック
+            # 実エンゲージ実績が高いがランキング形式で「具体性」が低評価されるパターンは閾値を緩和
+            _HIGH_ENG_PIDS = {"kotodama_rank", "caligula", "lucky_combo", "zodiac_ranking"}
+            _q_threshold = 6.0 if pattern.get("id") in _HIGH_ENG_PIDS else None
             result = score_with_retry(
                 first_draft, knowledge["profile"],
                 rewrite_func=rewrite_func, max_retries=MAX_QUALITY_RETRIES,
+                threshold=_q_threshold,
             )
             if not result["accepted"]:
                 rejected += 1

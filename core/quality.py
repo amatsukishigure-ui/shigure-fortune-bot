@@ -113,6 +113,7 @@ def score_with_retry(
     account_profile: dict,
     rewrite_func=None,
     max_retries: int = 2,
+    threshold: float = None,
 ) -> dict:
     """
     品質スコアが閾値未満なら rewrite_func で書き直してリトライする。
@@ -120,6 +121,7 @@ def score_with_retry(
     Returns:
         {"post": str, "score_result": dict, "attempts": int, "accepted": bool}
     """
+    _threshold = threshold if threshold is not None else QUALITY_THRESHOLD
     current_post = post_text
     attempts = 0
 
@@ -127,6 +129,7 @@ def score_with_retry(
         attempts = attempt + 1
         try:
             score_result = score_post(current_post, account_profile)
+            score_result["passed"] = score_result["average"] >= _threshold
         except (ValueError, json.JSONDecodeError):
             if attempt < max_retries:
                 continue

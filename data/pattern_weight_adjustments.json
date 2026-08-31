@@ -18,6 +18,9 @@
     "before_sleep": 0.5,
     "zodiac_target": 0.777,
     "harm_revelation": 1.146,
-    "reply_magnet": 0.5
+    "reply_magnet": 0.5,
+    "empathy_thread": 0.5,
+    "hesitation_break": 0.5,
+    "list": 0.5
   }
 }
