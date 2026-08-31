@@ -412,6 +412,26 @@ def run() -> dict:
         print("⏸ ポスター: キューが空です")
         return {"posted": False, "reason": "Queue empty"}
 
+    # menu_guide 週次上限: 週2件まで（広告連続投稿防止）
+    _MENU_GUIDE_WEEKLY_LIMIT = 2
+    if post and post.get("pattern_id") == "menu_guide":
+        _week_start = (_jst_now - timedelta(days=_jst_now.weekday())).date().isoformat()
+        _menu_this_week = sum(
+            1 for h in history
+            if h.get("pattern_id") == "menu_guide"
+            and h.get("posted_at", "")[:10] >= _week_start
+        )
+        if _menu_this_week >= _MENU_GUIDE_WEEKLY_LIMIT:
+            print(f"⏭ menu_guide 週次上限({_menu_this_week}/{_MENU_GUIDE_WEEKLY_LIMIT}件)→キュー末尾へ戻す")
+            from core.state import load_queue, save_queue as _sq
+            _q = load_queue()
+            _q.append(post)
+            _sq(_q)
+            post = dequeue_post()
+    if not post:
+        print("⏸ ポスター: menu_guide除外後にキューが空です")
+        return {"posted": False, "reason": "Queue empty after menu_guide skip"}
+
     # 直近14日以内に同一テキストを投稿済みならスキップ（git push 失敗による queue 未保存の重複投稿を防ぐ）
     # 重複が連続してもブロックされないよう最大5件まで次の投稿を試す
     _cutoff = (datetime.now(timezone.utc) - timedelta(days=14)).isoformat()

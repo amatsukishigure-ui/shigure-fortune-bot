@@ -162,5 +162,13 @@ jobs:
           git config user.email "bot@shigure-fortune.local"
           git add data/
           git diff --cached --quiet || git commit -m "bot: state update $(date -u +'%Y-%m-%d %H:%M') UTC"
-          # push失敗時はリモートの変更を取り込んでリトライ（状態未保存→重複投稿を防ぐ）
-          git push || (git fetch origin && git merge origin/master --no-edit -m "bot: merge remote state" && git push)
+          # push失敗時: fetch → merge(-X theirs でコンフリクト解消) → 再push を最大3回
+          # -X theirs: queue/pending はリモート優先（重複投稿防止）; history はappend-onlyなので競合しにくい
+          PUSH_OK=false
+          for _i in 1 2 3; do
+            git push && PUSH_OK=true && break
+            echo "⚠️ push失敗($_i/3) — fetch & merge して再試行"
+            git fetch origin master
+            git merge -X theirs origin/master --no-edit -m "bot: re-merge state (attempt $_i)" || true
+          done
+          $PUSH_OK || echo "🚨 state push 3回失敗 — 次回実行で重複投稿が起きる可能性あり"
