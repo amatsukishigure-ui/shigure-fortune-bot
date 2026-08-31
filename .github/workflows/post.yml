@@ -2,15 +2,15 @@ name: shigure-auto-post
 
 on:
   schedule:
-    # POST_SLOTS = [7, 11, 12, 16, 21, 22] に対応（JST = UTC+9）
-    # 2026-07-12: 18時(ENG0.98%)→16時(ENG4.0%, 22likes/post)に変更
-    # 2026-08-15: 09時(avg_eng=5.4)→11時(avg_eng=15.9)に変更（config.pyとの同期）
-    - cron: '0 22 * * *'  #  07:00 JST (UTC22) — 朝ピーク
-    - cron: '0 2 * * *'   #  11:00 JST (UTC02) — 朝の落ち着き（旧09時枠: avg5.4→11時: avg15.9）
-    - cron: '0 3 * * *'   #  12:00 JST (UTC03) — 昼ピーク
-    - cron: '0 7 * * *'   #  16:00 JST (UTC07) — 夕方前ピーク（旧18時枠より高ENG）
-    - cron: '0 12 * * *'  #  21:00 JST (UTC12) — 就寝前ピーク
-    - cron: '0 13 * * *'  #  22:00 JST (UTC13) — before_sleep専用枠
+    # POST_SLOTS = [7, 11, 16, 18, 21, 0] に対応（JST = UTC+9）
+    # 2026-08-27: 12時(avg9.4, 11時と1h差重複)→18時(avg23.0, n=78)に変更
+    # 2026-08-27: 22時(avg17.2, 21時と1h差重複)→00時(avg17.2, 21時との間隔確保)に変更
+    - cron: '0 22 * * *'  #  07:00 JST (UTC22) — 朝枠 avg14.5
+    - cron: '0 2 * * *'   #  11:00 JST (UTC02) — 午前枠 avg19.0
+    - cron: '0 7 * * *'   #  16:00 JST (UTC07) — 夕方前ピーク avg26.3（最高）
+    - cron: '0 9 * * *'   #  18:00 JST (UTC09) — 夕方枠 avg23.0（旧12時枠を移動）
+    - cron: '0 12 * * *'  #  21:00 JST (UTC12) — 夜枠 avg17.5
+    - cron: '0 15 * * *'  #  00:00 JST (UTC15) — 深夜枠 avg17.2（旧22時枠を移動）
     # 深夜返信専用スロット
     - cron: '0 16 * * *'  #  01:00 JST (UTC16) — reply only
     - cron: '0 19 * * *'  #  04:00 JST (UTC19) — reply only

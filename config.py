@@ -42,8 +42,10 @@ SIMILARITY_HISTORY_SIZE = 100      # 比較対象の過去投稿数
 # Posting schedule
 DAILY_POST_LIMIT = 20
 MIN_POST_INTERVAL_HOURS = 0.5  # 1h→0.5h: 夜帯1時間おきcronでもスキップされないよう緩和
-POST_SLOTS = [7, 11, 12, 16, 21, 22]  # 6スロット/日（2026-08-05: 9→11に変更。hourly_stats n=251: 11時avg15.9L/6.52% vs 9時avg5.2L/3.69%）
-# 07=15.2L / 11=15.9L(新) / 12=12.9L / 16=22.0L / 21=10.4L / 22=16.6L（avg_likes実績）
+POST_SLOTS = [7, 11, 16, 18, 21, 0]  # 6スロット/日（2026-08-27: 12→18時, 22→00時に変更）
+# 07=14.5 / 11=19.0 / 16=26.3(最高) / 18=23.0(新) / 21=17.5 / 00=17.2(新)（avg_eng実績）
+# 旧12時(UTC03)は11時(UTC02)と1時間差で実投稿が重複していた → 18時(UTC09)に移動
+# 旧22時(UTC13)は21時(UTC12)と1時間差で実投稿が重複していた → 00時(UTC15)に移動
 
 # Pattern rotation
 MAX_SAME_PATTERN_CONSECUTIVE = 3   # 同パターン連続上限
