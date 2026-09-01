@@ -17020,7 +17020,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/scorpio.jpg",
-    "recorded_at": "2026-08-31T03:01:42.400382"
+    "recorded_at": "2026-08-31T03:01:42.400382",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♊ 双子座で、好きな人との縁がどこかすれ違う気がしている人へ。\n\n#占い #龍脈命術",
@@ -17038,7 +17039,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/general.jpg",
-    "recorded_at": "2026-08-31T06:01:09.579113"
+    "recorded_at": "2026-08-31T06:01:09.579113",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♌獅子座の方へ。\n鑑定の場でしか言わないことを、今夜一つだけここに書く。\n\n恋愛で「動けない」「縁が来ない」と感じているとき、多くの人が心や気持ちの問題だと思っている。\n違う。原因は──方位にある。\n\n#占い #恋愛運 #縁",
@@ -17123,5 +17125,25 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-09-01T06:01:01.237209"
+  },
+  {
+    "text": "♊双子座の方へ。\n\n財布、どこに置いてる？\n\n龍脈命術では、財布を「床に直置き」するのは気の格を下げる行為として読む。気は高い場所に向かう性質があり、地面に近いほど淀んだ気と混ざりやすい。\n\n今日やること1つ。\n財布を、棚やトレーの上など「腰より高い定位置」に置く。\nそれだけで財の気の流れが変わる。\n\n今の財布、床に置いてない？コメントで教えて。\n\n#占い #金運 #開運",
+    "x_text": "♊双子座の方へ。\n\n財布、どこに置いてる？\n\n龍脈命術では、財布を「床に直置き」するのは気の格を下げる行為として読む。気は高い場所に向かう性質があり、地面に近いほど淀んだ気と混ざりやすい。\n\n今日やること1つ。\n財布を、棚やトレーの上など「腰より高い定位置」に置く。\nそれだけで財の気の流れが変わる。\n\n今の財布、床に置いてない？コメントで教えて。\n\n#占い #時雨 #吉方位 #風水",
+    "theme": "吉方位・風水/金運アップの吉方位",
+    "pattern_id": "fuusui_tip",
+    "quality_score": 7.8,
+    "attempts": 1,
+    "x_eligible": true,
+    "expires_on": "2026-09-08",
+    "persona_id": "p019",
+    "zodiac_boost": "♊双子座",
+    "pending_at": "2026-08-25T02:56:09.889268",
+    "queued_at": "2026-08-25T02:56:56.464916",
+    "threads_post_id": "18620884759043776",
+    "posted_at": "2026-09-01T06:58:10.520366+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/gemini.jpg",
+    "recorded_at": "2026-09-01T06:58:10.530609"
   }
 ]
