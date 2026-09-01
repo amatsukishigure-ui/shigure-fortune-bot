@@ -52,24 +52,39 @@ def cmd_daily():
         print("⛔ 異常検知のため中断")
         return
 
-    print("\n📊 [2/5] フェッチャー: メトリクス取得（Threads・X）")
-    fetcher.run()
+    try:
+        print("\n📊 [2/5] フェッチャー: メトリクス取得（Threads・X）")
+        fetcher.run()
+    except Exception as _e:
+        print(f"  ⚠️ フェッチャーエラー（継続）: {_e}")
 
-    print("\n📈 [3/5] アナリスト: パフォーマンス分析")
-    analyst.run()
+    try:
+        print("\n📈 [3/5] アナリスト: パフォーマンス分析")
+        analyst.run()
+    except Exception as _e:
+        print(f"  ⚠️ アナリストエラー（継続）: {_e}")
 
-    print("\n🔍 [4/5] リサーチャー: ネタ収集（吉方位・風水・占い）")
-    researcher.run(max_themes=3)
+    try:
+        print("\n🔍 [4/5] リサーチャー: ネタ収集（吉方位・風水・占い）")
+        researcher.run(max_themes=3)
+    except Exception as _e:
+        print(f"  ⚠️ リサーチャーエラー（継続）: {_e}")
 
-    print("\n📡 [+] トラッカー: フォロワー数・時間帯統計を更新")
-    from agents import tracker
-    tracker.run()
+    try:
+        print("\n📡 [+] トラッカー: フォロワー数・時間帯統計を更新")
+        from agents import tracker
+        tracker.run()
+    except Exception as _e:
+        print(f"  ⚠️ トラッカーエラー（継続）: {_e}")
 
-    print("\n💬 [+] リプライヤー: コメント自動返信")
-    from agents import replier
-    r_result = replier.run()
-    if r_result["replied"] > 0:
-        print(f"   {r_result['replied']}件返信しました")
+    try:
+        print("\n💬 [+] リプライヤー: コメント自動返信")
+        from agents import replier
+        r_result = replier.run()
+        if r_result["replied"] > 0:
+            print(f"   {r_result['replied']}件返信しました")
+    except Exception as _e:
+        print(f"  ⚠️ リプライヤーエラー（継続）: {_e}")
 
     try:
         from agents import x_outreach
@@ -77,13 +92,16 @@ def cmd_daily():
         xo_result = x_outreach.run()
         if xo_result["replied"] > 0:
             print(f"   {xo_result['replied']}件リプライ（{xo_result['searched']}件検索）")
-    except ImportError:
+    except (ImportError, Exception):
         pass
 
     if datetime.now().weekday() in (0, 2, 4):  # 月・水・金（週3回）
-        print("\n♻️  [+] リポスター: 人気投稿の再掲（週3回）")
-        from agents import reposter
-        reposter.run()
+        try:
+            print("\n♻️  [+] リポスター: 人気投稿の再掲（週3回）")
+            from agents import reposter
+            reposter.run()
+        except Exception as _e:
+            print(f"  ⚠️ リポスターエラー（継続）: {_e}")
 
     print("\n✍️  [5/5] ライター: 投稿生成（時雨として）")
     result = writer.run(batch_size=8)

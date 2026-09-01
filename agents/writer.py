@@ -68,6 +68,7 @@ _ZODIAC_MARKS_STR = "♈♉♊♋♌♍♎♏♐♑♒♓"
 _ZODIAC_SELF_MANAGED_PIDS = frozenset({
     "zodiac_target", "caligula", "zodiac_deep", "zodiac_problem",
     "kotodama_rank", "lucky_combo", "zodiac_ranking",
+    "daily_energy", "caution_rank", "theme_luck",
 })
 
 
@@ -1622,6 +1623,146 @@ NG: 🔮 vs 🐉（どちらもブランドシンボルで対になっていな�
 200〜280字
 """
 
+    elif pattern_id == "daily_energy":
+        import random as _rnd_de
+        _de_frame = _rnd_de.choice(["今日", "今週", "この週末"])
+        _de_theme = _rnd_de.choice([
+            "気の流れが整いやすい", "気のエネルギーが集まりやすい",
+            "運気の向きが良い", "気の巡りが良好な", "方位的に動きやすい",
+        ])
+        _de_top1_candidates = [
+            ("いて座", "「遠くへ向かう気」が最大に活性化している。行動に迷いがない日。"),
+            ("さそり座", "深く潜る気が整っている。本質的なことに集中できる。"),
+            ("みずがめ座", "独自の流れが整う。周りに合わせなくていい日。"),
+            ("おひつじ座", "スタートの気が強い。何か始めると勢いがつく。"),
+            ("てんびん座", "受け取る気が整っている。待っていた返事が来やすい日。"),
+            ("やぎ座", "地に足がついた気の流れ。コツコツが最大の成果を生む。"),
+        ]
+        _de_top1_zodiac, _de_top1_desc = _rnd_de.choice(_de_top1_candidates)
+        pattern_extra = f"""
+## 今日の気の流れランキング型の追加ルール
+
+### 構成（必須）
+1. タイトル行（1行）: 「{_de_frame}、{_de_theme}星座 TOP5🔮」の形式
+2. ランキング本体（TOP5、各1〜2行）:
+   - 🥇1位　{_de_top1_zodiac}:「{_de_top1_desc}」← このフレーズを必ず使うこと
+   - 🥈2位〜🏅5位: 他の星座を龍脈命術の「気の状態」で1〜2行ずつ
+   - 各星座名の前に星座記号（♈〜♓）を付ける
+3. CTA（1行）: 「あなたの星座は入ってた？コメントで教えてね🌙」または類似表現
+
+### 龍脈命術の観点で書く
+- 「今日の気の流れ」は方位と星座の気の相性で決まるという観点
+- 各星座に「気の状態」（整っている・集まっている・乱れやすい等）を1文で
+- 「運がいい」という表現より「気の流れが〜」「方位的に〜」を優先
+
+### 文字数・トーン
+- 全体100〜180字（コンパクトが命）
+- 親しみやすい断言調。「〜だよ」「〜ね」可
+- URLなし
+
+### 禁止
+- 「今日だけ」「今夜限り」など期限ハック
+- 全12星座を書く（TOP5まで）
+"""
+
+    elif pattern_id == "caution_rank":
+        import random as _rnd_cr
+        _cr_period = _rnd_cr.choice(["今週", "この時期", "今月前半"])
+        _cr_theme = _rnd_cr.choice([
+            "気の流れが乱れやすい",
+            "停滞しやすい気の配置になっている",
+            "エネルギーが内向きになりすぎる",
+            "判断が鈍りやすい気の状態",
+        ])
+        _cr_closing_variants = [
+            "気が乱れているときこそ、方位を整えるチャンス。乱れを感じたら動き方を変えて。",
+            "この状態は「変化の前触れ」でもある。気の流れが乱れる時期は、次の整いへの準備期間。",
+            "止まって当然の時期もある。でも止まり方に方向性を持てると、その後の動きが変わる。",
+        ]
+        _cr_closing = _rnd_cr.choice(_cr_closing_variants)
+        pattern_extra = f"""
+## 気の乱れ注意ランキング型の追加ルール
+
+### 構成（必須）
+1. タイトル行（1行）: 「{_cr_period}、{_cr_theme}星座ランキング⚠️」形式
+2. ランキング本体（TOP5、各1〜2行）:
+   - 🔴1位〜5位: 各星座に龍脈命術的な「なぜ気が乱れやすいか」を1行
+   - 各星座名の前に星座記号を付ける
+   - 否定的すぎず「こういう状態だから」という客観的な観察として書く
+3. 転換メッセージ（1〜2行）:「{_cr_closing}」← このフレーズを必ず使うこと
+4. CTA（1行）: 「当てはまった？コメントで教えて」「あなたは何座？」等
+
+### 龍脈命術の観点で書く
+- 「気の乱れ」は方位の向きや月の気の影響という観点
+- 「運が悪い」ではなく「気の流れがXXな状態」という表現
+- 最後に「だから何をすべきか」のヒントを必ず入れる（ネガポジ転換）
+
+### 文字数・トーン
+- 全体150〜220字
+- 客観的・穏やかな警告トーン（怖がらせない）
+- URLなし
+
+### 禁止
+- 「最悪」「終わり」など過激な表現
+- 1位星座を過度に悪く書く（読者が傷つく）
+"""
+
+    elif pattern_id == "theme_luck":
+        import random as _rnd_tl
+        _tl_themes = {
+            "金運": {
+                "desc": "お金の気の流れが整いやすい",
+                "angle": "龍脈命術では「入ってくる気」の方向が金運を左右する",
+                "cta": "今月、金運を動かしたい人はコメントで星座を教えて💰",
+            },
+            "恋愛運": {
+                "desc": "縁の気が動きやすい",
+                "angle": "龍脈命術では「受け取る向き」が整ったとき縁が動く",
+                "cta": "ご縁を引き寄せたい人、自分の星座がいたら教えてね🌙",
+            },
+            "仕事運": {
+                "desc": "仕事の気が上昇しやすい",
+                "angle": "龍脈命術では「動き出す気」の方向が行動力と評価に直結する",
+                "cta": "今の仕事を動かしたい人、星座を教えて🐉",
+            },
+            "転機・決断": {
+                "desc": "転機の気が訪れやすい",
+                "angle": "龍脈命術では「変化の気」が集まる配置のとき決断が実を結ぶ",
+                "cta": "今、動こうか迷っている人へ。あなたの星座がいたら教えて🔮",
+            },
+            "引越し・移転": {
+                "desc": "場所の気の入れ替えが起きやすい",
+                "angle": "龍脈命術では「移動の気」が整う時期に引越し・移転が吉に出やすい",
+                "cta": "引越し・転居を考えている人、星座があったら教えてね🏡",
+            },
+        }
+        _tl_key = _rnd_tl.choice(list(_tl_themes.keys()))
+        _tl = _tl_themes[_tl_key]
+        pattern_extra = f"""
+## テーマ別開運ランキング型の追加ルール
+
+### テーマ: {_tl_key}
+### 今回のランキング軸: {_tl['desc']}星座 TOP5〜7
+
+### 構成（必須）
+1. タイトル行（1行）: 「{_tl_key}の気が整う星座ランキング🔮」または「今月{_tl_key}が動く星座TOP」
+2. ランキング本体（5〜7星座、各1〜2行）:
+   - 🥇〜🏅: {_tl['angle']}
+   - 各星座の「なぜこの星座がこのテーマで良いのか」を龍脈命術的に1文
+   - 各星座名の前に星座記号（♈〜♓）を付ける
+3. CTA（1〜2行）: 「{_tl['cta']}」← このフレーズを必ず使うこと
+
+### 龍脈命術の観点で書く
+- テーマ別の「気の向き」がある（金運=入ってくる気、恋愛=受け取る気、など）
+- 各星座とテーマの相性を「気の特性×星座の性質」で説明
+- 「なんとなく良い」ではなく「なぜ今この星座か」の理由を一文
+
+### 文字数・トーン
+- 全体180〜250字
+- 断言調・親しみやすい
+- URLなし
+"""
+
     elif pattern_id == "zodiac_ranking":
         import random as _rnd_zr
         from datetime import datetime as _dt_zr
@@ -2165,6 +2306,9 @@ def run(batch_size: int = 5) -> dict:
             "kotodama_rank",    # 350-450字の全12星座ランキング。汎用2投稿指示がフォーマットを破壊する
             "zodiac_ranking",   # 380-480字の全12星座ランキング。同上
             "lucky_combo",      # 200-280字の生まれ月×星座ランキング。分割不要
+            "daily_energy",     # 100-180字コンパクトランキング。分割すると薄くなる
+            "caution_rank",     # 150-220字の注意ランキング。分割不要
+            "theme_luck",       # 180-250字のテーマ別ランキング。分割不要
         }
         # medium/long パターンも2投稿ツリー形式で生成（short・単発専用パターンを除く）
         is_thread_pattern = (
@@ -2178,11 +2322,17 @@ def run(batch_size: int = 5) -> dict:
             _thread_hint = dict(extra_hint or {})
             if pattern.get("id") not in THREAD_PATTERNS:
                 _thread_hint["output_as_thread"] = True
-            thread_posts = _generate_thread(
-                client_obj, pattern, theme, knowledge,
-                research_data.get("topics", []), analyst_feedback,
-                extra_hint=_thread_hint,
-            )
+            try:
+                thread_posts = _generate_thread(
+                    client_obj, pattern, theme, knowledge,
+                    research_data.get("topics", []), analyst_feedback,
+                    extra_hint=_thread_hint,
+                )
+            except Exception as _gen_e:
+                print(f"  ❌ ツリー生成エラー（バッチ{i+1}、スキップ）: {_gen_e}")
+                rejected += 1
+                details.append({"status": "error", "error": str(_gen_e), "theme": theme})
+                continue
             if not thread_posts or len(thread_posts) < 2:
                 rejected += 1
                 details.append({"status": "rejected_thread_empty", "theme": theme})
@@ -2287,11 +2437,17 @@ def run(batch_size: int = 5) -> dict:
                 return new_post
 
             # 初回生成
-            first_draft = _generate_post(
-                client_obj, pattern, theme, knowledge,
-                research_data.get("topics", []), analyst_feedback,
-                extra_hint=extra_hint,
-            )
+            try:
+                first_draft = _generate_post(
+                    client_obj, pattern, theme, knowledge,
+                    research_data.get("topics", []), analyst_feedback,
+                    extra_hint=extra_hint,
+                )
+            except Exception as _gen_e:
+                print(f"  ❌ 投稿生成エラー（バッチ{i+1}、スキップ）: {_gen_e}")
+                rejected += 1
+                details.append({"status": "error", "error": str(_gen_e), "theme": theme})
+                continue
             if not first_draft:
                 rejected += 1
                 continue

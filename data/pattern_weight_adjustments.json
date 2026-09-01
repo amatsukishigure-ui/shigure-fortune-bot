@@ -21,6 +21,9 @@
     "reply_magnet": 0.5,
     "empathy_thread": 0.5,
     "hesitation_break": 0.5,
-    "list": 0.5
+    "list": 0.5,
+    "daily_energy": 1.0,
+    "caution_rank": 1.0,
+    "theme_luck": 1.0
   }
 }
