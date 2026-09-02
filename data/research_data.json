@@ -1,46 +1,6 @@
 {
   "topics": [
     {
-      "title": "中日サヨナラ負け 9回異例の敬遠",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "田中樹 24時間テレビドラマ出演",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "金融庁が企画室新設へ 検査司令塔",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "千葉豪雨 浸水想定域で9人犠牲か",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "09年の15人死傷放火殺人 死刑執行",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "港で大型船が火災 作業員1人死亡",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "4人死亡 時速50kmで駅構内進入か",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "小2が味に違和感 配布の水にネジ",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
       "title": "織田翔希を智弁和歌山が攻略 真相",
       "description": "",
       "source": "Yahoo Japan ニュース"
@@ -5163,9 +5123,49 @@
       "source": "news_rss",
       "cultural_angle": "風水における嵐後の気の浄化・大地のリセット観",
       "season_note": "台風シーズン・8月。夏から秋への気の移行期"
+    },
+    {
+      "title": "青森で猛烈な雨 災害発生の恐れ",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "学校以外の居場所 様々な選択肢",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "上皇さまの葬儀規模 大幅縮小検討",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "パワハラ報道巡り 東京MKが会見",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "アニマルカフェ 国が実態調査へ",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "T・ウッズ氏 5年間運転免許停止",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "掲載写真に指6本指摘 週マガ声明",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "【動画】Pickup NEWS（8月8日）",
+      "description": "これまでに入っているニュースを、まとめて1分の動画でお伝えします。（データ放送では動画をご覧いただけません）",
+      "source": "NHK社会"
     }
   ],
-  "last_updated": "2026-09-02T15:48:21.906706",
+  "last_updated": "2026-09-02T18:20:46.232849",
   "last_rss_count": 31,
   "last_cultural_count": 0
 }
