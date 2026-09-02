@@ -17209,7 +17209,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/capricorn.jpg",
-    "recorded_at": "2026-09-01T14:04:03.750352"
+    "recorded_at": "2026-09-01T14:04:03.750352",
+    "hourly_stats_recorded": true
   },
   {
     "text": "天職の気配が最も強く引き寄せられる組み合わせ。生まれ月と星座で読む、今の仕事との「気の向き」。\n\n天職・仕事運の気が今月最も集まる 生まれ月×星座 top7\n\n1位 3月生まれ × 射手座\n2位 9月生まれ × 牡羊座\n3位 6月生まれ × 蠍座\n4位 11月生まれ × 乙女座\n5位 1月生まれ × 双子座\n6位 5月生まれ × 水瓶座\n7位 8月生まれ × 魚座\n\n龍脈命術では「仕事が合わない」は能力ではなく気の向きの問題。生まれ月×星座でその向きが読める。\n\n🐉を置いた人から、今の仕事に新しい展開が入ってきますように\n\n#占い #恋愛運 #縁",
@@ -17425,5 +17426,25 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/capricorn.jpg",
     "recorded_at": "2026-09-02T13:25:48.383217"
+  },
+  {
+    "text": "♈牡羊座さん、今この瞬間、選んで。\n\n🌊 A — 動きたい気持ちはあるのに、踏み出せずにいる\n🔥 B — 少し動き始めた。でもこの方向で合ってるか不安\n🌿 C — いったん立ち止まって、整えてから動き直したい\n\n龍脈命術では、行動の「量」より「向き」を読む。同じ努力でも、気の流れに乗った方向かどうかで結果が変わる。\n\nA・B・Cをコメントで教えて。\n今の気の流れと吉方位、返信するよ 🔮\n\n#占い #吉方位 #開運",
+    "x_text": "♈牡羊座さん、今この瞬間、選んで。\n\n🌊 A — 動きたい気持ちはあるのに、踏み出せずにいる\n🔥 B — 少し動き始めた。でもこの方向で合ってるか不安\n🌿 C — いったん立ち止まって、整えてから動き直したい\n\n龍脈命術では、行動の「量」より「向き」を読む。同じ努力でも、気の流れに乗った方向かどうかで結果が変わる。\n\nA・B・Cをコメントで教えて。\n今の気の流れと吉方位、返信するよ 🔮\n\n#占い #時雨 #星座占い #運勢",
+    "theme": "星座別メッセージ/今週の星座別メッセージ",
+    "pattern_id": "card_pick",
+    "quality_score": 8.2,
+    "attempts": 1,
+    "x_eligible": false,
+    "expires_on": "2026-09-07",
+    "persona_id": "p008",
+    "zodiac_boost": "♈牡羊座",
+    "pending_at": "2026-08-24T12:39:47.229746",
+    "queued_at": "2026-08-24T12:40:35.302264",
+    "threads_post_id": "17980646175089537",
+    "posted_at": "2026-09-02T15:52:29.954499+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
+    "recorded_at": "2026-09-02T15:52:29.965361"
   }
 ]
