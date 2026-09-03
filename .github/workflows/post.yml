@@ -112,19 +112,7 @@ jobs:
               if [ "$NEED_REFILL" = "yes" ]; then
                 echo "Queue + pending low — running daily to refill"
                 python main.py daily || echo "⚠️ daily失敗 — postは継続"
-                # approve: キャップ(40件)を超えない範囲で品質スコア上位から承認
-                python -c "
-            import sys, json, pathlib; sys.path.insert(0,'.')
-            from core.state import load_pending, approve_pending, load_queue
-            q = load_queue(); pending = load_pending()
-            headroom = max(0, 40 - len(q))
-            if headroom == 0:
-                print('⚠️ キュー上限のため承認スキップ')
-            else:
-                idx = sorted(range(len(pending)), key=lambda i: pending[i].get('quality_score', 0), reverse=True)
-                approve_pending(idx[:headroom])
-                print(f'✅ {min(headroom, len(pending))}件承認（headroom={headroom}）')
-            " || echo "⚠️ approve失敗 — postは継続"
+                python main.py approve || echo "⚠️ approve失敗 — postは継続"
               fi
 
               echo "Running post"
