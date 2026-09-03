@@ -17434,7 +17434,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/capricorn.jpg",
-    "recorded_at": "2026-09-02T13:25:48.383217"
+    "recorded_at": "2026-09-02T13:25:48.383217",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♈牡羊座さん、今この瞬間、選んで。\n\n🌊 A — 動きたい気持ちはあるのに、踏み出せずにいる\n🔥 B — 少し動き始めた。でもこの方向で合ってるか不安\n🌿 C — いったん立ち止まって、整えてから動き直したい\n\n龍脈命術では、行動の「量」より「向き」を読む。同じ努力でも、気の流れに乗った方向かどうかで結果が変わる。\n\nA・B・Cをコメントで教えて。\n今の気の流れと吉方位、返信するよ 🔮\n\n#占い #吉方位 #開運",
@@ -17515,5 +17516,29 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-09-03T13:24:47.510825"
+  },
+  {
+    "text": "♏蠍座で、「転職したいのに動けないまま時間だけが過ぎている」人以外は、読まなくていい。\n\n#占い #転職 #仕事運",
+    "thread_posts": [
+      "♏蠍座で、「転職したいのに動けないまま時間だけが過ぎている」人以外は、読まなくていい。\n\n#占い #転職 #仕事運",
+      "龍脈命術で蠍座の仕事運を読むとき、まず確認するのは「どの方位に向かって動いているか」。努力が空回りするとき、たいてい向きがズレている。意志の問題じゃない。\n\n白露を過ぎたこの時期、蠍座の吉方位は北東。朝、仕事の書類や求人票を北東方向に置くだけでいい。気の流れに乗ると、同じ行動でも結果の出方が変わる。\n\n転職を考え始めて、今どのくらい経つ？\n\n#占い #龍脈命術 #蠍座",
+      "「このままでいいのかな」\nその言葉、今月だけで何回呟きましたか？\n\n占いというと「当たる・当たらない」で語られがちですが、私が大事にしているのはそこじゃありません。\n\n風水×吉方位×星読みを組み合わせた、動くための占い「龍脈命術」について、無料noteにまとめました🔮\n誰のための占いか、どんな悩みに効くか。よければ覗いてみてください👇\nhttps://note.com/shigure_fortune/n/nab07df599219\n\n続きの記事も随時公開していくので、noteのフォローもしていただけると嬉しいです🙏\n\n#占い #転職 #仕事運"
+    ],
+    "theme": "吉方位・風水/仕事・転職の吉方位",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "zodiac_boost": "♋蟹座",
+    "expires_on": "2026-09-15",
+    "pending_at": "2026-09-01T06:57:33.683251",
+    "queued_at": "2026-09-03T21:38:33.735940",
+    "threads_post_id": "18108054296160042",
+    "posted_at": "2026-09-03T15:42:31.760857+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-09-03T15:42:31.771113"
   }
 ]
