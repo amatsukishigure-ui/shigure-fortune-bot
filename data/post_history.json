@@ -17543,7 +17543,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-09-03T15:42:31.771113"
+    "recorded_at": "2026-09-03T15:42:31.771113",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♋蟹座さん、占いに興味ない人にこそ、今の時期だけ一度聞いてほしいことがある。\n\n#占い #吉方位 #開運",
@@ -17566,7 +17567,8 @@
     "posted_at": "2026-09-03T18:23:25.968257+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-09-03T18:23:25.979432"
+    "recorded_at": "2026-09-03T18:23:25.979432",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♎天秤座さん、今「どこへ引越すか」をまだ方位で考えていないなら読まないほうがいい。\n\n#占い #引越し #風水",
@@ -17808,5 +17810,25 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-09-04T15:39:59.422095"
+  },
+  {
+    "text": "♒ 水瓶座さんへ。\n\n「このままでいいのかな」が口癖になって、もう何年も経ってない？\n\n動きたい気持ちはある。でも体が動かない。そのまま季節だけ変わっていく感覚、気のせいじゃないよ。\n\n龍脈命術でいうと、今の水瓶座は北西の気が詰まりやすい時期。努力の向きじゃなくて、向かっている方角がズレているだけ。\n\n白露を過ぎた今は、南東の方位に意識を向けてみて。窓を開けるでも、散歩でも、小さくていい。気の流れが動き始めると、同じ行動でも結果が変わってくる。\n\n水瓶座さん、今これ当てはまってる？コメントで教えて。\n\n#占い #引越し #風水",
+    "x_text": "♒ 水瓶座さんへ。\n\n「このままでいいのかな」が口癖になって、もう何年も経ってない？\n\n動きたい気持ちはある。でも体が動かない。そのまま季節だけ変わっていく感覚、気のせいじゃないよ。\n\n龍脈命術でいうと、今の水瓶座は北西の気が詰まりやすい時期。努力の向きじゃなくて、向かっている方角がズレているだけ。\n\n白露を過ぎた今は、南東の方位に意識を向けてみて。窓を開けるでも、散歩でも、小さくていい。気の流れが動き始めると、同じ行動でも結果が変わってくる。\n\n水瓶座さん、今これ当てはまってる？コメントで教えて。\n\n#占い #時雨 #吉方位 #風水",
+    "theme": "吉方位・風水/引越し方位",
+    "pattern_id": "zodiac_target",
+    "quality_score": 8.1,
+    "attempts": 1,
+    "x_eligible": false,
+    "expires_on": "2026-09-16",
+    "persona_id": "p003",
+    "zodiac_boost": "♒水瓶座",
+    "pending_at": "2026-09-02T00:04:03.830655",
+    "queued_at": "2026-09-03T21:38:33.777990",
+    "threads_post_id": "18343910131282969",
+    "posted_at": "2026-09-04T18:50:08.468716+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aquarius.jpg",
+    "recorded_at": "2026-09-04T18:50:08.481751"
   }
 ]
