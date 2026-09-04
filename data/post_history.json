@@ -17592,7 +17592,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-09-03T19:08:09.488647"
+    "recorded_at": "2026-09-03T19:08:09.488647",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♋蟹座で、「整理しなきゃ」と思いながらずっと手が動かない人以外は、読まなくていい。\n\n#占い #吉方位 #開運",
@@ -17830,5 +17831,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aquarius.jpg",
     "recorded_at": "2026-09-04T18:50:08.481751"
+  },
+  {
+    "text": "♒水瓶座の方から、よく聞く言葉がある。「頑張ってるのに、なぜか何も変わらない」。意志の問題じゃないよ。\n\n#占い #開運 #運気アップ",
+    "thread_posts": [
+      "♒水瓶座の方から、よく聞く言葉がある。「頑張ってるのに、なぜか何も変わらない」。意志の問題じゃないよ。\n\n#占い #開運 #運気アップ",
+      "♒水瓶座さん、聞いてほしい。\n\n鑑定した方から連絡が来た。\n30代、外資系で結果を出し続けているのに「このままでいいのか」が3年止まらなかった方。\n\n鑑定でわかったのは、方位のズレだった。\n北東を背にしてデスクに座っていた。気が逃げる向きで、ずっと踏ん張っていたんだ。\n\n向きを変えた翌月、別部署への異動の話が来て、初めて「動いていい」と思えたと言っていた。\n\n龍脈命術は「当てる」より「動かせる」占い。\nこういう連絡が、その確信を深める。\n\n気になったら → 鑑定ページ https://coconala.com/services/4292937?ref=threads\n\n#龍脈命術 #転機のサイン #水瓶座"
+    ],
+    "theme": "転機のサイン/停滞が続く人の共通点",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♒水瓶座",
+    "expires_on": "2026-09-19",
+    "pending_at": "2026-09-04T21:25:26.034705",
+    "queued_at": "2026-09-04T21:26:02.385222",
+    "threads_post_id": "18085574855676055",
+    "posted_at": "2026-09-04T21:26:26.601789+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aquarius.jpg",
+    "recorded_at": "2026-09-04T21:26:26.612025"
   }
 ]
