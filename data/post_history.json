@@ -17636,7 +17636,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-09-04T00:04:55.207149"
+    "recorded_at": "2026-09-04T00:04:55.207149",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♒水瓶座の人から、よく聞く言葉がある。「努力は続けてる。でも、なんで選ばれないんだろう」\n\n#占い #星座占い #運勢",
@@ -17659,7 +17660,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aquarius.jpg",
-    "recorded_at": "2026-09-04T01:01:16.994581"
+    "recorded_at": "2026-09-04T01:01:16.994581",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♋蟹座で、「最近なんとなく体が重い」が続いている人以外は、読まなくていい。\n\n#占い #吉方位 #開運",
@@ -17682,7 +17684,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/cancer.jpg",
-    "recorded_at": "2026-09-04T03:01:22.968131"
+    "recorded_at": "2026-09-04T03:01:22.968131",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♐射手座で、「このまま続けていていいのか」がずっと頭の片隅にある人以外は、読まなくていい。\n\n#占い #星座占い #運勢",
@@ -17705,7 +17708,8 @@
     "posted_at": "2026-09-04T06:01:30.524170+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-09-04T06:01:30.536150"
+    "recorded_at": "2026-09-04T06:01:30.536150",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♐射手座さん、占いに興味ない人にこそ一度だけ聞いてほしいことがある。\n\n#占い #金運 #開運",
@@ -17916,5 +17920,24 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-09-05T06:01:00.475595"
+  },
+  {
+    "text": "♏蠍座さんへ。\n\n3回会うと続かない、それを「また私のせいかな」って飲み込んできたでしょう。\n\n違う。向きが合っていない人のところへ、ずっと同じ方向から動いていただけ。\n\n龍脈命術は「誰が悪いか」じゃなく、「どこへ向かうか」を読む。自分を責める前に、方位を見るという選択がある。\n\n「わかる」と「初めて聞いた」、どっちに近い？コメントで教えて。\n\n#占い #吉方位 #龍脈命術",
+    "x_text": "♏蠍座さんへ。\n\n3回会うと続かない、それを「また私のせいかな」って飲み込んできたでしょう。\n\n違う。向きが合っていない人のところへ、ずっと同じ方向から動いていただけ。\n\n龍脈命術は「誰が悪いか」じゃなく、「どこへ向かうか」を読む。自分を責める前に、方位を見るという選択がある。\n\n「わかる」と「初めて聞いた」、どっちに近い？コメントで教えて。\n\n#占い #時雨 #龍脈命術 #開運",
+    "theme": "時雨の世界観/占いへの想い",
+    "pattern_id": "ichi_gon",
+    "quality_score": 8.11,
+    "attempts": 1,
+    "x_eligible": true,
+    "expires_on": "2026-09-19",
+    "persona_id": "p011",
+    "zodiac_boost": "♏蠍座",
+    "pending_at": "2026-09-04T21:25:46.813787",
+    "queued_at": "2026-09-04T21:26:02.394661",
+    "threads_post_id": "18144546355483799",
+    "posted_at": "2026-09-05T06:31:23.470353+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-09-05T06:31:23.481876"
   }
 ]
