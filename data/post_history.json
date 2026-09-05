@@ -17799,7 +17799,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-09-04T13:20:45.697042"
+    "recorded_at": "2026-09-04T13:20:45.697042",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♒ 水瓶座さんへ。\n\n売上が戻らない、動きたいのに判断できない。\nそれ、意志の問題じゃないよ。\n\n今の水瓶座、北東の気が重くなっている。\n気が滞ると、どれだけ考えても答えが出ない状態が続く。\n\n龍脈命術は「どう動くか」じゃなく「どこに向かうか」を読む。\n今動くなら、南の方角を意識してみて。\n南に向かう打ち手——商談・相談・新しい縁——から先に動かすといい。\n\n焦って決断しなくていい。\n白露を過ぎた今、気はゆっくり秋へ切り替わっている。\n流れが変わり始めているのを、体が先に感じているはずだよ。\n\n読んだ ♒ さん、🌟 でいいから置いてみて。\n\n#占い #金運 #開運",
@@ -18018,5 +18019,25 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
     "recorded_at": "2026-09-05T12:35:14.037266"
+  },
+  {
+    "text": "♈牡羊座の方へ。\n\n今夜布団に入る前に、スマホを頭の向きと逆の方向に置いてみて。\n\n龍脈命術では、頭の向きと電磁気の流れが重なると、眠中に受け取るはずの「引き寄せの気」が乱れる。\n\n方位を整えるのは昼間だけじゃない。眠っている時間こそ、気は動く。\n\n明日の朝、なんとなく気分が軽かったら教えてね 🌙\n\n#占い #吉方位 #龍脈命術",
+    "x_text": "♈牡羊座の方へ。\n\n今夜布団に入る前に、スマホを頭の向きと逆の方向に置いてみて。\n\n龍脈命術では、頭の向きと電磁気の流れが重なると、眠中に受け取るはずの「引き寄せの気」が乱れる。\n\n方位を整えるのは昼間だけじゃない。眠っている時間こそ、気は動く。\n\n明日の朝、なんとなく気分が軽かったら教えてね 🌙\n\n#占い #時雨 #引き寄せ #龍脈命術",
+    "theme": "引き寄せ/方位が引き寄せを加速する仕組み",
+    "pattern_id": "before_sleep",
+    "quality_score": 7.9,
+    "attempts": 1,
+    "x_eligible": false,
+    "expires_on": "2026-09-15",
+    "persona_id": "p009",
+    "zodiac_boost": "♈牡羊座",
+    "pending_at": "2026-09-01T01:16:47.782088",
+    "queued_at": "2026-09-03T21:38:33.726943",
+    "threads_post_id": "18116549875746862",
+    "posted_at": "2026-09-05T14:28:37.743888+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
+    "recorded_at": "2026-09-05T14:28:37.753877"
   }
 ]
