@@ -18084,5 +18084,25 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-09-06T01:00:58.436995"
+  },
+  {
+    "text": "今夜寝る前に、1つだけ。\n\n♊双子座の人は頭が止まらないまま眠れない夜が多い。\n龍脈命術では、思考が過剰なとき「木の気」が乱れているサイン。\nそういうときは、スマホを頭の反対側に置いて横になって。\n\n気の流れが鎮まると、朝の頭が全然違う。\n\n今夜試してみた？明日の気分、教えてね 🌙\n\n#占い #龍脈命術",
+    "x_text": "今夜寝る前に、1つだけ。\n\n♊双子座の人は頭が止まらないまま眠れない夜が多い。\n龍脈命術では、思考が過剰なとき「木の気」が乱れているサイン。\nそういうときは、スマホを頭の反対側に置いて横になって。\n\n気の流れが鎮まると、朝の頭が全然違う。\n\n今夜試してみた？明日の気分、教えてね 🌙\n\n#占い #時雨 #龍脈命術 #開運",
+    "theme": "運気/運気の波の読み方",
+    "pattern_id": "before_sleep",
+    "quality_score": 8.0,
+    "attempts": 1,
+    "x_eligible": false,
+    "expires_on": "2026-09-15",
+    "persona_id": "p018",
+    "zodiac_boost": "♊双子座",
+    "pending_at": "2026-09-01T06:57:15.921620",
+    "queued_at": "2026-09-03T21:38:33.733501",
+    "threads_post_id": "17925312117410324",
+    "posted_at": "2026-09-06T03:01:04.210936+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/gemini.jpg",
+    "recorded_at": "2026-09-06T03:01:04.223147"
   }
 ]
