@@ -17968,7 +17968,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/gemini.jpg",
-    "recorded_at": "2026-09-05T09:01:02.003449"
+    "recorded_at": "2026-09-05T09:01:02.003449",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今日、気のエネルギーが集まりやすい星座 TOP5🔮\n\n🥇1位　♎てんびん座\n受け取る気が整っている。待っていた返事が来やすい日。\n\n🥈2位　♏さそり座\n秋の深まりと気の方向が一致。決断のエネルギーが高まってるよ。\n\n🥉3位　♑やぎ座\n地の気が安定。動いたことがかたちになりやすいタイミング。\n\n4位　♐いて座\n北から流れる冷涼な気が味方。新しい場所への一歩が軽くなる。\n\n🏅5位　♓うお座\n感受性の気が澄んでいる。大事なことに気づける日。\n\nあなたの星座は入ってた？コメントで教えてね🌙\n\n#占い #星座占い #運勢",
@@ -17987,7 +17988,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/season/autumn.jpg",
-    "recorded_at": "2026-09-05T11:16:57.367393"
+    "recorded_at": "2026-09-05T11:16:57.367393",
+    "hourly_stats_recorded": true
   },
   {
     "text": "今週だけ読んでほしい。\n\n【暮らしの方角で流れが変わる星座ランキング】\n\n🥇1位 ♍乙女座｜窓を開けた朝から、気の詰まりが動き出す\n🥈2位 ♑山羊座｜光の入る場所を整えると、停滞が溶ける\n🥉3位 ♎天秤座｜東の気を取り込んだとき、判断が研ぎ澄まされる\n🏅4位 ♒水瓶座｜風通しを変えるだけで、次の縁が入ってくる\n5位 ♋蟹座｜住まいが整うほど、内側が静かに満ちていく\n6位 ♐射手座｜向かう方角を意識すると、動きが軽くなる\n7位 ♈牡羊座｜朝一番の採光が、今週の勢いを決める\n8位 ♊双子座｜気の循環が戻ると、言葉に力が宿り始める\n9位 ♉牡牛座｜北側を整えると、地に足がつく感覚が戻る\n10位 ♌獅子座｜今は光を取り込む準備期間。焦らなくていい\n11位 ♏蠍座｜手放した空間に、新しい気が入ってくる\n12位 ♓魚座｜まず一枚、窓を開けるだけでいい\n\n龍脈命術では「どこへ向かうか」より先に「今いる場所の気」を整えることを重視する。秋分に向けて、住まいの気が切り替わるタイミング。窓と採光から、流れを変えてみて。\n\n#占い #開運 #運気アップ",
@@ -18169,5 +18171,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/gemini.jpg",
     "recorded_at": "2026-09-06T09:00:59.150032"
+  },
+  {
+    "text": "♉牡牛座の方へ。「努力は正しいはず。なのになぜ、4年間同じ場所にいる？」\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "♉牡牛座の方へ。「努力は正しいはず。なのになぜ、4年間同じ場所にいる？」\n\n#占い #吉方位 #開運",
+      "♉牡牛座の方からよく聞く言葉がある。\n「スキルも上げた。提案もした。でも単価が動かない。」\n\n動けないのは意志が弱いからじゃない。向きがズレてたんだ。\n\n先日、フリーランスのエンジニアの方を鑑定した。\n職場（作業机）の向きを北西に変えただけで、翌月に新規クライアントから声がかかったと連絡が来た。\n\n龍脈命術は「当てる」占いじゃなく「動かす」占い。向きを整えると、同じ行動の結果が変わる。\n\n今日、作業机の向きを確認してみて。\n気になったら → ▷ LINE https://lin.ee/TJg5dru\n\n#龍脈命術 #吉方位 #牡牛座"
+    ],
+    "theme": "暮らしの吉方位と気の整え方/職場の席と方位",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♉牡牛座",
+    "expires_on": "2026-09-20",
+    "pending_at": "2026-09-06T11:36:38.801645",
+    "queued_at": "2026-09-06T11:37:57.579463",
+    "threads_post_id": "17946561531083719",
+    "posted_at": "2026-09-06T11:38:29.653706+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
+    "recorded_at": "2026-09-06T11:38:29.665399"
   }
 ]
