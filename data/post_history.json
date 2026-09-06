@@ -18008,7 +18008,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
-    "recorded_at": "2026-09-05T12:00:59.621377"
+    "recorded_at": "2026-09-05T12:00:59.621377",
+    "hourly_stats_recorded": true
   },
   {
     "text": "仕事が「なんか違う」とずっと思ってきた人へ。\n\n天職の気が今、最も引き寄せられている組み合わせ。\n\n🐉 天職・仕事運の気が今秋最も集まる 生まれ月×星座 top7\n\n1位 10月生まれ × 牡羊座\n2位 3月生まれ × 蠍座\n3位 7月生まれ × 山羊座\n4位 1月生まれ × 乙女座\n5位 11月生まれ × 双子座\n6位 5月生まれ × 水瓶座\n7位 8月生まれ × 魚座\n\n龍脈命術では「仕事が合わない」は能力ではなく気の向きの問題。生まれ月×星座でその向きが読める。\n\n「🐉」を置いた人から、今の仕事に新しい展開が入ってきますように。\n\n#占い #仕事運 #運気アップ",
@@ -18027,7 +18028,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
-    "recorded_at": "2026-09-05T12:35:14.037266"
+    "recorded_at": "2026-09-05T12:35:14.037266",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♈牡羊座の方へ。\n\n今夜布団に入る前に、スマホを頭の向きと逆の方向に置いてみて。\n\n龍脈命術では、頭の向きと電磁気の流れが重なると、眠中に受け取るはずの「引き寄せの気」が乱れる。\n\n方位を整えるのは昼間だけじゃない。眠っている時間こそ、気は動く。\n\n明日の朝、なんとなく気分が軽かったら教えてね 🌙\n\n#占い #吉方位 #龍脈命術",
@@ -18194,5 +18196,24 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
     "recorded_at": "2026-09-06T11:38:29.665399"
+  },
+  {
+    "text": "秋が深まる前に、知っておいてほしい。\n\n【今週、天職・仕事運が動き出す星座ランキング】\n\n🥇1位 ♑山羊座｜積み上げた努力が、形として現れてくる\n🥈2位 ♏蠍座｜手放した先に、本来の居場所が見えてくる\n🥉3位 ♈牡羊座｜動き出した瞬間に、気の道が開く\n🏅4位 ♍乙女座｜整えた環境が、静かに評価される\n5位 ♎天秤座｜判断を迷わせていた霧が晴れていく\n6位 ♊双子座｜情報が仕事の種に変わり始める\n7位 ♌獅子座｜表に出ることで、選ばれる流れができる\n8位 ♉牡牛座｜じっくり動いた分が、信頼として返ってくる\n9位 ♐射手座｜視野を広げた先に、次の扉がある\n10位 ♋蟹座｜内側を整えると、外の縁が動き出す\n11位 ♒水瓶座｜独自の視点が、じわじわ届き始める\n12位 ♓魚座｜受け取る器を整える週。焦らなくていい\n\n龍脈命術では、努力の「向き」が合っているかどうかを気の流れで読む。同じ頑張りでも、方向次第で届き方が変わる。\n\n🔮を置いてくれた方に、気の流れが届きますように。あなたの仕事運が動き出しますように。\n\n#占い #仕事運 #運気アップ",
+    "x_text": "秋が深まる前に、知っておいてほしい。\n\n他の星座はThreadsで👇\n\n#占い #時雨 #龍脈命術 #開運",
+    "theme": "転機のサイン/停滞が続く人の共通点",
+    "pattern_id": "zodiac_ranking",
+    "quality_score": 7.2,
+    "attempts": 1,
+    "x_eligible": false,
+    "expires_on": "2026-09-16",
+    "persona_id": "p002",
+    "pending_at": "2026-09-01T15:57:27.041528",
+    "queued_at": "2026-09-03T21:38:33.752657",
+    "threads_post_id": "17929363587404261",
+    "posted_at": "2026-09-06T12:48:56.259022+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
+    "recorded_at": "2026-09-06T12:48:56.270472"
   }
 ]
