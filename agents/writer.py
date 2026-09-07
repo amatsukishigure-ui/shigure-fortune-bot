@@ -457,8 +457,13 @@ def _build_prompt(
     analyst_feedback: str,
     feedback_for_rewrite: str = "",
     extra_hint: dict = None,
-) -> str:
-    """投稿生成プロンプトを構築する"""
+) -> tuple[str, str]:
+    """投稿生成プロンプトを構築する。
+
+    Returns:
+        (static_prompt, dynamic_prompt) — static_prompt はcache_control付きsystemとして
+        使い回すための固定指示、dynamic_prompt は呼び出しごとに変わるuserメッセージ。
+    """
     profile = knowledge["profile"]
     profile_summary = (
         f"占術家名: {profile.get('name')}\n"
@@ -1947,28 +1952,10 @@ eng=102: 「嵐の中で「動こう」としていませんか。」→「手�
         "## 出力\n投稿本文のみ。説明・メタ情報・マークダウン記法は不要。プレーンテキストで出力すること。"
     )
 
-    return f"""あなたは占術家「時雨（しぐれ）」として、Threadsに投稿するテキストを1本生成してください。
+    static_prompt = f"""あなたは占術家「時雨（しぐれ）」として、Threadsに投稿するテキストを1本生成してください。
 
-{post_time_block}
 ## アカウント情報
 {profile_summary}
-
-## 投稿パターン
-- パターン: {pattern.get('name')}
-- 説明: {pattern.get('description')}
-- 例: {pattern.get('example', '')}
-
-## 投稿テーマ
-{theme}
-
-## 参考リサーチ
-{research_text}
-
-## アナリストフィードバック
-{analyst_feedback or '（まだデータなし）'}
-
-## バズった1行目の構造例
-{hooks_sample}
 
 ## 心に刺さる場面（読者が「これ私だ」と感じる具体的な状況）
 投稿に合う場面を1つ選んで、その人の気持ちをリアルに描写すること。
@@ -1993,7 +1980,6 @@ eng=102: 「嵐の中で「動こう」としていませんか。」→「手�
 - 安定しているけど何かが足りない漠然とした不満
 - 好きなことを仕事にしている人を見て自分と比べてしまう
 
-{rewrite_block}{pattern_extra}
 ## 読者を動かす投稿の共通原則（全パターン必読）
 
 **① 悩みの解像度を上げる**
@@ -2063,10 +2049,33 @@ eng=102: 「嵐の中で「動こう」としていませんか。」→「手�
 - 絵文字は基本0〜1個（ポップ短文型のみ最大2個）
 - NGワードは使わない
 - 「今日」「明日」「今週」などの時間表現は必ず推定投稿時刻を基準にすること
-- 季節・節気（秋分・春分・夏至・冬至など）は必ず上記「実際の季節情報」に合った内容のみ使用すること。NG節気は絶対に使わない
+- 季節・節気（秋分・春分・夏至・冬至など）は必ず指定された「実際の季節情報」に合った内容のみ使用すること。NG節気は絶対に使わない
 - **【絶対禁止】投稿本文にマークダウン記法を使わない**: `**太字**` `*斜体*` `# 見出し` `- 箇条書き` `` `コード` `` などのマークダウン記号は投稿文に一切含めない。SNS投稿はプレーンテキストで書くこと。箇条書きが必要な場合は「・」を使う。
+"""
+
+    dynamic_prompt = f"""{post_time_block}
+## 投稿パターン
+- パターン: {pattern.get('name')}
+- 説明: {pattern.get('description')}
+- 例: {pattern.get('example', '')}
+
+## 投稿テーマ
+{theme}
+
+## 参考リサーチ
+{research_text}
+
+## アナリストフィードバック
+{analyst_feedback or '（まだデータなし）'}
+
+## バズった1行目の構造例
+{hooks_sample}
+
+{rewrite_block}{pattern_extra}
 
 {output_instruction}"""
+
+    return static_prompt, dynamic_prompt
 
 
 # ツリー投稿パターン（format="tree"、複数投稿を連結するパターン）
@@ -2124,14 +2133,15 @@ def _generate_post(
     feedback_for_rewrite: str = "",
     extra_hint: dict = None,
 ) -> str:
-    prompt = _build_prompt(
+    static_prompt, dynamic_prompt = _build_prompt(
         pattern, theme, knowledge, research_topics,
         analyst_feedback, feedback_for_rewrite, extra_hint,
     )
     response = client_obj.messages.create(
         model=MODEL_HEAVY,
         max_tokens=4096,
-        messages=[{"role": "user", "content": prompt}],
+        system=[{"type": "text", "text": static_prompt, "cache_control": {"type": "ephemeral"}}],
+        messages=[{"role": "user", "content": dynamic_prompt}],
     )
     for block in response.content:
         if block.type == "text":
@@ -2157,14 +2167,15 @@ def _generate_thread(
     Returns:
         ["1投稿目", "2投稿目", "3投稿目"] または失敗時 []
     """
-    prompt = _build_prompt(
+    static_prompt, dynamic_prompt = _build_prompt(
         pattern, theme, knowledge, research_topics,
         analyst_feedback, "", extra_hint,
     )
     response = client_obj.messages.create(
         model=MODEL_HEAVY,
         max_tokens=4096,
-        messages=[{"role": "user", "content": prompt}],
+        system=[{"type": "text", "text": static_prompt, "cache_control": {"type": "ephemeral"}}],
+        messages=[{"role": "user", "content": dynamic_prompt}],
     )
     raw = ""
     for block in response.content:
