@@ -18241,7 +18241,8 @@
     "posted_at": "2026-09-06T14:50:23.385992+00:00",
     "is_mock": false,
     "has_image": false,
-    "recorded_at": "2026-09-06T14:50:23.394195"
+    "recorded_at": "2026-09-06T14:50:23.394195",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♏蠍座さんへ。\n\n今の蠍座には「突破の気」が流れ始めている。\n長く耐えてきたものが、ようやく動き出すタイミング。ただ、蠍座が陥りやすいのは「自分の力だけで何とかしようとすること」。今は一人で抱え込む時期じゃない。\n\n龍脈命術では、気の流れを方位で整えることで、同じ努力の結果が変わると見る。\n\n・東方向 → 新しい縁・仕事の流れが開く。朝、東向きの窓を開けて10分、そこで今日やることを頭の中で整理するだけでいい\n\nもう一点、避けてほしい方位がある──\n\n続きはいいね🩷してもらえると届きます\n\n#占い #引越し #風水",
@@ -18362,5 +18363,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-09-07T13:25:53.440396"
+  },
+  {
+    "text": "♈牡羊座の方から、よく聞く言葉がある。「頑張ってるのに、なんで変わらないんだろう」って。\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "♈牡羊座の方から、よく聞く言葉がある。「頑張ってるのに、なんで変わらないんだろう」って。\n\n#占い #吉方位 #開運",
+      "♈牡羊座さん、聞いてほしい。\n\n先月、鑑定した方から連絡が来た。\n保育士5年目、手取りは変わらず、毎朝「行かなきゃ」で起きていた方。\n\n以前: 転職サイトを見ては閉じる、を繰り返していた\n今: 異業種から内定をもらい、来月から動き出す\n\n龍脈命術でわかったのは、方位のズレだった。「動けない」のは意志の問題じゃなく、向きの問題だった。\n北東の吉方位を整えた翌月、動きが変わったと言っていた。\n\n龍脈命術は「当てる」より「動かす」占い。こういう報告を聞くたびに、その確信が深まる。\n\n心当たりある？\n気になったら → LINE https://lin.ee/TJg5dru\n\n#方位 #吉方位 #龍脈命術"
+    ],
+    "theme": "方位の基礎知識/吉方位と凶方位の違い",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♈牡羊座",
+    "expires_on": "2026-09-21",
+    "pending_at": "2026-09-07T14:56:27.016668",
+    "queued_at": "2026-09-07T14:58:02.647835",
+    "threads_post_id": "18112070708153946",
+    "posted_at": "2026-09-07T14:58:32.317877+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
+    "recorded_at": "2026-09-07T14:58:32.329762"
   }
 ]
