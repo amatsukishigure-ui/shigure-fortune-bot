@@ -15,7 +15,10 @@
     "menu_guide": 0.5,
     "reply_magnet": 0.5,
     "before_sleep": 0.5,
-    "zodiac_deep": 0.88,
-    "card_pick": 0.5
+    "zodiac_deep": 0.875,
+    "card_pick": 0.5,
+    "world_view": 0.5,
+    "ritual_window": 0.3,
+    "zodiac_rank_cta": 0.3
   }
 }
