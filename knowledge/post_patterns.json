@@ -18,7 +18,7 @@
       21,
       22
     ],
-    "status": "active"
+    "status": "hold"
   },
   {
     "id": "list",
@@ -278,7 +278,7 @@
     "preferred_hours": [
       22
     ],
-    "status": "active"
+    "status": "hold"
   },
   {
     "id": "client_voice",
