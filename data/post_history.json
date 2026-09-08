@@ -18285,7 +18285,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/general.jpg",
-    "recorded_at": "2026-09-07T01:01:01.639761"
+    "recorded_at": "2026-09-07T01:01:01.639761",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♊双子座で、「なんで最後だけいつも届かないんだろう」がずっと頭にある人以外は、読まなくていい。\n\n#占い #吉方位 #開運",
@@ -18308,7 +18309,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-09-07T03:01:22.375721"
+    "recorded_at": "2026-09-07T03:01:22.375721",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♎天秤座で、「今の場所でいいのかな」がここ1年ずっと頭にある人以外は、読まなくていい。\n\n#占い #吉方位 #開運",
@@ -18469,5 +18471,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-09-08T03:01:06.963829"
+  },
+  {
+    "text": "♉牡牛座の方から、よく聞く言葉がある。「頑張ってるのに、なぜか自分だけ変わらない」。\n\n#占い #開運 #運気アップ",
+    "thread_posts": [
+      "♉牡牛座の方から、よく聞く言葉がある。「頑張ってるのに、なぜか自分だけ変わらない」。\n\n#占い #開運 #運気アップ",
+      "♉牡牛座さん、聞いてほしい。\n\n鑑定した30代の方から連絡が来た。\n中小企業で5年、評価はされてるのに年収が動かない。転職活動も「惜しい」を繰り返して止まっていた。\n\n鑑定でわかったのは、意志の問題じゃなかった。向きのズレだった。\n龍脈命術は「当てる」占いじゃなく「動かす」占い。デスクの向きを整えた翌月、一度断った会社から再オファーが届いたと言っていた。\n\n牡牛座は動き出すまでが長い。でもそれは臆病じゃなく、気の流れが整っていないサインだよ。\n\nまず話したい → LINE https://lin.ee/TJg5dru\nすぐ試したい → Coconala https://coconala.com/services/4292937?ref=threads\n\n#龍脈命術 #牡牛座 #吉方位"
+    ],
+    "theme": "時雨の世界観/停滞している人に言い続けてきたこと",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♉牡牛座",
+    "expires_on": "2026-09-22",
+    "pending_at": "2026-09-08T06:44:29.295411",
+    "queued_at": "2026-09-08T06:44:56.222873",
+    "threads_post_id": "18126050393504183",
+    "posted_at": "2026-09-08T06:45:19.892089+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
+    "recorded_at": "2026-09-08T06:45:19.903930"
   }
 ]
