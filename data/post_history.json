@@ -18367,7 +18367,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-09-07T13:25:53.440396"
+    "recorded_at": "2026-09-07T13:25:53.440396",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♈牡羊座の方から、よく聞く言葉がある。「頑張ってるのに、なんで変わらないんだろう」って。\n\n#占い #吉方位 #開運",
@@ -18390,7 +18391,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
-    "recorded_at": "2026-09-07T14:58:32.329762"
+    "recorded_at": "2026-09-07T14:58:32.329762",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♉牡牛座で、「頑張っているのに最後だけうまくいかない」という感覚がある人以外は、読まなくていい。\n\n#占い #吉方位 #龍脈命術",
@@ -18559,5 +18561,24 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/leo.jpg",
     "recorded_at": "2026-09-08T13:29:47.348504"
+  },
+  {
+    "text": "今週、エネルギーが内向きになりすぎる星座 TOP5 ⚠️\n\n🔴1位 ♏蠍座|信頼していた関係への疑念で、気が自分の内側に閉じこもりやすい\n🔴2位 ♑山羊座|白露以降の「締める気」が強まり、判断力より慎重さが勝ちすぎる\n🔴3位 ♉牡牛座|南方位の気が滞り、行動より現状維持の引力が強まっている\n🔴4位 ♋蟹座|秋の気の切り替わりに感受性が過剰反応し、決断のタイミングを逃しやすい\n🔴5位 ♎天秤座|バランスを取ろうとするほど、動けない状態が続く気の流れ\n\nこの状態は「変化の前触れ」でもある。気の流れが乱れる時期は、次の整いへの準備期間。\n\n龍脈命術では、停滞は「どこへ向かうか」を見直すサイン。当てはまった？\n\n#占い #開運 #運気アップ",
+    "x_text": "今週、エネルギーが内向きになりすぎる星座 TOP5 ⚠️\n\n他の星座はThreadsで👇\n\n#占い #時雨 #龍脈命術 #開運",
+    "theme": "転機のサイン/動けない本当の理由",
+    "pattern_id": "caution_rank",
+    "quality_score": 7.8,
+    "attempts": 2,
+    "x_eligible": false,
+    "expires_on": "2026-09-16",
+    "persona_id": "p018",
+    "pending_at": "2026-09-01T21:45:42.543897",
+    "queued_at": "2026-09-03T21:38:33.765980",
+    "threads_post_id": "18365784469244208",
+    "posted_at": "2026-09-08T15:55:07.433557+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
+    "recorded_at": "2026-09-08T15:55:07.444855"
   }
 ]
