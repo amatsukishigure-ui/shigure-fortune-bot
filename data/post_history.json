@@ -18600,5 +18600,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
     "recorded_at": "2026-09-08T18:20:13.190651"
+  },
+  {
+    "text": "♑山羊座で、「このままじゃない気がする」が頭から離らない人以外は、読まなくていい。\n\n#占い #龍脈命術",
+    "theme": "時雨の世界観/動ける占いとは",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "x_eligible": false,
+    "is_repost": true,
+    "original_post_id": "17974953525113067",
+    "pending_at": "2026-09-09T00:05:30.657544",
+    "queued_at": "2026-09-09T00:06:56.745136",
+    "threads_post_id": "18218446702338885",
+    "posted_at": "2026-09-09T00:07:05.722990+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
+    "recorded_at": "2026-09-09T00:07:05.735065"
   }
 ]
