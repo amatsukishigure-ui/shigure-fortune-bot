@@ -18753,7 +18753,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/capricorn.jpg",
-    "recorded_at": "2026-09-09T13:37:37.992326"
+    "recorded_at": "2026-09-09T13:37:37.992326",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♍乙女座の方から、よく聞く言葉がある。「頑張ってるのに、なぜか収入が安定しない」——それ、努力の問題じゃないかもしれない。\n\n#占い #吉方位 #龍脈命術",
@@ -18981,5 +18982,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-09-10T13:27:59.790572"
+  },
+  {
+    "text": "♉牡牛座で、「体が限界なのに頭が止まれない」という感覚がある人以外は、読まなくていい。\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "♉牡牛座で、「体が限界なのに頭が止まれない」という感覚がある人以外は、読まなくていい。\n\n#占い #吉方位 #開運",
+      "秋分に向けて、気が切り替わる時期に入っている。この時期の牡牛座は、体の疲れが方位のズレとして出やすい。龍脈命術では「消耗が止まらない」のは意志の問題じゃなく、向かっている方角が体の回復を妨げているサインと読む。今週だけでいいから、寝るとき頭を北か東に向けてみて。「頑張る向き」より「回復できる向き」を優先するだけで、体への気の入り方が変わる。当てはまる → 🔮 / 初めて聞いた → ✨ コメントで教えて。\n#占い #龍脈命術 #牡牛座"
+    ],
+    "theme": "季節・天文と方位/新月の吉方位行動",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♉牡牛座",
+    "expires_on": "2026-09-24",
+    "pending_at": "2026-09-10T13:26:02.196574",
+    "queued_at": "2026-09-10T13:27:34.004094",
+    "threads_post_id": "18108456038586007",
+    "posted_at": "2026-09-10T15:45:02.807533+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
+    "recorded_at": "2026-09-10T15:45:02.819628"
   }
 ]
