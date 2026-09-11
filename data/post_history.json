@@ -19015,7 +19015,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
-    "recorded_at": "2026-09-10T15:45:02.819628"
+    "recorded_at": "2026-09-10T15:45:02.819628",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♓魚座の方へ、聞いてほしい。\n\n本来は書くつもりがなかった。有料鑑定でしか話していないことを今夜だけ書く。\n\nテーマは「停滞の本当の原因」。\n\n丁寧にやっている。努力もしている。なのに選ばれない、変わらない——その理由は、頑張り方じゃない。\n\n止まっている理由は──方向だ。\n\n#占い #開運 #運気アップ",
@@ -19246,5 +19247,28 @@
     "is_mock": false,
     "has_image": false,
     "recorded_at": "2026-09-11T15:47:02.519619"
+  },
+  {
+    "text": "♋蟹座で、「頑張っているのになぜ」という気持ちが消えない人以外は、読まなくていい。\n\n#占い #龍脈命術",
+    "thread_posts": [
+      "♋蟹座で、「頑張っているのになぜ」という気持ちが消えない人以外は、読まなくていい。\n\n#占い #龍脈命術",
+      "今の時期、蟹座の龍脈は方角のズレが出やすい。\n\nパワースポットへ行っても「なんか違う」と感じたことはないか。それ、直感が正しい。龍脈命術では、神社や聖地の気は方位によって質が変わると読む。どの方向から参拝したかで、受け取れる気の種類が変わるんだ。\n\n今週、最寄りの神社へ行くなら東側の入口から入ってみて。\n\n気の変化、感じた？感じなかった？🔮か✨、コメントで教えて\n\n#占い #龍脈命術 #蟹座"
+    ],
+    "theme": "神社・パワースポット/パワースポットの気の読み方",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♋蟹座",
+    "expires_on": "2026-09-26",
+    "pending_at": "2026-09-11T15:45:15.996811",
+    "queued_at": "2026-09-11T15:46:19.812169",
+    "threads_post_id": "18061388999519338",
+    "posted_at": "2026-09-11T18:09:41.575848+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/cancer.jpg",
+    "recorded_at": "2026-09-11T18:09:41.590231"
   }
 ]
