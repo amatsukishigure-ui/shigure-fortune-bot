@@ -18991,7 +18991,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-09-10T13:27:59.790572"
+    "recorded_at": "2026-09-10T13:27:59.790572",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♉牡牛座で、「体が限界なのに頭が止まれない」という感覚がある人以外は、読まなくていい。\n\n#占い #吉方位 #開運",
@@ -19222,5 +19223,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
     "recorded_at": "2026-09-11T13:26:49.976301"
+  },
+  {
+    "text": "♋蟹座で、「なんで私だけ、まだここにいるんだろう」という感覚が最近ある人だけ読んで。\n\n#占い #吉方位 #龍脈命術",
+    "thread_posts": [
+      "♋蟹座で、「なんで私だけ、まだここにいるんだろう」という感覚が最近ある人だけ読んで。\n\n#占い #吉方位 #龍脈命術",
+      "先日、蟹座の方を鑑定した。\n\n仕事も恋愛も、頑張っている。なのに「止まっている」感覚が3年続いているという。\n\n龍脈命術で見ると、原因は努力量じゃなかった。向かっていた方位が、蟹座の気の流れと逆を突いていた。\n\n方位を北東にひとつ変えただけで、翌月に想定外の話が動き出した。「何も変えていないのに」と本人が言っていた。\n\n変えたのは、向きだけ。\n\n今この時期、秋の気が切り替わるこのタイミングは、方位を整えるのに動きやすい。当てはまる人は今週中に。\n\n止まっている感覚、ある？→🔮 / 初めて聞いた→✨ コメントで教えて。\n\n#占い #龍脈命術 #蟹座",
+      "こんな方、いませんか？\n□ 引っ越し・転職・独立、決め手がなくて動けない\n□ 「このままでいいのか」がずっと頭の片隅にある\n□ 占いを受けたことはあるけど、聞いて終わりだった\n\n2つ以上当てはまったら、読んでほしいnoteを書きました。\n\n「動ける占い」龍脈命術について、無料で公開しています🔮\nhttps://note.com/shigure_fortune/n/nab07df599219\n\n見逃したくない方は、noteのフォローもぜひ👀\n\n#占い #転職 #仕事運"
+    ],
+    "theme": "鑑定エピソード/方位を変えたら想定外のことが起きた話",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "zodiac_boost": "♋蟹座",
+    "expires_on": "2026-09-25",
+    "pending_at": "2026-09-11T13:25:55.706629",
+    "queued_at": "2026-09-11T13:26:25.648321",
+    "threads_post_id": "17908325067472020",
+    "posted_at": "2026-09-11T15:47:02.509470+00:00",
+    "is_mock": false,
+    "has_image": false,
+    "recorded_at": "2026-09-11T15:47:02.519619"
   }
 ]
