@@ -99,12 +99,32 @@ def run() -> dict:
         adjustments[pat] = round(factor, 3)
         print(f"  {pat:25s} ENG={eng:.3f}% ratio={ratio:.2f} → {factor:.2f}x (n={pattern_stats[pat]['count']})")
 
+    # 既存ファイルから locked リストと手動設定値を読み込む
+    out_path = DATA_DIR / "pattern_weight_adjustments.json"
+    existing: dict = {}
+    if out_path.exists():
+        try:
+            existing = json.loads(out_path.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+    locked: list = existing.get("locked", [])
+    existing_adjs: dict = existing.get("adjustments", {})
+
+    # locked パターンは自動計算値を上書きせず既存値を維持
+    for pat in locked:
+        if pat in existing_adjs:
+            adjustments[pat] = existing_adjs[pat]
+            print(f"  {'[LOCKED] ' + pat:25s} → kept {existing_adjs[pat]:.3f} (auto skipped)")
+        elif pat in adjustments:
+            del adjustments[pat]
+
+    import datetime as _dt2
     out = {
-        "_updated": __import__("datetime").datetime.now().isoformat()[:16],
-        "_overall_avg_eng": round(overall_avg, 4),
+        "updated_at": _dt2.datetime.now().isoformat(),
+        "locked": locked,
+        "lookback_days": LOOKBACK_DAYS,
         "adjustments": adjustments,
     }
-    out_path = DATA_DIR / "pattern_weight_adjustments.json"
     out_path.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"\nSaved → {out_path}")
     return out
