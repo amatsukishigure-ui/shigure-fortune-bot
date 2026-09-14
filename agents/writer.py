@@ -297,6 +297,32 @@ def _get_recent_zodiac_signs_any(history: list, hours: int = 24) -> list:
     return used
 
 
+def _get_queue_zodiac_signs(queue: list, pattern_id: str) -> list:
+    """キュー内の指定パターンで使用済みの星座を返す（重複生成防止）"""
+    marks = "♈♉♊♋♌♍♎♏♐♑♒♓"
+    import re
+    used = []
+    for item in queue:
+        if item.get("pattern_id") != pattern_id:
+            continue
+        zb = item.get("zodiac_boost", "")
+        if zb:
+            for z in ZODIAC_SIGNS:
+                if zb == z or zb.startswith(z[0]):
+                    if z not in used:
+                        used.append(z)
+                    break
+        else:
+            text = item.get("text", "")
+            m = re.search(f"([{marks}])", text)
+            if m:
+                for z in ZODIAC_SIGNS:
+                    if z[0] == m.group(1) and z not in used:
+                        used.append(z)
+                        break
+    return used
+
+
 def _pick_zodiac(exclude: list | None = None) -> str:
     import random
     available = [z for z in ZODIAC_SIGNS if z not in (exclude or [])]
@@ -2302,17 +2328,21 @@ def run(batch_size: int = 5) -> dict:
         if pattern.get("id") in ("zodiac_target", "caligula", "zodiac_deep", "zodiac_problem"):
             if pattern.get("id") == "zodiac_deep":
                 _recent_used = _get_recent_zodiac_deep_signs(history, days=14)
+                # キュー内で既に使われている星座も除外（複数バッチ実行時の重複防止）
+                _queue_zodiacs_deep = _get_queue_zodiac_signs(current_queue, "zodiac_deep")
+                _exclude_deep = list(dict.fromkeys(_recent_used + _queue_zodiacs_deep + batch_used_zodiacs))
                 # caligula コンボ: 直近5日のcaligula星座と同じ星座を60%確率で使う（シリーズ効果）
                 _combo_sign = _get_recent_caligula_sign(history, days=5)
-                if (_combo_sign and _combo_sign not in _recent_used + batch_used_zodiacs
+                if (_combo_sign and _combo_sign not in _exclude_deep
                         and _random.random() < 0.6):
                     _zodiac_val = _combo_sign
                 else:
-                    _zodiac_val = _pick_zodiac(exclude=_recent_used + batch_used_zodiacs)
+                    _zodiac_val = _pick_zodiac(exclude=_exclude_deep)
             elif pattern.get("id") in ("caligula", "zodiac_target", "zodiac_problem"):
-                # 直近7日 + バッチ内使用済みを除外（バッチ内重複防止）
+                # 直近7日 + バッチ内使用済み + キュー内使用済みを除外（重複防止）
                 _recent_zodiac_used = _get_recent_zodiac_signs_any(history, hours=24 * 7)
-                _zodiac_val = _pick_zodiac(exclude=_recent_zodiac_used + batch_used_zodiacs)
+                _queue_zodiacs_cali = _get_queue_zodiac_signs(current_queue, pattern.get("id"))
+                _zodiac_val = _pick_zodiac(exclude=_recent_zodiac_used + _queue_zodiacs_cali + batch_used_zodiacs)
             else:
                 _zodiac_val = _pick_zodiac()
             batch_used_zodiacs.append(_zodiac_val)
