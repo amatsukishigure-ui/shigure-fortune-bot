@@ -1,22 +1,22 @@
 {
-  "updated_at": "2026-09-16T06:55:56.957962",
+  "updated_at": "2026-09-16T12:26:56.042584",
   "locked": [
     "lucky_combo"
   ],
   "lookback_days": 30,
   "adjustments": {
-    "zodiac_ranking": 0.938,
-    "zodiac_target": 0.817,
-    "caligula": 1.606,
-    "zodiac_deep": 1.509,
+    "zodiac_deep": 1.514,
     "client_voice": 0.5,
-    "ichi_gon": 1.05,
+    "zodiac_ranking": 0.939,
+    "ichi_gon": 1.054,
+    "caligula": 1.553,
+    "zodiac_target": 0.85,
     "kotodama_rank": 2.0,
-    "reply_magnet": 0.731,
+    "reply_magnet": 0.733,
     "before_sleep": 0.5,
     "fuusui_tip": 0.5,
     "card_pick": 0.5,
-    "harm_revelation": 1.23,
+    "harm_revelation": 1.234,
     "lucky_combo": 2.0,
     "caution_rank": 0.5,
     "daily_energy": 0.5
