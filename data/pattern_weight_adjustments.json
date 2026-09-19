@@ -1,13 +1,12 @@
 {
-  "updated_at": "2026-09-19T12:56:02.222127",
+  "updated_at": "2026-09-19T15:09:11.625955",
   "locked": [
     "lucky_combo"
   ],
   "lookback_days": 30,
   "adjustments": {
-    "fuusui_tip": 0.5,
     "client_voice": 0.5,
-    "caligula": 1.381,
+    "caligula": 1.357,
     "zodiac_target": 0.872,
     "zodiac_ranking": 1.081,
     "card_pick": 0.5,
@@ -15,6 +14,7 @@
     "harm_revelation": 1.126,
     "before_sleep": 0.5,
     "zodiac_deep": 1.159,
+    "fuusui_tip": 0.5,
     "lucky_combo": 2.0,
     "menu_guide": 0.5,
     "kotodama_rank": 2.0,
