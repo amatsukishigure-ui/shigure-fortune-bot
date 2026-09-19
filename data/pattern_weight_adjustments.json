@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-09-19T11:48:59.045476",
+  "updated_at": "2026-09-19T12:56:02.222127",
   "locked": [
     "lucky_combo"
   ],
   "lookback_days": 30,
   "adjustments": {
-    "ichi_gon": 0.5,
     "fuusui_tip": 0.5,
     "client_voice": 0.5,
     "caligula": 1.381,
     "zodiac_target": 0.872,
-    "zodiac_ranking": 1.07,
+    "zodiac_ranking": 1.081,
     "card_pick": 0.5,
+    "ichi_gon": 0.5,
     "harm_revelation": 1.126,
     "before_sleep": 0.5,
     "zodiac_deep": 1.159,
