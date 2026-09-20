@@ -11616,5 +11616,60 @@
     "pattern_id": "daily_energy",
     "post_id": "18117509875748191",
     "fetched_at": "2026-09-20T00:02:46.425730"
+  },
+  {
+    "views": 229,
+    "likes": 1,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "client_voice",
+    "post_id": "18134014894636504",
+    "fetched_at": "2026-09-20T07:11:12.020815"
+  },
+  {
+    "views": 1909,
+    "likes": 78,
+    "replies": 4,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "caligula",
+    "post_id": "18130860340679692",
+    "fetched_at": "2026-09-20T07:11:12.305785"
+  },
+  {
+    "views": 74,
+    "likes": 1,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "reply_magnet",
+    "post_id": "18107424998230841",
+    "fetched_at": "2026-09-20T07:11:12.574259"
+  },
+  {
+    "views": 5543,
+    "likes": 41,
+    "replies": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "harm_revelation",
+    "post_id": "17902807545595305",
+    "fetched_at": "2026-09-20T07:11:12.791672"
+  },
+  {
+    "views": 134,
+    "likes": 5,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "daily_energy",
+    "post_id": "17909060973495085",
+    "fetched_at": "2026-09-20T07:11:13.047556"
   }
 ]
