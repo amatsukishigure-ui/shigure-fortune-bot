@@ -11792,5 +11792,38 @@
     "pattern_id": "caligula",
     "post_id": "18030768662850031",
     "fetched_at": "2026-09-21T07:20:25.671365"
+  },
+  {
+    "views": 678,
+    "likes": 16,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "caution_rank",
+    "post_id": "18121278403810286",
+    "fetched_at": "2026-09-21T13:40:04.869686"
+  },
+  {
+    "views": 203,
+    "likes": 5,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "zodiac_ranking",
+    "post_id": "18118832516294824",
+    "fetched_at": "2026-09-21T13:40:05.077168"
+  },
+  {
+    "views": 31,
+    "likes": 2,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "client_voice",
+    "post_id": "18142301461591862",
+    "fetched_at": "2026-09-21T13:40:05.499643"
   }
 ]
