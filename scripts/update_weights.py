@@ -44,16 +44,18 @@ def run() -> dict:
             if pid and pat:
                 id_to_pattern[str(pid)] = pat
 
-    # パターン別 ENG% を集計（直近 LOOKBACK_DAYS 日のみ）
+    # パターン別 ENG% を集計（直近 LOOKBACK_DAYS 日、直近7日は2倍重み）
     LOOKBACK_DAYS = 30
     import datetime as _dt
-    _cutoff = (_dt.datetime.now(_dt.timezone.utc) - _dt.timedelta(days=LOOKBACK_DAYS)).isoformat()
+    _now = _dt.datetime.now(_dt.timezone.utc)
+    _cutoff = (_now - _dt.timedelta(days=LOOKBACK_DAYS)).isoformat()
+    _recent_cutoff = (_now - _dt.timedelta(days=7)).isoformat()
 
     pattern_stats: dict = {}
     for rec in perf_data:
-        if rec.get("fetched_at", "") < _cutoff:
+        fetched = rec.get("fetched_at", "")
+        if fetched < _cutoff:
             continue
-        # performance_data は post_id キーを使う
         post_id = str(rec.get("post_id") or rec.get("threads_post_id") or rec.get("id") or "")
         pat = id_to_pattern.get(post_id)
         if not pat:
@@ -64,25 +66,27 @@ def run() -> dict:
         likes    = rec.get("likes", 0) or 0
         replies  = rec.get("replies", 0) or 0
         reposts  = rec.get("reposts", 0) or 0
-        # writer.py と同じ重み付き ENG 計算式（×1000 スケール）
         eng = (likes * 0.4 + replies * 0.35 + reposts * 0.25) / views * 1000
+        # 直近7日は2倍重み（トレンド変化に素早く追随する）
+        sample_weight = 2.0 if fetched >= _recent_cutoff else 1.0
 
         if pat not in pattern_stats:
-            pattern_stats[pat] = {"total_eng": 0.0, "count": 0}
-        pattern_stats[pat]["total_eng"] += eng
-        pattern_stats[pat]["count"] += 1
+            pattern_stats[pat] = {"weighted_eng": 0.0, "weight_sum": 0.0}
+        pattern_stats[pat]["weighted_eng"] += eng * sample_weight
+        pattern_stats[pat]["weight_sum"] += sample_weight
 
     if not pattern_stats:
         print("No joined records — skip")
         return {}
 
-    # パターン別平均 ENG%（現行パターンのみ・削除済みパターンを除外）
-    avg_engs = {
-        pat: s["total_eng"] / s["count"]
-        for pat, s in pattern_stats.items()
-        if s["count"] >= 3  # 3件以上のデータがあるパターンのみ
-        and (not active_pattern_ids or pat in active_pattern_ids)  # 現行パターンのみ
-    }
+    # パターン別加重平均 ENG%（現行パターンのみ・実効サンプル3件以上）
+    avg_engs = {}
+    for pat, s in pattern_stats.items():
+        if s["weight_sum"] < 3.0:
+            continue
+        if active_pattern_ids and pat not in active_pattern_ids:
+            continue
+        avg_engs[pat] = s["weighted_eng"] / s["weight_sum"]
 
     if not avg_engs:
         print("Not enough data per pattern — skip")
@@ -91,13 +95,15 @@ def run() -> dict:
     overall_avg = sum(avg_engs.values()) / len(avg_engs)
     print(f"Overall avg ENG%: {overall_avg:.3f}% ({len(avg_engs)} patterns)")
 
-    # 補正係数: ENG%が全体平均の2倍→2.0x、半分以下→0.5x にクリップ
+    # 補正係数: ENG%が全体平均の2倍→2.0x、1/3以下→0.35x にクリップ
+    # フロアを0.5→0.35に下げ、低エンゲージパターンの抑制を強化
     adjustments = {}
     for pat, eng in sorted(avg_engs.items(), key=lambda x: -x[1]):
         ratio = eng / overall_avg if overall_avg > 0 else 1.0
-        factor = max(0.5, min(2.0, ratio))
+        factor = max(0.35, min(2.0, ratio))
+        ws = pattern_stats[pat]["weight_sum"]
         adjustments[pat] = round(factor, 3)
-        print(f"  {pat:25s} ENG={eng:.3f}% ratio={ratio:.2f} → {factor:.2f}x (n={pattern_stats[pat]['count']})")
+        print(f"  {pat:25s} ENG={eng:.3f}% ratio={ratio:.2f} → {factor:.2f}x (w={ws:.1f})")
 
     # 既存ファイルから locked リストと手動設定値を読み込む
     out_path = DATA_DIR / "pattern_weight_adjustments.json"

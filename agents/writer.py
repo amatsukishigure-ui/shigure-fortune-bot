@@ -276,6 +276,27 @@ def _get_recent_zodiac_deep_signs(history: list, days: int = 14) -> list:
     return used
 
 
+def _get_recent_caligula_signs(history: list, days: int = 14) -> list:
+    """直近N日のcaligula投稿で使われた星座の一覧を返す（ローテーション強制用）"""
+    import re
+    cutoff = (datetime.now(JST) - timedelta(days=days)).isoformat()
+    marks = "♈♉♊♋♌♍♎♏♐♑♒♓"
+    used = []
+    for h in history:
+        if h.get("pattern_id") != "caligula":
+            continue
+        if h.get("posted_at", "") < cutoff:
+            continue
+        text = h.get("text", "")
+        m = re.search(f"([{marks}])", text)
+        if m:
+            for z in ZODIAC_SIGNS:
+                if z[0] == m.group(1) and z not in used:
+                    used.append(z)
+                    break
+    return used
+
+
 def _get_recent_caligula_sign(history: list, days: int = 5) -> str | None:
     """直近N日のcaligula投稿で最後に使われた星座を返す（zodiac_deepコンボ用）"""
     import re
@@ -2491,9 +2512,12 @@ def run(batch_size: int = 5) -> dict:
                 else:
                     _zodiac_val = _pick_zodiac(exclude=_exclude_deep)
             elif pattern.get("id") in ("caligula", "zodiac_target", "zodiac_problem"):
-                # 直近7日 + バッチ内使用済み + キュー内使用済みを除外（重複防止）
-                _recent_zodiac_used = _get_recent_zodiac_signs_any(history, hours=24 * 7)
                 _queue_zodiacs_cali = _get_queue_zodiac_signs(current_queue, pattern.get("id"))
+                if pattern.get("id") == "caligula":
+                    # caligula専用: 直近14日の使用済み星座を除外（12星座フルローテーション強制）
+                    _recent_zodiac_used = _get_recent_caligula_signs(history, days=14)
+                else:
+                    _recent_zodiac_used = _get_recent_zodiac_signs_any(history, hours=24 * 7)
                 _zodiac_val = _pick_zodiac(exclude=_recent_zodiac_used + _queue_zodiacs_cali + batch_used_zodiacs)
             else:
                 _zodiac_val = _pick_zodiac()
