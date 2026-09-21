@@ -17,9 +17,10 @@ from config import (
     MAX_QUALITY_RETRIES, MAX_SAME_PATTERN_CONSECUTIVE, MAX_SAME_THEME_CONSECUTIVE,
     ACCOUNT_PROFILE_FILE, POST_PATTERNS_FILE, THEME_TREE_FILE, HOOK_EXAMPLES_FILE,
     PERSONAS_FILE, HARM_FILE, CONTENT_SCHEDULE, DATA_DIR,
+    HARM_REVELATION_COUNT_FILE,
 )
 from core.state import (
-    load_json, load_history, load_research, enqueue_post, enqueue_pending,
+    load_json, save_json, load_history, load_research, enqueue_post, enqueue_pending,
 )
 from core.similarity import SimilarityChecker
 from core.quality import score_with_retry
@@ -63,6 +64,21 @@ ZODIAC_SIGNS = [
 _ZODIAC_MARK_TO_NAME = {z[0]: z[1:] for z in ZODIAC_SIGNS}
 _ZODIAC_NAME_TO_MARK = {z[1:]: z[0] for z in ZODIAC_SIGNS}
 _ZODIAC_MARKS_STR = "♈♉♊♋♌♍♎♏♐♑♒♓"
+# モデルがひらがな表記を使った場合の正規化マップ（漢字表記に統一）
+_ZODIAC_HIRA_TO_KANJI: dict[str, str] = {
+    "おひつじ座": "牡羊座",
+    "おうし座": "牡牛座",
+    "ふたご座": "双子座",
+    "かに座": "蟹座",
+    "しし座": "獅子座",
+    "おとめ座": "乙女座",
+    "てんびん座": "天秤座",
+    "さそり座": "蠍座",
+    "いて座": "射手座",
+    "やぎ座": "山羊座",
+    "みずがめ座": "水瓶座",
+    "うお座": "魚座",
+}
 
 # zodiac_boost が指定されても星座を自己管理するパターン（保証ロジック対象外）
 _ZODIAC_SELF_MANAGED_PIDS = frozenset({
@@ -95,6 +111,9 @@ def _fix_zodiac(text: str, target_zodiac: str) -> str:
         return text
 
     import re
+    # ひらがな表記を漢字表記に正規化（例: 「うお座」→「魚座」）してから記号置換に入る
+    for _hira, _kanji in _ZODIAC_HIRA_TO_KANJI.items():
+        text = text.replace(_hira, _kanji)
     # 他の星座記号をターゲット記号に置換
     wrong_marks = [m for m in _ZODIAC_MARK_TO_NAME if m != target_mark]
     for wm in wrong_marks:
@@ -105,6 +124,9 @@ def _fix_zodiac(text: str, target_zodiac: str) -> str:
         text = re.sub(re.escape(wm) + r"(?!" + "|".join(re.escape(n) for n in _ZODIAC_MARK_TO_NAME.values()) + ")", target_mark, text)
         # 名前だけ残っている場合: 「双子座」→「乙女座」
         text = text.replace(wn, target_name)
+    # フォールバック: ターゲット記号が本文にないが名前はある → 「天秤座」→「♎天秤座」に補完
+    if target_mark and target_name and target_mark not in text and target_name in text:
+        text = text.replace(target_name, f"{target_mark}{target_name}", 1)
     return text
 
 
@@ -361,6 +383,7 @@ def _select_pattern(
     hour: int = 12,
     excluded_patterns: set = None,
     long_history_patterns: list = None,
+    recent_triggers: dict = None,
 ) -> dict:
     """
     投稿パターンを重み付きランダムで選択する。
@@ -371,6 +394,9 @@ def _select_pattern(
 
     long_history_patterns: 直近30件のpattern_idリスト。
         未出現パターンに starvation boost（2.0x）を掛けて偏りを補正する。
+
+    recent_triggers: {pattern_id: posted_at_iso} — 直近N日に投稿されたパターンの最終投稿日時。
+        combo_boost の発動判定に使用（龍脈弧システム）。
 
     format の種類（参考）:
         short  … 1〜4行、120字以内のひとこと投稿（ici_gon / emoji_comment 等）
@@ -409,6 +435,7 @@ def _select_pattern(
 
     # パフォーマンスフィードバックによる動的補正係数を取得
     perf_adjustments = _load_weight_adjustments()
+    _triggers = recent_triggers or {}
 
     # 時間帯・曜日による weight ブースト（JST基準で判定 — UTC判定だと7/9時スロットが前日になる）
     _today_wd = datetime.now(JST).weekday()  # 月=0
@@ -441,6 +468,25 @@ def _select_pattern(
         _today_dom = datetime.now(JST).day
         if 1 <= _today_dom <= 3 and pid == "kotodama_rank":
             w *= 2.5
+
+        # ── 龍脈弧 combo_boost ──────────────────────────────────────────
+        # トリガーパターンが window_days 以内に投稿されていたら multiplier を乗算する
+        for _cb in p.get("combo_boost", []):
+            _trig = _cb.get("trigger", "")
+            _win  = _cb.get("window_days", 3)
+            _mul  = _cb.get("multiplier", 1.0)
+            if _trig in _triggers:
+                _trig_ts = _triggers[_trig]
+                try:
+                    _elapsed = (datetime.now(JST) - datetime.fromisoformat(_trig_ts)).days
+                    if _elapsed <= _win:
+                        w *= _mul
+                        # デバッグログ（選択時に弧の名前を出力）
+                        _arc = _cb.get("arc", "combo")
+                        print(f"  ✦ 龍脈弧発動 [{_arc}] {_trig}→{pid} ({_elapsed}日前) x{_mul}")
+                except Exception:
+                    pass
+        # ────────────────────────────────────────────────────────────────
 
         weights.append(w)
 
@@ -491,6 +537,10 @@ def _build_prompt(
         使い回すための固定指示、dynamic_prompt は呼び出しごとに変わるuserメッセージ。
     """
     profile = knowledge["profile"]
+    _bv = profile.get("brand_voice", {})
+    _tone_rules = "\n".join(f"  - {r}" for r in _bv.get("tone_rules", []))
+    _sig_phrases = "\n".join(f"  「{p}」" for p in _bv.get("signature_phrases", []))
+    _diff = _bv.get("brand_differentiation", {})
     profile_summary = (
         f"占術家名: {profile.get('name')}\n"
         f"肩書き: {profile.get('title')}\n"
@@ -498,7 +548,16 @@ def _build_prompt(
         f"コアコンセプト: {profile.get('core_concept')}\n"
         f"口調: {profile.get('tone')}\n"
         f"NGワード: {', '.join(profile.get('ng_words', []))}\n"
-        f"シグネチャ: 占術家 時雨（投稿の最後、世界観投稿・長め投稿のみ使用）"
+        f"シグネチャ: 占術家 時雨（投稿の最後、世界観投稿・長め投稿のみ使用）\n"
+        f"\n## 龍脈命術ブランドボイス（全投稿で必ず意識すること）\n"
+        f"コアメッセージ: {_bv.get('core_message', '')}\n"
+        f"必須ルール: {_bv.get('required_per_post', '')}\n"
+        f"トーンルール:\n{_tone_rules}\n"
+        f"龍脈命術ならではのシグネチャフレーズ（自然に使えるものを選んで埋め込む）:\n{_sig_phrases}\n"
+        f"差別化ポイント:\n"
+        f"  - 西洋占星術との違い: {_diff.get('vs_seiza', '')}\n"
+        f"  - 一般風水との違い: {_diff.get('vs_fuusui', '')}\n"
+        f"  - 核心: {_diff.get('core', '')}"
     )
 
     import random as _rnd
@@ -1143,12 +1202,26 @@ NG: 🔮 vs 🐉（どちらもブランドシンボルで対になっていな�
         ]
         _hr_hook = _rnd_hr.choice(_hr_hooks)
         _hr_topic, _hr_angle = _rnd_hr.choice(_hr_topics)
-        _hr_ctas = [
-            f"自分の状況が気になる方は鑑定で見ます。\n▷ {service_url}",
-            f"続きが気になる方は、鑑定で話しましょう。\n▷ {service_url}",
-            f"自分の方位を確かめたい方 → {service_url}",
-        ]
+        # LINE / Coconala を交互に使い、どちらの経路のCVが高いか測定する
+        _hr_count_data = load_json(HARM_REVELATION_COUNT_FILE, default={"count": 0})
+        _hr_count = _hr_count_data.get("count", 0)
+        _line_url_hr = knowledge.get("profile", {}).get("line_url", "https://lin.ee/TJg5dru")
+        if _hr_count % 2 == 0:
+            # 偶数回目 → LINE（0回目=初回もLINE）
+            _hr_ctas = [
+                f"まず話したい方はLINEへ（無料）。\n▷ {_line_url_hr}",
+                f"続きが気になる方、LINEで話しましょう。\n▷ {_line_url_hr}",
+                f"自分の状況を確かめたい方 → {_line_url_hr}",
+            ]
+        else:
+            # 奇数回目 → Coconala
+            _hr_ctas = [
+                f"自分の状況が気になる方は鑑定で見ます。\n▷ {service_url}",
+                f"続きが気になる方は、鑑定で話しましょう。\n▷ {service_url}",
+                f"自分の方位を確かめたい方 → {service_url}",
+            ]
         _hr_cta = _rnd_hr.choice(_hr_ctas)
+        save_json(HARM_REVELATION_COUNT_FILE, {"count": _hr_count + 1})
         pattern_extra = f"""
 ## プレミアム開示型ツリー（3投稿）の追加ルール（有料内容の限定公開）
 
@@ -2105,16 +2178,23 @@ eng=102: 「嵐の中で「動こう」としていませんか。」→「手�
   - または「〇〇な人へ」「〇〇しているあなたへ」と直接呼びかける
   - 豆知識・開運日・世界観投稿でも「情報を伝える」より先に「誰に届けるか」を示す
 - 風水・吉方位・龍脈命術の世界観を自然に織り込む
-- **【ブランド認知・教育の埋め込み】全投稿で龍脈命術の「何が違うか」を1文忍ばせる**:
-  単に「龍脈命術では〜」と名前を出すだけでなく、**龍脈命術ならではの視点**を1行で自然に示すこと。
+- **【ブランド認知・龍脈命術の刻み込み — 最重要】全投稿で必ず「龍脈命術」または「龍脈」を1回以上使う**:
   目的: 読者が「龍脈命術 = 方位・気の流れで人生を動かす占い」と記憶する。
+  単に名前を出すだけでなく、**龍脈命術ならではの視点**を1行で自然に示すこと。
   埋め込みの型（いずれか1つ、文脈に合うものを選ぶ）:
   - 差別化型: 「星座占いが性格を読むのに対し、龍脈命術は今いる場所・向かう方向を読む」
   - 実践型: 「龍脈命術は『当てる』より『動ける』占い。方位を整えると、同じ行動の結果が変わる」
   - 原理型: 「龍脈命術の根拠は気の流れ。気は方位によって質が違い、向かう方向で人生の流れが変わる」
   - 体験型: 「龍脈命術を受けた人がよく言うのは『占いなのに行動できた』という感想」
-  埋め込み禁止パターン（ブランド説明だけの投稿は読まれない）: 龍脈命術の説明だけで終わる。「龍脈命術とは〜です」という定義文から始まる。
+  - 断言型: 「意志の問題じゃない。向きの問題だ。龍脈命術が言い続けてきたのは、そういうことだ」
+  埋め込み禁止パターン: 龍脈命術の説明だけで終わる。「龍脈命術とは〜です」という定義文から始まる。
   例外: emoji_comment・type_quiz・ichi_gon（短文で文字数制約がある場合）は不要
+- **【断言トーン — 龍脈命術ブランドの柱】**:
+  「〜だ。」「〜だった。」「〜だけだ。」の断言形式を基本とする。
+  「〜だと思う」「〜かもしれない」「〜やすい」は reach/engage パターンでは使わない。
+  「静かで確信がある」— 断言しながらも押しつけでない、時雨固有のトーン。
+  シグネチャフレーズを自然に使えるものは積極的に使う:
+  「命（さだめ）を読み、気の流れで動かす」「向きが変われば、同じ行動の結果が変わる」など
 - **【エンゲージメント最重要】締め問いかけ必須**: CTA・変換系パターン（harm_cta・menu_guide・follow_cta・conversion系）以外は、最後の1行を問いかけで終わらせること
   - 必須例: 「これ、わかる？」「当てはまった？」「心当たりある？」「やってみた？」「どっちかな。」
   - 1語でも十分: 「わかる？」「当てはまる？」「どっち？」
@@ -2328,6 +2408,22 @@ def run(batch_size: int = 5) -> dict:
     # starvation boost 用: 直近30件のパターンIDセット
     long_history_patterns = [h.get("pattern_id") for h in history[-30:] if h.get("pattern_id")]
 
+    # 龍脈弧 combo_boost 用: 直近7日に投稿されたパターンの最終投稿日時 {pattern_id: posted_at}
+    _combo_window_days = 7
+    _now_iso = datetime.now(JST).isoformat()
+    recent_triggers: dict[str, str] = {}
+    for _h in reversed(history):
+        _pid = _h.get("pattern_id", "")
+        _ts  = _h.get("posted_at", "")
+        if not _pid or not _ts or _pid in recent_triggers:
+            continue
+        try:
+            _elapsed = (datetime.now(JST) - datetime.fromisoformat(_ts)).days
+            if _elapsed <= _combo_window_days:
+                recent_triggers[_pid] = _ts
+        except Exception:
+            pass
+
     # 現在のキュー長を取得（投稿予定時刻の推定に使用）
     # pending_posts（承認待ち）も含めないと推定時刻が早すぎるズレが生じる
     current_queue = load_json(DATA_DIR / "post_queue.json", default=[])
@@ -2372,6 +2468,7 @@ def run(batch_size: int = 5) -> dict:
                 knowledge["patterns"], recent_patterns,
                 hour=jst_hour, excluded_patterns=excluded_pids,
                 long_history_patterns=long_history_patterns,
+                recent_triggers=recent_triggers,
             )
 
         # 推定投稿時刻（キュー長 + バッチ内位置 から計算）
@@ -2607,6 +2704,10 @@ def run(batch_size: int = 5) -> dict:
             _target_z = extra_hint.get("zodiac", "")
             if _target_z and pattern.get("id") in ("caligula", "zodiac_target"):
                 first_draft = _fix_zodiac(first_draft, _target_z)
+            # kotodama_rank: 全12星座のひらがな→漢字正規化（target_zodiacなしで一括置換）
+            if pattern.get("id") == "kotodama_rank":
+                for _hira, _kanji in _ZODIAC_HIRA_TO_KANJI.items():
+                    first_draft = first_draft.replace(_hira, _kanji)
             # zodiac_boost パターン: 星座記号が本文になければ冒頭に強制追加（品質チェック前）
             _zb_single = extra_hint.get("zodiac_boost", "")
             if _zb_single and pattern.get("id") not in _ZODIAC_SELF_MANAGED_PIDS:
@@ -2681,8 +2782,18 @@ def run(batch_size: int = 5) -> dict:
                 post_obj["harm_category"] = extra_hint["harm_category"]
 
             # 星座ブーストを記録（画像選択で使用）
+            # caligula/zodiac_target: _fix_zodiac が部分失敗した場合も
+            # zodiac_boost を実際のテキスト内の星座記号に合わせる（14% mismatch 対策）
             if extra_hint.get("zodiac_boost"):
-                post_obj["zodiac_boost"] = extra_hint["zodiac_boost"]
+                _zb_val = extra_hint["zodiac_boost"]
+                if pattern.get("id") in ("caligula", "zodiac_target"):
+                    _actual_mark = next((c for c in threads_text if c in _ZODIAC_MARKS_STR), None)
+                    if _actual_mark:
+                        _actual_zodiac = _actual_mark + _ZODIAC_MARK_TO_NAME.get(_actual_mark, "")
+                        if _actual_zodiac != _zb_val:
+                            print(f"  ⚠ zodiac_boost 補正 [{pattern.get('id')}]: {_zb_val} → {_actual_zodiac}")
+                        _zb_val = _actual_zodiac
+                post_obj["zodiac_boost"] = _zb_val
 
             # 承認待ちに追加（承認後にポスターが投稿する）
             enqueue_pending(post_obj)

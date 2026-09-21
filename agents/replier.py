@@ -407,6 +407,8 @@ def run() -> dict:
         and h.get("posted_at", "") >= cutoff
         and not h.get("is_mock")
     ]
+    # reply_magnet を先頭に移動（返信約束を最優先で処理する）
+    target_posts.sort(key=lambda p: (0 if p.get("pattern_id") == "reply_magnet" else 1, p.get("posted_at", "")))
 
     replied = 0
     nested_replied = 0
