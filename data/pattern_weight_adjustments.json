@@ -1,15 +1,14 @@
 {
-  "updated_at": "2026-09-22T13:56:31.802079",
+  "updated_at": "2026-09-22T18:26:52.138526",
   "locked": [
     "lucky_combo"
   ],
   "lookback_days": 30,
   "adjustments": {
-    "fuusui_tip": 0.5,
     "lucky_combo": 2.0,
     "menu_guide": 0.5,
-    "harm_revelation": 1.089,
-    "zodiac_deep": 1.367,
+    "harm_revelation": 1.029,
+    "zodiac_deep": 1.368,
     "zodiac_target": 0.715,
     "card_pick": 0.5,
     "client_voice": 0.5,
@@ -20,6 +19,7 @@
     "caution_rank": 0.5,
     "daily_energy": 2.0,
     "before_sleep": 0.5,
-    "reply_magnet": 0.681
+    "reply_magnet": 0.682,
+    "fuusui_tip": 0.5
   }
 }
