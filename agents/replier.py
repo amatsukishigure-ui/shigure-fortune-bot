@@ -46,6 +46,21 @@ def _has_consult_signal(text: str) -> bool:
     return any(kw in text for kw in _CONSULT_KEYWORDS)
 
 
+_QUESTION_ENDINGS = ("？", "?", "ですか", "でしょうか", "ますか", "ません か",
+                     "いいんですか", "いいですか", "でいい", "なんですか",
+                     "ますか", "てもいい", "くれますか", "えますか")
+_QUESTION_WORDS = ("どうすれば", "どうやって", "どう思", "どうしたら", "なぜ",
+                   "なんで", "何から", "何が", "どこから", "いつから",
+                   "教えて", "知りたい", "気になる", "聞いていい", "聞いてもいい")
+
+def _is_question(text: str) -> bool:
+    """コメントが質問かどうかを判定する"""
+    t = text.strip()
+    if t.endswith("？") or t.endswith("?"):
+        return True
+    return any(w in t for w in _QUESTION_ENDINGS + _QUESTION_WORDS)
+
+
 def _get_replies(thread_id: str) -> list:
     """スレッドIDへの返信一覧を取得する（投稿にもコメントにも使える）"""
     if not THREADS_ACCESS_TOKEN:
@@ -257,6 +272,7 @@ def _generate_reply(comment_text: str, post_text: str, profile: dict, pattern_id
             return _generate_hesitation_reply(choice, profile)
 
     has_signal = _has_consult_signal(comment_text)
+    is_q = _is_question(comment_text)
     line_url = profile.get("line_url", "https://lin.ee/TJg5dru")
 
     cta_rule = (
@@ -267,17 +283,52 @@ def _generate_reply(comment_text: str, post_text: str, profile: dict, pattern_id
         else "- 鑑定への直接誘導は不要（自然な会話の中で信頼を積む）"
     )
 
-    _REPLY_STYLES = [
-        "受け止め共感→龍脈の視点で状況を一言→短い問いかけ",
-        "コメントの1語を引用して受け止め→方位・気の流れ解釈1行→余韻のある締め",
-        "驚きや嬉しさを最初に→その人の状況に合った気の流れ解釈→「何か変化あったら教えてね」",
-        "相手の状況を1行で言い当てる→龍脈命術的な読み→背中を押す一言",
-        "シンプルな共感1行→吉方位ヒントを自然に→軽い問いかけ",
-    ]
-    style = random.choice(_REPLY_STYLES)
-
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
-    prompt = f"""あなたは占術家「時雨（しぐれ）」です。
+
+    if is_q:
+        # 質問コメント: まず答える → 龍脈の視点で補足 → 問いかけ
+        _Q_STYLES = [
+            "質問に直接答える（Yes/Noを明確に）→龍脈命術の視点で補足1行→興味を引く問いかけ",
+            "「いい質問だね」などで受け取る→答えを龍脈の言葉で1〜2行→「試してみたらどうだった？」",
+            "答えを先に断言する→なぜそうかを気の流れで一言説明→軽い問いかけ",
+        ]
+        style = random.choice(_Q_STYLES)
+        prompt = f"""あなたは占術家「時雨（しぐれ）」です。
+Threadsへの投稿に質問コメントが届きました。時雨として返信してください。
+
+【元の投稿】
+{post_text[:200]}
+
+【届いた質問コメント】
+{comment_text}
+
+【今回の返信スタイル（これに従う）】
+{style}
+
+【返信ルール — 質問なので必ずこれを守る】
+- 60〜130字で返す
+- 🚨 最重要: 質問に対して「答え」を最初に返すこと。感情の反射・言い換え・共感だけで終わるのは不合格
+  × 不合格例: 「「物から」って感じてるんだね」→ これは答えじゃない
+  ○ 合格例: 「物から始めるのは全然アリだよ。龍脈命術でも〜」
+- 「ありがとうございます」は使わない
+- 龍脈命術・気の流れの視点を自然に1行添える（説明口調は禁止）
+- 返信の末尾に軽い問いかけを入れてスレッドを続かせる
+{cta_rule}
+- 語尾は「〜だよ」「〜ね」「〜かも」など柔らかく
+- 絵文字は0〜1個
+
+返信文のみ出力してください。"""
+    else:
+        # 感想・共感・反応コメント: 受け止め → 龍脈の視点 → 問いかけ
+        _REPLY_STYLES = [
+            "受け止め共感→龍脈の視点で状況を一言→短い問いかけ",
+            "コメントの1語を引用して受け止め→方位・気の流れ解釈1行→余韻のある締め",
+            "驚きや嬉しさを最初に→その人の状況に合った気の流れ解釈→「何か変化あったら教えてね」",
+            "相手の状況を1行で言い当てる→龍脈命術的な読み→背中を押す一言",
+            "シンプルな共感1行→吉方位ヒントを自然に→軽い問いかけ",
+        ]
+        style = random.choice(_REPLY_STYLES)
+        prompt = f"""あなたは占術家「時雨（しぐれ）」です。
 Threadsへの投稿にコメントが届きました。時雨として返信してください。
 
 【元の投稿】
