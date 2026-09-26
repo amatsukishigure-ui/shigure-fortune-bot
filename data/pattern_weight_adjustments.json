@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26T12:04:55.407083",
+  "updated_at": "2026-09-26T13:39:19.788945",
   "locked": [
     "lucky_combo"
   ],
@@ -7,16 +7,16 @@
   "adjustments": {
     "lucky_combo": 2.0,
     "before_sleep": 0.5,
-    "caligula": 0.896,
+    "caligula": 0.895,
     "daily_energy": 2.0,
     "caution_rank": 0.5,
     "client_voice": 0.5,
-    "zodiac_ranking": 0.782,
+    "zodiac_ranking": 0.781,
     "kotodama_rank": 2.0,
-    "zodiac_deep": 1.522,
+    "zodiac_deep": 1.521,
     "ichi_gon": 0.523,
-    "zodiac_target": 0.856,
-    "harm_revelation": 1.089,
+    "zodiac_target": 0.855,
+    "harm_revelation": 1.088,
     "reply_magnet": 0.697,
     "fuusui_tip": 0.5
   }
