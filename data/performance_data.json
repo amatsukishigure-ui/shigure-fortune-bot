@@ -12254,5 +12254,38 @@
     "pattern_id": "daily_energy",
     "post_id": "18109039280150707",
     "fetched_at": "2026-09-26T00:29:51.639678"
+  },
+  {
+    "views": 909,
+    "likes": 7,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "caligula",
+    "post_id": "17948526918293996",
+    "fetched_at": "2026-09-26T06:44:20.303443"
+  },
+  {
+    "views": 464,
+    "likes": 32,
+    "replies": 5,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "zodiac_target",
+    "post_id": "18116928967991486",
+    "fetched_at": "2026-09-26T06:44:20.652617"
+  },
+  {
+    "views": 210,
+    "likes": 5,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "fuusui_tip",
+    "post_id": "18368360764246924",
+    "fetched_at": "2026-09-26T06:44:20.945297"
   }
 ]
