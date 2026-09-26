@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-09-26T13:39:19.788945",
+  "updated_at": "2026-09-26T15:30:46.420998",
   "locked": [
     "lucky_combo"
   ],
   "lookback_days": 30,
   "adjustments": {
-    "lucky_combo": 2.0,
     "before_sleep": 0.5,
-    "caligula": 0.895,
+    "caligula": 0.876,
+    "lucky_combo": 2.0,
     "daily_energy": 2.0,
     "caution_rank": 0.5,
     "client_voice": 0.5,
