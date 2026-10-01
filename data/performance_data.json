@@ -12795,7 +12795,7 @@
     "fetched_at": "2026-10-01T07:54:09.942368"
   },
   {
-    "views": 0,
+    "views": 930,
     "likes": 13,
     "replies": 1,
     "reposts": 0,
@@ -12803,6 +12803,39 @@
     "shares": 0,
     "pattern_id": "caligula",
     "post_id": "18077151806737021",
-    "fetched_at": "2026-10-01T07:54:10.070864"
+    "fetched_at": "2026-10-01T14:14:50.699259"
+  },
+  {
+    "views": 68,
+    "likes": 5,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "daily_energy",
+    "post_id": "18063945281785844",
+    "fetched_at": "2026-10-01T14:14:50.944089"
+  },
+  {
+    "views": 345,
+    "likes": 17,
+    "replies": 3,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "zodiac_ranking",
+    "post_id": "17933637642398063",
+    "fetched_at": "2026-10-01T14:14:51.232785"
+  },
+  {
+    "views": 487,
+    "likes": 13,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "client_voice",
+    "post_id": "18221630524337252",
+    "fetched_at": "2026-10-01T14:14:51.578428"
   }
 ]
