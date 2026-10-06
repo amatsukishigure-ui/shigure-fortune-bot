@@ -1,23 +1,5 @@
 [
   {
-    "text": "「週末くらいゆっくりしたい」と思いながら、結局スマホ見てダラダラして終わる人へ。\n\nそれ、休めてるようで休めてない。\n\n龍脈命術では、気の巡りが滞ると「何もしてないのに疲れが取れない」状態になる。\n\n今日は芒種。種を蒔く日。\n\nだからこそ、ひとつだけやってみて。\n玄関の靴を揃えて、窓を5分開ける。\n\nそれだけで気の通り道が変わる。\n\nやってみる人はいいねして。\n\n#占い #龍脈命術",
-    "x_text": "「週末くらいゆっくりしたい」と思いながら、結局スマホ見てダラダラして終わる人へ。\n\nそれ、休めてるようで休めてない。\n\n龍脈命術では、気の巡りが滞ると「何もしてないのに疲れが取れない」状態になる。\n\n今日は芒種。種を蒔く日。\n\nだからこそ、ひとつだけやってみて。\n玄関の靴を揃えて、窓を5分開ける。\n\nそれだけで気の通り道が変わる。\n\nやってみる人はいいねして。\n\n#占い #時雨 #開運 #風水",
-    "theme": "開運行動/週末の整え方",
-    "pattern_id": "engagement_hook",
-    "quality_score": 8.0,
-    "attempts": 1,
-    "x_eligible": true,
-    "pending_at": "2026-06-05T00:03:05.972794",
-    "queued_at": "2026-06-05T00:04:59.062545",
-    "threads_post_id": "17917070034381588",
-    "posted_at": "2026-06-05T23:59:06.262244",
-    "is_mock": false,
-    "has_image": true,
-    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-06-05T23:59:06.266208",
-    "hourly_stats_recorded": true
-  },
-  {
     "text": "「パワースポットに行っても何も変わらなかった」って人、多いと思う。\n\n龍脈命術では、神社にも\"方位の相性\"がある。\n自分にとって吉方位にある神社へ足を運ぶだけで、受け取れる気の質がまるで違う。\n\nどこへ行くかより、どの方角へ動くか。\n\n　　　占術家 時雨\n\n#占い #龍脈命術",
     "x_text": "「パワースポットに行っても何も変わらなかった」って人、多いと思う。\n\n龍脈命術では、神社にも\"方位の相性\"がある。\n自分にとって吉方位にある神社へ足を運ぶだけで、受け取れる気の質がまるで違う。\n\nどこへ行くかより、どの方角へ動くか。\n\n#占い #時雨 #神社 #パワースポット",
     "theme": "神社・パワースポット/方位別おすすめ神社",
@@ -20716,5 +20698,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-10-05T21:52:24.259847"
+  },
+  {
+    "text": "♋蟹座の方から、よく聞く言葉がある。「頑張っているのに、なんか報われない気がする」——それ、努力の量じゃなくて、向きの問題かもしれない。\n\n#占い #龍脈命術",
+    "thread_posts": [
+      "♋蟹座の方から、よく聞く言葉がある。「頑張っているのに、なんか報われない気がする」——それ、努力の量じゃなくて、向きの問題かもしれない。\n\n#占い #龍脈命術",
+      "♋蟹座さん、聞いてほしい。\n\n鑑定に来た30代・教師の方がいた。\n子育てと仕事を必死に回しているのに、職場では重要な仕事から外され「このまま続けていいのか」と迷っていた。\n\n鑑定でわかったのは方位のズレ。\n働く方向と気の流れが嚙み合っていなかった。\n\n龍脈命術は「当てる」占いじゃなく「動かす」占い。\n方位を整えた翌月、異動の希望が通ったと連絡が来た。\n\n努力は十分。あとは向きだけ。\n\nまず話したい → LINE https://lin.ee/TJg5dru\nすぐ試したい → Coconala https://coconala.com/services/4292937?ref=threads\n\n#龍脈命術 #蟹座 #開運"
+    ],
+    "theme": "龍脈命術の世界観/龍脈命術と九星気学の違い",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♋蟹座",
+    "expires_on": "2026-10-20",
+    "pending_at": "2026-10-06T00:46:44.938983",
+    "queued_at": "2026-10-06T00:46:45.127867",
+    "threads_post_id": "18093485930174532",
+    "posted_at": "2026-10-06T00:47:18.389385+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/cancer.jpg",
+    "recorded_at": "2026-10-06T00:47:18.399454"
   }
 ]
