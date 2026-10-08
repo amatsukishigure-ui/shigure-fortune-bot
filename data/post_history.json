@@ -1,24 +1,5 @@
 [
   {
-    "text": "今の自分のメニューに迷いがない人は、この先を読まなくていい。\n\n♒ 水瓶座、今月は「自分で選んでいるようで、選べていない」時期。\n\n龍脈命術では、芒種から夏至にかけての今は気の流れが揺れやすい。\n決断力が落ちるのは意志の問題じゃなく、今いる場所と向いている方位のズレ。\n\n何を選べばいいか、というより\n「自分が今どこにいるか」を先に知るほうがいい。\n\nそれを整理するのが、鑑定。\n何ができるかは、プロフィールから確認してみて。\n\n#占い #龍脈命術",
-    "x_text": "今の自分のメニューに迷いがない人は、この先を読まなくていい。\n\n♒ 水瓶座、今月は「自分で選んでいるようで、選べていない」時期。\n\n龍脈命術では、芒種から夏至にかけての今は気の流れが揺れやすい。\n決断力が落ちるのは意志の問題じゃなく、今いる場所と向いている方位のズレ。\n\n何を選べばいいか、というより\n「自分が今どこにいるか」を先に知るほうがいい。\n\nそれを整理するのが、鑑定。\n何ができるかは、プロフィールから確認してみて。\n\n#占い #時雨 #龍脈命術 #吉方位",
-    "theme": "メニュー誘導/鑑定メニュー案内",
-    "pattern_id": "caligula",
-    "quality_score": 7.6,
-    "attempts": 1,
-    "x_eligible": true,
-    "zodiac_boost": "♒水瓶座",
-    "pending_at": "2026-06-07T22:36:57.862530",
-    "queued_at": "2026-06-07T22:37:44.227695",
-    "threads_post_id": "18053526056735596",
-    "posted_at": "2026-06-07T14:56:45.699153",
-    "is_mock": false,
-    "has_image": true,
-    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aquarius.jpg",
-    "recorded_at": "2026-06-07T14:56:45.705603",
-    "hourly_stats_recorded": true
-  },
-  {
     "text": "転機が来るとき、人はたいてい「動かなかった選択」を先にする。\n\n止まることも、流れの一部だ。\n\nこれ、わかる？\n\n#占い #龍脈命術",
     "x_text": "転機が来るとき、人はたいてい「動かなかった選択」を先にする。\n\n止まることも、流れの一部だ。\n\nこれ、わかる？\n\n#占い #時雨 #龍脈命術 #開運",
     "theme": "鑑定エピソード/人生の転機",
@@ -20590,7 +20571,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/fortune_1.jpg",
-    "recorded_at": "2026-10-07T01:01:09.426511"
+    "recorded_at": "2026-10-07T01:01:09.426511",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♑山羊座で、「頑張ってるのに寒露の季節も何も変わらない気がする」という感覚がある人だけ読んで。\n\n#占い #星座占い #運勢",
@@ -20774,5 +20756,29 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/cancer.jpg",
     "recorded_at": "2026-10-08T01:01:11.736353"
+  },
+  {
+    "text": "♌獅子座で、「なんで最終面接だけ受からないんだろう」という感覚が今もある人だけ読んで。\n\n#占い #龍脈命術",
+    "thread_posts": [
+      "♌獅子座で、「なんで最終面接だけ受からないんだろう」という感覚が今もある人だけ読んで。\n\n#占い #龍脈命術",
+      "努力が足りないんじゃない。向きが合っていないだけ。\n\n龍脈命術では、今の獅子座に「発信の気」が滞りやすい時期が重なっている。伝わっているはずなのに届かない。評価されているのに選ばれない。そのループ、気の出口が詰まっているサインだよ。\n\nまず今夜、北東を向いて5分だけ静かに座ってみて。気の流れを整える最小の一歩。\n\n「最終だけ落ちる」経験、ある？ → 🔮 / 初めて聞いた → ✨ コメントで教えて。\n\n#占い #龍脈命術 #獅子座",
+      "「このままでいいのかな」\nその言葉、今月だけで何回呟きましたか？\n\n占いというと「当たる・当たらない」で語られがちですが、私が大事にしているのはそこじゃありません。\n\n風水×吉方位×星読みを組み合わせた、動くための占い「龍脈命術」について、無料noteにまとめました🔮\n誰のための占いか、どんな悩みに効くか。よければ覗いてみてください👇\nhttps://note.com/shigure_fortune/n/nab07df599219\n\n続きの記事も随時公開していくので、noteのフォローもしていただけると嬉しいです🙏\n\n#占い #吉方位 #開運"
+    ],
+    "theme": "メニュー誘導/初回無料",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 3,
+    "zodiac_boost": "♌獅子座",
+    "expires_on": "2026-10-22",
+    "pending_at": "2026-10-08T01:50:29.321685",
+    "queued_at": "2026-10-08T01:51:14.615425",
+    "threads_post_id": "18633934990034499",
+    "posted_at": "2026-10-08T01:51:58.112271+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/leo.jpg",
+    "recorded_at": "2026-10-08T01:51:58.124376"
   }
 ]
