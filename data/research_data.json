@@ -1,36 +1,6 @@
 {
   "topics": [
     {
-      "title": "群馬殺人 事件前日に娘へ避難指導",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "トキエア再延期 県からの融資返済",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "がん社内公表の役員 自ら平社員に",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "パラ銀メダリスト 追突事故で死去",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "北朝鮮が整列拒否 サッカー男子",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "齋藤飛鳥 アナザースカイの新MC",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
       "title": "台風・大雨の季節に読む「気の乱れ」と人生の判断",
       "theme": "風水・気の流れ/自然災害と気の読み方",
       "hook_idea": "台風が来ているとき、あなたは大事な決断をしていませんか？",
@@ -5316,9 +5286,39 @@
       "source": "news_rss",
       "cultural_angle": "龍脈命術における運気蓄積と転換の概念、西洋占星術のトランジット（転機）との対応",
       "season_note": "夏の甲子園シーズン（8月）／運気サイクルの後半。秋に向けて気が動き始める転換期"
+    },
+    {
+      "title": "外相 赤根・ルビオ両氏と電話協議",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "パレスチナ議会選 来年9月に延期",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "カルテル疑惑 卸売業者が実態証言",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "車と衝突 義父が用水路に落ち死亡",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "卓球・佐藤瞳が快進撃 決勝に進出",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "てんちむ出産 第2子は「青汁似」",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
     }
   ],
-  "last_updated": "2026-10-10T15:07:38.583692",
+  "last_updated": "2026-10-10T22:24:33.650658",
   "last_rss_count": 31,
   "last_cultural_count": 0
 }
