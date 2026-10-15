@@ -1,24 +1,5 @@
 [
   {
-    "text": "旅行や引越し、今の時期に計画してる人へ。\n\n行き先より「方角」を先に決めてみて。\n吉方位に動くと、移動後の空気が全然違うよ。🧭\n\n#占い #龍脈命術",
-    "x_text": "旅行や引越し、今の時期に計画してる人へ。\n\n行き先より「方角」を先に決めてみて。\n吉方位に動くと、移動後の空気が全然違うよ。🧭\n\n#占い #時雨 #吉方位 #風水",
-    "theme": "吉方位・風水/星座別吉方位",
-    "pattern_id": "pop_short",
-    "quality_score": 7.1,
-    "attempts": 1,
-    "x_eligible": true,
-    "zodiac_boost": "♌獅子座",
-    "pending_at": "2026-06-08T10:23:56.915427",
-    "queued_at": "2026-06-08T10:24:51.559701",
-    "threads_post_id": "18100481197870156",
-    "posted_at": "2026-06-08T23:57:31.564879",
-    "is_mock": false,
-    "has_image": true,
-    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/fortune_3.jpg",
-    "recorded_at": "2026-06-08T23:57:31.568474",
-    "hourly_stats_recorded": true
-  },
-  {
     "text": "「3回会ったら、なぜか終わる」\n\nその理由が、どうしてもわからなかった。\n\n龍脈命術で29歳の方を見たとき、気づいたことがある。\n自宅の西方位に、ゴミ箱と段ボールが置かれていた。\n西は、出会いと縁の気が流れる方位。\nそこに\"捨てるもの\"があると、縁も一緒に流れていく。\n\n配置を整えただけで、その後、自然な出会いが動き出した。\n\n恋愛がうまくいかないのは、あなたの魅力や相性の問題じゃないかもしれない。\n\n▷ まず無料鑑定から https://shigurerooms.hp.peraichi.com\n\n占術家 時雨\n\n#占い #龍脈命術",
     "x_text": "「3回会ったら、なぜか終わる」\n\nその理由が、どうしてもわからなかった。\n\n龍脈命術で29歳の方を見たとき、気づいたことがある。\n自宅の西方位に、ゴミ箱と段ボールが置かれていた。\n西は、出会いと縁の気が流れる方位。\nそこに\"捨てるもの\"があると、縁も一緒に流れていく。\n\n配置を整えただけで、その後、自然な出会いが動き出した。\n\n恋愛がうまくいかないのは、あなたの魅力や相性の問題じゃないかもしれない。\n\n▷ まず無料鑑定から https://shigurerooms.hp.peraichi.com\n\n占術家 時雨\n\n#占い #時雨 #龍脈命術 #吉方位",
     "theme": "鑑定エピソード/方位を変えて人生が変わった話",
@@ -20825,5 +20806,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-10-14T14:28:35.494549"
+  },
+  {
+    "text": "♉牡牛座で、引越しを「なんとなくここかな」で決めようとしている人だけ読んで。\n\n#占い #引越し #風水",
+    "thread_posts": [
+      "♉牡牛座で、引越しを「なんとなくここかな」で決めようとしている人だけ読んで。\n\n#占い #引越し #風水",
+      "♉牡牛座の方から連絡が来た。\n\n「引越し先、3件で迷っていたんですが、鑑定後に北東の物件に決めて。転職先も気になる会社から声がかかりました」\n\n30代・転職と引越しを同時に考えていた方。\n「なんとなく安定しているけど、何かが足りない」を何年も感じていたと言っていた。\n\n龍脈命術は「当てる」占いじゃない。場所の向きを整えて、流れを変える占い。\n引越し先を変えただけで、仕事の流れまで動いた。\n\n心当たりある？\n\nまず話したい → LINE https://lin.ee/TJg5dru\nすぐ試したい → Coconala https://coconala.com/services/4292937?ref=threads\n\n#牡牛座 #引越し方位 #龍脈命術"
+    ],
+    "theme": "吉方位・風水/引越し方位",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♉牡牛座",
+    "expires_on": "2026-10-28",
+    "pending_at": "2026-10-14T14:28:25.378143",
+    "queued_at": "2026-10-14T14:28:25.686581",
+    "threads_post_id": "17912100525499761",
+    "posted_at": "2026-10-15T00:30:08.774350+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
+    "recorded_at": "2026-10-15T00:30:08.785493"
   }
 ]
