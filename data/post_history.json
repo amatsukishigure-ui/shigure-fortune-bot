@@ -1,24 +1,5 @@
 [
   {
-    "text": "財布にレシートを溜めてる人は、この先読まなくていい。\n\n溜めてる人にとって、ここから先の話は意味がないから。\n\n財布は「金運の通り道」。\n龍脈命術では、財布の中の乱れは、気の流れが滞っているサインと読む。\n\nレシートは「過去の支出」。\nそれを今の財布に入れ続けるということは、金の流れに\"過去\"を詰め込んでいるのと同じ。\n\n梅雨のこの時期、湿気と一緒に財布の中も重くなりやすい。\n\n今夜、一度財布を空にしてみて。\n\n#占い #龍脈命術",
-    "x_text": "財布にレシートを溜めてる人は、この先読まなくていい。\n\n溜めてる人にとって、ここから先の話は意味がないから。\n\n財布は「金運の通り道」。\n龍脈命術では、財布の中の乱れは、気の流れが滞っているサインと読む。\n\nレシートは「過去の支出」。\nそれを今の財布に入れ続けるということは、金の流れに\"過去\"を詰め込んでいるのと同じ。\n\n梅雨のこの時期、湿気と一緒に財布の中も重くなりやすい。\n\n今夜、一度財布を空にしてみて。\n\n#占い #時雨 #風水 #開運",
-    "theme": "風水豆知識/財布・金運",
-    "pattern_id": "caligula",
-    "quality_score": 7.9,
-    "attempts": 1,
-    "x_eligible": true,
-    "zodiac_boost": "♑山羊座",
-    "pending_at": "2026-06-09T13:51:06.216643",
-    "queued_at": "2026-06-09T13:51:13.241592",
-    "threads_post_id": "18138700045551215",
-    "posted_at": "2026-06-09T13:51:22.554920",
-    "is_mock": false,
-    "has_image": true,
-    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-06-09T13:51:22.559646",
-    "hourly_stats_recorded": true
-  },
-  {
     "text": "玄関に敷くマットは、「気の入り口」に置くフィルターだ。\n\nくたびれた一枚を変えただけで、家の中の流れが変わることがある。\n\nうなずいた人、いる？\n\n#占い #龍脈命術",
     "x_text": "玄関に敷くマットは、「気の入り口」に置くフィルターだ。\n\nくたびれた一枚を変えただけで、家の中の流れが変わることがある。\n\nうなずいた人、いる？\n\n#占い #時雨 #風水 #開運",
     "theme": "風水インテリア/玄関マットと運気",
@@ -20666,7 +20647,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-10-14T14:28:35.494549"
+    "recorded_at": "2026-10-14T14:28:35.494549",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♉牡牛座で、引越しを「なんとなくここかな」で決めようとしている人だけ読んで。\n\n#占い #引越し #風水",
@@ -20854,5 +20836,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-10-15T14:05:52.265993"
+  },
+  {
+    "text": "♒水瓶座さん、占いに興味ない人にこそ一度だけ聞いてほしいことがある。\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "♒水瓶座さん、占いに興味ない人にこそ一度だけ聞いてほしいことがある。\n\n#占い #吉方位 #開運",
+      "最終面接で何度も弾かれている水瓶座さん、今の時期は注目。\n\n「準備は十分なのに、なぜか最後で弾かれる」\nそのパターン、意志や能力の問題じゃない。\n\n龍脈命術では、努力の「向き」を読む。\n星座占いが性格を見るのに対して、龍脈命術は今あなたが向かっている方向の気の質を読む。\n\n今週中に一つだけ試してほしい。\n面接や大事な行動の前、北東を向いて深呼吸するだけでいい。\n\n当てはまる人は🔮、初めて聞いた人は✨コメントで教えて。\n\n#占い #龍脈命術 #水瓶座"
+    ],
+    "theme": "吉方位・風水/吉方位と引き寄せの相乗効果",
+    "pattern_id": "caligula",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♒水瓶座",
+    "expires_on": "2026-10-29",
+    "pending_at": "2026-10-15T14:05:11.259134",
+    "queued_at": "2026-10-15T14:05:42.051913",
+    "threads_post_id": "18411376885088899",
+    "posted_at": "2026-10-15T18:56:02.429991+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aquarius.jpg",
+    "recorded_at": "2026-10-15T18:56:02.441047"
   }
 ]
