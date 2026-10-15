@@ -1,25 +1,5 @@
 [
   {
-    "text": "「3回会ったら、なぜか終わる」\n\nその理由が、どうしてもわからなかった。\n\n龍脈命術で29歳の方を見たとき、気づいたことがある。\n自宅の西方位に、ゴミ箱と段ボールが置かれていた。\n西は、出会いと縁の気が流れる方位。\nそこに\"捨てるもの\"があると、縁も一緒に流れていく。\n\n配置を整えただけで、その後、自然な出会いが動き出した。\n\n恋愛がうまくいかないのは、あなたの魅力や相性の問題じゃないかもしれない。\n\n▷ まず無料鑑定から https://shigurerooms.hp.peraichi.com\n\n占術家 時雨\n\n#占い #龍脈命術",
-    "x_text": "「3回会ったら、なぜか終わる」\n\nその理由が、どうしてもわからなかった。\n\n龍脈命術で29歳の方を見たとき、気づいたことがある。\n自宅の西方位に、ゴミ箱と段ボールが置かれていた。\n西は、出会いと縁の気が流れる方位。\nそこに\"捨てるもの\"があると、縁も一緒に流れていく。\n\n配置を整えただけで、その後、自然な出会いが動き出した。\n\n恋愛がうまくいかないのは、あなたの魅力や相性の問題じゃないかもしれない。\n\n▷ まず無料鑑定から https://shigurerooms.hp.peraichi.com\n\n占術家 時雨\n\n#占い #時雨 #龍脈命術 #吉方位",
-    "theme": "鑑定エピソード/方位を変えて人生が変わった話",
-    "pattern_id": "harm_funnel",
-    "quality_score": 8.7,
-    "attempts": 1,
-    "x_eligible": true,
-    "persona_id": "p011",
-    "harm_category": "R",
-    "pending_at": "2026-06-08T10:24:14.785249",
-    "queued_at": "2026-06-08T10:24:51.560511",
-    "threads_post_id": "18086868407080671",
-    "posted_at": "2026-06-09T01:00:56.782326",
-    "is_mock": false,
-    "has_image": true,
-    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
-    "recorded_at": "2026-06-09T01:00:56.786977",
-    "hourly_stats_recorded": true
-  },
-  {
     "text": "今、動きたい気持ちと、なんか重い気持ち、どっちに近い？\n\n流れが来てる気がする → ✨\n梅雨みたいに気が重い → 🌧️\n\nどっちかな。\n\n#占い #龍脈命術",
     "x_text": "今、動きたい気持ちと、なんか重い気持ち、どっちに近い？\n\n流れが来てる気がする → ✨\n梅雨みたいに気が重い → 🌧️\n\nどっちかな。\n\n#占い #時雨 #吉方位 #風水",
     "theme": "吉方位・風水/星座別吉方位",
@@ -20829,5 +20809,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
     "recorded_at": "2026-10-15T00:30:08.785493"
+  },
+  {
+    "text": "♉牡牛座の方から、連絡が来た。「収入が上がりました」と。\n\n#占い #金運 #開運",
+    "thread_posts": [
+      "♉牡牛座の方から、連絡が来た。「収入が上がりました」と。\n\n#占い #金運 #開運",
+      "♉牡牛座さん、聞いてほしい。\n\n先月、鑑定した方から連絡が来た。\n36歳・安定した仕事で将来の不安を抱えていた方。\n「変わりたいけど、怖くて動けない」が口癖だった。\n\n鑑定でわかったのは、座る向きのズレ。\n北東を背にして仕事をする習慣が、気の流れを塞いでいた。\nデスクの向きを南向きに変えたその月、想定外の収入の道が開いたと連絡が来た。\n\n龍脈命術は「当てる」より「動かす」占い。\n向きを整えると、同じ努力の効き方が変わる。\n\n気になったら▷ Coconala https://coconala.com/services/4292937?ref=threads\n\n#吉方位 #金運 #龍脈命術"
+    ],
+    "theme": "吉方位・風水/金運アップの吉方位",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♉牡牛座",
+    "expires_on": "2026-10-29",
+    "pending_at": "2026-10-15T00:29:03.479324",
+    "queued_at": "2026-10-15T00:29:40.742225",
+    "threads_post_id": "17947793709323989",
+    "posted_at": "2026-10-15T01:01:21.028339+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
+    "recorded_at": "2026-10-15T01:01:21.037322"
   }
 ]
