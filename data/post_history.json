@@ -1,23 +1,5 @@
 [
   {
-    "text": "龍脈命術は、「仕事部屋の向き」まで読む。\n\n一般的な風水は、デスクの色や置き物を整える。\nでも龍脈命術が見るのは、その部屋が「どの方位にあるか」。\n\n北西に仕事部屋があるか、東にあるか。\nそれだけで、同じ努力が乗るかどうかが変わってくる。\n\n「頑張ってるのに空回りする」という人の部屋、だいたい方位がずれてる。\n\n占術家 時雨\n\n#占い #龍脈命術",
-    "x_text": "龍脈命術は、「仕事部屋の向き」まで読む。\n\n一般的な風水は、デスクの色や置き物を整える。\nでも龍脈命術が見るのは、その部屋が「どの方位にあるか」。\n\n北西に仕事部屋があるか、東にあるか。\nそれだけで、同じ努力が乗るかどうかが変わってくる。\n\n「頑張ってるのに空回りする」という人の部屋、だいたい方位がずれてる。\n\n占術家 時雨\n\n#占い #時雨 #風水 #開運",
-    "theme": "風水豆知識/書斎・仕事部屋",
-    "pattern_id": "brand_ryumyaku",
-    "quality_score": 7.8,
-    "attempts": 1,
-    "x_eligible": true,
-    "pending_at": "2026-06-09T06:46:26.838896",
-    "queued_at": "2026-06-09T06:46:35.478246",
-    "threads_post_id": "17852289894696946",
-    "posted_at": "2026-06-10T03:00:58.585021",
-    "is_mock": false,
-    "has_image": true,
-    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/ryumyaku_oracle.jpg",
-    "recorded_at": "2026-06-10T03:00:58.589859",
-    "hourly_stats_recorded": true
-  },
-  {
     "text": "願いを叶えたい気持ち、今どっちに近い？\n\n動く方位がある気がする → ✨\n何から始めればいいか分からない → 🌀\n\nどっちかな。\n\n#占い #龍脈命術",
     "x_text": "願いを叶えたい気持ち、今どっちに近い？\n\n動く方位がある気がする → ✨\n何から始めればいいか分からない → 🌀\n\nどっちかな。\n\n#占い #時雨 #引き寄せ #龍脈命術",
     "theme": "引き寄せ/願いを叶える方位",
@@ -20862,5 +20844,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
     "recorded_at": "2026-10-16T06:35:29.083616"
+  },
+  {
+    "text": "♋蟹座さんへ。\n\n「このままでいいのかな」が口癖になって、もう何年も経ってない？\n\n龍脈命術では、財布は金の気を「住まわせる場所」として見る。\n気が流れるためには、財布が「定位置」に戻ること。\nバッグの底・ポケット・テーブルに放置が続くと、金の気は落ち着く場所を失って散っていく。\n\n今夜やること1つ。\n財布を北の引き出しに戻して眠らせるだけでいい。\n\n龍脈命術を受けた方がよく言う。「片付けじゃなくて、気を整えたら動けた」って。\n\nこの秋分を過ぎた季節、財布の定位置ある？\n\n#占い #金運 #開運",
+    "theme": "鑑定エピソード/金運・収入が変わった話",
+    "pattern_id": "fuusui_tip",
+    "quality_score": 8.1,
+    "attempts": 1,
+    "x_eligible": true,
+    "is_repost": true,
+    "original_post_id": "18279660523292434",
+    "pending_at": "2026-09-28T23:53:05.904743",
+    "queued_at": "2026-09-28T23:54:39.322823",
+    "threads_post_id": "18218534908345383",
+    "posted_at": "2026-10-16T09:01:14.107673+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/fengshui/water.jpg",
+    "recorded_at": "2026-10-16T09:01:14.119504"
   }
 ]
