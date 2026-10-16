@@ -1,24 +1,5 @@
 [
   {
-    "text": "♊ 双子座さんへ。\n\n「なんか最近、決断するたびに空回りしてる気がする」という感覚がある人だけ読んで。\n\n今、双子座は気の流れが分岐するタイミングにある。\n判断力が高い星座だからこそ、向きがほんの少しズレると消耗が大きい。\n\n龍脈命術的に言うと、今の双子座に必要なのは「もっと考えること」じゃなく「流れに乗る方向を整えること」。\n\n努力の量より、向きを変えるだけで動き始める。\n\n心当たりある？\n\n#占い #龍脈命術",
-    "x_text": "♊ 双子座さんへ。\n\n「なんか最近、決断するたびに空回りしてる気がする」という感覚がある人だけ読んで。\n\n今、双子座は気の流れが分岐するタイミングにある。\n判断力が高い星座だからこそ、向きがほんの少しズレると消耗が大きい。\n\n龍脈命術的に言うと、今の双子座に必要なのは「もっと考えること」じゃなく「流れに乗る方向を整えること」。\n\n努力の量より、向きを変えるだけで動き始める。\n\n心当たりある？\n\n#占い #時雨 #龍脈命術 #吉方位",
-    "theme": "龍脈命術の世界観/気の流れと人の感情・行動の関係",
-    "pattern_id": "caligula",
-    "quality_score": 7.7,
-    "attempts": 1,
-    "x_eligible": true,
-    "zodiac_boost": "♊双子座",
-    "pending_at": "2026-06-10T07:04:18.662557",
-    "queued_at": "2026-06-10T07:05:19.131511",
-    "threads_post_id": "17944771068406257",
-    "posted_at": "2026-06-10T07:05:26.567536",
-    "is_mock": false,
-    "has_image": true,
-    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/gemini.jpg",
-    "recorded_at": "2026-06-10T07:05:26.572579",
-    "hourly_stats_recorded": true
-  },
-  {
     "text": "鑑定で一番多い相談は「どうして頑張っても変わらないんですか」という問いだ。\n\n私の答えはいつも同じ。\n動き方じゃなく、動く方向が違っている。\n\n心当たりある？\n\n#占い #龍脈命術",
     "x_text": "鑑定で一番多い相談は「どうして頑張っても変わらないんですか」という問いだ。\n\n私の答えはいつも同じ。\n動き方じゃなく、動く方向が違っている。\n\n心当たりある？\n\n#占い #時雨 #龍脈命術 #吉方位",
     "theme": "時雨の世界観/鑑定で一番多い相談と、時雨の答え",
@@ -20698,7 +20679,8 @@
     "is_mock": false,
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/scorpio.jpg",
-    "recorded_at": "2026-10-15T12:34:52.023097"
+    "recorded_at": "2026-10-15T12:34:52.023097",
+    "hourly_stats_recorded": true
   },
   {
     "text": "♒水瓶座で、「霜降を前にした今の時期に動いたのに、なんも変わらなかった」という感覚がある人以外は、読まなくていい。\n\n#占い #龍脈命術",
@@ -20865,5 +20847,28 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/aries.jpg",
     "recorded_at": "2026-10-16T12:01:12.021889"
+  },
+  {
+    "text": "♉牡牛座さん、鑑定後にこんな報告が来た。「選ばれる側に変わった気がします」と。\n\n#占い #吉方位 #開運",
+    "thread_posts": [
+      "♉牡牛座さん、鑑定後にこんな報告が来た。「選ばれる側に変わった気がします」と。\n\n#占い #吉方位 #開運",
+      "♉牡牛座の方から連絡が来た。\n\n美容師をしている20代後半の方。技術も接客も丁寧なのに指名が増えない、プライベートも空回り、「私は選ばれない人間なのかも」と思い始めていたと言っていた。\n\n鑑定でわかったのは、鏡の向きと気の反射のズレだった。牡牛座は「受け取る力」を持つ星座。でも鏡が向く方向によって、その力が外に漏れていた。\n\n鏡の位置をひとつ変えた秋、指名数が増え始めたと。\n\n龍脈命術は「当てる」より「動かす」占い。整えると、同じ努力の届き方が変わる。\n\nまず話したい → LINE https://lin.ee/TJg5dru\nすぐ試したい → Coconala https://coconala.com/services/4292937?ref=threads\n\n#龍脈命術 #吉方位 #牡牛座"
+    ],
+    "theme": "暮らしの吉方位と気の整え方/鏡の位置と気の反射",
+    "pattern_id": "client_voice",
+    "quality_score": 0.0,
+    "attempts": 1,
+    "is_thread": true,
+    "thread_count": 2,
+    "zodiac_boost": "♉牡牛座",
+    "expires_on": "2026-10-30",
+    "pending_at": "2026-10-16T12:11:47.110066",
+    "queued_at": "2026-10-16T12:12:07.849866",
+    "threads_post_id": "17950960506278010",
+    "posted_at": "2026-10-16T13:52:30.261607+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
+    "recorded_at": "2026-10-16T13:52:30.268362"
   }
 ]
