@@ -1,23 +1,5 @@
 [
   {
-    "text": "玄関が暗いまま「運が変わらない」と思っているなら、順番が逆かもしれない。\n\n気は、整えた場所から動き出す。\n\nうなずいた人、いる？\n\n#占い #龍脈命術",
-    "x_text": "玄関が暗いまま「運が変わらない」と思っているなら、順番が逆かもしれない。\n\n気は、整えた場所から動き出す。\n\nうなずいた人、いる？\n\n#占い #時雨 #風水 #開運",
-    "theme": "風水豆知識/玄関",
-    "pattern_id": "ichi_gon",
-    "quality_score": 7.5,
-    "attempts": 1,
-    "x_eligible": true,
-    "pending_at": "2026-06-11T09:34:17.097065",
-    "queued_at": "2026-06-11T10:00:06.872635",
-    "threads_post_id": "18233207764313602",
-    "posted_at": "2026-06-11T06:01:01.817229+00:00",
-    "is_mock": false,
-    "has_image": true,
-    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/general/ichi_gon.jpg",
-    "recorded_at": "2026-06-11T06:01:01.822235",
-    "hourly_stats_recorded": true
-  },
-  {
     "text": "♋ 蟹座さんへ。\n\n部屋のどこかに、なんとなく物が溜まってる場所ない？\n\n気の滞りは、必ず「物が動いていない場所」から始まる。\n特に今の時期、収納の奥に眠ったままのものが運気を重くしてるよ。\n\n北西の収納を少し整えるだけで、流れが変わりやすい配置になってる。\n\n心当たりある？\n\n#占い #龍脈命術",
     "x_text": "♋ 蟹座さんへ。\n\n部屋のどこかに、なんとなく物が溜まってる場所ない？\n\n気の滞りは、必ず「物が動いていない場所」から始まる。\n特に今の時期、収納の奥に眠ったままのものが運気を重くしてるよ。\n\n北西の収納を少し整えるだけで、流れが変わりやすい配置になってる。\n\n心当たりある？\n\n#占い #時雨 #風水 #開運",
     "theme": "風水豆知識/収納と気の滞り",
@@ -20887,5 +20869,23 @@
     "has_image": true,
     "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/fengshui/water.jpg",
     "recorded_at": "2026-10-17T03:01:02.924271"
+  },
+  {
+    "text": "♋蟹座さんへ。\n\n「このままでいいのかな」が口癖になって、もう何年も経ってない？\n\n龍脈命術では、財布は金の気を「住まわせる場所」として見る。\n気が流れるためには、財布が「定位置」に戻ること。\nバッグの底・ポケット・テーブルに放置が続くと、金の気は落ち着く場所を失って散っていく。\n\n今週やること1つ。\n財布を北の引き出しに戻して眠らせるだけでいい。\n\n龍脈命術を受けた方がよく言う。「片付けじゃなくて、気を整えたら動けた」って。\n\n今の財布、定位置ある？\n\n#占い #金運 #開運",
+    "theme": "鑑定エピソード/金運・収入が変わった話",
+    "pattern_id": "fuusui_tip",
+    "quality_score": 8.1,
+    "attempts": 1,
+    "x_eligible": true,
+    "is_repost": true,
+    "original_post_id": "18279660523292434",
+    "pending_at": "2026-09-30T15:47:41.746358",
+    "queued_at": "2026-09-30T15:48:58.654477",
+    "threads_post_id": "18076704446455539",
+    "posted_at": "2026-10-17T06:01:07.016703+00:00",
+    "is_mock": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/fengshui/water.jpg",
+    "recorded_at": "2026-10-17T06:01:07.027455"
   }
 ]
