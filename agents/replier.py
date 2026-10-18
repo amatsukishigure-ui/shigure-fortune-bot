@@ -381,6 +381,27 @@ def _classify_nested_comment(text: str) -> str:
     return "high_interest"
 
 
+_CLOSING_CV_COUNT_FILE = "state/closing_cv_count.json"
+
+def _get_closing_cv_destination(profile: dict) -> tuple[str, str]:
+    """
+    LINE / Coconala を交互に選択して返す。
+    Returns: (destination_label, cta_text)
+    """
+    from core.state import load_json, save_json
+    count_data = load_json(_CLOSING_CV_COUNT_FILE, default={"count": 0})
+    count = count_data.get("count", 0)
+    save_json(_CLOSING_CV_COUNT_FILE, {"count": count + 1})
+
+    line_url = profile.get("line_url", "https://lin.ee/TJg5dru")
+    coconala_url = profile.get("service_url", "https://coconala.com/services/4292937?ref=threads")
+
+    if count % 2 == 0:
+        return "LINE", line_url
+    else:
+        return "Coconala", coconala_url
+
+
 def _generate_closing_reply(
     nested_comment: str,
     original_comment: str,
@@ -388,31 +409,42 @@ def _generate_closing_reply(
     profile: dict,
 ) -> str:
     """
-    自分の返信に届いた再コメントへの返信を生成する。
-    コメントの種別によってCTAを変える：
-    - high_interest/question → 自然にLINEへ誘導
-    - casual → 温かく受け止めてCTA不要
+    自分の返信に届いた再コメントへの返信を生成する（2往復目以降）。
+    コメントタイプに関わらず常にCVCTAを含める。
+    LINE / Coconala を交互に誘導し、どちらの経路のCVが高いか計測する。
     """
-    line_url = profile.get("line_url", "https://lin.ee/TJg5dru")
     comment_type = _classify_nested_comment(nested_comment)
+    dest_label, dest_url = _get_closing_cv_destination(profile)
 
     if comment_type == "casual":
-        cta_instruction = "- LINEやプロフィールへの誘導は不要。会話を温かく受け止めて自然に締める。"
-        length_rule = "- 30〜60字で完結させる（短く温かく）"
+        length_rule = "- 40〜80字で完結させる"
+        cta_instruction = (
+            f"- 会話を温かく受け止めたあと、「もし気になることがあれば{dest_label}でも話せるよ」と自然に1行添える\n"
+            f"- URL: {dest_url}（文末に自然に置く）"
+        )
     elif comment_type == "question":
-        cta_instruction = (
-            f"- 質問に1行で答えたあと、「もっと詳しくはLINE（{line_url}）でも聞けるよ」と軽く添える"
-        )
         length_rule = "- 60〜100字で完結させる"
-    else:  # high_interest
         cta_instruction = (
-            f"- 「気になることがあれば」「もっと話したいなら」など軽いきっかけを添えてLINE（{line_url}）へ案内する"
+            f"- 質問に1行で答えたあと、「もっと詳しくは{dest_label}でも聞けるよ」と添える\n"
+            f"- URL: {dest_url}（文末に自然に置く）"
         )
+    else:  # high_interest
         length_rule = "- 50〜90字で完結させる"
+        if dest_label == "Coconala":
+            cta_instruction = (
+                f"- 「気になるなら1,000円のモニターから試してみて」という自然なひと押しを添える\n"
+                f"- URL: {dest_url}（文末に置く）"
+            )
+        else:
+            cta_instruction = (
+                f"- 「もう少し話したいなら{dest_label}でも話せるよ」と温かく誘う\n"
+                f"- URL: {dest_url}（文末に置く）"
+            )
 
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
     prompt = f"""あなたは占術家「時雨（しぐれ）」です。
-Threadsでの会話が続いています。相手からまた返信が届きました。
+Threadsでの会話が2往復続いています。相手がまた返信してくれました。
+ここで{dest_label}への自然な誘導を含めた返信を書いてください。
 
 【元の投稿】
 {post_text[:150]}
@@ -596,6 +628,8 @@ def run() -> dict:
                 reply_id = _post_reply(nid, closing_text)
                 if reply_id:
                     mark_comment_replied(nid)
+                    # クロージング返信のIDも記録して3往復目も捕捉できるようにする
+                    save_our_reply_id(reply_id, ctx.get("post_text", ""), nested_text)
                     nested_replied += 1
                     print(f"  🔁 ネスト返信: 「{nested_text[:30]}」→ 「{closing_text[:40]}」")
                     time.sleep(3)

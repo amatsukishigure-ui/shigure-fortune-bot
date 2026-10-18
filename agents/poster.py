@@ -26,7 +26,7 @@ from config import (
 from core.state import (
     dequeue_post, dequeue_by_pattern, load_history, add_to_history,
     is_killed, log_error, clear_errors, activate_kill_switch,
-    load_json,
+    load_json, clean_expired_queue,
 )
 
 
@@ -134,8 +134,11 @@ def _get_last_post_time(history: list) -> datetime | None:
 def _can_post(history: list) -> tuple[bool, str]:
     """投稿可能かチェック"""
     today_count = _count_today_posts(history)
-    if today_count >= DAILY_POST_LIMIT:
-        return False, f"本日の上限({DAILY_POST_LIMIT}件)に達しています"
+    # 日曜日はエンゲージメントが低い（avg=9.8 vs 他曜日avg=15〜19）ため投稿上限を3件に制限
+    _jst_weekday = datetime.now(timezone(timedelta(hours=9))).weekday()
+    _effective_limit = 3 if _jst_weekday == 6 else DAILY_POST_LIMIT
+    if today_count >= _effective_limit:
+        return False, f"本日の上限({'日曜: 3' if _jst_weekday == 6 else DAILY_POST_LIMIT}件)に達しています"
 
     last_time = _get_last_post_time(history)
     if last_time:
@@ -322,7 +325,7 @@ _SELF_REPLY_VARIANTS = [
     "質問・相談はいつでも 🌿\n気軽にLINEへ → https://lin.ee/TJg5dru",
     "龍脈命術、気になる方へ ⭐\n▷ まずLINEで話してみて https://lin.ee/TJg5dru",
     "コメントに質問があれば返信するよ 🔮",
-    "鑑定に興味が出てきた方へ 🐉\n▷ 1,500円モニターで試せます https://coconala.com/services/4292937?ref=threads",
+    "鑑定に興味が出てきた方へ 🐉\n▷ 1,000円モニターで試せます https://coconala.com/services/4292937?ref=threads",
     "気の流れ、一緒に整えていきましょう 🌿\nコメントで気軽に声をかけてね",
 ]
 
@@ -356,6 +359,8 @@ def run() -> dict:
     """
     if is_killed():
         return {"posted": False, "reason": "Kill switch active"}
+
+    clean_expired_queue()  # 期限切れキューを除去してから投稿判断
 
     history = load_history(limit=100)
     can_post, reason = _can_post(history)

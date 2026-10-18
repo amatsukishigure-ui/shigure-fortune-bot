@@ -15,7 +15,9 @@ from config import THREADS_ACCESS_TOKEN, THREADS_USER_ID
 from core.state import (
     load_history, load_performance,
     add_follower_snapshot, update_hourly_stats, get_follower_growth, get_best_hours,
+    save_json,
 )
+from config import FOLLOWER_HISTORY_FILE
 
 
 THREADS_API_BASE = "https://graph.threads.net/v1.0"
@@ -27,11 +29,11 @@ def _fetch_follower_count() -> int | None:
     if not THREADS_ACCESS_TOKEN or not THREADS_USER_ID:
         return None
 
-    # まず insights API を試みる
+    # 方法1: insights API (period=lifetime — day は followers_count では使用不可)
     url = f"{THREADS_API_BASE}/{THREADS_USER_ID}/threads_insights"
     params = {
         "metric": "followers_count",
-        "period": "day",
+        "period": "lifetime",
         "access_token": THREADS_ACCESS_TOKEN,
     }
     try:
@@ -40,13 +42,18 @@ def _fetch_follower_count() -> int | None:
             data = resp.json().get("data", [])
             for item in data:
                 if item.get("name") == "followers_count":
+                    val = item.get("total_value", {}).get("value")
+                    if val is not None:
+                        return int(val)
                     values = item.get("values", [])
                     if values:
                         return values[-1].get("value")
-    except Exception:
-        pass
+        else:
+            print(f"  [tracker] insights API エラー: {resp.status_code} {resp.text[:200]}")
+    except Exception as e:
+        print(f"  [tracker] insights API 例外: {e}")
 
-    # フォールバック: ユーザーフィールド
+    # 方法2: ユーザーフィールド
     url2 = f"{THREADS_API_BASE}/{THREADS_USER_ID}"
     params2 = {
         "fields": "followers_count",
@@ -55,9 +62,30 @@ def _fetch_follower_count() -> int | None:
     try:
         resp = requests.get(url2, params=params2, timeout=10)
         if resp.ok:
-            return resp.json().get("followers_count")
+            val = resp.json().get("followers_count")
+            if val is not None:
+                return int(val)
+        else:
+            print(f"  [tracker] user fields API エラー: {resp.status_code} {resp.text[:200]}")
     except Exception as e:
-        print(f"  フォロワー数取得エラー: {e}")
+        print(f"  [tracker] user fields API 例外: {e}")
+
+    # 方法3: /me エンドポイント
+    url3 = f"{THREADS_API_BASE}/me"
+    params3 = {
+        "fields": "followers_count",
+        "access_token": THREADS_ACCESS_TOKEN,
+    }
+    try:
+        resp = requests.get(url3, params=params3, timeout=10)
+        if resp.ok:
+            val = resp.json().get("followers_count")
+            if val is not None:
+                return int(val)
+        else:
+            print(f"  [tracker] /me API エラー: {resp.status_code} {resp.text[:200]}")
+    except Exception as e:
+        print(f"  [tracker] /me API 例外: {e}")
 
     return None
 
@@ -121,6 +149,10 @@ def run() -> dict:
     Returns:
         {"follower_count": int, "growth_7d": int, "hourly_updated": int}
     """
+    # ファイルが存在しない場合は空リストで初期化
+    if not FOLLOWER_HISTORY_FILE.exists():
+        save_json(FOLLOWER_HISTORY_FILE, [])
+
     # フォロワー数取得・記録
     count = _fetch_follower_count()
     if count is not None:

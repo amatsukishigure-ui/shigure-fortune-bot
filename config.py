@@ -69,6 +69,7 @@ FOLLOWER_HISTORY_FILE = DATA_DIR / "follower_history.json"
 REPLIED_COMMENTS_FILE = DATA_DIR / "replied_comments.json"
 OUR_REPLY_IDS_FILE = DATA_DIR / "our_reply_ids.json"
 HOURLY_STATS_FILE = DATA_DIR / "hourly_stats.json"
+HARM_REVELATION_COUNT_FILE = DATA_DIR / "harm_revelation_count.json"
 EVENT_CALENDAR_FILE = KNOWLEDGE_DIR / "event_calendar.json"
 
 IMAGE_MAP_FILE = KNOWLEDGE_DIR / "image_map.json"

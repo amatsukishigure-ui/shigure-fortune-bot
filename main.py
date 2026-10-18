@@ -111,7 +111,16 @@ def cmd_daily():
         f"X: {result['queued_x']}件, "
         f"棄却: {result['rejected']}件"
     )
-    print(f"   📋 python main.py review  で内容を確認 → approve で承認")
+
+    # 自動承認: 生成した投稿を即キューに追加
+    from core.state import load_pending, approve_pending
+    pending = load_pending()
+    if pending:
+        approved = approve_pending()
+        from core.state import load_queue
+        print(f"   ✅ 自動承認: {approved}件をキューに追加（残: {len(load_queue())}件）")
+    else:
+        print(f"   ℹ️ 承認待ちなし")
 
     print(f"\n{'='*55}")
     print(f"✅ Daily Run 完了 - 龍の気が整いました")
@@ -400,6 +409,32 @@ def cmd_revive():
     print("✅ Kill Switch を解除しました。龍脈が再び流れます。")
 
 
+def cmd_catchup():
+    """ログオン時キャッチアップ: dailyが今日未実行なら実行 → post"""
+    from datetime import datetime
+    from core.state import load_history, load_queue
+
+    today = datetime.now().date().isoformat()
+
+    # daily が今日まだ実行されているかキュー残数で判断
+    queue = load_queue()
+    history_today = [p for p in load_history(limit=50)
+                     if p.get("posted_at", "").startswith(today)]
+
+    print(f"[catchup] キュー残: {len(queue)}件 / 本日投稿済み: {len(history_today)}件")
+
+    # キューが空 かつ 今日まだ投稿0件 → daily を実行
+    if len(queue) == 0 and len(history_today) == 0:
+        print("[catchup] キュー空 → daily 実行")
+        cmd_daily()
+    elif len(queue) == 0:
+        print("[catchup] キュー空 → daily 実行（本日投稿済みあり）")
+        cmd_daily()
+
+    # post を実行（インターバルチェックは内部で行う）
+    cmd_post()
+
+
 COMMANDS = {
     "daily":    cmd_daily,
     "post":     cmd_post,
@@ -411,6 +446,7 @@ COMMANDS = {
     "optimize": cmd_optimize_schedule,
     "kill":     cmd_kill,
     "revive":   cmd_revive,
+    "catchup":  cmd_catchup,
 }
 
 if __name__ == "__main__":
