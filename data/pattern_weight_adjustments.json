@@ -3,7 +3,7 @@
   "locked": [],
   "lookback_days": 30,
   "adjustments": {
-    "lucky_combo": 0.8,
+    "lucky_combo": 1.1,
     "zodiac_target": 0.9,
     "kotodama_rank": 1.382,
     "before_sleep": 0.9,
