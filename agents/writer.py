@@ -957,12 +957,18 @@ A・B・Cをコメントで教えて。
         ) if zodiac else "⚠️ 星座が未指定だが、できるだけ星座を推定して冒頭に入れること"
 
         import random as _rnd_cali
-        # deny=3/5確率: 実績データで否定制限型が上位を独占
-        _cali_hook_type = _rnd_cali.choice(["deny","deny","deny","state","skeptic"])
+        _now_month = datetime.now(JST).month
+        # 10-12月は seasonal urgency を50%で強制（年末urgencyがENGを押し上げる）
+        if _now_month in (10, 11, 12) and _rnd_cali.random() < 0.5:
+            _cali_hook_type = "seasonal"
+        else:
+            # deny=3/5確率: 実績データで否定制限型が上位を独占
+            _cali_hook_type = _rnd_cali.choice(["deny","deny","deny","state","skeptic"])
         _hook_guide = {
             "deny":    f"否定制限型（最強）: 「{zodiac_mark}{zodiac_name}で〜な人以外は、読まなくていい。」「{zodiac_mark}{zodiac_name}さん、〜な人はこの先読まないほうがいい。」\n  感情・状態を具体的に指定する（「お金の不安がない人」「このままでいいのかが頭にある人」「運気の波が気になり始めた人」）",
             "state":   f"状態指名型: 「{zodiac_mark}{zodiac_name}で、〜という感覚がある人だけ読んで。」「{zodiac_mark}{zodiac_name}さん、今〜な人のための話をする。」\n  「感覚」「状態」「悩み」を読者が今まさに感じているレベルで具体化する",
             "skeptic": f"懐疑層向け（新規獲得型）: 「{zodiac_mark}{zodiac_name}さん、占いに興味ない人にこそ一度だけ聞いてほしいことがある。」\n  「信じなくていい」「試したくなければそれでいい」という姿勢で書く",
+            "seasonal": f"季節urgency型（10-12月限定・ENG=177実績）: 年末urgencyと「このままで終わる」感覚を組み合わせる。\n  必須フレーズ例: 「この秋も何も変わらない気がする{zodiac_name}さんへ。」「{zodiac_mark}{zodiac_name}さん、今年もこのまま終わる気がしている人だけ読んで。」「{zodiac_mark}{zodiac_name}で、年末が近づいてきたのに動けていない人へ。」\n  ポイント: 「この秋/今年/年末」×「変わらない/終わる/動けていない」の組み合わせが最強。≤50字厳守。",
         }[_cali_hook_type]
 
         pattern_extra = f"""
