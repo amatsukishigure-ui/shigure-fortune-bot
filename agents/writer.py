@@ -16,7 +16,7 @@ from config import (
     ANTHROPIC_API_KEY, MODEL_HEAVY,
     MAX_QUALITY_RETRIES, MAX_SAME_PATTERN_CONSECUTIVE, MAX_SAME_THEME_CONSECUTIVE,
     ACCOUNT_PROFILE_FILE, POST_PATTERNS_FILE, THEME_TREE_FILE, HOOK_EXAMPLES_FILE,
-    PERSONAS_FILE, HARM_FILE, CONTENT_SCHEDULE, DATA_DIR,
+    PERSONAS_FILE, HARM_FILE, HOOK_PATTERNS_FILE, CONTENT_SCHEDULE, DATA_DIR,
     HARM_REVELATION_COUNT_FILE,
 )
 from core.state import (
@@ -37,6 +37,7 @@ def _load_knowledge() -> dict:
         "hook_examples": load_json(HOOK_EXAMPLES_FILE, default=[]),
         "personas": personas_data.get("personas", []),
         "harm": load_json(HARM_FILE, default={}),
+        "hook_patterns": load_json(HOOK_PATTERNS_FILE, default={}),
     }
 
 
@@ -592,6 +593,19 @@ def _build_prompt(
         f"  - 一般風水との違い: {_diff.get('vs_fuusui', '')}\n"
         f"  - 核心: {_diff.get('core', '')}"
     )
+    profile_summary += (
+        "\n\n## 自分事化・HARM法則・心理効果（全投稿必須）\n"
+        "【バーナム効果】「頑張っているのに変わらない」「同じパターンを繰り返す」「やる気はあるのに体が動かない」など"
+        "多くの人の深層心理に刺さる普遍的な真実を冒頭または本文に入れること。読者が『まさに自分のことだ』と感じる言葉を選ぶ。\n"
+        "【外在化フレーム（最重要）】「意志・才能・努力の問題ではなく、向き・気の流れの問題だ」"
+        "— これが龍脈命術の最強の自分事化装置。ほぼ全投稿に入れること。読者の自己責任感を解放することで信頼を得る。\n"
+        "【感情先出し】冒頭で感情名詞を先出しする（「もどかしさ」「根拠のない焦り」「じわじわ続く停滞感」「悔しさ」「空回りする感覚」）。"
+        "読者が自分の感情を認識した瞬間に引き込まれる。\n"
+        "【HARM悩みの精度】1投稿に1つだけ: H=健康（体の重さ・気力枯渇）/ A=野心（評価されない・変われない）"
+        "/ R=人間関係（縁が続かない・孤独感）/ M=お金（頑張っても増えない）の痛みを身体感覚レベルで描写する。\n"
+        "【問いかけ終止】「心当たりない？」「これ、今の自分に当てはまる？」「最近こんなこと感じてない？」で締めると"
+        "読者が頭の中で返事して自分事化が完結する。"
+    )
 
     import random as _rnd
     _hooks = list(knowledge["hook_examples"])
@@ -971,6 +985,19 @@ A・B・Cをコメントで教えて。
             "seasonal": f"季節urgency型（10-12月限定・ENG=177実績）: 年末urgencyと「このままで終わる」感覚を組み合わせる。\n  必須フレーズ例: 「この秋も何も変わらない気がする{zodiac_name}さんへ。」「{zodiac_mark}{zodiac_name}さん、今年もこのまま終わる気がしている人だけ読んで。」「{zodiac_mark}{zodiac_name}で、年末が近づいてきたのに動けていない人へ。」\n  ポイント: 「この秋/今年/年末」×「変わらない/終わる/動けていない」の組み合わせが最強。≤50字厳守。",
         }[_cali_hook_type]
 
+        # HARMシード: フックの感情・状態描写の精度を向上させる
+        _cali_harm_data = knowledge.get("harm", {})
+        _cali_harm_keys = [k for k in _cali_harm_data if not k.startswith("_")]
+        if _cali_harm_keys:
+            _cali_harm_cat = _rnd_cali.choice(_cali_harm_keys)
+            _cali_harm_info = _cali_harm_data.get(_cali_harm_cat, {})
+            _cali_harm_pains = _cali_harm_info.get("pains", [])
+            _cali_harm_seed = _rnd_cali.choice(_cali_harm_pains) if _cali_harm_pains else ""
+            _cali_harm_label = _cali_harm_info.get("label", "")
+        else:
+            _cali_harm_seed = ""
+            _cali_harm_label = ""
+
         pattern_extra = f"""
 ## カリギュラ型の必須構造（2投稿ツリー）
 
@@ -982,6 +1009,12 @@ A・B・Cをコメントで教えて。
 
 ### 今回のhook型: {_cali_hook_type}
 {_hook_guide}
+
+### 今回のHARMシード（フックの感情精度向上・必須）
+読者の痛みカテゴリ: {_cali_harm_label}
+具体的な痛み: 「{_cali_harm_seed}」
+→ フック1行目（状態・感情の描写）をこの痛みを持つ人に刺さるよう設計すること。
+→ 2投稿目（本文）で「この痛みの原因は意志・能力の問題ではなく、向き・気の流れの問題だ」という外在化フレームを1行入れること。
 
 ### 実績TOP投稿と弱い投稿の比較（n=140件 全期間データ）
 
@@ -1411,6 +1444,20 @@ NG: 🔮 vs 🐉（どちらもブランドシンボルで対になっていな�
         ]
         _hr_hook = _rnd_hr.choice(_hr_hooks)
         _hr_topic, _hr_angle = _rnd_hr.choice(_hr_topics)
+        # HARMシード: 読者の痛みを具体的に設定（外在化テーマと連動）
+        _hr_harm_data = knowledge.get("harm", {})
+        _hr_harm_keys = [k for k in _hr_harm_data if not k.startswith("_")]
+        if _hr_harm_keys:
+            _hr_harm_cat = _rnd_hr.choice(_hr_harm_keys)
+            _hr_harm_info = _hr_harm_data.get(_hr_harm_cat, {})
+            _hr_harm_pains = _hr_harm_info.get("pains", [])
+            _hr_harm_seed = _rnd_hr.choice(_hr_harm_pains) if _hr_harm_pains else ""
+            _hr_harm_label = _hr_harm_info.get("label", "")
+            _hr_pain_theme_hint = _hr_harm_info.get("theme_hint", "")
+        else:
+            _hr_harm_seed = ""
+            _hr_harm_label = ""
+            _hr_pain_theme_hint = ""
         # LINE / Coconala を交互に使い、どちらの経路のCVが高いか測定する
         _hr_count_data = load_json(HARM_REVELATION_COUNT_FILE, default={"count": 0})
         _hr_count = _hr_count_data.get("count", 0)
@@ -1443,6 +1490,12 @@ NG: 🔮 vs 🐉（どちらもブランドシンボルで対になっていな�
 - トピック: {_hr_topic}
 - 展開の角度: {_hr_angle}
 - CTA: {_hr_cta}
+
+### 今回のHARMシード（外在化の方向性・必須）
+読者の痛みカテゴリ: {_hr_harm_label}（{_hr_pain_theme_hint}）
+具体的な痛み: 「{_hr_harm_seed}」
+→ 1投稿目のフックでこの痛みを間接的に刺すこと（「頑張っているのに変わらない」「同じパターンを繰り返す」など身体感覚レベルで）。
+→ 2投稿目の核心開示で「この痛みの原因は意志・才能の問題ではなく、向き・気の流れにある」という外在化フレームを必ず入れること。
 
 ### 各投稿の構成
 
@@ -1942,6 +1995,18 @@ NG: 🔮 vs 🐉（どちらもブランドシンボルで対になっていな�
         _kr_top1_zodiac, _kr_top1_phrase = _kr_pool[0]
         _kr_top2_zodiac, _kr_top2_phrase = _kr_pool[1]
         _kr_top3_zodiac, _kr_top3_phrase = _kr_pool[2]
+        # HARMシード: 言霊フレーズの自分事化精度を向上させる
+        _kr_harm_data = knowledge.get("harm", {})
+        _kr_harm_keys = [k for k in _kr_harm_data if not k.startswith("_")]
+        if _kr_harm_keys:
+            _kr_harm_cat = _rnd_kr.choice(_kr_harm_keys)
+            _kr_harm_info = _kr_harm_data.get(_kr_harm_cat, {})
+            _kr_harm_pains = _kr_harm_info.get("pains", [])
+            _kr_harm_seed = _rnd_kr.choice(_kr_harm_pains) if _kr_harm_pains else ""
+            _kr_harm_label = _kr_harm_info.get("label", "")
+        else:
+            _kr_harm_seed = ""
+            _kr_harm_label = ""
         pattern_extra = f"""
 ## 龍脈言霊ランキング型の追加ルール
 
@@ -1974,6 +2039,11 @@ NG: 🔮 vs 🐉（どちらもブランドシンボルで対になっていな�
 - みずがめ座「鏡の向きを整えると、気の反射が変わる」(eng=57)
 - てんびん座「住む場所の気が、私の流れを決めている」
 - ふたご座「手放す方向を変えると、入ってくるものが変わる」
+
+### HARMシード（言霊の自分事化精度・必須）
+今回の読者の深層痛み: {_kr_harm_label}「{_kr_harm_seed}」
+→ この痛みを持つ人が「自分の星座のフレーズが刺さる」と感じるよう、複数の言霊フレーズにこの痛みの解決・外在化・希望の視点を込めること。
+→ 特にTOP3フレーズに「頑張り・意志の問題ではなく、向きの問題」という外在化の視点を含めること。
 
 ### 文字数
 全体で350〜450字（ランキング数で調整）
@@ -2343,6 +2413,71 @@ eng=102: 「嵐の中で「動こう」としていませんか。」→「手�
 - 「保証します」「絶対」などNG
 - 「今日だけ」フック → 「今週だけ」に統一（今日限定は期待値下がる）
 - 日付・吉日依存（「寅の日に〜」など：スケジュールずれで嘘になる）
+"""
+
+    elif pattern_id == "ryumyaku_insight":
+        import random as _rnd_ri
+        _ri_themes = [
+            ("龍脈の読み方", "龍脈命術では「場所・向き・時期」の3つの交差点で命の流れを読む。同じ努力でも結果が違う理由は、この交差点がずれているから。"),
+            ("命（さだめ）の仕組み", "龍脈命術が西洋占星術と根本的に違う点がある。西洋占星術が「性格・運命」を読むのに対し、龍脈命術は「今いる場所・向かう方向」を読む。性格じゃなく向きを変えるだけで、同じ人間が違う結果を出せる。"),
+            ("気の停滞サイン", "鑑定でほぼ全員に共通して出てくるサインがある。「頑張っているのに変わらない」「同じパターンを繰り返す」— これは意志や能力の問題じゃない。気の流れが特定の方向で止まっているサインだ。"),
+            ("転機の読み方", "龍脈命術で転機を読むとき、「運が良くなる」という言い方はしない。「気の流れが変わるタイミング」と言う。運は待つものじゃない。方位を整えて、気が動き始める瞬間に合わせて動く。それだけだ。"),
+            ("外在化の力", "「頑張っているのになぜか変わらない」と感じているとき、人は必ず自分を責める。能力の問題、意志の問題、運の問題。でも龍脈命術で見ると、止まっている理由のほとんどは「向き」にある。自分の問題じゃない。向きの問題だ。"),
+            ("方位と縁の関係", "縁は偶然じゃない。龍脈命術で見ると、人が出会うのは同じ「気の流れ」を共有しているとき。住む場所・移動する方向・拠点の気が整うと、必然的に縁が変わる。引っ越しや移転で人生が変わる人が多いのは、そういう理由だ。"),
+        ]
+        _ri_theme_name, _ri_angle = _rnd_ri.choice(_ri_themes)
+        _ri_openings = [
+            "龍脈命術のことを、少し深く話す。",
+            "鑑定を重ねて確信になったことを書く。",
+            "有料鑑定では当たり前に話すことを、今日はここに書く。",
+            "占いを信じない人でも、これだけは聞いてほしい。",
+            "普段は投稿に書かないことにしている。でも今日だけ書く。",
+        ]
+        _ri_ctas = [
+            "これについてもっと話したい人、コメントで「龍脈」と言ってみて。",
+            "自分の龍脈を知りたくなった人、コメントで教えて。",
+            "心当たりある人、「それ」ってコメントで。",
+            "深掘りしてほしいテーマがある人、コメントで。",
+        ]
+        _ri_opening = _rnd_ri.choice(_ri_openings)
+        _ri_cta = _rnd_ri.choice(_ri_ctas)
+        pattern_extra = f"""
+## 龍脈命術インサイト型（信頼構築・ブランド深化）
+
+### 役割（最重要）
+時雨の「知の深さ」と「龍脈命術の独自性」を伝える信頼構築型投稿。
+売り込まない。ただ、読んだ人が「この人は本当に分かっている」と感じる内容。
+バーナム効果を意識: 誰でも当てはまるが深い真実を書く。読者が「これは自分のことだ」と感じる冒頭から入る。
+
+### 今回のテーマ: {_ri_theme_name}
+切り口: {_ri_angle}
+
+### 導入
+{_ri_opening}
+
+### 構成（150〜250字 / 長ければ2投稿ツリー）
+1. **導入（1行）**: {_ri_opening}
+2. **洞察の核心（3〜5行）**: 切り口を龍脈命術の視点で具体的に展開する。
+   - バーナム効果: 「頑張っているのに変わらない」「同じパターンを繰り返す」など多くの人に当てはまる状況から入る
+   - 外在化フレーム必須: 「これはあなたのせいじゃない。向きの問題だ」
+   - 龍脈命術ならではの具体的な見方（「方位で見ると〜」「気の流れで読むと〜」）
+   - 深い専門知識を平易な言葉で。「確かに」と頷ける論理展開
+3. **締め（1行）**: {_ri_cta}
+
+### 文体・トーン
+- 断言形式（〜だ。〜だった。〜だけだ。）
+- 静かな確信感。神秘的だが論理的
+- 「有料鑑定では当たり前に話すことだが」という内部情報感がある文体
+- URLや鑑定誘導は不要（信頼を積む投稿。売り込まない）
+
+### ハッシュタグ
+末尾に #龍脈命術 #方位 から1〜2個
+
+### 禁止
+- 鑑定URL・LINE URL（信頼構築フェーズ、売り込まない）
+- 「お申し込みは〜」「鑑定受けると〜」などの直接訴求
+- 「不思議なことが起きた」「奇跡的に〜」などオカルト臭の強い表現
+- 「〜かもしれません」「〜だと思います」などの弱い断言
 """
 
     # ── convert カテゴリ: 末尾URL必須ルール（ツリーパターンは各投稿内で管理するため除外）──
