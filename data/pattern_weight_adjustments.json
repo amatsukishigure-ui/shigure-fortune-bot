@@ -1,8 +1,9 @@
 {
-  "updated_at": "2026-10-19T07:02:32.476744",
+  "updated_at": "2026-10-19T14:23:10.924823",
   "locked": [],
   "lookback_days": 30,
   "adjustments": {
-    "zodiac_deep": 0.5
+    "zodiac_deep": 0.5,
+    "caligula": 0.5
   }
 }
