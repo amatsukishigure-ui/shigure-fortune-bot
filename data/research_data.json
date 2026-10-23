@@ -1,55 +1,6 @@
 {
   "topics": [
     {
-      "title": "「決め手がなくて動けない」——高校球児が逆転勝ちする瞬間に学ぶ、気の流れの変わり目",
-      "theme": "吉方位・風水/運気の転換点・タイミング",
-      "hook_idea": "流れが変わる瞬間は、必ずある。問題は、それに乗れるかどうかだ。",
-      "key_points": [
-        "夏の甲子園で相次ぐ逆転勝ち——試合の流れが変わる瞬間、選手たちは『気の流れ』を体感している",
-        "龍脈命術で見る『転機』は、突然やってくるのではなく、事前に星と方位が教えてくれている。準備した人だけがその波に乗れる",
-        "転職・引越し・人生の岐路で「決め手がない」と感じているなら、それは決め手が『来ていない』のではなく、来ている流れを読めていないだけかもしれない"
-      ],
-      "summary": "高校野球の逆転劇というポジティブなニュースを起点に、「流れの読み方・タイミングの見極め」という龍脈命術の核心概念に橋渡しする投稿。「決め手がなくて動けない」という転職・引越し検討層の心理に直接刺さる設計。親しみやすいスポーツの話題から始まるため間口が広い。",
-      "source": "news_rss",
-      "cultural_angle": "気の流れ・転機の読み方（龍脈命術的視点）",
-      "season_note": "夏の甲子園シーズン。夏の終わりは五行の切り替わり点で、転機が生まれやすい時期"
-    },
-    {
-      "title": "伊豆諸島 土砂災害危険警報に切替",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "小林鷹之政調会長留任へ 首相意向",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "景気拡大期 戦後最長超えの公算大",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "6歳男児が行方不明 足どりは",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "新米出回り コメさらに値下がりか",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "金利上昇 住宅ローン返済者ら悩み",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "マンガの言葉 データベース整備へ",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
       "title": "メルカリ くら寿司の騒動巡り言及",
       "description": "",
       "source": "Yahoo Japan ニュース"
@@ -4776,9 +4727,49 @@
       "source": "news_rss",
       "cultural_angle": "龍脈命術（気の充実・枯渇と方位の関係）",
       "season_note": "8月・酷暑シーズン。肉体的消耗と精神的消耗が重なる時期として自然に接続できる。"
+    },
+    {
+      "title": "台風 強い勢力のまま先島諸島接近",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "露 ウ南部で一時停戦合意と米発表",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "タイムズカー情報流出 集団訴訟へ",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "7歳死亡 法廷で母謝罪も無罪主張",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "元副議長の証言受け 蔵内氏が反論",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "車ドアと路面に首はさまれ 窒息死",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "車に1歳放置し病院勤務疑い 逮捕",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "王貞治氏 松井秀喜新監督にエール",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
     }
   ],
-  "last_updated": "2026-10-23T14:08:43.675769",
+  "last_updated": "2026-10-23T18:51:57.434765",
   "last_rss_count": 31,
   "last_cultural_count": 0
 }
