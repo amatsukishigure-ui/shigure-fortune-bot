@@ -42,13 +42,22 @@ def _get_threads_tags(text: str, theme: str = "") -> str:
     return THREADS_HASHTAGS_BASE
 
 
+def _format_visual(text: str) -> str:
+    """視覚フォーマットの後処理: ハッシュタグ前空行確保 + 連続空行正規化"""
+    # ハッシュタグ行の直前に空行がない場合は追加
+    text = re.sub(r'([^\n])\n(#\w)', r'\1\n\n\2', text)
+    # 連続3行以上の空行を2行に制限
+    text = re.sub(r'\n{3,}', '\n\n', text)
+    return text.strip()
+
+
 def format_for_threads(text: str, theme: str = "") -> str:
     """
     Threads用に整形する（最大500字）。
     段落単位で収まる範囲まで含め、文の途中で切れないようにする。
     末尾にテーマに合ったハッシュタグを追加して発見性を高める。
     """
-    text = text.strip()
+    text = _format_visual(text.strip())
     tags = _get_threads_tags(text, theme)
 
     # 既にハッシュタグが含まれていたら追加しない
