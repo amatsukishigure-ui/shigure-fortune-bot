@@ -20,3 +20,27 @@ data/error_log.json
 # OS
 .DS_Store
 Thumbs.db
+
+# 認証・設定（シークレット含む可能性）
+.credentials.json
+settings.json
+
+# ランタイム生成ファイル（投稿履歴・キュー・キャッシュ）
+history.jsonl
+.last-cleanup
+cache/
+sessions/
+state/
+backups/
+casting/
+file-history/
+shell-snapshots/
+
+# サブシステム（別プロジェクト扱い）
+note365-generator/
+thumbnail-system/
+plugins/
+projects/
+
+# 起動設定（ローカル環境依存）
+launch.json
