@@ -2056,6 +2056,7 @@ NG: 🔮 vs 🐉（どちらもブランドシンボルで対になっていな�
 ### 構成（必須）
 1. 冒頭フック（1行）: 「♈♉♊♋♌♍♎♏♐♑♒♓ 気づいた方だけ受け取ってください。」の形式で始める。**先頭に12星座の記号を並べること（必須）。**
 2. ランキングタイトル（1行）: 「【保存版｜今週の龍脈言霊ランキング｜{_kr_rank_theme}】」または「【今週の龍脈言霊ランキング｜{_kr_rank_theme}】」のどちらか（「保存版｜」は50%の確率で付ける）
+   ⚠️ **「今週の」は絶対に変えない。「今月の」「今日の」「今旬の」などへの変更禁止。必ず「今週の」を使うこと。**
 3. ランキング本体（全12星座を必ず全部含める）: 🥇🥈🥉🏅を1〜4位に使い、以下は「第◯位」
    - 各星座に「向き・方位・気の流れ」を使った15〜25文字の言霊フレーズ
    - **今回の1位**: {_kr_top1_zodiac} → 🥇第1位　{_kr_top1_zodiac}{_kr_top1_phrase}
@@ -3214,6 +3215,12 @@ def run(batch_size: int = 5) -> dict:
             if pattern.get("id") == "kotodama_rank":
                 for _hira, _kanji in _ZODIAC_HIRA_TO_KANJI.items():
                     first_draft = first_draft.replace(_hira, _kanji)
+                # 「今月の」「今日の」等を「今週の」に強制置換（hallucination 対策）
+                first_draft = re.sub(
+                    r'(【(?:保存版｜)?)今[月日旬]の(龍脈言霊ランキング)',
+                    r'\1今週の\2',
+                    first_draft
+                )
             # zodiac_boost パターン: 星座記号が本文になければ冒頭に強制追加（品質チェック前）
             _zb_single = extra_hint.get("zodiac_boost", "")
             if _zb_single and pattern.get("id") not in _ZODIAC_SELF_MANAGED_PIDS:
