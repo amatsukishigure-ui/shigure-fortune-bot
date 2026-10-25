@@ -134,11 +134,8 @@ def _get_last_post_time(history: list) -> datetime | None:
 def _can_post(history: list) -> tuple[bool, str]:
     """投稿可能かチェック"""
     today_count = _count_today_posts(history)
-    # 日曜日はエンゲージメントが低い（avg=9.8 vs 他曜日avg=15〜19）ため投稿上限を3件に制限
-    _jst_weekday = datetime.now(timezone(timedelta(hours=9))).weekday()
-    _effective_limit = 3 if _jst_weekday == 6 else DAILY_POST_LIMIT
-    if today_count >= _effective_limit:
-        return False, f"本日の上限({'日曜: 3' if _jst_weekday == 6 else DAILY_POST_LIMIT}件)に達しています"
+    if today_count >= DAILY_POST_LIMIT:
+        return False, f"本日の上限({DAILY_POST_LIMIT}件)に達しています"
 
     last_time = _get_last_post_time(history)
     if last_time:
