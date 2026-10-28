@@ -1,41 +1,6 @@
 {
   "topics": [
     {
-      "title": "北の飛翔体は弾道ミサイル 韓国軍",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "消費減税 特例・経過措置で複雑化",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "亀蔵さん死亡火災 知人を書類送検",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "ガソスタ 10年で1700社超が消滅",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "読めない看板 住民ら要望で存続へ",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "映画「国宝」テレビ初放送が決定",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "森本レオさん 原因不明の突然死",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
       "title": "ランサム被害を復元 警察庁が開発",
       "description": "",
       "source": "Yahoo Japan ニュース"
@@ -4461,9 +4426,44 @@
       "source": "news_rss",
       "cultural_angle": "龍脈（地気）・土地の気・移転鑑定",
       "season_note": "お盆明けの引越しシーズン前。移転を考え始めるタイミングに重なる"
+    },
+    {
+      "title": "GMO脅迫サイト 国が遮断を要請",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "他県警でも失効免許不正流用 証言",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "千葉県で震度5弱 津波の心配なし",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "解体作業中に鉄板が落下 男性死亡",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "巨人ヘッドCに高橋由伸氏決定",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "DeNA筒香 海外FA権行使を検討",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "DeNA球団社長 筒香&牧の去就言及",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
     }
   ],
-  "last_updated": "2026-10-28T15:48:57.758230",
+  "last_updated": "2026-10-28T23:05:17.914470",
   "last_rss_count": 31,
   "last_cultural_count": 0
 }
