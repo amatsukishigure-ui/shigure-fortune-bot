@@ -1,64 +1,6 @@
 {
   "topics": [
     {
-      "title": "「このままでいいのか」——岐路に立つ人が夏の終わりに動き出せる理由",
-      "theme": "龍脈命術/鑑定への導線・転機の読み方",
-      "hook_idea": "夏の終わりに「このままでいいのか」と思うのは、偶然じゃない。",
-      "key_points": [
-        "立秋を過ぎると気の流れが夏→秋へ切り替わり、「動きたい衝動」が高まりやすい",
-        "転職・引越し・恋愛——岐路に立つ人が増えるのはこの時期の気の変化が原因",
-        "龍脈命術では「いつ動くか」「どこへ動くか」をセットで読む"
-      ],
-      "summary": "お盆を過ぎると多くの人が「このままでいいのか」と自問し始める。これは単なる夏バテのせいではなく、立秋を境に大地の気が切り替わり、停滞していた衝動が表面化するタイミング。龍脈命術では、この気の変わり目をどう読み、どの方位へいつ動くかを鑑定で示す。",
-      "source": "cultural_research",
-      "cultural_angle": "龍脈命術（立秋・季節の転換点と運気）",
-      "season_note": "立秋（8月7日前後）／夏から秋への気の切り替わり"
-    },
-    {
-      "title": "逆転勝ち、15年ぶりの勝ち星——「流れを引き寄せる」とはどういうことか",
-      "theme": "龍脈命術/気の流れ・運気の読み方",
-      "hook_idea": "流れを手放さなかった者だけが、逆転できる。",
-      "key_points": [
-        "風水でいう「気の流れに乗る」とは、逆境でも方向性を見失わないこと",
-        "15年間勝てなかった積み重ねが、気の蓄積となって一点突破につながる",
-        "「いつ動くか」「何を蓄えてきたか」——龍脈命術が読むのはその人固有の流れ"
-      ],
-      "summary": "高校野球で15年ぶりの逆転勝ち。風水・龍脈の観点では、長い蓄積の末に気が弾ける瞬間がある。人の運気も同じで、「まだ動けない」時期は気を蓄えているフェーズ。龍脈命術はその蓄積がいつ解放されるかを読む占い——転職・独立・引越しで「あと一歩が踏み出せない」人に響くネタ。",
-      "source": "news_rss",
-      "cultural_angle": "龍脈命術（蓄気・転機・気の放出タイミング）",
-      "season_note": "夏（甲子園・挑戦の季節）／立秋前後の気の転換期"
-    },
-    {
-      "title": "対米投資第3弾 次世代原発が有力",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "米利上げ予想高まる インフレ続く",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "陸上の大会で28人搬送 弁当原因か",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "MUFG 富裕層囲い込み戦略の裏側",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "伊藤大海 西武コーチとの騒動言及",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "バレー男子イラン監督 日程に不満",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
       "title": "国対委員長に村井英樹氏 首相意向",
       "description": "",
       "source": "Yahoo Japan ニュース"
@@ -4542,9 +4484,49 @@
       "source": "cultural_research",
       "cultural_angle": "二十四節気「立秋」／日本の暦と気学の季節サイクル",
       "season_note": "立秋（8月7日）直後／秋の方位エネルギーへの切り替わり"
+    },
+    {
+      "title": "ガソリン補助金 12月から段階縮小",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "中野でまた高級時計窃盗 男が逃走",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "NVIDIAトップに中国工作員接近か",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "八田與一容疑者の鮮明な写真公開",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "ナップザック 中高生になぜ人気",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "清水隆行氏 巨人打撃コーチ就任へ",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "パトリック・スチュワート氏死去",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "矢部「ナイナイANN」2度目の卒業",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
     }
   ],
-  "last_updated": "2026-10-29T15:56:49.418932",
+  "last_updated": "2026-10-29T23:13:11.413069",
   "last_rss_count": 31,
   "last_cultural_count": 0
 }
