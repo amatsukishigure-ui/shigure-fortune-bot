@@ -1,64 +1,6 @@
 {
   "topics": [
     {
-      "title": "引越し先を「感覚」で選んでいませんか？",
-      "theme": "吉方位・風水/引越し・移転と方位鑑定",
-      "hook_idea": "「なんとなく良さそう」で選んだ街で、なんとなく上手くいかなくなった話。",
-      "key_points": [
-        "引越し先を選ぶ基準の多くは家賃・利便性・雰囲気——方位は考慮されない",
-        "風水・吉方位では、現住所から見た移転方角が気の流れを決定する",
-        "同じ物件でも「方位が合う人」と「合わない人」がいる。それが龍脈命術の読み方"
-      ],
-      "summary": "引越しを検討する人が増えるお盆明け〜秋にかけての時期。多くの人が物件の条件や雰囲気で選ぶが、吉方位の観点では「どの方角へ動くか」が最も重要な要素のひとつ。龍脈命術では移転先の方位と時期を複合的に読み解き、気が味方する引越しを導く。",
-      "source": "cultural_research",
-      "cultural_angle": "吉方位・移転風水",
-      "season_note": "お盆明けは引越し・転居の検討が活発になる時期"
-    },
-    {
-      "title": "「嵐の後」に動く人が、運を掴む。",
-      "theme": "吉方位・風水/行動タイミングと気の転換",
-      "hook_idea": "嵐が去った後の空気を、あなたは知っているか。",
-      "key_points": [
-        "台風通過後は気圧・気流が一変する。自然界では「気の一新」が起きる",
-        "龍脈命術では、大きな自然の動きの後は気の転換点として読む",
-        "転職・独立・引越しを迷っている人が動き出すなら、嵐の後の静けさの中で"
-      ],
-      "summary": "台風13号が日本列島に影響を与えているこの時期。嵐の後、空気が一変するように、自然の大きな動きは「気の転換点」を生む。龍脈命術ではこの転換のタイミングを読み、人生の決断に重ねていく。動きたいのに動けない人へ、「嵐の後」が答えを示してくれることがある。",
-      "source": "news_rss",
-      "cultural_angle": "気の転換思想・龍脈（自然の動きと人の運気の連動）",
-      "season_note": "台風シーズン（8〜9月）、気の大きな転換が起きる時期"
-    },
-    {
-      "title": "古謝氏当選 辺野古容認へ県政転換",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "玉城デニー氏 結果受け止める",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "極右AfDが勝利 独全土で抗議デモ",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "商店街で漏水 近隣店員「大打撃」",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "侍U18優勝逃す 韓国に痛恨の連敗",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "大河異例の特番ドラマ 全国放送へ",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
       "title": "慎吾ママ 令和のママにメッセージ",
       "description": "",
       "source": "Yahoo Japan ニュース"
@@ -4596,9 +4538,49 @@
       "source": "news_rss",
       "cultural_angle": "熊本・九州の土地の気・災害後の復興と気の整え方",
       "season_note": "熊本地震（2025年7月末）の直後。土地選び・移転を考える層への自然な訴求タイミング。"
+    },
+    {
+      "title": "北が関与か バイナンス巡り米調査",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "発達障害増加 支援学校の教員不足",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "東京メトロ 29年3月値上げ目指す",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "列車とクマ衝突 乗客は車内で一夜",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "3歳妹殺害され 左耳聴力失った兄",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "神戸の「モザイク」全面改装へ",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "都内最古の「天下一品」閉店へ",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "第2子誕生の藤森 ブランチ欠席",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
     }
   ],
-  "last_updated": "2026-10-30T22:55:11.682659",
+  "last_updated": "2026-10-31T01:32:03.959868",
   "last_rss_count": 31,
   "last_cultural_count": 0
 }
