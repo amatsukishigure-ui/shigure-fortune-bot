@@ -433,7 +433,7 @@
     "name": "12星座ランキング（日次アンカー）",
     "format": "long",
     "category": "reach",
-    "daily_limit": 2,
+    "daily_limit": 1,
     "anchor_hour": 21,
     "weight": 6.0,
     "platforms": [
