@@ -518,6 +518,10 @@ def run() -> dict:
         if len(_tp) > 1:
             post["is_thread"] = True
             post["thread_count"] = len(_tp)
+            # ツリー全投稿IDを保存（fetcher が全IDのメトリクスをSUMするため）
+            all_ids = result.get("post_ids", [])
+            if len(all_ids) > 1:
+                post["thread_post_ids"] = all_ids
         add_to_history(post)
         clear_errors("poster")
 

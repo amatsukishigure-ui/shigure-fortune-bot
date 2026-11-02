@@ -100,9 +100,20 @@ def run() -> dict:
             skipped += 1
             continue
 
-        metrics = _fetch_metrics(post_id)
+        # ツリー投稿の場合は全IDのメトリクスをSUMして計上
+        all_ids = post.get("thread_post_ids") or [post_id]
+        aggregated: dict | None = None
+        for tid in all_ids:
+            m = _fetch_metrics(tid)
+            if m is None:
+                continue
+            if aggregated is None:
+                aggregated = {k: 0 for k in m if k != "pattern_id"}
+            for k, v in m.items():
+                if k != "pattern_id" and isinstance(v, (int, float)):
+                    aggregated[k] = aggregated.get(k, 0) + v
+        metrics = aggregated
         if metrics:
-            # pattern_id を performance_data に記録してパターン別分析を可能にする
             pid = pattern_id_map.get(post_id, "")
             if pid:
                 metrics["pattern_id"] = pid
