@@ -1,71 +1,6 @@
 {
   "topics": [
     {
-      "title": "PHPに欠陥 欧州各国でサイト遮断",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "コミックシーモア最大420万件流出",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "88歳の父死亡 傷害疑いで娘を逮捕",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "大谷は手術回避へ 編成本部長明言",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "異例 阪神・上本打撃コーチが退団",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "台風 23日から沖縄先島諸島に接近",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "G7TV会議を首相欠席 与野党波紋",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "PHPの脆弱性 米OpenAIのAIで発見",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "メタに約4兆円支払い命令 米地裁",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "情報抜き取りに15秒 悪用指摘のAI",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "ヒマラヤ山脈 日本人2人が不明",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "高橋塁 ゲイ公表までの葛藤を語る",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "柳楽優弥 日曜劇場に初出演で主演",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
       "title": "台風・大雨の季節——気の乱れが人の判断を狂わせる",
       "theme": "気の流れ/自然と運気",
       "hook_idea": "台風が来るとき、気の流れも乱れる。この時期に大きな決断をしてはいけない理由がある。",
@@ -4398,9 +4333,74 @@
       "title": "米津「Lemon」MV10億回再生突破",
       "description": "",
       "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "米大統領 敗因巡りイラン攻撃言及",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "黒人女性が州知事に当選確実 米",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "東証続落 米選挙懸念でAI株売り",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "BYD海外販売が倍増 中国車に明暗",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "津市の火災 死亡の4人は4～13歳",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "鉄板の下敷きに 解体作業員が死亡",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "ラッコ見学を全面中止 鳥羽水族館",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "G松井監督 工藤氏は尊敬する先輩",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "高校野球 英明が関東第一に逆転勝ち 夏の甲子園15年ぶり勝ち星",
+      "description": "夏の全国高校野球、大会4日目の第4試合は、香川の英明高校が東東京の関東第一高校に4対1で逆転勝ちし、夏の甲子園で15年ぶりに勝ち星を挙げました。",
+      "source": "NHKライフスタイル"
+    },
+    {
+      "title": "ラグビー日本代表 3点及ばず テストマッチで豪州に競り負ける",
+      "description": "ラグビー日本代表は8日夜、大阪で行われたテストマッチで来年のワールドカップの開催国のオーストラリア代表と対戦し、32対35で競り負けました。",
+      "source": "NHKライフスタイル"
+    },
+    {
+      "title": "サッカーJ3 ロアッソ熊本 大地震を乗り越え開幕戦 大きな拍手",
+      "description": "サッカーJ3、ロアッソ熊本が8日夜にアウェーで開幕戦に臨み、熊本地震で大きな被害が出た宇城市出身のディフェンダー、薬師田澪選手をはじめ、選手たちが体を張った守備で苦しい展開を無失点でしのぎ、引き分けとしました。",
+      "source": "NHKライフスタイル"
+    },
+    {
+      "title": "サッカーJ1 第1節 ヴィッセル神戸が白星スタート",
+      "description": "7日に開幕したサッカーJ1は8日に第1節の6試合が行われ、特別大会に続いて優勝を目指すヴィッセル神戸がアビスパ福岡に勝って白星スタートを切りました。",
+      "source": "NHKライフスタイル"
+    },
+    {
+      "title": "高校野球 大分商 エース平田が流れ引き寄せ逆転勝ち 2回戦へ",
+      "description": "夏の全国高校野球、大会4日目の第3試合は、大分商業が新潟の日本文理高校に6対4で逆転勝ちして、2回戦に進みました。",
+      "source": "NHKライフスタイル"
     }
   ],
-  "last_updated": "2026-11-04T02:08:40.401711",
+  "last_updated": "2026-11-04T08:15:49.465093",
   "last_rss_count": 31,
   "last_cultural_count": 0
 }

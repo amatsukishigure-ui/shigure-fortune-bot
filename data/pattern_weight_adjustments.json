@@ -1,17 +1,17 @@
 {
-  "updated_at": "2026-11-04T02:06:20.259884",
+  "updated_at": "2026-11-04T08:13:23.892002",
   "locked": [],
   "lookback_days": 30,
   "adjustments": {
     "kotodama_rank": 2.0,
     "zodiac_deep": 2.0,
-    "ichi_gon": 0.754,
-    "zodiac_ranking": 0.603,
-    "caligula": 0.811,
-    "zodiac_target": 0.899,
-    "harm_revelation": 1.068,
-    "fuusui_tip": 0.559,
+    "ichi_gon": 0.751,
+    "zodiac_ranking": 0.578,
+    "caligula": 0.785,
+    "zodiac_target": 0.895,
+    "harm_revelation": 1.227,
+    "fuusui_tip": 0.557,
     "coconala_monitor": 0.5,
-    "lucky_combo": 1.242
+    "lucky_combo": 1.237
   }
 }
