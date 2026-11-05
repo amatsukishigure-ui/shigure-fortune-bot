@@ -12716,5 +12716,27 @@
     "pattern_id": "reply_magnet",
     "post_id": "18120461426079786",
     "fetched_at": "2026-11-05T08:38:45.630008"
+  },
+  {
+    "views": 61,
+    "likes": 5,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "zodiac_ranking",
+    "post_id": "18236254675326263",
+    "fetched_at": "2026-11-05T15:11:41.266730"
+  },
+  {
+    "views": 122,
+    "likes": 6,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "zodiac_target",
+    "post_id": "17930797134424062",
+    "fetched_at": "2026-11-05T15:11:41.542411"
   }
 ]
