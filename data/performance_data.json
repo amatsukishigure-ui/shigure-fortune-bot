@@ -12683,5 +12683,38 @@
     "pattern_id": "zodiac_deep",
     "post_id": "17943342114397158",
     "fetched_at": "2026-11-05T02:10:52.455100"
+  },
+  {
+    "views": 38,
+    "likes": 1,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "caligula",
+    "post_id": "18110476817194434",
+    "fetched_at": "2026-11-05T08:38:44.777343"
+  },
+  {
+    "views": 113,
+    "likes": 4,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "zodiac_ranking",
+    "post_id": "18152156317559039",
+    "fetched_at": "2026-11-05T08:38:45.264310"
+  },
+  {
+    "views": 89,
+    "likes": 4,
+    "replies": 8,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "reply_magnet",
+    "post_id": "18120461426079786",
+    "fetched_at": "2026-11-05T08:38:45.630008"
   }
 ]
