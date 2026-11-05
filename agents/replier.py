@@ -385,21 +385,11 @@ _CLOSING_CV_COUNT_FILE = "state/closing_cv_count.json"
 
 def _get_closing_cv_destination(profile: dict) -> tuple[str, str]:
     """
-    LINE / Coconala を交互に選択して返す。
-    Returns: (destination_label, cta_text)
+    2往復目以降は Coconala モニターへ固定誘導する。
+    Returns: (destination_label, url)
     """
-    from core.state import load_json, save_json
-    count_data = load_json(_CLOSING_CV_COUNT_FILE, default={"count": 0})
-    count = count_data.get("count", 0)
-    save_json(_CLOSING_CV_COUNT_FILE, {"count": count + 1})
-
-    line_url = profile.get("line_url", "https://lin.ee/TJg5dru")
     coconala_url = profile.get("service_url", "https://coconala.com/services/4292937?ref=threads")
-
-    if count % 2 == 0:
-        return "LINE", line_url
-    else:
-        return "Coconala", coconala_url
+    return "Coconala", coconala_url
 
 
 def _generate_closing_reply(
@@ -419,27 +409,21 @@ def _generate_closing_reply(
     if comment_type == "casual":
         length_rule = "- 40〜80字で完結させる"
         cta_instruction = (
-            f"- 会話を温かく受け止めたあと、「もし気になることがあれば{dest_label}でも話せるよ」と自然に1行添える\n"
+            f"- 会話を温かく受け止めたあと、「気になったら1,000円のモニターから試してみてね」と自然に1行添える\n"
             f"- URL: {dest_url}（文末に自然に置く）"
         )
     elif comment_type == "question":
         length_rule = "- 60〜100字で完結させる"
         cta_instruction = (
-            f"- 質問に1行で答えたあと、「もっと詳しくは{dest_label}でも聞けるよ」と添える\n"
+            f"- 質問に1行で答えたあと、「もっと詳しく知りたければ1,000円モニターで試してみて」と添える\n"
             f"- URL: {dest_url}（文末に自然に置く）"
         )
     else:  # high_interest
         length_rule = "- 50〜90字で完結させる"
-        if dest_label == "Coconala":
-            cta_instruction = (
-                f"- 「気になるなら1,000円のモニターから試してみて」という自然なひと押しを添える\n"
-                f"- URL: {dest_url}（文末に置く）"
-            )
-        else:
-            cta_instruction = (
-                f"- 「もう少し話したいなら{dest_label}でも話せるよ」と温かく誘う\n"
-                f"- URL: {dest_url}（文末に置く）"
-            )
+        cta_instruction = (
+            f"- 「気になるなら1,000円のモニターから試してみて」という自然なひと押しを添える\n"
+            f"- URL: {dest_url}（文末に置く）"
+        )
 
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
     prompt = f"""あなたは占術家「時雨（しぐれ）」です。
