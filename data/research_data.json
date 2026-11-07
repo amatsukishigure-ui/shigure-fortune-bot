@@ -1,55 +1,6 @@
 {
   "topics": [
     {
-      "title": "「このままでいいのか」がループする夏——それは嵐の前兆だ",
-      "theme": "吉方位・人生の岐路/転職・引越し・恋愛の決断",
-      "hook_idea": "「このままでいいのか」を、今年の夏で何回思った？",
-      "key_points": [
-        "台風・地震・大雨——外の世界が激しく動いているとき、内側も揺れるのは自然なこと。それは変化の兆しだ",
-        "同じ場所でループしている感覚は、気の向きが合っていないサイン。自然界と同じく、滞った気はやがて動こうとする",
-        "龍脈命術は、そのループを断ち切るための『向き』を示す。転職・引越し・恋愛——どの岐路にも、吉方位がある"
-      ],
-      "summary": "台風が列島を揺らし、大地が動き、嵐が続くこの夏。外の世界が激しく変化しているとき、人の内側も揺れ動く。「このままでいいのか」という言葉が止まらないなら、それは龍脈命術では『気が動こうとしているサイン』だ。向きさえ整えば、同じ意志が全く違う結果を生む。",
-      "source": "news_rss",
-      "cultural_angle": "自然の気の動き（台風・嵐）と人の運気変動の連動。風水における天候と龍脈の関係",
-      "season_note": "8月＝夏の終わり・転換点。お盆を境に気が切り替わり、秋（行動の季節）に向けた準備期。転職・引越しの決断が多い時期"
-    },
-    {
-      "title": "近畿で非常に激しい雨 26日も警戒",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "衆院議席減案 国民民主の賛否焦点",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "那覇市の女性強殺事件 米兵を起訴",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "床はう患者撮影し投稿 法的責任は",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "退職代行「バブル」崩壊? なぜ今",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "美容室の倒産高水準 競争で二極化",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
-      "title": "巨人 ドラ1浅野翔吾を自由契約",
-      "description": "",
-      "source": "Yahoo Japan ニュース"
-    },
-    {
       "title": "今田美桜 公式サイト&FC閉鎖へ",
       "description": "",
       "source": "Yahoo Japan ニュース"
@@ -4515,9 +4466,49 @@
       "source": "news_rss",
       "cultural_angle": "日本の夏の甲子園文化・逆転劇への共感",
       "season_note": "8月甲子園シーズン。ターゲット層（20〜40代）に刺さる「逆転・転機」の文脈で活用可能。"
+    },
+    {
+      "title": "米中間選挙 共和党大敗の舞台裏",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "大阪維新の会「吉村体制」3期目に",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "「継戦能力」強化を明記 政府検討",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "基地交付金 打ち切り恐れに町反発",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "女性を監禁疑い 供述後に遺体発見",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "FA宣言 15年ぶり「2ケタ」現実味",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "山本モナさん 50歳で司法修習生に",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
+    },
+    {
+      "title": "こじはる結婚 ノースリーブス祝福",
+      "description": "",
+      "source": "Yahoo Japan ニュース"
     }
   ],
-  "last_updated": "2026-11-07T13:48:04.115625",
+  "last_updated": "2026-11-07T15:31:34.689202",
   "last_rss_count": 31,
   "last_cultural_count": 0
 }
