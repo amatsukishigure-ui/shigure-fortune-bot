@@ -33,6 +33,7 @@ SKIP_PATTERNS = {
     "yoru_kichi",          # 「明日」表現が古くなる
     "weekly_forecast",     # 週情報は翌週に無意味化
     "menu_guide",          # 料金・URL変更リスク
+    "caligula",            # リポスト過多（直近30日26件、全リポストの53%）→ 新規生成のみに限定
 }
 
 

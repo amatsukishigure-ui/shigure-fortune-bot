@@ -11866,7 +11866,7 @@
     "reposts": 0,
     "quotes": 0,
     "shares": 0,
-    "pattern_id": "harm_revelation",
+    "pattern_id": "_excluded_harm_revelation_bug",
     "post_id": "18420713332158701",
     "fetched_at": "2026-10-27T12:59:50.120132"
   },
@@ -11899,7 +11899,7 @@
     "reposts": 0,
     "quotes": 0,
     "shares": 0,
-    "pattern_id": "harm_revelation",
+    "pattern_id": "_excluded_harm_revelation_bug",
     "post_id": "18136382023638746",
     "fetched_at": "2026-10-27T22:53:55.297362"
   },
@@ -12229,7 +12229,7 @@
     "reposts": 0,
     "quotes": 0,
     "shares": 0,
-    "pattern_id": "harm_revelation",
+    "pattern_id": "_excluded_harm_revelation_bug",
     "post_id": "18337697290279764",
     "fetched_at": "2026-10-31T07:37:43.425995"
   },
@@ -12559,7 +12559,7 @@
     "reposts": 0,
     "quotes": 0,
     "shares": 0,
-    "pattern_id": "harm_revelation",
+    "pattern_id": "_excluded_harm_revelation_bug",
     "post_id": "18081010769395527",
     "fetched_at": "2026-11-03T14:52:18.353550"
   },
@@ -12603,7 +12603,7 @@
     "reposts": 0,
     "quotes": 0,
     "shares": 0,
-    "pattern_id": "harm_revelation",
+    "pattern_id": "_excluded_harm_revelation_bug",
     "post_id": "18059481497562969",
     "fetched_at": "2026-11-04T08:12:59.815750"
   },
@@ -12614,7 +12614,7 @@
     "reposts": 0,
     "quotes": 0,
     "shares": 0,
-    "pattern_id": "harm_revelation",
+    "pattern_id": "_excluded_harm_revelation_bug",
     "post_id": "17918191314467519",
     "fetched_at": "2026-11-04T08:13:00.073070"
   },
@@ -12636,7 +12636,7 @@
     "reposts": 0,
     "quotes": 0,
     "shares": 0,
-    "pattern_id": "harm_revelation",
+    "pattern_id": "_excluded_harm_revelation_bug",
     "post_id": "18114538055166601",
     "fetched_at": "2026-11-04T15:08:52.727668"
   },
