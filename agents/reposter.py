@@ -161,6 +161,14 @@ def run() -> dict:
                 "is_repost": True,
                 "original_post_id": h.get("threads_post_id"),
             }
+            # ツリー投稿のリポストは thread_posts を引き継ぐ（失わないと単発投稿になる）
+            original_thread_posts = h.get("thread_posts", [])
+            if len(original_thread_posts) > 1:
+                updated_threads = [_update_date_expressions(p, profile) for p in original_thread_posts]
+                post_obj["thread_posts"] = updated_threads
+                post_obj["is_thread"] = True
+                post_obj["thread_count"] = len(updated_threads)
+                post_obj["text"] = updated_threads[0]
             enqueue_pending(post_obj)
             reposted += 1
             print(f"  ♻️  リポスト追加: [{h.get('pattern_id')}] {updated_text[:40]}...")
