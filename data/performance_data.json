@@ -13035,5 +13035,38 @@
     "pattern_id": "zodiac_deep",
     "post_id": "17960870706013999",
     "fetched_at": "2026-11-08T08:10:10.899434"
+  },
+  {
+    "views": 160,
+    "likes": 8,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "zodiac_ranking",
+    "post_id": "18125914786810126",
+    "fetched_at": "2026-11-08T14:05:30.118328"
+  },
+  {
+    "views": 239,
+    "likes": 20,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "zodiac_ranking",
+    "post_id": "18107245319360487",
+    "fetched_at": "2026-11-08T14:05:30.407323"
+  },
+  {
+    "views": 415,
+    "likes": 20,
+    "replies": 9,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "zodiac_target",
+    "post_id": "17895765297434530",
+    "fetched_at": "2026-11-08T14:05:30.618296"
   }
 ]
