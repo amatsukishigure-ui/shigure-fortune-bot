@@ -98,23 +98,15 @@ jobs:
                 NEED_REFILL="no"
               fi
 
-              # kotodama_rank または caligula が少ない場合はキャップ内で強制補充（top performer欠如防止）
-              KR_COUNT=$(python -c "
+              # zodiac_ranking が枯渇した場合はキャップ内で強制補充（top performer欠如防止）
+              # 旧: caligula<3 チェック → caligula は weight 下げ+SKIP_PATTERNS により常に<3になる → 誤発火のため削除
+              ZR_COUNT=$(python -c "
             import json, pathlib
             q = json.loads(pathlib.Path('data/post_queue.json').read_text()) if pathlib.Path('data/post_queue.json').exists() else []
-            print(sum(1 for x in q if x.get('pattern_id') == 'kotodama_rank'))
+            print(sum(1 for x in q if x.get('pattern_id') == 'zodiac_ranking'))
             " 2>/dev/null || echo "1")
-              CAL_COUNT=$(python -c "
-            import json, pathlib
-            q = json.loads(pathlib.Path('data/post_queue.json').read_text()) if pathlib.Path('data/post_queue.json').exists() else []
-            print(sum(1 for x in q if x.get('pattern_id') == 'caligula'))
-            " 2>/dev/null || echo "1")
-              if [ "$KR_COUNT" = "0" ] && [ "$QUEUE_TOTAL" -le 100 ]; then
-                echo "📌 kotodama_rank=0 — forcing daily to replenish top performer"
-                NEED_REFILL="yes"
-              fi
-              if [ "$CAL_COUNT" -lt 3 ] && [ "$QUEUE_TOTAL" -le 100 ]; then
-                echo "📌 caligula<3 — forcing daily to replenish top performer"
+              if [ "$ZR_COUNT" = "0" ] && [ "$QUEUE_TOTAL" -le 100 ]; then
+                echo "📌 zodiac_ranking=0 — forcing daily to replenish top performer"
                 NEED_REFILL="yes"
               fi
 
