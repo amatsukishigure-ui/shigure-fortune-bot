@@ -21255,14 +21255,15 @@
     "expires_on": "2026-11-27",
     "pending_at": "2026-11-13T08:56:51.585687",
     "queued_at": "2026-11-13T08:57:05.437297",
-    "threads_post_id": "18062605007554953",
-    "posted_at": "2026-11-19T01:02:13.132077+00:00",
+    "threads_post_id": "18139960435647616",
+    "posted_at": "2026-11-19T01:01:28.906236+00:00",
     "is_mock": false,
-    "has_image": false,
+    "has_image": true,
+    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/zodiac/taurus.jpg",
     "thread_post_ids": [
-      "18062605007554953",
-      "17999813292028663"
+      "18139960435647616",
+      "18071103230520991"
     ],
-    "recorded_at": "2026-11-19T01:02:13.138774"
+    "recorded_at": "2026-11-19T01:01:28.915583"
   }
 ]
