@@ -21321,11 +21321,10 @@
     "original_post_id": "17942320473300974",
     "pending_at": "2026-11-20T01:11:42.973840",
     "queued_at": "2026-11-20T01:12:37.294130",
-    "threads_post_id": "18652631443024032",
-    "posted_at": "2026-11-20T03:09:00.813723+00:00",
+    "threads_post_id": "18134155984768820",
+    "posted_at": "2026-11-20T03:05:32.509563+00:00",
     "is_mock": false,
-    "has_image": true,
-    "image_url": "https://raw.githubusercontent.com/amatsukishigure-ui/shigure-images/master/brand/crystal_zodiac.jpg",
-    "recorded_at": "2026-11-20T03:09:00.820478"
+    "has_image": false,
+    "recorded_at": "2026-11-20T03:05:32.522046"
   }
 ]
