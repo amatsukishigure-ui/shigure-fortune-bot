@@ -1309,19 +1309,19 @@ NG: 🔮 vs 🐉（どちらもブランドシンボルで対になっていな�
             _hr_harm_seed = ""
             _hr_harm_label = ""
             _hr_pain_theme_hint = ""
-        # LINE / Coconala を交互に使い、どちらの経路のCVが高いか測定する
+        # Coconala 2 : LINE 1 の比率でCTAを切り替え（ococナラメイン戦略）
         _hr_count_data = load_json(HARM_REVELATION_COUNT_FILE, default={"count": 0})
         _hr_count = _hr_count_data.get("count", 0)
         _line_url_hr = knowledge.get("profile", {}).get("line_url", "https://lin.ee/TJg5dru")
-        if _hr_count % 2 == 0:
-            # 偶数回目 → LINE（0回目=初回もLINE）
+        if _hr_count % 3 == 0:
+            # 3回に1回 → LINE
             _hr_ctas = [
                 f"まず話したい方はLINEへ（無料）。\n▷ {_line_url_hr}",
                 f"続きが気になる方、LINEで話しましょう。\n▷ {_line_url_hr}",
                 f"自分の状況を確かめたい方 → {_line_url_hr}",
             ]
         else:
-            # 奇数回目 → Coconala（モニター1,000円を入口として明示）
+            # 3回に2回 → Coconala（モニター1,000円を入口として明示）
             _hr_ctas = [
                 f"まず1,000円モニターで試してほしい。\n▷ {service_url}",
                 f"「試してみたい」という方は、1,000円のモニターがある。\n▷ {service_url}",
