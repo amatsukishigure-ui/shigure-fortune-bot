@@ -14652,5 +14652,115 @@
     "pattern_id": "reply_magnet",
     "post_id": "18090033680687300",
     "fetched_at": "2026-11-25T19:00:03.124856"
+  },
+  {
+    "views": 5,
+    "likes": 1,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "reply_magnet",
+    "post_id": "18150669409553351",
+    "fetched_at": "2026-11-26T18:51:20.268580"
+  },
+  {
+    "views": 6,
+    "likes": 1,
+    "replies": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "reply_magnet",
+    "post_id": "17973445650203289",
+    "fetched_at": "2026-11-26T18:51:20.465849"
+  },
+  {
+    "views": 82,
+    "likes": 5,
+    "replies": 3,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "reply_magnet",
+    "post_id": "18117605993185432",
+    "fetched_at": "2026-11-26T18:51:20.744430"
+  },
+  {
+    "views": 92,
+    "likes": 5,
+    "replies": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "ryumyaku_insight",
+    "post_id": "18090935021292890",
+    "fetched_at": "2026-11-26T18:51:21.327081"
+  },
+  {
+    "views": 10,
+    "likes": 2,
+    "replies": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "ryumyaku_insight",
+    "post_id": "18117732329033996",
+    "fetched_at": "2026-11-26T18:51:21.950934"
+  },
+  {
+    "views": 237,
+    "likes": 4,
+    "replies": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "ryumyaku_insight",
+    "post_id": "17970600966234668",
+    "fetched_at": "2026-11-26T18:51:22.509873"
+  },
+  {
+    "views": 80,
+    "likes": 3,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "ryumyaku_insight",
+    "post_id": "18037505981912166",
+    "fetched_at": "2026-11-26T18:51:23.142474"
+  },
+  {
+    "views": 214,
+    "likes": 4,
+    "replies": 2,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "harm_revelation",
+    "post_id": "18128217067921376",
+    "fetched_at": "2026-11-26T18:51:24.116627"
+  },
+  {
+    "views": 9,
+    "likes": 1,
+    "replies": 0,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "fuusui_tip",
+    "post_id": "18164021224507123",
+    "fetched_at": "2026-11-26T18:51:24.435461"
+  },
+  {
+    "views": 48,
+    "likes": 1,
+    "replies": 1,
+    "reposts": 0,
+    "quotes": 0,
+    "shares": 0,
+    "pattern_id": "zodiac_ranking",
+    "post_id": "18080811968739649",
+    "fetched_at": "2026-11-26T18:51:24.673495"
   }
 ]
