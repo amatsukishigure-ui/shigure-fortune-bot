@@ -1,16 +1,16 @@
 {
-  "updated_at": "2026-11-27T18:43:29.370103",
+  "updated_at": "2026-11-27T23:07:26.553501",
   "locked": [
     "kotodama_rank"
   ],
   "lookback_days": 30,
   "adjustments": {
     "caligula": 0.894,
-    "zodiac_ranking": 1.772,
+    "zodiac_ranking": 1.771,
     "fuusui_tip": 0.5,
     "harm_revelation": 0.99,
     "zodiac_target": 1.065,
-    "daily_energy": 0.993,
+    "daily_energy": 0.992,
     "lucky_combo": 0.728,
     "ichi_gon": 0.5,
     "zodiac_deep": 1.637,
